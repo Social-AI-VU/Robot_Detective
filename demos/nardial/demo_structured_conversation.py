@@ -7,6 +7,10 @@ The conversation is conducted through a series of dialogs, which are defined in 
 
 Before running this demo, make sure you have completed the required setup steps.
 This demo depends on external services for speech, language understanding, and LLM responses.
+
+pip install "protobuf<=3.20.3"
+pip install —upgrade social_interaction_cloud[alphamini]
+pip install elevenlabs
 -------------------------
 1. Install dependencies
 -------------------------

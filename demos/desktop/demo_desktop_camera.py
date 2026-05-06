@@ -33,7 +33,7 @@ class CameraDemo(SICApplication):
         # self.set_log_file_path("path/to/logs")
 
         # Load environment variables
-        self.load_env("../../conf/.env")
+        #elf.load_env("../../conf/.env")
         
         self.setup()
 
