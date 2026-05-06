@@ -119,7 +119,7 @@ if __name__ == "__main__":
         ],
         agent=agent,
         dialog_json_path=str(DIALOG_CONFIG_PATH),
-        participant_id="1",
+        participant_id="2",
     )
 
     # =========================

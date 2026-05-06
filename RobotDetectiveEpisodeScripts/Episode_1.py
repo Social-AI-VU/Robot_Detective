@@ -64,6 +64,14 @@ google_keyfile_path = abspath(join(repo_root, "conf", "google", "google-key.json
 env_file_path = abspath(join(repo_root, "conf", ".env"))
 dialog_json_path = abspath(join(repo_root, "RobotDetective_Narrative_Jsons", "Episode_1_all_dialogs.json"))
 
+# =========================
+# MANUAL MODE SETTINGS
+# =========================
+# Set MANUAL_MODE=True to use manual commenting only.
+# When True, SessionManager will only see dialogs that are in session_agenda.
+# Just comment/uncomment scenes normally in session_agenda without errors.
+MANUAL_MODE = True
+
 if __name__ == '__main__':
     # =========================
     # 1. SELECT DEVICE
@@ -110,10 +118,9 @@ if __name__ == '__main__':
 
     session_agenda = [
         "Ep1_Scene_1_Intro",             # intro + meet Robin, collect name
-        "Ep1_Scene_1_Robin_LLM_Chat",    # open chat with Robin
         "Ep1_Scene_2_Toon_Rami",         # Toon & Rami report the missing rollercoaster
         "Ep1_Scene_3_Trudy",             # interview Trudy (karaoke plan)
-        "Ep1_Scene_3_Trudy_LLM_Chat",    # open chat with Trudy
+
         "Ep1_Scene_4_Eddy",              # interview Professor Eddy (puzzle)
         "Ep1_Scene_4_Eddy_LLM_Chat",     # open chat with Eddy
         "Ep1_Scene_5_Yoyo",              # interview Yoyo (alibi)
@@ -128,10 +135,33 @@ if __name__ == '__main__':
     # =========================
     # 5. SESSION MANAGER
     # =========================
+    active_dialog_json_path = dialog_json_path
+
+    if MANUAL_MODE:
+        import json
+        import tempfile
+
+        with open(dialog_json_path, "r", encoding="utf-8") as f:
+            all_dialogs = json.load(f)
+
+        # Filter dialogs to only include those in session_agenda
+        filtered_dialogs = [d for d in all_dialogs if d.get("id") in session_agenda]
+
+        # Write filtered dialogs to temp file
+        with tempfile.NamedTemporaryFile(
+            mode="w", suffix="_episode1_manual_dialogs.json", delete=False, encoding="utf-8"
+        ) as temp_file:
+            json.dump(filtered_dialogs, temp_file, ensure_ascii=False, indent=2)
+            active_dialog_json_path = temp_file.name
+
+        print(f"[MANUAL MODE] Session agenda has {len(session_agenda)} scene(s)")
+        print(f"[MANUAL MODE] Filtered dialogs: {[d['id'] for d in filtered_dialogs]}")
+        print(f"[MANUAL MODE] Using temp dialog file: {active_dialog_json_path}")
+
     session_manager = SessionManager(
         session_agenda=session_agenda,
         agent=agent,
-        dialog_json_path=dialog_json_path,
+        dialog_json_path=active_dialog_json_path,
         participant_id="999",   # change per participant for personalisation / logging
     )
 
