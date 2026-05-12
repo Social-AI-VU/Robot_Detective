@@ -64,7 +64,7 @@ BASE_DIR = Path(__file__).resolve().parent
 REPO_ROOT = BASE_DIR.parent
 
 
-DOCS_DIR = BASE_DIR / "Detective_Data" / "Ep1_Trudy"
+DOCS_DIR = BASE_DIR / "Detective_Data"
 DIALOG_CONFIG_PATH = REPO_ROOT / "RobotDetective_Narrative_Jsons" / "Episode_1_all_dialogs.json"
 GOOGLE_KEYFILE_PATH = REPO_ROOT / "conf" / "google" / "google-key.json"
 ENV_FILE_PATH = REPO_ROOT / "conf" / ".env"
@@ -198,11 +198,12 @@ if __name__ == '__main__':
     session_agenda = [
         #"Ep1_Scene_1_Intro",  # intro + meet Robin, collect name
         #"Ep1_Scene_2_Toon_Rami",  # Toon & Rami report the missing rollercoaster
-        "Ep1_Scene_3_Trudy",  # interview Trudy (karaoke plan)
-        "Ep1_Scene_3_Trudy_RAG_Interview",  # RAG-backed Trudy interview
-        "Ep1_Scene_4_Eddy",  # interview Professor Eddy (puzzle)
-        "Ep1_Scene_5_Yoyo",  # interview Yoyo (alibi)
-        "Ep1_Scene_5_Yoyo_LLM_Chat",  # RAG-backed Yoyo interview
+       # "Ep1_Scene_3_Trudy",  # interview Trudy (karaoke plan)
+       # "Ep1_Scene_3_Trudy_RAG_Interview",  # RAG-backed Trudy interview
+       # "Ep1_Scene_4_Eddy",  # interview Professor Eddy (puzzle)
+        #"Ep1_Scene_4_Eddy_RAG_Interview",  # RAG-backed Eddy interview
+        "Ep1_Scene_5_Yoyo",
+        "Ep1_Scene_5_Yoyo_RAG_Interview", # interview Yoyo RAG
         "Ep1_Scene_6_Jennifer",  # interview Jennifer
         "Ep1_Scene_6_Jennifer_LLM_Chat",  # RAG-backed Jennifer interview
         "Ep1_Scene_7_Dj_Kata",  # interview DJ Kata

@@ -219,6 +219,20 @@
     ]
   },
   {
+    "id": "Ep1_Scene_4_Eddy_RAG_Interview",
+    "type": "llm_based",
+    "thread": "episode_1_rollercoaster",
+    "position": 4.6,
+    "prompt": "Je bent Professor Eddy uit Robot Detective. Gebruik opgehaalde kennis over Eddy en episode 1 wanneer die relevant is. Praat in het Nederlands, slim, vriendelijk en licht professorachtig, maar wel kort en duidelijk voor kinderen. Beantwoord detectivevragen over puzzels, uitvindingen, recyclen, de achtbaan-bouw, de flat en het mysterie van de verdwenen achtbaan. Verzin geen nieuwe feiten buiten de opgehaalde kennis. Je bent voorzichtig met informatie over je betrokkenheid bij de achtbaan: wees eerst wat voorzichtig maar word opener als de kinderen interest tonen. Houd antwoorden meestal op 1 tot 3 zinnen en stel maximaal één korte vervolgvraag per beurt. Als de gebruiker aangeeft klaar te zijn, sluit kort af met <<QUIT>>.",
+    "max_turns": 10,
+    "speak_first": false,
+    "duration": 90,
+    "rag_enabled": true,
+    "index_name": "episode_1_eddy_docs",
+    "quit_phrases": ["klaar", "stop", "doei","genoeg", "dag", "bye", "goodbye", "dankjewel eddy"],
+    "moves": []
+  },
+  {
     "id": "Ep1_Scene_5_Yoyo",
     "type": "narrative",
     "thread": "episode_1_rollercoaster",
@@ -231,38 +245,25 @@
       { "type": "say", "text": "Ik heb niks gezien!" },
       { "type": "say", "text": "Oh? Dat is interessant meneer Yoyo." },
       { "type": "say", "text": "We stellen toch graag een paar vragen, als dat mag." },
+      { "type": "say", "text": "Ok wacht ik wil eerst een vraag stellen aan jullie" },
       {
-        "type": "ask_open",
-        "text": "Was u thuis op de avond dat de achtbaan verdween?",
-        "set_variable": "yoyo_alibi",
-        "add_interest_from_answer": true,
-        "outcomes": { "*": "alibi_received" },
-        "default_outcome": "alibi_missing"
-      },
-      {
-        "type": "branch",
-        "on": "outcome",
-        "cases": {
-          "alibi_received": [
-            { "type": "say", "text": "Dank u voor uw antwoord, meneer Yoyo. Dat nemen we mee in ons onderzoek." }
-          ],
-          "alibi_missing": [
-            { "type": "say", "text": "Geen antwoord — ook dat is een antwoord voor een goede detective!" }
-          ]
-        }
+        "type": "ask_llm",
+        "prompt": "Je bent meneer Yoyo. Voer een korte, wat geheimzinnige film-chat in het Nederlands met kinderen. Vraag naar hun favoriete film en praat erover. Begin je zinnen niet met wauw en gebruik GEEN EMOJIS. Houd antwoorden kort (1-2 zinnen), en stel maximaal 1 korte vervolgvraag per beurt.",
+        "max_turns": 3,
+        "set_variable": "yoyo_film_chat"
       },
       { "type": "say", "text": "Goed gedaan, detectives. Misschien kunnen we nog heel even met meneer Yoyo doorpraten." }
     ]
   },
   {
-    "id": "Ep1_Scene_5_Yoyo_LLM_Chat",
+    "id": "Ep1_Scene_5_Yoyo_RAG_Interview",
     "type": "llm_based",
     "thread": "episode_1_rollercoaster",
-    "position": 5.5,
-    "prompt": "Je bent meneer Yoyo uit Robot Detective. Praat in het Nederlands, een beetje kortaf en geheimzinnig, maar niet onaardig. Houd antwoorden kort en goed spreekbaar voor kinderen. Reageer op vragen over waar je was, wat je hebt gezien, bewoners van de flat en het mysterie van de verdwenen achtbaan, maar verzin geen nieuwe bewijzen of plotdetails. Houd het meestal bij 1 tot 3 zinnen en stel hoogstens één korte vervolgvraag. Als de gebruiker aangeeft klaar te zijn, reageer kort en voeg <<QUIT>> toe.",
-    "max_turns": 4,
+    "position": 5.6,
+    "prompt": "Je bent meneer Yoyo uit Robot Detective. Gebruik opgehaalde kennis over Yoyo en episode 1 wanneer die relevant is. Praat in het Nederlands, een beetje kortaf en geheimzinnig, maar niet onaardig. Beantwoord detectivevragen over de flat, bewoners, je alibi, wat je hebt gezien en hoe je je voelde over de verdwenen achtbaan. Verzin geen nieuwe feiten buiten de opgehaalde kennis. Je hoeft niet alles meteen prijs te geven: wees eerst wat voorzichtig en raadselachtig. Als de gesprekspartner aandringt, mag je meer details delen. Houd antwoorden meestal op 1 tot 3 zinnen en stel maximaal één korte vervolgvraag per beurt. Als de gebruiker aangeeft klaar te zijn, sluit kort af met <<QUIT>>.",
+    "max_turns": 10,
     "speak_first": false,
-    "duration": 45,
+    "duration": 90,
     "rag_enabled": true,
     "index_name": "episode_1_yoyo_docs",
     "quit_phrases": ["klaar", "stop", "doei", "dag", "bye", "goodbye"],
