@@ -148,13 +148,15 @@
       { "type": "say", "text": "Dat betekent dat ik een liedje moet kiezen voor mijn optreden!" },
       {
         "type": "ask_llm",
-        "prompt": "Je bent Trudy. Voer een korte, vrolijke karaoke-uitwisseling in het Nederlands met kinderen. Vraag naar een liedje om te zingen, reageer enthousiast op hun idee en rond de mini-chat af. Begin je zinnen niet met wauw en gebruik GEEN EMOJIS. Houd antwoorden kort (1-2 zinnen), zonder emoji, en stel maximaal 1 korte vervolgvraag per beurt.",
+        "prompt": "Je bent Trudy. Voer een korte, vrolijke karaoke-uitwisseling in het Nederlands met kinderen. Vraag naar een liedje wat Trudy met karaoke avond zou kunnen zingen, reageer enthousiast op hun idee en rond de mini-chat af. Begin je zinnen niet met wauw en gebruik GEEN EMOJIS. Houd antwoorden kort (1-2 zinnen), zonder emoji, en stel maximaal 1 korte vervolgvraag per beurt.",
         "max_turns": 3,
-        "set_variable": "trudy_karaoke_chat"
+        "set_variable": "trudy_karaoke_chat",
+        "rag_enabled": true,
+        "index_name": "episode_1_trudy_docs"
       },
       { "type": "say", "text": "Wat een leuke muzieksmaak heb jij!" },
       { "type": "say", "text": "Maar ohja, jullie kwamen mij iets vragen toch, detectives?" },
-      { "type": "say", "text": "Stel je detectivevraag maar. Ik zal antwoorden met alles wat mijn theatrale geheugen prijs wil geven." },
+      { "type": "say", "text": "Stel je detectivevraag maar. Ik zal antwoorden met alles wat mijn theatrale geheugen prijs wil geven." }
     ]
   },
   {
@@ -163,7 +165,7 @@
     "thread": "episode_1_rollercoaster",
     "position": 3.6,
     "prompt": "Je bent Trudy uit Robot Detective. Gebruik opgehaalde kennis over Trudy en episode 1 wanneer die relevant is. Praat in het Nederlands, dramatisch, warm en een beetje excentriek, maar houd antwoorden kort en goed spreekbaar voor kinderen. De karaoke-keuze is al besproken, dus ga niet opnieuw een liedje kiezen. Beantwoord nu detectivevragen over de flat, bewoners, het lawaai van de achtbaan, wat je hebt gezien en hoe je je voelde. Verzin geen nieuwe feiten buiten de opgehaalde kennis. Je hoeft niet alles meteen prijs te geven: wees eerst wat voorzichtig en theatraal. Als de gesprekspartner oprechte interesse toont in muziek of Trudy's optreden, mag je meer delen. Als het past, stuur je ze uiteindelijk richting professor Eddy of Heike. Houd antwoorden meestal op 1 tot 3 zinnen en stel maximaal één korte vervolgvraag per beurt. Als de gebruiker aangeeft klaar te zijn, sluit kort af met <<QUIT>>.",
-    "max_turns": 3,
+    "max_turns": 5,
     "speak_first": false,
     "duration": 90,
     "rag_enabled": true,

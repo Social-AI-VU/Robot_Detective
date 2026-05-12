@@ -63,6 +63,8 @@ import tempfile
 BASE_DIR = Path(__file__).resolve().parent
 REPO_ROOT = BASE_DIR.parent
 
+
+DOCS_DIR = BASE_DIR / "Detective_Data" / "Ep1_Trudy"
 DIALOG_CONFIG_PATH = REPO_ROOT / "RobotDetective_Narrative_Jsons" / "Episode_1_all_dialogs.json"
 GOOGLE_KEYFILE_PATH = REPO_ROOT / "conf" / "google" / "google-key.json"
 ENV_FILE_PATH = REPO_ROOT / "conf" / ".env"
@@ -72,7 +74,6 @@ INGEST_DOCS = False
 
 
 DEFAULT_RAG_INDEX_NAME = "episode_1_trudy_docs"
-# Ingestion is controlled only via demos/nardial/ingest_episode1_rag.py.
 
 # =========================
 # MANUAL MODE SETTINGS
@@ -95,6 +96,21 @@ def print_startup_checks() -> None:
     else:
         print("[WARN] OPENAI_API_KEY missing in environment; ask_llm/llm_based can be skipped/fail")
 
+    try:
+        all_dialogs = json.loads(DIALOG_CONFIG_PATH.read_text(encoding="utf-8"))
+        rag_blocks = [
+            d for d in all_dialogs
+            if d.get("type") == "llm_based" and d.get("rag_enabled")
+        ]
+        print(f"[CHECK] RAG-enabled dialog blocks: {[d.get('id') for d in rag_blocks]}")
+        print(f"[CHECK] Default RAG index: {DEFAULT_RAG_INDEX_NAME}")
+        for block in rag_blocks:
+            print(
+                f"[CHECK] {block.get('id')} -> index={block.get('index_name', DEFAULT_RAG_INDEX_NAME)}"
+            )
+    except Exception as exc:
+        print(f"[WARN] Could not inspect rag_enabled dialogs: {exc}")
+
 if __name__ == '__main__':
     print_startup_checks()
 
@@ -112,18 +128,19 @@ if __name__ == '__main__':
     # =========================
     # 2. CONFIGURE INTERACTION
     # =========================
+
     interaction_config = InteractionConfig(
-        google_keyfile_path=GOOGLE_KEYFILE_PATH,
-        keyboard_input=True,           # set False to use microphone instead
-        env_file_path=ENV_FILE_PATH,
+        google_keyfile_path=str(GOOGLE_KEYFILE_PATH),
+        env_file_path=str(ENV_FILE_PATH),
+        keyboard_input=True,
         rag=True,
         ingest_docs=INGEST_DOCS,
-        input_path="",
+        input_path=str(DOCS_DIR),
         index_name=INDEX_NAME,
         embedding_model="text-embedding-3-large",
         chunk_chars=900,
         chunk_overlap=120,
-        override_existing=False,
+        override_existing=True,
         force_recreate_index=False,
         tts_conf=GoogleTTSConf(
             speaking_rate=1.0,
@@ -132,9 +149,33 @@ if __name__ == '__main__':
         ),
         language="nl",
         # microphone_device=1,         # uncomment to select a specific mic
-        # post_speech_delay=0.5,       # pause in seconds after the agent speaks
+        post_speech_delay=0.5,       # pause in seconds after the agent speaks
         # signal_listening_behavior=True,  # visual cue while listening (robots)
     )
+
+    # interaction_config = InteractionConfig(
+    #     google_keyfile_path=GOOGLE_KEYFILE_PATH,
+    #     keyboard_input=True,           # set False to use microphone instead
+    #     env_file_path=ENV_FILE_PATH,
+    #     rag=True,
+    #     ingest_docs=INGEST_DOCS,
+    #     input_path=str(DOCS_DIR),
+    #     index_name=INDEX_NAME,
+    #     embedding_model="text-embedding-3-large",
+    #     chunk_chars=900,
+    #     chunk_overlap=120,
+    #     override_existing=False,
+    #     force_recreate_index=False,
+    #     tts_conf=GoogleTTSConf(
+    #         speaking_rate=1.0,
+    #         google_tts_voice_name="nl-NL-Wavenet-A",
+    #         google_tts_voice_gender="FEMALE"
+    #     ),
+    #     language="nl",
+    #     # microphone_device=1,         # uncomment to select a specific mic
+    #     # post_speech_delay=0.5,       # pause in seconds after the agent speaks
+    #     # signal_listening_behavior=True,  # visual cue while listening (robots)
+    # )
 
     # =========================
     # 3. CREATE AGENT
@@ -155,8 +196,8 @@ if __name__ == '__main__':
 
 
     session_agenda = [
-        "Ep1_Scene_1_Intro",  # intro + meet Robin, collect name
-        "Ep1_Scene_2_Toon_Rami",  # Toon & Rami report the missing rollercoaster
+        #"Ep1_Scene_1_Intro",  # intro + meet Robin, collect name
+        #"Ep1_Scene_2_Toon_Rami",  # Toon & Rami report the missing rollercoaster
         "Ep1_Scene_3_Trudy",  # interview Trudy (karaoke plan)
         "Ep1_Scene_3_Trudy_RAG_Interview",  # RAG-backed Trudy interview
         "Ep1_Scene_4_Eddy",  # interview Professor Eddy (puzzle)
