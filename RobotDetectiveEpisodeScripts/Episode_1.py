@@ -48,21 +48,31 @@ from nardial.interaction_orchestrator import InteractionConfig
 from nardial.session_manager import SessionManager
 from nardial.tts_manager import GoogleTTSConf
 
+# Import SIC device(s), message(s), and service(s) we will be using
 from sic_framework.devices.common_desktop.desktop_speakers import SpeakersConf
 from sic_framework.devices.desktop import Desktop
 
+# import other libraries
+from pathlib import Path
+import json
+import os
 import sys
-from os.path import abspath, dirname, join
+import tempfile
 
-# Resolve project files relative to this script so the episode can be launched
-# from any working directory inside the repository.
-script_dir = dirname(abspath(__file__))
-repo_root = dirname(script_dir)
 
-# Paths used by the interaction config and session manager.
-google_keyfile_path = abspath(join(repo_root, "conf", "google", "google-key.json"))
-env_file_path = abspath(join(repo_root, "conf", ".env"))
-dialog_json_path = abspath(join(repo_root, "RobotDetective_Narrative_Jsons", "Episode_1_all_dialogs.json"))
+BASE_DIR = Path(__file__).resolve().parent
+REPO_ROOT = BASE_DIR.parent
+
+DIALOG_CONFIG_PATH = REPO_ROOT / "RobotDetective_Narrative_Jsons" / "Episode_1_all_dialogs.json"
+GOOGLE_KEYFILE_PATH = REPO_ROOT / "conf" / "google" / "google-key.json"
+ENV_FILE_PATH = REPO_ROOT / "conf" / ".env"
+
+INDEX_NAME = "episode_1_trudy_docs"
+INGEST_DOCS = False
+
+
+DEFAULT_RAG_INDEX_NAME = "episode_1_trudy_docs"
+# Ingestion is controlled only via demos/nardial/ingest_episode1_rag.py.
 
 # =========================
 # MANUAL MODE SETTINGS
@@ -72,7 +82,22 @@ dialog_json_path = abspath(join(repo_root, "RobotDetective_Narrative_Jsons", "Ep
 # Just comment/uncomment scenes normally in session_agenda without errors.
 MANUAL_MODE = True
 
+
+def print_startup_checks() -> None:
+    # Fast local checks to explain why ask_llm blocks can get skipped.
+    print(f"[CHECK] Dialog JSON exists: {DIALOG_CONFIG_PATH.exists()} -> {DIALOG_CONFIG_PATH}")
+    print(f"[CHECK] Google key exists: {GOOGLE_KEYFILE_PATH.exists()} -> {GOOGLE_KEYFILE_PATH}")
+    print(f"[CHECK] Env file exists: {ENV_FILE_PATH.exists()} -> {ENV_FILE_PATH}")
+
+    openai_key = os.getenv("OPENAI_API_KEY")
+    if openai_key:
+        print("[CHECK] OPENAI_API_KEY found in environment")
+    else:
+        print("[WARN] OPENAI_API_KEY missing in environment; ask_llm/llm_based can be skipped/fail")
+
 if __name__ == '__main__':
+    print_startup_checks()
+
     # =========================
     # 1. SELECT DEVICE
     # =========================
@@ -88,9 +113,18 @@ if __name__ == '__main__':
     # 2. CONFIGURE INTERACTION
     # =========================
     interaction_config = InteractionConfig(
-        google_keyfile_path=google_keyfile_path,
+        google_keyfile_path=GOOGLE_KEYFILE_PATH,
         keyboard_input=True,           # set False to use microphone instead
-        env_file_path=env_file_path,
+        env_file_path=ENV_FILE_PATH,
+        rag=True,
+        ingest_docs=INGEST_DOCS,
+        input_path="",
+        index_name=INDEX_NAME,
+        embedding_model="text-embedding-3-large",
+        chunk_chars=900,
+        chunk_overlap=120,
+        override_existing=False,
+        force_recreate_index=False,
         tts_conf=GoogleTTSConf(
             speaking_rate=1.0,
             google_tts_voice_name="nl-NL-Wavenet-A",
@@ -110,59 +144,58 @@ if __name__ == '__main__':
         int_config=interaction_config
     )
 
+
+
     # =========================
     # 4. DEFINE SESSION STRUCTURE
     # =========================
     # Each entry must match the "id" field of a dialog in Episode_1_all_dialogs.json.
     # Scenes play in order; LLM chats follow their paired scene.
 
-    session_agenda = [
-        "Ep1_Scene_1_Intro",             # intro + meet Robin, collect name
-        "Ep1_Scene_2_Toon_Rami",         # Toon & Rami report the missing rollercoaster
-        "Ep1_Scene_3_Trudy",             # interview Trudy (karaoke plan)
 
-        "Ep1_Scene_4_Eddy",              # interview Professor Eddy (puzzle)
-        "Ep1_Scene_4_Eddy_LLM_Chat",     # open chat with Eddy
-        "Ep1_Scene_5_Yoyo",              # interview Yoyo (alibi)
-        "Ep1_Scene_5_Yoyo_LLM_Chat",     # open chat with Yoyo
-        "Ep1_Scene_6_Jennifer",          # interview Jennifer
-        "Ep1_Scene_6_Jennifer_LLM_Chat", # open chat with Jennifer
-        "Ep1_Scene_7_Dj_Kata",           # interview DJ Kata
-        "Ep1_Scene_7_Dj_Kata_LLM_Chat",  # open chat with DJ Kata
-        "Ep1_Scene_8_Ontknoping",        # denouement — wrap up the mystery
+
+    session_agenda = [
+        "Ep1_Scene_1_Intro",  # intro + meet Robin, collect name
+        "Ep1_Scene_2_Toon_Rami",  # Toon & Rami report the missing rollercoaster
+        "Ep1_Scene_3_Trudy",  # interview Trudy (karaoke plan)
+        "Ep1_Scene_3_Trudy_RAG_Interview",  # RAG-backed Trudy interview
+        "Ep1_Scene_4_Eddy",  # interview Professor Eddy (puzzle)
+        "Ep1_Scene_5_Yoyo",  # interview Yoyo (alibi)
+        "Ep1_Scene_5_Yoyo_LLM_Chat",  # RAG-backed Yoyo interview
+        "Ep1_Scene_6_Jennifer",  # interview Jennifer
+        "Ep1_Scene_6_Jennifer_LLM_Chat",  # RAG-backed Jennifer interview
+        "Ep1_Scene_7_Dj_Kata",  # interview DJ Kata
+        "Ep1_Scene_7_Dj_Kata_LLM_Chat",  # RAG-backed DJ Kata interview
+        "Ep1_Scene_8_Ontknoping",  # denouement — wrap up the mystery
     ]
 
-    # =========================
-    # 5. SESSION MANAGER
-    # =========================
-    active_dialog_json_path = dialog_json_path
-
+    active_dialog_json_path = str(DIALOG_CONFIG_PATH)
     if MANUAL_MODE:
-        import json
-        import tempfile
+        all_dialogs = json.loads(DIALOG_CONFIG_PATH.read_text(encoding="utf-8"))
+        dialogs_by_id = {d.get("id"): d for d in all_dialogs if d.get("id")}
+        missing = [scene_id for scene_id in session_agenda if scene_id not in dialogs_by_id]
+        if missing:
+            raise ValueError(f"session_agenda contains unknown dialog ids: {missing}")
 
-        with open(dialog_json_path, "r", encoding="utf-8") as f:
-            all_dialogs = json.load(f)
-
-        # Filter dialogs to only include those in session_agenda
-        filtered_dialogs = [d for d in all_dialogs if d.get("id") in session_agenda]
-
-        # Write filtered dialogs to temp file
+        # Preserve agenda order and strip unrelated dialogs so manual commenting just works.
+        filtered_dialogs = [dialogs_by_id[scene_id] for scene_id in session_agenda]
         with tempfile.NamedTemporaryFile(
             mode="w", suffix="_episode1_manual_dialogs.json", delete=False, encoding="utf-8"
         ) as temp_file:
             json.dump(filtered_dialogs, temp_file, ensure_ascii=False, indent=2)
             active_dialog_json_path = temp_file.name
 
-        print(f"[MANUAL MODE] Session agenda has {len(session_agenda)} scene(s)")
-        print(f"[MANUAL MODE] Filtered dialogs: {[d['id'] for d in filtered_dialogs]}")
-        print(f"[MANUAL MODE] Using temp dialog file: {active_dialog_json_path}")
+        print(f"[MANUAL MODE] Active scene count: {len(session_agenda)}")
+        print(f"[MANUAL MODE] Using filtered dialog file: {active_dialog_json_path}")
 
+    # =========================
+    # 5. SESSION MANAGER
+    # =========================
     session_manager = SessionManager(
         session_agenda=session_agenda,
         agent=agent,
         dialog_json_path=active_dialog_json_path,
-        participant_id="999",   # change per participant for personalisation / logging
+        participant_id="2",
     )
 
     # =========================

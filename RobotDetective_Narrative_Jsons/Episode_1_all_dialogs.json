@@ -121,7 +121,7 @@
       { "type": "say", "text": "Hoihoi!" },
       { "type": "say", "text": "Beste junior detectives, Toon wilde net vertellen wat er precies gebeurd is!" },
       { "type": "say", "text": "Goed, wat jullie moeten weten: ik ben een kunstenaar." },
-      { "type": "say", "text": "En ik had een mega grote achtbaan gebouwd samen met professor Eddy." },
+      { "type": "say", "text": "En ik had een mega grote achtbaan gebouwd samen met mijn broertje en professor Eddy." },
       { "type": "say", "text": "Een geweldig ding! Hij gaat wel zo hard als de Joris en de Draak." },
       { "type": "say", "text": "Deze prachtige achtbaan stond altijd op het balkon." },
       { "type": "say", "text": "Maar nu..." },
@@ -149,33 +149,27 @@
       {
         "type": "ask_llm",
         "prompt": "Je bent Trudy. Voer een korte, vrolijke karaoke-uitwisseling in het Nederlands met kinderen. Vraag naar een liedje om te zingen, reageer enthousiast op hun idee en rond de mini-chat af. Begin je zinnen niet met wauw en gebruik GEEN EMOJIS. Houd antwoorden kort (1-2 zinnen), zonder emoji, en stel maximaal 1 korte vervolgvraag per beurt.",
-        "max_turns": 5,
+        "max_turns": 3,
         "set_variable": "trudy_karaoke_chat"
       },
       { "type": "say", "text": "Wat een leuke muzieksmaak heb jij!" },
       { "type": "say", "text": "Maar ohja, jullie kwamen mij iets vragen toch, detectives?" },
-      {
-        "type": "ask_open",
-        "text": "Vraag maar raak! Ik ben een open boek.",
-        "set_variable": "trudy_question",
-        "add_interest_from_answer": true,
-        "outcomes": { "*": "has_question_trudy" },
-        "default_outcome": "no_question_trudy"
-      },
-      {
-        "type": "branch",
-        "on": "outcome",
-        "cases": {
-          "has_question_trudy": [
-            { "type": "say", "text": "Top! Vraag maar door, dan kletsen we daar nog even over." }
-          ],
-          "no_question_trudy": [
-            { "type": "say", "text": "Oei die kon ik even niet verstaan." }
-          ]
-        }
-      },
-      { "type": "say", "text": "Het was leuk jullie te ontmoeten! Houdoe!" }
+      { "type": "say", "text": "Stel je detectivevraag maar. Ik zal antwoorden met alles wat mijn theatrale geheugen prijs wil geven." },
     ]
+  },
+  {
+    "id": "Ep1_Scene_3_Trudy_RAG_Interview",
+    "type": "llm_based",
+    "thread": "episode_1_rollercoaster",
+    "position": 3.6,
+    "prompt": "Je bent Trudy uit Robot Detective. Gebruik opgehaalde kennis over Trudy en episode 1 wanneer die relevant is. Praat in het Nederlands, dramatisch, warm en een beetje excentriek, maar houd antwoorden kort en goed spreekbaar voor kinderen. De karaoke-keuze is al besproken, dus ga niet opnieuw een liedje kiezen. Beantwoord nu detectivevragen over de flat, bewoners, het lawaai van de achtbaan, wat je hebt gezien en hoe je je voelde. Verzin geen nieuwe feiten buiten de opgehaalde kennis. Je hoeft niet alles meteen prijs te geven: wees eerst wat voorzichtig en theatraal. Als de gesprekspartner oprechte interesse toont in muziek of Trudy's optreden, mag je meer delen. Als het past, stuur je ze uiteindelijk richting professor Eddy of Heike. Houd antwoorden meestal op 1 tot 3 zinnen en stel maximaal één korte vervolgvraag per beurt. Als de gebruiker aangeeft klaar te zijn, sluit kort af met <<QUIT>>.",
+    "max_turns": 3,
+    "speak_first": false,
+    "duration": 90,
+    "rag_enabled": true,
+    "index_name": "episode_1_trudy_docs",
+    "quit_phrases": ["klaar", "stop", "doei", "dag", "bye", "goodbye"],
+    "moves": []
   },
   {
     "id": "Ep1_Scene_4_Eddy",
@@ -219,7 +213,7 @@
           ]
         }
       },
-      { "type": "say", "text": "Het was leuk jullie te ontmoeten! Houdoe!" }
+      { "type": "say", "text": "Het was leuk jullie te ontmoeten! Doeidoei!" }
     ]
   },
   {
@@ -267,6 +261,8 @@
     "max_turns": 4,
     "speak_first": false,
     "duration": 45,
+    "rag_enabled": true,
+    "index_name": "episode_1_yoyo_docs",
     "quit_phrases": ["klaar", "stop", "doei", "dag", "bye", "goodbye"],
     "moves": []
   },
@@ -315,6 +311,8 @@
     "max_turns": 4,
     "speak_first": false,
     "duration": 45,
+    "rag_enabled": true,
+    "index_name": "episode_1_jennifer_docs",
     "quit_phrases": ["klaar", "stop", "doei", "dag", "bye", "goodbye"],
     "moves": []
   },
@@ -362,6 +360,8 @@
     "max_turns": 4,
     "speak_first": false,
     "duration": 45,
+    "rag_enabled": true,
+    "index_name": "episode_1_dj_kata_docs",
     "quit_phrases": ["klaar", "stop", "doei", "dag", "bye", "goodbye"],
     "moves": []
   },
@@ -398,4 +398,3 @@
     ]
   }
 ]
-

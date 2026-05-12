@@ -1,0 +1,32 @@
+1) Check Python 3.12 is available
+py -0p
+py -3.12 --version
+If py -3.12 fails, install Python 3.12 first (from python.org), then retry.
+2) Create the venv (from your project root)
+cd C:\Users\viq021\repositories\Robot_Detective
+py -3.12 -m venv .venv
+3) Activate + upgrade packaging tools
+.\.venv\Scripts\Activate.ps1
+python -V
+python -m pip install --upgrade pip setuptools wheel
+4) Install project dependencies
+If you use setup.py:
+python -m pip install -e .
+Or if you have a requirements file:
+python -m pip install -r requirements.txt
+5) Make it show as library root in JetBrains
+In JetBrains (PyCharm/JetBrains-PY):
+File -> Settings -> Project -> Python Interpreter
+Click gear icon -> Add...
+Choose Existing environment
+Select:
+C:\Users\viq021\repositories\Robot_Detective\.venv\Scripts\python.exe
+Apply/OK
+After this, .venv\Lib\site-packages appears under External Libraries (that’s the interpreter library root).
+6) If it still doesn’t appear
+Use File -> Invalidate Caches / Restart
+Re-open interpreter settings and confirm it points to .venv\Scripts\python.exe
+In terminal, confirm pip path:
+python -m pip -V
+It should point inside .venv.
+If you want, I can also give you a one-time powershell bootstrap script for this repo that creates/activates .venv and installs everything in one go.
