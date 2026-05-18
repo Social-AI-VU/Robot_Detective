@@ -32,7 +32,6 @@ WARNING: Never commit these files to version control.
 Run these in separate terminals BEFORE starting the episode:
 
     conf/redis/redis-server.exe conf/redis/redis.conf
-    run-redis --data-dir <path to where you want to save vector database>
     run-dialogflow
     run-google-tts
     run-gpt
@@ -48,6 +47,8 @@ from nardial.conversation_agent import ConversationAgent
 from nardial.interaction_orchestrator import InteractionConfig
 from nardial.session_manager import SessionManager
 from nardial.tts_manager import GoogleTTSConf
+from nardial.user_model import UserModel
+from nardial_overrides import apply_nardial_overrides
 
 # Import SIC device(s), message(s), and service(s) we will be using
 from sic_framework.devices.common_desktop.desktop_speakers import SpeakersConf
@@ -72,6 +73,8 @@ ENV_FILE_PATH = REPO_ROOT / "conf" / ".env"
 
 INDEX_NAME = "episode_1_trudy_docs"
 INGEST_DOCS = False
+PARTICIPANT_ID = os.getenv("PARTICIPANT_ID", "1")
+RESET_PARTICIPANT_STATE = os.getenv("RESET_PARTICIPANT_STATE", "1").strip().lower() in {"1", "true", "yes", "y"}
 
 
 DEFAULT_RAG_INDEX_NAME = "episode_1_trudy_docs"
@@ -97,6 +100,9 @@ def print_startup_checks() -> None:
     else:
         print("[WARN] OPENAI_API_KEY missing in environment; ask_llm/llm_based can be skipped/fail")
 
+    print(f"[CHECK] Participant ID: {PARTICIPANT_ID}")
+    print(f"[CHECK] RESET_PARTICIPANT_STATE: {RESET_PARTICIPANT_STATE}")
+
     try:
         all_dialogs = json.loads(DIALOG_CONFIG_PATH.read_text(encoding="utf-8"))
         rag_blocks = [
@@ -113,6 +119,7 @@ def print_startup_checks() -> None:
         print(f"[WARN] Could not inspect rag_enabled dialogs: {exc}")
 
 if __name__ == '__main__':
+    apply_nardial_overrides()
     print_startup_checks()
 
     # =========================
@@ -197,20 +204,21 @@ if __name__ == '__main__':
 
 
     session_agenda = [
-        #"Ep1_Scene_1_Intro",  # intro + meet Robin, collect name
-        #"Ep1_Scene_2_Toon_Rami",  # Toon & Rami report the missing rollercoaster
-       # "Ep1_Scene_3_Trudy",  # interview Trudy (karaoke plan)
-       # "Ep1_Scene_3_Trudy_RAG_Interview",  # RAG-backed Trudy interview
-       # "Ep1_Scene_4_Eddy",  # interview Professor Eddy (puzzle)
-        #"Ep1_Scene_4_Eddy_RAG_Interview",  # RAG-backed Eddy interview
-       # "Ep1_Scene_5_Yoyo",
-      #  "Ep1_Scene_5_Yoyo_RAG_Interview", # interview Yoyo RAG
-      #  "Ep1_Scene_6_Jennifer",  # interview Jennifer
-      #  "Ep1_Scene_6_Jennifer_LLM_Chat",  # initial LLM chat with Jennifer
-      #  "Ep1_Scene_6_Jennifer_RAG_Interview",  # RAG-backed Jennifer interview
+        "Ep1_Scene_1_Intro",  # intro + meet Robin, collect name
+        "Ep1_Scene_2_Toon_Rami",  # Toon & Rami report the missing rollercoaster
+        "Ep1_Scene_3_Trudy",  # interview Trudy (karaoke plan)
+        "Ep1_Scene_3_Trudy_RAG_Interview",  # RAG-backed Trudy interview
+        "Ep1_Scene_4_Eddy",  # interview Professor Eddy (puzzle)
+        "Ep1_Scene_4_Eddy_RAG_Interview",  # RAG-backed Eddy interview
+        "Ep1_Scene_5_Yoyo",
+        "Ep1_Scene_5_Yoyo_RAG_Interview", # interview Yoyo RAG
+        "Ep1_Scene_6_Jennifer",  # interview Jennifer
+        "Ep1_Scene_6_Jennifer_LLM_Chat",  # initial LLM chat with Jennifer
+        "Ep1_Scene_6_Jennifer_RAG_Interview",  # RAG-backed Jennifer interview
         "Ep1_Scene_7_Dj_Kata",  # interview DJ Kata
         "Ep1_Scene_7_Dj_Kata_LLM_Chat",  # RAG-backed DJ Kata interview
-        "Ep1_Scene_8_Ontknoping",  # denouement — wrap up the mystery
+        "Ep1_Scene_8_Ontknoping",
+        "Ep1_Scene_9_Kelder_Disco"
     ]
 
     active_dialog_json_path = str(DIALOG_CONFIG_PATH)
@@ -235,11 +243,18 @@ if __name__ == '__main__':
     # =========================
     # 5. SESSION MANAGER
     # =========================
+    if RESET_PARTICIPANT_STATE:
+        try:
+            UserModel(participant_id=PARTICIPANT_ID).clear_remote()
+            print(f"[CHECK] Cleared Redis-backed user state for participant {PARTICIPANT_ID}")
+        except Exception as exc:
+            print(f"[WARN] Could not clear Redis-backed user state for participant {PARTICIPANT_ID}: {exc}")
+
     session_manager = SessionManager(
         session_agenda=session_agenda,
         agent=agent,
         dialog_json_path=active_dialog_json_path,
-        participant_id="2",
+        participant_id=PARTICIPANT_ID,
     )
 
     # =========================
