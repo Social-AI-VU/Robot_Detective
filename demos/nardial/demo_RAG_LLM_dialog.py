@@ -31,6 +31,7 @@ WARNING: Never commit credential files to version control.
 -------------------------
 You MUST run these in separate terminals BEFORE starting the demo:
 
+.\.venv\Scripts\Activate.ps1
     run-redis --data-dir <path to where you want to save vector database>
     run-dialogflow
     run-google-tts

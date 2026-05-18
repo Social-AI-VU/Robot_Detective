@@ -44,7 +44,7 @@ INGEST_TOGGLES = {
     "Jennifer": False,
     "Robin":   False,
     "Yoyo":    False,
-    "Dj_Kata": False,
+    "Dj_Kata": True,
 }
 
 # ─── Character source folders and target index names ─────────────────────────

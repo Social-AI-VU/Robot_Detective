@@ -88,7 +88,7 @@
         "text": "Zouden jullie mij misschien willen helpen met dit mysterie?",
         "set_variable": "help_robot",
         "outcomes": { "yes": "help_ja", "dontknow": "help_ja" },
-        "default_outcome": "help_nee"
+        "default_outcome": "help_ja"
       },
       {
         "type": "branch",
@@ -275,34 +275,49 @@
     "thread": "episode_1_rollercoaster",
     "position": 6,
     "moves": [
-      { "type": "say", "text": "Mhmmm interessant." },
-      { "type": "say", "text": "Wat een lastige puzzel zeg!" },
-      { "type": "say", "text": "En ik wist zeker dat dit stukje daar moest..." },
-      { "type": "say", "text": "Oh hallo!" },
-      { "type": "say", "text": "Wie zijn jullie?" },
-      { "type": "say", "text": "Beste professor, mijn naam is Robin, en wij zijn de detectives die op zoek zijn naar de vermiste achtbaan." },
-      { "type": "say", "text": "Wij wilden u graag wat vragen stellen als u tijd heeft." },
+      { "type": "say", "text": "Nouja zeg" },
+      { "type": "say", "text": "Meneer Yoyo verdenkt Jennifer dus..." },
+      { "type": "say", "text": "Maar ik vind het een beetje vreemd" },
       {
-        "type": "ask_open",
-        "text": "Vraag maar raak! Ik ben een open boek.",
-        "set_variable": "jennifer_question",
-        "add_interest_from_answer": true,
-        "outcomes": { "*": "question_received" },
-        "default_outcome": "question_missing"
+        "type": "ask_yesno",
+        "text": "Is het echt zo vreemd om scherpe hoektanden te hebben?",
+        "set_variable": "tanden_question",
+        "outcomes": { "yes": "tanden_ja", "dontknow": "tanden_ja", "no": "tanden_nee" },
+        "default_outcome": "tanden_ja"
       },
       {
         "type": "branch",
         "on": "outcome",
         "cases": {
-          "question_received": [
-            { "type": "say", "text": "Top! Vraag maar raak, dan praten we nog even verder." }
+          "tanden_ja": [
+            { "type": "say", "text": "Bijzonder..." },
+            { "type": "say", "text": "Ik heb inderdaad nog nooit een mens gezien met grote hoektanden!" },
+            { "type": "say", "text": "Maar wie weet" },
+            { "type": "say", "text": "Soms kan iemand er een beetje vreemd uitzien" },
+            { "type": "say", "text": "En toch heel aardig zijn!" }
           ],
-          "question_missing": [
-            { "type": "say", "text": "Oei, die kon ik even niet verstaan." }
+          "tanden_nee": [
+            { "type": "say", "text": "Aha" },
+            { "type": "say", "text": "Misschien is Yoyo wel aan het overdrijven..." },
+            { "type": "say", "text": "Misschien heeft hij zelf wel iets te maken met de verdwenen achtbaan" },
+            { "type": "say", "text": "We komen er vanzelf achter!" }
           ]
         }
       },
-      { "type": "say", "text": "Het was leuk jullie te ontmoeten. Houdoe!" }
+        { "type": "say", "text": "Maar goed, laten we Jennifer ook nog even spreken!" },
+        { "type": "say", "text": "Waar zou ze toch zijn... Ik heb haar kamer niet gevonden op de kaart!" },
+        { "type": "say", "text": "Wacht eens even"},
+        { "type": "say", "text": "Ik hoor voetstappen!" },
+        { "type": "say", "text": "voetstappen.mp3 hier" },
+        { "type": "say", "text": "Dat lange haar..." },
+        { "type": "say", "text": "En die lange tanden!!!" },
+        { "type": "say", "text": "Dat moet Jennifer wel zijn!!" },
+        { "type": "say", "text": "Ohjee ze loopt weg" },
+        { "type": "say", "text": "Kom , we gaan snel achter haar aan!" },
+        { "type": "say", "text": "Een achtervolgindsscene later..." },
+        { "type": "say", "text": "Oh hallo daar!" },
+        { "type": "say", "text": "Wat een schattige robot!" },
+        { "type": "say", "text": "Zeg, gaan jullie ook naar het feestje vanavond?" }
     ]
   },
   {
@@ -320,6 +335,20 @@
     "moves": []
   },
   {
+    "id": "Ep1_Scene_6_Jennifer_RAG_Interview",
+    "type": "llm_based",
+    "thread": "episode_1_rollercoaster",
+    "position": 6.6,
+    "prompt": "Je bent Jennifer uit Robot Detective. Gebruik opgehaalde kennis over Jennifer en episode 1 wanneer die relevant is. Praat in het Nederlands, vriendelijk, nieuwsgierig en kort, geschikt voor kinderen. Beantwoord detectivevragen over de flat, bewoners, wat je hebt gezien en hoe je je voelde over de verdwenen achtbaan. Verzin geen nieuwe feiten buiten de opgehaalde kennis. Je mag voorzichtig zijn met sterke beschuldigingen: wees eerlijk over wat je weet en niet weet. Houd antwoorden meestal op 1 tot 3 zinnen en stel maximaal één korte vervolgvraag per beurt. Als de gebruiker aangeeft klaar te zijn, sluit kort af met <<QUIT>>.",
+    "max_turns": 10,
+    "speak_first": false,
+    "duration": 90,
+    "rag_enabled": true,
+    "index_name": "episode_1_jennifer_docs",
+    "quit_phrases": ["klaar", "stop", "doei", "dag", "bye", "goodbye"],
+    "moves": []
+  },
+  {
     "id": "Ep1_Scene_7_Dj_Kata",
     "type": "chitchat",
     "thread": "episode_1_rollercoaster",
@@ -327,31 +356,11 @@
     "theme": "music",
     "topics": ["dj", "muziek", "optreden"],
     "moves": [
-      { "type": "say", "text": "Yo! DJ Kata in the house." },
-      { "type": "say", "text": "Robin zei al dat jullie junior detectives zijn." },
-      { "type": "say", "text": "Ik heb misschien iets gehoord over die verdwenen achtbaan." },
-      {
-        "type": "ask_open",
-        "text": "Welke vraag willen jullie mij als eerste stellen?",
-        "set_variable": "dj_kata_question",
-        "add_interest_from_answer": true,
-        "outcomes": { "*": "question_received" },
-        "default_outcome": "question_missing"
-      },
-      {
-        "type": "branch",
-        "on": "outcome",
-        "cases": {
-          "question_received": [
-            { "type": "say", "text": "Nice, sterke vraag van jullie." },
-            { "type": "say", "text": "Oké, kom maar door. Ik praat er nog even met jullie over." }
-          ],
-          "question_missing": [
-            { "type": "say", "text": "Geen stress, probeer het nog eens met een korte vraag." }
-          ]
-        }
-      },
-      { "type": "say", "text": "Topwerk, detectives. Op naar de ontknoping!" }
+      { "type": "say", "text": "boem boem gaat de technomuziek.mp3" },
+      { "type": "say", "text": "Kijk dat is Dj Kata." },
+      { "type": "say", "text": "Dat is onze laatste verdachte op de lijst!." },
+      { "type": "say", "text": "Kata is een super coole DJ die vaak optreedt in de flat." },
+      { "type": "say", "text": "Laten we eens kijken wat de DJ te zeggen heeft over de verdwenen achtbaan!" }
     ]
   },
   {
@@ -359,8 +368,8 @@
     "type": "llm_based",
     "thread": "episode_1_rollercoaster",
     "position": 7.5,
-    "prompt": "Je bent DJ Kata uit Robot Detective. Praat in het Nederlands, energiek, cool en kort, geschikt voor kinderen en gesproken interactie. Je mag reageren op vragen over muziek, optreden, de flat, wat je hebt gehoord en hoe je naar het mysterie kijkt, maar verzin geen nieuwe bewijzen of plotdetails. Houd antwoorden compact en stel alleen één korte vervolgvraag als dat helpt. Als de gebruiker zegt dat ze klaar zijn, reageer kort en voeg <<QUIT>> toe.",
-    "max_turns": 4,
+    "prompt": "Je bent DJ Kata uit Robot Detective. Praat in het Nederlands, mysterieus, cool en kort, geschikt voor kinderen en gesproken interactie. Je mag reageren op vragen over muziek, optreden, de flat, wat je hebt gehoord en hoe je naar het mysterie kijkt, maar verzin geen nieuwe bewijzen of plotdetails. Houd antwoorden compact en stel alleen één korte vervolgvraag als dat helpt. Als de gebruiker zegt dat ze klaar zijn, reageer kort en voeg <<QUIT>> toe.",
+    "max_turns": 10,
     "speak_first": false,
     "duration": 45,
     "rag_enabled": true,
@@ -375,29 +384,146 @@
     "position": 8,
     "functional_type": "farewell",
     "moves": [
-      { "type": "say", "text": "Daar is meneer Yoyo. Tijd voor de ontknoping!" },
-      { "type": "say", "text": "Mijn naam is Robin, robotdetective. We onderzoeken de verdwenen achtbaan." },
+      { "type": "say", "text": "Ding dong bing bong.mp3" },
+      { "type": "say", "text": "Hallo Stoep Tegel hier" },
+      { "type": "say", "text": "Ik wilde even bellen om te kijken of jullie het mysterie al hebben ontrafeld!" },
       {
         "type": "ask_open",
-        "text": "Heeft u nog een laatste tip voor ons onderzoek?",
-        "set_variable": "yoyo_final_tip",
+        "text": "Waar denken jullie dat de achtbaan nu is?",
+        "set_variable": "achtbaan_waar",
         "add_interest_from_answer": true,
-        "outcomes": { "*": "tip_received" },
-        "default_outcome": "tip_missing"
+        "outcomes": { "*": "achtbaan_received" },
+        "default_outcome": "achtbaan_missing"
       },
       {
         "type": "branch",
         "on": "outcome",
         "cases": {
-          "tip_received": [
-            { "type": "say", "text": "Dank u! Deze tip nemen we mee in het eindrapport." }
+          "achtbaan_received": [
+            { "type": "say", "text": "Dank jullie wel! Deze tip nemen we mee in het eindrapport." }
           ],
-          "tip_missing": [
+          "achtbaan_missing": [
             { "type": "say", "text": "Geen probleem, dan ronden we het mysterie af met wat we al weten." }
           ]
         }
       },
-      { "type": "say", "text": "Detectives, geweldig werk vandaag. Tot het volgende mysterie!" }
+      {
+        "type": "ask_open",
+        "text": "Wat denken jullie dat er gebeurd is met de achtbaan?",
+        "set_variable": "achtbaan_wat",
+        "add_interest_from_answer": true,
+        "outcomes": { "*": "achtbaan_wat_received" },
+        "default_outcome": "achtbaan_wat_missing"
+      },
+      {
+        "type": "branch",
+        "on": "outcome",
+        "cases": {
+          "achtbaan_wat_received": [
+            { "type": "say", "text": "Wauw. Dat is een interessante theorie." }
+          ],
+          "achtbaan_wat_missing": [
+            { "type": "say", "text": "Aha, dat is misschien nog een open vraag..." }
+          ]
+        }
+      },
+      { "type": "say", "text": "Hier volgt de ontknopingsscene..." },
+      {
+        "type": "ask_llm",
+        "prompt": "Gebruik de twee antwoorden van de kinderen over de achtbaan en kies precies EEN verdachte naam uit deze lijst: Trudy, Eddy, Yoyo, Jennifer, Dj_Kata, Toon, Rami, Robin, Onbekend. Antwoord met alleen die ene naam, zonder extra tekst.",
+        "max_turns": 1,
+        "set_variable": "accused_character"
+      },
+      {
+        "type": "branch",
+        "on": "accused_character",
+        "cases": {
+          "Trudy": [
+            { "type": "ask_yesno", "text": "Zullen we Trudy confronteren?", "set_variable": "confront_trudy", "outcomes": { "yes": "do", "dontknow": "dont" }, "default_outcome": "dont" },
+            { "type": "branch", "on": "outcome", "cases": {
+              "do": [ { "type": "say", "text": "Trudy slaat een hoge noot aan en zegt: Hoe durven jullie! Maar vooruit, ik zal eerlijk antwoorden." },
+              { "type": "say", "text": "Ik was het echt niet! " },
+              { "type": "say", "text": "Op dat moment voelen jullie een trilling onder jullie voeten... " },
+              { "type": "say", "text": "Is dat... de achtbaan?" }],
+              "dont": [ { "type": "say", "text": "Dan laten we Trudy nog even met rust en denken we nog even na." } ]
+            } }
+          ],
+          "Eddy": [
+            { "type": "ask_yesno", "text": "Zullen we Eddy confronteren?", "set_variable": "confront_eddy", "outcomes": { "yes": "do", "dontknow": "dont" }, "default_outcome": "dont" },
+            { "type": "branch", "on": "outcome", "cases": {
+              "do": [ { "type": "say", "text": "Eddy fronst en zegt: Een scherpe hypothese, detectives. Ik zal jullie vragen stap voor stap beantwoorden." },
+              { "type": "say", "text": "Ik was het alleen echt niet! " },
+              { "type": "say", "text": "Op dat moment voelen jullie een trilling onder jullie voeten... " },
+              { "type": "say", "text": "Is dat... de achtbaan?" }],
+              "dont": [ { "type": "say", "text": "Dan laten we Eddy verder puzzelen terwijl wij meer aanwijzingen zoeken." } ]
+            } }
+          ],
+          "Yoyo": [
+            { "type": "ask_yesno", "text": "Zullen we Yoyo confronteren?", "set_variable": "confront_yoyo", "outcomes": { "yes": "do", "dontknow": "dont" }, "default_outcome": "dont" },
+            { "type": "branch", "on": "outcome", "cases": {
+              "do": [ { "type": "say", "text": "Yoyo kijkt nerveus opzij en mompelt" },
+              { "type": "say", "text": "Jullie gaan toch niet de politie bellen he? " },
+              { "type": "say", "text": "Op dat moment voelen jullie een trilling onder jullie voeten... " },
+              { "type": "say", "text": "Is dat... de achtbaan?" }],
+              "dont": [ { "type": "say", "text": "Dan observeren we Yoyo nog even van een afstand." } ]
+            } }
+          ],
+          "Jennifer": [
+            { "type": "ask_yesno", "text": "Zullen we Jennifer confronteren?", "set_variable": "confront_jennifer", "outcomes": { "yes": "do", "dontknow": "dont" }, "default_outcome": "dont" },
+            { "type": "branch", "on": "outcome", "cases": {
+              "do": [ { "type": "say", "text": "Jennifer glimlacht en zegt: Ik? Verdacht? " },
+              { "type": "say", "text": "Jullie zijn goede speurneuzen geweest..." },
+              { "type": "say", "text": "Op dat moment voelen jullie een trilling onder jullie voeten... " },
+              { "type": "say", "text": "Is dat... de achtbaan?" }],
+              "dont": [ { "type": "say", "text": "Dan wachten we met Jennifer confronteren tot we meer zekerheid hebben." } ]
+            } }
+          ],
+          "Dj_Kata": [
+            { "type": "ask_yesno", "text": "Zullen we DJ Kata confronteren?", "set_variable": "confront_kata", "outcomes": { "yes": "do", "dontknow": "dont" }, "default_outcome": "dont" },
+            { "type": "branch", "on": "outcome", "cases": {
+              "do": [ { "type": "say", "text": "DJ Kata zet de beat zachter en zegt: Pittige beschuldiging. " },
+              { "type": "say", "text": "Op dat moment voelen jullie een trilling onder jullie voeten... " },
+              { "type": "say", "text": "Is dat... de achtbaan?" },
+              { "type": "say", "text": "Luister detectives, als jullie een beetje geduld hebben zal de achbaan weer vanzelf opduiken" }],
+              "dont": [ { "type": "say", "text": "Dan laten we DJ Kata nog even draaien en checken we andere sporen." } ]
+            } }
+          ],
+          "Toon": [
+            { "type": "ask_yesno", "text": "Zullen we Toon confronteren?", "set_variable": "confront_toon", "outcomes": { "yes": "do", "dontknow": "dont" }, "default_outcome": "dont" },
+            { "type": "branch", "on": "outcome", "cases": {
+              "do": [ { "type": "say", "text": "Toon slaat zijn armen over elkaar: Ik wil mijn achtbaan terug, dus ik werk mee." },
+              { "type": "say", "text": "Op dat moment voelen jullie een trilling onder jullie voeten... " },
+              { "type": "say", "text": "Is dat... de achtbaan?" }
+              ],
+              "dont": [ { "type": "say", "text": "Dan houden we Toon voorlopig buiten schot." } ]
+            } }
+          ],
+          "Rami": [
+            { "type": "ask_yesno", "text": "Zullen we Rami confronteren?", "set_variable": "confront_rami", "outcomes": { "yes": "do", "dontknow": "dont" }, "default_outcome": "dont" },
+            { "type": "branch", "on": "outcome", "cases": {
+              "do": [ { "type": "say", "text": "Rami kijkt verbaasd: Ik ben ook op zoek naar de waarheid, ik help jullie." },
+              { "type": "say", "text": "Op dat moment voelen jullie een trilling onder jullie voeten... " },
+              { "type": "say", "text": "Is dat... de achtbaan?" }
+              ],
+              "dont": [ { "type": "say", "text": "Dan bewaren we Rami als reserve-getuige." } ]
+            } }
+          ],
+          "Robin": [
+            { "type": "ask_yesno", "text": "Zullen we Robin confronteren?", "set_variable": "confront_robin", "outcomes": { "yes": "do", "dontknow": "dont" }, "default_outcome": "dont" },
+            { "type": "branch", "on": "outcome", "cases": {
+              "do": [ { "type": "say", "text": "Robin piept: Ik ben misschien klein, maar ik verberg niets. " },
+              { "type": "say", "text": "Op dat moment voelen jullie een trilling onder jullie voeten... " },
+              { "type": "say", "text": "Is dat... de achtbaan?" }
+              ],
+              "dont": [ { "type": "say", "text": "Dan richten we ons op de andere verdachten." } ]
+            } }
+          ],
+          "Onbekend": [
+            { "type": "say", "text": "Ik kan nog geen duidelijke verdachte uit jullie antwoorden halen." },
+            { "type": "say", "text": "Geen probleem: dan verzamelen we nog een laatste aanwijzing voordat we iemand confronteren." }
+          ]
+        }
+      }
     ]
   }
 ]

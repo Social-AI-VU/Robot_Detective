@@ -32,6 +32,7 @@ WARNING: Never commit these files to version control.
 Run these in separate terminals BEFORE starting the episode:
 
     conf/redis/redis-server.exe conf/redis/redis.conf
+    run-redis --data-dir <path to where you want to save vector database>
     run-dialogflow
     run-google-tts
     run-gpt
@@ -202,10 +203,11 @@ if __name__ == '__main__':
        # "Ep1_Scene_3_Trudy_RAG_Interview",  # RAG-backed Trudy interview
        # "Ep1_Scene_4_Eddy",  # interview Professor Eddy (puzzle)
         #"Ep1_Scene_4_Eddy_RAG_Interview",  # RAG-backed Eddy interview
-        "Ep1_Scene_5_Yoyo",
-        "Ep1_Scene_5_Yoyo_RAG_Interview", # interview Yoyo RAG
-        "Ep1_Scene_6_Jennifer",  # interview Jennifer
-        "Ep1_Scene_6_Jennifer_LLM_Chat",  # RAG-backed Jennifer interview
+       # "Ep1_Scene_5_Yoyo",
+      #  "Ep1_Scene_5_Yoyo_RAG_Interview", # interview Yoyo RAG
+      #  "Ep1_Scene_6_Jennifer",  # interview Jennifer
+      #  "Ep1_Scene_6_Jennifer_LLM_Chat",  # initial LLM chat with Jennifer
+      #  "Ep1_Scene_6_Jennifer_RAG_Interview",  # RAG-backed Jennifer interview
         "Ep1_Scene_7_Dj_Kata",  # interview DJ Kata
         "Ep1_Scene_7_Dj_Kata_LLM_Chat",  # RAG-backed DJ Kata interview
         "Ep1_Scene_8_Ontknoping",  # denouement — wrap up the mystery
