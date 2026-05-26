@@ -46,7 +46,7 @@ Run these in separate terminals BEFORE starting the episode:
 from nardial.conversation_agent import ConversationAgent
 from nardial.interaction_orchestrator import InteractionConfig
 from nardial.session_manager import SessionManager
-from nardial.tts_manager import GoogleTTSConf
+from nardial.tts_manager import ElevenLabsTTSConf
 from nardial.user_model import UserModel
 from nardial_overrides import apply_nardial_overrides
 
@@ -73,8 +73,9 @@ ENV_FILE_PATH = REPO_ROOT / "conf" / ".env"
 
 INDEX_NAME = "episode_1_trudy_docs"
 INGEST_DOCS = False
-PARTICIPANT_ID = os.getenv("PARTICIPANT_ID", "1")
+PARTICIPANT_ID = os.getenv("PARTICIPANT_ID", "3")
 RESET_PARTICIPANT_STATE = os.getenv("RESET_PARTICIPANT_STATE", "1").strip().lower() in {"1", "true", "yes", "y"}
+AUDIO_HEARTBEAT = os.getenv("AUDIO_HEARTBEAT", "1").strip().lower() in {"1", "true", "yes", "y"}
 
 
 DEFAULT_RAG_INDEX_NAME = "episode_1_trudy_docs"
@@ -131,8 +132,8 @@ if __name__ == '__main__':
     device = Desktop(
         speakers_conf=SpeakersConf(sample_rate=22050)
     )
-    # device = Pepper(ip="XXX")  # Replace with your robot's IP
-
+    #device = Pepper(ip="XXX")  # Replace with your robot's IP
+    #device = Nao(ip="10.0.0.139")
     # =========================
     # 2. CONFIGURE INTERACTION
     # =========================
@@ -155,35 +156,19 @@ if __name__ == '__main__':
             google_tts_voice_name="nl-NL-Wavenet-A",
             google_tts_voice_gender="FEMALE"
         ),
+
+   #     tts_conf = ElevenLabsTTSConf(
+   #         speaking_rate=1.0,
+    #        voice_id='D50w2srwVohKTPx9X6Th',
+    #        model_id='eleven_flash_v2_5'
+    #    ),
+
         language="nl",
         # microphone_device=1,         # uncomment to select a specific mic
         post_speech_delay=0.5,       # pause in seconds after the agent speaks
         # signal_listening_behavior=True,  # visual cue while listening (robots)
     )
 
-    # interaction_config = InteractionConfig(
-    #     google_keyfile_path=GOOGLE_KEYFILE_PATH,
-    #     keyboard_input=True,           # set False to use microphone instead
-    #     env_file_path=ENV_FILE_PATH,
-    #     rag=True,
-    #     ingest_docs=INGEST_DOCS,
-    #     input_path=str(DOCS_DIR),
-    #     index_name=INDEX_NAME,
-    #     embedding_model="text-embedding-3-large",
-    #     chunk_chars=900,
-    #     chunk_overlap=120,
-    #     override_existing=False,
-    #     force_recreate_index=False,
-    #     tts_conf=GoogleTTSConf(
-    #         speaking_rate=1.0,
-    #         google_tts_voice_name="nl-NL-Wavenet-A",
-    #         google_tts_voice_gender="FEMALE"
-    #     ),
-    #     language="nl",
-    #     # microphone_device=1,         # uncomment to select a specific mic
-    #     # post_speech_delay=0.5,       # pause in seconds after the agent speaks
-    #     # signal_listening_behavior=True,  # visual cue while listening (robots)
-    # )
 
     # =========================
     # 3. CREATE AGENT
@@ -204,12 +189,12 @@ if __name__ == '__main__':
 
 
     session_agenda = [
-        "Ep1_Scene_1_Intro",  # intro + meet Robin, collect name
-        "Ep1_Scene_2_Toon_Rami",  # Toon & Rami report the missing rollercoaster
-        "Ep1_Scene_3_Trudy",  # interview Trudy (karaoke plan)
-        "Ep1_Scene_3_Trudy_RAG_Interview",  # RAG-backed Trudy interview
-        "Ep1_Scene_4_Eddy",  # interview Professor Eddy (puzzle)
-        "Ep1_Scene_4_Eddy_RAG_Interview",  # RAG-backed Eddy interview
+       # "Ep1_Scene_1_Intro",  # intro + meet Robin, collect name
+       # "Ep1_Scene_2_Toon_Rami",  # Toon & Rami report the missing rollercoaster
+       # "Ep1_Scene_3_Trudy",  # interview Trudy (karaoke plan)
+       # "Ep1_Scene_3_Trudy_RAG_Interview",  # RAG-backed Trudy interview
+       # "Ep1_Scene_4_Eddy",  # interview Professor Eddy (puzzl=e)
+       # "Ep1_Scene_4_Eddy_RAG_Interview",  # RAG-backed Eddy interview
         "Ep1_Scene_5_Yoyo",
         "Ep1_Scene_5_Yoyo_RAG_Interview", # interview Yoyo RAG
         "Ep1_Scene_6_Jennifer",  # interview Jennifer
@@ -260,6 +245,13 @@ if __name__ == '__main__':
     # =========================
     # 6. RUN SESSION
     # =========================
+    if AUDIO_HEARTBEAT:
+        try:
+            # Quick audible check so silent output is obvious before dialogs start.
+            agent.say("Audio check. Als je dit hoort, werkt de audio.")
+        except Exception as exc:
+            print(f"[WARN] Startup audio heartbeat failed: {exc}")
+
     session_manager.run()
 
     sys.exit()

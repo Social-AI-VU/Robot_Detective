@@ -39,12 +39,12 @@ FORCE_RECREATE_INDEX = False
 
 # ─── Toggle per character: True = ingest, False = skip ───────────────────────
 INGEST_TOGGLES = {
-    "Trudy":   False,
+    "Trudy":   True,
     "Eddy":    False,   # ← enable to ingest Eddy documents
     "Jennifer": False,
     "Robin":   False,
     "Yoyo":    False,
-    "Dj_Kata": True,
+    "Dj_Kata": False,
 }
 
 # ─── Character source folders and target index names ─────────────────────────
