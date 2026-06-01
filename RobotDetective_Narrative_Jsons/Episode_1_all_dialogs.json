@@ -4,32 +4,155 @@
     "type": "narrative",
     "thread": "episode_1_rollercoaster",
     "position": 1,
+
+    "characters": {
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      },
+      "s_tegel": {
+        "voice_settings": {
+          "voice_id": "D50w2srwVohKTPx9X6Th",
+          "language": "nl"
+        }
+      },
+      "hazel": {
+      "voice_settings": {
+        "voice_id": "tfweP7lGJyLeNV9dH1Rm",
+        "language": "nl"
+      }
+    },
+    "s_tegel": {
+      "voice_settings": {
+        "voice_id": "D50w2srwVohKTPx9X6Th",
+        "language": "nl"
+      }
+    },
+    "kata": {
+      "voice_settings": {
+        "voice_id": "7qdUFMklKPaaAVMsBTBt",
+        "language": "nl"
+      }
+    },
+    "trudy": {
+      "voice_settings": {
+        "voice_id": "OlBRrVAItyi00MuGMbna",
+        "language": "nl"
+      }
+    },
+      "yoyo": {
+      "voice_settings": {
+        "voice_id": "2wqbkywMMH2LWAlR4EMt",
+        "language": "nl"
+      }
+    }
+    },
     "moves": [
-      { "type": "say", "text": "Goedemiddag luistervinkjes en luisteraars!" },
-      { "type": "say", "text": "Wat is het te gek dat je luistert naar de Onderste Steen Boven." },
-      { "type": "say", "text": "Waarin ik detective S. Tegel antwoorden vind op de grootste mysteries van De Smaragd." },
-      { "type": "say", "text": "Ik ontmasker leugens, ik klaar geheimen op," },
-      { "type": "say", "text": "En ik gebruik mijn uitmuntende speurdersneus om alles waar een luchtje aan zit op te sporen." },
-      { "type": "say", "text": "Ik sta hier op de zevende en hoogste verdieping van torenflat de Smaragd," },
-      { "type": "say", "text": "en ik kijk uit op de grijze golven van zee in de verte voorbij Donderstad." },
-      { "type": "say", "text": "Onder mijn plateauzolen liggen alle andere verdiepingen van deze ongewone flat." },
-      { "type": "say", "text": "Want dat deze flat een beetje vreemd is, een beetje eigenaardig, dat weet iedereen." },
-      { "type": "say", "text": "Er gebeuren hier vaak mysterieuze zaken, raadselachtige kwesties, geheimzinnige dingen." },
-      { "type": "say", "text": "Ten eerste zwerven er altijd krokodillen sloffen door het pand en niemand weet van wie ze zijn." },
-      { "type": "say", "text": "Daarnaast wonen er twee jongens zonder ouders die een achtbaan op hun balkon hebben gebouwd." },
-      { "type": "say", "text": "Dit pand kent een stortgat waardoor je helemaal van het dak van de flat naar de kelder kunt glijden." },
-      { "type": "say", "text": "Er is een leen-auto waarvan mensen beweren dat die 's nachts wel eens in de lucht is gespot." },
-      { "type": "say", "text": "In deze flat verschijnen er dingen, verdwijnen er dingen of gaan er dingen kapot en niemand weet hoe of door wie of waarom." },
-      { "type": "say", "text": "Dus stel ik die vragen." },
-      { "type": "say", "text": "Ik traceer de sporen, ik graaf door tot de onderste steen boven ligt." },
-      { "type": "say", "text": "Oh hallo daar!" },
-      { "type": "say", "text": "Mijn naam is Robin, de Robotdetective!" },
+      {
+        "type": "say",
+        "text": "Goedemiddag luistervinkjes en luisteraars!",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "Wat is het te gek dat je luistert naar de Onderste Steen Boven.",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "Waarin ik detective S. Tegel antwoorden vind op de grootste mysteries van De Smaragd.",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "Ik ontmasker leugens, ik klaar geheimen op,",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "En ik gebruik mijn uitmuntende speurdersneus om alles waar een luchtje aan zit op te sporen.",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "Ik sta hier op de zevende en hoogste verdieping van torenflat de Smaragd,",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "en ik kijk uit op de grijze golven van zee in de verte voorbij Donderstad.",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "Onder mijn plateauzolen liggen alle andere verdiepingen van deze ongewone flat.",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "Want dat deze flat een beetje vreemd is, een beetje eigenaardig, dat weet iedereen.",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "Er gebeuren hier vaak mysterieuze zaken, raadselachtige kwesties, geheimzinnige dingen.",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "Ten eerste zwerven er altijd krokodillen sloffen door het pand en niemand weet van wie ze zijn.",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "Daarnaast wonen er twee jongens zonder ouders die een achtbaan op hun balkon hebben gebouwd.",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "Dit pand kent een stortgat waardoor je helemaal van het dak van de flat naar de kelder kunt glijden.",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "Er is een leen-auto waarvan mensen beweren dat die 's nachts wel eens in de lucht is gespot.",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "In deze flat verschijnen er dingen, verdwijnen er dingen of gaan er dingen kapot en niemand weet hoe of door wie of waarom.",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "Dus stel ik die vragen.",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "Ik traceer de sporen, ik graaf door tot de onderste steen boven ligt.",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "Oh hallo daar!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Mijn naam is Robin, de Robotdetective!",
+        "character": "robin"
+      },
       {
         "type": "ask_open",
         "text": "En wie zijn jullie?",
         "set_variable": "name",
         "add_interest_from_answer": true,
-        "outcomes": { "*": "has_name" },
+        "outcomes": {
+          "*": "has_name"
+        },
         "default_outcome": "no_name"
       },
       {
@@ -37,21 +160,44 @@
         "on": "outcome",
         "cases": {
           "has_name": [
-            { "type": "say", "text": "Hoi %name%!" },
-            { "type": "say", "text": "Wat gezellig dat je er bij bent." }
+            {
+              "type": "say",
+              "text": "Hoi %name%!",
+              "character": "robin"
+            },
+            {
+              "type": "say",
+              "text": "Wat gezellig dat je er bij bent.",
+              "character": "robin"
+            }
           ],
           "no_name": [
-            { "type": "say", "text": "Ohjee dat verstond ik niet helemaal, maar geen nood!" }
+            {
+              "type": "say",
+              "text": "Ohjee dat verstond ik niet helemaal, maar geen nood!",
+              "character": "robin"
+            }
           ]
         }
       },
-      { "type": "say", "text": "Kijk, ik kan het heel goed voordoen hoe je vragen stelt!" },
-      { "type": "say", "text": "Eehh jij daar helemaal links!" },
+      {
+        "type": "say",
+        "text": "Kijk, ik kan het heel goed voordoen hoe je vragen stelt!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Eehh jij daar helemaal links!",
+        "character": "robin"
+      },
       {
         "type": "ask_yesno",
         "text": "Ik heb een vraag voor jou! Ben je er klaar voor?",
         "set_variable": "ask_question_color",
-        "outcomes": { "yes": "ja", "dontknow": "ja" },
+        "outcomes": {
+          "yes": "ja",
+          "dontknow": "ja"
+        },
         "default_outcome": "ja"
       },
       {
@@ -60,12 +206,19 @@
         "max_turns": 3,
         "set_variable": "robin_color_chat"
       },
-      { "type": "say", "text": "Dat was een hartstikke informatieve uitwisseling!" },
+      {
+        "type": "say",
+        "text": "Dat was een hartstikke informatieve uitwisseling!",
+        "character": "robin"
+      },
       {
         "type": "ask_yesno",
         "text": "Weetje, mag ik jullie een geheim vertellen?",
         "set_variable": "say_secret",
-        "outcomes": { "yes": "ja", "dontknow": "ja" },
+        "outcomes": {
+          "yes": "ja",
+          "dontknow": "ja"
+        },
         "default_outcome": "ja"
       },
       {
@@ -73,13 +226,41 @@
         "on": "outcome",
         "cases": {
           "ja": [
-            { "type": "say", "text": "Ik vind het eigenlijk heel spannend om vragen te stellen." },
-            { "type": "say", "text": "Vooral bij volwassenen." },
-            { "type": "say", "text": "Bij kinderen gaat het nog wel!" },
-            { "type": "say", "text": "Maar volwassenen zijn zo groot!!!" },
-            { "type": "say", "text": "Ze kunnen mij zo optillen of omverlopen als ze geen zin hebben in mijn vragen!" },
-            { "type": "say", "text": "Maar nu is de achtbaan van Toon en Rami vermist en ik heb ze beloofd om te helpen zoeken." },
-            { "type": "say", "text": "Zeg... Ik krijg ineens een idee..." }
+            {
+              "type": "say",
+              "text": "Ik vind het eigenlijk heel spannend om vragen te stellen.",
+              "character": "robin"
+            },
+            {
+              "type": "say",
+              "text": "Vooral bij volwassenen.",
+              "character": "robin"
+            },
+            {
+              "type": "say",
+              "text": "Bij kinderen gaat het nog wel!",
+              "character": "robin"
+            },
+            {
+              "type": "say",
+              "text": "Maar volwassenen zijn zo groot!!!",
+              "character": "robin"
+            },
+            {
+              "type": "say",
+              "text": "Ze kunnen mij zo optillen of omverlopen als ze geen zin hebben in mijn vragen!",
+              "character": "robin"
+            },
+            {
+              "type": "say",
+              "text": "Maar nu is de achtbaan van Toon en Rami vermist en ik heb ze beloofd om te helpen zoeken.",
+              "character": "robin"
+            },
+            {
+              "type": "say",
+              "text": "Zeg... Ik krijg ineens een idee...",
+              "character": "robin"
+            }
           ]
         }
       },
@@ -87,7 +268,10 @@
         "type": "ask_yesno",
         "text": "Zouden jullie mij misschien willen helpen met dit mysterie?",
         "set_variable": "help_robot",
-        "outcomes": { "yes": "help_ja", "dontknow": "help_ja" },
+        "outcomes": {
+          "yes": "help_ja",
+          "dontknow": "help_ja"
+        },
         "default_outcome": "help_ja"
       },
       {
@@ -95,14 +279,38 @@
         "on": "outcome",
         "cases": {
           "help_ja": [
-            { "type": "say", "text": "Joepie!!!!" },
-            { "type": "say", "text": "Dat is super lief van jullie!" },
-            { "type": "say", "text": "Laten we naar de flat gaan!" },
-            { "type": "say", "text": "Daar zullen we vast veel sporen tegenkomen." }
+            {
+              "type": "say",
+              "text": "Joepie!!!!",
+              "character": "robin"
+            },
+            {
+              "type": "say",
+              "text": "Dat is super lief van jullie!",
+              "character": "robin"
+            },
+            {
+              "type": "say",
+              "text": "Laten we naar de flat gaan!",
+              "character": "robin"
+            },
+            {
+              "type": "say",
+              "text": "Daar zullen we vast veel sporen tegenkomen.",
+              "character": "robin"
+            }
           ],
           "help_nee": [
-            { "type": "say", "text": "Oh, jullie mogen er over nadenken hoor!" },
-            { "type": "say", "text": "Ik ga vast naar de flat toe!" }
+            {
+              "type": "say",
+              "text": "Oh, jullie mogen er over nadenken hoor!",
+              "character": "robin"
+            },
+            {
+              "type": "say",
+              "text": "Ik ga vast naar de flat toe!",
+              "character": "robin"
+            }
           ]
         }
       }
@@ -113,22 +321,102 @@
     "type": "narrative",
     "thread": "episode_1_rollercoaster",
     "position": 2,
+    "characters": {
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      },
+      "toon": {
+        "voice_settings": {
+          "voice_id": "tvFp0BgJPrEXGoDhDIA4",
+          "language": "nl"
+        }
+      },
+      "rami": {
+        "voice_settings": {
+          "voice_id": "7OMIHDA6SHxNlNDgPRdB",
+          "language": "nl"
+        }
+      }
+    },
     "moves": [
-      { "type": "say", "text": "Oh hey!" },
-      { "type": "say", "text": "Wat fijn dat jullie toch gekomen zijn!" },
-      { "type": "say", "text": "Toon en Rami, dit zijn %name%!" },
-      { "type": "say", "text": "Aha, dus dit zijn je nieuwe hulpjes?" },
-      { "type": "say", "text": "Hoihoi!" },
-      { "type": "say", "text": "Beste junior detectives, Toon wilde net vertellen wat er precies gebeurd is!" },
-      { "type": "say", "text": "Goed, wat jullie moeten weten: ik ben een kunstenaar." },
-      { "type": "say", "text": "En ik had een mega grote achtbaan gebouwd samen met mijn broertje en professor Eddy." },
-      { "type": "say", "text": "Een geweldig ding! Hij gaat wel zo hard als de Joris en de Draak." },
-      { "type": "say", "text": "Deze prachtige achtbaan stond altijd op het balkon." },
-      { "type": "say", "text": "Maar nu..." },
-      { "type": "say", "text": "Twee dagen geleden..." },
-      { "type": "say", "text": "Is hij ineens verdwenen!" },
-      { "type": "say", "text": "Mega gek toch!" },
-      { "type": "say", "text": "We gaan nu kiezen wie we als eerste gaan interviewen — let's go, detectives! Biep boep!" }
+      {
+        "type": "say",
+        "text": "Oh hey!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Wat fijn dat jullie toch gekomen zijn!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Toon en Rami, dit zijn %name%!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Aha, dus dit zijn je nieuwe hulpjes?",
+        "character": "toon"
+      },
+      {
+        "type": "say",
+        "text": "Hoihoi!",
+        "character": "rami"
+      },
+      {
+        "type": "say",
+        "text": "Beste junior detectives, Toon wilde net vertellen wat er precies gebeurd is!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Goed, wat jullie moeten weten: ik ben een kunstenaar.",
+        "character": "toon"
+      },
+      {
+        "type": "say",
+        "text": "En ik had een mega grote achtbaan gebouwd samen met mijn broertje en professor Eddy.",
+        "character": "toon"
+      },
+      {
+        "type": "say",
+        "text": "Een geweldig ding! Hij gaat wel zo hard als de Joris en de Draak.",
+        "character": "toon"
+      },
+      {
+        "type": "say",
+        "text": "Deze prachtige achtbaan stond altijd op het balkon.",
+        "character": "toon"
+      },
+      {
+        "type": "say",
+        "text": "Maar nu...",
+        "character": "toon"
+      },
+      {
+        "type": "say",
+        "text": "Twee dagen geleden...",
+        "character": "toon"
+      },
+      {
+        "type": "say",
+        "text": "Is hij ineens verdwenen!",
+        "character": "toon"
+      },
+      {
+        "type": "say",
+        "text": "Mega gek toch!",
+        "character": "toon"
+      },
+      {
+        "type": "say",
+        "text": "We gaan nu kiezen wie we als eerste gaan interviewen — let's go, detectives! Biep boep!",
+        "character": "robin"
+      }
     ]
   },
   {
@@ -136,23 +424,96 @@
     "type": "narrative",
     "thread": "episode_1_rollercoaster",
     "position": 3,
+    "characters": {
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      },
+      "trudy": {
+        "voice_settings": {
+          "voice_id": "OlBRrVAItyi00MuGMbna",
+          "language": "nl"
+        }
+      }
+    },
     "moves": [
-      { "type": "say", "text": "Lalalalaaa! ." },
-      { "type": "say", "text": "Oh hallo daar!" },
-      { "type": "say", "text": "Trudy is haar was aan het opvouwen" },
-      { "type": "say", "text": "Al haar werkbloezen liggen netjes op een enorme stapel " },
-      { "type": "say", "text": "Ze knipt in haar vingers en floep!" },
-      { "type": "say", "text": "Alle was past nu perfect in haar werkkoffertje" },
-      { "type": "say", "text": "Zo, dat was handig zeg!" },
-       { "type": "say", "text": "Zeker! Ik heb ooit Origami les gehad op school, nu kan ik super fijn al mijn spullen opvouwen die ik nodig heb op mijn werk!" },
-
-      { "type": "say", "text": "Maar he! wat hebben jullie leuke detectivehoedjes op!" },
-      { "type": "say", "text": "Beste Trudy, mijn naam is Robin, en dit zijn mijn detectives in opleiding." },
-      { "type": "say", "text": "Wij wilden u graag wat vragen stellen als u tijd heeft!" },
-      { "type": "say", "text": "Wat bijzonder! Deze stofzuiger kan gewoon praten!" },
-      { "type": "say", "text": "Ik wil best wat vragen beantwoorden, kinders." },
-      { "type": "say", "text": "Ik heb vanavond een karaoke avond!" },
-      { "type": "say", "text": "Dat betekent dat ik een liedje moet kiezen voor mijn optreden!" },
+      {
+        "type": "say",
+        "text": "Lalalalaaa! .",
+        "character": "trudy"
+      },
+      {
+        "type": "say",
+        "text": "Oh hallo daar!",
+        "character": "trudy"
+      },
+      {
+        "type": "say",
+        "text": "Trudy is haar was aan het opvouwen",
+        "character": "narrator"
+      },
+      {
+        "type": "say",
+        "text": "Al haar werkbloezen liggen netjes op een enorme stapel ",
+        "character": "narrator"
+      },
+      {
+        "type": "say",
+        "text": "Ze knipt in haar vingers en floep!",
+        "character": "narrator"
+      },
+      {
+        "type": "say",
+        "text": "Alle was past nu perfect in haar werkkoffertje",
+        "character": "narrator"
+      },
+      {
+        "type": "say",
+        "text": "Zo, dat was handig zeg!",
+        "character": "trudy"
+      },
+      {
+        "type": "say",
+        "text": "Zeker! Ik heb ooit Origami les gehad op school, nu kan ik super fijn al mijn spullen opvouwen die ik nodig heb op mijn werk!",
+        "character": "trudy"
+      },
+      {
+        "type": "say",
+        "text": "Maar he! wat hebben jullie leuke detectivehoedjes op!",
+        "character": "trudy"
+      },
+      {
+        "type": "say",
+        "text": "Beste Trudy, mijn naam is Robin, en dit zijn mijn detectives in opleiding.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Wij wilden u graag wat vragen stellen als u tijd heeft!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Wat bijzonder! Deze stofzuiger kan gewoon praten!",
+        "character": "trudy"
+      },
+      {
+        "type": "say",
+        "text": "Ik wil best wat vragen beantwoorden, kinders.",
+        "character": "trudy"
+      },
+      {
+        "type": "say",
+        "text": "Ik heb vanavond een karaoke avond!",
+        "character": "trudy"
+      },
+      {
+        "type": "say",
+        "text": "Dat betekent dat ik een liedje moet kiezen voor mijn optreden!",
+        "character": "trudy"
+      },
       {
         "type": "ask_llm",
         "prompt": "Je bent Trudy. Voer een korte, vrolijke karaoke-uitwisseling in het Nederlands met kinderen. Vraag naar een liedje wat Trudy met karaoke avond zou kunnen zingen, reageer enthousiast op hun idee en rond de mini-chat af. Begin je zinnen niet met wauw en gebruik GEEN EMOJIS. Houd antwoorden kort (1-2 zinnen), zonder emoji, en stel maximaal 1 korte vervolgvraag per beurt.",
@@ -161,9 +522,21 @@
         "rag_enabled": true,
         "index_name": "episode_1_trudy_docs"
       },
-      { "type": "say", "text": "Wat een leuke muzieksmaak heb jij!" },
-      { "type": "say", "text": "Maar ohja, jullie kwamen mij iets vragen toch, detectives?" },
-      { "type": "say", "text": "Stel je detectivevraag maar. Ik zal antwoorden met alles wat mijn theatrale geheugen prijs wil geven." }
+      {
+        "type": "say",
+        "text": "Wat een leuke muzieksmaak heb jij!",
+        "character": "trudy"
+      },
+      {
+        "type": "say",
+        "text": "Maar ohja, jullie kwamen mij iets vragen toch, detectives?",
+        "character": "trudy"
+      },
+      {
+        "type": "say",
+        "text": "Stel je detectivevraag maar. Ik zal antwoorden met alles wat mijn theatrale geheugen prijs wil geven.",
+        "character": "trudy"
+      }
     ]
   },
   {
@@ -177,7 +550,14 @@
     "duration": 300,
     "rag_enabled": true,
     "index_name": "episode_1_trudy_docs",
-    "quit_phrases": ["klaar", "stop", "doei", "dag", "bye", "goodbye"],
+    "quit_phrases": [
+      "klaar",
+      "stop",
+      "doei",
+      "dag",
+      "bye",
+      "goodbye"
+    ],
     "moves": []
   },
   {
@@ -185,29 +565,109 @@
     "type": "narrative",
     "thread": "episode_1_rollercoaster",
     "position": 4,
+    "characters": {
+      "eddy": {
+        "voice_settings": {
+          "voice_id": "AVIlLDn2TVmdaDycgbo3",
+          "language": "nl"
+        }
+      },
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      }
+    },
     "moves": [
-      { "type": "say", "text": "Mhmmm interessant." },
-      { "type": "say", "text": "En ik wist zeker dat dit stukje daar moest..." },
-      { "type": "say", "text": "Oh hallo! Wie zijn jullie?" },
-      { "type": "say", "text": "Beste Professor Eddy, mijn naam is Robin, en wij zijn de detectives die op zoek zijn naar de vermiste achtbaan!" },
-      { "type": "say", "text": "Wij wilden u graag wat vragen stellen als u tijd heeft?" },
-      { "type": "say", "text": "Krijg nou! Een robot?" },
-      { "type": "say", "text": "Ik wist niet dat er een robot bij ons in de flat woonde!" },
-      { "type": "say", "text": "Ik ben vorige week door Detective Stoep Tegel gered uit het vuilnishok!" },
-      { "type": "say", "text": "Oude dingen opnieuw gebruiken is blijkbaar erg goed voor de natuur — recyclen heet dat!" },
-      { "type": "say", "text": "Ik ben gemaakt om mysteries op te lossen, beste professor!" },
-      { "type": "say", "text": "Aha! Op die fiets! Dus Robin, en detectives, jullie kunnen mij vast helpen met deze puzzel!" },
-      { "type": "say", "text": "Kijk eens in de groene bak — daar zitten houten blokjes in." },
-      { "type": "say", "text": "Ik wil de blokjes in de vorm leggen van een kat! Net als op het plaatje." },
-      { "type": "say", "text": "Denken jullie dat jullie dit kunnen oplossen?" },
-      { "type": "say", "text": "Oei, dat is best een uitdaging! Maar ik denk dat we er samen wel uit komen." },
-      { "type": "say", "text": "Maar ohja, jullie kwamen mij iets vragen toch, detectives?" },
+      {
+        "type": "say",
+        "text": "Mhmmm interessant.",
+        "character": "eddy"
+      },
+      {
+        "type": "say",
+        "text": "En ik wist zeker dat dit stukje daar moest...",
+        "character": "eddy"
+      },
+      {
+        "type": "say",
+        "text": "Oh hallo! Wie zijn jullie?",
+        "character": "eddy"
+      },
+      {
+        "type": "say",
+        "text": "Beste Professor Eddy, mijn naam is Robin, en wij zijn de detectives die op zoek zijn naar de vermiste achtbaan!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Wij wilden u graag wat vragen stellen als u tijd heeft?",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Krijg nou! Een robot?",
+        "character": "eddy"
+      },
+      {
+        "type": "say",
+        "text": "Ik wist niet dat er een robot bij ons in de flat woonde!",
+        "character": "eddy"
+      },
+      {
+        "type": "say",
+        "text": "Ik ben vorige week door Detective Stoep Tegel gered uit het vuilnishok!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Oude dingen opnieuw gebruiken is blijkbaar erg goed voor de natuur — recyclen heet dat!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Ik ben gemaakt om mysteries op te lossen, beste professor!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Aha! Op die fiets! Dus Robin, en detectives, jullie kunnen mij vast helpen met deze puzzel!",
+        "character": "eddy"
+      },
+      {
+        "type": "say",
+        "text": "Kijk eens in de groene bak — daar zitten houten blokjes in.",
+        "character": "eddy"
+      },
+      {
+        "type": "say",
+        "text": "Ik wil de blokjes in de vorm leggen van een kat! Net als op het plaatje.",
+        "character": "eddy"
+      },
+      {
+        "type": "say",
+        "text": "Denken jullie dat jullie dit kunnen oplossen?",
+        "character": "eddy"
+      },
+      {
+        "type": "say",
+        "text": "Oei, dat is best een uitdaging! Maar ik denk dat we er samen wel uit komen.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Maar ohja, jullie kwamen mij iets vragen toch, detectives?",
+        "character": "eddy"
+      },
       {
         "type": "ask_open",
         "text": "Vraag maar raak! Ik ben een open boek.",
         "set_variable": "eddy_question",
         "add_interest_from_answer": true,
-        "outcomes": { "*": "has_question_eddy" },
+        "outcomes": {
+          "*": "has_question_eddy"
+        },
         "default_outcome": "no_question_eddy"
       },
       {
@@ -215,14 +675,26 @@
         "on": "outcome",
         "cases": {
           "has_question_eddy": [
-            { "type": "say", "text": "Uitstekende vraag! Laten we daar even samen over doorpraten." }
+            {
+              "type": "say",
+              "text": "Uitstekende vraag! Laten we daar even samen over doorpraten.",
+              "character": "eddy"
+            }
           ],
           "no_question_eddy": [
-            { "type": "say", "text": "Oei die kon ik even niet verstaan." }
+            {
+              "type": "say",
+              "text": "Oei die kon ik even niet verstaan.",
+              "character": "eddy"
+            }
           ]
         }
       },
-      { "type": "say", "text": "Het was leuk jullie te ontmoeten! Doeidoei!" }
+      {
+        "type": "say",
+        "text": "Het was leuk jullie te ontmoeten! Doeidoei!",
+        "character": "eddy"
+      }
     ]
   },
   {
@@ -236,7 +708,16 @@
     "duration": 300,
     "rag_enabled": true,
     "index_name": "episode_1_eddy_docs",
-    "quit_phrases": ["klaar", "stop", "doei","genoeg", "dag", "bye", "goodbye", "dankjewel eddy"],
+    "quit_phrases": [
+      "klaar",
+      "stop",
+      "doei",
+      "genoeg",
+      "dag",
+      "bye",
+      "goodbye",
+      "dankjewel eddy"
+    ],
     "moves": []
   },
   {
@@ -244,22 +725,75 @@
     "type": "narrative",
     "thread": "episode_1_rollercoaster",
     "position": 5,
+    "characters": {
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      },
+      "yoyo": {
+        "voice_settings": {
+          "voice_id": "2wqbkywMMH2LWAlR4EMt",
+          "language": "nl"
+        }
+      }
+    },
     "moves": [
-      { "type": "say", "text": "Yoyo ik ben Yoyo." },
-      { "type": "say", "text": "Wie zijn jullie?" },
-      { "type": "say", "text": "Beste meneer Yoyo, mijn naam is Robin." },
-      { "type": "say", "text": "Wij zijn detectives en we onderzoeken wat er met de achtbaan van Toon en Rami is gebeurd." },
-      { "type": "say", "text": "Ik heb niks gezien!" },
-      { "type": "say", "text": "Oh? Dat is interessant meneer Yoyo." },
-      { "type": "say", "text": "We stellen toch graag een paar vragen, als dat mag." },
-      { "type": "say", "text": "Ok wacht ik wil eerst een vraag stellen aan jullie" },
+      {
+        "type": "say",
+        "text": "Yoyo ik ben Yoyo.",
+        "character": "yoyo"
+      },
+      {
+        "type": "say",
+        "text": "Wie zijn jullie?",
+        "character": "yoyo"
+      },
+      {
+        "type": "say",
+        "text": "Beste meneer Yoyo, mijn naam is Robin.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Wij zijn detectives en we onderzoeken wat er met de achtbaan van Toon en Rami is gebeurd.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Ik heb niks gezien!",
+        "character": "yoyo"
+      },
+      {
+        "type": "say",
+        "text": "Oh? Dat is interessant meneer Yoyo.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "We stellen toch graag een paar vragen, als dat mag.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Ok wacht ik wil eerst een vraag stellen aan jullie",
+        "character": "yoyo"
+      },
       {
         "type": "ask_llm",
-        "prompt": "Je bent meneer Yoyo. Voer een korte, wat geheimzinnige film-chat in het Nederlands met kinderen. Vraag naar hun favoriete film en praat erover. Begin je zinnen niet met wauw en gebruik GEEN EMOJIS. Houd antwoorden kort (1-2 zinnen), en stel maximaal 1 korte vervolgvraag per beurt.",
+        "prompt": "Je bent meneer Yoyo. Voer een kort gesprek in het Nederlands met kinderen. Vraag naar hun favoriete film en praat erover. Begin je zinnen niet met wauw en gebruik GEEN EMOJIS. Houd antwoorden kort (1-2 zinnen), en stel maximaal 1 korte vervolgvraag per beurt.",
         "max_turns": 4,
-        "set_variable": "yoyo_film_chat"
+        "set_variable": "yoyo_film_chat",
+        "character" : "yoyo",
+        "rag_enabled": true,
+        "index_name": "episode_1_yoyo_docs"
       },
-      { "type": "say", "text": "Goed gedaan, detectives. Misschien kunnen we nog heel even met meneer Yoyo doorpraten." }
+      {
+        "type": "say",
+        "text": "Goed gedaan, detectives. Misschien kunnen we nog heel even met meneer Yoyo doorpraten.",
+        "character": "robin"
+      }
     ]
   },
   {
@@ -273,7 +807,14 @@
     "duration": 300,
     "rag_enabled": true,
     "index_name": "episode_1_yoyo_docs",
-    "quit_phrases": ["klaar", "stop", "doei", "dag", "bye", "goodbye"],
+    "quit_phrases": [
+      "klaar",
+      "stop",
+      "doei",
+      "dag",
+      "bye",
+      "goodbye"
+    ],
     "moves": []
   },
   {
@@ -281,15 +822,45 @@
     "type": "narrative",
     "thread": "episode_1_rollercoaster",
     "position": 6,
+    "characters": {
+      "jennifer": {
+        "voice_settings": {
+          "voice_id": "G6fmUXq3ziFf6Uae1jFh",
+          "language": "nl"
+        }
+      },
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      }
+    },
     "moves": [
-      { "type": "say", "text": "Nouja zeg" },
-      { "type": "say", "text": "Meneer Yoyo verdenkt Jennifer dus..." },
-      { "type": "say", "text": "Maar ik vind het een beetje vreemd" },
+      {
+        "type": "say",
+        "text": "Nouja zeg",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Meneer Yoyo verdenkt Jennifer dus...",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Maar ik vind het een beetje vreemd",
+        "character": "robin"
+      },
       {
         "type": "ask_yesno",
         "text": "Is het echt zo vreemd om scherpe hoektanden te hebben?",
         "set_variable": "tanden_question",
-        "outcomes": { "yes": "tanden_ja", "dontknow": "tanden_ja", "no": "tanden_nee" },
+        "outcomes": {
+          "yes": "tanden_ja",
+          "dontknow": "tanden_ja",
+          "no": "tanden_nee"
+        },
         "default_outcome": "tanden_ja"
       },
       {
@@ -297,34 +868,126 @@
         "on": "outcome",
         "cases": {
           "tanden_ja": [
-            { "type": "say", "text": "Bijzonder..." },
-            { "type": "say", "text": "Ik heb inderdaad nog nooit een mens gezien met grote hoektanden!" },
-            { "type": "say", "text": "Maar wie weet" },
-            { "type": "say", "text": "Soms kan iemand er een beetje vreemd uitzien" },
-            { "type": "say", "text": "En toch heel aardig zijn!" }
+            {
+              "type": "say",
+              "text": "Bijzonder...",
+              "character": "robin"
+            },
+            {
+              "type": "say",
+              "text": "Ik heb inderdaad nog nooit een mens gezien met grote hoektanden!",
+              "character": "robin"
+            },
+            {
+              "type": "say",
+              "text": "Maar wie weet",
+              "character": "robin"
+            },
+            {
+              "type": "say",
+              "text": "Soms kan iemand er een beetje vreemd uitzien",
+              "character": "robin"
+            },
+            {
+              "type": "say",
+              "text": "En toch heel aardig zijn!",
+              "character": "robin"
+            }
           ],
           "tanden_nee": [
-            { "type": "say", "text": "Aha" },
-            { "type": "say", "text": "Misschien is Yoyo wel aan het overdrijven..." },
-            { "type": "say", "text": "Misschien heeft hij zelf wel iets te maken met de verdwenen achtbaan" },
-            { "type": "say", "text": "We komen er vanzelf achter!" }
+            {
+              "type": "say",
+              "text": "Aha",
+              "character": "robin"
+            },
+            {
+              "type": "say",
+              "text": "Misschien is Yoyo wel aan het overdrijven...",
+              "character": "robin"
+            },
+            {
+              "type": "say",
+              "text": "Misschien heeft hij zelf wel iets te maken met de verdwenen achtbaan",
+              "character": "robin"
+            },
+            {
+              "type": "say",
+              "text": "We komen er vanzelf achter!",
+              "character": "robin"
+            }
           ]
         }
       },
-        { "type": "say", "text": "Maar goed, laten we Jennifer ook nog even spreken!" },
-        { "type": "say", "text": "Waar zou ze toch zijn... Ik heb haar kamer niet gevonden op de kaart!" },
-        { "type": "say", "text": "Wacht eens even"},
-        { "type": "say", "text": "Ik hoor voetstappen!" },
-        { "type": "say", "text": "voetstappen.mp3 hier" },
-        { "type": "say", "text": "Dat lange haar..." },
-        { "type": "say", "text": "En die lange tanden!!!" },
-        { "type": "say", "text": "Dat moet Jennifer wel zijn!!" },
-        { "type": "say", "text": "Ohjee ze loopt weg" },
-        { "type": "say", "text": "Kom , we gaan snel achter haar aan!" },
-        { "type": "say", "text": "Een achtervolgindsscene later..." },
-        { "type": "say", "text": "Oh hallo daar!" },
-        { "type": "say", "text": "Wat een schattige robot!" },
-        { "type": "say", "text": "Zeg, gaan jullie ook naar het feestje vanavond?" }
+      {
+        "type": "say",
+        "text": "Maar goed, laten we Jennifer ook nog even spreken!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Waar zou ze toch zijn... Ik heb haar kamer niet gevonden op de kaart!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Wacht eens even",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Ik hoor voetstappen!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "voetstappen.mp3 hier",
+        "character": "narrator"
+      },
+      {
+        "type": "say",
+        "text": "Dat lange haar...",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "En die lange tanden!!!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Dat moet Jennifer wel zijn!!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Ohjee ze loopt weg",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Kom , we gaan snel achter haar aan!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Een achtervolgindsscene later...",
+        "character": "narrator"
+      },
+      {
+        "type": "say",
+        "text": "Oh hallo daar!",
+        "character": "jennifer"
+      },
+      {
+        "type": "say",
+        "text": "Wat een schattige robot!",
+        "character": "jennifer"
+      },
+      {
+        "type": "say",
+        "text": "Zeg, gaan jullie ook naar het feestje vanavond?",
+        "character": "jennifer"
+      }
     ]
   },
   {
@@ -338,7 +1001,14 @@
     "duration": 300,
     "rag_enabled": true,
     "index_name": "episode_1_jennifer_docs",
-    "quit_phrases": ["klaar", "stop", "doei", "dag", "bye", "goodbye"],
+    "quit_phrases": [
+      "klaar",
+      "stop",
+      "doei",
+      "dag",
+      "bye",
+      "goodbye"
+    ],
     "moves": []
   },
   {
@@ -352,7 +1022,14 @@
     "duration": 300,
     "rag_enabled": true,
     "index_name": "episode_1_jennifer_docs",
-    "quit_phrases": ["klaar", "stop", "doei", "dag", "bye", "goodbye"],
+    "quit_phrases": [
+      "klaar",
+      "stop",
+      "doei",
+      "dag",
+      "bye",
+      "goodbye"
+    ],
     "moves": []
   },
   {
@@ -361,13 +1038,45 @@
     "thread": "episode_1_rollercoaster",
     "position": 7,
     "theme": "music",
-    "topics": ["dj", "muziek", "optreden"],
+    "topics": [
+      "dj",
+      "muziek",
+      "optreden"
+    ],
+    "characters": {
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      }
+    },
     "moves": [
-      { "type": "say", "text": "boem boem gaat de technomuziek.mp3" },
-      { "type": "say", "text": "Kijk dat is Dj Kata." },
-      { "type": "say", "text": "Dat is onze laatste verdachte op de lijst!." },
-      { "type": "say", "text": "Kata is een super coole DJ die vaak optreedt in de flat." },
-      { "type": "say", "text": "Laten we eens kijken wat de DJ te zeggen heeft over de verdwenen achtbaan!" }
+      {
+        "type": "say",
+        "text": "boem boem gaat de technomuziek.mp3",
+        "character": "narrator"
+      },
+      {
+        "type": "say",
+        "text": "Kijk dat is Dj Kata.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Dat is onze laatste verdachte op de lijst!.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Kata is een super coole DJ die vaak optreedt in de flat.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Laten we eens kijken wat de DJ te zeggen heeft over de verdwenen achtbaan!",
+        "character": "robin"
+      }
     ]
   },
   {
@@ -381,7 +1090,14 @@
     "duration": 300,
     "rag_enabled": true,
     "index_name": "episode_1_dj_kata_docs",
-    "quit_phrases": ["klaar", "stop", "doei", "dag", "bye", "goodbye"],
+    "quit_phrases": [
+      "klaar",
+      "stop",
+      "doei",
+      "dag",
+      "bye",
+      "goodbye"
+    ],
     "moves": []
   },
   {
@@ -390,16 +1106,74 @@
     "thread": "episode_1_rollercoaster",
     "position": 8,
     "functional_type": "farewell",
+    "characters": {
+      "dj_kata": {
+        "voice_settings": {
+          "voice_id": "REPLACE_WITH_DJ_KATA_VOICE_ID",
+          "language": "nl"
+        }
+      },
+      "eddy": {
+        "voice_settings": {
+          "voice_id": "AVIlLDn2TVmdaDycgbo3",
+          "language": "nl"
+        }
+      },
+      "jennifer": {
+        "voice_settings": {
+          "voice_id": "G6fmUXq3ziFf6Uae1jFh",
+          "language": "nl"
+        }
+      },
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      },
+      "yoyo": {
+        "voice_settings": {
+          "voice_id": "2wqbkywMMH2LWAlR4EMt",
+          "language": "nl"
+        }
+      },
+      "s_tegel": {
+        "voice_settings": {
+          "voice_id": "D50w2srwVohKTPx9X6Th",
+          "language": "nl"
+        }
+      },
+      "trudy": {
+        "voice_settings": {
+          "voice_id": "OlBRrVAItyi00MuGMbna",
+          "language": "nl"
+        }
+      }
+    },
     "moves": [
-      { "type": "say", "text": "Ding dong bing bong.mp3" },
-      { "type": "say", "text": "Hallo Stoep Tegel hier" },
-      { "type": "say", "text": "Ik wilde even bellen om te kijken of jullie het mysterie al hebben ontrafeld!" },
+      {
+        "type": "say",
+        "text": "Ding dong bing bong.mp3",
+        "character": "narrator"
+      },
+      {
+        "type": "say",
+        "text": "Hallo Stoep Tegel hier",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "Ik wilde even bellen om te kijken of jullie het mysterie al hebben ontrafeld!",
+        "character": "s_tegel"
+      },
       {
         "type": "ask_open",
         "text": "Waar denken jullie dat de achtbaan nu is?",
         "set_variable": "achtbaan_waar",
         "add_interest_from_answer": true,
-        "outcomes": { "*": "achtbaan_received" },
+        "outcomes": {
+          "*": "achtbaan_received"
+        },
         "default_outcome": "achtbaan_missing"
       },
       {
@@ -407,10 +1181,18 @@
         "on": "outcome",
         "cases": {
           "achtbaan_received": [
-            { "type": "say", "text": "Dank jullie wel! Deze tip nemen we mee in het eindrapport." }
+            {
+              "type": "say",
+              "text": "Dank jullie wel! Deze tip nemen we mee in het eindrapport.",
+              "character": "s_tegel"
+            }
           ],
           "achtbaan_missing": [
-            { "type": "say", "text": "Geen probleem, dan ronden we het mysterie af met wat we al weten." }
+            {
+              "type": "say",
+              "text": "Geen probleem, dan ronden we het mysterie af met wat we al weten.",
+              "character": "s_tegel"
+            }
           ]
         }
       },
@@ -419,7 +1201,9 @@
         "text": "Wat denken jullie dat er gebeurd is met de achtbaan?",
         "set_variable": "achtbaan_wat",
         "add_interest_from_answer": false,
-        "outcomes": { "*": "achtbaan_wat_received" },
+        "outcomes": {
+          "*": "achtbaan_wat_received"
+        },
         "default_outcome": "achtbaan_wat_missing"
       },
       {
@@ -427,10 +1211,18 @@
         "on": "outcome",
         "cases": {
           "achtbaan_wat_received": [
-            { "type": "say", "text": "Wauw. Dat is een interessante theorie." }
+            {
+              "type": "say",
+              "text": "Wauw. Dat is een interessante theorie.",
+              "character": "s_tegel"
+            }
           ],
           "achtbaan_wat_missing": [
-            { "type": "say", "text": "Aha, dat is misschien nog een open vraag..." }
+            {
+              "type": "say",
+              "text": "Aha, dat is misschien nog een open vraag...",
+              "character": "s_tegel"
+            }
           ]
         }
       },
@@ -458,8 +1250,8 @@
           "Toon": "Toon",
           "rami": "Rami",
           "Rami": "Rami",
-          "robin": "Robin"
-          ,"Robin": "Robin",
+          "robin": "Robin",
+          "Robin": "Robin",
           "*": "Onbekend"
         },
         "default_outcome": "Onbekend"
@@ -469,106 +1261,448 @@
         "on": "outcome",
         "cases": {
           "Trudy": [
-            { "type": "ask_yesno", "text": "Zullen we Trudy confronteren?", "set_variable": "confront_trudy", "outcomes": { "ja": "do", "yes": "do", "no": "dont", "nee": "dont", "dontknow": "dont" }, "default_outcome": "dont" },
-            { "type": "branch", "on": "outcome", "cases": {
-              "do": [ { "type": "say", "text": "Trudy slaat een hoge noot aan en zegt: Hoe durven jullie! Maar vooruit, ik zal eerlijk antwoorden." },
-              { "type": "say", "text": "Ik was het echt niet! " },
-              { "type": "say", "text": "Op dat moment voelen jullie een trilling onder jullie voeten... " },
-              { "type": "say", "text": "Is dat... de achtbaan?" }],
-              "dont": [ { "type": "say", "text": "Dan laten we Trudy nog even met rust en denken we nog even na." } ]
-            } }
+            {
+              "type": "ask_yesno",
+              "text": "Zullen we Trudy confronteren?",
+              "set_variable": "confront_trudy",
+              "outcomes": {
+                "ja": "do",
+                "yes": "do",
+                "no": "dont",
+                "nee": "dont",
+                "dontknow": "dont"
+              },
+              "default_outcome": "dont"
+            },
+            {
+              "type": "branch",
+              "on": "outcome",
+              "cases": {
+                "do": [
+                  {
+                    "type": "say",
+                    "text": "Trudy slaat een hoge noot aan en zegt: Hoe durven jullie! Maar vooruit, ik zal eerlijk antwoorden.",
+                    "character": "narrator"
+                  },
+                  {
+                    "type": "say",
+                    "text": "Ik was het echt niet! ",
+                    "character": "trudy"
+                  },
+                  {
+                    "type": "say",
+                    "text": "Op dat moment voelen jullie een trilling onder jullie voeten... ",
+                    "character": "narrator"
+                  },
+                  {
+                    "type": "say",
+                    "text": "Is dat... de achtbaan?",
+                    "character": "robin"
+                  }
+                ],
+                "dont": [
+                  {
+                    "type": "say",
+                    "text": "Dan laten we Trudy nog even met rust en denken we nog even na.",
+                    "character": "robin"
+                  }
+                ]
+              }
+            }
           ],
           "Eddy": [
-            { "type": "ask_yesno", "text": "Zullen we Eddy confronteren?", "set_variable": "confront_eddy", "outcomes": { "ja": "do", "yes": "do", "no": "dont", "nee": "dont", "dontknow": "dont" }, "default_outcome": "dont" },
-            { "type": "branch", "on": "outcome", "cases": {
-              "do": [ { "type": "say", "text": "Eddy fronst en zegt: Een scherpe hypothese, detectives. Ik zal jullie vragen stap voor stap beantwoorden." },
-              { "type": "say", "text": "Ik was het alleen echt niet! " },
-              { "type": "say", "text": "Op dat moment voelen jullie een trilling onder jullie voeten... " },
-              { "type": "say", "text": "Is dat... de achtbaan?" }],
-              "dont": [ { "type": "say", "text": "Dan laten we Eddy verder puzzelen terwijl wij meer aanwijzingen zoeken." } ]
-            } }
+            {
+              "type": "ask_yesno",
+              "text": "Zullen we Eddy confronteren?",
+              "set_variable": "confront_eddy",
+              "outcomes": {
+                "ja": "do",
+                "yes": "do",
+                "no": "dont",
+                "nee": "dont",
+                "dontknow": "dont"
+              },
+              "default_outcome": "dont"
+            },
+            {
+              "type": "branch",
+              "on": "outcome",
+              "cases": {
+                "do": [
+                  {
+                    "type": "say",
+                    "text": "Eddy fronst en zegt: Een scherpe hypothese, detectives. Ik zal jullie vragen stap voor stap beantwoorden.",
+                    "character": "narrator"
+                  },
+                  {
+                    "type": "say",
+                    "text": "Ik was het alleen echt niet! ",
+                    "character": "eddy"
+                  },
+                  {
+                    "type": "say",
+                    "text": "Op dat moment voelen jullie een trilling onder jullie voeten... ",
+                    "character": "narrator"
+                  },
+                  {
+                    "type": "say",
+                    "text": "Is dat... de achtbaan?",
+                    "character": "robin"
+                  }
+                ],
+                "dont": [
+                  {
+                    "type": "say",
+                    "text": "Dan laten we Eddy verder puzzelen terwijl wij meer aanwijzingen zoeken.",
+                    "character": "robin"
+                  }
+                ]
+              }
+            }
           ],
           "Yoyo": [
-            { "type": "ask_yesno", "text": "Zullen we Yoyo confronteren?", "set_variable": "confront_yoyo", "outcomes": { "ja": "do", "yes": "do", "no": "dont", "nee": "dont", "dontknow": "dont" }, "default_outcome": "dont" },
-            { "type": "branch", "on": "outcome", "cases": {
-              "do": [ { "type": "say", "text": "Yoyo kijkt nerveus opzij en mompelt" },
-              { "type": "say", "text": "Jullie gaan toch niet de politie bellen he? " },
-              { "type": "say", "text": "Op dat moment voelen jullie een trilling onder jullie voeten... " },
-              { "type": "say", "text": "Is dat... de achtbaan?" }],
-              "dont": [ { "type": "say", "text": "Dan observeren we Yoyo nog even van een afstand." } ]
-            } }
+            {
+              "type": "ask_yesno",
+              "text": "Zullen we Yoyo confronteren?",
+              "set_variable": "confront_yoyo",
+              "outcomes": {
+                "ja": "do",
+                "yes": "do",
+                "no": "dont",
+                "nee": "dont",
+                "dontknow": "dont"
+              },
+              "default_outcome": "dont"
+            },
+            {
+              "type": "branch",
+              "on": "outcome",
+              "cases": {
+                "do": [
+                  {
+                    "type": "say",
+                    "text": "Yoyo kijkt nerveus opzij en mompelt",
+                    "character": "narrator"
+                  },
+                  {
+                    "type": "say",
+                    "text": "Jullie gaan toch niet de politie bellen he? ",
+                    "character": "yoyo"
+                  },
+                  {
+                    "type": "say",
+                    "text": "Op dat moment voelen jullie een trilling onder jullie voeten... ",
+                    "character": "narrator"
+                  },
+                  {
+                    "type": "say",
+                    "text": "Is dat... de achtbaan?",
+                    "character": "robin"
+                  }
+                ],
+                "dont": [
+                  {
+                    "type": "say",
+                    "text": "Dan observeren we Yoyo nog even van een afstand.",
+                    "character": "robin"
+                  }
+                ]
+              }
+            }
           ],
           "Jennifer": [
-            { "type": "ask_yesno", "text": "Zullen we Jennifer confronteren?", "set_variable": "confront_jennifer", "outcomes": { "ja": "do", "yes": "do", "no": "dont", "nee": "dont", "dontknow": "dont" }, "default_outcome": "dont" },
-            { "type": "branch", "on": "outcome", "cases": {
-              "do": [ { "type": "say", "text": "Jennifer glimlacht en zegt: Ik? Verdacht? " },
-              { "type": "say", "text": "Jullie zijn goede speurneuzen geweest..." },
-              { "type": "say", "text": "Op dat moment voelen jullie een trilling onder jullie voeten... " },
-              { "type": "say", "text": "Is dat... de achtbaan?" }],
-              "dont": [ { "type": "say", "text": "Dan wachten we met Jennifer confronteren tot we meer zekerheid hebben." } ]
-            } }
+            {
+              "type": "ask_yesno",
+              "text": "Zullen we Jennifer confronteren?",
+              "set_variable": "confront_jennifer",
+              "outcomes": {
+                "ja": "do",
+                "yes": "do",
+                "no": "dont",
+                "nee": "dont",
+                "dontknow": "dont"
+              },
+              "default_outcome": "dont"
+            },
+            {
+              "type": "branch",
+              "on": "outcome",
+              "cases": {
+                "do": [
+                  {
+                    "type": "say",
+                    "text": "Jennifer glimlacht en zegt: Ik? Verdacht? ",
+                    "character": "narrator"
+                  },
+                  {
+                    "type": "say",
+                    "text": "Jullie zijn goede speurneuzen geweest...",
+                    "character": "jennifer"
+                  },
+                  {
+                    "type": "say",
+                    "text": "Op dat moment voelen jullie een trilling onder jullie voeten... ",
+                    "character": "narrator"
+                  },
+                  {
+                    "type": "say",
+                    "text": "Is dat... de achtbaan?",
+                    "character": "robin"
+                  }
+                ],
+                "dont": [
+                  {
+                    "type": "say",
+                    "text": "Dan wachten we met Jennifer confronteren tot we meer zekerheid hebben.",
+                    "character": "robin"
+                  }
+                ]
+              }
+            }
           ],
           "Dj_Kata": [
-            { "type": "ask_yesno", "text": "Zullen we DJ Kata confronteren?", "set_variable": "confront_kata", "outcomes": { "ja": "do", "yes": "do", "no": "dont", "nee": "dont", "dontknow": "dont" }, "default_outcome": "dont" },
-            { "type": "branch", "on": "outcome", "cases": {
-              "do": [ { "type": "say", "text": "DJ Kata zet de beat zachter en zegt: Pittige beschuldiging. " },
-              { "type": "say", "text": "Op dat moment voelen jullie een trilling onder jullie voeten... " },
-              { "type": "say", "text": "Is dat... de achtbaan?" },
-              { "type": "say", "text": "Luister detectives, als jullie een beetje geduld hebben zal de achbaan weer vanzelf opduiken" }],
-              "dont": [ { "type": "say", "text": "Dan laten we DJ Kata nog even draaien en checken we andere sporen." } ]
-            } }
+            {
+              "type": "ask_yesno",
+              "text": "Zullen we DJ Kata confronteren?",
+              "set_variable": "confront_kata",
+              "outcomes": {
+                "ja": "do",
+                "yes": "do",
+                "no": "dont",
+                "nee": "dont",
+                "dontknow": "dont"
+              },
+              "default_outcome": "dont"
+            },
+            {
+              "type": "branch",
+              "on": "outcome",
+              "cases": {
+                "do": [
+                  {
+                    "type": "say",
+                    "text": "DJ Kata zet de beat zachter en zegt: Pittige beschuldiging. ",
+                    "character": "narrator"
+                  },
+                  {
+                    "type": "say",
+                    "text": "Op dat moment voelen jullie een trilling onder jullie voeten... ",
+                    "character": "narrator"
+                  },
+                  {
+                    "type": "say",
+                    "text": "Is dat... de achtbaan?",
+                    "character": "robin"
+                  },
+                  {
+                    "type": "say",
+                    "text": "Luister detectives, als jullie een beetje geduld hebben zal de achbaan weer vanzelf opduiken",
+                    "character": "dj_kata"
+                  }
+                ],
+                "dont": [
+                  {
+                    "type": "say",
+                    "text": "Dan laten we DJ Kata nog even draaien en checken we andere sporen.",
+                    "character": "robin"
+                  }
+                ]
+              }
+            }
           ],
-
           "Onbekend": [
-            { "type": "say", "text": "Ik kan nog geen duidelijke verdachte uit jullie antwoorden halen." },
-            { "type": "say", "text": "Geen probleem: dan verzamelen we nog een laatste aanwijzing voordat we iemand confronteren." }
+            {
+              "type": "say",
+              "text": "Ik kan nog geen duidelijke verdachte uit jullie antwoorden halen.",
+              "character": "robin"
+            },
+            {
+              "type": "say",
+              "text": "Geen probleem: dan verzamelen we nog een laatste aanwijzing voordat we iemand confronteren.",
+              "character": "robin"
+            }
           ]
         }
       }
     ]
   },
-
   {
     "id": "Ep1_Scene_9_Kelder_Disco",
     "type": "narrative",
     "thread": "episode_1_rollercoaster",
     "position": 9,
+    "characters": {
+      "dj_kata": {
+        "voice_settings": {
+          "voice_id": "REPLACE_WITH_DJ_KATA_VOICE_ID",
+          "language": "nl"
+        }
+      },
+      "jennifer": {
+        "voice_settings": {
+          "voice_id": "G6fmUXq3ziFf6Uae1jFh",
+          "language": "nl"
+        }
+      },
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      },
+      "s_tegel": {
+        "voice_settings": {
+          "voice_id": "D50w2srwVohKTPx9X6Th",
+          "language": "nl"
+        }
+      }
+    },
     "moves": [
-      { "type": "say", "text": "Wacht eens even... DE KELDER!" },
-      { "type": "say", "text": "Dat stortgat! Misschien is de achtbaan eraf gegleden en in de kelder beland!" },
-      { "type": "say", "text": "Kom snel, detectives! Naar beneden!" },
-      { "type": "say", "text": "We rennen zo snel we kunnen door de gangen van De Smaragd." },
-      { "type": "say", "text": "De trap af, de trap af, af, af!" },
-      { "type": "say", "text": "Steeds dieper in het duister van het pand..." },
-      { "type": "say", "text": "Tot we eindelijk... bij de kelder aankomen!" },
-      { "type": "say", "text": "En wat zien we daar?" },
-      { "type": "say", "text": "BOEM BOEM BOEM! De technobeat!" },
-      { "type": "say", "text": "De Kelder disco!" },
-      { "type": "say", "text": "Dj Kata staat daar te draaien en..." },
-      { "type": "say", "text": "WAUW!" },
-      { "type": "say", "text": "Daar staat-ie!" },
-      { "type": "say", "text": "De ACHTBAAN!" },
-      { "type": "say", "text": "Glimmend, mooi en helemaal intact!" },
-      { "type": "say", "text": "De achtbaan was nooit echt verdwenen..." },
-
-      { "type": "say", "text": "Je moest eens weten hoe moeilijk het was om hem in de leenauto te stoppen! Zegt Jennifer" },
-      { "type": "say", "text": "Gelukkig is Trudy heel goed in Origami, dat is de kunst van dingen opvouwen enzo" },
-      { "type": "say", "text": "Wij zijn met de leenauto naar het balkon van Toon en Rami gevlogen" },
-      { "type": "say", "text": "Trudy heeft de achtbaan opgevouwen en in de achterbak van de leenauto gestopt" },
-      { "type": "say", "text": "We een verdieping naar beneden gevlogen en hebben wij de achtbaan door het stortgat gegooid" },
-      { "type": "say", "text": "Yoyo had hem beneden in de kelder gevangen" },
-      { "type": "say", "text": "De achtbaan was een paar dagen onder een mega groot doek verstopt in de Kelderdisco van Kata" },
-
-
-       { "type": "say", "text": "Ik hou van herrie , zegt Kata, maar dit was ook voor mij een verassing" },
-
-       { "type": "say", "text": "Maar goed, het belangrijkste is dat de achtbaan weer terug is!" },
-
-      { "type": "say", "text": "Toen kwamen Toon en Rami binnen en ze waren helemaal flabbergasted etc" },
-
-      { "type": "say", "text": "En dat is het einde van het mysterie van de Verdwenen Achtbaan!" },
-      { "type": "say", "text": "Tot ziens, luistervinkjes en luisteraars!" },
-      { "type": "say", "text": "Dit was de Robot Detective, live vanuit torenflat De Smaragd!" }
+      {
+        "type": "say",
+        "text": "Wacht eens even... DE KELDER!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Dat stortgat! Misschien is de achtbaan eraf gegleden en in de kelder beland!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Kom snel, detectives! Naar beneden!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "We rennen zo snel we kunnen door de gangen van De Smaragd.",
+        "character": "narrator"
+      },
+      {
+        "type": "say",
+        "text": "De trap af, de trap af, af, af!",
+        "character": "narrator"
+      },
+      {
+        "type": "say",
+        "text": "Steeds dieper in het duister van het pand...",
+        "character": "narrator"
+      },
+      {
+        "type": "say",
+        "text": "Tot we eindelijk... bij de kelder aankomen!",
+        "character": "narrator"
+      },
+      {
+        "type": "say",
+        "text": "En wat zien we daar?",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "BOEM BOEM BOEM! De technobeat!",
+        "character": "narrator"
+      },
+      {
+        "type": "say",
+        "text": "De Kelder disco!",
+        "character": "narrator"
+      },
+      {
+        "type": "say",
+        "text": "Dj Kata staat daar te draaien en...",
+        "character": "narrator"
+      },
+      {
+        "type": "say",
+        "text": "WAUW!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Daar staat-ie!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "De ACHTBAAN!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Glimmend, mooi en helemaal intact!",
+        "character": "narrator"
+      },
+      {
+        "type": "say",
+        "text": "De achtbaan was nooit echt verdwenen...",
+        "character": "narrator"
+      },
+      {
+        "type": "say",
+        "text": "Je moest eens weten hoe moeilijk het was om hem in de leenauto te stoppen! Zegt Jennifer",
+        "character": "jennifer"
+      },
+      {
+        "type": "say",
+        "text": "Gelukkig is Trudy heel goed in Origami, dat is de kunst van dingen opvouwen enzo",
+        "character": "jennifer"
+      },
+      {
+        "type": "say",
+        "text": "Wij zijn met de leenauto naar het balkon van Toon en Rami gevlogen",
+        "character": "jennifer"
+      },
+      {
+        "type": "say",
+        "text": "Trudy heeft de achtbaan opgevouwen en in de achterbak van de leenauto gestopt",
+        "character": "jennifer"
+      },
+      {
+        "type": "say",
+        "text": "We een verdieping naar beneden gevlogen en hebben wij de achtbaan door het stortgat gegooid",
+        "character": "jennifer"
+      },
+      {
+        "type": "say",
+        "text": "Yoyo had hem beneden in de kelder gevangen",
+        "character": "jennifer"
+      },
+      {
+        "type": "say",
+        "text": "De achtbaan was een paar dagen onder een mega groot doek verstopt in de Kelderdisco van Kata",
+        "character": "jennifer"
+      },
+      {
+        "type": "say",
+        "text": "Ik hou van herrie , zegt Kata, maar dit was ook voor mij een verassing",
+        "character": "dj_kata"
+      },
+      {
+        "type": "say",
+        "text": "Maar goed, het belangrijkste is dat de achtbaan weer terug is!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Toen kwamen Toon en Rami binnen en ze waren helemaal flabbergasted etc",
+        "character": "narrator"
+      },
+      {
+        "type": "say",
+        "text": "En dat is het einde van het mysterie van de Verdwenen Achtbaan!",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "Tot ziens, luistervinkjes en luisteraars!",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "Dit was de Robot Detective, live vanuit torenflat De Smaragd!",
+        "character": "s_tegel"
+      }
     ]
   }
 ]

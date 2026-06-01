@@ -48,7 +48,7 @@ from nardial.interaction_orchestrator import InteractionConfig
 from nardial.session_manager import SessionManager
 from nardial.tts_manager import ElevenLabsTTSConf
 from nardial.user_model import UserModel
-from nardial_overrides import apply_nardial_overrides
+from nardial_overrides import apply_nardial_overrides, register_character_voices, preconnect_all_character_voices
 
 # Import SIC device(s), message(s), and service(s) we will be using
 from sic_framework.devices.common_desktop.desktop_speakers import SpeakersConf
@@ -160,13 +160,14 @@ if __name__ == '__main__':
         tts_conf = ElevenLabsTTSConf(
             speaking_rate=1.0,
             voice_id='D50w2srwVohKTPx9X6Th',
-            model_id='eleven_flash_v2_5'
+            model_id='eleven_flash_v2_5',
+
         ),
 
-        language="nl",
-        # microphone_device=1,         # uncomment to select a specific mic
-        post_speech_delay=0.5,       # pause in seconds after the agent speaks
-        # signal_listening_behavior=True,  # visual cue while listening (robots)
+         language="nl",
+         # microphone_device=1,         # uncomment to select a specific mic
+         post_speech_delay=0.0,       # pause in seconds after the agent speaks (adaptive tail handles pacing)
+         # signal_listening_behavior=True,  # visual cue while listening (robots)
     )
 
 
@@ -214,6 +215,10 @@ if __name__ == '__main__':
         if missing:
             raise ValueError(f"session_agenda contains unknown dialog ids: {missing}")
 
+        # Register all character voices from every dialog's characters block
+        for d in all_dialogs:
+            register_character_voices(d.get("characters", {}))
+
         # Preserve agenda order and strip unrelated dialogs so manual commenting just works.
         filtered_dialogs = [dialogs_by_id[scene_id] for scene_id in session_agenda]
         with tempfile.NamedTemporaryFile(
@@ -251,6 +256,10 @@ if __name__ == '__main__':
             agent.say("Audio check. Als je dit hoort, werkt de audio.")
         except Exception as exc:
             print(f"[WARN] Startup audio heartbeat failed: {exc}")
+
+    # Pre-connect one persistent WebSocket per character voice so voice
+    # switching during the session is instant (no per-line reconnect latency).
+    preconnect_all_character_voices(agent.orchestrator)
 
     session_manager.run()
 
