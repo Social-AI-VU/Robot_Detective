@@ -151,17 +151,17 @@ if __name__ == '__main__':
         chunk_overlap=120,
         override_existing=True,
         force_recreate_index=False,
-        tts_conf=GoogleTTSConf(
-            speaking_rate=1.0,
-            google_tts_voice_name="nl-NL-Wavenet-A",
-            google_tts_voice_gender="FEMALE"
-        ),
+       # tts_conf=GoogleTTSConf(
+       #     speaking_rate=1.0,
+       #     google_tts_voice_name="nl-NL-Wavenet-A",
+       #     google_tts_voice_gender="FEMALE"
+       # ),
 
-   #     tts_conf = ElevenLabsTTSConf(
-   #         speaking_rate=1.0,
-    #        voice_id='D50w2srwVohKTPx9X6Th',
-    #        model_id='eleven_flash_v2_5'
-    #    ),
+        tts_conf = ElevenLabsTTSConf(
+            speaking_rate=1.0,
+            voice_id='D50w2srwVohKTPx9X6Th',
+            model_id='eleven_flash_v2_5'
+        ),
 
         language="nl",
         # microphone_device=1,         # uncomment to select a specific mic
