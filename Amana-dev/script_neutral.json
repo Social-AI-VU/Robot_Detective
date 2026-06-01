@@ -1,0 +1,194 @@
+[
+    {
+      "id": "Drone_Scene_1_Intro",
+      "type": "narrative",
+      "thread": "drone_rooftop_mystery",
+      "position": 1,
+      "characters": {
+        "janitor":  { "voice_settings": { "voice_id": "AVIlLDn2TVmdaDycgbo3", "language": "en" } },
+        "engineer": { "voice_settings": { "voice_id": "D50w2srwVohKTPx9X6Th", "language": "en" } },
+        "resident": { "voice_settings": { "voice_id": "OlBRrVAItyi00MuGMbna", "language": "en" } }
+      },
+      "moves": [
+        { "type": "say", "text": "Hello." , "character": "robot"},
+        { "type": "say", "text": "I will present a case for investigation.", "character": "robot" },
+        { "type": "say", "text": "A delivery drone has disappeared from the rooftop of this building.", "character": "robot" },
+        { "type": "say", "text": "Three individuals had access to the rooftop area." , "character": "robot"},
+        { "type": "say", "text": "Your task is to investigate and identify who is responsible." , "character": "robot"},
+        { "type": "say", "text": "Let's begin the investigation." , "character": "robot"},
+        {
+          "type": "ask_open",
+          "text": "What is your name, investigator?",
+          "set_variable": "investigator_name",
+          "add_interest_from_answer": true,
+          "outcomes": { "*": "has_name" },
+          "default_outcome": "no_name"
+        },
+        {
+          "type": "branch",
+          "on": "outcome",
+          "cases": {
+            "has_name": [
+              { "type": "say", "text": "Acknowledged, %investigator_name%.", "character": "robot" }
+            ],
+            "no_name": [
+              { "type": "say", "text": "Proceeding without identification.", "character": "robot" }
+            ]
+          }
+        },
+        { "type": "say", "text": "We will now review the suspects.", "character": "robot" }
+      ]
+    },
+    {
+      "id": "Drone_Scene_2_Suspects",
+      "type": "narrative",
+      "thread": "drone_rooftop_mystery",
+      "position": 2,
+      "moves": [
+        { "type": "say", "text": "Suspect 1: The janitor." },
+        { "type": "say", "text": "Responsible for general building maintenance." },
+        { "type": "say", "text": "Has access to rooftop and service corridors." },
+        { "type": "say", "text": "Reports performing routine checks at the time of the incident." },
+        { "type": "say", "text": "Suspect 2: The building engineer." },
+        { "type": "say", "text": "Responsible for technical systems and building infrastructure." },
+        { "type": "say", "text": "Worked late near rooftop control systems." },
+        { "type": "say", "text": "Has expertise in mechanical devices including drones." },
+        { "type": "say", "text": "Suspect 3: A long-term resident." },
+        { "type": "say", "text": "Lives directly below the rooftop garden." },
+        { "type": "say", "text": "Reported noise disturbances from the drone at night." },
+        { "type": "say", "text": "States she did not directly witness the incident." },
+        { "type": "say", "text": "You may now investigate each suspect." }
+      ]
+    },
+    {
+      "id": "Drone_Scene_3_Interview_Janitor",
+      "type": "narrative",
+      "thread": "drone_rooftop_mystery",
+      "position": 3,
+      "characters": {
+        "robot":    { "voice_settings": { "voice_id": "f2yUVfK5jdm78zlpcZ8C", "language": "en" } },
+        "janitor":  { "voice_settings": { "voice_id": "AVIlLDn2TVmdaDycgbo3", "language": "en" } },
+        "engineer": { "voice_settings": { "voice_id": "D50w2srwVohKTPx9X6Th", "language": "en" } },
+        "resident": { "voice_settings": { "voice_id": "OlBRrVAItyi00MuGMbna", "language": "en" } }
+      },
+      "moves": [
+        { "type": "say", "text": "You approach the janitor.", "character": "robot" },
+        { "type": "say", "text": "He looks up briefly from his maintenance logs.","character": "robot" },
+        {
+          "type": "ask_llm",
+          "character": "janitor",
+          "prompt": "You are the building janitor in a mystery investigation. Speak in a neutral, realistic tone. Answer questions about rooftop access, maintenance work, and the drone disappearance. Do not confess. Keep answers short (1–3 sentences). You may be defensive but not hostile.",
+          "max_turns": 3,
+          "set_variable": "janitor_chat"
+        },
+        {
+          "type": "ask_open",
+          "character" : "robot",
+          "text": "Do you want to accuse the janitor or continue investigating?",
+          "set_variable": "janitor_decision",
+          "outcomes": { "*": "continue" },
+          "default_outcome": "continue"
+        }
+      ]
+    },
+    {
+      "id": "Drone_Scene_4_Interview_Engineer",
+      "type": "narrative",
+      "thread": "drone_rooftop_mystery",
+      "position": 4,
+      "characters": {
+        "robot":    { "voice_settings": { "voice_id": "f2yUVfK5jdm78zlpcZ8C", "language": "en" } },
+        "janitor":  { "voice_settings": { "voice_id": "AVIlLDn2TVmdaDycgbo3", "language": "en" } },
+        "engineer": { "voice_settings": { "voice_id": "D50w2srwVohKTPx9X6Th", "language": "en" } },
+        "resident": { "voice_settings": { "voice_id": "OlBRrVAItyi00MuGMbna", "language": "en" } }
+      },
+      "moves": [
+        { "type": "say", "text": "You find the building engineer near a control panel.","character": "robot" },
+        {
+          "type": "ask_llm",
+          "character": "engineer",
+          "prompt": "You are a building engineer in a neutral mystery case. Speak technically but clearly. Answer questions about rooftop systems, drones, and your movements during the incident. Keep responses short and grounded. Do not admit guilt. Keep answers short (1–3 sentences)",
+          "max_turns": 3,
+          "set_variable": "engineer_chat"
+        },
+        {
+          "type": "ask_open",
+          "text": "Do you want to question the resident next or make a guess?","character": "robot",
+          "set_variable": "engineer_decision",
+          "outcomes": { "*": "continue" },
+          "default_outcome": "continue"
+        }
+      ]
+    },
+    {
+      "id": "Drone_Scene_5_Interview_Resident",
+      "type": "narrative",
+      "thread": "drone_rooftop_mystery",
+      "position": 5,
+      "characters": {
+        "robot":    { "voice_settings": { "voice_id": "f2yUVfK5jdm78zlpcZ8C", "language": "en" } },
+        "janitor":  { "voice_settings": { "voice_id": "AVIlLDn2TVmdaDycgbo3", "language": "en" } },
+        "engineer": { "voice_settings": { "voice_id": "D50w2srwVohKTPx9X6Th", "language": "en" } },
+        "resident": { "voice_settings": { "voice_id": "OlBRrVAItyi00MuGMbna", "language": "en" } }
+      },
+      "moves": [
+        { "type": "say", "text": "You speak to the long-term resident below the rooftop." },
+        {
+          "type": "ask_llm",
+          "character": "resident",
+          "prompt": "You are a resident in a building mystery. Speak neutrally and calmly. You are annoyed by noise from the drone and balcony damage to your plants. Answer questions but avoid full confession unless pressured. Keep responses 1–3 sentences.",
+          "max_turns": 3,
+          "set_variable": "resident_chat"
+        },
+        { "type": "say", "text": "The resident seems emotional about her damaged plants.", "character": "robot"}
+      ]
+    },
+    {
+      "id": "Drone_Scene_6_Deduction",
+      "type": "narrative",
+      "thread": "drone_rooftop_mystery",
+      "position": 6,
+      "moves": [
+        { "type": "say", "text": "You now have gathered all testimonies.","character": "robot" },
+        {
+          "type": "ask_open",
+          "text": "Who do you think is responsible for the missing drone?",
+          "set_variable": "final_guess",
+          "outcomes": {
+            "janitor": "wrong",
+            "engineer": "wrong",
+            "resident": "correct"
+          },
+          "default_outcome": "wrong"
+        },
+        {
+          "type": "branch",
+          "on": "outcome",
+          "cases": {
+            "correct": [
+              { "type": "say", "text": "Correct.", "character": "robot"},
+              { "type": "say", "text": "The resident disposed of the drone.", "character": "robot"},
+              { "type": "say", "text": "Repeated crashes damaged her balcony plants.", "character": "robot"},
+              { "type": "say", "text": "She removed the drone to prevent further damage.", "character": "robot"}
+            ],
+            "wrong": [
+              { "type": "say", "text": "Incorrect conclusion.","character": "robot" },
+              { "type": "say", "text": "Evidence most strongly points to the resident.", "character": "robot"}
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "Drone_Scene_7_Outro",
+      "type": "functional",
+      "thread": "drone_rooftop_mystery",
+      "position": 7,
+      "functional_type": "farewell",
+      "moves": [
+        { "type": "say", "text": "Case closed." },
+        { "type": "say", "text": "Thank you for your participation." },
+        { "type": "say", "text": "End of session." }
+      ]
+    }
+  ]

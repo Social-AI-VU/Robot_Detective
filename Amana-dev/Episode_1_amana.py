@@ -43,16 +43,6 @@ Run these in separate terminals BEFORE starting the episode:
 =========================
 """
 
-from nardial.conversation_agent import ConversationAgent
-from nardial.interaction_orchestrator import InteractionConfig
-from nardial.session_manager import SessionManager
-from nardial.tts_manager import ElevenLabsTTSConf
-from nardial.user_model import UserModel
-from nardial_overrides import apply_nardial_overrides, register_character_voices, preconnect_all_character_voices
-
-# Import SIC device(s), message(s), and service(s) we will be using
-from sic_framework.devices.common_desktop.desktop_speakers import SpeakersConf
-from sic_framework.devices.desktop import Desktop
 
 # import other libraries
 from pathlib import Path
@@ -61,21 +51,62 @@ import os
 import sys
 import tempfile
 
+# Add the repo root so nardial_overrides is importable from any working directory
+_REPO_ROOT_FOR_IMPORT = str(Path(__file__).resolve().parent.parent)
+if _REPO_ROOT_FOR_IMPORT not in sys.path:
+    sys.path.insert(0, _REPO_ROOT_FOR_IMPORT)
+
+from sic_framework.devices.desktop import Desktop
+from sic_framework.devices.common_desktop.desktop_speakers import SpeakersConf
+
+from nardial.conversation_agent import ConversationAgent
+from nardial.interaction_orchestrator import InteractionConfig
+from nardial.session_manager import SessionManager
+from nardial.tts_manager import ElevenLabsTTSConf
+
+from RobotDetectiveEpisodeScripts.nardial_overrides import (
+    apply_nardial_overrides,
+    register_character_voices,
+    preconnect_all_character_voices,
+)
 
 BASE_DIR = Path(__file__).resolve().parent
 REPO_ROOT = BASE_DIR.parent
 
 
 DOCS_DIR = BASE_DIR / "Detective_Data"
-DIALOG_CONFIG_PATH = REPO_ROOT / "RobotDetective_Narrative_Jsons" / "Episode_1_all_dialogs.json"
+CONDITION = "neutral"   #neutral or "emotional"
+
+if CONDITION == "neutral":
+    DIALOG_CONFIG_PATH = REPO_ROOT / "Amana-dev" / "script_neutral.json"
+
+    session_agenda = [
+        "Drone_Scene_1_Intro",
+        "Drone_Scene_2_Suspects",
+        "Drone_Scene_3_Interview_Janitor",
+        "Drone_Scene_4_Interview_Engineer",
+        "Drone_Scene_5_Interview_Resident",
+        "Drone_Scene_6_Deduction",
+        "Drone_Scene_7_Outro",
+    ]
+
+else:
+    DIALOG_CONFIG_PATH = REPO_ROOT / "Amana-dev" / "script_emotional.json"
+
+    session_agenda = [
+        "Drone_Scene_1_Intro_Emotional",
+        "Drone_Scene_2_Suspects_Emotional",
+        "Drone_Scene_3_Interview_Janitor_Emotional",
+        "Drone_Scene_4_Interview_Engineer_Emotional",
+        "Drone_Scene_5_Interview_Resident_Emotional",
+        "Drone_Scene_6_Deduction_Emotional",
+        "Drone_Scene_7_Outro_Emotional",
+    ]
 GOOGLE_KEYFILE_PATH = REPO_ROOT / "conf" / "google" / "google-key.json"
 ENV_FILE_PATH = REPO_ROOT / "conf" / ".env"
 
 INDEX_NAME = "episode_1_trudy_docs"
 INGEST_DOCS = False
-PARTICIPANT_ID = os.getenv("PARTICIPANT_ID", "3")
-RESET_PARTICIPANT_STATE = os.getenv("RESET_PARTICIPANT_STATE", "1").strip().lower() in {"1", "true", "yes", "y"}
-AUDIO_HEARTBEAT = os.getenv("AUDIO_HEARTBEAT", "1").strip().lower() in {"1", "true", "yes", "y"}
 
 
 DEFAULT_RAG_INDEX_NAME = "episode_1_trudy_docs"
@@ -101,9 +132,6 @@ def print_startup_checks() -> None:
     else:
         print("[WARN] OPENAI_API_KEY missing in environment; ask_llm/llm_based can be skipped/fail")
 
-    print(f"[CHECK] Participant ID: {PARTICIPANT_ID}")
-    print(f"[CHECK] RESET_PARTICIPANT_STATE: {RESET_PARTICIPANT_STATE}")
-
     try:
         all_dialogs = json.loads(DIALOG_CONFIG_PATH.read_text(encoding="utf-8"))
         rag_blocks = [
@@ -126,23 +154,23 @@ if __name__ == '__main__':
     # =========================
     # 1. SELECT DEVICE
     # =========================
-    # Desktop uses your computer's mic + speakers.
-    # Uncomment the Pepper line to connect to a robot instead.
-
     device = Desktop(
         speakers_conf=SpeakersConf(sample_rate=22050)
     )
-    #device = Pepper(ip="XXX")  # Replace with your robot's IP
-    #device = Nao(ip="10.0.0.139")
+
     # =========================
     # 2. CONFIGURE INTERACTION
     # =========================
-
+    # Narrator / default voice: f2yUVfK5jdm78zlpcZ8C  (Robin voice)
+    # Janitor voice:            AVIlLDn2TVmdaDycgbo3   (Eddy — mature male)
+    # Engineer voice:           tvFp0BgJPrEXGoDhDIA4   (Thomas - young male)
+    # Resident voice:           OlBRrVAItyi00MuGMbna   (Trudy — expressive female)
+    # Replace any of the above with a different ElevenLabs voice_id to change a character.
     interaction_config = InteractionConfig(
         google_keyfile_path=str(GOOGLE_KEYFILE_PATH),
         env_file_path=str(ENV_FILE_PATH),
         keyboard_input=True,
-        rag=True,
+        rag=False,
         ingest_docs=INGEST_DOCS,
         input_path=str(DOCS_DIR),
         index_name=INDEX_NAME,
@@ -151,25 +179,14 @@ if __name__ == '__main__':
         chunk_overlap=120,
         override_existing=True,
         force_recreate_index=False,
-       # tts_conf=GoogleTTSConf(
-       #     speaking_rate=1.0,
-       #     google_tts_voice_name="nl-NL-Wavenet-A",
-       #     google_tts_voice_gender="FEMALE"
-       # ),
-
-        tts_conf = ElevenLabsTTSConf(
+        tts_conf=ElevenLabsTTSConf(
             speaking_rate=1.0,
-            voice_id='D50w2srwVohKTPx9X6Th',
-            model_id='eleven_flash_v2_5',
-
+            voice_id='f2yUVfK5jdm78zlpcZ8C',   # narrator / default
+            model_id='eleven_flash_v2_5'
         ),
-
-         language="nl",
-         # microphone_device=1,         # uncomment to select a specific mic
-         post_speech_delay=0.0,       # pause in seconds after the agent speaks (adaptive tail handles pacing)
-         # signal_listening_behavior=True,  # visual cue while listening (robots)
+        language="nl",
+        post_speech_delay=0.0,
     )
-
 
     # =========================
     # 3. CREATE AGENT
@@ -179,33 +196,9 @@ if __name__ == '__main__':
         int_config=interaction_config
     )
 
-
-
     # =========================
     # 4. DEFINE SESSION STRUCTURE
     # =========================
-    # Each entry must match the "id" field of a dialog in Episode_1_all_dialogs.json.
-    # Scenes play in order; LLM chats follow their paired scene.
-
-
-
-    session_agenda = [
-       # "Ep1_Scene_1_Intro",  # intro + meet Robin, collect name
-       # "Ep1_Scene_2_Toon_Rami",  # Toon & Rami report the missing rollercoaster
-       # "Ep1_Scene_3_Trudy",  # interview Trudy (karaoke plan)
-       # "Ep1_Scene_3_Trudy_RAG_Interview",  # RAG-backed Trudy interview
-       # "Ep1_Scene_4_Eddy",  # interview Professor Eddy (puzzl=e)
-       # "Ep1_Scene_4_Eddy_RAG_Interview",  # RAG-backed Eddy interview
-        "Ep1_Scene_5_Yoyo",
-        "Ep1_Scene_5_Yoyo_RAG_Interview", # interview Yoyo RAG
-        "Ep1_Scene_6_Jennifer",  # interview Jennifer
-        "Ep1_Scene_6_Jennifer_LLM_Chat",  # initial LLM chat with Jennifer
-        "Ep1_Scene_6_Jennifer_RAG_Interview",  # RAG-backed Jennifer interview
-        "Ep1_Scene_7_Dj_Kata",  # interview DJ Kata
-        "Ep1_Scene_7_Dj_Kata_LLM_Chat",  # RAG-backed DJ Kata interview
-        "Ep1_Scene_8_Ontknoping",
-        "Ep1_Scene_9_Kelder_Disco"
-    ]
 
     active_dialog_json_path = str(DIALOG_CONFIG_PATH)
     if MANUAL_MODE:
@@ -219,10 +212,9 @@ if __name__ == '__main__':
         for d in all_dialogs:
             register_character_voices(d.get("characters", {}))
 
-        # Preserve agenda order and strip unrelated dialogs so manual commenting just works.
         filtered_dialogs = [dialogs_by_id[scene_id] for scene_id in session_agenda]
         with tempfile.NamedTemporaryFile(
-            mode="w", suffix="_episode1_manual_dialogs.json", delete=False, encoding="utf-8"
+            mode="w", suffix="_amana_manual_dialogs.json", delete=False, encoding="utf-8"
         ) as temp_file:
             json.dump(filtered_dialogs, temp_file, ensure_ascii=False, indent=2)
             active_dialog_json_path = temp_file.name
@@ -233,34 +225,19 @@ if __name__ == '__main__':
     # =========================
     # 5. SESSION MANAGER
     # =========================
-    if RESET_PARTICIPANT_STATE:
-        try:
-            UserModel(participant_id=PARTICIPANT_ID).clear_remote()
-            print(f"[CHECK] Cleared Redis-backed user state for participant {PARTICIPANT_ID}")
-        except Exception as exc:
-            print(f"[WARN] Could not clear Redis-backed user state for participant {PARTICIPANT_ID}: {exc}")
-
     session_manager = SessionManager(
         session_agenda=session_agenda,
         agent=agent,
         dialog_json_path=active_dialog_json_path,
-        participant_id=PARTICIPANT_ID,
+        participant_id="2",
     )
+
+    # Pre-connect one persistent WebSocket per character voice
+    preconnect_all_character_voices(agent.orchestrator)
 
     # =========================
     # 6. RUN SESSION
     # =========================
-    if AUDIO_HEARTBEAT:
-        try:
-            # Quick audible check so silent output is obvious before dialogs start.
-            agent.say("Audio check. Als je dit hoort, werkt de audio.")
-        except Exception as exc:
-            print(f"[WARN] Startup audio heartbeat failed: {exc}")
-
-    # Pre-connect one persistent WebSocket per character voice so voice
-    # switching during the session is instant (no per-line reconnect latency).
-    preconnect_all_character_voices(agent.orchestrator)
-
     session_manager.run()
 
     sys.exit()

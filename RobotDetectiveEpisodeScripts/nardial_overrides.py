@@ -31,6 +31,8 @@ CHARACTER_VOICE_MAP: dict = {}
 # ---------------------------------------------------------------------------
 _TTS_POOL: dict = {}          # voice_id → ElevenLabsTTS
 _TTS_POOL_ORCH = None         # reference to the InteractionOrchestrator
+_LLM_SENTENCE_PAUSE_S = float(environ.get("RD_LLM_SENTENCE_PAUSE", "0.14"))
+_LLM_COMMA_PAUSE_S = float(environ.get("RD_LLM_COMMA_PAUSE", "0.05"))
 
 
 def register_character_voices(characters: dict) -> None:
@@ -239,9 +241,13 @@ def apply_nardial_overrides() -> None:
 
     def elevenlabs_say_safe(self, text, post_speech_delay=None, amplified=False,
                             always_regenerate=False, chunking=True):
-        # Choppiness fix: keep each line as a single synthesis request.
-        # Splitting into short chunks introduces audible seams for some voices.
-        text_chunks = [text]
+        # Keep one synthesis request by default to avoid audible seams.
+        # For ask_llm responses we split on punctuation boundaries so we can
+        # pause briefly after commas and full stops.
+        if getattr(self, "_rd_llm_sentence_pause_mode", False):
+            text_chunks = [part for part in re.split(r"(?<=[.,])\s+", str(text).strip()) if part]
+        else:
+            text_chunks = [text]
 
         # If earlier runs cached truncated clips, replaying cache will preserve
         # the truncation forever. Default to cache OFF for ElevenLabs until
@@ -273,8 +279,15 @@ def apply_nardial_overrides() -> None:
             duration_s = len(audio_bytes) / (self.sample_rate * 2)
             current_char = getattr(self, "_rd_current_character", None)
             # Minimal tail for natural pacing; adaptive tail handles inter-sentence timing.
-            tail_s = 0.02 if current_char in {"robin", "yoyo"} else 0.01
+            tail_s = 0.02 if current_char in {"robin", "yoyo", "engineer", "resident", "janitor", "robot"} else 0.01
             _sleep(duration_s + tail_s)
+
+            if getattr(self, "_rd_llm_sentence_pause_mode", False):
+                trimmed = chunk.rstrip()
+                if trimmed.endswith("."):
+                    _sleep(_LLM_SENTENCE_PAUSE_S)
+                elif trimmed.endswith(","):
+                    _sleep(_LLM_COMMA_PAUSE_S)
 
             # The base config has post_speech_delay=0.5, which is too large once
             # we already wait for real audio duration. Cap it to a tiny value.
@@ -418,10 +431,12 @@ def apply_nardial_overrides() -> None:
 
         orch = self.conversation_agent.orchestrator if self.conversation_agent else None
         prev_char = getattr(orch, "_rd_current_character", None) if orch is not None else None
+        prev_sentence_pause_mode = getattr(orch, "_rd_llm_sentence_pause_mode", None) if orch is not None else None
 
         try:
             if orch is not None:
                 orch._rd_current_character = character
+                orch._rd_llm_sentence_pause_mode = True
             if target_voice_id and orch and isinstance(getattr(orch, "tts_conf", None), ElevenLabsTTSConf):
                 default_voice_id = orch.tts_conf.voice_id
                 if target_voice_id != default_voice_id:
@@ -437,6 +452,7 @@ def apply_nardial_overrides() -> None:
         finally:
             if orch is not None:
                 orch._rd_current_character = prev_char
+                orch._rd_llm_sentence_pause_mode = prev_sentence_pause_mode
 
     MiniDialog.handle_move_ask_llm = handle_move_ask_llm_with_character
     MiniDialog._robot_detective_original_handle_move_ask_llm = original_handle_move_ask_llm
@@ -477,6 +493,47 @@ def apply_nardial_overrides() -> None:
     
     InteractionOrchestrator.say = say_with_character_voice
     print("[patch] InteractionOrchestrator.say character voice wrapper registered")
+
+    # â”€â”€ ask_open voice routing â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    original_handle_move_ask_open = MiniDialog.handle_move_ask_open
+
+    def handle_move_ask_open_with_character(self, move):
+        character = move.get("character") if isinstance(move, dict) else None
+        target_voice_id = CHARACTER_VOICE_MAP.get(character) if character else None
+
+        orch = self.conversation_agent.orchestrator if self.conversation_agent else None
+        default_tts = None
+        default_voice_id = None
+        swapped = False
+        prev_char = getattr(orch, "_rd_current_character", None) if orch is not None else None
+
+        if target_voice_id and orch and isinstance(getattr(orch, "tts_conf", None), ElevenLabsTTSConf):
+            default_voice_id = orch.tts_conf.voice_id
+            if target_voice_id != default_voice_id:
+                char_tts = _get_or_create_tts(target_voice_id, orch)
+                if char_tts is not None:
+                    default_tts = orch.tts
+                    orch.tts = char_tts
+                    orch.tts_conf.voice_id = target_voice_id
+                    swapped = True
+                    print(f"[voice-open] {character} â†’ {target_voice_id}")
+                else:
+                    print(f"[voice-open] WARNING: no TTS for '{character}' ({target_voice_id}), using default.")
+
+        if orch is not None:
+            orch._rd_current_character = character
+
+        try:
+            return original_handle_move_ask_open(self, move)
+        finally:
+            if orch is not None:
+                orch._rd_current_character = prev_char
+            if swapped and default_tts is not None and orch is not None:
+                orch.tts = default_tts
+                orch.tts_conf.voice_id = default_voice_id
+
+    MiniDialog.handle_move_ask_open = handle_move_ask_open_with_character
+    MiniDialog._robot_detective_original_handle_move_ask_open = original_handle_move_ask_open
 
     _PATCH_APPLIED = True
 

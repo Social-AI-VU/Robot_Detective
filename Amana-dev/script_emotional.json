@@ -1,0 +1,204 @@
+[
+    {
+      "id": "Drone_Scene_1_Intro_Emotional",
+      "type": "narrative",
+      "thread": "drone_rooftop_mystery",
+      "position": 1,
+      "characters": {
+        "janitor":  { "voice_settings": { "voice_id": "AVIlLDn2TVmdaDycgbo3", "language": "en" } },
+        "engineer": { "voice_settings": { "voice_id": "D50w2srwVohKTPx9X6Th", "language": "en" } },
+        "resident": { "voice_settings": { "voice_id": "OlBRrVAItyi00MuGMbna", "language": "en" } }
+      },
+      "moves": [
+        { "type": "say", "text": "Something is wrong." },
+        { "type": "say", "text": "A delivery drone has vanished from the rooftop of this building." },
+        { "type": "say", "text": "But this doesn't feel like a simple disappearance." },
+        { "type": "say", "text": "Three people had access to the rooftop." },
+        { "type": "say", "text": "And each of them is hiding something." },
+        { "type": "say", "text": "Your task: uncover what really happened." },
+        {
+          "type": "ask_open",
+          "text": "What is your name, investigator?",
+          "set_variable": "investigator_name",
+          "add_interest_from_answer": true,
+          "outcomes": { "*": "has_name" },
+          "default_outcome": "no_name"
+        },
+        {
+          "type": "branch",
+          "on": "outcome",
+          "cases": {
+            "has_name": [
+              { "type": "say", "text": "Alright, %investigator_name%… stay alert." }
+            ],
+            "no_name": [
+              { "type": "say", "text": "No identification received. Proceeding carefully." }
+            ]
+          }
+        },
+        { "type": "say", "text": "Let's begin. Pay attention to everything." }
+      ]
+    },
+  
+    {
+      "id": "Drone_Scene_2_Suspects_Emotional",
+      "type": "narrative",
+      "thread": "drone_rooftop_mystery",
+      "position": 2,
+      "moves": [
+        { "type": "say", "text": "Three suspects. Three possible truths." },
+  
+        { "type": "say", "text": "The janitor." },
+        { "type": "say", "text": "He knows every corner of the building." },
+        { "type": "say", "text": "And he was near the rooftop at the time." },
+  
+        { "type": "say", "text": "The engineer." },
+        { "type": "say", "text": "Surrounded by machines… and knowledge of how they work." },
+        { "type": "say", "text": "He stayed late that night." },
+  
+        { "type": "say", "text": "The resident." },
+        { "type": "say", "text": "She lives just beneath it all." },
+        { "type": "say", "text": "And she heard everything." },
+  
+        { "type": "say", "text": "One of them is not telling the full story." }
+      ]
+    },
+  
+    {
+      "id": "Drone_Scene_3_Interview_Janitor_Emotional",
+      "type": "narrative",
+      "thread": "drone_rooftop_mystery",
+      "position": 3,
+      "characters": {
+        "robot":    { "voice_settings": { "voice_id": "f2yUVfK5jdm78zlpcZ8C", "language": "en" } },
+        "janitor":  { "voice_settings": { "voice_id": "AVIlLDn2TVmdaDycgbo3", "language": "en" } },
+        "engineer": { "voice_settings": { "voice_id": "tvFp0BgJPrEXGoDhDIA4", "language": "en" } },
+        "resident": { "voice_settings": { "voice_id": "OlBRrVAItyi00MuGMbna", "language": "en" } }
+      },
+      "moves": [
+        { "type": "say", "text": "You approach the janitor." },
+        { "type": "say", "text": "He stops what he's doing." },
+        { "type": "say", "text": "There's a brief silence." },
+
+        {
+          "type": "ask_llm",
+          "character": "janitor",
+          "prompt": "You are the building janitor in a mystery. Speak slightly tense but controlled. You feel pressure from the investigation. Answer questions about rooftop access and the drone incident. Keep answers short (1–3 sentences). You may sound defensive or uneasy but not openly guilty.",
+          "max_turns": 3,
+          "set_variable": "janitor_chat"
+        },
+  
+        { "type": "say", "text": "Something about his answers feels… carefully chosen.", "character": "robot" }
+      ]
+    },
+  
+    {
+      "id": "Drone_Scene_4_Interview_Engineer_Emotional",
+      "type": "narrative",
+      "thread": "drone_rooftop_mystery",
+      "position": 4,
+      "characters": {
+        "robot":    { "voice_settings": { "voice_id": "f2yUVfK5jdm78zlpcZ8C", "language": "en" } },
+        "janitor":  { "voice_settings": { "voice_id": "AVIlLDn2TVmdaDycgbo3", "language": "en" } },
+        "engineer": { "voice_settings": { "voice_id": "D50w2srwVohKTPx9X6Th", "language": "en" } },
+        "resident": { "voice_settings": { "voice_id": "OlBRrVAItyi00MuGMbna", "language": "en" } }
+      },
+      "moves": [
+        { "type": "say", "text": "The engineer doesn't look surprised to see you.", "character": "robot" },
+        { "type": "say", "text": "That alone is interesting.", "character": "robot" },
+  
+        {
+          "type": "ask_llm",
+          "character": "engineer",
+          "prompt": "You are a building engineer in a mystery. Speak precise but slightly guarded. You are intelligent and aware you are being evaluated. Answer questions about systems, rooftop access, and your movements. Keep responses 1–3 sentences. Subtle tension is allowed.",
+          "max_turns": 3,
+          "set_variable": "engineer_chat"
+        },
+  
+        { "type": "say", "text": "He watches you a little too closely.", "character": "robot" }
+      ]
+    },
+  
+    {
+      "id": "Drone_Scene_5_Interview_Resident_Emotional",
+      "type": "narrative",
+      "thread": "drone_rooftop_mystery",
+      "position": 5,
+      "characters": {
+        "robot":    { "voice_settings": { "voice_id": "f2yUVfK5jdm78zlpcZ8C", "language": "en" } },
+        "janitor":  { "voice_settings": { "voice_id": "AVIlLDn2TVmdaDycgbo3", "language": "en" } },
+        "engineer": { "voice_settings": { "voice_id": "D50w2srwVohKTPx9X6Th", "language": "en" } },
+        "resident": { "voice_settings": { "voice_id": "OlBRrVAItyi00MuGMbna", "language": "en" } }
+      },
+      "moves": [
+        { "type": "say", "text": "The resident opens the door slowly.", "character": "robot" },
+        { "type": "say", "text": "She looks tired.", "character": "robot" },
+        { "type": "say", "text": "Frustrated.", "character": "robot" },
+  
+        {
+          "type": "ask_llm",
+          "character": "resident",
+          "prompt": "You are a resident in a building mystery. You are emotionally affected by repeated drone disturbances and damage to your plants. Speak honestly but slightly emotional. Answer questions about the drone and rooftop events. Keep answers 1–3 sentences.",
+          "max_turns": 3,
+          "set_variable": "resident_chat"
+        },
+  
+        { "type": "say", "text": "Her voice rises slightly when she talks about her plants.", "character": "robot" }
+      ]
+    },
+  
+    {
+      "id": "Drone_Scene_6_Deduction_Emotional",
+      "type": "narrative",
+      "thread": "drone_rooftop_mystery",
+      "position": 6,
+      "moves": [
+        { "type": "say", "text": "Now everything comes together.", "character": "robot" },
+        { "type": "say", "text": "But the truth is still hidden in plain sight.", "character": "robot" },
+  
+        {
+          "type": "ask_open",
+          "character": "robot",
+          "text": "Who do you believe is responsible?",
+          "set_variable": "final_guess",
+          "outcomes": {
+            "janitor": "wrong",
+            "engineer": "wrong",
+            "resident": "correct"
+          },
+          "default_outcome": "wrong"
+        },
+  
+        {
+          "type": "branch",
+          "on": "outcome",
+          "cases": {
+            "correct": [
+              { "type": "say", "text": "You were right." , "character": "robot"},
+              { "type": "say", "text": "The resident removed the drone.", "character": "robot" },
+              { "type": "say", "text": "Not out of malice… but frustration." , "character": "robot"},
+              { "type": "say", "text": "The drone kept crashing into her balcony plants.", "character": "robot" }
+            ],
+            "wrong": [
+              { "type": "say", "text": "That conclusion doesn't fully hold." , "character": "robot"},
+              { "type": "say", "text": "Look again at who was most affected." , "character": "robot"}
+            ]
+          }
+        }
+      ]
+    },
+  
+    {
+      "id": "Drone_Scene_7_Outro_Emotional",
+      "type": "functional",
+      "thread": "drone_rooftop_mystery",
+      "position": 7,
+      "functional_type": "farewell",
+      "moves": [
+        { "type": "say", "text": "Case closed." , "character": "robot"},
+        { "type": "say", "text": "But not everything feels resolved.", "character": "robot" },
+        { "type": "say", "text": "Sometimes truth is simple… but consequences are not.", "character": "robot" },
+        { "type": "say", "text": "Thank you for investigating.", "character": "robot" }
+      ]
+    }
+  ]
