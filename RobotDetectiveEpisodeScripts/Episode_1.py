@@ -35,6 +35,8 @@ Run these in separate terminals BEFORE starting the episode:
     run-dialogflow
     run-google-tts
     run-gpt
+    run-redis
+    run-elevenlabs-tts
 
 -------------------------
 4. Run the episode
@@ -42,17 +44,20 @@ Run these in separate terminals BEFORE starting the episode:
     python RobotDetectiveEpisodeScripts/Episode_1.py
 =========================
 """
+import os
+import sys
+from os.path import abspath, join
 
+from dotenv import load_dotenv
+from sic_framework.devices.common_desktop.desktop_speakers import SpeakersConf
+from sic_framework.devices.desktop import Desktop
+
+from nardial.providers.device.desktop import DesktopAdapter
+from nardial.providers.tts.elevenlabs import ElevenLabsTTSProvider, ElevenLabsTTSConf
+from nardial.providers.nlu.written_keyword import WrittenKeywordNLUProvider
 from nardial.conversation_agent import ConversationAgent
 from nardial.interaction_orchestrator import InteractionConfig
 from nardial.session_manager import SessionManager
-from nardial.tts_manager import ElevenLabsTTSConf
-from nardial.user_model import UserModel
-from nardial_overrides import apply_nardial_overrides, register_character_voices, preconnect_all_character_voices
-
-# Import SIC device(s), message(s), and service(s) we will be using
-from sic_framework.devices.common_desktop.desktop_speakers import SpeakersConf
-from sic_framework.devices.desktop import Desktop
 
 # import other libraries
 from pathlib import Path
@@ -61,6 +66,8 @@ import os
 import sys
 import tempfile
 
+
+load_dotenv(dotenv_path="../conf/.env")
 
 BASE_DIR = Path(__file__).resolve().parent
 REPO_ROOT = BASE_DIR.parent
@@ -120,74 +127,41 @@ def print_startup_checks() -> None:
         print(f"[WARN] Could not inspect rag_enabled dialogs: {exc}")
 
 if __name__ == '__main__':
-    apply_nardial_overrides()
-    print_startup_checks()
+    # Select device
+    desktop = Desktop(speakers_conf=SpeakersConf(sample_rate=22050))
+    device = DesktopAdapter(desktop)
+    # device = PepperAdapter(Pepper(ip="10.0.0.148"))
 
-    # =========================
-    # 1. SELECT DEVICE
-    # =========================
-    # Desktop uses your computer's mic + speakers.
-    # Uncomment the Pepper line to connect to a robot instead.
-
-    device = Desktop(
-        speakers_conf=SpeakersConf(sample_rate=22050)
+    tts_conf = ElevenLabsTTSConf(
+        api_key=os.getenv("ELEVENLABS_API_KEY", ""),
+        voice_id="9BWtsMINqrJLrRacOk9x",
+        model_id="eleven_flash_v2_5",
     )
-    #device = Pepper(ip="XXX")  # Replace with your robot's IP
-    #device = Nao(ip="10.0.0.139")
+    tts = ElevenLabsTTSProvider(conf=tts_conf, device=device)
+
     # =========================
     # 2. CONFIGURE INTERACTION
     # =========================
 
-    interaction_config = InteractionConfig(
-        google_keyfile_path=str(GOOGLE_KEYFILE_PATH),
-        env_file_path=str(ENV_FILE_PATH),
-        keyboard_input=True,
-        rag=True,
-        ingest_docs=INGEST_DOCS,
-        input_path=str(DOCS_DIR),
-        index_name=INDEX_NAME,
-        embedding_model="text-embedding-3-large",
-        chunk_chars=900,
-        chunk_overlap=120,
-        override_existing=True,
-        force_recreate_index=False,
-       # tts_conf=GoogleTTSConf(
-       #     speaking_rate=1.0,
-       #     google_tts_voice_name="nl-NL-Wavenet-A",
-       #     google_tts_voice_gender="FEMALE"
-       # ),
 
-        tts_conf = ElevenLabsTTSConf(
-            speaking_rate=1.0,
-            voice_id='D50w2srwVohKTPx9X6Th',
-            model_id='eleven_flash_v2_5',
 
-        ),
-
-         language="nl",
-         # microphone_device=1,         # uncomment to select a specific mic
-         post_speech_delay=0.0,       # pause in seconds after the agent speaks (adaptive tail handles pacing)
-         # signal_listening_behavior=True,  # visual cue while listening (robots)
-    )
-
+    interaction_config = InteractionConfig(post_speech_delay=0,
+                                           signal_listening_behavior=False)
+    nlu = WrittenKeywordNLUProvider()
 
     # =========================
     # 3. CREATE AGENT
     # =========================
-    agent = ConversationAgent(
-        device_manager=device,
-        int_config=interaction_config
-    )
-
-
+    agent = ConversationAgent(device=device,
+                              tts_provider=tts,
+                              nlu_provider=nlu,
+                              int_config=interaction_config)
 
     # =========================
     # 4. DEFINE SESSION STRUCTURE
     # =========================
     # Each entry must match the "id" field of a dialog in Episode_1_all_dialogs.json.
     # Scenes play in order; LLM chats follow their paired scene.
-
-
 
     session_agenda = [
        # "Ep1_Scene_1_Intro",  # intro + meet Robin, collect name
@@ -215,12 +189,9 @@ if __name__ == '__main__':
         if missing:
             raise ValueError(f"session_agenda contains unknown dialog ids: {missing}")
 
-        # Register all character voices from every dialog's characters block
-        for d in all_dialogs:
-            register_character_voices(d.get("characters", {}))
-
         # Preserve agenda order and strip unrelated dialogs so manual commenting just works.
         filtered_dialogs = [dialogs_by_id[scene_id] for scene_id in session_agenda]
+
         with tempfile.NamedTemporaryFile(
             mode="w", suffix="_episode1_manual_dialogs.json", delete=False, encoding="utf-8"
         ) as temp_file:
@@ -250,16 +221,7 @@ if __name__ == '__main__':
     # =========================
     # 6. RUN SESSION
     # =========================
-    if AUDIO_HEARTBEAT:
-        try:
-            # Quick audible check so silent output is obvious before dialogs start.
-            agent.say("Audio check. Als je dit hoort, werkt de audio.")
-        except Exception as exc:
-            print(f"[WARN] Startup audio heartbeat failed: {exc}")
 
-    # Pre-connect one persistent WebSocket per character voice so voice
-    # switching during the session is instant (no per-line reconnect latency).
-    preconnect_all_character_voices(agent.orchestrator)
 
     session_manager.run()
 
