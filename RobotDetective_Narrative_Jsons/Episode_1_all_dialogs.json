@@ -737,6 +737,12 @@
           "voice_id": "2wqbkywMMH2LWAlR4EMt",
           "language": "nl"
         }
+      },
+      "narrator": {
+        "voice_settings": {
+          "voice_id": "9BWtsMINqrJLrRacOk9x",
+          "language": "nl"
+        }
       }
     },
     "moves": [
@@ -832,6 +838,12 @@
       "robin": {
         "voice_settings": {
           "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      },
+      "narrator": {
+        "voice_settings": {
+          "voice_id": "9BWtsMINqrJLrRacOk9x",
           "language": "nl"
         }
       }
@@ -1049,6 +1061,12 @@
           "voice_id": "f2yUVfK5jdm78zlpcZ8C",
           "language": "nl"
         }
+      },
+      "narrator": {
+        "voice_settings": {
+          "voice_id": "9BWtsMINqrJLrRacOk9x",
+          "language": "nl"
+        }
       }
     },
     "moves": [
@@ -1146,6 +1164,12 @@
       "trudy": {
         "voice_settings": {
           "voice_id": "OlBRrVAItyi00MuGMbna",
+          "language": "nl"
+        }
+      },
+      "narrator": {
+        "voice_settings": {
+          "voice_id": "9BWtsMINqrJLrRacOk9x",
           "language": "nl"
         }
       }
@@ -1553,6 +1577,12 @@
       "s_tegel": {
         "voice_settings": {
           "voice_id": "D50w2srwVohKTPx9X6Th",
+          "language": "nl"
+        }
+      },
+      "narrator": {
+        "voice_settings": {
+          "voice_id": "9BWtsMINqrJLrRacOk9x",
           "language": "nl"
         }
       }

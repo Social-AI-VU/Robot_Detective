@@ -204,12 +204,6 @@ if __name__ == '__main__':
     # =========================
     # 5. SESSION MANAGER
     # =========================
-    if RESET_PARTICIPANT_STATE:
-        try:
-            UserModel(participant_id=PARTICIPANT_ID).clear_remote()
-            print(f"[CHECK] Cleared Redis-backed user state for participant {PARTICIPANT_ID}")
-        except Exception as exc:
-            print(f"[WARN] Could not clear Redis-backed user state for participant {PARTICIPANT_ID}: {exc}")
 
     session_manager = SessionManager(
         session_agenda=session_agenda,
