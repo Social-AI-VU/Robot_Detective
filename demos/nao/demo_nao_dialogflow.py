@@ -38,7 +38,7 @@ class NaoDialogflowDemo(SICApplication):
         super(NaoDialogflowDemo, self).__init__()
 
         # Demo-specific initialization
-        self.nao_ip = "XXX"
+        self.nao_ip = "169.254.47.183"
         self.google_keyfile_path = google_keyfile_path
         self.nao = None
         self.dialogflow = None
