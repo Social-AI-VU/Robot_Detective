@@ -31,6 +31,9 @@ from dotenv import load_dotenv
 from sic_framework.devices import Nao
 from sic_framework.services.dialogflow.dialogflow import DialogflowConf
 
+from sic_framework.devices.common_naoqi.naoqi_autonomous import NaoRestRequest
+from sic_framework.devices.common_naoqi.naoqi_motion import NaoPostureRequest
+
 from nardial.conversation_agent import ConversationAgent
 from nardial.interaction_orchestrator import InteractionConfig
 from nardial.providers.device.nao import NaoAdapter
@@ -60,6 +63,52 @@ DEFAULT_RAG_INDEX_NAME = "episode_1_trudy_docs"
 # MANUAL MODE SETTINGS
 # =========================
 MANUAL_MODE = True
+
+
+def iter_referenced_characters(node):
+    if isinstance(node, dict):
+        character = node.get("character")
+        if isinstance(character, str):
+            yield character
+
+        for value in node.values():
+            yield from iter_referenced_characters(value)
+    elif isinstance(node, list):
+        for item in node:
+            yield from iter_referenced_characters(item)
+
+
+def populate_missing_character_definitions(dialogs) -> None:
+    known_character_defs = {}
+    for dialog in dialogs:
+        for character_name, character_def in dialog.get("characters", {}).items():
+            known_character_defs.setdefault(character_name, character_def)
+
+    unresolved = []
+    for dialog in dialogs:
+        characters = dialog.setdefault("characters", {})
+        missing_in_dialog = []
+
+        for character_name in dict.fromkeys(iter_referenced_characters(dialog.get("moves", []))):
+            if character_name in characters:
+                continue
+
+            character_def = known_character_defs.get(character_name)
+            if character_def is None:
+                missing_in_dialog.append(character_name)
+                continue
+
+            characters[character_name] = character_def
+
+        if missing_in_dialog:
+            unresolved.append(
+                f"{dialog.get('id', '<unknown>')}: {', '.join(sorted(missing_in_dialog))}"
+            )
+
+    if unresolved:
+        raise ValueError(
+            "Dialogs reference characters without definitions: " + "; ".join(unresolved)
+        )
 
 
 def print_startup_checks() -> None:
@@ -97,8 +146,12 @@ if __name__ == "__main__":
     load_dotenv(dotenv_path=ENV_FILE_PATH)
     print_startup_checks()
 
+
+
     nao = Nao(ip=NAO_IP)
     device = NaoAdapter(nao)
+
+    nao.motion.request(NaoPostureRequest("Stand", 0.8))
 
     tts_conf = ElevenLabsTTSConf(
         api_key=os.getenv("ELEVENLABS_API_KEY", ""),
@@ -127,10 +180,10 @@ if __name__ == "__main__":
     )
 
     session_agenda = [
-       # "Ep1_Scene_1_Intro",
-       # "Ep1_Scene_2_Toon_Rami",
-       # "Ep1_Scene_3_Trudy",
-       # "Ep1_Scene_3_Trudy_RAG_Interview",
+        "Ep1_Scene_1_Intro",
+        "Ep1_Scene_2_Toon_Rami",
+        "Ep1_Scene_3_Trudy",
+        "Ep1_Scene_3_Trudy_RAG_Interview",
         "Ep1_Scene_4_Eddy",
         "Ep1_Scene_4_Eddy_RAG_Interview",
         "Ep1_Scene_5_Yoyo",
@@ -147,6 +200,7 @@ if __name__ == "__main__":
     active_dialog_json_path = str(DIALOG_CONFIG_PATH)
     if MANUAL_MODE:
         all_dialogs = json.loads(DIALOG_CONFIG_PATH.read_text(encoding="utf-8"))
+        populate_missing_character_definitions(all_dialogs)
         dialogs_by_id = {d.get("id"): d for d in all_dialogs if d.get("id")}
         missing = [scene_id for scene_id in session_agenda if scene_id not in dialogs_by_id]
         if missing:
@@ -170,6 +224,9 @@ if __name__ == "__main__":
         participant_id=PARTICIPANT_ID,
     )
 
-    session_manager.run()
-
-    sys.exit()
+    try:
+        session_manager.run()
+    except Exception as e:
+        print(f"Error occurred: {e}")
+    finally:
+        nao.autonomous.request(NaoRestRequest())

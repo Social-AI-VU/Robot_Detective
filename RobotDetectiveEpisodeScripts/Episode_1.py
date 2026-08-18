@@ -96,6 +96,52 @@ DEFAULT_RAG_INDEX_NAME = "episode_1_trudy_docs"
 MANUAL_MODE = True
 
 
+def iter_referenced_characters(node):
+    if isinstance(node, dict):
+        character = node.get("character")
+        if isinstance(character, str):
+            yield character
+
+        for value in node.values():
+            yield from iter_referenced_characters(value)
+    elif isinstance(node, list):
+        for item in node:
+            yield from iter_referenced_characters(item)
+
+
+def populate_missing_character_definitions(dialogs) -> None:
+    known_character_defs = {}
+    for dialog in dialogs:
+        for character_name, character_def in dialog.get("characters", {}).items():
+            known_character_defs.setdefault(character_name, character_def)
+
+    unresolved = []
+    for dialog in dialogs:
+        characters = dialog.setdefault("characters", {})
+        missing_in_dialog = []
+
+        for character_name in dict.fromkeys(iter_referenced_characters(dialog.get("moves", []))):
+            if character_name in characters:
+                continue
+
+            character_def = known_character_defs.get(character_name)
+            if character_def is None:
+                missing_in_dialog.append(character_name)
+                continue
+
+            characters[character_name] = character_def
+
+        if missing_in_dialog:
+            unresolved.append(
+                f"{dialog.get('id', '<unknown>')}: {', '.join(sorted(missing_in_dialog))}"
+            )
+
+    if unresolved:
+        raise ValueError(
+            "Dialogs reference characters without definitions: " + "; ".join(unresolved)
+        )
+
+
 def print_startup_checks() -> None:
     # Fast local checks to explain why ask_llm blocks can get skipped.
     print(f"[CHECK] Dialog JSON exists: {DIALOG_CONFIG_PATH.exists()} -> {DIALOG_CONFIG_PATH}")
@@ -184,6 +230,7 @@ if __name__ == '__main__':
     active_dialog_json_path = str(DIALOG_CONFIG_PATH)
     if MANUAL_MODE:
         all_dialogs = json.loads(DIALOG_CONFIG_PATH.read_text(encoding="utf-8"))
+        populate_missing_character_definitions(all_dialogs)
         dialogs_by_id = {d.get("id"): d for d in all_dialogs if d.get("id")}
         missing = [scene_id for scene_id in session_agenda if scene_id not in dialogs_by_id]
         if missing:
