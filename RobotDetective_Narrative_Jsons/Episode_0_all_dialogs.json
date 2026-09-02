@@ -1,0 +1,449 @@
+[
+  {
+    "id": "Ep0_Scene_1_Intro",
+    "type": "narrative",
+    "thread": "episode_0_tutorial",
+    "position": 1,
+    "characters": {
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "Hoi!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Zo, even mijn motoren op laten warmen zeg.",
+        "character": "robin"
+      },
+      {
+        "type": "ask_open",
+        "text": "Waar ben ik nu weer wakker geworden? Weten jullie dat?",
+        "set_variable": "wake_location",
+        "add_interest_from_answer": false,
+        "outcomes": {
+          "*": "has_answer"
+        },
+        "default_outcome": "no_answer"
+      },
+      {
+        "type": "branch",
+        "on": "outcome",
+        "cases": {
+          "has_answer": [
+            {
+              "type": "say",
+              "text": "Hè, daar heb ik nog nooit van gehoord! Spannend zeg.",
+              "character": "robin"
+            }
+          ],
+          "no_answer": [
+            {
+              "type": "say",
+              "text": "Ik voel me alsof ik vannacht in een koffer heb geslapen…",
+              "character": "robin"
+            }
+          ]
+        }
+      },
+      {
+        "type": "ask_open",
+        "text": "En ik zie allemaal onbekende gezichten! Wie zijn jullie eigenlijk?",
+        "set_variable": "user_intro",
+        "add_interest_from_answer": true,
+        "outcomes": {
+          "*": "has_answer"
+        },
+        "default_outcome": "no_answer"
+      },
+      {
+        "type": "branch",
+        "on": "outcome",
+        "cases": {
+          "has_answer": [
+            {
+              "type": "say",
+              "text": "Oke oke oke, aangenaam!",
+              "character": "robin"
+            }
+          ],
+          "no_answer": [
+            {
+              "type": "say",
+              "text": "Ja ik schrik hier net zo erg van als jullie!",
+              "character": "robin"
+            }
+          ]
+        }
+      },
+      {
+        "type": "say",
+        "text": "Mijn naam is Robin, ik ben een robot detective.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Ik ben twee jaar geleden gered uit een berg met afval.",
+        "character": "robin"
+      },
+      {
+        "type": "ask_yesno",
+        "text": "Vaak zeggen mensen dat dat een beetje vies is, vinden jullie dat ook?",
+        "set_variable": "think_dirty",
+        "outcomes": {
+          "yes": "ja",
+          "dontknow": "nee"
+        },
+        "default_outcome": "nee"
+      },
+      {
+        "type": "branch",
+        "on": "outcome",
+        "cases": {
+          "ja": [
+            {
+              "type": "say",
+              "text": "Oei, nou ik ben inmiddels weer helemaal schoongemaakt! Ik hoop dat ik niet meer stink in ieder geval.",
+              "character": "robin"
+            }
+          ],
+          "nee": [
+            {
+              "type": "say",
+              "text": "Fijn! Gelukkig begrijpen kinderen mij wel vaker. Een beetje vies is oke toch!",
+              "character": "robin"
+            }
+          ]
+        }
+      },
+      {
+        "type": "say",
+        "text": "Maar goed, mijn beste vriendin Stoep Tegel heeft mij gevonden.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Ik lag in duizend verschillende stukjes als een soort gigantische puzzel.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Maar zij is zo slim hè, zij heeft mij zo weer in elkaar gezet!",
+        "character": "robin"
+      },
+      {
+        "type": "ask_yesno",
+        "text": "Zeg, zijn jullie misschien ook goed in puzzels oplossen?",
+        "set_variable": "good_at_puzzles",
+        "outcomes": {
+          "yes": "ja",
+          "dontknow": "ja"
+        },
+        "default_outcome": "ja"
+      },
+      {
+        "type": "branch",
+        "on": "outcome",
+        "cases": {
+          "ja": [
+            {
+              "type": "say",
+              "text": "Super!",
+              "character": "robin"
+            }
+          ],
+          "nee": [
+            {
+              "type": "say",
+              "text": "Aha, maar misschien kunnen jullie mij toch helpen!",
+              "character": "robin"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "Ep0_Scene_2_Smaragd_Flat",
+    "type": "narrative",
+    "thread": "episode_0_tutorial",
+    "position": 2,
+    "characters": {
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "Ik heb namelijk een paar grote mysteries om op te lossen.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Ik woon in een erg bijzondere flat genaamd ‘De Smaragd’.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "En het bijzondere aan deze flat is dat er heel veel gekke dingen gebeuren!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Misschien kan de juffrouw of meester de kaart van de flat uit mijn koffer pakken?",
+        "character": "robin"
+      },
+      {
+        "type": "ask_open",
+        "text": "Zeg maar: ‘We zijn er klaar voor’ als jullie goed naar de kaart hebben gekeken!",
+        "set_variable": "map_viewed",
+        "add_interest_from_answer": false,
+        "outcomes": {
+          "*": "ready"
+        },
+        "default_outcome": "ready"
+      },
+      {
+        "type": "say",
+        "text": "Zoals jullie zien is er altijd wat te doen in deze flat!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Er raken altijd dingen kwijt, zoals Oma Hazel’s dikke kat.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "En soms worden er gekke dingen gevonden, zoals glibberige paarse slippers!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Samen met Stoep Tegel ga ik vaak op onderzoek uit.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Ik zoek naar sporen, hints en clues!",
+        "character": "robin"
+      },
+      {
+        "type": "ask_yesno",
+        "text": "Hey, zouden jullie mij daar misschien bij kunnen helpen?",
+        "set_variable": "help_robin",
+        "outcomes": {
+          "yes": "ja",
+          "dontknow": "ja"
+        },
+        "default_outcome": "ja"
+      },
+      {
+        "type": "branch",
+        "on": "outcome",
+        "cases": {
+          "ja": [
+            {
+              "type": "say",
+              "text": "Super fijn! Ik ben daar heel blij mee.",
+              "character": "robin"
+            },
+            {
+              "type": "animation",
+              "animation_name": "animations/Stand/Gestures/Explain_8"
+            }
+          ],
+          "nee": [
+            {
+              "type": "say",
+              "text": "Oh wat jammer! Maar voor degenen die wel mee willen doen...",
+              "character": "robin"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "Ep0_Scene_3_Question_Intro",
+    "type": "narrative",
+    "thread": "episode_0_tutorial",
+    "position": 3,
+    "characters": {
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "Dit is nog best belangrijk: dus houd je oren gespitst!",
+        "character": "robin"
+      },
+      {
+        "type": "ask_open",
+        "text": "Weet er iemand van jullie hoe je een goede vraag moet stellen?",
+        "set_variable": "knows_question_concept",
+        "add_interest_from_answer": false,
+        "outcomes": {
+          "*": "has_answer"
+        },
+        "default_outcome": "no_answer"
+      },
+      {
+        "type": "branch",
+        "on": "outcome",
+        "cases": {
+          "has_answer": [
+            {
+              "type": "say",
+              "text": "Kijk! Jij bent al goed aan het nadenken.",
+              "character": "robin"
+            }
+          ],
+          "no_answer": [
+            {
+              "type": "say",
+              "text": "Geen probleem, ik zal een tip geven.",
+              "character": "robin"
+            }
+          ]
+        }
+      },
+      {
+        "type": "say",
+        "text": "Een goede vraag begint meestal met Wie, Wat, Waar, Waarom, of Hoe!",
+        "character": "robin"
+      },
+      {
+        "type": "ask_open",
+        "text": "Laten we het even proberen! Vertel eens, wat is jouw lievelingskleur?",
+        "set_variable": "user_favorite_color",
+        "llm_followup": "Jij bent Robin de Robotdetective. Het kind geeft antwoord op de vraag wat zijn of haar lievelingskleur is. Antwoord van het kind: %user_favorite_color%. Reageer hierop met een enthousiaste en korte reactie van 1-2 zinnen. Gebruik geen emojis.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Dankjewel voor je antwoord!",
+        "character": "robin"
+      },
+      {
+        "type": "ask_open",
+        "text": "Nu de juf of meester! Heeft u een goede vraag voor mij over mijzelf, robots of wetenschap?",
+        "set_variable": "teacher_question",
+        "llm_followup": "Jij bent Robin de Robotdetective. De leerkracht stelt deze vraag over jezelf, robots of wetenschap: %teacher_question%. Geef kort en grappig feedback over de kwaliteit van de vraag en geef antwoord in 1-3 korte zinnen. Gebruik geen emojis.",
+        "character": "robin",
+        "rag_enabled": true,
+        "index_name": "episode_0_robin_docs"
+      }
+    ]
+  },
+  {
+    "id": "Ep0_Scene_4_Student_Practice",
+    "type": "narrative",
+    "thread": "episode_0_tutorial",
+    "position": 4,
+    "characters": {
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "Super! Laten we nu een oefenrondje met de klas doen.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Iedereen mag een vraag stellen aan mij. We beginnen van links naar rechts!",
+        "character": "robin"
+      },
+      {
+        "type": "animation",
+        "animation_name": "animations/Stand/Gestures/Explain_1"
+      },
+      {
+        "type": "ask_open",
+        "text": "Hoi daar! Wat is jouw vraag voor mij?",
+        "set_variable": "student_q1",
+        "llm_followup": "Jij bent Robin de Robotdetective. Het kind stelt deze vraag: %student_q1%. Beantwoord de vraag van het kind van 8-12 jaar. Geef kort en grappig feedback op de vraag en geef antwoord in 1-3 korte zinnen. Gebruik geen emojis. Stel geen vervolgvraag.",
+        "character": "robin",
+        "rag_enabled": true,
+        "index_name": "episode_0_robin_docs"
+      },
+      {
+        "type": "ask_open",
+        "text": "Super gedaan! Wie is de volgende? Wat is jouw vraag voor mij?",
+        "set_variable": "student_q2",
+        "llm_followup": "Jij bent Robin de Robotdetective. Het kind stelt deze vraag: %student_q2%. Beantwoord de vraag van het kind van 8-12 jaar. Geef kort en grappig feedback op de vraag en geef antwoord in 1-3 korte zinnen. Gebruik geen emojis. Stel geen vervolgvraag.",
+        "character": "robin",
+        "rag_enabled": true,
+        "index_name": "episode_0_robin_docs"
+      },
+      {
+        "type": "ask_open",
+        "text": "Mooi zo! Zit de volgende al klaar? Wat is jouw vraag?",
+        "set_variable": "student_q3",
+        "llm_followup": "Jij bent Robin de Robotdetective. Het kind stelt deze vraag: %student_q3%. Beantwoord de vraag van het kind van 8-12 jaar. Geef kort en grappig feedback op de vraag en geef antwoord in 1-3 korte zinnen. Gebruik geen emojis. Stel geen vervolgvraag.",
+        "character": "robin",
+        "rag_enabled": true,
+        "index_name": "episode_0_robin_docs"
+      },
+      {
+        "type": "ask_open",
+        "text": "Ik vind jullie nu al mega interessant! Klaar voor de volgende vraag?",
+        "set_variable": "student_q4",
+        "llm_followup": "Jij bent Robin de Robotdetective. Het kind stelt deze vraag: %student_q4%. Beantwoord de vraag van het kind van 8-12 jaar. Geef kort en grappig feedback op de vraag en geef antwoord in 1-3 korte zinnen. Gebruik geen emojis. Stel geen vervolgvraag.",
+        "character": "robin",
+        "rag_enabled": true,
+        "index_name": "episode_0_robin_docs"
+      },
+      {
+        "type": "ask_open",
+        "text": "Laatste ronde! Wie wil mij nog een goede vraag stellen?",
+        "set_variable": "student_q5",
+        "llm_followup": "Jij bent Robin de Robotdetective. Het kind stelt deze vraag: %student_q5%. Beantwoord de vraag van het kind van 8-12 jaar. Geef kort en grappig feedback op de vraag en geef antwoord in 1-3 korte zinnen. Gebruik geen emojis. Stel geen vervolgvraag.",
+        "character": "robin",
+        "rag_enabled": true,
+        "index_name": "episode_0_robin_docs"
+      },
+      {
+        "type": "say",
+        "text": "Super! Wat hebben jullie goed je best gedaan zeg.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Ik denk dat wij een prima team zullen zijn en ik kijk er naar uit om met jullie op speurdersonderzoek te gaan!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Ik vond het erg leuk om jullie te ontmoeten. Doeidoei!!",
+        "character": "robin"
+      },
+      {
+        "type": "animation",
+        "animation_name": "animations/Stand/Gestures/Explain_1"
+      }
+    ]
+  }
+]

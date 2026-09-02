@@ -1,0 +1,8 @@
+
+# Start the Redis server
+ .\conf\redis\redis-server.exe .\conf\redis\redis.conf
+
+each in a new terminal:
+    3. run-dialogflow
+    4. run-google-tts
+    5. run-gpt
