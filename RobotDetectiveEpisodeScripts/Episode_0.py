@@ -118,8 +118,8 @@ if __name__ == "__main__":
     # Comment/uncomment scenes below as needed:
     # =========================
     session_agenda = [
-        #"Ep0_Scene_1_Intro",           # Intro & waking up
-        # "Ep0_Scene_2_Smaragd_Flat",     # Flat De Smaragd & map review
+        "Ep0_Scene_1_Intro",           # Intro & waking up
+         "Ep0_Scene_2_Smaragd_Flat",     # Flat De Smaragd & map review
          "Ep0_Scene_3_Question_Intro",   # Question tutorial
 
         "Ep0_Scene_4_Student_Practice",    # Student Q&A practice (in-narrative)
