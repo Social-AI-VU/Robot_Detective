@@ -27,6 +27,14 @@ import sys
 import tempfile
 from pathlib import Path
 
+_REPO_ROOT_FOR_IMPORT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+if _REPO_ROOT_FOR_IMPORT not in sys.path:
+    sys.path.insert(0, _REPO_ROOT_FOR_IMPORT)
+
+from runtime_patches import apply_runtime_patches
+
+apply_runtime_patches()
+
 from dotenv import load_dotenv
 from sic_framework.devices import Nao
 from sic_framework.services.dialogflow.dialogflow import DialogflowConf
@@ -38,6 +46,8 @@ from nardial.conversation_agent import ConversationAgent
 from nardial.interaction_orchestrator import InteractionConfig
 from nardial.providers.device.nao import NaoAdapter
 from nardial.providers.nlu.dialogflow import DialogflowNLUProvider
+from nardial.providers.llm.openai_gpt import OpenAIGPTProvider
+from nardial.providers.vector_store.redis_store import RedisVectorStoreProvider
 from nardial.providers.tts.elevenlabs import ElevenLabsTTSConf, ElevenLabsTTSProvider
 from nardial.session_manager import SessionManager
 
@@ -155,7 +165,7 @@ if __name__ == "__main__":
 
     tts_conf = ElevenLabsTTSConf(
         api_key=os.getenv("ELEVENLABS_API_KEY", ""),
-        voice_id="9BWtsMINqrJLrRacOk9x",
+        voice_id="f2yUVfK5jdm78zlpcZ8C",  # Robin
         model_id="eleven_flash_v2_5",
     )
     tts = ElevenLabsTTSProvider(conf=tts_conf, device=device)
@@ -171,18 +181,28 @@ if __name__ == "__main__":
         post_speech_delay=0,
         signal_listening_behavior=True,
     )
+    llm = OpenAIGPTProvider(api_key=os.getenv("OPENAI_API_KEY"))
+    vector_store = RedisVectorStoreProvider(
+        embedding_model="text-embedding-3-large",
+        openai_api_key=os.getenv("OPENAI_API_KEY"),
+        index_name=DEFAULT_RAG_INDEX_NAME,
+        ingest_docs=False,
+        input_path=str(DOCS_DIR),
+    )
 
     agent = ConversationAgent(
         device=device,
         tts_provider=tts,
         nlu_provider=nlu,
+        llm_provider=llm,
+        vector_store=vector_store,
         int_config=interaction_config,
     )
 
     session_agenda = [
-        "Ep1_Scene_1_Intro",
-        "Ep1_Scene_2_Toon_Rami",
-        "Ep1_Scene_3_Trudy",
+     #   "Ep1_Scene_1_Intro",
+     #   "Ep1_Scene_2_Toon_Rami",
+     #   "Ep1_Scene_3_Trudy",
         "Ep1_Scene_3_Trudy_RAG_Interview",
         "Ep1_Scene_4_Eddy",
         "Ep1_Scene_4_Eddy_RAG_Interview",

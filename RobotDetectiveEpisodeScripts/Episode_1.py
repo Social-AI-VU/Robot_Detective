@@ -50,11 +50,17 @@ from os.path import abspath, join
 
 from dotenv import load_dotenv
 from sic_framework.devices.common_desktop.desktop_speakers import SpeakersConf
+from runtime_patches import apply_runtime_patches
+
+apply_runtime_patches()
+
 from sic_framework.devices.desktop import Desktop
 
 from nardial.providers.device.desktop import DesktopAdapter
 from nardial.providers.tts.elevenlabs import ElevenLabsTTSProvider, ElevenLabsTTSConf
 from nardial.providers.nlu.written_keyword import WrittenKeywordNLUProvider
+from nardial.providers.llm.openai_gpt import OpenAIGPTProvider
+from nardial.providers.vector_store.redis_store import RedisVectorStoreProvider
 from nardial.conversation_agent import ConversationAgent
 from nardial.interaction_orchestrator import InteractionConfig
 from nardial.session_manager import SessionManager
@@ -67,7 +73,7 @@ import sys
 import tempfile
 
 
-load_dotenv(dotenv_path="../conf/.env")
+load_dotenv(dotenv_path=Path(__file__).resolve().parent.parent / "conf" / ".env")
 
 BASE_DIR = Path(__file__).resolve().parent
 REPO_ROOT = BASE_DIR.parent
@@ -180,7 +186,7 @@ if __name__ == '__main__':
 
     tts_conf = ElevenLabsTTSConf(
         api_key=os.getenv("ELEVENLABS_API_KEY", ""),
-        voice_id="9BWtsMINqrJLrRacOk9x",
+        voice_id="f2yUVfK5jdm78zlpcZ8C",  # Robin
         model_id="eleven_flash_v2_5",
     )
     tts = ElevenLabsTTSProvider(conf=tts_conf, device=device)
@@ -194,6 +200,14 @@ if __name__ == '__main__':
     interaction_config = InteractionConfig(post_speech_delay=0,
                                            signal_listening_behavior=False)
     nlu = WrittenKeywordNLUProvider()
+    llm = OpenAIGPTProvider(api_key=os.getenv("OPENAI_API_KEY"))
+    vector_store = RedisVectorStoreProvider(
+        embedding_model="text-embedding-3-large",
+        openai_api_key=os.getenv("OPENAI_API_KEY"),
+        index_name=DEFAULT_RAG_INDEX_NAME,
+        ingest_docs=False,
+        input_path=str(DOCS_DIR),
+    )
 
     # =========================
     # 3. CREATE AGENT
@@ -201,6 +215,8 @@ if __name__ == '__main__':
     agent = ConversationAgent(device=device,
                               tts_provider=tts,
                               nlu_provider=nlu,
+                              llm_provider=llm,
+                              vector_store=vector_store,
                               int_config=interaction_config)
 
     # =========================
@@ -212,10 +228,10 @@ if __name__ == '__main__':
     session_agenda = [
        # "Ep1_Scene_1_Intro",  # intro + meet Robin, collect name
        # "Ep1_Scene_2_Toon_Rami",  # Toon & Rami report the missing rollercoaster
-       # "Ep1_Scene_3_Trudy",  # interview Trudy (karaoke plan)
-       # "Ep1_Scene_3_Trudy_RAG_Interview",  # RAG-backed Trudy interview
-       # "Ep1_Scene_4_Eddy",  # interview Professor Eddy (puzzl=e)
-       # "Ep1_Scene_4_Eddy_RAG_Interview",  # RAG-backed Eddy interview
+        #"Ep1_Scene_3_Trudy",  # interview Trudy (karaoke plan)
+        "Ep1_Scene_3_Trudy_RAG_Interview",  # RAG-backed Trudy interview
+        "Ep1_Scene_4_Eddy",  # interview Professor Eddy (puzzl=e)
+        "Ep1_Scene_4_Eddy_RAG_Interview",  # RAG-backed Eddy interview
         "Ep1_Scene_5_Yoyo",
         "Ep1_Scene_5_Yoyo_RAG_Interview", # interview Yoyo RAG
         "Ep1_Scene_6_Jennifer",  # interview Jennifer

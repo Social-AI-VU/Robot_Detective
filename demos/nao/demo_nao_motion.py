@@ -32,7 +32,7 @@ class NaoMotionDemo(SICApplication):
         super(NaoMotionDemo, self).__init__()
 
         # Demo-specific initialization
-        self.nao_ip = "XXX"
+        self.nao_ip = "192.168.0.250"
         self.nao = None
 
         self.set_log_level(sic_logging.INFO)

@@ -1,50 +1,44 @@
 """
 Episode 1 RAG Ingestor — NarDial InteractionConfig style
 =========================================================
-Uses the same InteractionConfig + ConversationAgent pattern as demo_RAG_LLM_dialog.py
-so that ingestion goes through the same Redis datastore pipeline that actually works.
+Uses the RedisVectorStoreProvider directly to ingest character docs into Redis Vector DB.
 
 How to use:
 1. Start required services in separate terminals:
        run-redis --data-dir <path>
-       run-dialogflow
-       run-google-tts
        run-gpt
 2. Toggle characters you want to ingest below (INGEST_TOGGLES).
 3. Run:  python RAG_Vectors/RAG_Ingestion_Episode_1.py
 """
 
 from pathlib import Path
+import os
 import sys
 
-from nardial.conversation_agent import ConversationAgent
-from nardial.interaction_orchestrator import InteractionConfig
-
-from sic_framework.devices.common_desktop.desktop_speakers import SpeakersConf
-from sic_framework.devices.desktop import Desktop
+from dotenv import load_dotenv
+from nardial.providers.vector_store.redis_store import RedisVectorStoreProvider
 
 
 BASE_DIR = Path(__file__).resolve().parent
 REPO_ROOT = BASE_DIR.parent
 
-GOOGLE_KEYFILE_PATH = REPO_ROOT / "conf" / "google" / "google-key.json"
 ENV_FILE_PATH = REPO_ROOT / "conf" / ".env"
 DETECTIVE_DATA_DIR = REPO_ROOT / "Detective_Data"
 
 EMBEDDING_MODEL = "text-embedding-3-large"
-CHUNK_CHARS = 900
-CHUNK_OVERLAP = 120
+CHUNK_CHARS = 350
+CHUNK_OVERLAP = 60
 OVERRIDE_EXISTING = True
 FORCE_RECREATE_INDEX = False
 
 # ─── Toggle per character: True = ingest, False = skip ───────────────────────
 INGEST_TOGGLES = {
     "Trudy":   True,
-    "Eddy":    False,   # ← enable to ingest Eddy documents
-    "Jennifer": False,
-    "Robin":   False,
-    "Yoyo":    False,
-    "Dj_Kata": False,
+    "Eddy":    True,   # ← enable to ingest Eddy documents
+    "Jennifer": True,
+    "Robin":   True,
+    "Yoyo":    True,
+    "Dj_Kata": True,
 }
 
 # ─── Character source folders and target index names ─────────────────────────
@@ -62,39 +56,31 @@ def ingest_character(character: str, docs_dir: Path, index_name: str) -> tuple[b
     if not docs_dir.exists():
         return False, f"docs directory not found: {docs_dir}"
 
-    pdf_files = list(docs_dir.rglob("*.txt"))
-    if not pdf_files:
-        return False, f"no PDF files found in: {docs_dir}"
+    doc_files = list(docs_dir.rglob("*.txt"))
+    if not doc_files:
+        return False, f"no .txt files found in: {docs_dir}"
 
-    print(f"  [INFO] Found {len(pdf_files)} PDF file(s) in {docs_dir}")
+    print(f"  [INFO] Found {len(doc_files)} text file(s) in {docs_dir}")
     print(f"  [INFO] Ingesting into index '{index_name}' ...")
 
-    # Use same InteractionConfig pattern as demo_RAG_LLM_dialog.py
-    interaction_config = InteractionConfig(
-        google_keyfile_path=str(GOOGLE_KEYFILE_PATH),
-        env_file_path=str(ENV_FILE_PATH),
-        keyboard_input=True,
-        rag=True,
+    vector_store = RedisVectorStoreProvider(
+        embedding_model=EMBEDDING_MODEL,
+        openai_api_key=os.getenv("OPENAI_API_KEY", ""),
+        index_name=index_name,
         ingest_docs=True,
         input_path=str(docs_dir),
-        index_name=index_name,
-        embedding_model=EMBEDDING_MODEL,
         chunk_chars=CHUNK_CHARS,
         chunk_overlap=CHUNK_OVERLAP,
         override_existing=OVERRIDE_EXISTING,
         force_recreate_index=FORCE_RECREATE_INDEX,
     )
+    vector_store.close()
 
-    device = Desktop(speakers_conf=SpeakersConf(sample_rate=22050))
-
-    # ConversationAgent.__init__ triggers ingestion via InteractionOrchestrator._setup_rag
-    _agent = ConversationAgent(device_manager=device, int_config=interaction_config)
-    del _agent
-
-    return True, f"ingested {len(pdf_files)} PDF(s) -> index '{index_name}'"
+    return True, f"ingested {len(doc_files)} text file(s) -> index '{index_name}'"
 
 
 def main() -> int:
+    load_dotenv(dotenv_path=ENV_FILE_PATH)
     enabled = [c for c, on in INGEST_TOGGLES.items() if on]
     if not enabled:
         print("[INFO] No characters enabled for ingestion.")
@@ -102,8 +88,8 @@ def main() -> int:
         return 0
 
     print(f"[INFO] Characters to ingest: {enabled}")
-    print(f"[INFO] Google key: {GOOGLE_KEYFILE_PATH}")
     print(f"[INFO] Env file:   {ENV_FILE_PATH}")
+    print(f"[INFO] OPENAI_API_KEY present: {bool(os.getenv('OPENAI_API_KEY'))}")
 
     failures = []
 
@@ -141,4 +127,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
-

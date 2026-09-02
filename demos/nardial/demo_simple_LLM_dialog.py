@@ -7,7 +7,7 @@ The conversation flow is defined in:
     dialog_configs/simple_llm_dialogs.json
 
 Before running this demo, make sure you have completed the required setup steps.
-This demo depends on external services for speech, language understanding, and LLM responses.
+This demo depends on external services for speech and LLM responses.
 -------------------------
 1. Install dependencies
 -------------------------
@@ -19,7 +19,7 @@ This demo depends on external services for speech, language understanding, and L
 -------------------------
 You MUST create the following files:
 
-- Dialogflow / Google credentials: conf/google/google-key.json
+- Google credentials: conf/google/google-key.json
 - OpenAI API key: conf/.env
 Example `.env` entry:
     OPENAI_API_KEY="your key"
@@ -30,8 +30,6 @@ WARNING: Never commit credential files to version control.
 -------------------------
 You MUST run these in separate terminals BEFORE starting the demo:
 
-    redis-server conf/redis/redis.conf
-    run-dialogflow
     run-google-tts
     run-gpt
 =========================
@@ -41,6 +39,10 @@ You MUST run these in separate terminals BEFORE starting the demo:
 from nardial.conversation_agent import ConversationAgent
 from nardial.interaction_orchestrator import InteractionConfig
 from nardial.session_manager import SessionManager
+from nardial.providers.device.desktop import DesktopAdapter
+from nardial.providers.nlu.written_keyword import WrittenKeywordNLUProvider
+from nardial.providers.tts.google import GoogleTTSProvider, GoogleTTSConf
+from nardial.providers.llm.openai_gpt import OpenAIGPTProvider
 
 # Import SIC device(s), message(s), and service(s) we will be using
 from sic_framework.devices.common_desktop.desktop_speakers import SpeakersConf
@@ -48,7 +50,9 @@ from sic_framework.devices.desktop import Desktop
 
 # Import other necessary libraries
 from pathlib import Path
+import os
 import sys
+from dotenv import load_dotenv
 
 
 BASE_DIR = Path(__file__).resolve().parent
@@ -60,36 +64,55 @@ ENV_FILE_PATH = SIC_APPLICATIONS_DIR / "conf" / ".env"
 
 
 if __name__ == "__main__":
+    load_dotenv(dotenv_path=ENV_FILE_PATH)
+
     # =========================
     # 1. SELECT DEVICE
     # =========================
-    device = Desktop(
+    desktop = Desktop(
         speakers_conf=SpeakersConf(
             sample_rate=22050
         )
     )
+    device = DesktopAdapter(desktop)
 
     # =========================
     # 2. CONFIGURE INTERACTION
     # =========================
-    # Keep RAG disabled for a simple LLM-only flow.
     interaction_config = InteractionConfig(
-        google_keyfile_path=str(GOOGLE_KEYFILE_PATH),
-        env_file_path=str(ENV_FILE_PATH),
-        keyboard_input=True,
-        rag=False,
+        language="nl",
+        post_speech_delay=0,
+        signal_listening_behavior=False,
     )
 
     # =========================
-    # 3. CREATE AGENT
+    # 3. CREATE PROVIDERS
+    # =========================
+    tts = GoogleTTSProvider(
+        conf=GoogleTTSConf(
+            speaking_rate=1.0,
+            google_tts_voice_name="nl-NL-Wavenet-A",
+            google_tts_voice_gender="MALE",
+        ),
+        device=device,
+        keyfile_path=str(GOOGLE_KEYFILE_PATH),
+    )
+    nlu = WrittenKeywordNLUProvider()
+    llm = OpenAIGPTProvider(api_key=os.getenv("OPENAI_API_KEY"))
+
+    # =========================
+    # 4. CREATE AGENT
     # =========================
     agent = ConversationAgent(
-        device_manager=device,
+        device=device,
+        tts_provider=tts,
+        nlu_provider=nlu,
+        llm_provider=llm,
         int_config=interaction_config,
     )
 
     # =========================
-    # 4. SESSION MANAGER
+    # 5. SESSION MANAGER
     # =========================
     session_manager = SessionManager(
         session_agenda=[
@@ -103,11 +126,11 @@ if __name__ == "__main__":
     )
 
     # =========================
-    # 5. RUN SESSION
+    # 6. RUN SESSION
     # =========================
     session_manager.run()
 
     # =========================
-    # 6. CLEAN EXIT
+    # 7. CLEAN EXIT
     # =========================
     sys.exit()
