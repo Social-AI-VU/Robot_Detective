@@ -183,13 +183,13 @@ if __name__ == '__main__':
         # "Ep1_Scene_1_Intro",  # intro + meet Robin, collect name
         # "Ep1_Scene_2_Toon_Rami",  # Toon & Rami report the missing rollercoaster
         # "Ep1_Scene_3_Trudy",  # interview Trudy (karaoke plan)
-        "Ep1_Scene_3_Trudy_RAG_Interview",  # RAG-backed Trudy interview
-        "Ep1_Scene_4_Eddy",  # interview Professor Eddy (puzzl=e)
-        "Ep1_Scene_4_Eddy_RAG_Interview",  # RAG-backed Eddy interview
-        "Ep1_Scene_5_Yoyo",
-        "Ep1_Scene_5_Yoyo_RAG_Interview", # interview Yoyo RAG
-        "Ep1_Scene_6_Jennifer",  # interview Jennifer
-        "Ep1_Scene_6_Jennifer_LLM_Chat",  # initial LLM chat with Jennifer
+      #  "Ep1_Scene_3_Trudy_RAG_Interview",  # RAG-backed Trudy interview
+     #   "Ep1_Scene_4_Eddy",  # interview Professor Eddy (puzzl=e)
+      #  "Ep1_Scene_4_Eddy_RAG_Interview",  # RAG-backed Eddy interview
+      #  "Ep1_Scene_5_Yoyo",
+      #  "Ep1_Scene_5_Yoyo_RAG_Interview", # interview Yoyo RAG
+      #  "Ep1_Scene_6_Jennifer",  # interview Jennifer
+       # "Ep1_Scene_6_Jennifer_LLM_Chat",  # initial LLM chat with Jennifer
         "Ep1_Scene_6_Jennifer_RAG_Interview",  # RAG-backed Jennifer interview
         "Ep1_Scene_7_Dj_Kata",  # interview DJ Kata
         "Ep1_Scene_7_Dj_Kata_LLM_Chat",  # RAG-backed DJ Kata interview
