@@ -226,9 +226,9 @@ if __name__ == '__main__':
     # Scenes play in order; LLM chats follow their paired scene.
 
     session_agenda = [
-       # "Ep1_Scene_1_Intro",  # intro + meet Robin, collect name
-       # "Ep1_Scene_2_Toon_Rami",  # Toon & Rami report the missing rollercoaster
-        #"Ep1_Scene_3_Trudy",  # interview Trudy (karaoke plan)
+        "Ep1_Scene_1_Intro",  # intro + meet Robin, collect name
+        "Ep1_Scene_2_Toon_Rami",  # Toon & Rami report the missing rollercoaster
+        "Ep1_Scene_3_Trudy",  # interview Trudy (karaoke plan)
         "Ep1_Scene_3_Trudy_RAG_Interview",  # RAG-backed Trudy interview
         "Ep1_Scene_4_Eddy",  # interview Professor Eddy (puzzl=e)
         "Ep1_Scene_4_Eddy_RAG_Interview",  # RAG-backed Eddy interview

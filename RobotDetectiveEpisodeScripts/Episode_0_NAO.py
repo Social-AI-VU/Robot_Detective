@@ -61,7 +61,7 @@ INDEX_NAME = "episode_0_robin_docs"
 INGEST_DOCS = False
 PARTICIPANT_ID = os.getenv("PARTICIPANT_ID", "0")
 RESET_PARTICIPANT_STATE = os.getenv("RESET_PARTICIPANT_STATE", "1").strip().lower() in {"1", "true", "yes", "y"}
-NAO_IP = os.getenv("NAO_IP", "192.168.0.250")
+NAO_IP = os.getenv("NAO_IP", "10.0.0.221") #home 192.168.0.250
 
 DEFAULT_RAG_INDEX_NAME = "episode_0_robin_docs"
 
@@ -132,9 +132,38 @@ def print_startup_checks() -> None:
         print(f"[WARN] Could not inspect rag_enabled dialogs: {exc}")
 
 
+def reset_participant_state_if_needed() -> None:
+    if not RESET_PARTICIPANT_STATE:
+        return
+
+    candidate_paths = [
+        Path.cwd() / "participants" / f"{PARTICIPANT_ID}.json",
+        REPO_ROOT / "participants" / f"{PARTICIPANT_ID}.json",
+        REPO_ROOT / "RobotDetectiveEpisodeScripts" / "participants" / f"{PARTICIPANT_ID}.json",
+    ]
+
+    for path in candidate_paths:
+        try:
+            if path.exists():
+                path.unlink()
+                print(f"[RESET] Deleted participant state: {path}")
+        except Exception as exc:
+            print(f"[WARN] Could not delete participant state at {path}: {exc}")
+
+    try:
+        from nardial.user_model import UserModel
+
+        user_model = UserModel(participant_id=PARTICIPANT_ID)
+        user_model.clear_remote()
+        print(f"[RESET] Cleared remote continuity for participant {PARTICIPANT_ID}")
+    except Exception as exc:
+        print(f"[WARN] Could not clear remote participant continuity: {exc}")
+
+
 if __name__ == "__main__":
     load_dotenv(dotenv_path=ENV_FILE_PATH)
     print_startup_checks()
+    reset_participant_state_if_needed()
 
     nao = Nao(ip=NAO_IP)
     device = NaoAdapter(nao)
@@ -178,8 +207,8 @@ if __name__ == "__main__":
     )
 
     session_agenda = [
-        "Ep0_Scene_1_Intro",
-        "Ep0_Scene_2_Smaragd_Flat",
+       # "Ep0_Scene_1_Intro",
+       # "Ep0_Scene_2_Smaragd_Flat",
         "Ep0_Scene_3_Question_Intro",
         "Ep0_Scene_4_Student_Practice",
     ]

@@ -297,6 +297,7 @@
       {
         "type": "ask_open",
         "text": "Weet er iemand van jullie hoe je een goede vraag moet stellen?",
+        "character": "robin",
         "set_variable": "knows_question_concept",
         "add_interest_from_answer": false,
         "outcomes": {
@@ -326,7 +327,32 @@
       },
       {
         "type": "say",
-        "text": "Een goede vraag begint meestal met Wie, Wat, Waar, Waarom, of Hoe!",
+        "text": "Een goede vraag begint meestal met ",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Wie",
+        "character": "robin"
+      },
+       {
+        "type": "say",
+        "text": "Wat",
+        "character": "robin"
+      },
+       {
+        "type": "say",
+        "text": "Waar",
+        "character": "robin"
+      },
+       {
+        "type": "say",
+        "text": "Waarom",
+        "character": "robin"
+      },
+       {
+        "type": "say",
+        "text": "Hoe!",
         "character": "robin"
       },
       {

@@ -1,0 +1,297 @@
+[
+  {
+    "id": "Ep2_Scene_1_Intro",
+    "type": "narrative",
+    "thread": "episode_2_gigagiebels",
+    "position": 1,
+    "characters": {
+      "s_tegel": { "voice_settings": { "voice_id": "D50w2srwVohKTPx9X6Th", "language": "nl" } },
+      "robin": { "voice_settings": { "voice_id": "f2yUVfK5jdm78zlpcZ8C", "language": "nl" } },
+      "hazel": { "voice_settings": { "voice_id": "tfweP7lGJyLeNV9dH1Rm", "language": "nl" } },
+      "choukri": { "voice_settings": { "voice_id": "G9lzzm05bGAXnuymdcqF", "language": "nl" } },
+      "heike": { "voice_settings": { "voice_id": "aIIUR1U2SFQm8PBmlNKP", "language": "nl" } },
+      "jennifer": { "voice_settings": { "voice_id": "G6fmUXq3ziFf6Uae1jFh", "language": "nl" } },
+      "eddy": { "voice_settings": { "voice_id": "X6ofsaMkHh5Ms1hBa7Rn", "language": "nl" } },
+      "toon": { "voice_settings": { "voice_id": "tvFp0BgJPrEXGoDhDIA4", "language": "nl" } },
+      "rami": { "voice_settings": { "voice_id": "7OMIHDA6SHxNlNDgPRdB", "language": "nl" } }
+    },
+    "moves": [
+      { "type": "animation", "animation_name": "animations/Stand/Gestures/Explain_1" },
+      { "type": "say", "text": "Goedemiddag luistervinkjes en luisteraars!", "character": "s_tegel" },
+      { "type": "animation", "animation_name": "animations/Stand/Gestures/Explain_2" },
+      { "type": "say", "text": "Wat is het te gek dat je luistert naar de Onderste Steen Boven.", "character": "s_tegel" },
+      { "type": "animation", "animation_name": "animations/Stand/Gestures/Explain_3" },
+      { "type": "say", "text": "Waarin ik detective S. Tegel antwoorden vind op de grootste mysteries van De Smaragd.", "character": "s_tegel" },
+      { "type": "animation", "animation_name": "animations/Stand/Gestures/Explain_6" },
+      { "type": "say", "text": "Ik ontmasker leugens.", "character": "s_tegel" },
+      { "type": "say", "text": "Ik klaar geheimen op.", "character": "s_tegel" },
+      { "type": "say", "text": "En ik gebruik mijn uitmuntende speurdersneus om alles waar een luchtje aan zit op te sporen.", "character": "s_tegel" },
+      { "type": "animation", "animation_name": "animations/Stand/Gestures/Explain_4" },
+      { "type": "say", "text": "Ik sta hier op de zevende en hoogste verdieping van torenflat de Smaragd,", "character": "s_tegel" },
+      { "type": "animation", "animation_name": "animations/Stand/Gestures/Explain_5" },
+      { "type": "say", "text": "en ik kijk uit op de grijze golven van zee in de verte voorbij Donderstad.", "character": "s_tegel" },
+      { "type": "animation", "animation_name": "animations/Stand/Gestures/Explain_7" },
+      { "type": "say", "text": "Er gebeuren hier vaak mysterieuze zaken.", "character": "s_tegel" },
+      { "type": "say", "text": "Er gebeuren hier vaak raadselachtige kwesties.", "character": "s_tegel" },
+      { "type": "say", "text": "Er gebeuren hier vaak geheimzinnige dingen.", "character": "s_tegel" },
+      { "type": "animation", "animation_name": "animations/Stand/Gestures/Explain_8" },
+      { "type": "say", "text": "Dus stel ik die vragen.", "character": "s_tegel" },
+      { "type": "say", "text": "Ik traceer de sporen.", "character": "s_tegel" },
+      { "type": "say", "text": "Ik graaf door tot de onderste steen boven ligt.", "character": "s_tegel" },
+      { "type": "animation", "animation_name": "animations/Stand/Gestures/Explain_3" },
+      { "type": "say", "text": "Oh hallo daar!", "character": "robin" },
+      { "type": "animation", "animation_name": "animations/Stand/Gestures/Explain_11" },
+      { "type": "say", "text": "Mijn naam is Robin, de Robotdetective!", "character": "robin" },
+      {
+        "type": "ask_open",
+        "text": "En wie zijn jullie?",
+        "set_variable": "name",
+        "add_interest_from_answer": true,
+        "outcomes": {
+          "*": "has_name"
+        },
+        "default_outcome": "no_name"
+      },
+      {
+        "type": "branch",
+        "on": "outcome",
+        "cases": {
+          "has_name": [
+            { "type": "animation", "animation_name": "animations/Stand/Gestures/Explain_1" },
+            { "type": "say", "text": "Hoi allemaal!", "character": "robin" },
+            { "type": "animation", "animation_name": "animations/Stand/Gestures/Explain_4" },
+            { "type": "say", "text": "Wat gezellig dat jullie er weer bij zijn!", "character": "robin" }
+          ],
+          "no_name": [
+            { "type": "animation", "animation_name": "animations/Stand/Gestures/Explain_2" },
+            { "type": "say", "text": "Ohjee dat verstond ik niet helemaal, maar geen nood!", "character": "robin" }
+          ]
+        }
+      },
+      { "type": "ask_llm", "prompt": "Je bent Robin de Robotdetective. Voer een korte, speelse kennismaking in het Nederlands met kinderen. Vraag wie ze zijn en help hun antwoorden verwerken in een kort gesprek. Houd het heel kort. Begin je zinnen NIET met wauw. Gebruik GEEN EMOJIS. Stel maximaal 1 korte vervolgvraag per beurt.", "max_turns": 4, "set_variable": "name_chat", "character": "robin", "rag_enabled": true, "index_name": "episode_2_robin_docs" },
+      { "type": "say", "text": "Willen jullie ons helpen?", "character": "s_tegel" }
+    ]
+  },
+  {
+    "id": "Ep2_Scene_2_Mystery",
+    "type": "narrative",
+    "thread": "episode_2_gigagiebels",
+    "position": 2,
+    "characters": {
+      "s_tegel": { "voice_settings": { "voice_id": "D50w2srwVohKTPx9X6Th", "language": "nl" } },
+      "robin": { "voice_settings": { "voice_id": "f2yUVfK5jdm78zlpcZ8C", "language": "nl" } },
+      "hazel": { "voice_settings": { "voice_id": "tfweP7lGJyLeNV9dH1Rm", "language": "nl" } }
+    },
+    "moves": [
+      { "type": "say", "text": "Vandaag heb ik weer een onopgelost mysterie voor jullie, namelijk het mysterie van de Gigagiebels.", "character": "s_tegel" },
+      { "type": "say", "text": "Ik liep vandaag wat nietsvermoedend door de gangen van de Smaragd, op zoek naar een nieuwtje, toen ik plots een erg vreemd geluid in het trapgat hoorde.", "character": "s_tegel" },
+      { "type": "say", "text": "Het was Hazel, Hazel Hellastrong die alle verdiepingen van de flat naar beneden stuiterde.", "character": "s_tegel" },
+      { "type": "say", "text": "Ik rook natuurlijk meteen een mysterie dus ik snelde me achter Hazel aan naar beneden toe.", "character": "s_tegel" },
+      { "type": "say", "text": "Hazel? Wat is er gebeurd?", "character": "s_tegel" },
+      { "type": "say", "text": "Je begrijpt dat ik nogal in de war ben. Mevrouw Hellastrong is net heel hard gevallen, maar ze kan alleen maar lachen.", "character": "s_tegel" },
+      { "type": "say", "text": "Hazel schreef iets op een briefje waar ik niks van begreep. Jullie gaan dat ontcijferen.", "character": "s_tegel" }
+    ]
+  },
+  {
+    "id": "Ep2_Scene_3_Robin_Intro",
+    "type": "narrative",
+    "thread": "episode_2_gigagiebels",
+    "position": 3,
+    "characters": {
+      "robin": { "voice_settings": { "voice_id": "f2yUVfK5jdm78zlpcZ8C", "language": "nl" } }
+    },
+    "moves": [
+      { "type": "say", "text": "Goedemiddag. Mijn naam is Robin en ik ben een robotdetective.", "character": "robin" },
+      { "type": "ask_llm", "prompt": "Je bent Robin de Robotdetective. Voer een korte, vrolijke Q&A in het Nederlands met kinderen over vragen stellen, hobby's en detectivewerk. Houd antwoorden kort (1-2 zinnen), stel maximaal 1 korte vervolgvraag per beurt, begin niet met wauw en gebruik geen emojis.", "max_turns": 3, "set_variable": "robin_intro_chat", "character": "robin", "rag_enabled": true, "index_name": "episode_2_robin_docs" },
+      { "type": "say", "text": "Een goede detective stelt veel vragen.", "character": "robin" },
+      { "type": "say", "text": "Niet alleen over het mysterie.", "character": "robin" },
+      { "type": "say", "text": "Maar ook over andere zaken.", "character": "robin" },
+      { "type": "say", "text": "Zo krijgen we een volledig plaatje.", "character": "robin" }
+    ]
+  },
+  {
+    "id": "Ep2_Scene_4_Helpt_zoeken",
+    "type": "narrative",
+    "thread": "episode_2_gigagiebels",
+    "position": 4,
+    "characters": {
+      "robin": { "voice_settings": { "voice_id": "f2yUVfK5jdm78zlpcZ8C", "language": "nl" } }
+    },
+    "moves": [
+      { "type": "say", "text": "Oké we gaan van start.", "character": "robin" },
+      { "type": "say", "text": "Ga naar pagina (…) van jullie detectiveboek.", "character": "robin" },
+      { "type": "say", "text": "We moeten eerst Hazel's boodschap ontcijferen.", "character": "robin" },
+      { "type": "say", "text": "Ga eerst zelf aan de slag.", "character": "robin" },
+      { "type": "say", "text": "Houd het antwoord voor jezelf.", "character": "robin" },
+      { "type": "say", "text": "Overleg dan met elkaar.", "character": "robin" },
+      { "type": "say", "text": "Vertel mij wat er staat!", "character": "robin" },
+      { "type": "say", "text": "Willen jullie mij helpen met dit mysterie?", "character": "robin" },
+      { "type": "say", "text": "Joepie! Dat is super lief van jullie!", "character": "robin" }
+    ]
+  },
+  {
+    "id": "Ep2_Scene_5_Heike_Choukri",
+    "type": "narrative",
+    "thread": "episode_2_gigagiebels",
+    "position": 5,
+    "characters": {
+      "heike": { "voice_settings": { "voice_id": "aIIUR1U2SFQm8PBmlNKP", "language": "nl" } },
+      "jennifer": { "voice_settings": { "voice_id": "G6fmUXq3ziFf6Uae1jFh", "language": "nl" } },
+      "choukri": { "voice_settings": { "voice_id": "G9lzzm05bGAXnuymdcqF", "language": "nl" } },
+      "robin": { "voice_settings": { "voice_id": "f2yUVfK5jdm78zlpcZ8C", "language": "nl" } }
+    },
+    "moves": [
+      { "type": "say", "text": "Oké we gaan naar Choukri of Heike.", "character": "robin" },
+      { "type": "say", "text": "Naar welke verdieping moeten we toe?", "character": "robin" },
+      { "type": "say", "text": "Robin: Heike woont samen met haar moeder Jennifer.", "character": "robin" },
+      { "type": "say", "text": "Laten we aanbellen bij hun deur en zien of ze thuis is.", "character": "robin" },
+      { "type": "say", "text": "Hallo Jennifer, wij zijn op zoek naar Heike is ze thuis?", "character": "robin" },
+      { "type": "say", "text": "Heike is niet thuis. Meestal is ze aan het skateboarden door de Smaragd.", "character": "jennifer" },
+      { "type": "ask_llm", "prompt": "Je bent Heike. Voer een korte, vrolijke chitchat in het Nederlands met kinderen. Praat over skateboarden of wat hen blij maakt. Houd het kort (1-2 zinnen), enthousiast en kindvriendelijk. Begin niet met wauw en gebruik geen emojis.", "max_turns": 2, "set_variable": "heike_chat", "character": "heike", "rag_enabled": true, "index_name": "episode_2_heike_docs" },
+      { "type": "say", "text": "Robin: Kijk, daar is Choukri’s appartement.", "character": "robin" },
+      { "type": "say", "text": "Zie je die hele donkere deur?", "character": "robin" },
+      { "type": "say", "text": "Laten we aankloppen.", "character": "robin" },
+      { "type": "say", "text": "Hallo wat kan ik voor u doen? Kom binnen, kom binnen.", "character": "choukri" },
+      { "type": "say", "text": "Mijn naam is Choukri. Ik hou van donker, pudding en bezoek.", "character": "choukri" },
+      { "type": "ask_llm", "prompt": "Je bent Choukri. Voer een korte, warme chitchat in het Nederlands met kinderen. Praat over pudding, donker, bezoek of wat iemand vrolijk maakt. Houd antwoorden kort (1-2 zinnen), stel maximaal 1 korte vervolgvraag per beurt, begin niet met wauw en gebruik geen emojis.", "max_turns": 2, "set_variable": "choukri_chat", "character": "choukri", "rag_enabled": true, "index_name": "episode_2_choukri_docs" }
+    ]
+  },
+  {
+    "id": "Ep2_Scene_5_Choukri_RAG_Interview",
+    "type": "llm_based",
+    "thread": "episode_2_gigagiebels",
+    "position": 5.6,
+    "character": "choukri",
+    "characters": {
+      "choukri": { "voice_settings": { "voice_id": "G9lzzm05bGAXnuymdcqF", "language": "nl" } }
+    },
+    "prompt": "Je bent Choukri. Gebruik opgehaalde kennis over Choukri en episode 2 wanneer die relevant is. Praat in het Nederlands, warm, gastvrij en rustig, geschikt voor kinderen van 8-11 jaar oud. Beantwoord detectivevragen over de flat, het gelach van Hazel, de Gigagiebels en wat je hebt gehoord of gezien. Verzin geen nieuwe feiten buiten de opgehaalde kennis. Houd antwoorden in 1 tot 3 zinnen en stel maximaal één korte vervolgvraag per beurt. Als de gebruiker aangeeft klaar te zijn, sluit kort af met <<QUIT>>.",
+    "max_turns": 10,
+    "speak_first": false,
+    "duration": 300,
+    "rag_enabled": true,
+    "index_name": "episode_2_choukri_docs",
+    "quit_phrases": ["klaar", "stop", "doei", "dag", "bye", "goodbye"],
+    "moves": []
+  },
+  {
+    "id": "Ep2_Scene_6_Eddy",
+    "type": "narrative",
+    "thread": "episode_2_gigagiebels",
+    "position": 6,
+    "characters": {
+      "eddy": { "voice_settings": { "voice_id": "X6ofsaMkHh5Ms1hBa7Rn", "language": "nl" } },
+      "robin": { "voice_settings": { "voice_id": "f2yUVfK5jdm78zlpcZ8C", "language": "nl" } }
+    },
+    "moves": [
+      { "type": "say", "text": "Waar woont Eddy?", "character": "robin" },
+      { "type": "say", "text": "Juist, Eddy woont op de (…) etage.", "character": "robin" },
+      { "type": "say", "text": "Eddy is de professor van de Smaragd.", "character": "robin" },
+      { "type": "say", "text": "Hij heeft scheikunde en natuurkunde gestudeerd.", "character": "robin" },
+      { "type": "say", "text": "Nu is hij met pensioen.", "character": "robin" },
+      { "type": "say", "text": "Maar hij doet nog steeds veel experimenten in zijn lab.", "character": "robin" },
+      { "type": "say", "text": "Laten we de trap nemen.", "character": "robin" },
+      { "type": "say", "text": "Wel goed je voeten optillen hoor.", "character": "robin" },
+      { "type": "say", "text": "We willen niet net als Hazel van de trap vallen.", "character": "robin" },
+      { "type": "say", "text": "Kijk daar is Eddy’s deur.", "character": "robin" },
+      { "type": "say", "text": "Wat vreemd.", "character": "robin" },
+      { "type": "say", "text": "De deur staat op een kiertje.", "character": "robin" },
+      { "type": "say", "text": "Waarom zou dat zijn?", "character": "robin" },
+      { "type": "say", "text": "Laten we Eddy roepen.", "character": "robin" },
+      { "type": "say", "text": "Goedemiddag daar. Mijn naam is professor Eddy.", "character": "eddy" },
+      { "type": "ask_llm", "prompt": "Je bent professor Eddy. Voer een korte, nieuwsgierige chat in het Nederlands met kinderen over wetenschap, moleculen en hun interesses. Houd antwoorden kort (1-2 zinnen), vrolijk en duidelijk. Begin niet met wauw en gebruik geen emojis.", "max_turns": 2, "set_variable": "eddy_chat", "character": "eddy", "rag_enabled": true, "index_name": "episode_2_eddy_docs" },
+      { "type": "say", "text": "Eddy heeft een cactus die hij de koningin van de nacht noemt.", "character": "eddy" },
+      { "type": "say", "text": "De enige aan wie hij precies heeft verteld wat de bloembladeren kunnen doen zijn Toon en Rami.", "character": "eddy" }
+    ]
+  },
+  {
+    "id": "Ep2_Scene_6_Eddy_RAG_Interview",
+    "type": "llm_based",
+    "thread": "episode_2_gigagiebels",
+    "position": 6.6,
+    "character": "eddy",
+    "characters": {
+      "eddy": { "voice_settings": { "voice_id": "X6ofsaMkHh5Ms1hBa7Rn", "language": "nl" } }
+    },
+    "prompt": "Je bent Professor Eddy. Gebruik opgehaalde kennis over Eddy, de koningin van de nacht-cactus en episode 2 wanneer die relevant is. Praat in het Nederlands, slim, vriendelijk en professorachtig in simpele taal voor kinderen van 8-11 jaar. Beantwoord detectivevragen over je cactus, de bloembladeren, de effecten daarvan en je vermoedens rond het onbeheersbare lachen. Houd antwoorden in 1 tot 3 zinnen. Als de gebruiker aangeeft klaar te zijn, sluit kort af met <<QUIT>>.",
+    "max_turns": 10,
+    "speak_first": false,
+    "duration": 300,
+    "rag_enabled": true,
+    "index_name": "episode_2_eddy_docs",
+    "quit_phrases": ["klaar", "stop", "doei", "dag", "bye", "goodbye"],
+    "moves": []
+  },
+  {
+    "id": "Ep2_Scene_7_Toon_Rami",
+    "type": "narrative",
+    "thread": "episode_2_gigagiebels",
+    "position": 7,
+    "characters": {
+      "toon": { "voice_settings": { "voice_id": "tvFp0BgJPrEXGoDhDIA4", "language": "nl" } },
+      "rami": { "voice_settings": { "voice_id": "7OMIHDA6SHxNlNDgPRdB", "language": "nl" } },
+      "robin": { "voice_settings": { "voice_id": "f2yUVfK5jdm78zlpcZ8C", "language": "nl" } },
+      "s_tegel": { "voice_settings": { "voice_id": "D50w2srwVohKTPx9X6Th", "language": "nl" } }
+    },
+    "moves": [
+      { "type": "say", "text": "Volgens Eddy zit er maar één ding op.", "character": "robin" },
+      { "type": "say", "text": "We moeten naar Toon en Rami.", "character": "robin" },
+      { "type": "say", "text": "Toon en Rami zijn broers.", "character": "robin" },
+      { "type": "say", "text": "Ze zijn onafscheidelijk.", "character": "robin" },
+      { "type": "say", "text": "De meeste mensen halen ze door elkaar.", "character": "robin" },
+      { "type": "say", "text": "Ze hebben ook de gewoonte om elkaars zinnen af te maken.", "character": "robin" },
+      { "type": "say", "text": "Dag detectives en Robin. Ik kom even inchecken. Hoe staat het ervoor met het mysterie?", "character": "s_tegel" },
+      { "type": "say", "text": "We gaan naar Toon en Rami op de bovenste etage van de Smaragd.", "character": "robin" },
+      { "type": "say", "text": "Hey, what's up. Wij zijn Toon. En Rami.", "character": "toon" },
+      { "type": "say", "text": "Wij wonen hier met z'n tweetjes.", "character": "toon" },
+      { "type": "ask_llm", "prompt": "Je bent Toon. Voer een korte chitchat in het Nederlands met kinderen samen met Rami. Praat over samenwonen, scheikunde en hun rommelige kamer. Houd antwoorden kort (1-2 zinnen), spreek speels en gebruik geen emojis.", "max_turns": 2, "set_variable": "toon_chat", "character": "toon", "rag_enabled": true, "index_name": "episode_2_toon_docs" },
+      { "type": "ask_llm", "prompt": "Je bent Rami. Voer een korte chitchat in het Nederlands met kinderen. Praat rustig over scheikunde, leren en wat hij weet over de cactus. Houd antwoorden kort (1-2 zinnen), stel maximaal 1 korte vervolgvraag per beurt en gebruik geen emojis.", "max_turns": 2, "set_variable": "rami_chat", "character": "rami", "rag_enabled": true, "index_name": "episode_2_rami_docs" }
+    ]
+  },
+  {
+    "id": "Ep2_Scene_7_Toon_Rami_RAG_Interview",
+    "type": "llm_based",
+    "thread": "episode_2_gigagiebels",
+    "position": 7.6,
+    "character": "rami",
+    "characters": {
+      "toon": { "voice_settings": { "voice_id": "tvFp0BgJPrEXGoDhDIA4", "language": "nl" } },
+      "rami": { "voice_settings": { "voice_id": "7OMIHDA6SHxNlNDgPRdB", "language": "nl" } }
+    },
+    "prompt": "Je bent Rami (en Toon helpt soms mee). Gebruik opgehaalde kennis over Toon, Rami en episode 2 wanneer die relevant is. Praat in het Nederlands, een beetje nerveus maar eerlijk en vriendelijk voor kinderen. Beantwoord detectivevragen over wat er met de cactus is gebeurd, het brouwen van het drankje en de gigagiebels. Wees eerst wat terughoudend, maar vertel de waarheid als de detectives doorvragen. Houd antwoorden in 1 tot 3 zinnen. Als de gebruiker aangeeft klaar te zijn, sluit kort af met <<QUIT>>.",
+    "max_turns": 10,
+    "speak_first": false,
+    "duration": 300,
+    "rag_enabled": true,
+    "index_name": "episode_2_rami_docs",
+    "quit_phrases": ["klaar", "stop", "doei", "dag", "bye", "goodbye"],
+    "moves": []
+  },
+  {
+    "id": "Ep2_Scene_8_Ontknoping",
+    "type": "narrative",
+    "thread": "episode_2_gigagiebels",
+    "position": 8,
+    "characters": {
+      "s_tegel": { "voice_settings": { "voice_id": "D50w2srwVohKTPx9X6Th", "language": "nl" } },
+      "robin": { "voice_settings": { "voice_id": "f2yUVfK5jdm78zlpcZ8C", "language": "nl" } },
+      "hazel": { "voice_settings": { "voice_id": "tfweP7lGJyLeNV9dH1Rm", "language": "nl" } },
+      "choukri": { "voice_settings": { "voice_id": "G9lzzm05bGAXnuymdcqF", "language": "nl" } },
+      "heike": { "voice_settings": { "voice_id": "aIIUR1U2SFQm8PBmlNKP", "language": "nl" } },
+      "eddy": { "voice_settings": { "voice_id": "X6ofsaMkHh5Ms1hBa7Rn", "language": "nl" } },
+      "toon": { "voice_settings": { "voice_id": "tvFp0BgJPrEXGoDhDIA4", "language": "nl" } },
+      "rami": { "voice_settings": { "voice_id": "7OMIHDA6SHxNlNDgPRdB", "language": "nl" } }
+    },
+    "moves": [
+      { "type": "say", "text": "Jullie hebben gelijk. Ik heb het gedaan. Sorry, het spijt me echt.", "character": "rami" },
+      { "type": "say", "text": "Het zit zo.", "character": "rami" },
+      { "type": "say", "text": "Ik wilde gewoon dat de mensen in de flat weer blij werden.", "character": "rami" },
+      { "type": "say", "text": "Dat Choukri weer lachte.", "character": "rami" },
+      { "type": "say", "text": "Dat Heike weer zoefde.", "character": "rami" },
+      { "type": "say", "text": "En dat Hazel weer vrolijk werd.", "character": "rami" },
+      { "type": "say", "text": "Geluk is helaas niet zo makkelijk.", "character": "s_tegel" },
+      { "type": "say", "text": "Iemand anders gelukkig proberen te maken, zonder te vragen waar die blij van wordt, kan helemaal niet!", "character": "s_tegel" },
+      { "type": "say", "text": "Dankjulliewel voor jullie inzet. Jullie hebben bewezen dat jullie echt detectives zijn!", "character": "s_tegel" }
+    ]
+  }
+]

@@ -65,7 +65,7 @@ INGEST_DOCS = False
 PARTICIPANT_ID = os.getenv("PARTICIPANT_ID", "3")
 RESET_PARTICIPANT_STATE = os.getenv("RESET_PARTICIPANT_STATE", "1").strip().lower() in {"1", "true", "yes", "y"}
 AUDIO_HEARTBEAT = os.getenv("AUDIO_HEARTBEAT", "1").strip().lower() in {"1", "true", "yes", "y"}
-NAO_IP = os.getenv("NAO_IP", "192.168.0.250")
+NAO_IP = os.getenv("NAO_IP", "10.0.0.221") #192.168.0.250 home
 
 DEFAULT_RAG_INDEX_NAME = "episode_1_trudy_docs"
 

@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent
 REPO_ROOT = BASE_DIR.parent
 
 ENV_FILE_PATH = REPO_ROOT / "conf" / ".env"
-DETECTIVE_DATA_DIR = REPO_ROOT / "Detective_Data"
+DETECTIVE_DATA_DIR = REPO_ROOT / "Episode_1_Detective_Data"
 
 EMBEDDING_MODEL = "text-embedding-3-large"
 CHUNK_CHARS = 350
@@ -33,12 +33,12 @@ FORCE_RECREATE_INDEX = False
 
 # ─── Toggle per character: True = ingest, False = skip ───────────────────────
 INGEST_TOGGLES = {
-    "Trudy":   False,
-    "Eddy":    False,   # ← enable to ingest Eddy documents
+    "Trudy":   True,
+    "Eddy":    True,   # ← enable to ingest Eddy documents
     "Jennifer": True,
-    "Robin":   False,
-    "Yoyo":    False,
-    "Dj_Kata": False,
+    "Robin":   True,
+    "Yoyo":    True,
+    "Dj_Kata": True,
 }
 
 # ─── Character source folders and target index names ─────────────────────────

@@ -1,0 +1,476 @@
+﻿Het mysterie van de kapotte intercom
+
+
+Scène 1 - Introductie Stoep Tegel
+
+
+[algemene informatie, introductie flat et cetera]
+
+
+________________
+
+
+Scène 2 - Introductie mysterie[a]
+
+
+S TEGEL                        Hallo? Robin, detectives, horen jullie mij?
+
+
+[antwoord kinderen]
+
+
+S TEGEL                        Oh, gelukkig – ik weet niet wàt er precies aan de hand is, 
+maar de intercom maakt enorm rare geluiden! Luister maar eens: [geluid van krakende intercom]
+
+
+Het is zó erg dat ik me amper kan concentreren op mijn speurwerk. En wanneer er iemand aanbelt beneden hoor of zie ik helemaal niets! Wat als een geweldig mysterie bij mij probeert aan te bellen? Dan zou ik het zomaar missen door die kapotte intercom!   
+
+
+Het lijkt wel alsof er altijd iets mankeert aan deze flat… Is het niet de haperende lift dan is het wel een kapotte intercom! Zo blijf ik toch altijd maar aan het speuren en rapporteren, het lijkt wel tot in het oneindige toe.
+
+
+Robin, ik moet echt verder met mijn speurwerk, maar als ik steeds wordt onderbroken door een [geluid krakende intercom] – door dat! – dan lukt het natuurlijk niet om mijn hoofd erbij te houden. Kun je alsjeblieft de oorsprong van dit kabaal opzoeken?
+
+
+ROBIN                          Goedemiddag. Mijn naam is Robin en ik ben een 
+robotdetective. Ik woon samen met S. Tegel in de flat de Smaragd en ik help haar met het oplossen van mysteries. S. Tegel en ik kunnen wel een beetje hulp gebruiken bij het oplossen van dit mysterie. Willen jullie mij helpen? Laten we eerst even oefenen met het stellen van vragen. Wat willen jullie van mij weten? (RAG: Backstory Robin)
+
+
+ROBIN                         Dat gaat al heel goed. Ik kan zien dat jullie een
+speurdersneus hebben voor mysterieuze zaken.
+
+
+Een goede detective stelt veel vragen. Niet alleen over het mysterie maar ook over andere zaken. Bijvoorbeeld wat iemands hobby is? Of wat de relaties zijn met de andere bewoners van de flat. Zo krijgen we een volledig plaatje. Een goede detective weet de vier w’s. Wat, waar, wanneer en waarom. (hier voorbeeldvragen met de 4 w’s)[b][c] Jullie hebben ook werkbladen gekregen. Achteraf moet je dus alle blokjes in kunnen vullen. Hebben jullie nog vragen of zullen we van start gaan?
+
+
+[antwoord kinderen]
+________________
+
+
+Scène 3 – DJ Kata
+
+
+We staan voor de deur van het flatgebouw de Smaragd en bellen aan bij de intercom. Normaal klinkt er een scherpe beltoon, maar nu blijft het stil. Ook de camera licht niet op.
+
+
+ROBIN                        Mevrouw S. Tegel had gelijk, de intercom reageert 
+nergens op. Bezoek ontvangen wordt zo wel erg lastig. En hoe gaan wij eigenlijk binnenkomen?!
+
+
+Door het glas in de deur zien we een figuur in de gang rondlopen. We zien de rug van DJ Kata, ze is aan het rommelen aan een paneel. Haar hoofd wiegt mee met de muziek die ze luistert op haar koptelefoon.
+
+
+[hard aankloppen]
+
+
+We zien dat DJ Kata haar koptelefoon afdoet en omkijkt[d]. Eerst kijkt ze verbaasd, maar dan lacht ze en komt naar de deur rennen. Ze draagt een trui met daarop de naam van een artiest waar we nog nooit van hebben gehoord.[e] Aan haar broek bungelen meerdere USB-sticks die ze gebruikt voor haar dj-sets. Ze opent de deur met een glimlach.
+
+
+DJ KATA                          Yo boss! Mini-baasjes. Ik had jullie bijna niet gehoord. Ik 
+ben DJ Kata, ik woon hier beneden in de kelder die ik heb getransformeerd tot sicke discotheek. Als ik daar niet mijn muziek aan het draaien ben dan ben ik wel nieuwe geluiden aan het opnemen om te gebruiken in mijn mixes! Ik houd echt heel erg van technologie en experiment, dus je vindt me vaak met mijn vingers op de draaitafel of verstrengeld in draden van apparaten.[f][g] Zeg Robin, als je straks nog wat tijd over hebt, kom dan langs de studio. Je kan vast hele nice sounds maken, ben benieuwd of we een robottrack kunnen opnemen samen…
+
+
+DJ Kata buigt voor Robin en de detectives.
+
+
+ROBIN                        Goedemiddag mevrouw DJ Kata. Het klopt dus dat de 
+intercom het niet doet?
+
+
+DJ KATA                         Yes, klopt. De intercom is haywire gegaan, hij is helemaal 
+kapot, echt balen want ik wou net mijn nieuwe song afspelen. Iedereen moet die horen, het is echt fire, echt een goede track.[h] De samples joh, je kan je er niets bij voorstellen! Ik was net bezig de intercom te fiksen, zodat ik mijn beats kan laten horen, maar er is echt iets helemaal fout…
+
+
+Hey, kunnen jullie me niet helpen? Jij bent een robot, toch? Zijn jij en die intercom niet een soort van brothers from another mother? Hebben jullie niet dezelfde technologie en zo?
+
+
+ROBIN                        Uhm… Nou ja… Ik denk dat ik wel iets geavanceerdere 
+systemen heb dan de intercom… 
+
+
+DJ KATA                         Oh ja, loud and clear, ik hoor je. Maar ik dacht gewoon: 
+master Robin weet vast het een en ander van technologie. Gezien je, je weet wel, je robot zijn! Kijk anders een seconde, misschien zie ik iets compleet over het hoofd.
+
+
+[bedradingspuzzel]
+
+
+DJ KATA                        Wow, nice! Dat hebben jullie echt snel ff gefikst! Pfoeh, 
+wat een rust opeens zonder al die herrie. Normaal houd ik van herrie[i], dat weten jullie, maar dit ging mij zelfs te ver.
+
+
+ROBIN                        Geen probleem mevrouw DJ Kata. We doen onderzoek 
+naar dit mysterieuze voorval, zouden we u wat vragen mogen stellen over de kapotte intercom?
+
+
+[LLM ondervraging]
+
+
+S. TEGEL                Robin! Detectives! Ik ben iets op het spoor gekomen. Spits jullie 
+oren[j], want dit is een erg sappige roddel. 
+
+
+[opname:
+
+
+TRUDY                Och gossie – wat een… [psssshhhkkk] Moet DJ Kata nou altijd 
+die mixes van haar over de intercom laten horen? [krrrr] … beter in de discotheek [ttttttkkk] daar iets aan doen!
+]        
+
+
+S. TEGEL                Hmmm.. dat klinkt verdacht! Misschien kunnen jullie eens kijken 
+wat Trudy weet over de kapotte intercom.
+
+
+[outro Robin]
+
+
+________________
+
+
+Scène 4 – Trudy
+
+
+[#transitieROBIN]
+
+
+De voordeur van Trudy is paars geschilderd. Haar bel heeft de vorm van een madeliefje[k], wanneer we het indrukken klinkt er een vrolijk melodietje [geluid?].
+
+
+TRUDY                Oh hallo! Ik ben Trudy, sinds een aantal jaar ben ik met pensioen [l]
+en dat vind ik geweldig! Zo veel tijd om al mijn hobby’s uit te voeren en interessante nieuwe mensen te ontmoeten! Vroeger was ik taxichauffeur, dat vond ik ook geweldig.[m] Door mijn baan als chauffeur ben ik het helemaal gewend om met mensen te kletsen en de hele wereld over te reizen. Wat een leuke verrassing dat jullie hier zijn! Sorry dat ik niet mijn normaal zo enthousiaste verschijning ben, ik kon maar niet slapen door die rottige intercom! En dat is heel onhandig want straks moet ik nog naar zangles en dan met Hazel ga ik nog een stuk wandelen, voordat ik hier mijn was moet opvouwen, zodat ik daarna nog met Jennifer de leenauto kan opruimen! Dat bakbeest heeft echt nodig hoor, ik weet niet wie daar de hele tijd sinaasappelsap morst,[n] maar het loopt uit de klauwen! Dus ja, het is heel onhandig dat ik nu mijn dutje niet heb kunnen doen door al dat kabaal! Oh komen jullie trouwens lekker binnen, dan zet ik even een kopje thee, willen jullie munt of gember?
+
+
+Zodra we de drempel overstappen worden we omringd door planten – elk oppervlak is bezaaid met groen. De vensterbanken, tafels, het keukenblad… Zelfs op de vloer staan potten met geurige kruiden en stralende bloemen. Aan de keukentafel is er net genoeg ruimte voor Trudy om te zitten en wat te eten. Al is dat plekje nu ingenomen door half opgevouwen papiertjes. Een snavel, een veer, een staart zijn te onderscheiden in de kleine frommels.
+
+
+TRUDY                Ach ja, god, als ik niet kan slapen, begin ik te vouwen. Maar elke
+keer als ik die onbenullige intercom hoor, schrik ik toch zo! En dan is er weer een kraanvogel verpest…
+
+
+[puzzel met kraanvogels vouwen?][o]
+
+
+Aan de muur hangen foto’s van Trudy op verre reizen, omringd door enorme bergen, rode woestijnen, vrieskoude ijsschotsen, parelwitte stranden en uitgestrekte valleien. Nooit staat ze alleen op een foto, altijd omringd door groepen mensen die net zo hartelijk lachen als zij, met ontblote tanden. Tussen al die foto’s hangen allerlei kunstwerken – olieverfschilderijen, aquarellen, diamond paintings, houtskooltekeningen, collages, borduurwerken… Allemaal onderteken met Trudy’s naam.
+
+
+En het ruikt hier heerlijk, naast alle walmen die opstijgen uit de gepotte kruiden, ruiken we ook knoflook, ui, salie die gebakken worden. Op het fornuis pruttelt een pannetje gemoedelijk.
+
+
+ROBIN                Mevrouw Trudy, fijn dat we even binnen mogen komen. We zijn 
+toevallig bezig met het onderzoeken van de intercom –
+
+
+TRUDY                Kijk, ik ben natuurlijk wel gewend hè dat de dingen hier een 
+beetje vreemd lopen! Ik zeg altijd maar zo: een dag in de Smaragd loopt nooit zoals je verwacht! En dat is echt waar, hoor! Gisteren nog was ik onderweg naar het theater en werd ik plotseling aangesproken door Leen en voor je het weet hang je aan een touw van de rand van het gebouw de ramen te lappen! Nou, dat theaterstuk kon ik dus wel vergeten, maar kijk hoe mooi de ramen glinsteren! Het is alsof ik mijn bril eindelijk weer op heb, zo goed kan ik Donderstad zien. Kijk daar is de oude watertoren, wat een prachtig ding hè?
+
+
+We kijken uit het raam en zien de skyline van Donderstad[p]. Flatgebouwen en fabrieken staan achter het historische centrum, waar de oude watertoren en de grote kerk in het zonlicht fonkelen. Uit het park bij het station stijgt een zwerm parkieten op en vliegt richting de zee.
+
+
+ROBIN                Inderdaad erg prachtig mevrouw Trudy. Mogen we u wat vragen 
+stellen over de intercom?
+
+
+TRUDY                Natuurlijk! Ik houd ervan om lekker even te kletsen, vooral met 
+zulke lieve snoetjes als jullie!
+
+
+[LLM ondervraging]
+
+
+S TEGEL                Hoe gaat het daar detectives?
+
+
+[antwoord kinderen]
+
+
+S TEGEL                Ik ben iets nieuws op het spoor gekomen – Luister maar eens 
+goed naar dit!
+
+
+[opname:
+
+
+HEIKE                Hahaha, mijn pa schrikt zich de hele tijd rot echt grappig[q] [kkkkrrr] 
+we zouden vaker de intercom moeten slopen! [pppppptttttrrrrrr] 
+
+
+]
+
+
+S TEGEL                Ik moet zeggen dat dat wel heel erg klinkt als een 
+schuldbekentenis. Kunnen jullie dat voor mij onderzoeken?
+
+
+
+
+[outro Robin]                        
+
+
+________________
+
+
+Scène 5 – Heike
+
+
+Op de tweede verdieping is het chaos. Bij de deur van Eddy ruiken we zoals altijd een gekke geur en er komt wat rook onder de deur vandaan. De deur van Heike, Jennifer en Leen heeft allerlei kleuren ongecoördineerd over het hout uitgespreid, wolken van geel, paars, blauw, groen, rood, oranje… Daarnaast staat een schoenenrek dat uitpuilt van de schoenen, met erboven allerlei tekeningen van de Smaragd en haar bewoners. We drukken de bel in.
+
+
+LEEN                        Hallo daar Robin, wat leuk je te zien.
+
+
+ROBIN                Hallo meneer Leen, wij zijn op zoek naar Heike, is ze thuis?
+
+
+LEEN                        Nee, Heike is niet thuis. Meestal is ze aan het skateboarden
+door de Smaragd. Meestal moet ik haar heel hard roepen en dan komt ze.  
+
+
+ROBIN                Aha, bedankt meneer Leen. Wij zullen Heike roepen in de 
+gangen.
+
+
+[roepen HEIKE]
+
+
+
+
+HEIKE                Wow, pas op! Dat ging net goed hoor. Ik was bijna tegen jullie 
+opgebotst. Er staan niet vaak zoveel mensen in de gang. Mijn naam is Heike en ik ben twaalf jaar. Ik woon al mijn hele leven hier in de Smaragd met mijn vader Leen en moeder Jennifer.[r][s] Ik hou van skateboarden en van strandjutten en van de zelfgemaakte pudding van Choukri. Omdat de postbode al oud is help ik hem met het rondbrengen van pakketjes in de Smaragd, dat heb ik op mijn skateboard zo gedaan! [t]Ik was net 
+bezig wat pakketjes bezorgen, misschien kunnen jullie me helpen? Dan gaat het vijf keer zo snel, weet je.
+
+
+[pakketbezorgpuzzel?]
+
+
+HEIKE                Thanks, dat scheelt een hoop zeg! Hebben jullie het gehoord 
+van de intercom? Zo grappig haha, iedereen schrikt zich de hele tijd een hoedje. Maar volgens mij is ‘ie weer gerepareerd, het is zo stil opeens.
+
+
+ROBIN                 Dat klopt! Wij hebben hem gerepareerd. Zouden we u misschien 
+iets mogen vragen over de intercom?
+
+
+[LLM ondervraging]
+
+
+
+
+S TEGEL                Detectives! Ik ben toch weer zoiets vreemds op het spoor 
+gekomen. Een nieuwe hint in dit ingewikkelde intercom-mysterie.
+
+
+[opname:
+
+
+CHOUKRI                Technologie tegenwoordig… [kkkkrrrrttt] Ik sloop het nog eens 
+een keer [pppppptttttttrrrrr] Onding!
+
+
+]
+
+
+S TEGEL                Jullie kunnen je voorstellen dat ik super druk ben met al de 
+informatie die maar op me af blijft komen… Zouden jullie daarom deze hint willen onderzoeken? Volgens mij was dat de stem van Choukri.
+
+
+[outro Robin]
+________________
+Scène 6 – Choukri
+
+
+We staan aan het begin van de gang van de derde verdieping. De gang is rustig, links is de ingang naar het appartement van S. Tegel, rechts die van Trudy. Het is er netjes. Het lijkt erop dat Trudy niet thuis is, normaal klinken er allerlei toonladders en uithalen van achter haar deur, maar nu is het muisstil. Voor de deur van S. Tegel is het altijd opgeruimd, iedere ochtend gaat ze even voor haar deur langs met haar draadloze stofzuiger. We krijgen het vreemde gevoel dat we worden bekeken.
+
+
+ROBIN                Het is wel heel stil hier, ik krijg er bijna de kriebels van! Waar zat 
+het huis van Choukri ook al weer… Ik kom iedere dag op deze verdieping, maar nog steeds raak ik altijd de weg kwijt naar die inktzwarte deur van Choukri… Het is alsof al het licht wordt opgezogen in dat zwart, waardoor die deur bijna lijkt te verdwijnen! Ik krijg haast het idee dat hij niet wil dat iemand hem bezoekt!
+
+
+We lopen naar het einde van de gang, gaan rechts, dan links, dan weer rechts en dan weer rechts en lopen frontaal met onze gezichten tegen de deur aan. Het is inderdaad onmogelijk om de deur waar te nemen, zo donker is het zwart. De deurbel glimt goud in het niets en is het enige waardoor we nog kunnen zien dat dit überhaupt een deur is.
+
+
+ROBIN                AUW!!!!! Nou ja, ik voel eigenlijk niets, ik heb geen zenuwen in 
+dit plastic.[u] Maar gaat het met jullie goed? Niets gebroken? Oké, goed, laten we dan maar aanbellen en zien of Choukri wat meer weet over de pudding...
+
+
+We drukken de glinsterende gouden deurbel in, dat gaat verbazingwekkend stroef. Achter de deur klinkt het geluid van een klingelende bel, een klepel tegen klok. Een paar seconde later ontstaat er tussen de deur en het kozijn een spleetje, zo dun dat er enkel een vel papier doorheen zou passen.
+
+
+CHOUKRI                 Hallo?
+
+
+We kijken verbaasd naar elkaar, het geluid komt toch echt uit dat flinterdunne spleetje.
+
+
+ROBIN                Ahem… Goedemiddag meneer Choukri! We zijn het, Robin en 
+de detectivebende. We zijn gekomen om het mysterie van de kapotte intercom op te lossen. Zouden we misschien binnen mogen komen?
+
+
+CHOUKRI                Oh, ja graag! Dat onding maakte me helemaal tureluurs, met zijn 
+geKRRRRRR en geSKJHKJEEKSNFOSIFKLS! Ik kon geen zin lezen in mijn boek of mijn concentratie werd verbroken.
+
+
+De flinterdunne spleet wordt nu zo groot dat een robot en wat kinderen er prima doorheen passen. Het appartement van Choukri is donker, heel donker, nog donkerder dan wanneer je je ogen sluit! Het duurt even voor onze ogen gewend zijn aan dat donker, dan zien we dat de ribfluwelen, zwarte gordijnen potdicht zitten. 
+
+
+ROBIN                Meneer Choukri, zou u zo vriendelijk willen zijn een lampje aan 
+te doen. Wij detectives hebben ons zicht nodig om de zaken goed te zien, ziet u?
+
+
+CHOUKRI                 Een lampje, een lampje… Jeminee, ik houd niet zo van licht… 
+Even kijken hoor of ik zoiets heb…[v]
+
+
+In het duister horen we Choukri rommelen en schuiven. Dan klinkt het alsof er een stekker in het stopcontact gaat en plotseling schijnt er een felle lichtstraal tegen de muur. Het licht maakt een vierkant wit vlak op de muur, die ook zwart geschilderd is. Nu er wat meer licht is, zien we dat het appartement volstaat met allerlei spullen. Kratten vol elpees staan tegen de muur gestapeld, plastic dozen vol ingrediënten bevolken de keuken, op de bank liggen stapels kranten en boeken. Aan de muur hangen allerlei instrumenten, van gitaren tot violen tot rhaita’s tot karkabous.
+
+
+CHOUKRI                  Oh dit? Dat is een diaprojector, haha, echt uit de steentijd! Van 
+Yoyo gekregen. Als kind was ik altijd aan het fotograferen, dat vertelde ik Yoyo eens. Nu geeft hij me alles uit de kringloopwinkel waar hij geen interesse in heeft: camera’s, elpees, magazines, diaprojectors… 
+
+
+Toen ik tien werd gaf mijn vader me één van zijn oude camera’s cadeau. Hij was zelf portretfotograaf, dat vond ik zo gaaf! Na school kwam ik graag helpen. Vaak was er niet veel te doen, maar dan keek ik gewoon toe hoe iedereen er op zijn mooist bij zat. En hoe mijn vader dan de lichten iets verzette, wat veranderde in zijn positie of de houding van de geportretteerde. Hij had zo’n goed oog voor die dingen, soms verschoof hij iets een millimeter en veranderde het beeld meteen voor mijn ogen… Een ware kunstenaar was hij!
+
+
+Er zijn weinig mensen in Donderstad die niet eens in zijn stoel hebben gezeten voor een pasfoto! Daar was hij erg trots op. Zo kende hij ook iedereen in de stad. Als we samen op pad gingen werden we bijna om de seconden aangesproken door iemand! Het boodschappen doen kon soms wel uren duren haha. 
+
+
+Dit was lang geleden, haha, dat kunnen jullie vast wel zien aan mijn mooie grijze hanenkam. Toen gingen er nog van die rolletjes in camera’s en zag je pas later of je foto was gelukt. En met dat soort rolletjes kun je dus dia’s maken die in die projector gaan. Vroeger moest je veel moeite doen om de dingen goed te zien. Vermoeiend eigenlijk. Dat is nu wel een stukje makkelijker geworden, haha[w]. 
+
+
+Maar ik ben weer begonnen met foto’s schieten met die oude camera van mijn pa. Zo’n camera begrijp ik tenminste! Jeminee, al die technologie tegenwoordig, haha, ik word er helemaal tureluurs van. Geef mij maar dingen die ik vast kan houden, die een geur hebben en geluid maken. De klik van het rolletje in de camera, het krr krr krr van het draaien aan het wieltje, het zoemende geluid van de flits die zich oplaadt… Die kleine dingetjes zorgen ervoor dat ik me deel voel van deze wereld! Misschien een beetje zweverig, maar zo voel ik dat echt, haha.
+
+
+Daarom draai ik ook alleen maar met elpees. Ja jullie verwachten het zeker niet van zo’n oude bok als ik, maar ik krijg dj-lessen van Kata. Maar dan met al die oude platen die ik van Yoyo krijg. Als ik zie hoe Kata heen en weer moet klikken en springen en tikken op die laptop om muziek te maken… Nee, dat is niets voor mij. Dus mix ik met elpees, dit is een stuk lastiger dan met digitale tracks![x] Je moet de naald echt precies op de goede plek zetten, anders klinkt het als die kat van mevrouw Hazel als ze honger heeft. MIAAAAAAAUUUURGHHHHHHHHHHH.[y] Oeh, misschien moet Kata dat eens samplen haha.
+
+
+Goed, sorry, nu ben ik enorm aan het ratelen haha, maar ik vind het zo gezellig dat hier zo veel kinderen zijn! Dat gebeurt me niet elke dag. Waarvoor kwamen jullie ook alweer?
+
+
+[LLM ondervraging]
+
+
+CHOUKRI                Een audiofragment? Hoe komen jullie daar nou weer aan? Ik 
+vertrouw die intercom écht niet. Nooit gedaan ook! Misschien is het maar goed dat ‘ie het niet meer doet. Hoe kunnen jullie nou een audiofragment van mij hebben? Dit is ook waarom ik geen mobiele telefoon heb hè! Iedereen noemt me vreemd, maar ze verzamelen allerlei data van je, zoals van die audiofragmenten. Ze weten wat je opzoekt en met wie je praat… Ik heb gehoord dat ze zelfs verzamelen waar je allemaal naar toe gaat. Dat houd ik echt veel liever voor mezelf hoor. Waarom moet iemand dat van mij weten?[z]
+
+
+ROBIN                Dat is eigenlijk best een goede vraag… Hoe komt mevrouw 
+Tegel aan al die opnames? Detectives! Laten we eens verhaal halen bij mevrouw Tegel.
+
+
+[outro Robin]
+
+
+
+
+
+
+
+
+
+
+
+
+________________
+
+
+Scène 6 – Stoep Tegel
+
+
+[#transitieROBIN]
+
+
+S TEGEL                Oh dag detectives, hoe gaat het met het mysterie? Hebben jullie 
+wat hulp nodig?
+
+
+ROBIN                Mevrouw Tegel, u heeft mij altijd geleerd dat een uitmuntende 
+detective alles bevraagd.
+
+
+S TEGEL                Natuurlijk! Dat is een kernkwaliteit van een goede speurneus.
+
+
+ROBIN                Daarom zijn we nu hier om u te bevragen.
+
+
+S TEGEL                Mij?! Maar… ik heb juist zo’n last van die intercom!
+
+
+[LLM ondervraging]
+
+
+S TEGEL                Jullie hebben gelijk. Ik was zo druk op zoek naar een nieuwe
+roddel, dat ik bereid was de privacy van anderen te schenden… Ik ga direct mijn excuses aanbieden aan alle flatbewoners via De Onderste Steen Boven.
+
+
+ROBIN                Mevrouw Tegel… U weet toch dat u meer bent dan alleen de 
+detective van de Smaragd? Zelfs als u jaren geen nieuws zou uitbrengen, zou u nog steeds gewaardeerd worden door alle bewoners hier! En anders wel in het bijzonder door mij. Ik heb alles in dit vak van u geleerd en dat heeft me als robot veranderd. Nog steeds leer ik enorm veel van uw ambitie en intuïtie en verander ik elke dag. Maakt u dus minder zorgen over wat iedereen denkt, dat zit zeker wel snor!
+
+
+S TEGEL                Lieve bewoners van de Smaragd, mijn buren, ik wil mijn 
+welgemeende excuses aanbieden. Zoals jullie weten ben ik altijd op zoek naar de nieuwste feitjes en mysteries, om jullie zo goed mogelijk op de hoogte te houden van het reilen en zeilen van onze geliefde flat. Er gebeuren hier vreemde zaken en ik houd ervan die zaken uit te pluizen.
+
+
+Ik maakte me zorgen dat er geen mysteries meer waren om te onderzoeken, het was al een tijdje geleden dat iets merkwaardigs op mijn pad was gekomen. Ik werd bang dat ik niets te melden had in De Onderste Steen Boven. Ik wilde jullie simpelweg niet teleurstellen, lief publiek! [aa][ab][ac]
+
+
+Dus met veel schaamte en berouw zeg ik hiermee: degene die de intercom kapot heeft gemaakt… ben ik! Hopelijk kunnen jullie het mij vergeven dat ik zo klakkeloos met jullie privacy ben omgegaan. Ik beloof dat ik vanaf nu het beroep van journalist weer eer aan zal doen en enkel op de verantwoorde wijzes mijn onderzoek zal uitvoeren.[ad][ae]
+
+
+Door het onderzoek van Robin en zijn detectives zag ik weer in dat deze flat heel goed naar elkaar omkijkt. Zo vertelde Choukri over zijn nieuwe vriendschap met Yoyo en hoe hij altijd voor iedereens planten en dieren zorgt! En hoe DJ Kata hem nu leert te DJ-en. En van Heike hoorde ik dat ze de post bezorgt om de postbode te ontlasten. En van Trudy hoorde ik dat zij en Jennifer de Leenauto goed bijhouden en dat ze zelfs de ramen heeft gelapt van de gehele flat! Ik vind het zo naar dat ik heb geprobeerd die fijne sfeer in de Smaragd te verpesten door roddels te verspreiden.
+
+
+Dat was het voor De Onderste Steen Boven van deze week. Ik was S. Tegel. Deze aflevering had niet tot stand kunnen komen zonder de hulp van mijn robotdetective Robin en zijn studenten. Tot de volgende keer!
+
+
+[a]Dit format van schrijven is trouwens super overzichtelijk en fijn!
+1 reactie in totaal
+klimrek heeft gereageerd met ♥️ op 2026-05-28 1:08 p.m. UTC
+[b]Cool!
+[c]van steff gestolen!
+[d]Kata heeft echt cool older cousin vibes voor mijn gevoel :)
+[e]oeh hier ga ik nog iets verzinnen denk ik :)
+[f]het lijkt mij ook grappig als Kata super benieuwd is naar de geluiden die de robot kan maken :) 
+
+
+'Yo als je klaar bent met speuren enzo kom even naar de studio' 'wie- ik?'
+[g]leuk ik voeg het ff toe!
+[h]Nu wil ik die track ook wel horen! Misschien kan die dan op het einde afgespeeld worden
+1 reactie in totaal
+klimrek heeft gereageerd met ♥️ op 2026-05-28 1:09 p.m. UTC
+[i]Kata heeft vast tinnitus van alle technoraves :,)
+[j]Ik zie voor me dat de robot een beetje in de war is hierdoor en daardoor zijn handen bij zijn oren zal houden om ze te 'spitsen'
+[k]ik zie voor me dat Trudy helemaal los zou gaan in de Sostrene Grene...
+[l]hoera!
+[m]Trudy komt uit rotterdam ik voel dit lol
+[n]hahaha ik wel!
+[o]oeh leuk! ik ga eens kijken of ik dat uit kan werken
+[p]Cool! hier kan ik een mooi plaatje van maken denk ik
+[q]'pa' :D
+[r]Ik ben echt benieuwd naar Heike's interpretatie van deze situatie , wel super leuk dat ze het allemaal prima vind, lekker nonchalant karakter
+[s]wederom van Steff gestolen!
+[t]lief!
+[u]Haha lekker dramatisch
+[v]Ik zie het helemaal voor me... ik denk dat het cool zou zijn om de lichten in het klaslokaal ook uit te doen op dat moment
+[w]dit is ook heel leuk! ik heb toevallig nog oude negatieven liggen die ik mee zou kunnen nemen ter demonstratie
+[x]leuk contrast!
+[y]hahaha ik zie het helemaal voor me
+[z]choukri ik voel dit helemaal!
+[aa]Stoep "informatiesnelweg" Tegel...
+
+
+Ik voel dat we hier misschien moeten nadenken over de rede dat ze dit op zou biechten!
+
+
+Misschien heeft ze door ineens hoe veel de bewoners om elkaar geven (bijvoorbeeld zelfs heike die helpt met de post, en yoyo die altijd op iedereens huisdieren past etc) en dat het echt fout is geweest van haar om drama te lopen stoken!
+[ab]Het kan wel interessant zijn om ineens een stukje emotie te laten zien vanuit Stoep omdat ze normaal gesproken super koel en no nonsense is
+
+
+(misschien had ze ineens iets gehoord over een geheim verjaardagsfeestje dat voor haar werd georganiseerd ofzoiets!)
+
+
+Misschien herpakt ze zichzelf wel meteen na dit incident maar het lijkt me toch een cool moment!
+[ac]ik heb er iets van gebrouwen! misschien moet dit nog wat verder uitgewerkt worden met behulp ook van de andere schrijvers?
+[ad]ik ben benieuwd hoe de robot hierop zal reageren! dit is best een flinke misdaad van onze stoep
+[ae]ik heb wat toegevoegd!

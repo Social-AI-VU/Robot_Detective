@@ -23,7 +23,7 @@ if __name__ == '__main__':
 
     tts_conf = ElevenLabsTTSConf(
         api_key=os.getenv("ELEVENLABS_API_KEY", ""),
-        voice_id="9BWtsMINqrJLrRacOk9x",
+        voice_id="f2yUVfK5jdm78zlpcZ8C",  # Robin
         model_id="eleven_flash_v2_5",
     )
     tts = ElevenLabsTTSProvider(conf=tts_conf, device=device)
