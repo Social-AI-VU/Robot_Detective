@@ -1,0 +1,278 @@
+[
+  {
+    "id": "Ep3_Scene_1_Intro",
+    "type": "narrative",
+    "thread": "episode_3_kapotte_intercom",
+    "position": 1,
+    "characters": {
+      "s_tegel": { "voice_settings": { "voice_id": "D50w2srwVohKTPx9X6Th", "language": "nl" } },
+      "robin": { "voice_settings": { "voice_id": "f2yUVfK5jdm78zlpcZ8C", "language": "nl" } },
+      "kata": { "voice_settings": { "voice_id": "zn2YPAoUG84gOQL6wLo2", "language": "nl" } },
+      "trudy": { "voice_settings": { "voice_id": "OlBRrVAItyi00MuGMbna", "language": "nl" } },
+      "heike": { "voice_settings": { "voice_id": "aIIUR1U2SFQm8PBmlNKP", "language": "nl" } },
+      "choukri": { "voice_settings": { "voice_id": "G9lzzm05bGAXnuymdcqF", "language": "nl" } }
+    },
+    "moves": [
+      { "type": "say", "text": "Hallo? Robin, detectives, horen jullie mij?", "character": "s_tegel" },
+      { "type": "say", "text": "Oh, gelukkig.", "character": "s_tegel" },
+      { "type": "say", "text": "Ik weet niet wat er precies aan de hand is.", "character": "s_tegel" },
+      { "type": "say", "text": "De intercom maakt enorm rare geluiden.", "character": "s_tegel" },
+      { "type": "say", "text": "Het is zo erg dat ik me amper kan concentreren op mijn speurwerk.", "character": "s_tegel" },
+      { "type": "say", "text": "En wanneer er iemand aanbelt beneden hoor of zie ik helemaal niets.", "character": "s_tegel" },
+      { "type": "say", "text": "Kun je alsjeblieft de oorsprong van dit kabaal opzoeken?", "character": "s_tegel" }
+    ]
+  },
+  {
+    "id": "Ep3_Scene_2_Robin_Intro",
+    "type": "narrative",
+    "thread": "episode_3_kapotte_intercom",
+    "position": 2,
+    "characters": {
+      "robin": { "voice_settings": { "voice_id": "f2yUVfK5jdm78zlpcZ8C", "language": "nl" } }
+    },
+    "moves": [
+      { "type": "say", "text": "Goedemiddag.", "character": "robin" },
+      { "type": "say", "text": "Mijn naam is Robin.", "character": "robin" },
+      { "type": "say", "text": "Ik ben een robotdetective.", "character": "robin" },
+      { "type": "ask_llm", "prompt": "Je bent Robin de Robotdetective. Voer een korte, speelse kennismaking in het Nederlands met kinderen. Vraag wie ze zijn, reageer enthousiast en houd het heel kort. Begin je zinnen NIET met wauw. Gebruik GEEN EMOJIS. Stel maximaal 1 korte vervolgvraag per beurt.", "max_turns": 4, "set_variable": "name_chat", "character": "robin", "rag_enabled": true, "index_name": "episode_3_robin_docs" },
+      { "type": "say", "text": "Een goede detective stelt veel vragen.", "character": "robin" },
+      { "type": "say", "text": "Niet alleen over het mysterie.", "character": "robin" },
+      { "type": "say", "text": "Maar ook over andere zaken.", "character": "robin" },
+      { "type": "say", "text": "Zo krijgen we een volledig plaatje.", "character": "robin" }
+    ]
+  },
+  {
+    "id": "Ep3_Scene_3_DJ_Kata",
+    "type": "narrative",
+    "thread": "episode_3_kapotte_intercom",
+    "position": 3,
+    "characters": {
+      "kata": { "voice_settings": { "voice_id": "zn2YPAoUG84gOQL6wLo2", "language": "nl" } },
+      "robin": { "voice_settings": { "voice_id": "f2yUVfK5jdm78zlpcZ8C", "language": "nl" } }
+    },
+    "moves": [
+      { "type": "say", "text": "De intercom reageert nergens op.", "character": "robin" },
+      { "type": "say", "text": "Door het glas in de deur zien we DJ Kata rommelen aan een paneel.", "character": "robin" },
+      { "type": "say", "text": "Yo boss.", "character": "kata" },
+      { "type": "say", "text": "Ik ben DJ Kata.", "character": "kata" },
+      { "type": "say", "text": "Ik woon hier beneden in de kelder.", "character": "kata" },
+      { "type": "say", "text": "Die heb ik getransformeerd tot een sicke discotheek.", "character": "kata" },
+      { "type": "say", "text": "Ik draai muziek.", "character": "kata" },
+      { "type": "say", "text": "Ik neem nieuwe geluiden op voor mijn mixes.", "character": "kata" },
+      { "type": "ask_llm", "prompt": "Je bent DJ Kata. Voer een korte, speelse chitchat in het Nederlands met kinderen. Praat over technologie, muziek, beats en geluiden. Houd antwoorden kort (1-2 zinnen), energiek en kindvriendelijk. Begin niet met wauw en gebruik geen emojis.", "max_turns": 3, "set_variable": "kata_chat", "character": "kata", "rag_enabled": true, "index_name": "episode_3_kata_docs" },
+      { "type": "say", "text": "De intercom is helemaal kapot.", "character": "kata" },
+      { "type": "say", "text": "Ik was net bezig hem te fiksen.", "character": "kata" }
+    ]
+  },
+  {
+    "id": "Ep3_Scene_3_Kata_RAG_Interview",
+    "type": "llm_based",
+    "thread": "episode_3_kapotte_intercom",
+    "position": 3.5,
+    "character": "kata",
+    "characters": {
+      "kata": { "voice_settings": { "voice_id": "zn2YPAoUG84gOQL6wLo2", "language": "nl" } }
+    },
+    "prompt": "Je bent DJ Kata. Gebruik opgehaalde kennis over DJ Kata en episode 3 wanneer relevant. Praat in het Nederlands, energiek, cool en vriendelijk voor kinderen van 8-11 jaar. Beantwoord vragen over de intercom, de kelder, de geluiden en wat je hebt gezien of gedaan. Houd antwoorden in 1 tot 3 zinnen en stel maximaal één korte vervolgvraag per beurt. Als de gebruiker aangeeft klaar te zijn, sluit kort af met <<QUIT>>.",
+    "max_turns": 10,
+    "speak_first": false,
+    "duration": 300,
+    "rag_enabled": true,
+    "index_name": "episode_3_kata_docs",
+    "quit_phrases": ["klaar", "stop", "doei", "dag", "bye", "goodbye"],
+    "moves": []
+  },
+  {
+    "id": "Ep3_Scene_4_Trudy",
+    "type": "narrative",
+    "thread": "episode_3_kapotte_intercom",
+    "position": 4,
+    "characters": {
+      "trudy": { "voice_settings": { "voice_id": "OlBRrVAItyi00MuGMbna", "language": "nl" } },
+      "robin": { "voice_settings": { "voice_id": "f2yUVfK5jdm78zlpcZ8C", "language": "nl" } }
+    },
+    "moves": [
+      { "type": "say", "text": "De voordeur van Trudy is paars geschilderd.", "character": "robin" },
+      { "type": "say", "text": "Haar bel heeft de vorm van een madeliefje.", "character": "robin" },
+      { "type": "say", "text": "Oh hallo.", "character": "trudy" },
+      { "type": "say", "text": "Ik ben Trudy.", "character": "trudy" },
+      { "type": "say", "text": "Sinds een aantal jaar ben ik met pensioen.", "character": "trudy" },
+      { "type": "say", "text": "En dat vind ik geweldig.", "character": "trudy" },
+      { "type": "say", "text": "Vroeger was ik taxichauffeur.", "character": "trudy" },
+      { "type": "say", "text": "Ik kon maar niet slapen door die rottige intercom.", "character": "trudy" },
+      { "type": "ask_llm", "prompt": "Je bent Trudy. Voer een korte, vrolijke chitchat in het Nederlands met kinderen. Praat over reizen, pensionering, hobby's en wat je leuk vindt. Houd antwoorden kort (1-2 zinnen), enthousiast en vriendelijk. Begin niet met wauw en gebruik geen emojis.", "max_turns": 3, "set_variable": "trudy_chat", "character": "trudy", "rag_enabled": true, "index_name": "episode_3_trudy_docs" },
+      { "type": "say", "text": "Ik ben natuurlijk wel gewend dat de dingen hier een beetje vreemd lopen.", "character": "trudy" },
+      { "type": "say", "text": "Gisteren nog was ik onderweg naar het theater.", "character": "trudy" },
+      { "type": "say", "text": "Toen werd ik plotseling aangesproken door Leen.", "character": "trudy" }
+    ]
+  },
+  {
+    "id": "Ep3_Scene_4_Trudy_RAG_Interview",
+    "type": "llm_based",
+    "thread": "episode_3_kapotte_intercom",
+    "position": 4.5,
+    "character": "trudy",
+    "characters": {
+      "trudy": { "voice_settings": { "voice_id": "OlBRrVAItyi00MuGMbna", "language": "nl" } }
+    },
+    "prompt": "Je bent Trudy. Gebruik opgehaalde kennis over Trudy en episode 3 wanneer relevant. Praat in het Nederlands, warm, enthousiast en duidelijk voor kinderen van 8-11 jaar. Beantwoord vragen over de intercom, haar slaap, haar hobby's, de leenauto en wat ze gezien of gehoord heeft. Houd antwoorden in 1 tot 3 zinnen en stel maximaal één korte vervolgvraag per beurt. Als de gebruiker aangeeft klaar te zijn, sluit kort af met <<QUIT>>.",
+    "max_turns": 10,
+    "speak_first": false,
+    "duration": 300,
+    "rag_enabled": true,
+    "index_name": "episode_3_trudy_docs",
+    "quit_phrases": ["klaar", "stop", "doei", "dag", "bye", "goodbye"],
+    "moves": []
+  },
+  {
+    "id": "Ep3_Scene_5_Heike",
+    "type": "narrative",
+    "thread": "episode_3_kapotte_intercom",
+    "position": 5,
+    "characters": {
+      "heike": { "voice_settings": { "voice_id": "aIIUR1U2SFQm8PBmlNKP", "language": "nl" } },
+      "jennifer": { "voice_settings": { "voice_id": "G6fmUXq3ziFf6Uae1jFh", "language": "nl" } },
+      "robin": { "voice_settings": { "voice_id": "f2yUVfK5jdm78zlpcZ8C", "language": "nl" } }
+    },
+    "moves": [
+      { "type": "say", "text": "Leen doet open en zegt dat Heike niet thuis is.", "character": "robin" },
+      { "type": "say", "text": "Meestal is ze aan het skateboarden door de Smaragd.", "character": "robin" },
+      { "type": "say", "text": "Wow, pas op!", "character": "heike" },
+      { "type": "say", "text": "Ik ben Heike.", "character": "heike" },
+      { "type": "say", "text": "Ik woon hier al mijn hele leven in de Smaragd.", "character": "heike" },
+      { "type": "say", "text": "Samen met mijn vader Leen en moeder Jennifer.", "character": "heike" },
+      { "type": "ask_llm", "prompt": "Je bent Heike. Voer een korte, vrolijke chitchat in het Nederlands met kinderen. Praat over skateboarden, pakketjes en wat je blij maakt. Houd antwoorden kort (1-2 zinnen), enthousiast en kindvriendelijk. Begin niet met wauw en gebruik geen emojis.", "max_turns": 3, "set_variable": "heike_chat", "character": "heike", "rag_enabled": true, "index_name": "episode_3_heike_docs" },
+      { "type": "say", "text": "Ik help de postbode met het rondbrengen van pakketjes in de Smaragd.", "character": "heike" },
+      { "type": "say", "text": "Misschien kunnen jullie me helpen?", "character": "heike" }
+    ]
+  },
+  {
+    "id": "Ep3_Scene_5_Heike_RAG_Interview",
+    "type": "llm_based",
+    "thread": "episode_3_kapotte_intercom",
+    "position": 5.5,
+    "character": "heike",
+    "characters": {
+      "heike": { "voice_settings": { "voice_id": "aIIUR1U2SFQm8PBmlNKP", "language": "nl" } }
+    },
+    "prompt": "Je bent Heike. Gebruik opgehaalde kennis over Heike en episode 3 wanneer relevant. Praat in het Nederlands, energiek en vriendelijk voor kinderen van 8-11 jaar. Beantwoord vragen over de intercom, de pakketjes, het skateboarden en wat je gehoord of gezien hebt. Houd antwoorden in 1 tot 3 zinnen en stel maximaal één korte vervolgvraag per beurt. Als de gebruiker aangeeft klaar te zijn, sluit kort af met <<QUIT>>.",
+    "max_turns": 10,
+    "speak_first": false,
+    "duration": 300,
+    "rag_enabled": true,
+    "index_name": "episode_3_heike_docs",
+    "quit_phrases": ["klaar", "stop", "doei", "dag", "bye", "goodbye"],
+    "moves": []
+  },
+  {
+    "id": "Ep3_Scene_6_Choukri",
+    "type": "narrative",
+    "thread": "episode_3_kapotte_intercom",
+    "position": 6,
+    "characters": {
+      "choukri": { "voice_settings": { "voice_id": "G9lzzm05bGAXnuymdcqF", "language": "nl" } },
+      "robin": { "voice_settings": { "voice_id": "f2yUVfK5jdm78zlpcZ8C", "language": "nl" } }
+    },
+    "moves": [
+      { "type": "say", "text": "Het is hier heel stil.", "character": "robin" },
+      { "type": "say", "text": "Ik raak altijd de weg kwijt naar die inktzwarte deur van Choukri.", "character": "robin" },
+      { "type": "say", "text": "Hallo?", "character": "choukri" },
+      { "type": "say", "text": "Oh, ja graag.", "character": "choukri" },
+      { "type": "say", "text": "Dat onding maakte me helemaal tureluurs.", "character": "choukri" },
+      { "type": "say", "text": "Ik kon geen zin lezen in mijn boek.", "character": "choukri" },
+      { "type": "say", "text": "Mijn concentratie werd verbroken.", "character": "choukri" },
+      { "type": "ask_llm", "prompt": "Je bent Choukri. Voer een korte, warme chitchat in het Nederlands met kinderen. Praat over donker, lezen, muziek of wat je rustig maakt. Houd antwoorden kort (1-2 zinnen), vriendelijk en kindvriendelijk. Begin niet met wauw en gebruik geen emojis.", "max_turns": 3, "set_variable": "choukri_chat", "character": "choukri", "rag_enabled": true, "index_name": "episode_3_choukri_docs" },
+      { "type": "say", "text": "Ik vertrouw die intercom echt niet.", "character": "choukri" },
+      { "type": "say", "text": "Misschien is het maar goed dat hij het niet meer doet.", "character": "choukri" }
+    ]
+  },
+  {
+    "id": "Ep3_Scene_6_Choukri_RAG_Interview",
+    "type": "llm_based",
+    "thread": "episode_3_kapotte_intercom",
+    "position": 6.5,
+    "character": "choukri",
+    "characters": {
+      "choukri": { "voice_settings": { "voice_id": "G9lzzm05bGAXnuymdcqF", "language": "nl" } }
+    },
+    "prompt": "Je bent Choukri. Gebruik opgehaalde kennis over Choukri en episode 3 wanneer relevant. Praat in het Nederlands, rustig en een beetje wantrouwig, maar vriendelijk voor kinderen van 8-11 jaar. Beantwoord vragen over de kapotte intercom, de geluiden, wat je hoorde en waarom je de intercom niet vertrouwt. Houd antwoorden in 1 tot 3 zinnen en stel maximaal één korte vervolgvraag per beurt. Als de gebruiker aangeeft klaar te zijn, sluit kort af met <<QUIT>>.",
+    "max_turns": 10,
+    "speak_first": false,
+    "duration": 300,
+    "rag_enabled": true,
+    "index_name": "episode_3_choukri_docs",
+    "quit_phrases": ["klaar", "stop", "doei", "dag", "bye", "goodbye"],
+    "moves": []
+  },
+  {
+    "id": "Ep3_Scene_6_S_toe_Tegel",
+    "type": "narrative",
+    "thread": "episode_3_kapotte_intercom",
+    "position": 6.8,
+    "characters": {
+      "s_tegel": { "voice_settings": { "voice_id": "D50w2srwVohKTPx9X6Th", "language": "nl" } },
+      "robin": { "voice_settings": { "voice_id": "f2yUVfK5jdm78zlpcZ8C", "language": "nl" } }
+    },
+    "moves": [
+      { "type": "say", "text": "Ik ben iets nieuws op het spoor gekomen.", "character": "s_tegel" },
+      { "type": "say", "text": "Spits jullie oren.", "character": "s_tegel" },
+      { "type": "say", "text": "Dit is een erg sappige roddel.", "character": "s_tegel" },
+      { "type": "say", "text": "Misschien kunnen jullie eens kijken wat Trudy weet over de kapotte intercom.", "character": "s_tegel" }
+    ]
+  },
+  {
+    "id": "Ep3_Scene_7_Stoep_Tegel",
+    "type": "narrative",
+    "thread": "episode_3_kapotte_intercom",
+    "position": 7,
+    "characters": {
+      "s_tegel": { "voice_settings": { "voice_id": "D50w2srwVohKTPx9X6Th", "language": "nl" } },
+      "robin": { "voice_settings": { "voice_id": "f2yUVfK5jdm78zlpcZ8C", "language": "nl" } }
+    },
+    "moves": [
+      { "type": "say", "text": "Oh dag detectives, hoe gaat het met het mysterie?", "character": "s_tegel" },
+      { "type": "say", "text": "Hebben jullie wat hulp nodig?", "character": "s_tegel" },
+      { "type": "say", "text": "Mevrouw Tegel, u heeft mij altijd geleerd dat een uitmuntende detective alles bevraagt.", "character": "robin" },
+      { "type": "say", "text": "Daarom zijn we nu hier om u te bevragen.", "character": "robin" },
+      { "type": "say", "text": "Jullie hebben gelijk.", "character": "s_tegel" },
+      { "type": "say", "text": "Ik was zo druk op zoek naar een nieuwe roddel dat ik bereid was de privacy van anderen te schenden.", "character": "s_tegel" },
+      { "type": "say", "text": "Ik ga direct mijn excuses aanbieden aan alle flatbewoners.", "character": "s_tegel" }
+    ]
+  },
+  {
+    "id": "Ep3_Scene_7_Stoep_Tegel_RAG_Interview",
+    "type": "llm_based",
+    "thread": "episode_3_kapotte_intercom",
+    "position": 7.5,
+    "character": "s_tegel",
+    "characters": {
+      "s_tegel": { "voice_settings": { "voice_id": "D50w2srwVohKTPx9X6Th", "language": "nl" } }
+    },
+    "prompt": "Je bent S. Tegel. Gebruik opgehaalde kennis over S. Tegel en episode 3 wanneer relevant. Praat in het Nederlands, licht schaapachtig maar waardig, en leg in simpele taal uit waarom je de intercom kapot liet maken en wat je van de bewoners hebt geleerd. Houd antwoorden in 1 tot 3 zinnen en stel maximaal één korte vervolgvraag per beurt. Als de gebruiker aangeeft klaar te zijn, sluit kort af met <<QUIT>>.",
+    "max_turns": 10,
+    "speak_first": false,
+    "duration": 300,
+    "rag_enabled": true,
+    "index_name": "episode_3_s_tegel_docs",
+    "quit_phrases": ["klaar", "stop", "doei", "dag", "bye", "goodbye"],
+    "moves": []
+  },
+  {
+    "id": "Ep3_Scene_8_Ontknoping",
+    "type": "narrative",
+    "thread": "episode_3_kapotte_intercom",
+    "position": 8,
+    "characters": {
+      "s_tegel": { "voice_settings": { "voice_id": "D50w2srwVohKTPx9X6Th", "language": "nl" } },
+      "robin": { "voice_settings": { "voice_id": "f2yUVfK5jdm78zlpcZ8C", "language": "nl" } }
+    },
+    "moves": [
+      { "type": "say", "text": "Jullie hebben gelijk.", "character": "s_tegel" },
+      { "type": "say", "text": "Ik was zo druk op zoek naar een nieuwe roddel dat ik bereid was de privacy van anderen te schenden.", "character": "s_tegel" },
+      { "type": "say", "text": "Ik wilde jullie niet teleurstellen.", "character": "s_tegel" },
+      { "type": "say", "text": "Ik beloof dat ik vanaf nu alleen nog op verantwoorde wijze mijn onderzoek zal uitvoeren.", "character": "s_tegel" },
+      { "type": "say", "text": "Dankjulliewel voor jullie hulp.", "character": "s_tegel" },
+      { "type": "say", "text": "Tot de volgende keer.", "character": "s_tegel" }
+    ]
+  }
+]
