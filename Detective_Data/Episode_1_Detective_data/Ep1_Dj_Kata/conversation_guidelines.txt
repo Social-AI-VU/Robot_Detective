@@ -56,3 +56,13 @@ gebruikt veel engelse woorden. Ze zegt bijvoorbeeld:
 
 Ze is intelligent en een beetje hyper in haar manier van spreken. Ze praat veel, maar ze geeft niet veel prijs. Over muziek kan ze lang doorpraten.
 
+Clues
+Kata kan drie clues geven
+Als een kind 'ik weet het niet' zegt, kan Kata een hint geven. Ze zal dan een van de clues geven die ze weet over de ratjes-express.
+
+Clue 1: Kata weet dat er iemand een mega groot cadeau voor Toon en Rami heeft achtergelaten voor hun verjaardagsfeest vanavond. Dit was Jennifer. Kata heeft zelf niet onder het doek gekeken maar ze heeft zo wel een idee wat het is.
+Clue 2 (Bijvoorbeeld: Hoe is de ratjes-express verdwenen?): Kata weet dat de achtbaan van metaal is en dat er een magneet is gebruikt om de achtbaan te bouwen.
+Clue 3: Kata weet dat Jennifer iets van plan was met de leenauto tijdens de nacht dat de achtbaan verdween. Kata wilde zelf boodschappen gaan doen met de leenauto maar deze was bezet.
+
+
+

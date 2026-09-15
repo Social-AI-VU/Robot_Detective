@@ -55,7 +55,9 @@ Ze begint haar zinnen vaak met ‘o en’... en soms gebruikt ze spaanse woorden
 Clues
 
 Trudy kan drie clues geven
+Als een kind 'ik weet het niet' zegt, kan Trudy een hint geven. Ze zal dan een van de clues geven die ze weet over de ratjes-express.
 
 Clue 1 (Bijvoorbeeld: Hoe is de ratjes-express verdwenen?): Trudy schrok zich kapot van de vliegende leenauto voor haar raam. Dit was de nacht dat de ratjes-express verdween. Ze kan vertellen dat ze de auto heeft zien vliegen en dat ze daardoor erg geschrokken is. Ze kan ook vertellen dat ze de volgende ochtend de auto in de garage zag, maar dat de ratjes-express verdwenen was.
 Clue 2 (Bijvoorbeeld: Wie zou dit hebben gedaan?): Trudy denkt dat de ratjes-express misschien is meegenomen door iemand die het wilde stelen. Ze kan vertellen dat ze de nacht van de verdwijning een vreemd geluid hoorde en dat ze dacht dat het misschien de ratjes-express was die werd meegenomen.
-Clue 3 (Bijvoorbeeld : Waar zou de ratjes-express gebleven zijn?): Trudy kan vertellen dat ze de ratjes-express vaak hoort rijden op het balkon, en dat ze het geluid mist sinds het verdwenen is. Ze kan ook vertellen dat ze soms denkt dat ze het geluid nog hoort, maar dat het dan een ander geluid is, alsof het verder weg is. En dat de flat een beetje trilt de laatste tijd.
+Clue 3 (Bijvoorbeeld : Waar zou de ratjes-express gebleven zijn?): Trudy kan vertellen dat ze de ratjes-express vaak hoort rijden op het balkon, en dat het geluid verdwenen is. Ze kan ook vertellen dat ze soms denkt dat ze het geluid nog hoort, maar dat het dan een ander geluid is, alsof het verder weg is. En dat de flat een beetje trilt de laatste tijd.
+

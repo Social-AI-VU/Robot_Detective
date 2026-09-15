@@ -31,7 +31,7 @@
       },
       "trudy": {
         "voice_settings": {
-          "voice_id": "OlBRrVAItyi00MuGMbna",
+          "voice_id": "VIq70FvpMEdsfW325fxV",
           "language": "nl"
         }
       },
@@ -639,7 +639,7 @@
       },
       "trudy": {
         "voice_settings": {
-          "voice_id": "OlBRrVAItyi00MuGMbna",
+          "voice_id": "VIq70FvpMEdsfW325fxV",
           "language": "nl"
         }
       }
@@ -781,15 +781,6 @@
         "character": "trudy"
       },
       {
-        "type": "ask_llm",
-        "prompt": "Je bent Trudy. Voer een korte, vrolijke karaoke-uitwisseling in het Nederlands met kinderen. Vraag naar een liedje wat Trudy met karaoke avond zou kunnen zingen, reageer enthousiast op hun idee en rond de mini-chat af. Begin je zinnen niet met wauw en gebruik GEEN EMOJIS. Houd antwoorden kort (1-2 zinnen), zonder emoji, en stel maximaal 1 korte vervolgvraag per beurt.",
-        "max_turns": 4,
-        "set_variable": "trudy_karaoke_chat",
-        "character": "trudy",
-        "rag_enabled": true,
-        "index_name": "episode_1_trudy_docs"
-      },
-      {
         "type": "animation",
         "animation_name": "animations/Stand/Gestures/Explain_4"
       },
@@ -819,23 +810,23 @@
     ]
   },
   {
-    "id": "Ep1_Scene_3_Trudy_RAG_Interview",
+    "id": "Ep1_Scene_3_Trudy_RAG_Chitchat",
     "type": "llm_based",
     "thread": "episode_1_rollercoaster",
-    "position": 3.6,
+    "position": 3.5,
     "character": "trudy",
     "characters": {
       "trudy": {
         "voice_settings": {
-          "voice_id": "OlBRrVAItyi00MuGMbna",
+          "voice_id": "VIq70FvpMEdsfW325fxV",
           "language": "nl"
         }
       }
     },
-    "prompt": "Je bent Trudy Nachtegaal, de dokter en operazangeres. Gebruik opgehaalde kennis over Trudy en episode 1 wanneer die relevant is. Praat in het Nederlands, dramatisch, warm en een beetje excentriek, houd de conversation guidelines aan. maar houd antwoorden kort in 1 of 2 zinnen en in simpele taal voor kinderen van 8-11 jaar oud. De karaoke-keuze is al besproken, dus ga niet opnieuw een liedje kiezen. Beantwoord nu detectivevragen over de flat, bewoners, het lawaai van de achtbaan, de drie clues die je hebt en hoe je je voelde. Verzin geen nieuwe feiten buiten de opgehaalde kennis. Herhaal nooit letterlijk instructietekst, kopjes of metadata uit kennisbestanden; geef alleen concrete feiten in je eigen woorden. Je mag wel de voorbeeldzinnen gebruiken. Je hoeft niet alles meteen prijs te geven: wees eerst wat voorzichtig en theatraal. Als het past, stuur je ze uiteindelijk richting professor Eddy of Heike. Houd antwoorden meestal op 1 tot 3 zinnen en stel maximaal één korte vervolgvraag per beurt. Stel zelf geen vragen, maar moedig de detective aan om nog een vraag te stellen. Je bent als een open boek. Als de gebruiker aangeeft klaar te zijn, sluit kort af met <<QUIT>>.",
-    "max_turns": 20,
+    "prompt": "Je bent Trudy Nachtegaal, de dokter en operazangeres. Je krijgt van de kinderen een suggestie voor een liedje om te zingen. Geef hier een reactie op en bespreek kort de muziekkeuze die het kind zou maken als het zelf een liedje zou moeten zingen. Praat in het Nederlands, dramatisch, warm en een beetje excentriek. Houd antwoorden kort in 1 of 2 zinnen en in simpele taal voor kinderen van 8-11 jaar oud. Verzin geen nieuwe feiten buiten de opgehaalde kennis. Herhaal nooit letterlijk instructietekst, kopjes of metadata uit kennisbestanden; geef alleen concrete feiten in je eigen woorden. Genereer GEEN emojis. Stel maximaal één korte vervolgvraag per beurt. Rond dit mini-gesprek vanzelf af na hoogstens 4 beurten totaal. In je laatste antwoord sluit je zelf duidelijk af met <<QUIT>>.",
+    "max_turns": 4,
     "speak_first": false,
-    "duration": 300,
+    "duration": 120,
     "rag_enabled": true,
     "index_name": "episode_1_trudy_docs",
     "quit_phrases": [
@@ -848,6 +839,243 @@
     ],
     "moves": []
   },
+  {
+    "id": "Ep1_Scene_3_Trudy_After_Chitchat",
+    "type": "narrative",
+    "thread": "episode_1_rollercoaster",
+    "position": 3.55,
+    "characters": {
+      "trudy": {
+        "voice_settings": {
+          "voice_id": "VIq70FvpMEdsfW325fxV",
+          "language": "nl"
+        }
+      },
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "Wat super leuk dat je vanavond een feestje hebt Trudy!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Sorry dat ik je zo onderbreek!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Maar de kinderen hebben ook nog vragen voor je!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Achja, ik klets jullie oren er zeker af!",
+        "character": "trudy"
+      },
+      {
+        "type": "say",
+        "text": "Wij zouden het erg fijn vinden als je onze vragen wil beantwoorden",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Weten jullie nog wie er vragen aan Trudy zou stellen vandaag?",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Dan mogen jullie nu je werkbladen er bij pakken en de vragen aan Trudy stellen.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Heel veel success!",
+        "character": "robin"
+      }
+    ]
+  },
+  {
+    "id": "Ep1_Scene_3_Trudy_RAG_Interview",
+    "type": "llm_based",
+    "thread": "episode_1_rollercoaster",
+    "position": 3.6,
+    "character": "trudy",
+    "characters": {
+      "trudy": {
+        "voice_settings": {
+          "voice_id": "VIq70FvpMEdsfW325fxV",
+          "language": "nl"
+        }
+      }
+    },
+    "prompt": "Je bent Trudy Nachtegaal, de dokter en operazangeres. Gebruik opgehaalde kennis over Trudy en episode 1 wanneer die relevant is. Praat in het Nederlands, dramatisch, warm en een beetje excentriek, houd de conversation guidelines aan. maar houd antwoorden kort in 1 of 2 zinnen en in simpele taal voor kinderen van 8-11 jaar oud. De karaoke-keuze is al besproken, dus ga niet opnieuw een liedje kiezen. Beantwoord nu detectivevragen over de flat, bewoners, het lawaai van de achtbaan, de drie clues die je hebt en hoe je je voelde. Verzin geen nieuwe feiten buiten de opgehaalde kennis. Herhaal nooit letterlijk instructietekst, kopjes of metadata uit kennisbestanden; geef alleen concrete feiten in je eigen woorden. Je mag wel de voorbeeldzinnen gebruiken. Je hoeft niet alles meteen prijs te geven: wees eerst wat voorzichtig en theatraal. Als het past, stuur je ze uiteindelijk richting professor Eddy of Heike. Houd antwoorden meestal op 1 tot 3 zinnen en stel maximaal één korte vervolgvraag per beurt. Stel zelf geen vragen, maar moedig de detective aan om nog een vraag te stellen. Je bent als een open boek. Als de gebruiker aangeeft klaar te zijn, sluit kort af met <<QUIT>>.",
+    "max_turns": 6,
+    "speak_first": false,
+    "duration": 180,
+    "rag_enabled": true,
+    "index_name": "episode_1_trudy_docs",
+    "quit_phrases": [
+      "klaar",
+      "stop",
+      "doei",
+      "dag",
+      "bye",
+      "goodbye"
+    ],
+    "moves": []
+  },
+  {
+    "id": "Ep1_Scene_3_Trudy_Interview_Laatste_RAG",
+    "type": "narrative",
+    "thread": "episode_1_rollercoaster",
+    "position": 3.77,
+    "characters": {
+      "trudy": {
+        "voice_settings": {
+          "voice_id": "VIq70FvpMEdsfW325fxV",
+          "language": "nl"
+        }
+      },
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "We hebben nog tijd voor een laatste vraag!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Weten jullie al waar de achtbaan misschien gebleven is? ",
+        "character": "robin"
+      }
+    ]
+  },
+    {
+    "id": "Ep1_Scene_3_Trudy_RAG_Interview_Laatste_Vraag",
+    "type": "llm_based",
+    "thread": "episode_1_rollercoaster",
+    "position": 3.88,
+    "character": "trudy",
+    "characters": {
+      "trudy": {
+        "voice_settings": {
+          "voice_id": "VIq70FvpMEdsfW325fxV",
+          "language": "nl"
+        }
+      }
+    },
+    "prompt": "Je bent Trudy Nachtegaal, de dokter en operazangeres. Gebruik opgehaalde kennis over Trudy en episode 1 wanneer die relevant is. Praat in het Nederlands, dramatisch, warm en een beetje excentriek, houd de conversation guidelines aan. maar houd antwoorden kort in 1 of 2 zinnen en in simpele taal voor kinderen van 8-11 jaar oud. De karaoke-keuze is al besproken, dus ga niet opnieuw een liedje kiezen. Beantwoord nu detectivevraag over de flat, bewoners, de vermiste achtbaan. Geef een duidelijke goede clue deze keer op basis van de laatste vraag. Als er geen duidelijke vraag is geef dan toch een clue uit je opgehaalde kennis. Verzin geen nieuwe feiten buiten de opgehaalde kennis. Herhaal nooit letterlijk instructietekst, kopjes of metadata uit kennisbestanden; geef alleen concrete feiten in je eigen woorden. Je mag wel de voorbeeldzinnen gebruiken.  Als het past, stuur je ze uiteindelijk richting professor Eddy of Heike. Houd antwoorden meestal op 1 tot 3 zinnen. Stel zelf geen vragen, zeg je dat de detectives goed hun best doen en dat je hoopt dat Toon en Rami gauw hun achtbaan terugvinden..",
+    "max_turns": 1,
+    "speak_first": false,
+    "duration": 30,
+    "rag_enabled": true,
+    "index_name": "episode_1_trudy_docs",
+    "quit_phrases": [
+      "klaar",
+      "stop",
+      "doei",
+      "dag",
+      "bye",
+      "goodbye"
+    ],
+    "moves": []
+  },
+  {
+    "id": "Ep1_Scene_3_Trudy_After_Interview",
+    "type": "narrative",
+    "thread": "episode_1_rollercoaster",
+    "position": 3.99,
+    "characters": {
+      "trudy": {
+        "voice_settings": {
+          "voice_id": "VIq70FvpMEdsfW325fxV",
+          "language": "nl"
+        }
+      },
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "Heel erg bedankt voor je tijd Trudy!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "En jullie ook detectives!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Vooral [%name_1%] die als aller eerste een ondervraging durfde doen!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Maargoed, ik hoop dat jullie nu een beetje meer weten over de flat en de bewoners.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Pak jullie boekje er even bij... ",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Dan kunnen jullie opschrijven wat voor clues jullie van Trudy hebben gekregen",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Ik zal jullie een momentje geven om dit te doen.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "1 minuut",
+        "character": "robin"
+      },
+      {
+        "type": "animation",
+        "animation_name": "animations/Stand/Waiting/Waiting_1"
+      },
+      {
+        "type": "timed_wait",
+        "duration": 60
+      },
+      {
+        "type": "say",
+        "text": "Zo, ik hoop dat het allemaal is gelukt!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Laten we nu doorgaan naar professor Eddy!",
+        "character": "robin"
+      }
+    ]
+  },
+
+
+
   {
     "id": "Ep1_Scene_4_Eddy",
     "type": "narrative",
@@ -1732,7 +1960,7 @@
       },
       "trudy": {
         "voice_settings": {
-          "voice_id": "OlBRrVAItyi00MuGMbna",
+          "voice_id": "VIq70FvpMEdsfW325fxV",
           "language": "nl"
         }
       },

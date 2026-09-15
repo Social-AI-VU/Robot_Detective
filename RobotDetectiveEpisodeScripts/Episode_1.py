@@ -178,6 +178,7 @@ def print_startup_checks() -> None:
     except Exception as exc:
         print(f"[WARN] Could not inspect rag_enabled dialogs: {exc}")
 
+
 if __name__ == '__main__':
     # Select device
     desktop = Desktop(speakers_conf=SpeakersConf(sample_rate=22050))
@@ -229,7 +230,12 @@ if __name__ == '__main__':
       #  "Ep1_Scene_1_Intro",  # intro + meet Robin, collect name
       #  "Ep1_Scene_2_Toon_Rami",  # Toon & Rami report the missing rollercoaster
       #  "Ep1_Scene_3_Trudy",  # interview Trudy (karaoke plan)
+      #  "Ep1_Scene_3_Trudy_RAG_Chitchat",  # RAG-backed Trudy chitchat
+     #   "Ep1_Scene_3_Trudy_After_Chitchat",  # Robin/trudy bridge after chitchat
         "Ep1_Scene_3_Trudy_RAG_Interview",  # RAG-backed Trudy interview
+        "Ep1_Scene_3_Trudy_Interview_Laatste_RAG",
+        "Ep1_Scene_3_Trudy_RAG_Interview_Laatste_Vraag",
+        "Ep1_Scene_3_Trudy_After_Interview",
         "Ep1_Scene_4_Eddy",  # interview Professor Eddy (puzzl=e)
         "Ep1_Scene_4_Eddy_RAG_Interview",  # RAG-backed Eddy interview
         "Ep1_Scene_5_Yoyo",

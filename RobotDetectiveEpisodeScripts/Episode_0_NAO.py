@@ -61,6 +61,7 @@ INDEX_NAME = "episode_0_robin_docs"
 INGEST_DOCS = False
 PARTICIPANT_ID = os.getenv("PARTICIPANT_ID", "0")
 RESET_PARTICIPANT_STATE = os.getenv("RESET_PARTICIPANT_STATE", "1").strip().lower() in {"1", "true", "yes", "y"}
+NAO_LISTEN_TIMEOUT_SEC = float(os.getenv("NAO_LISTEN_TIMEOUT_SEC", "10"))
 NAO_IP = os.getenv("NAO_IP", "10.0.0.221") #home 192.168.0.250
 
 DEFAULT_RAG_INDEX_NAME = "episode_0_robin_docs"
@@ -187,6 +188,7 @@ if __name__ == "__main__":
         language="nl",
         post_speech_delay=0,
         signal_listening_behavior=True,
+        duration=NAO_LISTEN_TIMEOUT_SEC,
     )
     llm = OpenAIGPTProvider(api_key=os.getenv("OPENAI_API_KEY"))
     vector_store = RedisVectorStoreProvider(
