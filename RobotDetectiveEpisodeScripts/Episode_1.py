@@ -237,14 +237,19 @@ if __name__ == '__main__':
      #   "Ep1_Scene_3_Trudy_RAG_Interview_Laatste_Vraag",
      #   "Ep1_Scene_3_Trudy_After_Interview",
       #  "Ep1_Scene_4_Eddy",  # intro Eddy
-        "Ep1_Scene_4_Eddy_RAG_Chitchat",  # Eddy chitchat
-        "Ep1_Scene_4_Eddy_After_Chitchat",  # bridge after Eddy chitchat
-        "Ep1_Scene_4_Eddy_RAG_Interview",  # RAG-backed Eddy interview
-        "Ep1_Scene_4_Eddy_Interview_Laatste_RAG",  # last-question setup
-        "Ep1_Scene_4_Eddy_RAG_Interview_Laatste_Vraag",  # final Eddy clue
-        "Ep1_Scene_4_Eddy_Interview_Afsluiten",  # close Eddy scene
-        "Ep1_Scene_5_Yoyo",
-        "Ep1_Scene_5_Yoyo_RAG_Interview", # interview Yoyo RAG
+     #   "Ep1_Scene_4_Eddy_RAG_Chitchat",  # Eddy chitchat
+      #  "Ep1_Scene_4_Eddy_After_Chitchat",  # bridge after Eddy chitchat
+     #   "Ep1_Scene_4_Eddy_RAG_Interview",  # RAG-backed Eddy interview
+     #   "Ep1_Scene_4_Eddy_Interview_Laatste_RAG",  # last-question setup
+     #   "Ep1_Scene_4_Eddy_RAG_Interview_Laatste_Vraag",  # final Eddy clue
+     #   "Ep1_Scene_4_Eddy_Interview_Afsluiten",  # close Eddy scene
+     #   "Ep1_Scene_5_Yoyo",
+        "Ep1_Scene_5_Yoyo_RAG_Chitchat",
+        "Ep1_Scene_5_Yoyo_After_Chitchat",
+        "Ep1_Scene_5_Yoyo_RAG_Interview",# interview Yoyo RAG
+        "Ep1_Scene_5_Yoyo_Interview_Laatste_RAG",
+        "Ep1_Scene_5_Yoyo_RAG_Interview_Laatste_Vraag",
+        "Ep1_Scene_5_Yoyo_Interview_Afsluiten",
         "Ep1_Scene_6_Jennifer",  # interview Jennifer
         "Ep1_Scene_6_Jennifer_LLM_Chat",  # initial LLM chat with Jennifer
         "Ep1_Scene_6_Jennifer_RAG_Interview",  # RAG-backed Jennifer interview

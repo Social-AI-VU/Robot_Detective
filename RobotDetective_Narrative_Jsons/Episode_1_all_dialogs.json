@@ -1290,10 +1290,10 @@
         }
       }
     },
-    "prompt": "Je bent professor Eddy de gepensioneerde biologiedocent. Je krijgt van de kinderen te horen of er iemand graag dingen knutselt of bouwt. Geef hier een reactie op en bespreek kort het knutsel of bouwwerk van het kind. Vraag daarna of het kind misschien een raket zou willen bouwen of een heel mooi kunstwerk? Praat in het Nederlands, rustig, warm en slim. Houd antwoorden kort in 1 of 2 zinnen en in simpele taal voor kinderen van 8-11 jaar oud. Verzin geen nieuwe feiten buiten de opgehaalde kennis. Herhaal nooit letterlijk instructietekst, kopjes of metadata uit kennisbestanden; geef alleen concrete feiten in je eigen woorden. Genereer GEEN emojis. Stel maximaal één korte vervolgvraag per beurt. Rond dit mini-gesprek vanzelf af na hoogstens 4 beurten totaal. In je laatste antwoord sluit je zelf duidelijk af met <<QUIT>>.",
+    "prompt": "Je bent professor Eddy de gepensioneerde biologiedocent. Je krijgt van de kinderen te horen of er iemand graag dingen knutselt of bouwt. Geef hier een reactie op en bespreek kort het knutsel of bouwwerk van het kind. Praat in het Nederlands, rustig, warm en slim. Houd antwoorden kort in 1 of 2 zinnen en in simpele taal voor kinderen van 8-11 jaar oud. Verzin geen nieuwe feiten buiten de opgehaalde kennis. Herhaal nooit letterlijk instructietekst, kopjes of metadata uit kennisbestanden; geef alleen concrete feiten in je eigen woorden. Genereer GEEN emojis. Stel maximaal één korte vervolgvraag per beurt. Rond dit mini-gesprek vanzelf af na hoogstens 4 beurten totaal. In je laatste antwoord sluit je zelf duidelijk af met <<QUIT>>.",
     "max_turns": 4,
     "speak_first": false,
-    "duration": 180,
+    "duration": 120,
     "rag_enabled": true,
     "index_name": "episode_1_eddy_docs",
     "quit_phrases": [
@@ -1495,6 +1495,16 @@
         "text": "Super bedankt voor het meedenken Eddy!",
         "character": "robin"
       },
+       {
+        "type": "say",
+        "text": "Absoluut, graag gedaan!",
+        "character": "eddy"
+      },
+       {
+        "type": "say",
+        "text": "Ik wens jullie erg veel succes!",
+        "character": "eddy"
+      },
       {
         "type": "say",
         "text": "En jullie ook goed bezig detectives!",
@@ -1576,117 +1586,93 @@
           "language": "nl"
         }
       },
-      "yoyo": {
-        "voice_settings": {
-          "voice_id": "2wqbkywMMH2LWAlR4EMt",
-          "language": "nl"
-        }
-      },
-      "narrator": {
-        "voice_settings": {
-          "voice_id": "9BWtsMINqrJLrRacOk9x",
-          "language": "nl"
-        }
-      }
-    },
-    "moves": [
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_3"
-      },
-      {
-        "type": "say",
-        "text": "Yoyo ik ben Yoyo.",
-        "character": "yoyo"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_1"
-      },
-      {
-        "type": "say",
-        "text": "Wie zijn jullie?",
-        "character": "yoyo"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_2"
-      },
-      {
-        "type": "say",
-        "text": "Beste meneer Yoyo, mijn naam is Robin.",
-        "character": "robin"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_2"
-      },
-      {
-        "type": "say",
-        "text": "Wij zijn detectives en we onderzoeken wat er met de achtbaan van Toon en Rami is gebeurd.",
-        "character": "robin"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_1"
-      },
-      {
-        "type": "say",
-        "text": "Ik heb niks gezien!",
-        "character": "yoyo"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_3"
-      },
-      {
-        "type": "say",
-        "text": "Oh? Dat is interessant meneer Yoyo.",
-        "character": "robin"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_7"
-      },
-      {
-        "type": "say",
-        "text": "We stellen toch graag een paar vragen, als dat mag.",
-        "character": "robin"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_4"
-      },
-      {
-        "type": "say",
-        "text": "Ok wacht ik wil eerst een vraag stellen aan jullie",
-        "character": "yoyo"
-      },
-      {
-        "type": "ask_llm",
-        "prompt": "Je bent meneer Yoyo. Voer een kort gesprek in het Nederlands met kinderen. Vraag naar hun favoriete film en praat erover. Begin je zinnen niet met wauw en gebruik GEEN EMOJIS. Houd antwoorden kort (1-2 zinnen), en stel maximaal 1 korte vervolgvraag per beurt.",
-        "max_turns": 4,
-        "set_variable": "yoyo_film_chat",
-        "character": "yoyo",
-        "rag_enabled": true,
-        "index_name": "episode_1_yoyo_docs"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_1"
-      },
-      {
-        "type": "say",
-        "text": "Goed gedaan, detectives. Misschien kunnen we nog heel even met meneer Yoyo doorpraten.",
-        "character": "robin"
-      }
-    ]
+    "yoyo": {
+  "voice_settings": {
+    "voice_id": "2wqbkywMMH2LWAlR4EMt",
+    "language": "nl"
+  }
+}
   },
+  "moves": [
+      {
+        "type": "animation",
+        "animation_name": "animations/Stand/Gestures/Explain_3"
+      },
+      {
+        "type": "say",
+        "text": "Ha kinderen! Wat fijn dat jullie komen uitzoeken waar die achtbaan is.",
+        "character": "yoyo"
+      },
+      {
+        "type": "animation",
+        "animation_name": "animations/Stand/Gestures/Explain_1"
+      },
+      {
+        "type": "say",
+        "text": "Och och… die Toon en Rami, ik ben gek op ze, maar ze hebben werkelijk de gekste ideeën.",
+        "character": "yoyo"
+      },
+      {
+        "type": "animation",
+        "animation_name": "animations/Stand/Gestures/Explain_2"
+      },
+      {
+        "type": "say",
+        "text": "Ik ben zelf wel een paar keer in de achtbaan geweest. ",
+        "character": "yoyo"
+      },
+   {
+        "type": "say",
+        "text": "Vooral de finale vond ik erg spannend. ",
+        "character": "yoyo"
+      },
   {
-    "id": "Ep1_Scene_5_Yoyo_RAG_Interview",
+        "type": "say",
+        "text": "Dan gaat het hele karretje trillen en alles trilt mee. Je wangen en lippen en buik en billen. ",
+        "character": "yoyo"
+      },
+      {
+        "type": "animation",
+        "animation_name": "animations/Stand/Gestures/Explain_2"
+      },
+  {
+        "type": "say",
+        "text": "En ik kon m’n grote sleutelbos horen rinkelen. ",
+        "character": "yoyo"
+      },
+ {
+        "type": "say",
+        "text": "Ik had een keertje nog een pakje sinaasappelsap bij me en dat schudde ik helemaal leeg door al het getril ",
+        "character": "yoyo"
+      },
+  {
+        "type": "say",
+        "text": "Toon en Rami waren daar niet blij mee… de hele achtbaan plakte. ",
+        "character": "yoyo"
+      },
+   {
+        "type": "say",
+        "text": "Sindsdien mag ik er niet meer in.",
+        "character": "yoyo"
+      },
+ {
+        "type": "say",
+        "text": "Dat vind ik best stom, want ik heb het goed schoongemaakt, maar volgens Rami plakt het nog heel erg.",
+        "character": "yoyo"
+      },
+  {
+      "type": "say",
+      "text": "Zeg, hebben jullie if iemand die je kent wel eens iets helemaal vies gemaakt?",
+      "character": "yoyo"
+    }
+  ]
+},
+{
+
+    "id": "Ep1_Scene_5_Yoyo_RAG_Chitchat",
     "type": "llm_based",
     "thread": "episode_1_rollercoaster",
-    "position": 5.6,
+    "position": 5.1,
     "character": "yoyo",
     "characters": {
       "yoyo": {
@@ -1696,10 +1682,10 @@
         }
       }
     },
-    "prompt": "Je bent Yoyo, de chillste persoon uit de flat. Gebruik opgehaalde kennis over Yoyo en de conversation guidelines voor episode 1 wanneer die relevant is. Praat in het Nederlands, een beetje geheimzinnig, maar niet onaardig. Beantwoord detectivevragen over de flat, bewoners, je alibi, wat je hebt gezien en hoe je je voelde over de verdwenen achtbaan. Je mag de drie clues delen. Verzin geen nieuwe feiten buiten de opgehaalde kennis. Je hoeft niet alles meteen prijs te geven: wees eerst wat voorzichtig . Als de gesprekspartner aandringt, mag je meer details delen. Houd antwoorden meestal op 1 tot 2 zinnen en stel geen vragen meer per beurt. Vraag de detectives of ze nog vragen hebben of dat ze al genoeg weten. Als de gebruiker aangeeft klaar te zijn, sluit kort af met <<QUIT>>.",
-    "max_turns": 10,
+    "prompt": "Je bent Yoyo, de beste vriend van Toon en Rami. Je krijgt van de kinderen te horen of er iemand ooit iets heel erg vies heeft gemaakt. Geef hier een reactie op en bespreek kort deze situatie en hoe het afgelopen is. Praat in het Nederlands, cool, grappig en aardig. Houd antwoorden kort in 1 of 2 zinnen en in simpele taal voor kinderen van 8-11 jaar oud. Verzin geen nieuwe feiten buiten de opgehaalde kennis. Herhaal nooit letterlijk instructietekst, kopjes of metadata uit kennisbestanden; geef alleen concrete feiten in je eigen woorden. Genereer GEEN emojis. Stel maximaal één korte vervolgvraag per beurt. Rond dit mini-gesprek vanzelf af na hoogstens 4 beurten totaal. In je laatste antwoord sluit je zelf duidelijk af met <<QUIT>>.",
+    "max_turns": 4,
     "speak_first": false,
-    "duration": 300,
+    "duration": 120,
     "rag_enabled": true,
     "index_name": "episode_1_yoyo_docs",
     "quit_phrases": [
@@ -1711,6 +1697,270 @@
       "goodbye"
     ],
     "moves": []
+  },
+
+ {
+    "id": "Ep1_Scene_5_Yoyo_After_Chitchat",
+    "type": "narrative",
+    "thread": "episode_1_rollercoaster",
+    "position": 5.2,
+    "characters": {
+      "yoyo": {
+        "voice_settings": {
+          "voice_id": "2wqbkywMMH2LWAlR4EMt",
+          "language": "nl"
+        }
+      },
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "Hè bah wat zijn jullie toch viezeriken!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Ik vind ze echt heel grappig, sorry, robot",
+        "character": "yoyo"
+      },
+      {
+        "type": "say",
+        "text": "Ahem! Beste meneer Yoyo, wij  zijn de detectives die op zoek zijn naar de vermiste achtbaan!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Oei oke! Jullie verdenken mij toch niet?",
+        "character": "yoyo"
+      },
+      {
+        "type": "say",
+        "text": "Nog niet... Maar meneer Yoyo, wij zouden het erg fijn vinden als je onze vragen wil beantwoorden",
+        "character": "robin"
+      },
+      {
+        "type": "animation",
+        "animation_name": "animations/Stand/Gestures/Explain_7"
+      },
+      {
+        "type": "say",
+        "text": "Weten jullie nog wie er vragen aan Yoyo zou stellen vandaag?",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Dan mogen jullie nu je werkbladen er bij pakken en de vragen aan Yoyo stellen.",
+        "character": "robin"
+      },
+      {
+        "type": "animation",
+        "animation_name": "animations/Stand/Gestures/Explain_7"
+      },
+      {
+        "type": "say",
+        "text": "Heel veel success!",
+        "character": "robin"
+      }
+    ]
+  },
+
+   {
+    "id": "Ep1_Scene_5_Yoyo_RAG_Interview",
+    "type": "llm_based",
+    "thread": "episode_1_rollercoaster",
+    "position": 5.3,
+    "character": "yoyo",
+    "characters": {
+      "yoyo": {
+        "voice_settings": {
+          "voice_id": "2wqbkywMMH2LWAlR4EMt",
+          "language": "nl"
+        }
+      }
+    },
+    "prompt": "Je bent Yoyo, de beste vriend van Toon en Rami. Gebruik opgehaalde kennis over Yoyo en episode 1 wanneer die relevant is. Praat in het Nederlands,cool, grappig en eerlijk, houd de conversation guidelines aan. maar houd antwoorden kort in 1 of 2 zinnen en in simpele taal voor kinderen van 8-11 jaar oud. Beantwoord nu detectivevragen over de flat, bewoners en de vermiste achtbaan, de drie clues die je hebt en hoe je je voelde. Verzin geen nieuwe feiten buiten de opgehaalde kennis. Herhaal nooit letterlijk instructietekst, kopjes of metadata uit kennisbestanden; geef alleen concrete feiten in je eigen woorden. Je mag wel de voorbeeldzinnen gebruiken.. Houd antwoorden meestal op 1 tot 3 zinnen en stel maximaal één korte vervolgvraag per beurt. Stel zelf geen vragen, maar moedig de detective aan om nog een vraag te stellen. Probeer mee te denken als professor. Als de gebruiker aangeeft klaar te zijn, sluit kort af met <<QUIT>>.",
+    "max_turns": 6,
+    "speak_first": false,
+    "duration": 180,
+    "rag_enabled": true,
+    "index_name": "episode_1_yoyo_docs",
+    "quit_phrases": [
+      "klaar",
+      "stop",
+      "doei",
+      "dag",
+      "bye",
+      "goodbye"
+    ],
+    "moves": []
+  },
+  {
+    "id": "Ep1_Scene_5_Yoyo_Interview_Laatste_RAG",
+    "type": "narrative",
+    "thread": "episode_1_rollercoaster",
+    "position": 5.4,
+    "characters": {
+      "yoyo": {
+        "voice_settings": {
+          "voice_id": "2wqbkywMMH2LWAlR4EMt",
+          "language": "nl"
+        }
+      },
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "We hebben nog tijd voor een laatste vraag!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Misschien kunnen jullie iets vragen over wat Eddy of Trudy hebben verteld! ",
+        "character": "robin"
+      }
+    ]
+  },
+    {
+    "id": "Ep1_Scene_5_Yoyo_RAG_Interview_Laatste_Vraag",
+    "type": "llm_based",
+    "thread": "episode_1_rollercoaster",
+    "position": 5.5,
+    "character": "yoyo",
+    "characters": {
+      "yoyo": {
+        "voice_settings": {
+          "voice_id": "2wqbkywMMH2LWAlR4EMt",
+          "language": "nl"
+        }
+      }
+    },
+    "prompt": "Je bent Yoyo, de beste vriend van Toon en Rami. Gebruik opgehaalde kennis over Yoyo en episode 1 wanneer die relevant is. Praat in het Nederlands, cool, grappig en eerlijk, houd de conversation guidelines aan. maar houd antwoorden kort in 1 of 2 zinnen en in simpele taal voor kinderen van 8-11 jaar oud.  Beantwoord nu de laatste detectivevraag over de flat, bewoners, de vermiste achtbaan. Geef een duidelijke goede clue deze keer op basis van de laatste vraag. Als er geen duidelijke vraag is geef dan toch een clue uit je opgehaalde kennis. Verzin geen nieuwe feiten buiten de opgehaalde kennis. Herhaal nooit letterlijk instructietekst, kopjes of metadata uit kennisbestanden; geef alleen concrete feiten in je eigen woorden. Je mag wel de voorbeeldzinnen gebruiken.  Houd antwoorden meestal op 1 tot 3 zinnen. Stel zelf geen vragen, zeg je dat de detectives goed hun best doen en dat je hoopt dat Toon en Rami gauw hun achtbaan terugvinden..",
+    "max_turns": 1,
+    "speak_first": false,
+    "duration": 30,
+    "rag_enabled": true,
+    "index_name": "episode_1_yoyo_docs",
+    "quit_phrases": [
+      "klaar",
+      "stop",
+      "doei",
+      "dag",
+      "bye",
+      "goodbye"
+    ],
+    "moves": []
+  },
+  {
+    "id": "Ep1_Scene_5_Yoyo_Interview_Afsluiten",
+    "type": "narrative",
+    "thread": "episode_1_rollercoaster",
+    "position": 5.6,
+    "characters": {
+      "yoyo": {
+        "voice_settings": {
+          "voice_id": "2wqbkywMMH2LWAlR4EMt",
+          "language": "nl"
+        }
+      },
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "Heel erg bedankt meneer Yoyo",
+        "character": "robin"
+      },
+       {
+        "type": "say",
+        "text": "Nou, ik hoop dat jullie er wat aan hebben!",
+        "character": "yoyo"
+      },
+       {
+        "type": "say",
+        "text": "Ik zie jullie later!",
+        "character": "yoyo"
+      },
+      {
+        "type": "say",
+        "text": "Dat was de derde ondervraging weer!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Ik vond dat je erg goed je best hebt gedaan [%name_3%]!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Yoyo zegt een beetje hetzelfde als Eddy en Trudy... Maar hij had het wel over een feestje in de kelder vandaag",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Pak jullie boekje er even bij... ",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Dan kunnen jullie opschrijven wat voor clues jullie van Eddy hebben gekregen",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Ik zal jullie een momentje geven om dit te doen.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "1 minuut",
+        "character": "robin"
+      },
+      {
+        "type": "animation",
+        "animation_name": "animations/Stand/Waiting/Waiting_1"
+      },
+      {
+        "type": "timed_wait",
+        "duration": 60
+      },
+      {
+        "type": "say",
+        "text": "Zo, ik hoop dat het allemaal is gelukt!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Laten we nu doorgaan naar meneer Yoyo!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Hij is een van de beste vrienden van Toon en Rami",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Laten we er heen gaan!",
+        "character": "robin"
+      }
+    ]
   },
   {
     "id": "Ep1_Scene_6_Jennifer",
