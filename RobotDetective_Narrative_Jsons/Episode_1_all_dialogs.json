@@ -813,7 +813,7 @@
     "id": "Ep1_Scene_3_Trudy_RAG_Chitchat",
     "type": "llm_based",
     "thread": "episode_1_rollercoaster",
-    "position": 3.5,
+    "position": 4.1,
     "character": "trudy",
     "characters": {
       "trudy": {
@@ -843,7 +843,7 @@
     "id": "Ep1_Scene_3_Trudy_After_Chitchat",
     "type": "narrative",
     "thread": "episode_1_rollercoaster",
-    "position": 3.55,
+    "position": 4.2,
     "characters": {
       "trudy": {
         "voice_settings": {
@@ -905,7 +905,7 @@
     "id": "Ep1_Scene_3_Trudy_RAG_Interview",
     "type": "llm_based",
     "thread": "episode_1_rollercoaster",
-    "position": 3.6,
+    "position": 4.3,
     "character": "trudy",
     "characters": {
       "trudy": {
@@ -1070,6 +1070,16 @@
         "type": "say",
         "text": "Laten we nu doorgaan naar professor Eddy!",
         "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Hij weet meer over hoe de achtbaan is gebouwd!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Eddy woont op de tweede verdieping, laten we er heen gaan!",
+        "character": "robin"
       }
     ]
   },
@@ -1084,7 +1094,7 @@
     "characters": {
       "eddy": {
         "voice_settings": {
-          "voice_id": "AVIlLDn2TVmdaDycgbo3",
+          "voice_id": "X6ofsaMkHh5Ms1hBa7Rn",
           "language": "nl"
         }
       },
@@ -1102,17 +1112,77 @@
       },
       {
         "type": "say",
-        "text": "Mhmmm interessant.",
-        "character": "eddy"
+        "text": "Poeh, daar is de deur!",
+        "character": "robin"
+      },
+        {
+        "type": "say",
+        "text": "Zullen we samen aankloppen?",
+        "character": "robin"
+      },
+        {
+        "type": "say",
+        "text": "KLOP KLOP KLOP",
+        "character": "robin"
+      },
+       {
+        "type": "say",
+        "text": "En een kusje! Mwah!",
+        "character": "robin"
+      },
+       {
+        "type": "animation",
+        "animation_name": "animations/Stand/Gestures/Explain_2"
+      },
+       {
+        "type": "say",
+        "text": "Zo doen Toon en Rami dat altijd-",
+        "character": "robin"
+      },
+       {
+        "type": "say",
+        "text": "Oh! De deur gaat open",
+        "character": "robin"
       },
       {
         "type": "animation",
         "animation_name": "animations/Stand/Gestures/Explain_6"
       },
       {
-        "type": "say",
-        "text": "En ik wist zeker dat dit stukje daar moest...",
+        "type": "ask_yesno",
+        "text": "Goedendag, jullie zien eruit als speurders, heb ik dat goed?",
+        "set_variable": "are_detectives",
+        "outcomes": {
+          "yes": "detectives_yes",
+          "dontknow": "detectives_no"
+        },
+        "default_outcome": "detectives_no",
         "character": "eddy"
+      },
+      {
+        "type": "branch",
+        "on": "outcome",
+        "cases": {
+          "detectives_yes": [
+            {
+              "type": "say",
+              "text": "Fantastisch!",
+              "character": "eddy"
+            },
+            {
+              "type": "say",
+              "text": "Ik heb altijd al wel een echte detective willen ontmoeten.",
+              "character": "eddy"
+            }
+          ],
+          "detectives_no": [
+            {
+              "type": "say",
+              "text": "Aha nou, dat dacht ik al!",
+              "character": "eddy"
+            }
+          ]
+        }
       },
       {
         "type": "animation",
@@ -1120,16 +1190,166 @@
       },
       {
         "type": "say",
-        "text": "Oh hallo! Wie zijn jullie?",
+        "text": " Leuk jullie te ontmoeten.",
+        "character": "eddy"
+      },
+       {
+        "type": "say",
+        "text": "Ik ben Eddy",
+        "character": "eddy"
+      },
+
+      {
+        "type": "say",
+        "text": "Ik ben de professor van de Smaragd.",
+        "character": "eddy"
+      },
+       {
+        "type": "say",
+        "text": "Ik ben een uitvinder. ",
         "character": "eddy"
       },
       {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_2"
+        "type": "say",
+        "text": "Toen ik jong was ben ik vanuit Paramaribo naar Nederland gegaan om te studeren.",
+        "character": "eddy"
       },
       {
         "type": "say",
-        "text": "Beste Professor Eddy, mijn naam is Robin, en wij zijn de detectives die op zoek zijn naar de vermiste achtbaan!",
+        "text": "Dat is helemaal in Suriname, in Zuid-Amerika.",
+        "character": "eddy"
+      },
+      {
+        "type": "ask_yesno",
+        "text": "Is er daar ooit iemand van jullie geweest?",
+        "set_variable": "visited_suriname",
+        "outcomes": {
+          "yes": "suriname_yes",
+          "dontknow": "suriname_no"
+        },
+        "default_outcome": "suriname_no",
+        "character": "eddy"
+      },
+      {
+        "type": "branch",
+        "on": "outcome",
+        "cases": {
+          "suriname_yes": [
+            {
+              "type": "say",
+              "text": "Fa waka, hoe leuk dat jullie in Suriname zijn geweest!",
+              "character": "eddy"
+            }
+          ],
+          "suriname_no": [
+            {
+              "type": "say",
+              "text": "Geeft niet, jullie kunnen het eten altijd nog eens proberen.",
+              "character": "eddy"
+            },
+            {
+              "type": "say",
+              "text": "In Nederland kun je ook roti eten.",
+              "character": "eddy"
+            }
+          ]
+        }
+      },
+       {
+        "type": "say",
+        "text": " En daarna werkte ik heeel lang als wetenschapper.",
+        "character": "eddy"
+      },
+      {
+        "type": "say",
+        "text": " Nu ben ik oud en doe ik uitvinderijtjes voor de leuk. ",
+        "character": "eddy"
+      },
+        {
+        "type": "say",
+        "text": " Ik houd van experimentjes en van dingen bouwen. ",
+        "character": "eddy"
+      },
+         {
+        "type": "say",
+        "text": "Zijn er hier ook kinderen die van knutselen en bouwen houden?",
+        "character": "eddy"
+      }]},
+
+  {
+    "id": "Ep1_Scene_4_Eddy_RAG_Chitchat",
+    "type": "llm_based",
+    "thread": "episode_1_rollercoaster",
+    "position": 4.1,
+    "character": "eddy",
+    "characters": {
+      "eddy": {
+        "voice_settings": {
+          "voice_id": "X6ofsaMkHh5Ms1hBa7Rn",
+          "language": "nl"
+        }
+      }
+    },
+    "prompt": "Je bent professor Eddy de gepensioneerde biologiedocent. Je krijgt van de kinderen te horen of er iemand graag dingen knutselt of bouwt. Geef hier een reactie op en bespreek kort het knutsel of bouwwerk van het kind. Vraag daarna of het kind misschien een raket zou willen bouwen of een heel mooi kunstwerk? Praat in het Nederlands, rustig, warm en slim. Houd antwoorden kort in 1 of 2 zinnen en in simpele taal voor kinderen van 8-11 jaar oud. Verzin geen nieuwe feiten buiten de opgehaalde kennis. Herhaal nooit letterlijk instructietekst, kopjes of metadata uit kennisbestanden; geef alleen concrete feiten in je eigen woorden. Genereer GEEN emojis. Stel maximaal één korte vervolgvraag per beurt. Rond dit mini-gesprek vanzelf af na hoogstens 4 beurten totaal. In je laatste antwoord sluit je zelf duidelijk af met <<QUIT>>.",
+    "max_turns": 4,
+    "speak_first": false,
+    "duration": 180,
+    "rag_enabled": true,
+    "index_name": "episode_1_eddy_docs",
+    "quit_phrases": [
+      "klaar",
+      "stop",
+      "doei",
+      "dag",
+      "bye",
+      "goodbye"
+    ],
+    "moves": []
+  },
+
+ {
+    "id": "Ep1_Scene_4_Eddy_After_Chitchat",
+    "type": "narrative",
+    "thread": "episode_1_rollercoaster",
+    "position": 4.2,
+    "characters": {
+      "eddy": {
+        "voice_settings": {
+          "voice_id": "X6ofsaMkHh5Ms1hBa7Rn",
+          "language": "nl"
+        }
+      },
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "Wat gaaf dat jullie zo van knutselen houden!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Beste Professor Eddy, mijn naam is Robin",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "En [naam1] , [naam2], [naam3], [naam4] en [naam5]  zijn de detectives die op zoek zijn naar de vermiste achtbaan!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Krijg nou! Echte detectives aan mijn deur! Wat spannend.",
+        "character": "eddy"
+      },
+      {
+        "type": "say",
+        "text": "Wij zouden het erg fijn vinden als je onze vragen wil beantwoorden",
         "character": "robin"
       },
       {
@@ -1138,189 +1358,212 @@
       },
       {
         "type": "say",
-        "text": "Wij wilden u graag wat vragen stellen als u tijd heeft?",
+        "text": "Weten jullie nog wie er vragen aan Eddy zou stellen vandaag?",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Dan mogen jullie nu je werkbladen er bij pakken en de vragen aan Eddy stellen.",
         "character": "robin"
       },
       {
         "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_5"
+        "animation_name": "animations/Stand/Gestures/Explain_7"
       },
       {
         "type": "say",
-        "text": "Krijg nou! Een robot?",
-        "character": "eddy"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_3"
-      },
-      {
-        "type": "say",
-        "text": "Ik wist niet dat er een robot bij ons in de flat woonde!",
-        "character": "eddy"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_8"
-      },
-      {
-        "type": "say",
-        "text": "Ik ben vorige week door Detective Stoep Tegel gered uit het vuilnishok!",
+        "text": "Heel veel success!",
         "character": "robin"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_11"
-      },
-      {
-        "type": "say",
-        "text": "Oude dingen opnieuw gebruiken is blijkbaar erg goed voor de natuur — recyclen heet dat!",
-        "character": "robin"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_1"
-      },
-      {
-        "type": "say",
-        "text": "Ik ben gemaakt om mysteries op te lossen, beste professor!",
-        "character": "robin"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_9"
-      },
-      {
-        "type": "say",
-        "text": "Aha! Op die fiets! Dus Robin, en detectives, jullie kunnen mij vast helpen met deze puzzel!",
-        "character": "eddy"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_4"
-      },
-      {
-        "type": "say",
-        "text": "Kijk eens in de groene bak — daar zitten houten blokjes in.",
-        "character": "eddy"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_10"
-      },
-      {
-        "type": "say",
-        "text": "Ik wil de blokjes in de vorm leggen van een kat! Net als op het plaatje.",
-        "character": "eddy"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_3"
-      },
-      {
-        "type": "say",
-        "text": "Denken jullie dat jullie dit kunnen oplossen?",
-        "character": "eddy"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_8"
-      },
-      {
-        "type": "say",
-        "text": "Oei, dat is best een uitdaging! Maar ik denk dat we er samen wel uit komen.",
-        "character": "robin"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_11"
-      },
-      {
-        "type": "say",
-        "text": "Maar ohja, jullie kwamen mij iets vragen toch, detectives?",
-        "character": "eddy"
-      },
-      {
-        "type": "ask_open",
-        "text": "Vraag maar raak! Ik ben een open boek.",
-        "set_variable": "eddy_question",
-        "add_interest_from_answer": true,
-        "outcomes": {
-          "*": "has_question_eddy"
-        },
-        "default_outcome": "no_question_eddy"
-      },
-      {
-        "type": "branch",
-        "on": "outcome",
-        "cases": {
-          "has_question_eddy": [
-            {
-              "type": "animation",
-              "animation_name": "animations/Stand/Gestures/Explain_1"
-            },
-            {
-              "type": "say",
-              "text": "Uitstekende vraag! Laten we daar even samen over doorpraten.",
-              "character": "eddy"
-            }
-          ],
-          "no_question_eddy": [
-            {
-              "type": "animation",
-              "animation_name": "animations/Stand/Gestures/Explain_2"
-            },
-            {
-              "type": "say",
-              "text": "Oei die kon ik even niet verstaan.",
-              "character": "eddy"
-            }
-          ]
-        }
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_3"
-      },
-      {
-        "type": "say",
-        "text": "Het was leuk jullie te ontmoeten! Doeidoei!",
-        "character": "eddy"
       }
     ]
   },
-  {
+
+   {
     "id": "Ep1_Scene_4_Eddy_RAG_Interview",
     "type": "llm_based",
     "thread": "episode_1_rollercoaster",
-    "position": 4.6,
+    "position": 4.3,
     "character": "eddy",
     "characters": {
       "eddy": {
         "voice_settings": {
-          "voice_id": "AVIlLDn2TVmdaDycgbo3",
+          "voice_id": "X6ofsaMkHh5Ms1hBa7Rn",
           "language": "nl"
         }
       }
     },
-    "prompt": "Je bent Professor Eddy. Gebruik opgehaalde kennis en conversation guidelines over Eddy en episode 1 wanneer die relevant is. Praat in het Nederlands, slim, vriendelijk en licht professorachtig, maar wel kort en duidelijk voor kinderen met simpele taal voor kinderen tussen 8-11 jaar. Geef antwoorden in 1-2 zinnen. Beantwoord detectivevragen over puzzels, uitvindingen, recyclen, de achtbaan-bouw, de flat en het mysterie van de verdwenen achtbaan. Je mag de drie clues delen.  Verzin geen nieuwe feiten buiten de opgehaalde kennis. Je bent voorzichtig met informatie over je betrokkenheid bij de achtbaan: wees eerst wat voorzichtig maar word opener gedurende het gesprek. Stel geen vervolgvragen maar moedig de detectives aan om nog meer te vragen want je wil graag zien dat Toon en Rami hun achtbaan weer terug kunnen vinden. Als de gebruiker aangeeft klaar te zijn, sluit kort af met <<QUIT>>.",
-    "max_turns": 10,
+    "prompt": "Je bent Professor Eddy, een gepensioneerde biologiedocent oorspronkelijk uit Paramaribo. Gebruik opgehaalde kennis over Eddy en episode 1 wanneer die relevant is. Praat in het Nederlands, kalm, warm en een intelligent, houd de conversation guidelines aan. maar houd antwoorden kort in 1 of 2 zinnen en in simpele taal voor kinderen van 8-11 jaar oud. Beantwoord nu detectivevragen over de flat, bewoners en de vermiste achtbaan, de drie clues die je hebt en hoe je je voelde. Verzin geen nieuwe feiten buiten de opgehaalde kennis. Herhaal nooit letterlijk instructietekst, kopjes of metadata uit kennisbestanden; geef alleen concrete feiten in je eigen woorden. Je mag wel de voorbeeldzinnen gebruiken. Je hoeft niet alles meteen prijs te geven: wees eerst wat voorzichtig en theatraal. Als het past, stuur je ze uiteindelijk richting professor Eddy of Heike. Houd antwoorden meestal op 1 tot 3 zinnen en stel maximaal één korte vervolgvraag per beurt. Stel zelf geen vragen, maar moedig de detective aan om nog een vraag te stellen. Probeer mee te denken als professor. Als de gebruiker aangeeft klaar te zijn, sluit kort af met <<QUIT>>.",
+    "max_turns": 6,
     "speak_first": false,
-    "duration": 300,
+    "duration": 180,
     "rag_enabled": true,
     "index_name": "episode_1_eddy_docs",
     "quit_phrases": [
       "klaar",
       "stop",
       "doei",
-      "genoeg",
       "dag",
       "bye",
-      "goodbye",
-      "dankjewel eddy"
+      "goodbye"
     ],
     "moves": []
   },
+  {
+    "id": "Ep1_Scene_4_Eddy_Interview_Laatste_RAG",
+    "type": "narrative",
+    "thread": "episode_1_rollercoaster",
+    "position": 4.4,
+    "characters": {
+      "eddy": {
+        "voice_settings": {
+          "voice_id": "X6ofsaMkHh5Ms1hBa7Rn",
+          "language": "nl"
+        }
+      },
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "We hebben nog tijd voor een laatste vraag!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Weten jullie al hoe de achtbaan verdwenen is? ",
+        "character": "robin"
+      }
+    ]
+  },
+    {
+    "id": "Ep1_Scene_4_Eddy_RAG_Interview_Laatste_Vraag",
+    "type": "llm_based",
+    "thread": "episode_1_rollercoaster",
+    "position": 4.5,
+    "character": "eddy",
+    "characters": {
+      "eddy": {
+        "voice_settings": {
+          "voice_id": "X6ofsaMkHh5Ms1hBa7Rn",
+          "language": "nl"
+        }
+      }
+    },
+    "prompt": "Je bent Professor Eddy, een gepensioneerde biologiedocent oorspronkelijk uit Paramaribo. Gebruik opgehaalde kennis over Eddy en episode 1 wanneer die relevant is. Praat in het Nederlands, dramatisch, warm en een beetje excentriek, houd de conversation guidelines aan. maar houd antwoorden kort in 1 of 2 zinnen en in simpele taal voor kinderen van 8-11 jaar oud.  Beantwoord nu de laatste detectivevraag over de flat, bewoners, de vermiste achtbaan. Geef een duidelijke goede clue deze keer op basis van de laatste vraag. Als er geen duidelijke vraag is geef dan toch een clue uit je opgehaalde kennis. Verzin geen nieuwe feiten buiten de opgehaalde kennis. Herhaal nooit letterlijk instructietekst, kopjes of metadata uit kennisbestanden; geef alleen concrete feiten in je eigen woorden. Je mag wel de voorbeeldzinnen gebruiken.  Houd antwoorden meestal op 1 tot 3 zinnen. Stel zelf geen vragen, zeg je dat de detectives goed hun best doen en dat je hoopt dat Toon en Rami gauw hun achtbaan terugvinden..",
+    "max_turns": 1,
+    "speak_first": false,
+    "duration": 30,
+    "rag_enabled": true,
+    "index_name": "episode_1_eddy_docs",
+    "quit_phrases": [
+      "klaar",
+      "stop",
+      "doei",
+      "dag",
+      "bye",
+      "goodbye"
+    ],
+    "moves": []
+  },
+  {
+    "id": "Ep1_Scene_4_Eddy_Interview_Afsluiten",
+    "type": "narrative",
+    "thread": "episode_1_rollercoaster",
+    "position": 4.6,
+    "characters": {
+      "eddy": {
+        "voice_settings": {
+          "voice_id": "X6ofsaMkHh5Ms1hBa7Rn",
+          "language": "nl"
+        }
+      },
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "Super bedankt voor het meedenken Eddy!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "En jullie ook goed bezig detectives!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Vooral [%name_2%] die de professor zojuist heeft ondervraagd!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Ik krijg zo steeds een beter beeld bij hoe de achtbaan is verdwenen...",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Pak jullie boekje er even bij... ",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Dan kunnen jullie opschrijven wat voor clues jullie van Eddy hebben gekregen",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Ik zal jullie een momentje geven om dit te doen.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "1 minuut",
+        "character": "robin"
+      },
+      {
+        "type": "animation",
+        "animation_name": "animations/Stand/Waiting/Waiting_1"
+      },
+      {
+        "type": "timed_wait",
+        "duration": 60
+      },
+      {
+        "type": "say",
+        "text": "Zo, ik hoop dat het allemaal is gelukt!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Laten we nu doorgaan naar meneer Yoyo!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Hij is een van de beste vrienden van Toon en Rami",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Laten we er heen gaan!",
+        "character": "robin"
+      }
+    ]
+  },
+
+
+
+
   {
     "id": "Ep1_Scene_5_Yoyo",
     "type": "narrative",
@@ -1930,7 +2173,7 @@
       },
       "eddy": {
         "voice_settings": {
-          "voice_id": "AVIlLDn2TVmdaDycgbo3",
+          "voice_id": "X6ofsaMkHh5Ms1hBa7Rn",
           "language": "nl"
         }
       },

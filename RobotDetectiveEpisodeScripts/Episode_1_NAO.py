@@ -173,7 +173,7 @@ if __name__ == "__main__":
 
     keyfile_json = json.loads(GOOGLE_KEYFILE_PATH.read_text(encoding="utf-8"))
     nlu = DialogflowNLUProvider(
-        conf=DialogflowConf(keyfile_json=keyfile_json, sample_rate_hertz=16000),
+        conf=DialogflowConf(keyfile_json=keyfile_json, sample_rate_hertz=16000, language="nl"),
         mic=device.get_mic(),
     )
 

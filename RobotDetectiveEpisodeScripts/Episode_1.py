@@ -232,12 +232,17 @@ if __name__ == '__main__':
       #  "Ep1_Scene_3_Trudy",  # interview Trudy (karaoke plan)
       #  "Ep1_Scene_3_Trudy_RAG_Chitchat",  # RAG-backed Trudy chitchat
      #   "Ep1_Scene_3_Trudy_After_Chitchat",  # Robin/trudy bridge after chitchat
-        "Ep1_Scene_3_Trudy_RAG_Interview",  # RAG-backed Trudy interview
-        "Ep1_Scene_3_Trudy_Interview_Laatste_RAG",
-        "Ep1_Scene_3_Trudy_RAG_Interview_Laatste_Vraag",
-        "Ep1_Scene_3_Trudy_After_Interview",
-        "Ep1_Scene_4_Eddy",  # interview Professor Eddy (puzzl=e)
+     #   "Ep1_Scene_3_Trudy_RAG_Interview",  # RAG-backed Trudy interview
+     #   "Ep1_Scene_3_Trudy_Interview_Laatste_RAG",
+     #   "Ep1_Scene_3_Trudy_RAG_Interview_Laatste_Vraag",
+     #   "Ep1_Scene_3_Trudy_After_Interview",
+      #  "Ep1_Scene_4_Eddy",  # intro Eddy
+        "Ep1_Scene_4_Eddy_RAG_Chitchat",  # Eddy chitchat
+        "Ep1_Scene_4_Eddy_After_Chitchat",  # bridge after Eddy chitchat
         "Ep1_Scene_4_Eddy_RAG_Interview",  # RAG-backed Eddy interview
+        "Ep1_Scene_4_Eddy_Interview_Laatste_RAG",  # last-question setup
+        "Ep1_Scene_4_Eddy_RAG_Interview_Laatste_Vraag",  # final Eddy clue
+        "Ep1_Scene_4_Eddy_Interview_Afsluiten",  # close Eddy scene
         "Ep1_Scene_5_Yoyo",
         "Ep1_Scene_5_Yoyo_RAG_Interview", # interview Yoyo RAG
         "Ep1_Scene_6_Jennifer",  # interview Jennifer
