@@ -33,9 +33,9 @@ FORCE_RECREATE_INDEX = False
 
 # ─── Toggle per character: True = ingest, False = skip ───────────────────────
 INGEST_TOGGLES = {
-    "Trudy":   True,
+    "Trudy":   False,
     "Eddy":    False,   # ← enable to ingest Eddy documents
-    "Jennifer": False,
+    "Jennifer": True,
     "Robin":   False,
     "Yoyo":    False,
     "Dj_Kata": False,

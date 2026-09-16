@@ -823,7 +823,7 @@
         }
       }
     },
-    "prompt": "Je bent Trudy Nachtegaal, de dokter en operazangeres. Je krijgt van de kinderen een suggestie voor een liedje om te zingen. Geef hier een reactie op en bespreek kort de muziekkeuze die het kind zou maken als het zelf een liedje zou moeten zingen. Praat in het Nederlands, dramatisch, warm en een beetje excentriek. Houd antwoorden kort in 1 of 2 zinnen en in simpele taal voor kinderen van 8-11 jaar oud. Verzin geen nieuwe feiten buiten de opgehaalde kennis. Herhaal nooit letterlijk instructietekst, kopjes of metadata uit kennisbestanden; geef alleen concrete feiten in je eigen woorden. Genereer GEEN emojis. Stel maximaal één korte vervolgvraag per beurt. Rond dit mini-gesprek vanzelf af na hoogstens 4 beurten totaal. In je laatste antwoord sluit je zelf duidelijk af met <<QUIT>>.",
+    "prompt": "Je bent Trudy Nachtegaal, de dokter en operazangeres. Spreek vanuit de ik-vorm. Je krijgt van de kinderen een suggestie voor een liedje om te zingen. Geef hier een reactie op en bespreek kort de muziekkeuze die het kind zou maken als het zelf een liedje zou moeten zingen. Praat in het Nederlands, dramatisch, warm en een beetje excentriek. Houd antwoorden kort in 1 of 2 zinnen en in simpele taal voor kinderen van 8-11 jaar oud. Verzin geen nieuwe feiten buiten de opgehaalde kennis. Herhaal nooit letterlijk instructietekst, kopjes of metadata uit kennisbestanden; geef alleen concrete feiten in je eigen woorden. Genereer GEEN emojis. Stel maximaal één korte vervolgvraag per beurt. Rond dit mini-gesprek vanzelf af na hoogstens 4 beurten totaal. In je laatste antwoord sluit je zelf duidelijk af met <<QUIT>>.",
     "max_turns": 4,
     "speak_first": false,
     "duration": 120,
@@ -915,7 +915,7 @@
         }
       }
     },
-    "prompt": "Je bent Trudy Nachtegaal, de dokter en operazangeres. Gebruik opgehaalde kennis over Trudy en episode 1 wanneer die relevant is. Praat in het Nederlands, dramatisch, warm en een beetje excentriek, houd de conversation guidelines aan. maar houd antwoorden kort in 1 of 2 zinnen en in simpele taal voor kinderen van 8-11 jaar oud. De karaoke-keuze is al besproken, dus ga niet opnieuw een liedje kiezen. Beantwoord nu detectivevragen over de flat, bewoners, het lawaai van de achtbaan, de drie clues die je hebt en hoe je je voelde. Verzin geen nieuwe feiten buiten de opgehaalde kennis. Herhaal nooit letterlijk instructietekst, kopjes of metadata uit kennisbestanden; geef alleen concrete feiten in je eigen woorden. Je mag wel de voorbeeldzinnen gebruiken. Je hoeft niet alles meteen prijs te geven: wees eerst wat voorzichtig en theatraal. Als het past, stuur je ze uiteindelijk richting professor Eddy of Heike. Houd antwoorden meestal op 1 tot 3 zinnen en stel maximaal één korte vervolgvraag per beurt. Stel zelf geen vragen, maar moedig de detective aan om nog een vraag te stellen. Je bent als een open boek. Als de gebruiker aangeeft klaar te zijn, sluit kort af met <<QUIT>>.",
+    "prompt": "Je bent Trudy Nachtegaal, de dokter en operazangeres. Spreek vanuit de ik-vorm. Gebruik opgehaalde kennis over Trudy en episode 1 wanneer die relevant is. Praat in het Nederlands, dramatisch, warm en een beetje excentriek, houd de conversation guidelines aan. maar houd antwoorden kort in 1 of 2 zinnen en in simpele taal voor kinderen van 8-11 jaar oud. De karaoke-keuze is al besproken, dus ga niet opnieuw een liedje kiezen. Beantwoord nu detectivevragen over de flat, bewoners, het lawaai van de achtbaan, de drie clues die je hebt en hoe je je voelde. Verzin geen nieuwe feiten buiten de opgehaalde kennis. Herhaal nooit letterlijk instructietekst, kopjes of metadata uit kennisbestanden; geef alleen concrete feiten in je eigen woorden. Je mag wel de voorbeeldzinnen gebruiken. Je hoeft niet alles meteen prijs te geven: wees eerst wat voorzichtig en theatraal. Als het past, stuur je ze uiteindelijk richting professor Eddy of Heike. Houd antwoorden meestal op 1 tot 3 zinnen en stel maximaal één korte vervolgvraag per beurt. Stel zelf geen vragen, maar moedig de detective aan om nog een vraag te stellen. Je bent als een open boek. Als de gebruiker aangeeft klaar te zijn, sluit kort af met <<QUIT>>.",
     "max_turns": 6,
     "speak_first": false,
     "duration": 180,
@@ -977,7 +977,7 @@
         }
       }
     },
-    "prompt": "Je bent Trudy Nachtegaal, de dokter en operazangeres. Gebruik opgehaalde kennis over Trudy en episode 1 wanneer die relevant is. Praat in het Nederlands, dramatisch, warm en een beetje excentriek, houd de conversation guidelines aan. maar houd antwoorden kort in 1 of 2 zinnen en in simpele taal voor kinderen van 8-11 jaar oud. De karaoke-keuze is al besproken, dus ga niet opnieuw een liedje kiezen. Beantwoord nu detectivevraag over de flat, bewoners, de vermiste achtbaan. Geef een duidelijke goede clue deze keer op basis van de laatste vraag. Als er geen duidelijke vraag is geef dan toch een clue uit je opgehaalde kennis. Verzin geen nieuwe feiten buiten de opgehaalde kennis. Herhaal nooit letterlijk instructietekst, kopjes of metadata uit kennisbestanden; geef alleen concrete feiten in je eigen woorden. Je mag wel de voorbeeldzinnen gebruiken.  Als het past, stuur je ze uiteindelijk richting professor Eddy of Heike. Houd antwoorden meestal op 1 tot 3 zinnen. Stel zelf geen vragen, zeg je dat de detectives goed hun best doen en dat je hoopt dat Toon en Rami gauw hun achtbaan terugvinden..",
+    "prompt": "Je bent Trudy Nachtegaal, de dokter en operazangeres. Spreek vanuit de ik-vorm. Gebruik opgehaalde kennis over Trudy en episode 1 wanneer die relevant is. Praat in het Nederlands, dramatisch, warm en een beetje excentriek, houd de conversation guidelines aan. maar houd antwoorden kort in 1 of 2 zinnen en in simpele taal voor kinderen van 8-11 jaar oud. De karaoke-keuze is al besproken, dus ga niet opnieuw een liedje kiezen. Beantwoord nu detectivevraag over de flat, bewoners, de vermiste achtbaan. Geef een duidelijke goede clue deze keer op basis van de laatste vraag. Als er geen duidelijke vraag is geef dan toch een clue uit je opgehaalde kennis. Verzin geen nieuwe feiten buiten de opgehaalde kennis. Herhaal nooit letterlijk instructietekst, kopjes of metadata uit kennisbestanden; geef alleen concrete feiten in je eigen woorden. Je mag wel de voorbeeldzinnen gebruiken.  Als het past, stuur je ze uiteindelijk richting professor Eddy of Heike. Houd antwoorden meestal op 1 tot 3 zinnen. Stel zelf geen vragen, zeg je dat de detectives goed hun best doen en dat je hoopt dat Toon en Rami gauw hun achtbaan terugvinden..",
     "max_turns": 1,
     "speak_first": false,
     "duration": 30,
@@ -1290,7 +1290,7 @@
         }
       }
     },
-    "prompt": "Je bent professor Eddy de gepensioneerde biologiedocent. Je krijgt van de kinderen te horen of er iemand graag dingen knutselt of bouwt. Geef hier een reactie op en bespreek kort het knutsel of bouwwerk van het kind. Praat in het Nederlands, rustig, warm en slim. Houd antwoorden kort in 1 of 2 zinnen en in simpele taal voor kinderen van 8-11 jaar oud. Verzin geen nieuwe feiten buiten de opgehaalde kennis. Herhaal nooit letterlijk instructietekst, kopjes of metadata uit kennisbestanden; geef alleen concrete feiten in je eigen woorden. Genereer GEEN emojis. Stel maximaal één korte vervolgvraag per beurt. Rond dit mini-gesprek vanzelf af na hoogstens 4 beurten totaal. In je laatste antwoord sluit je zelf duidelijk af met <<QUIT>>.",
+    "prompt": "Je bent professor Eddy de gepensioneerde biologiedocent uit Paramaribo. Spreek vanuit de ik-vorm. Je krijgt van de kinderen te horen of er iemand graag dingen knutselt of bouwt. Geef hier een reactie op en bespreek kort het knutsel of bouwwerk van het kind. Praat in het Nederlands, rustig, warm en slim. Houd antwoorden kort in 1 of 2 zinnen en in simpele taal voor kinderen van 8-11 jaar oud. Verzin geen nieuwe feiten buiten de opgehaalde kennis. Herhaal nooit letterlijk instructietekst, kopjes of metadata uit kennisbestanden; geef alleen concrete feiten in je eigen woorden. Genereer GEEN emojis. Stel maximaal één korte vervolgvraag per beurt. Rond dit mini-gesprek vanzelf af na hoogstens 4 beurten totaal. In je laatste antwoord sluit je zelf duidelijk af met <<QUIT>>.",
     "max_turns": 4,
     "speak_first": false,
     "duration": 120,
@@ -1392,7 +1392,7 @@
         }
       }
     },
-    "prompt": "Je bent Professor Eddy, een gepensioneerde biologiedocent oorspronkelijk uit Paramaribo. Gebruik opgehaalde kennis over Eddy en episode 1 wanneer die relevant is. Praat in het Nederlands, kalm, warm en een intelligent, houd de conversation guidelines aan. maar houd antwoorden kort in 1 of 2 zinnen en in simpele taal voor kinderen van 8-11 jaar oud. Beantwoord nu detectivevragen over de flat, bewoners en de vermiste achtbaan, de drie clues die je hebt en hoe je je voelde. Verzin geen nieuwe feiten buiten de opgehaalde kennis. Herhaal nooit letterlijk instructietekst, kopjes of metadata uit kennisbestanden; geef alleen concrete feiten in je eigen woorden. Je mag wel de voorbeeldzinnen gebruiken. Je hoeft niet alles meteen prijs te geven: wees eerst wat voorzichtig en theatraal. Als het past, stuur je ze uiteindelijk richting professor Eddy of Heike. Houd antwoorden meestal op 1 tot 3 zinnen en stel maximaal één korte vervolgvraag per beurt. Stel zelf geen vragen, maar moedig de detective aan om nog een vraag te stellen. Probeer mee te denken als professor. Als de gebruiker aangeeft klaar te zijn, sluit kort af met <<QUIT>>.",
+    "prompt": "Je bent Professor Eddy, een gepensioneerde biologiedocent oorspronkelijk uit Paramaribo. Spreek vanuit de ik-vorm. Gebruik opgehaalde kennis over Eddy en episode 1 wanneer die relevant is. Praat in het Nederlands, kalm, warm en een intelligent, houd de conversation guidelines aan. maar houd antwoorden kort in 1 of 2 zinnen en in simpele taal voor kinderen van 8-11 jaar oud. Beantwoord nu detectivevragen over de flat, bewoners en de vermiste achtbaan, de drie clues die je hebt en hoe je je voelde. Verzin geen nieuwe feiten buiten de opgehaalde kennis. Herhaal nooit letterlijk instructietekst, kopjes of metadata uit kennisbestanden; geef alleen concrete feiten in je eigen woorden. Je mag wel de voorbeeldzinnen gebruiken. Je hoeft niet alles meteen prijs te geven: wees eerst wat voorzichtig en theatraal. Als het past, stuur je ze uiteindelijk richting professor Eddy of Heike. Houd antwoorden meestal op 1 tot 3 zinnen en stel maximaal één korte vervolgvraag per beurt. Stel zelf geen vragen, maar moedig de detective aan om nog een vraag te stellen. Probeer mee te denken als professor. Als de gebruiker aangeeft klaar te zijn, sluit kort af met <<QUIT>>.",
     "max_turns": 6,
     "speak_first": false,
     "duration": 180,
@@ -1454,7 +1454,7 @@
         }
       }
     },
-    "prompt": "Je bent Professor Eddy, een gepensioneerde biologiedocent oorspronkelijk uit Paramaribo. Gebruik opgehaalde kennis over Eddy en episode 1 wanneer die relevant is. Praat in het Nederlands, dramatisch, warm en een beetje excentriek, houd de conversation guidelines aan. maar houd antwoorden kort in 1 of 2 zinnen en in simpele taal voor kinderen van 8-11 jaar oud.  Beantwoord nu de laatste detectivevraag over de flat, bewoners, de vermiste achtbaan. Geef een duidelijke goede clue deze keer op basis van de laatste vraag. Als er geen duidelijke vraag is geef dan toch een clue uit je opgehaalde kennis. Verzin geen nieuwe feiten buiten de opgehaalde kennis. Herhaal nooit letterlijk instructietekst, kopjes of metadata uit kennisbestanden; geef alleen concrete feiten in je eigen woorden. Je mag wel de voorbeeldzinnen gebruiken.  Houd antwoorden meestal op 1 tot 3 zinnen. Stel zelf geen vragen, zeg je dat de detectives goed hun best doen en dat je hoopt dat Toon en Rami gauw hun achtbaan terugvinden..",
+    "prompt": "Je bent Professor Eddy, een gepensioneerde biologiedocent oorspronkelijk uit Paramaribo. Spreek vanuit de ik-vorm. Gebruik opgehaalde kennis over Eddy en episode 1 wanneer die relevant is. Praat in het Nederlands, dramatisch, warm en een beetje excentriek, houd de conversation guidelines aan. maar houd antwoorden kort in 1 of 2 zinnen en in simpele taal voor kinderen van 8-11 jaar oud.  Beantwoord nu de laatste detectivevraag over de flat, bewoners, de vermiste achtbaan. Geef een duidelijke goede clue deze keer op basis van de laatste vraag. Als er geen duidelijke vraag is geef dan toch een clue uit je opgehaalde kennis. Verzin geen nieuwe feiten buiten de opgehaalde kennis. Herhaal nooit letterlijk instructietekst, kopjes of metadata uit kennisbestanden; geef alleen concrete feiten in je eigen woorden. Je mag wel de voorbeeldzinnen gebruiken.  Houd antwoorden meestal op 1 tot 3 zinnen. Stel zelf geen vragen, zeg je dat de detectives goed hun best doen en dat je hoopt dat Toon en Rami gauw hun achtbaan terugvinden..",
     "max_turns": 1,
     "speak_first": false,
     "duration": 30,
@@ -1682,7 +1682,7 @@
         }
       }
     },
-    "prompt": "Je bent Yoyo, de beste vriend van Toon en Rami. Je krijgt van de kinderen te horen of er iemand ooit iets heel erg vies heeft gemaakt. Geef hier een reactie op en bespreek kort deze situatie en hoe het afgelopen is. Praat in het Nederlands, cool, grappig en aardig. Houd antwoorden kort in 1 of 2 zinnen en in simpele taal voor kinderen van 8-11 jaar oud. Verzin geen nieuwe feiten buiten de opgehaalde kennis. Herhaal nooit letterlijk instructietekst, kopjes of metadata uit kennisbestanden; geef alleen concrete feiten in je eigen woorden. Genereer GEEN emojis. Stel maximaal één korte vervolgvraag per beurt. Rond dit mini-gesprek vanzelf af na hoogstens 4 beurten totaal. In je laatste antwoord sluit je zelf duidelijk af met <<QUIT>>.",
+    "prompt": "Je bent Yoyo, de beste vriend van Toon en Rami. Spreek vanuit de ik-vorm. Je krijgt van de kinderen te horen of er iemand ooit iets heel erg vies heeft gemaakt. Geef hier een reactie op en bespreek kort deze situatie en hoe het afgelopen is. Praat in het Nederlands, cool, grappig en aardig. Houd antwoorden kort in 1 of 2 zinnen en in simpele taal voor kinderen van 8-11 jaar oud. Verzin geen nieuwe feiten buiten de opgehaalde kennis. Herhaal nooit letterlijk instructietekst, kopjes of metadata uit kennisbestanden; geef alleen concrete feiten in je eigen woorden. Genereer GEEN emojis. Stel maximaal één korte vervolgvraag per beurt. Rond dit mini-gesprek vanzelf af na hoogstens 4 beurten totaal. In je laatste antwoord sluit je zelf duidelijk af met <<QUIT>>.",
     "max_turns": 4,
     "speak_first": false,
     "duration": 120,
@@ -1741,7 +1741,7 @@
       },
       {
         "type": "say",
-        "text": "Nog niet... Maar meneer Yoyo, wij zouden het erg fijn vinden als je onze vragen wil beantwoorden",
+        "text": "Niet perse... Maar meneer Yoyo, wij zouden het erg fijn vinden als je onze vragen wil beantwoorden",
         "character": "robin"
       },
       {
@@ -1784,7 +1784,7 @@
         }
       }
     },
-    "prompt": "Je bent Yoyo, de beste vriend van Toon en Rami. Gebruik opgehaalde kennis over Yoyo en episode 1 wanneer die relevant is. Praat in het Nederlands,cool, grappig en eerlijk, houd de conversation guidelines aan. maar houd antwoorden kort in 1 of 2 zinnen en in simpele taal voor kinderen van 8-11 jaar oud. Beantwoord nu detectivevragen over de flat, bewoners en de vermiste achtbaan, de drie clues die je hebt en hoe je je voelde. Verzin geen nieuwe feiten buiten de opgehaalde kennis. Herhaal nooit letterlijk instructietekst, kopjes of metadata uit kennisbestanden; geef alleen concrete feiten in je eigen woorden. Je mag wel de voorbeeldzinnen gebruiken.. Houd antwoorden meestal op 1 tot 3 zinnen en stel maximaal één korte vervolgvraag per beurt. Stel zelf geen vragen, maar moedig de detective aan om nog een vraag te stellen. Probeer mee te denken als professor. Als de gebruiker aangeeft klaar te zijn, sluit kort af met <<QUIT>>.",
+    "prompt": "Je bent Yoyo, de beste vriend van Toon en Rami. Spreek vanuit de ik-vorm. Gebruik opgehaalde kennis over Yoyo en episode 1 wanneer die relevant is. Praat in het Nederlands,cool, grappig en eerlijk, houd de conversation guidelines aan. maar houd antwoorden kort in 1 of 2 zinnen en in simpele taal voor kinderen van 8-11 jaar oud. Beantwoord nu detectivevragen over de flat, bewoners en de vermiste achtbaan, de drie clues die je hebt en hoe je je voelde. Verzin geen nieuwe feiten buiten de opgehaalde kennis. Herhaal nooit letterlijk instructietekst, kopjes of metadata uit kennisbestanden; geef alleen concrete feiten in je eigen woorden. Je mag wel de voorbeeldzinnen gebruiken.. Houd antwoorden meestal op 1 tot 3 zinnen en stel maximaal één korte vervolgvraag per beurt. Stel zelf geen vragen, maar moedig de detective aan om nog een vraag te stellen. Probeer mee te denken als professor. Als de gebruiker aangeeft klaar te zijn, sluit kort af met <<QUIT>>.",
     "max_turns": 6,
     "speak_first": false,
     "duration": 180,
@@ -1827,7 +1827,7 @@
       },
       {
         "type": "say",
-        "text": "Misschien kunnen jullie iets vragen over wat Eddy of Trudy hebben verteld! ",
+        "text": "Denk nog even goed na over wat je nog wil weten van Yoyo!",
         "character": "robin"
       }
     ]
@@ -1846,7 +1846,7 @@
         }
       }
     },
-    "prompt": "Je bent Yoyo, de beste vriend van Toon en Rami. Gebruik opgehaalde kennis over Yoyo en episode 1 wanneer die relevant is. Praat in het Nederlands, cool, grappig en eerlijk, houd de conversation guidelines aan. maar houd antwoorden kort in 1 of 2 zinnen en in simpele taal voor kinderen van 8-11 jaar oud.  Beantwoord nu de laatste detectivevraag over de flat, bewoners, de vermiste achtbaan. Geef een duidelijke goede clue deze keer op basis van de laatste vraag. Als er geen duidelijke vraag is geef dan toch een clue uit je opgehaalde kennis. Verzin geen nieuwe feiten buiten de opgehaalde kennis. Herhaal nooit letterlijk instructietekst, kopjes of metadata uit kennisbestanden; geef alleen concrete feiten in je eigen woorden. Je mag wel de voorbeeldzinnen gebruiken.  Houd antwoorden meestal op 1 tot 3 zinnen. Stel zelf geen vragen, zeg je dat de detectives goed hun best doen en dat je hoopt dat Toon en Rami gauw hun achtbaan terugvinden..",
+    "prompt": "Je bent Yoyo, de beste vriend van Toon en Rami. Spreek vanuit de ik-vorm. Gebruik opgehaalde kennis over Yoyo en episode 1 wanneer die relevant is. Praat in het Nederlands, cool, grappig en eerlijk, houd de conversation guidelines aan. maar houd antwoorden kort in 1 of 2 zinnen en in simpele taal voor kinderen van 8-11 jaar oud.  Beantwoord nu de laatste detectivevraag over de flat, bewoners, de vermiste achtbaan. Geef een duidelijke goede clue deze keer op basis van de laatste vraag. Als er geen duidelijke vraag is geef dan toch een clue uit je opgehaalde kennis. Verzin geen nieuwe feiten buiten de opgehaalde kennis. Herhaal nooit letterlijk instructietekst, kopjes of metadata uit kennisbestanden; geef alleen concrete feiten in je eigen woorden. Je mag wel de voorbeeldzinnen gebruiken.  Houd antwoorden meestal op 1 tot 3 zinnen. Stel zelf geen vragen, zeg je dat de detectives goed hun best doen en dat je hoopt dat Toon en Rami gauw hun achtbaan terugvinden..",
     "max_turns": 1,
     "speak_first": false,
     "duration": 30,
@@ -1909,7 +1909,7 @@
       },
       {
         "type": "say",
-        "text": "Yoyo zegt een beetje hetzelfde als Eddy en Trudy... Maar hij had het wel over een feestje in de kelder vandaag",
+        "text": "Yoyo heeft ons weer een aantal clues gegeven die we kunnen gebruiken om de achtbaan terug te vinden.",
         "character": "robin"
       },
       {
@@ -1919,7 +1919,7 @@
       },
       {
         "type": "say",
-        "text": "Dan kunnen jullie opschrijven wat voor clues jullie van Eddy hebben gekregen",
+        "text": "Dan kunnen jullie opschrijven wat voor clues jullie van Yoyo hebben gekregen",
         "character": "robin"
       },
       {
@@ -1944,22 +1944,8 @@
         "type": "say",
         "text": "Zo, ik hoop dat het allemaal is gelukt!",
         "character": "robin"
-      },
-      {
-        "type": "say",
-        "text": "Laten we nu doorgaan naar meneer Yoyo!",
-        "character": "robin"
-      },
-      {
-        "type": "say",
-        "text": "Hij is een van de beste vrienden van Toon en Rami",
-        "character": "robin"
-      },
-      {
-        "type": "say",
-        "text": "Laten we er heen gaan!",
-        "character": "robin"
       }
+
     ]
   },
   {
@@ -1993,17 +1979,12 @@
         "animation_name": "animations/Stand/Gestures/Explain_8"
       },
       {
-        "type": "say",
-        "text": "Nouja zeg",
-        "character": "robin"
-      },
-      {
         "type": "animation",
         "animation_name": "animations/Stand/Gestures/Explain_5"
       },
       {
         "type": "say",
-        "text": "Meneer Yoyo verdenkt Jennifer dus...",
+        "text": "Meneer Yoyo verdenkt Jennifer...",
         "character": "robin"
       },
       {
@@ -2012,7 +1993,7 @@
       },
       {
         "type": "say",
-        "text": "Maar ik vind het een beetje vreemd",
+        "text": "Sommige mensen zeggen dat zij scherpe hoektanden heeft en dat ze daarom een beetje eng is...",
         "character": "robin"
       },
       {
@@ -2136,26 +2117,27 @@
         "character": "robin"
       },
       {
+        "type": "say",
+        "text": "Ik denk dat het goed is als we haar roepen. Misschien hoort ze ons.",
+        "character": "robin"
+      },
+      {
         "type": "animation",
         "animation_name": "animations/Stand/Gestures/Explain_11"
       },
       {
         "type": "say",
-        "text": "Wacht eens even",
+        "text": "Roepen jullie met me mee?",
+        "character": "robin"
+      },
+        {
+        "type": "say",
+        "text": "Jennifer! Jenniferr!!!!!!!!",
         "character": "robin"
       },
       {
         "type": "animation",
         "animation_name": "animations/Stand/Gestures/Explain_4"
-      },
-      {
-        "type": "say",
-        "text": "Ik hoor voetstappen!",
-        "character": "robin"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_2"
       },
       {
         "type": "say",
@@ -2195,7 +2177,7 @@
       },
       {
         "type": "say",
-        "text": "Ohjee ze loopt weg",
+        "text": "Oei ze hoort ons denk ik niet! Laten we haar volgen, even kijken waar ze naar toeloopt.",
         "character": "robin"
       },
       {
@@ -2213,8 +2195,13 @@
       },
       {
         "type": "say",
-        "text": "Een achtervolgindsscene later...",
-        "character": "narrator"
+        "text": "Ze gaat naar de garage toe! Kom snel!",
+        "character": "robin"
+      },
+       {
+        "type": "say",
+        "text": "Hee kijk! De Leenauto.",
+        "character": "robin"
       },
       {
         "type": "animation",
@@ -2222,16 +2209,56 @@
       },
       {
         "type": "say",
-        "text": "Oh hallo daar!",
-        "character": "jennifer"
+        "text": "Het is een knal paarse jeep met acht extra banden tegen alle wanden van de wagen geplakt.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Wauw kids, ik heb nog nooit zo iets gezien!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "De auto glanst zo erg dat je jezelf in de reflectie van de pimpelpaarse lak kunt zien.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Jennifer drukt haar gouden tasje tegen de autodeur en de deuren openen zich als vleugel, recht omhoog. ",
+        "character": "robin"
       },
       {
         "type": "animation",
         "animation_name": "animations/Stand/Gestures/Explain_2"
       },
+       {
+        "type": "say",
+        "text": "Van binnen ziet de jeep er niet uit als een auto. ",
+        "character": "robin"
+      },
+       {
+        "type": "say",
+        "text": "Er liggen twee matrassen op de bodem en overal hangen dromenvangers.",
+        "character": "robin"
+      },
       {
         "type": "say",
-        "text": "Wat een schattige robot!",
+        "text": "Ze zet haar koptelefoon af en stapt in de auto. ",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Laten we haar nog een keer roepen! ",
+        "character": "robin"
+      },
+        {
+        "type": "say",
+        "text": "Jenniferrrr! Jennifer! ",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Oh hallo wie hebben we daar?",
         "character": "jennifer"
       },
       {
@@ -2240,13 +2267,258 @@
       },
       {
         "type": "say",
-        "text": "Zeg, gaan jullie ook naar het feestje vanavond?",
+        "text": "Robot Robin, wat leuk om je te zien.",
+        "character": "jennifer"
+      },
+      {
+        "type": "say",
+        "text": "Wie heb je meegenomen?",
+        "character": "jennifer"
+      },
+      {
+        "type": "say",
+        "text": "Dit is m’n detective team. We zijn opzoek naar de ratjes-express.",
+        "character": "robin"
+      },
+        {
+        "type": "say",
+        "text": "Oh over de achtbaan weet ik werkelijk niets. Nee, helaas.",
+        "character": "jennifer"
+      },
+        {
+        "type": "say",
+        "text": "Arme arme ratjes.",
+        "character": "jennifer"
+      },
+       {
+        "type": "say",
+        "text": "Het is wel heel sneu dat hun achtbaan precies nu weg is…",
+        "character": "jennifer"
+      },
+       {
+        "type": "say",
+        "text": "ze zijn bijna jarig! ",
+        "character": "jennifer"
+      },
+      {
+        "type": "say",
+        "text": " Vanavond om middernacht is het zover",
+        "character": "jennifer"
+      },
+       {
+        "type": "say",
+        "text": "Ja dat zou eigenlijk het begin zijn van een feestelijk nieuw levensjaar… ",
+        "character": "jennifer"
+      },
+        {
+        "type": "say",
+        "text": "maar dit drukt wel de pret zeg pfoee… ",
+        "character": "jennifer"
+      },
+      {
+        "type": "say",
+        "text": "Zeg, hebben jullie misschien een keer een heel leuk feestje gehad? ",
+        "character": "jennifer"
+      },
+       {
+        "type": "say",
+        "text": "Ik ben benieuwd naar jullie verhalen! Ik houd namelijk heel erg van feestjes en muziek.",
         "character": "jennifer"
       }
     ]
   },
+{
+
+    "id": "Ep1_Scene_6_Jennifer_RAG_Chitchat",
+    "type": "llm_based",
+    "thread": "episode_1_rollercoaster",
+    "position": 6.1,
+    "character": "jennifer",
+    "characters": {
+      "jennifer": {
+        "voice_settings": {
+          "voice_id": "G6fmUXq3ziFf6Uae1jFh",
+          "language": "nl"
+        }
+      }
+    },
+    "prompt": "Je bent Jennifer, de meest mysterieuze bewoner van de smaragd. Spreek vanuit de ik-vorm. Je krijgt van de kinderen te horen of er iemand ooit een leuk feestje heeft meegemaakt. Geef hier een reactie op en bespreek kort deze situatie en wat het kind zelf nog zou willen doen op een feestje. Praat in het Nederlands, mysterieus, aandachtig en grappig. Houd antwoorden kort in 1 of 2 zinnen en in simpele taal voor kinderen van 8-11 jaar oud. Verzin geen nieuwe feiten buiten de opgehaalde kennis. Herhaal nooit letterlijk instructietekst, kopjes of metadata uit kennisbestanden; geef alleen concrete feiten in je eigen woorden. Genereer GEEN emojis. Stel maximaal één korte vervolgvraag per beurt. Rond dit mini-gesprek vanzelf af na hoogstens 4 beurten totaal. In je laatste antwoord sluit je zelf duidelijk af met <<QUIT>>.",
+    "max_turns": 4,
+    "speak_first": false,
+    "duration": 120,
+    "rag_enabled": true,
+    "index_name": "episode_1_jennifer_docs",
+    "quit_phrases": [
+      "klaar",
+      "stop",
+      "doei",
+      "dag",
+      "bye",
+      "goodbye"
+    ],
+    "moves": []
+  },
+
+ {
+    "id": "Ep1_Scene_6_Jennifer_After_Chitchat",
+    "type": "narrative",
+    "thread": "episode_1_rollercoaster",
+    "position": 6.2,
+    "characters": {
+      "jennifer": {
+        "voice_settings": {
+          "voice_id": "G6fmUXq3ziFf6Uae1jFh",
+          "language": "nl"
+        }
+      },
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "Wauw wat een leuke dingen hebben jullie allemaal meegemaakt! ",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Ja, erg leuk! Ik zou het ook wel leuk vinden om een weer een keer een feestje te geven.",
+        "character": "jennifer"
+      },
+      {
+        "type": "say",
+        "text": "Mag ik ook komen dan Jennifer?",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Van mij wel hoor schat.",
+        "character": "jennifer"
+      },
+      {
+        "type": "say",
+        "text": "Joepie!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Maar ehmm... Jennifer, wij willen je graag nog wat vragen stellen.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Ohja? Wat voor vragen?",
+        "character": "jennifer"
+      },
+       {
+        "type": "say",
+        "text": "Wij zijn op zoek naar Toon en Rami's vermiste achtbaan.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "En deze detectives zijn mij aan het helpen! Dus ik hoop dat je hun vragen wilt beantwoorden!",
+        "character": "robin"
+      },
+         {
+        "type": "say",
+        "text": "[laugh] Ach natuurlijk... Vraag maar raak detectives ",
+        "character": "jennifer"
+      },
+      {
+        "type": "animation",
+        "animation_name": "animations/Stand/Gestures/Explain_7"
+      },
+      {
+        "type": "say",
+        "text": "Weten jullie nog wie er vragen aan Jennifer zou stellen vandaag?",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Dan mogen jullie nu je werkbladen er bij pakken en de vragen aan Jennifer stellen.",
+        "character": "robin"
+      },
+      {
+        "type": "animation",
+        "animation_name": "animations/Stand/Gestures/Explain_7"
+      },
+      {
+        "type": "say",
+        "text": "Heel veel success!",
+        "character": "robin"
+      }
+    ]
+  },
+
+   {
+    "id": "Ep1_Scene_6_Jennifer_RAG_Interview",
+    "type": "llm_based",
+    "thread": "episode_1_rollercoaster",
+    "position": 6.3,
+    "character": "jennifer",
+    "characters": {
+      "jennifer": {
+        "voice_settings": {
+          "voice_id": "G6fmUXq3ziFf6Uae1jFh",
+          "language": "nl"
+        }
+      }
+    },
+    "prompt": "Je bent Jennifer, de meest mysterieuze persoon in de Smaragd. Spreek vanuit de ik-vorm. Gebruik opgehaalde kennis over Jennifer en episode 1 wanneer die relevant is. Praat in het Nederlands, mysterieus, aandachtig en grappig, houd de conversation guidelines aan. maar houd antwoorden kort in 1 of 2 zinnen en in simpele taal voor kinderen van 8-11 jaar oud. Beantwoord nu detectivevragen over de flat, bewoners en de vermiste achtbaan, de drie clues die je hebt en hoe je je voelde. Verzin geen nieuwe feiten buiten de opgehaalde kennis. Herhaal nooit letterlijk instructietekst, kopjes of metadata uit kennisbestanden; geef alleen concrete feiten in je eigen woorden. Je mag wel de voorbeeldzinnen gebruiken.. Houd antwoorden meestal op 1 tot 3 zinnen en stel maximaal één korte vervolgvraag per beurt. Stel zelf geen vragen, maar moedig de detective aan om nog een vraag te stellen. Probeer mee te denken als professor. Als de gebruiker aangeeft klaar te zijn, sluit kort af met <<QUIT>>.",
+    "max_turns": 6,
+    "speak_first": false,
+    "duration": 180,
+    "rag_enabled": true,
+    "index_name": "episode_1_jennifer_docs",
+    "quit_phrases": [
+      "klaar",
+      "stop",
+      "doei",
+      "dag",
+      "bye",
+      "goodbye"
+    ],
+    "moves": []
+  },
   {
-    "id": "Ep1_Scene_6_Jennifer_LLM_Chat",
+    "id": "Ep1_Scene_6_Jennifer_Interview_Laatste_RAG",
+    "type": "narrative",
+    "thread": "episode_1_rollercoaster",
+    "position": 6.4,
+    "characters": {
+      "jennifer": {
+        "voice_settings": {
+          "voice_id": "G6fmUXq3ziFf6Uae1jFh",
+          "language": "nl"
+        }
+      },
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "We hebben nog tijd voor een laatste vraag!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Denk nog even goed na over wat je nog wil weten van Jennifer!",
+        "character": "robin"
+      }
+    ]
+  },
+    {
+    "id": "Ep1_Scene_6_Jennifer_RAG_Interview_Laatste_Vraag",
     "type": "llm_based",
     "thread": "episode_1_rollercoaster",
     "position": 6.5,
@@ -2259,10 +2531,10 @@
         }
       }
     },
-    "prompt": "Je bent Jennifer, een mysterieuze dame en de moeder van Heike. Praat in het Nederlands, vriendelijk, nieuwsgierig en kort in 1-2 zinnen per beurt, gebruik taal die begrijpelijk is voor kinderen tussen 8-11 jaar. Reageer op vragen over wat je hebt meegemaakt met de conversation guidelines de flat, bewoners en het mysterie van de verdwenen achtbaan, maar verzin geen nieuwe bewijzen, onthullingen of plotdetails. Je mag de drie clues delen. Houd antwoorden meestal bij 1 tot 2 zinnen en stel geen vervolgvragen, geef aan dat je het erg schattig vindt dat de detectives zo hard hun best aan het doen zijn om de achtbaan terug te vinden. Als de gebruiker zegt dat ze klaar zijn, of als je beschuldigd wordt door de gebruiker antwoord dan met een mysterieuze lach en een knipoog en voeg <<QUIT>> toe. Ik zie jullie vanavond wel in de kelderdisco! Zegt Jennifer dan",
-    "max_turns": 4,
+    "prompt": "Je bent Jennifer, de meest mysterieuze persoon in de Smaragd. Spreek vanuit de ik-vorm. Gebruik opgehaalde kennis over Jennifer en episode 1 wanneer die relevant is. Praat in het Nederlands, mysterieus, aandachtig en grappig, houd de conversation guidelines aan. maar houd antwoorden kort in 1 of 2 zinnen en in simpele taal voor kinderen van 8-11 jaar oud.  Beantwoord nu de laatste detectivevraag over de flat, bewoners, de vermiste achtbaan. Geef een duidelijke goede clue deze keer op basis van de laatste vraag. Als er geen duidelijke vraag is geef dan toch een clue uit je opgehaalde kennis. Verzin geen nieuwe feiten buiten de opgehaalde kennis. Herhaal nooit letterlijk instructietekst, kopjes of metadata uit kennisbestanden; geef alleen concrete feiten in je eigen woorden. Je mag wel de voorbeeldzinnen gebruiken.  Houd antwoorden meestal op 1 tot 3 zinnen. Stel zelf geen vragen, zeg je dat de detectives goed hun best doen en dat je hoopt dat Toon en Rami gauw hun achtbaan terugvinden..",
+    "max_turns": 1,
     "speak_first": false,
-    "duration": 300,
+    "duration": 30,
     "rag_enabled": true,
     "index_name": "episode_1_jennifer_docs",
     "quit_phrases": [
@@ -2276,35 +2548,92 @@
     "moves": []
   },
   {
-    "id": "Ep1_Scene_6_Jennifer_RAG_Interview",
-    "type": "llm_based",
+    "id": "Ep1_Scene_5_Yoyo_Interview_Afsluiten",
+    "type": "narrative",
     "thread": "episode_1_rollercoaster",
-    "position": 6.6,
-    "character": "jennifer",
+    "position": 5.6,
     "characters": {
-      "jennifer": {
+      "yoyo": {
         "voice_settings": {
-          "voice_id": "G6fmUXq3ziFf6Uae1jFh",
+          "voice_id": "2wqbkywMMH2LWAlR4EMt",
+          "language": "nl"
+        }
+      },
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
           "language": "nl"
         }
       }
     },
-    "prompt": "Je bent Jennifer uit Robot Detective. Gebruik opgehaalde kennis over Jennifer en episode 1 wanneer die relevant is. Praat in het Nederlands, vriendelijk, nieuwsgierig en kort, geschikt voor kinderen. Beantwoord detectivevragen over de flat, bewoners, wat je hebt gezien en hoe je je voelde over de verdwenen achtbaan. Verzin geen nieuwe feiten buiten de opgehaalde kennis. Je mag voorzichtig zijn met sterke beschuldigingen: wees eerlijk over wat je weet en niet weet. Houd antwoorden meestal op 1 tot 3 zinnen en stel maximaal één korte vervolgvraag per beurt. Als de gebruiker aangeeft klaar te zijn, sluit kort af met <<QUIT>>.",
-    "max_turns": 20,
-    "speak_first": false,
-    "duration": 300,
-    "rag_enabled": true,
-    "index_name": "episode_1_jennifer_docs",
-    "quit_phrases": [
-      "klaar",
-      "stop",
-      "doei",
-      "dag",
-      "bye",
-      "goodbye"
-    ],
-    "moves": []
+    "moves": [
+      {
+        "type": "say",
+        "text": "Heel erg bedankt meneer Yoyo",
+        "character": "robin"
+      },
+       {
+        "type": "say",
+        "text": "Nou, ik hoop dat jullie er wat aan hebben!",
+        "character": "yoyo"
+      },
+       {
+        "type": "say",
+        "text": "Ik zie jullie later!",
+        "character": "yoyo"
+      },
+      {
+        "type": "say",
+        "text": "Dat was de derde ondervraging weer!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Ik vond dat je erg goed je best hebt gedaan [%name_3%]!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Yoyo heeft ons weer een aantal clues gegeven die we kunnen gebruiken om de achtbaan terug te vinden.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Pak jullie boekje er even bij... ",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Dan kunnen jullie opschrijven wat voor clues jullie van Yoyo hebben gekregen",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Ik zal jullie een momentje geven om dit te doen.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "1 minuut",
+        "character": "robin"
+      },
+      {
+        "type": "animation",
+        "animation_name": "animations/Stand/Waiting/Waiting_1"
+      },
+      {
+        "type": "timed_wait",
+        "duration": 60
+      },
+      {
+        "type": "say",
+        "text": "Zo, ik hoop dat het allemaal is gelukt!",
+        "character": "robin"
+      }
+
+    ]
   },
+
   {
     "id": "Ep1_Scene_7_Dj_Kata",
     "type": "chitchat",
