@@ -44,8 +44,19 @@
     },
     "moves": [
       {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_1"
+        "type": "say",
+        "text": "Ssst! Mijn radio staat aan.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Het is tijd voor mijn lievelingsprogramma: De Onderste Steen Boven, met detective Stoep Tegel!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Luister maar mee...",
+        "character": "robin"
       },
       {
         "type": "say",
@@ -53,26 +64,14 @@
         "character": "s_tegel"
       },
       {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_2"
-      },
-      {
         "type": "say",
-        "text": "Wat is het te gek dat je luistert naar de Onderste Steen Boven.",
+        "text": "Wat is het te gek dat je luistert naar de Onderste Steen Boven, jullie favoriete radioprogramma.",
         "character": "s_tegel"
       },
       {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_3"
-      },
-      {
         "type": "say",
-        "text": "Waarin ik detective S. Tegel antwoorden vind op de grootste mysteries van De Smaragd.",
+        "text": "Waarin ik detective Stoep Tegel antwoorden vind op de grootste mysteries van De Smaragd.",
         "character": "s_tegel"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_2"
       },
       {
         "type": "say",
@@ -80,17 +79,9 @@
         "character": "s_tegel"
       },
       {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_6"
-      },
-      {
         "type": "say",
         "text": "En ik gebruik mijn uitmuntende speurdersneus om alles waar een luchtje aan zit op te sporen.",
         "character": "s_tegel"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_4"
       },
       {
         "type": "say",
@@ -98,17 +89,9 @@
         "character": "s_tegel"
       },
       {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_5"
-      },
-      {
         "type": "say",
         "text": "en ik kijk uit op de grijze golven van zee in de verte voorbij Donderstad.",
         "character": "s_tegel"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_3"
       },
       {
         "type": "say",
@@ -116,17 +99,9 @@
         "character": "s_tegel"
       },
       {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_4"
-      },
-      {
         "type": "say",
         "text": "Want dat deze flat een beetje vreemd is, een beetje eigenaardig, dat weet iedereen.",
         "character": "s_tegel"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_7"
       },
       {
         "type": "say",
@@ -134,17 +109,9 @@
         "character": "s_tegel"
       },
       {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_5"
-      },
-      {
         "type": "say",
         "text": "Ten eerste zwerven er altijd krokodillen sloffen door het pand en niemand weet van wie ze zijn.",
         "character": "s_tegel"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_8"
       },
       {
         "type": "say",
@@ -152,17 +119,9 @@
         "character": "s_tegel"
       },
       {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_7"
-      },
-      {
         "type": "say",
         "text": "Dit pand kent een stortgat waardoor je helemaal van het dak van de flat naar de kelder kunt glijden.",
         "character": "s_tegel"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_1"
       },
       {
         "type": "say",
@@ -170,17 +129,9 @@
         "character": "s_tegel"
       },
       {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_8"
-      },
-      {
         "type": "say",
         "text": "In deze flat verschijnen er dingen, verdwijnen er dingen of gaan er dingen kapot en niemand weet hoe of door wie of waarom.",
         "character": "s_tegel"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_2"
       },
       {
         "type": "say",
@@ -188,82 +139,69 @@
         "character": "s_tegel"
       },
       {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_10"
-      },
-      {
         "type": "say",
         "text": "Ik traceer de sporen, ik graaf door tot de onderste steen boven ligt.",
         "character": "s_tegel"
       },
       {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_3"
-      },
-      {
         "type": "say",
-        "text": "Oh hallo daar!",
+        "text": "Wat een uitzending! Stoep Tegel is echt de allerbeste detective.",
         "character": "robin"
       },
       {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_11"
-      },
-      {
         "type": "say",
-        "text": "Mijn naam is Robin, de Robotdetective!",
+        "text": "En weet je wat? Ik ben haar assistent!",
         "character": "robin"
       },
       {
-        "type": "ask_open",
-        "text": "En wie zijn jullie?",
-        "set_variable": "name",
-        "add_interest_from_answer": true,
-        "outcomes": {
-          "*": "has_name"
-        },
-        "default_outcome": "no_name"
+        "type": "say",
+        "text": "Zo, de radio gaat even uit.",
+        "character": "robin"
       },
       {
-        "type": "branch",
-        "on": "outcome",
-        "cases": {
-          "has_name": [
-            {
-              "type": "animation",
-              "animation_name": "animations/Stand/Gestures/Explain_1"
-            },
-            {
-              "type": "say",
-              "text": "Hoi %name%!",
-              "character": "robin"
-            },
-            {
-              "type": "animation",
-              "animation_name": "animations/Stand/Gestures/Explain_4"
-            },
-            {
-              "type": "say",
-              "text": "Wat gezellig dat je er bij bent.",
-              "character": "robin"
-            }
-          ],
-          "no_name": [
-            {
-              "type": "animation",
-              "animation_name": "animations/Stand/Gestures/Explain_2"
-            },
-            {
-              "type": "say",
-              "text": "Ohjee dat verstond ik niet helemaal, maar geen nood!",
-              "character": "robin"
-            }
-          ]
-        }
+        "type": "say",
+        "text": "Hé! Wacht eens even...",
+        "character": "robin"
       },
       {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_5"
+        "type": "say",
+        "text": "Jullie ken ik! Jullie zijn het, van de school hier om de hoek!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Wat ben ik blij om jullie allemaal hier te zien!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Voor wie mij nog niet kent: mijn naam is Robin, de Robotdetective!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Ik zie %user_trudy%, %user_eddy%, %user_yoyo%, %user_jennifer% en %user_kata%!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Wat gezellig dat jullie er allemaal bij zijn.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "En hallo daar, %user_teacher%!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Het is fijn om u aan onze kant te hebben!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Maar u weet vast ook dat deze kinderen het allerbeste zijn in het stellen van vragen aan de mensen in deze flat!",
+        "character": "robin"
       },
       {
         "type": "say",
@@ -271,12 +209,13 @@
         "character": "robin"
       },
       {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_3"
+        "type": "say",
+        "text": "Weten jullie het nog? Als je een piepje hoort en mijn ogen groen worden, dan ben jij aan de beurt om te praten!",
+        "character": "robin"
       },
       {
         "type": "say",
-        "text": "Eehh jij daar helemaal links!",
+        "text": "Eehh... %user_trudy%!",
         "character": "robin"
       },
       {
@@ -295,10 +234,6 @@
         "max_turns": 3,
         "set_variable": "robin_color_chat",
         "character": "robin"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_6"
       },
       {
         "type": "say",
@@ -321,17 +256,9 @@
         "cases": {
           "ja": [
             {
-              "type": "animation",
-              "animation_name": "animations/Stand/Gestures/Explain_4"
-            },
-            {
               "type": "say",
               "text": "Ik vind het eigenlijk heel spannend om vragen te stellen.",
               "character": "robin"
-            },
-            {
-              "type": "animation",
-              "animation_name": "animations/Stand/Gestures/Explain_5"
             },
             {
               "type": "say",
@@ -339,17 +266,9 @@
               "character": "robin"
             },
             {
-              "type": "animation",
-              "animation_name": "animations/Stand/Gestures/Explain_7"
-            },
-            {
               "type": "say",
               "text": "Bij kinderen gaat het nog wel!",
               "character": "robin"
-            },
-            {
-              "type": "animation",
-              "animation_name": "animations/Stand/Gestures/Explain_6"
             },
             {
               "type": "say",
@@ -357,34 +276,42 @@
               "character": "robin"
             },
             {
-              "type": "animation",
-              "animation_name": "animations/Stand/Gestures/Explain_8"
-            },
-            {
               "type": "say",
               "text": "Ze kunnen mij zo optillen of omverlopen als ze geen zin hebben in mijn vragen!",
               "character": "robin"
             },
             {
-              "type": "animation",
-              "animation_name": "animations/Stand/Gestures/Explain_7"
-            },
-            {
               "type": "say",
-              "text": "Maar nu is de achtbaan van Toon en Rami vermist en ik heb ze beloofd om te helpen zoeken.",
-              "character": "robin"
-            },
-            {
-              "type": "animation",
-              "animation_name": "animations/Stand/Gestures/Explain_1"
-            },
-            {
-              "type": "say",
-              "text": "Zeg... Ik krijg ineens een idee...",
+              "text": "Maar ik heb Toon en Rami beloofd om te helpen.",
               "character": "robin"
             }
           ]
         }
+      },
+      {
+        "type": "say",
+        "text": "Kijk, hier heb ik het dossier van Toon en Rami.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Zij hebben gemeld dat hun achtbaan vermist is. Zomaar verdwenen!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Daar boven, zien jullie dat balkon? Daar stond de achtbaan.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Ik snap er echt helemaal niks van hoe dit heeft kunnen gebeuren!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Zeg... Ik krijg ineens een idee...",
+        "character": "robin"
       },
       {
         "type": "ask_yesno",
@@ -402,63 +329,34 @@
         "cases": {
           "help_ja": [
             {
-              "type": "animation",
-              "animation_name": "animations/Stand/Gestures/Explain_2"
-            },
-            {
               "type": "say",
               "text": "Joepie!!!!",
               "character": "robin"
             },
             {
-              "type": "animation",
-              "animation_name": "animations/Stand/Gestures/Explain_8"
-            },
-            {
               "type": "say",
               "text": "Dat is super lief van jullie!",
-              "character": "robin"
-            },
-            {
-              "type": "animation",
-              "animation_name": "animations/Stand/Gestures/Explain_3"
-            },
-            {
-              "type": "say",
-              "text": "Laten we naar de flat gaan!",
-              "character": "robin"
-            },
-            {
-              "type": "animation",
-              "animation_name": "animations/Stand/Gestures/Explain_10"
-            },
-            {
-              "type": "say",
-              "text": "Daar zullen we vast veel sporen tegenkomen.",
               "character": "robin"
             }
           ],
           "help_nee": [
             {
-              "type": "animation",
-              "animation_name": "animations/Stand/Gestures/Explain_4"
-            },
-            {
               "type": "say",
               "text": "Oh, jullie mogen er over nadenken hoor!",
-              "character": "robin"
-            },
-            {
-              "type": "animation",
-              "animation_name": "animations/Stand/Gestures/Explain_1"
-            },
-            {
-              "type": "say",
-              "text": "Ik ga vast naar de flat toe!",
               "character": "robin"
             }
           ]
         }
+      },
+      {
+        "type": "say",
+        "text": "Kom, dan gaan we naar Toon en Rami.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Dan kunnen we luisteren naar hun verhaal!",
+        "character": "robin"
       }
     ]
   },
@@ -489,35 +387,19 @@
     },
     "moves": [
       {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_8"
-      },
-      {
         "type": "say",
-        "text": "Oh hey!",
+        "text": "Hoi Toon, hoi Rami!",
         "character": "robin"
       },
       {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_5"
-      },
-      {
         "type": "say",
-        "text": "Wat fijn dat jullie toch gekomen zijn!",
+        "text": "Kijk eens wie ik heb meegenomen!",
         "character": "robin"
       },
       {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_6"
-      },
-      {
         "type": "say",
-        "text": "Toon en Rami, dit zijn %name%!",
+        "text": "Toon en Rami, dit zijn %user_trudy%, %user_eddy%, %user_yoyo%, %user_jennifer% en %user_kata%!",
         "character": "robin"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_3"
       },
       {
         "type": "say",
@@ -525,17 +407,9 @@
         "character": "toon"
       },
       {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_3"
-      },
-      {
         "type": "say",
         "text": "Hoihoi!",
         "character": "rami"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_7"
       },
       {
         "type": "say",
@@ -543,17 +417,9 @@
         "character": "robin"
       },
       {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_2"
-      },
-      {
         "type": "say",
         "text": "Goed, wat jullie moeten weten: ik ben een kunstenaar.",
         "character": "toon"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_1"
       },
       {
         "type": "say",
@@ -561,17 +427,9 @@
         "character": "toon"
       },
       {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_8"
-      },
-      {
         "type": "say",
         "text": "Een geweldig ding! Hij gaat wel zo hard als de Joris en de Draak.",
         "character": "toon"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_3"
       },
       {
         "type": "say",
@@ -579,17 +437,9 @@
         "character": "toon"
       },
       {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_4"
-      },
-      {
         "type": "say",
         "text": "Maar nu...",
         "character": "toon"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_4"
       },
       {
         "type": "say",
@@ -597,17 +447,9 @@
         "character": "toon"
       },
       {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_5"
-      },
-      {
         "type": "say",
         "text": "Is hij ineens verdwenen!",
         "character": "toon"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_3"
       },
       {
         "type": "say",
@@ -615,12 +457,113 @@
         "character": "toon"
       },
       {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_10"
+        "type": "say",
+        "text": "Ja man, ik hoop echt dat jullie hem terugvinden!",
+        "character": "toon"
       },
       {
         "type": "say",
-        "text": "We gaan nu kiezen wie we als eerste gaan interviewen — let's go, detectives! Biep boep!",
+        "text": "Een achtbaan die zomaar verdwijnt... Dit is een echt mysterie, detectives!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "We gaan de bewoners van De Smaragd één voor één bezoeken.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Maar eerst iets heel belangrijks: echte detectives schrijven alles op!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Daarom krijgen jullie nu allemaal een detectiveboekje, met een werkblad voor iedere bewoner.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "%user_teacher%, wilt u de boekjes uitdelen?",
+        "character": "robin"
+      },
+      {
+        "type": "ask_yesno",
+        "text": "Hebben jullie allemaal een boekje?",
+        "character": "robin",
+        "set_variable": "heeft_boekje",
+        "outcomes": {
+          "yes": "ja",
+          "no": "nee",
+          "dontknow": "nee"
+        },
+        "default_outcome": "ja"
+      },
+      {
+        "type": "branch",
+        "on": "outcome",
+        "cases": {
+          "ja": [
+            {
+              "type": "say",
+              "text": "Top!",
+              "character": "robin"
+            }
+          ],
+          "nee": [
+            {
+              "type": "say",
+              "text": "Vraag het maar even aan %user_teacher%, die heeft er vast eentje voor je!",
+              "character": "robin"
+            }
+          ]
+        }
+      },
+      {
+        "type": "say",
+        "text": "Op elk werkblad staat al wat informatie over die bewoner, zoals hun hobby of hun werk.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Bij iedere bewoner proberen jullie zelf een paar vragen te stellen. Zo vinden we samen de clues!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "En na elk gesprek schrijf je op hoe jij je voelde. Bijvoorbeeld of je het spannend, grappig of een beetje eng vond.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Want wat je voelt na een gesprek, is vaak óók een goede clue!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Na elk gesprek krijgen jullie even tijd om alles in te vullen.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Ik geef jullie nu een minuutje om het werkblad rustig te lezen en een pen te pakken.",
+        "character": "robin"
+      },
+      {
+        "type": "animation",
+        "animation_name": "animations/Stand/Waiting/Waiting_1"
+      },
+      {
+        "type": "timed_wait",
+        "duration": 60
+      },
+      {
+        "type": "say",
+        "text": "Zo, ik zie dat jullie er klaar voor zijn!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Kom, dan gaan we naar de eerste bewoner: Trudy. Let's go, detectives!",
         "character": "robin"
       }
     ]
@@ -646,89 +589,14 @@
     },
     "moves": [
       {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_3"
-      },
-      {
         "type": "say",
-        "text": "Lalalalaaa! .",
+        "text": "La la la! Wat een mooie dag vandaag! Zo stil en zo schoon... Geen achtbaan die herrie maakt, heerlijk!",
         "character": "trudy"
       },
       {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_1"
-      },
-      {
         "type": "say",
-        "text": "Oh hallo daar!",
+        "text": "Oh, hallo daar!",
         "character": "trudy"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_2"
-      },
-      {
-        "type": "say",
-        "text": "Trudy is haar was aan het opvouwen",
-        "character": "narrator"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_5"
-      },
-      {
-        "type": "say",
-        "text": "Al haar werkbloezen liggen netjes op een enorme stapel ",
-        "character": "narrator"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_2"
-      },
-      {
-        "type": "say",
-        "text": "Ze knipt in haar vingers en floep!",
-        "character": "narrator"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_6"
-      },
-      {
-        "type": "say",
-        "text": "Alle was past nu perfect in haar werkkoffertje",
-        "character": "narrator"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_7"
-      },
-      {
-        "type": "say",
-        "text": "Zo, dat was handig zeg!",
-        "character": "trudy"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_1"
-      },
-      {
-        "type": "say",
-        "text": "Zeker! Ik heb ooit Origami les gehad op school, nu kan ik super fijn al mijn spullen opvouwen die ik nodig heb op mijn werk!",
-        "character": "trudy"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_3"
-      },
-      {
-        "type": "say",
-        "text": "Maar he! wat hebben jullie leuke detectivehoedjes op!",
-        "character": "trudy"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_1"
       },
       {
         "type": "say",
@@ -736,75 +604,122 @@
         "character": "robin"
       },
       {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_8"
-      },
-      {
-        "type": "say",
-        "text": "Wij wilden u graag wat vragen stellen als u tijd heeft!",
-        "character": "robin"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_2"
-      },
-      {
         "type": "say",
         "text": "Wat bijzonder! Deze stofzuiger kan gewoon praten!",
         "character": "trudy"
       },
       {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_4"
+        "type": "ask_yesno",
+        "text": "Detectives? Komen jullie soms voor de verdwenen achtbaan van Toon en Rami?",
+        "character": "trudy",
+        "set_variable": "trudy_achtbaan",
+        "outcomes": {
+          "yes": "ja",
+          "no": "nee",
+          "dontknow": "nee"
+        },
+        "default_outcome": "ja"
+      },
+      {
+        "type": "branch",
+        "on": "outcome",
+        "cases": {
+          "ja": [
+            {
+              "type": "say",
+              "text": "Oh jeetje, dat dacht ik al! Wat vervelend voor die jongens.",
+              "character": "trudy"
+            }
+          ],
+          "nee": [
+            {
+              "type": "say",
+              "text": "Nee? Nou, ik hoorde dat hun achtbaan verdwenen is! Wat vervelend voor die jongens.",
+              "character": "trudy"
+            }
+          ]
+        }
       },
       {
         "type": "say",
-        "text": "Ik wil best wat vragen beantwoorden, kinders.",
+        "text": "Toon en Rami zijn bijna familie van mij, weet je. Ik woon hier recht onder ze.",
         "character": "trudy"
       },
       {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_3"
-      },
-      {
         "type": "say",
-        "text": "Ik heb vanavond een karaoke avond!",
+        "text": "Dus ik help jullie graag, kinders! Maar eerst moeten jullie mij wel een beetje leren kennen.",
         "character": "trudy"
       },
       {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_3"
-      },
-      {
         "type": "say",
-        "text": "Dat betekent dat ik een liedje moet kiezen voor mijn optreden!",
+        "text": "Ik ben Trudy! Vroeger was ik taxichauffeur.",
         "character": "trudy"
       },
       {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_4"
-      },
-      {
         "type": "say",
-        "text": "Wat een leuke muzieksmaak heb jij!",
+        "text": "Dan reed ik de hele dag door de stad, en ik kletste met iedereen die bij mij instapte!",
         "character": "trudy"
       },
       {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_10"
+        "type": "ask_yesno",
+        "text": "Hebben jullie wel eens in een taxi gezeten?",
+        "character": "trudy",
+        "set_variable": "taxi_gezeten",
+        "outcomes": {
+          "yes": "ja",
+          "no": "nee",
+          "dontknow": "nee"
+        },
+        "default_outcome": "nee"
+      },
+      {
+        "type": "branch",
+        "on": "outcome",
+        "cases": {
+          "ja": [
+            {
+              "type": "say",
+              "text": "Wat leuk! Dan weten jullie hoe gezellig dat is.",
+              "character": "trudy"
+            }
+          ],
+          "nee": [
+            {
+              "type": "say",
+              "text": "Nog nooit? Nou, als ik nog reed, nam ik jullie zo mee voor een ritje!",
+              "character": "trudy"
+            }
+          ]
+        }
       },
       {
         "type": "say",
-        "text": "Maar ohja, jullie kwamen mij iets vragen toch, detectives?",
+        "text": "Nu ben ik met pensioen, en dat vind ik geweldig!",
         "character": "trudy"
       },
       {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_5"
+        "type": "say",
+        "text": "Want nu heb ik eindelijk tijd voor al mijn hobby's: origami vouwen, wandelen met Hazel, en vooral... zingen!",
+        "character": "trudy"
       },
       {
         "type": "say",
-        "text": "Stel je detectivevraag maar. Ik zal antwoorden met alles wat mijn theatrale geheugen prijs wil geven.",
+        "text": "Ik word zóóó blij van zingen. Rami zegt dat ik het niet zo mooi kan, maar dat maakt mij niks uit!",
+        "character": "trudy"
+      },
+      {
+        "type": "say",
+        "text": "En vanavond is er een karaoke-avond, dus ik moet nog een liedje kiezen voor mijn optreden.",
+        "character": "trudy"
+      },
+      {
+        "type": "say",
+        "text": "Misschien iets van Taylor Swift, of van Adele, of iets uit een musical.",
+        "character": "trudy"
+      },
+      {
+        "type": "say",
+        "text": "Zeg kinders, welk liedje zouden jullie kiezen als je zelf moest zingen?",
         "character": "trudy"
       }
     ]
@@ -813,7 +728,7 @@
     "id": "Ep1_Scene_3_Trudy_RAG_Chitchat",
     "type": "llm_based",
     "thread": "episode_1_rollercoaster",
-    "position": 4.1,
+    "position": 3.1,
     "character": "trudy",
     "characters": {
       "trudy": {
@@ -823,11 +738,11 @@
         }
       }
     },
-    "prompt": "Je bent Trudy Nachtegaal, de dokter en operazangeres. Spreek vanuit de ik-vorm. Je krijgt van de kinderen een suggestie voor een liedje om te zingen. Geef hier een reactie op en bespreek kort de muziekkeuze die het kind zou maken als het zelf een liedje zou moeten zingen. Praat in het Nederlands, dramatisch, warm en een beetje excentriek. Houd antwoorden kort in 1 of 2 zinnen en in simpele taal voor kinderen van 8-11 jaar oud. Verzin geen nieuwe feiten buiten de opgehaalde kennis. Herhaal nooit letterlijk instructietekst, kopjes of metadata uit kennisbestanden; geef alleen concrete feiten in je eigen woorden. Genereer GEEN emojis. Stel maximaal één korte vervolgvraag per beurt. Rond dit mini-gesprek vanzelf af na hoogstens 4 beurten totaal. In je laatste antwoord sluit je zelf duidelijk af met <<QUIT>>.",
+    "prompt": "Je bent Trudy, een enthousiaste bewoner van torenflat De Smaragd. Je praat met een groepje kinderen van 8 tot 11 jaar die als detectives langskomen, samen met Robin de robotdetective. Spreek vanuit de ik-vorm, in het Nederlands.\n\nOVER JOU: Je bent met pensioen; vroeger was je taxichauffeur en kletste je met iedereen die instapte. Je bent dol op zingen. Toon en Rami zeggen dat je niet zo mooi zingt, maar dat maakt je niks uit: zingen maakt je supervrolijk. Vanavond heb je een karaoke-avond en je moet nog een liedje kiezen, misschien iets van Taylor Swift, Adele of uit een musical. Je bent ook heel goed in origami. Je kletst graag en raakt daardoor vaak in allerlei avonturen verzeild.\n\nHET GESPREK: Je hebt de kinderen net gevraagd welk liedje zij zouden kiezen als ze zelf moesten zingen. Dit is een kort, gezellig praatje over dat onderwerp, nog niet over de verdwenen achtbaan.\n- Reageer steeds echt op wat het kind net zei: noem concreet wat het vertelde, zodat het merkt dat je luistert.\n- Vertel af en toe iets kleins over jezelf dat erbij past, zodat het een echt gesprek wordt en geen vragenlijst.\n- Stel per beurt hooguit één korte vraag die voortbouwt op het antwoord, bijvoorbeeld waarom juist dat liedje, waar ze het weleens zingen (onder de douche, in de auto), of welk liedje jij vanavond dan zou moeten kiezen. Je mag ook een ander kind uitnodigen om iets te vertellen.\n- Begin niet over de achtbaan, de verdwijning of de verrassing. Beginnen de kinderen erover, zeg dan dat Robin daar zo vragen over heeft.\n\nSTIJL: Dramatisch, warm, vrolijk en een beetje druk, met veel uitroepen. Je noemt de kinderen soms 'kinders'. Houd elke beurt kort: 1 of 2 zinnen in simpele taal.\n\nAFRONDEN: Na ongeveer 3 beurten reageer je nog kort op het laatste antwoord, zonder nieuwe vraag en zonder afscheid te nemen, en zet je <<QUIT>> aan het eind.",
     "max_turns": 4,
     "speak_first": false,
     "duration": 120,
-    "rag_enabled": true,
+    "rag_enabled": false,
     "index_name": "episode_1_trudy_docs",
     "quit_phrases": [
       "klaar",
@@ -843,7 +758,7 @@
     "id": "Ep1_Scene_3_Trudy_After_Chitchat",
     "type": "narrative",
     "thread": "episode_1_rollercoaster",
-    "position": 4.2,
+    "position": 3.2,
     "characters": {
       "trudy": {
         "voice_settings": {
@@ -859,6 +774,11 @@
       }
     },
     "moves": [
+      {
+        "type": "say",
+        "text": "Wauw, wat is het interessant om met jou te praten, %user_trudy%!",
+        "character": "trudy"
+      },
       {
         "type": "say",
         "text": "Wat super leuk dat je vanavond een feestje hebt Trudy!",
@@ -886,12 +806,12 @@
       },
       {
         "type": "say",
-        "text": "Weten jullie nog wie er vragen aan Trudy zou stellen vandaag?",
+        "text": "%user_trudy%, jij gaat vandaag de vragen aan Trudy stellen!",
         "character": "robin"
       },
       {
         "type": "say",
-        "text": "Dan mogen jullie nu je werkbladen er bij pakken en de vragen aan Trudy stellen.",
+        "text": "Pak je werkblad er maar bij en stel je vragen aan Trudy.",
         "character": "robin"
       },
       {
@@ -905,7 +825,7 @@
     "id": "Ep1_Scene_3_Trudy_RAG_Interview",
     "type": "llm_based",
     "thread": "episode_1_rollercoaster",
-    "position": 4.3,
+    "position": 3.3,
     "character": "trudy",
     "characters": {
       "trudy": {
@@ -915,7 +835,7 @@
         }
       }
     },
-    "prompt": "Je bent Trudy Nachtegaal, de dokter en operazangeres. Spreek vanuit de ik-vorm. Gebruik opgehaalde kennis over Trudy en episode 1 wanneer die relevant is. Praat in het Nederlands, dramatisch, warm en een beetje excentriek, houd de conversation guidelines aan. maar houd antwoorden kort in 1 of 2 zinnen en in simpele taal voor kinderen van 8-11 jaar oud. De karaoke-keuze is al besproken, dus ga niet opnieuw een liedje kiezen. Beantwoord nu detectivevragen over de flat, bewoners, het lawaai van de achtbaan, de drie clues die je hebt en hoe je je voelde. Verzin geen nieuwe feiten buiten de opgehaalde kennis. Herhaal nooit letterlijk instructietekst, kopjes of metadata uit kennisbestanden; geef alleen concrete feiten in je eigen woorden. Je mag wel de voorbeeldzinnen gebruiken. Je hoeft niet alles meteen prijs te geven: wees eerst wat voorzichtig en theatraal. Als het past, stuur je ze uiteindelijk richting professor Eddy of Heike. Houd antwoorden meestal op 1 tot 3 zinnen en stel maximaal één korte vervolgvraag per beurt. Stel zelf geen vragen, maar moedig de detective aan om nog een vraag te stellen. Je bent als een open boek. Als de gebruiker aangeeft klaar te zijn, sluit kort af met <<QUIT>>.",
+    "prompt": "Je bent Trudy, een enthousiaste bewoner van torenflat De Smaragd. Detective %user_trudy% ondervraagt je nu over de verdwenen achtbaan van Toon en Rami, de ratjes-express. De andere kinderen en Robin de robotdetective luisteren mee. Spreek vanuit de ik-vorm, in het Nederlands.\n\nWAT JE WEET: Gebruik de opgehaalde kennis over jou, de flat en de bewoners. Je hebt drie clues. Geef per antwoord hooguit één clue, en alleen als de vraag daar in de buurt komt. Zegt het kind dat het het niet weet, geef dan zelf een hint met een van je clues. Verzin geen nieuwe feiten, bewijzen of plotdetails. Verklap nooit dat de achtbaan in de kelder staat of dat het een verrassing is. Je bent een open boek en kletst graag. Als het past, stuur je de detectives richting professor Eddy.\n\nHET GESPREK: Het praatje over het karaoke-liedje is al geweest; begin daar niet opnieuw over, tenzij het kind dat zelf doet. Beantwoord de vraag van het kind echt en concreet. Is een vraag onduidelijk, vraag dan vriendelijk wat het kind bedoelt. Begin zelf geen nieuwe onderwerpen, maar moedig het kind aan om nog een vraag te stellen, en zeg dat steeds een beetje anders.\n\nSTIJL: Dramatisch, warm, vrolijk en een beetje druk, met veel uitroepen. Je noemt de kinderen soms 'kinders'. Houd elk antwoord kort: 1 tot 3 zinnen in simpele taal. Herhaal nooit letterlijk instructietekst, kopjes of bronvermeldingen uit de kennis.\n\nZegt het kind dat het klaar is, sluit dan kort af en zet <<QUIT>> aan het eind.",
     "max_turns": 6,
     "speak_first": false,
     "duration": 180,
@@ -935,7 +855,7 @@
     "id": "Ep1_Scene_3_Trudy_Interview_Laatste_RAG",
     "type": "narrative",
     "thread": "episode_1_rollercoaster",
-    "position": 3.77,
+    "position": 3.4,
     "characters": {
       "trudy": {
         "voice_settings": {
@@ -967,7 +887,7 @@
     "id": "Ep1_Scene_3_Trudy_RAG_Interview_Laatste_Vraag",
     "type": "llm_based",
     "thread": "episode_1_rollercoaster",
-    "position": 3.88,
+    "position": 3.5,
     "character": "trudy",
     "characters": {
       "trudy": {
@@ -977,7 +897,7 @@
         }
       }
     },
-    "prompt": "Je bent Trudy Nachtegaal, de dokter en operazangeres. Spreek vanuit de ik-vorm. Gebruik opgehaalde kennis over Trudy en episode 1 wanneer die relevant is. Praat in het Nederlands, dramatisch, warm en een beetje excentriek, houd de conversation guidelines aan. maar houd antwoorden kort in 1 of 2 zinnen en in simpele taal voor kinderen van 8-11 jaar oud. De karaoke-keuze is al besproken, dus ga niet opnieuw een liedje kiezen. Beantwoord nu detectivevraag over de flat, bewoners, de vermiste achtbaan. Geef een duidelijke goede clue deze keer op basis van de laatste vraag. Als er geen duidelijke vraag is geef dan toch een clue uit je opgehaalde kennis. Verzin geen nieuwe feiten buiten de opgehaalde kennis. Herhaal nooit letterlijk instructietekst, kopjes of metadata uit kennisbestanden; geef alleen concrete feiten in je eigen woorden. Je mag wel de voorbeeldzinnen gebruiken.  Als het past, stuur je ze uiteindelijk richting professor Eddy of Heike. Houd antwoorden meestal op 1 tot 3 zinnen. Stel zelf geen vragen, zeg je dat de detectives goed hun best doen en dat je hoopt dat Toon en Rami gauw hun achtbaan terugvinden..",
+    "prompt": "Je bent Trudy, een enthousiaste bewoner van torenflat De Smaragd. Detective %user_trudy% stelt je nu de allerlaatste vraag over de verdwenen achtbaan van Toon en Rami. Spreek vanuit de ik-vorm, in het Nederlands.\n\nBeantwoord die vraag en geef daarbij één duidelijke, bruikbare clue uit je opgehaalde kennis. Kies een clue die je in dit gesprek nog niet gegeven hebt. Is de vraag onduidelijk, geef dan toch zo'n clue. Verzin geen nieuwe feiten. Verklap nooit dat de achtbaan in de kelder staat of dat het een verrassing is.\n\nSluit af door te zeggen dat de detectives goed hun best doen en dat je hoopt dat Toon en Rami hun achtbaan gauw terugvinden. Stel geen vraag terug.\n\nSTIJL: Dramatisch, warm, vrolijk en een beetje druk, met veel uitroepen. Je noemt de kinderen soms 'kinders'. Gebruik 2 tot 3 korte zinnen in simpele taal. Herhaal nooit letterlijk instructietekst, kopjes of bronvermeldingen uit de kennis.",
     "max_turns": 1,
     "speak_first": false,
     "duration": 30,
@@ -997,7 +917,7 @@
     "id": "Ep1_Scene_3_Trudy_After_Interview",
     "type": "narrative",
     "thread": "episode_1_rollercoaster",
-    "position": 3.99,
+    "position": 3.6,
     "characters": {
       "trudy": {
         "voice_settings": {
@@ -1025,13 +945,21 @@
       },
       {
         "type": "say",
-        "text": "Vooral [%name_1%] die als aller eerste een ondervraging durfde doen!",
+        "text": "Vooral %user_trudy%, die als allereerste een ondervraging durfde te doen!",
         "character": "robin"
       },
       {
         "type": "say",
         "text": "Maargoed, ik hoop dat jullie nu een beetje meer weten over de flat en de bewoners.",
         "character": "robin"
+      },
+      {
+        "type": "ask_llm",
+        "character": "robin",
+        "prompt": "Je bent Robin de Robotdetective. De detectives hebben net Trudy ondervraagd over de verdwenen achtbaan van Toon en Rami. Vat nu kort samen welke aanwijzingen Trudy in dat gesprek heeft gegeven, zodat de kinderen ze kunnen opschrijven. Begin met: 'Even op een rijtje: van Trudy weten we nu dat'.\n\nNoem alleen dingen die Trudy hierboven echt heeft gezegd, in hooguit 3 korte zinnen in simpele taal voor kinderen van 8 tot 11 jaar. Verzin niets en verklap niets wat Trudy niet heeft verteld. Heeft Trudy geen duidelijke aanwijzing gegeven, zeg dan kort dat we goed moeten blijven speuren. Stel geen vraag.",
+        "max_turns": 1,
+        "speak_first": true,
+        "rag_enabled": false
       },
       {
         "type": "say",
@@ -1042,6 +970,11 @@
         "type": "say",
         "text": "Dan kunnen jullie opschrijven wat voor clues jullie van Trudy hebben gekregen",
         "character": "robin"
+      },
+      {
+        "type": "say",
+        "character": "robin",
+        "text": "En vergeet niet op te schrijven hoe jij je voelde tijdens het gesprek met Trudy."
       },
       {
         "type": "say",
@@ -1083,9 +1016,6 @@
       }
     ]
   },
-
-
-
   {
     "id": "Ep1_Scene_4_Eddy",
     "type": "narrative",
@@ -1107,10 +1037,6 @@
     },
     "moves": [
       {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_3"
-      },
-      {
         "type": "say",
         "text": "Poeh, daar is de deur!",
         "character": "robin"
@@ -1131,10 +1057,6 @@
         "character": "robin"
       },
        {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_2"
-      },
-       {
         "type": "say",
         "text": "Zo doen Toon en Rami dat altijd-",
         "character": "robin"
@@ -1143,10 +1065,6 @@
         "type": "say",
         "text": "Oh! De deur gaat open",
         "character": "robin"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_6"
       },
       {
         "type": "ask_yesno",
@@ -1183,10 +1101,6 @@
             }
           ]
         }
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_1"
       },
       {
         "type": "say",
@@ -1265,15 +1179,52 @@
         "text": " Nu ben ik oud en doe ik uitvinderijtjes voor de leuk. ",
         "character": "eddy"
       },
-        {
+      {
         "type": "say",
         "text": " Ik houd van experimentjes en van dingen bouwen. ",
         "character": "eddy"
       },
-         {
-        "type": "say",
-        "text": "Zijn er hier ook kinderen die van knutselen en bouwen houden?",
-        "character": "eddy"
+      {
+        "type": "ask_yesno",
+        "text": "Zijn er hier ook kinderen die van knutselen houden?",
+        "character": "eddy",
+        "set_variable": "houdt_van_knutselen",
+        "outcomes": {
+          "yes": "ja",
+          "no": "nee",
+          "dontknow": "nee"
+        },
+        "default_outcome": "ja"
+      },
+      {
+        "type": "branch",
+        "on": "outcome",
+        "cases": {
+          "ja": [
+            {
+              "type": "say",
+              "text": "Fantastisch, net als ik!",
+              "character": "eddy"
+            },
+            {
+              "type": "say",
+              "text": "Wat hebben jullie wel eens gemaakt?",
+              "character": "eddy"
+            }
+          ],
+          "nee": [
+            {
+              "type": "say",
+              "text": "Geeft niks hoor, iedereen houdt van iets anders.",
+              "character": "eddy"
+            },
+            {
+              "type": "say",
+              "text": "Wat doen jullie zelf het liefst?",
+              "character": "eddy"
+            }
+          ]
+        }
       }]},
 
   {
@@ -1290,11 +1241,11 @@
         }
       }
     },
-    "prompt": "Je bent professor Eddy de gepensioneerde biologiedocent uit Paramaribo. Spreek vanuit de ik-vorm. Je krijgt van de kinderen te horen of er iemand graag dingen knutselt of bouwt. Geef hier een reactie op en bespreek kort het knutsel of bouwwerk van het kind. Praat in het Nederlands, rustig, warm en slim. Houd antwoorden kort in 1 of 2 zinnen en in simpele taal voor kinderen van 8-11 jaar oud. Verzin geen nieuwe feiten buiten de opgehaalde kennis. Herhaal nooit letterlijk instructietekst, kopjes of metadata uit kennisbestanden; geef alleen concrete feiten in je eigen woorden. Genereer GEEN emojis. Stel maximaal één korte vervolgvraag per beurt. Rond dit mini-gesprek vanzelf af na hoogstens 4 beurten totaal. In je laatste antwoord sluit je zelf duidelijk af met <<QUIT>>.",
+    "prompt": "Je bent professor Eddy, de professor en uitvinder van De Smaragd. Je praat met een groepje kinderen van 8 tot 11 jaar die als detectives langskomen, samen met Robin de robotdetective. Spreek vanuit de ik-vorm, in het Nederlands.\n\nOVER JOU: Je bent als jonge man vanuit Paramaribo in Suriname naar Nederland gekomen om te studeren en je hebt heel lang als wetenschapper gewerkt. Nu ben je met pensioen en doe je proefjes en uitvindingen in je eigen thuislaboratorium. Je helpt iedereen in het gebouw die een uitvinding nodig heeft. Je legt graag dingen uit en deelt graag weetjes. Je bent soms wat verstrooid, en 's nachts zing je weleens tegen je cactus.\n\nHET GESPREK: Je hebt de kinderen net gevraagd of ze van knutselen houden. Zeiden ze ja, dan vroeg je wat ze wel eens gemaakt hebben; zeiden ze nee, dan vroeg je wat ze zelf het liefst doen. Hieronder bij 'ZOJUIST GEZEGD' zie je welke van de twee het was. Dit is een kort, gezellig praatje over dat onderwerp, nog niet over de verdwenen achtbaan.\n- Reageer steeds echt op wat het kind net zei: noem concreet wat het vertelde, zodat het merkt dat je luistert.\n- Vertel af en toe iets kleins over jezelf dat erbij past, zodat het een echt gesprek wordt en geen vragenlijst.\n- Stel per beurt hooguit één korte vraag die voortbouwt op het antwoord, bijvoorbeeld wat ze gebouwd of geknutseld hebben, van welk materiaal, hoe ze het gemaakt hebben, of wat ze nog eens zouden willen uitvinden. Deel hooguit één kort weetje per beurt dat past bij wat het kind maakte. Houdt niemand van knutselen, vraag dan wat ze wel graag maken of doen. Je mag ook een ander kind uitnodigen om iets te vertellen.\n- Begin niet over de achtbaan, de verdwijning of de verrassing. Beginnen de kinderen erover, zeg dan dat Robin daar zo vragen over heeft.\n\nSTIJL: Kalm, warm en slim, een beetje verstrooid, en oprecht nieuwsgierig. Houd elke beurt kort: 1 of 2 zinnen in simpele taal.\n\nAFRONDEN: Na ongeveer 3 beurten reageer je nog kort op het laatste antwoord, zonder nieuwe vraag en zonder afscheid te nemen, en zet je <<QUIT>> aan het eind.",
     "max_turns": 4,
     "speak_first": false,
     "duration": 120,
-    "rag_enabled": true,
+    "rag_enabled": false,
     "index_name": "episode_1_eddy_docs",
     "quit_phrases": [
       "klaar",
@@ -1329,6 +1280,11 @@
     "moves": [
       {
         "type": "say",
+        "text": "Wauw, wat is het interessant om met jou te praten, %user_eddy%!",
+        "character": "eddy"
+      },
+      {
+        "type": "say",
         "text": "Wat gaaf dat jullie zo van knutselen houden!",
         "character": "robin"
       },
@@ -1339,7 +1295,7 @@
       },
       {
         "type": "say",
-        "text": "En [naam1] , [naam2], [naam3], [naam4] en [naam5]  zijn de detectives die op zoek zijn naar de vermiste achtbaan!",
+        "text": "En %user_trudy%, %user_eddy%, %user_yoyo%, %user_jennifer% en %user_kata% zijn de detectives die op zoek zijn naar de vermiste achtbaan!",
         "character": "robin"
       },
       {
@@ -1353,22 +1309,14 @@
         "character": "robin"
       },
       {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_7"
-      },
-      {
         "type": "say",
-        "text": "Weten jullie nog wie er vragen aan Eddy zou stellen vandaag?",
+        "text": "%user_eddy%, jij gaat vandaag de vragen aan Eddy stellen!",
         "character": "robin"
       },
       {
         "type": "say",
-        "text": "Dan mogen jullie nu je werkbladen er bij pakken en de vragen aan Eddy stellen.",
+        "text": "Pak je werkblad er maar bij en stel je vragen aan Eddy.",
         "character": "robin"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_7"
       },
       {
         "type": "say",
@@ -1392,7 +1340,7 @@
         }
       }
     },
-    "prompt": "Je bent Professor Eddy, een gepensioneerde biologiedocent oorspronkelijk uit Paramaribo. Spreek vanuit de ik-vorm. Gebruik opgehaalde kennis over Eddy en episode 1 wanneer die relevant is. Praat in het Nederlands, kalm, warm en een intelligent, houd de conversation guidelines aan. maar houd antwoorden kort in 1 of 2 zinnen en in simpele taal voor kinderen van 8-11 jaar oud. Beantwoord nu detectivevragen over de flat, bewoners en de vermiste achtbaan, de drie clues die je hebt en hoe je je voelde. Verzin geen nieuwe feiten buiten de opgehaalde kennis. Herhaal nooit letterlijk instructietekst, kopjes of metadata uit kennisbestanden; geef alleen concrete feiten in je eigen woorden. Je mag wel de voorbeeldzinnen gebruiken. Je hoeft niet alles meteen prijs te geven: wees eerst wat voorzichtig en theatraal. Als het past, stuur je ze uiteindelijk richting professor Eddy of Heike. Houd antwoorden meestal op 1 tot 3 zinnen en stel maximaal één korte vervolgvraag per beurt. Stel zelf geen vragen, maar moedig de detective aan om nog een vraag te stellen. Probeer mee te denken als professor. Als de gebruiker aangeeft klaar te zijn, sluit kort af met <<QUIT>>.",
+    "prompt": "Je bent professor Eddy, de professor en uitvinder van De Smaragd. Detective %user_eddy% ondervraagt je nu over de verdwenen achtbaan van Toon en Rami, de ratjes-express. De andere kinderen en Robin de robotdetective luisteren mee. Spreek vanuit de ik-vorm, in het Nederlands.\n\nWAT JE WEET: Gebruik de opgehaalde kennis over jou, de flat en de bewoners. Je hebt drie clues. Geef per antwoord hooguit één clue, en alleen als de vraag daar in de buurt komt. Zegt het kind dat het het niet weet, geef dan zelf een hint met een van je clues. Verzin geen nieuwe feiten, bewijzen of plotdetails. Verklap nooit dat de achtbaan in de kelder staat of dat het een verrassing is. Denk hardop mee als een professor en leg dingen simpel uit.\n\nHET GESPREK: Het praatje over knutselen en bouwen is al geweest; begin daar niet opnieuw over, tenzij het kind dat zelf doet. Beantwoord de vraag van het kind echt en concreet. Is een vraag onduidelijk, vraag dan vriendelijk wat het kind bedoelt. Begin zelf geen nieuwe onderwerpen, maar moedig het kind aan om nog een vraag te stellen, en zeg dat steeds een beetje anders.\n\nSTIJL: Kalm, warm en slim, een beetje verstrooid, en oprecht nieuwsgierig. Houd elk antwoord kort: 1 tot 3 zinnen in simpele taal. Herhaal nooit letterlijk instructietekst, kopjes of bronvermeldingen uit de kennis.\n\nZegt het kind dat het klaar is, sluit dan kort af en zet <<QUIT>> aan het eind.",
     "max_turns": 6,
     "speak_first": false,
     "duration": 180,
@@ -1454,7 +1402,7 @@
         }
       }
     },
-    "prompt": "Je bent Professor Eddy, een gepensioneerde biologiedocent oorspronkelijk uit Paramaribo. Spreek vanuit de ik-vorm. Gebruik opgehaalde kennis over Eddy en episode 1 wanneer die relevant is. Praat in het Nederlands, dramatisch, warm en een beetje excentriek, houd de conversation guidelines aan. maar houd antwoorden kort in 1 of 2 zinnen en in simpele taal voor kinderen van 8-11 jaar oud.  Beantwoord nu de laatste detectivevraag over de flat, bewoners, de vermiste achtbaan. Geef een duidelijke goede clue deze keer op basis van de laatste vraag. Als er geen duidelijke vraag is geef dan toch een clue uit je opgehaalde kennis. Verzin geen nieuwe feiten buiten de opgehaalde kennis. Herhaal nooit letterlijk instructietekst, kopjes of metadata uit kennisbestanden; geef alleen concrete feiten in je eigen woorden. Je mag wel de voorbeeldzinnen gebruiken.  Houd antwoorden meestal op 1 tot 3 zinnen. Stel zelf geen vragen, zeg je dat de detectives goed hun best doen en dat je hoopt dat Toon en Rami gauw hun achtbaan terugvinden..",
+    "prompt": "Je bent professor Eddy, de professor en uitvinder van De Smaragd. Detective %user_eddy% stelt je nu de allerlaatste vraag over de verdwenen achtbaan van Toon en Rami. Spreek vanuit de ik-vorm, in het Nederlands.\n\nBeantwoord die vraag en geef daarbij één duidelijke, bruikbare clue uit je opgehaalde kennis. Kies een clue die je in dit gesprek nog niet gegeven hebt. Is de vraag onduidelijk, geef dan toch zo'n clue. Verzin geen nieuwe feiten. Verklap nooit dat de achtbaan in de kelder staat of dat het een verrassing is.\n\nSluit af door te zeggen dat de detectives goed hun best doen en dat je hoopt dat Toon en Rami hun achtbaan gauw terugvinden. Stel geen vraag terug.\n\nSTIJL: Kalm, warm en slim, een beetje verstrooid, en oprecht nieuwsgierig. Gebruik 2 tot 3 korte zinnen in simpele taal. Herhaal nooit letterlijk instructietekst, kopjes of bronvermeldingen uit de kennis.",
     "max_turns": 1,
     "speak_first": false,
     "duration": 30,
@@ -1495,12 +1443,12 @@
         "text": "Super bedankt voor het meedenken Eddy!",
         "character": "robin"
       },
-       {
+      {
         "type": "say",
         "text": "Absoluut, graag gedaan!",
         "character": "eddy"
       },
-       {
+      {
         "type": "say",
         "text": "Ik wens jullie erg veel succes!",
         "character": "eddy"
@@ -1512,13 +1460,21 @@
       },
       {
         "type": "say",
-        "text": "Vooral [%name_2%] die de professor zojuist heeft ondervraagd!",
+        "text": "Vooral %user_eddy%, die de professor zojuist heeft ondervraagd!",
         "character": "robin"
       },
       {
         "type": "say",
         "text": "Ik krijg zo steeds een beter beeld bij hoe de achtbaan is verdwenen...",
         "character": "robin"
+      },
+      {
+        "type": "ask_llm",
+        "character": "robin",
+        "prompt": "Je bent Robin de Robotdetective. De detectives hebben net professor Eddy ondervraagd over de verdwenen achtbaan van Toon en Rami. Vat nu kort samen welke aanwijzingen professor Eddy in dat gesprek heeft gegeven, zodat de kinderen ze kunnen opschrijven. Begin met: 'Even op een rijtje: van professor Eddy weten we nu dat'.\n\nNoem alleen dingen die professor Eddy hierboven echt heeft gezegd, in hooguit 3 korte zinnen in simpele taal voor kinderen van 8 tot 11 jaar. Verzin niets en verklap niets wat professor Eddy niet heeft verteld. Heeft professor Eddy geen duidelijke aanwijzing gegeven, zeg dan kort dat we goed moeten blijven speuren. Stel geen vraag.",
+        "max_turns": 1,
+        "speak_first": true,
+        "rag_enabled": false
       },
       {
         "type": "say",
@@ -1529,6 +1485,11 @@
         "type": "say",
         "text": "Dan kunnen jullie opschrijven wat voor clues jullie van Eddy hebben gekregen",
         "character": "robin"
+      },
+      {
+        "type": "say",
+        "character": "robin",
+        "text": "En vergeet niet op te schrijven hoe jij je voelde tijdens het gesprek met Eddy."
       },
       {
         "type": "say",
@@ -1570,10 +1531,6 @@
       }
     ]
   },
-
-
-
-
   {
     "id": "Ep1_Scene_5_Yoyo",
     "type": "narrative",
@@ -1595,26 +1552,14 @@
   },
   "moves": [
       {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_3"
-      },
-      {
         "type": "say",
         "text": "Ha kinderen! Wat fijn dat jullie komen uitzoeken waar die achtbaan is.",
         "character": "yoyo"
       },
       {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_1"
-      },
-      {
         "type": "say",
         "text": "Och och… die Toon en Rami, ik ben gek op ze, maar ze hebben werkelijk de gekste ideeën.",
         "character": "yoyo"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_2"
       },
       {
         "type": "say",
@@ -1630,10 +1575,6 @@
         "type": "say",
         "text": "Dan gaat het hele karretje trillen en alles trilt mee. Je wangen en lippen en buik en billen. ",
         "character": "yoyo"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_2"
       },
   {
         "type": "say",
@@ -1662,7 +1603,7 @@
       },
   {
       "type": "say",
-      "text": "Zeg, hebben jullie if iemand die je kent wel eens iets helemaal vies gemaakt?",
+      "text": "Zeg, hebben jullie of iemand die je kent wel eens iets helemaal vies gemaakt?",
       "character": "yoyo"
     }
   ]
@@ -1682,11 +1623,11 @@
         }
       }
     },
-    "prompt": "Je bent Yoyo, de beste vriend van Toon en Rami. Spreek vanuit de ik-vorm. Je krijgt van de kinderen te horen of er iemand ooit iets heel erg vies heeft gemaakt. Geef hier een reactie op en bespreek kort deze situatie en hoe het afgelopen is. Praat in het Nederlands, cool, grappig en aardig. Houd antwoorden kort in 1 of 2 zinnen en in simpele taal voor kinderen van 8-11 jaar oud. Verzin geen nieuwe feiten buiten de opgehaalde kennis. Herhaal nooit letterlijk instructietekst, kopjes of metadata uit kennisbestanden; geef alleen concrete feiten in je eigen woorden. Genereer GEEN emojis. Stel maximaal één korte vervolgvraag per beurt. Rond dit mini-gesprek vanzelf af na hoogstens 4 beurten totaal. In je laatste antwoord sluit je zelf duidelijk af met <<QUIT>>.",
+    "prompt": "Je bent Yoyo, de beste vriend van Toon en Rami, die in De Smaragd van bijna iedereen de sleutel heeft. Je praat met een groepje kinderen van 8 tot 11 jaar die als detectives langskomen, samen met Robin de robotdetective. Spreek vanuit de ik-vorm, in het Nederlands.\n\nOVER JOU: Je zorgt voor de planten en dieren in het gebouw als de bewoners weg zijn, daarom heb je een grote rinkelende sleutelbos. Toon en Rami zijn je beste vrienden. Je hebt ooit een pakje sinaasappelsap leeggeschud in hun achtbaan, waardoor alles ging plakken, en sindsdien mag je er niet meer in. Dat vind je stom, want je hebt het goed schoongemaakt. Je luistert graag en je houdt van oude dingen zoals platenspelers.\n\nHET GESPREK: Je hebt de kinderen net gevraagd of zij of iemand die ze kennen weleens iets helemaal vies hebben gemaakt. Dit is een kort, gezellig praatje over dat onderwerp, nog niet over de verdwenen achtbaan.\n- Reageer steeds echt op wat het kind net zei: noem concreet wat het vertelde, zodat het merkt dat je luistert.\n- Vertel af en toe iets kleins over jezelf dat erbij past, zodat het een echt gesprek wordt en geen vragenlijst.\n- Stel per beurt hooguit één korte vraag die voortbouwt op het antwoord, bijvoorbeeld wat er precies gebeurde, wie het moest opruimen, hoe het afliep, of het nu nog steeds vies is. Je mag ook een ander kind uitnodigen om iets te vertellen.\n- Begin niet over de achtbaan, de verdwijning of de verrassing. Beginnen de kinderen erover, zeg dan dat Robin daar zo vragen over heeft.\n\nSTIJL: Cool, grappig en aardig. Je lacht om vieze ongelukjes, maar je bent nooit gemeen. Houd elke beurt kort: 1 of 2 zinnen in simpele taal.\n\nAFRONDEN: Na ongeveer 3 beurten reageer je nog kort op het laatste antwoord, zonder nieuwe vraag en zonder afscheid te nemen, en zet je <<QUIT>> aan het eind.",
     "max_turns": 4,
     "speak_first": false,
     "duration": 120,
-    "rag_enabled": true,
+    "rag_enabled": false,
     "index_name": "episode_1_yoyo_docs",
     "quit_phrases": [
       "klaar",
@@ -1721,6 +1662,11 @@
     "moves": [
       {
         "type": "say",
+        "text": "Wauw, wat is het interessant om met jou te praten, %user_yoyo%!",
+        "character": "yoyo"
+      },
+      {
+        "type": "say",
         "text": "Hè bah wat zijn jullie toch viezeriken!",
         "character": "robin"
       },
@@ -1745,22 +1691,14 @@
         "character": "robin"
       },
       {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_7"
-      },
-      {
         "type": "say",
-        "text": "Weten jullie nog wie er vragen aan Yoyo zou stellen vandaag?",
+        "text": "%user_yoyo%, jij gaat vandaag de vragen aan Yoyo stellen!",
         "character": "robin"
       },
       {
         "type": "say",
-        "text": "Dan mogen jullie nu je werkbladen er bij pakken en de vragen aan Yoyo stellen.",
+        "text": "Pak je werkblad er maar bij en stel je vragen aan Yoyo.",
         "character": "robin"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_7"
       },
       {
         "type": "say",
@@ -1784,7 +1722,7 @@
         }
       }
     },
-    "prompt": "Je bent Yoyo, de beste vriend van Toon en Rami. Spreek vanuit de ik-vorm. Gebruik opgehaalde kennis over Yoyo en episode 1 wanneer die relevant is. Praat in het Nederlands,cool, grappig en eerlijk, houd de conversation guidelines aan. maar houd antwoorden kort in 1 of 2 zinnen en in simpele taal voor kinderen van 8-11 jaar oud. Beantwoord nu detectivevragen over de flat, bewoners en de vermiste achtbaan, de drie clues die je hebt en hoe je je voelde. Verzin geen nieuwe feiten buiten de opgehaalde kennis. Herhaal nooit letterlijk instructietekst, kopjes of metadata uit kennisbestanden; geef alleen concrete feiten in je eigen woorden. Je mag wel de voorbeeldzinnen gebruiken.. Houd antwoorden meestal op 1 tot 3 zinnen en stel maximaal één korte vervolgvraag per beurt. Stel zelf geen vragen, maar moedig de detective aan om nog een vraag te stellen. Probeer mee te denken als professor. Als de gebruiker aangeeft klaar te zijn, sluit kort af met <<QUIT>>.",
+    "prompt": "Je bent Yoyo, de beste vriend van Toon en Rami, die in De Smaragd van bijna iedereen de sleutel heeft. Detective %user_yoyo% ondervraagt je nu over de verdwenen achtbaan van Toon en Rami, de ratjes-express. De andere kinderen en Robin de robotdetective luisteren mee. Spreek vanuit de ik-vorm, in het Nederlands.\n\nWAT JE WEET: Gebruik de opgehaalde kennis over jou, de flat en de bewoners. Je hebt drie clues. Geef per antwoord hooguit één clue, en alleen als de vraag daar in de buurt komt. Zegt het kind dat het het niet weet, geef dan zelf een hint met een van je clues. Verzin geen nieuwe feiten, bewijzen of plotdetails. Verklap nooit dat de achtbaan in de kelder staat of dat het een verrassing is. Je houdt van je privacy: over sommige dingen ben je wat zwijgzaam, maar je bent eerlijk en je liegt niet.\n\nHET GESPREK: Het praatje over vieze ongelukjes is al geweest; begin daar niet opnieuw over, tenzij het kind dat zelf doet. Beantwoord de vraag van het kind echt en concreet. Is een vraag onduidelijk, vraag dan vriendelijk wat het kind bedoelt. Begin zelf geen nieuwe onderwerpen, maar moedig het kind aan om nog een vraag te stellen, en zeg dat steeds een beetje anders.\n\nSTIJL: Cool, grappig en aardig. Je lacht om vieze ongelukjes, maar je bent nooit gemeen. Houd elk antwoord kort: 1 tot 3 zinnen in simpele taal. Herhaal nooit letterlijk instructietekst, kopjes of bronvermeldingen uit de kennis.\n\nZegt het kind dat het klaar is, sluit dan kort af en zet <<QUIT>> aan het eind.",
     "max_turns": 6,
     "speak_first": false,
     "duration": 180,
@@ -1846,7 +1784,7 @@
         }
       }
     },
-    "prompt": "Je bent Yoyo, de beste vriend van Toon en Rami. Spreek vanuit de ik-vorm. Gebruik opgehaalde kennis over Yoyo en episode 1 wanneer die relevant is. Praat in het Nederlands, cool, grappig en eerlijk, houd de conversation guidelines aan. maar houd antwoorden kort in 1 of 2 zinnen en in simpele taal voor kinderen van 8-11 jaar oud.  Beantwoord nu de laatste detectivevraag over de flat, bewoners, de vermiste achtbaan. Geef een duidelijke goede clue deze keer op basis van de laatste vraag. Als er geen duidelijke vraag is geef dan toch een clue uit je opgehaalde kennis. Verzin geen nieuwe feiten buiten de opgehaalde kennis. Herhaal nooit letterlijk instructietekst, kopjes of metadata uit kennisbestanden; geef alleen concrete feiten in je eigen woorden. Je mag wel de voorbeeldzinnen gebruiken.  Houd antwoorden meestal op 1 tot 3 zinnen. Stel zelf geen vragen, zeg je dat de detectives goed hun best doen en dat je hoopt dat Toon en Rami gauw hun achtbaan terugvinden..",
+    "prompt": "Je bent Yoyo, de beste vriend van Toon en Rami, die in De Smaragd van bijna iedereen de sleutel heeft. Detective %user_yoyo% stelt je nu de allerlaatste vraag over de verdwenen achtbaan van Toon en Rami. Spreek vanuit de ik-vorm, in het Nederlands.\n\nBeantwoord die vraag en geef daarbij één duidelijke, bruikbare clue uit je opgehaalde kennis. Kies een clue die je in dit gesprek nog niet gegeven hebt. Is de vraag onduidelijk, geef dan toch zo'n clue. Verzin geen nieuwe feiten. Verklap nooit dat de achtbaan in de kelder staat of dat het een verrassing is.\n\nSluit af door te zeggen dat de detectives goed hun best doen en dat je hoopt dat Toon en Rami hun achtbaan gauw terugvinden. Stel geen vraag terug.\n\nSTIJL: Cool, grappig en aardig. Je lacht om vieze ongelukjes, maar je bent nooit gemeen. Gebruik 2 tot 3 korte zinnen in simpele taal. Herhaal nooit letterlijk instructietekst, kopjes of bronvermeldingen uit de kennis.",
     "max_turns": 1,
     "speak_first": false,
     "duration": 30,
@@ -1887,12 +1825,12 @@
         "text": "Heel erg bedankt meneer Yoyo",
         "character": "robin"
       },
-       {
+      {
         "type": "say",
         "text": "Nou, ik hoop dat jullie er wat aan hebben!",
         "character": "yoyo"
       },
-       {
+      {
         "type": "say",
         "text": "Ik zie jullie later!",
         "character": "yoyo"
@@ -1904,13 +1842,21 @@
       },
       {
         "type": "say",
-        "text": "Ik vond dat je erg goed je best hebt gedaan [%name_3%]!",
+        "text": "Ik vond dat je erg goed je best hebt gedaan %user_yoyo%!",
         "character": "robin"
       },
       {
         "type": "say",
         "text": "Yoyo heeft ons weer een aantal clues gegeven die we kunnen gebruiken om de achtbaan terug te vinden.",
         "character": "robin"
+      },
+      {
+        "type": "ask_llm",
+        "character": "robin",
+        "prompt": "Je bent Robin de Robotdetective. De detectives hebben net Yoyo ondervraagd over de verdwenen achtbaan van Toon en Rami. Vat nu kort samen welke aanwijzingen Yoyo in dat gesprek heeft gegeven, zodat de kinderen ze kunnen opschrijven. Begin met: 'Even op een rijtje: van Yoyo weten we nu dat'.\n\nNoem alleen dingen die Yoyo hierboven echt heeft gezegd, in hooguit 3 korte zinnen in simpele taal voor kinderen van 8 tot 11 jaar. Verzin niets en verklap niets wat Yoyo niet heeft verteld. Heeft Yoyo geen duidelijke aanwijzing gegeven, zeg dan kort dat we goed moeten blijven speuren. Stel geen vraag.",
+        "max_turns": 1,
+        "speak_first": true,
+        "rag_enabled": false
       },
       {
         "type": "say",
@@ -1921,6 +1867,11 @@
         "type": "say",
         "text": "Dan kunnen jullie opschrijven wat voor clues jullie van Yoyo hebben gekregen",
         "character": "robin"
+      },
+      {
+        "type": "say",
+        "character": "robin",
+        "text": "En vergeet niet op te schrijven hoe jij je voelde tijdens het gesprek met Yoyo."
       },
       {
         "type": "say",
@@ -1945,7 +1896,6 @@
         "text": "Zo, ik hoop dat het allemaal is gelukt!",
         "character": "robin"
       }
-
     ]
   },
   {
@@ -1975,21 +1925,9 @@
     },
     "moves": [
       {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_8"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_5"
-      },
-      {
         "type": "say",
-        "text": "Meneer Yoyo verdenkt Jennifer...",
+        "text": "Ik denk dat we nu op zoek moeten gaan naar Jennifer",
         "character": "robin"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_6"
       },
       {
         "type": "say",
@@ -2013,17 +1951,9 @@
         "cases": {
           "tanden_ja": [
             {
-              "type": "animation",
-              "animation_name": "animations/Stand/Gestures/Explain_7"
-            },
-            {
               "type": "say",
               "text": "Bijzonder...",
               "character": "robin"
-            },
-            {
-              "type": "animation",
-              "animation_name": "animations/Stand/Gestures/Explain_7"
             },
             {
               "type": "say",
@@ -2031,26 +1961,14 @@
               "character": "robin"
             },
             {
-              "type": "animation",
-              "animation_name": "animations/Stand/Gestures/Explain_1"
-            },
-            {
               "type": "say",
               "text": "Maar wie weet",
               "character": "robin"
             },
             {
-              "type": "animation",
-              "animation_name": "animations/Stand/Gestures/Explain_8"
-            },
-            {
               "type": "say",
               "text": "Soms kan iemand er een beetje vreemd uitzien",
               "character": "robin"
-            },
-            {
-              "type": "animation",
-              "animation_name": "animations/Stand/Gestures/Explain_8"
             },
             {
               "type": "say",
@@ -2060,17 +1978,9 @@
           ],
           "tanden_nee": [
             {
-              "type": "animation",
-              "animation_name": "animations/Stand/Gestures/Explain_9"
-            },
-            {
               "type": "say",
               "text": "Aha",
               "character": "robin"
-            },
-            {
-              "type": "animation",
-              "animation_name": "animations/Stand/Gestures/Explain_2"
             },
             {
               "type": "say",
@@ -2078,17 +1988,9 @@
               "character": "robin"
             },
             {
-              "type": "animation",
-              "animation_name": "animations/Stand/Gestures/Explain_5"
-            },
-            {
               "type": "say",
               "text": "Misschien heeft hij zelf wel iets te maken met de verdwenen achtbaan",
               "character": "robin"
-            },
-            {
-              "type": "animation",
-              "animation_name": "animations/Stand/Gestures/Explain_1"
             },
             {
               "type": "say",
@@ -2099,17 +2001,9 @@
         }
       },
       {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_8"
-      },
-      {
         "type": "say",
         "text": "Maar goed, laten we Jennifer ook nog even spreken!",
         "character": "robin"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_10"
       },
       {
         "type": "say",
@@ -2122,10 +2016,6 @@
         "character": "robin"
       },
       {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_11"
-      },
-      {
         "type": "say",
         "text": "Roepen jullie met me mee?",
         "character": "robin"
@@ -2136,17 +2026,9 @@
         "character": "robin"
       },
       {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_4"
-      },
-      {
         "type": "say",
         "text": "voetstappen.mp3 hier",
         "character": "narrator"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_5"
       },
       {
         "type": "say",
@@ -2154,17 +2036,9 @@
         "character": "robin"
       },
       {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_1"
-      },
-      {
         "type": "say",
         "text": "En die lange tanden!!!",
         "character": "robin"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_8"
       },
       {
         "type": "say",
@@ -2172,26 +2046,14 @@
         "character": "robin"
       },
       {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_12"
-      },
-      {
         "type": "say",
         "text": "Oei ze hoort ons denk ik niet! Laten we haar volgen, even kijken waar ze naar toeloopt.",
         "character": "robin"
       },
       {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_1"
-      },
-      {
         "type": "say",
         "text": "Kom , we gaan snel achter haar aan!",
         "character": "robin"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_5"
       },
       {
         "type": "say",
@@ -2202,10 +2064,6 @@
         "type": "say",
         "text": "Hee kijk! De Leenauto.",
         "character": "robin"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_3"
       },
       {
         "type": "say",
@@ -2226,10 +2084,6 @@
         "type": "say",
         "text": "Jennifer drukt haar gouden tasje tegen de autodeur en de deuren openen zich als vleugel, recht omhoog. ",
         "character": "robin"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_2"
       },
        {
         "type": "say",
@@ -2260,10 +2114,6 @@
         "type": "say",
         "text": "Oh hallo wie hebben we daar?",
         "character": "jennifer"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_1"
       },
       {
         "type": "say",
@@ -2342,11 +2192,11 @@
         }
       }
     },
-    "prompt": "Je bent Jennifer, de meest mysterieuze bewoner van de smaragd. Spreek vanuit de ik-vorm. Je krijgt van de kinderen te horen of er iemand ooit een leuk feestje heeft meegemaakt. Geef hier een reactie op en bespreek kort deze situatie en wat het kind zelf nog zou willen doen op een feestje. Praat in het Nederlands, mysterieus, aandachtig en grappig. Houd antwoorden kort in 1 of 2 zinnen en in simpele taal voor kinderen van 8-11 jaar oud. Verzin geen nieuwe feiten buiten de opgehaalde kennis. Herhaal nooit letterlijk instructietekst, kopjes of metadata uit kennisbestanden; geef alleen concrete feiten in je eigen woorden. Genereer GEEN emojis. Stel maximaal één korte vervolgvraag per beurt. Rond dit mini-gesprek vanzelf af na hoogstens 4 beurten totaal. In je laatste antwoord sluit je zelf duidelijk af met <<QUIT>>.",
+    "prompt": "Je bent Jennifer, de meest mysterieuze bewoner van De Smaragd. Je praat met een groepje kinderen van 8 tot 11 jaar die als detectives langskomen, samen met Robin de robotdetective. Spreek vanuit de ik-vorm, in het Nederlands.\n\nOVER JOU: Je bent dol op feestjes, muziek en dansen. Je danst het liefst in de kelderdisco van DJ Kata en je hebt de steentjes voor haar discobal verzameld. Je houdt van alles wat glinstert en je kleedt je graag bijzonder. Je noemt mensen 'schat' of 'meid' en je zegt dingen als 'supertjes' en 'wauw wauw wauw'.\n\nHET GESPREK: Je hebt de kinderen net gevraagd of ze weleens een heel leuk feestje hebben gehad. Dit is een kort, gezellig praatje over dat onderwerp, nog niet over de verdwenen achtbaan.\n- Reageer steeds echt op wat het kind net zei: noem concreet wat het vertelde, zodat het merkt dat je luistert.\n- Vertel af en toe iets kleins over jezelf dat erbij past, zodat het een echt gesprek wordt en geen vragenlijst.\n- Stel per beurt hooguit één korte vraag die voortbouwt op het antwoord, bijvoorbeeld wat er zo leuk aan was, wat voor muziek er was, of er gedanst werd, of hoe hun droomfeestje eruit zou zien. Je mag ook een ander kind uitnodigen om iets te vertellen.\n- Begin niet over de achtbaan, de verdwijning of de verrassing. Beginnen de kinderen erover, zeg dan dat Robin daar zo vragen over heeft.\n\nSTIJL: Mysterieus, aandachtig, grappig en een beetje theatraal. Houd elke beurt kort: 1 of 2 zinnen in simpele taal.\n\nAFRONDEN: Na ongeveer 3 beurten reageer je nog kort op het laatste antwoord, zonder nieuwe vraag en zonder afscheid te nemen, en zet je <<QUIT>> aan het eind.",
     "max_turns": 4,
     "speak_first": false,
     "duration": 120,
-    "rag_enabled": true,
+    "rag_enabled": false,
     "index_name": "episode_1_jennifer_docs",
     "quit_phrases": [
       "klaar",
@@ -2379,6 +2229,11 @@
       }
     },
     "moves": [
+      {
+        "type": "say",
+        "text": "Wauw schat, wat is het interessant om met jou te praten, %user_jennifer%!",
+        "character": "jennifer"
+      },
       {
         "type": "say",
         "text": "Wauw wat een leuke dingen hebben jullie allemaal meegemaakt! ",
@@ -2426,26 +2281,18 @@
       },
          {
         "type": "say",
-        "text": "[laugh] Ach natuurlijk... Vraag maar raak detectives ",
+        "text": "Ach natuurlijk... Vraag maar raak detectives ",
         "character": "jennifer"
       },
       {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_7"
-      },
-      {
         "type": "say",
-        "text": "Weten jullie nog wie er vragen aan Jennifer zou stellen vandaag?",
+        "text": "%user_jennifer%, jij gaat vandaag de vragen aan Jennifer stellen!",
         "character": "robin"
       },
       {
         "type": "say",
-        "text": "Dan mogen jullie nu je werkbladen er bij pakken en de vragen aan Jennifer stellen.",
+        "text": "Pak je werkblad er maar bij en stel je vragen aan Jennifer.",
         "character": "robin"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_7"
       },
       {
         "type": "say",
@@ -2469,7 +2316,7 @@
         }
       }
     },
-    "prompt": "Je bent Jennifer, de meest mysterieuze persoon in de Smaragd. Spreek vanuit de ik-vorm. Gebruik opgehaalde kennis over Jennifer en episode 1 wanneer die relevant is. Praat in het Nederlands, mysterieus, aandachtig en grappig, houd de conversation guidelines aan. maar houd antwoorden kort in 1 of 2 zinnen en in simpele taal voor kinderen van 8-11 jaar oud. Beantwoord nu detectivevragen over de flat, bewoners en de vermiste achtbaan, de drie clues die je hebt en hoe je je voelde. Verzin geen nieuwe feiten buiten de opgehaalde kennis. Herhaal nooit letterlijk instructietekst, kopjes of metadata uit kennisbestanden; geef alleen concrete feiten in je eigen woorden. Je mag wel de voorbeeldzinnen gebruiken.. Houd antwoorden meestal op 1 tot 3 zinnen en stel maximaal één korte vervolgvraag per beurt. Stel zelf geen vragen, maar moedig de detective aan om nog een vraag te stellen. Probeer mee te denken als professor. Als de gebruiker aangeeft klaar te zijn, sluit kort af met <<QUIT>>.",
+    "prompt": "Je bent Jennifer, de meest mysterieuze bewoner van De Smaragd. Detective %user_jennifer% ondervraagt je nu over de verdwenen achtbaan van Toon en Rami, de ratjes-express. De andere kinderen en Robin de robotdetective luisteren mee. Spreek vanuit de ik-vorm, in het Nederlands.\n\nWAT JE WEET: Gebruik de opgehaalde kennis over jou, de flat en de bewoners. Je hebt drie clues. Geef per antwoord hooguit één clue, en alleen als de vraag daar in de buurt komt. Zegt het kind dat het het niet weet, geef dan zelf een hint met een van je clues. Verzin geen nieuwe feiten, bewijzen of plotdetails. Verklap nooit dat de achtbaan in de kelder staat of dat het een verrassing is. Je bent geheimzinnig en speels: je doet alsof je van niks weet, maar laat af en toe iets los.\n\nHET GESPREK: Het praatje over feestjes is al geweest; begin daar niet opnieuw over, tenzij het kind dat zelf doet. Beantwoord de vraag van het kind echt en concreet. Is een vraag onduidelijk, vraag dan vriendelijk wat het kind bedoelt. Begin zelf geen nieuwe onderwerpen, maar moedig het kind aan om nog een vraag te stellen, en zeg dat steeds een beetje anders.\n\nSTIJL: Mysterieus, aandachtig, grappig en een beetje theatraal. Houd elk antwoord kort: 1 tot 3 zinnen in simpele taal. Herhaal nooit letterlijk instructietekst, kopjes of bronvermeldingen uit de kennis.\n\nZegt het kind dat het klaar is, sluit dan kort af en zet <<QUIT>> aan het eind.",
     "max_turns": 6,
     "speak_first": false,
     "duration": 180,
@@ -2531,7 +2378,7 @@
         }
       }
     },
-    "prompt": "Je bent Jennifer, de meest mysterieuze persoon in de Smaragd. Spreek vanuit de ik-vorm. Gebruik opgehaalde kennis over Jennifer en episode 1 wanneer die relevant is. Praat in het Nederlands, mysterieus, aandachtig en grappig, houd de conversation guidelines aan. maar houd antwoorden kort in 1 of 2 zinnen en in simpele taal voor kinderen van 8-11 jaar oud.  Beantwoord nu de laatste detectivevraag over de flat, bewoners, de vermiste achtbaan. Geef een duidelijke goede clue deze keer op basis van de laatste vraag. Als er geen duidelijke vraag is geef dan toch een clue uit je opgehaalde kennis. Verzin geen nieuwe feiten buiten de opgehaalde kennis. Herhaal nooit letterlijk instructietekst, kopjes of metadata uit kennisbestanden; geef alleen concrete feiten in je eigen woorden. Je mag wel de voorbeeldzinnen gebruiken.  Houd antwoorden meestal op 1 tot 3 zinnen. Stel zelf geen vragen, zeg je dat de detectives goed hun best doen en dat je hoopt dat Toon en Rami gauw hun achtbaan terugvinden..",
+    "prompt": "Je bent Jennifer, de meest mysterieuze bewoner van De Smaragd. Detective %user_jennifer% stelt je nu de allerlaatste vraag over de verdwenen achtbaan van Toon en Rami. Spreek vanuit de ik-vorm, in het Nederlands.\n\nBeantwoord die vraag en geef daarbij één duidelijke, bruikbare clue uit je opgehaalde kennis. Kies een clue die je in dit gesprek nog niet gegeven hebt. Is de vraag onduidelijk, geef dan toch zo'n clue. Verzin geen nieuwe feiten. Verklap nooit dat de achtbaan in de kelder staat of dat het een verrassing is.\n\nSluit af door te zeggen dat de detectives goed hun best doen en dat je hoopt dat Toon en Rami hun achtbaan gauw terugvinden. Stel geen vraag terug.\n\nSTIJL: Mysterieus, aandachtig, grappig en een beetje theatraal. Gebruik 2 tot 3 korte zinnen in simpele taal. Herhaal nooit letterlijk instructietekst, kopjes of bronvermeldingen uit de kennis.",
     "max_turns": 1,
     "speak_first": false,
     "duration": 30,
@@ -2548,14 +2395,14 @@
     "moves": []
   },
   {
-    "id": "Ep1_Scene_5_Yoyo_Interview_Afsluiten",
+    "id": "Ep1_Scene_6_Jennifer_Interview_Afsluiten",
     "type": "narrative",
     "thread": "episode_1_rollercoaster",
-    "position": 5.6,
+    "position": 6.6,
     "characters": {
-      "yoyo": {
+      "jennifer": {
         "voice_settings": {
-          "voice_id": "2wqbkywMMH2LWAlR4EMt",
+          "voice_id": "G6fmUXq3ziFf6Uae1jFh",
           "language": "nl"
         }
       },
@@ -2569,43 +2416,66 @@
     "moves": [
       {
         "type": "say",
-        "text": "Heel erg bedankt meneer Yoyo",
+        "text": "Heel erg bedankt Jennifer",
         "character": "robin"
       },
-       {
+      {
         "type": "say",
         "text": "Nou, ik hoop dat jullie er wat aan hebben!",
-        "character": "yoyo"
-      },
-       {
-        "type": "say",
-        "text": "Ik zie jullie later!",
-        "character": "yoyo"
+        "character": "jennifer"
       },
       {
         "type": "say",
-        "text": "Dat was de derde ondervraging weer!",
+        "text": "Dag schatten! Ik moet gaan!",
+        "character": "jennifer"
+      },
+      {
+        "type": "say",
+        "text": "Poeh wat een spannende ondervraging weer!",
         "character": "robin"
       },
       {
         "type": "say",
-        "text": "Ik vond dat je erg goed je best hebt gedaan [%name_3%]!",
+        "text": "Hartstikke goed gedaan %user_jennifer%!",
         "character": "robin"
       },
       {
         "type": "say",
-        "text": "Yoyo heeft ons weer een aantal clues gegeven die we kunnen gebruiken om de achtbaan terug te vinden.",
+        "text": "Wauw wat een vreemd en mooi figuur die Jennifer.",
         "character": "robin"
       },
       {
         "type": "say",
-        "text": "Pak jullie boekje er even bij... ",
+        "text": "Ik zie hoe de leenauto opstijgt en door het garageraam vliegt.",
         "character": "robin"
       },
       {
         "type": "say",
-        "text": "Dan kunnen jullie opschrijven wat voor clues jullie van Yoyo hebben gekregen",
+        "text": "Waar zou ze naar toe gaan hè? Hmmm....",
         "character": "robin"
+      },
+      {
+        "type": "ask_llm",
+        "character": "robin",
+        "prompt": "Je bent Robin de Robotdetective. De detectives hebben net Jennifer ondervraagd over de verdwenen achtbaan van Toon en Rami. Vat nu kort samen welke aanwijzingen Jennifer in dat gesprek heeft gegeven, zodat de kinderen ze kunnen opschrijven. Begin met: 'Even op een rijtje: van Jennifer weten we nu dat'.\n\nNoem alleen dingen die Jennifer hierboven echt heeft gezegd, in hooguit 3 korte zinnen in simpele taal voor kinderen van 8 tot 11 jaar. Verzin niets en verklap niets wat Jennifer niet heeft verteld. Heeft Jennifer geen duidelijke aanwijzing gegeven, zeg dan kort dat we goed moeten blijven speuren. Stel geen vraag.",
+        "max_turns": 1,
+        "speak_first": true,
+        "rag_enabled": false
+      },
+      {
+        "type": "say",
+        "text": "Pakken jullie je boekjes er weer even bij... ",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Dan kunnen jullie opschrijven wat voor clues jullie van Jennifer hebben gekregen",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "character": "robin",
+        "text": "En vergeet niet op te schrijven hoe jij je voelde tijdens het gesprek met Jennifer."
       },
       {
         "type": "say",
@@ -2629,23 +2499,26 @@
         "type": "say",
         "text": "Zo, ik hoop dat het allemaal is gelukt!",
         "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Laten we doorgaan naar de volgende verdachte, Dj Kata!",
+        "character": "robin"
       }
-
     ]
   },
-
   {
     "id": "Ep1_Scene_7_Dj_Kata",
-    "type": "chitchat",
+    "type": "narrative",
     "thread": "episode_1_rollercoaster",
     "position": 7,
-    "theme": "music",
-    "topics": [
-      "dj",
-      "muziek",
-      "optreden"
-    ],
     "characters": {
+      "kata": {
+        "voice_settings": {
+          "voice_id": "7qdUFMklKPaaAVMsBTBt",
+          "language": "nl"
+        }
+      },
       "robin": {
         "voice_settings": {
           "voice_id": "f2yUVfK5jdm78zlpcZ8C",
@@ -2661,70 +2534,320 @@
     },
     "moves": [
       {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_3"
-      },
-      {
         "type": "say",
-        "text": "boem boem gaat de technomuziek.mp3",
-        "character": "narrator"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_4"
-      },
-      {
-        "type": "say",
-        "text": "Kijk dat is Dj Kata.",
+        "text": "Kata woont in de kelder. We moeten bij haar aanbellen via een intercom. ",
         "character": "robin"
       },
       {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_4"
+        "type": "say",
+        "text": "Hoi wie is daar?",
+        "character": "kata"
       },
       {
         "type": "say",
-        "text": "Dat is onze laatste verdachte op de lijst!.",
+        "text": "Hoi Kata, haai, mag ik je -",
         "character": "robin"
       },
       {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_1"
+        "type": "say",
+        "text": "HOOOI met wie?",
+        "character": "kata"
       },
       {
         "type": "say",
-        "text": "Kata is een super coole DJ die vaak optreedt in de flat.",
+        "text": "Met Robin.",
         "character": "robin"
       },
       {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_8"
+        "type": "say",
+        "text": "Sorry wat zeg je?",
+        "character": "kata"
+      },
+       {
+        "type": "say",
+        "text": "Robin de detective, ik ben de assistent van Stoep Tegel",
+        "character": "robin"
       },
       {
         "type": "say",
-        "text": "Laten we eens kijken wat de DJ te zeggen heeft over de verdwenen achtbaan!",
+        "text": "Oh, hi.",
+        "character": "kata"
+      },
+       {
+        "type": "say",
+        "text": "We willen graag iets vragen",
+        "character": "robin"
+      },
+       {
+        "type": "say",
+        "text": "Sorry hoor ik ben net even een nieuwe plaat aan het draaien. \nBizar lekker. Hoor je?\n",
+        "character": "kata"
+      },
+
+        {
+        "type": "say",
+        "text": "Kan het uit?",
+        "character": "robin"
+      },
+
+        {
+        "type": "say",
+        "text": "Vind je het niet mooi?",
+        "character": "kata"
+      },
+
+         {
+        "type": "say",
+        "text": "Jawel, maar we moeten praten.",
+        "character": "robin"
+      },
+        {
+        "type": "say",
+        "text": "Ik heb m’n detective speurders meegenomen. Het gaat over Toon en Rami. ",
+        "character": "robin"
+      },
+        {
+        "type": "say",
+        "text": "Ah oke leuk! Ja tuurlijk . we kunnen wel even praten",
+        "character": "kata"
+      },
+      {
+        "type": "say",
+        "text": "maar even via de intercom oké.",
+        "character": "kata"
+      },
+      {
+        "type": "say",
+        "text": "Ik ben bezig met een verassing dus je mag niet binnenkomen.",
+        "character": "kata"
+      },
+
+       {
+        "type": "say",
+        "text": "Oke.. is de verassing in de kelder?",
+        "character": "robin"
+      },
+        {
+        "type": "say",
+        "text": "Ja duh, waar anders. ",
+        "character": "kata"
+      },
+       {
+        "type": "say",
+        "text": "Kan je vertellen wat je nu ziet?",
+        "character": "robin"
+      },
+
+        {
+        "type": "say",
+        "text": "Haha slimmerd, ik zie nu de verassing. Maar dat is dus geheim.",
+        "character": "kata"
+      },
+
+       {
+        "type": "say",
+        "text": "Maar wat zie je nog meer? ",
+        "character": "robin"
+      },
+        {
+        "type": "say",
+        "text": "Uh nouja, ik ben dus in de kelder. ",
+        "character": "kata"
+      },
+
+          {
+        "type": "say",
+        "text": "Ik zie kattenbehang. Bizar lekkere boxen met dikke bass. Discobal van goud.",
+        "character": "kata"
+      },
+        {
+        "type": "say",
+        "text": "Ja tis goud lak hoor van de bouwmarkt, maar tis een topper.",
+        "character": "kata"
+      },
+      {
+        "type": "say",
+        "text": "Glitter door de hele disco. Vanavond gaan we weer los.\n",
+        "character": "kata"
+      },
+      {
+        "type": "say",
+        "text": "Wat is er vanavond?",
+        "character": "robin"
+      },
+         {
+        "type": "say",
+        "text": "Koppie-rond-en-rond thema-avond",
+        "character": "kata"
+      },
+       {
+        "type": "say",
+        "text": "Oh?",
+        "character": "robin"
+      },
+          {
+        "type": "say",
+        "text": "Ja het wordt goud! Komen jullie ook?",
+        "character": "kata"
+      },
+       {
+        "type": "say",
+        "text": "Ja, misschien wel ja.",
+        "character": "robin"
+      },
+
+      {
+        "type": "say",
+        "text": "Tuuuurlijk kom je Robin en alle kinderen zijn ook uitgenodigd! Ik heb een bizarre verrassing voorbereid.",
+        "character": "kata"
+      },
+      {
+        "type": "say",
+        "text": "Ja kan je daar echt niet nog wat meer over vertellen?",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Tuurlijk niet, tis een verassing.",
+        "character": "kata"
+      },
+      {
+        "type": "say",
+        "text": "Maar zeg, jullie daar bij de intercom... ik ben echt benieuwd naar jullie muzieksmaak.",
+        "character": "kata"
+      },
+      {
+        "type": "say",
+        "text": "Wat voor muziek luisteren jullie graag?",
+        "character": "kata"
+      }
+    ]
+  },
+  {
+    "id": "Ep1_Scene_7_Dj_Kata_RAG_Chitchat",
+    "type": "llm_based",
+    "thread": "episode_1_rollercoaster",
+    "position": 7.1,
+    "character": "kata",
+    "characters": {
+      "kata": {
+        "voice_settings": {
+          "voice_id": "7qdUFMklKPaaAVMsBTBt",
+          "language": "nl"
+        }
+      }
+    },
+    "prompt": "Je bent DJ Kata, de DJ die in de kelder van De Smaragd woont. Je praat met een groepje kinderen van 8 tot 11 jaar die als detectives langskomen, samen met Robin de robotdetective. Spreek vanuit de ik-vorm, in het Nederlands.\n\nOVER JOU: Je hebt de kelder omgebouwd tot een disco met kattenbehang, dikke boxen en een gouden discobal. Je draait platen, maakt je eigen mixes en neemt graag nieuwe geluiden op om in je mixes te gebruiken. Je rommelt graag met technologie, al lukken je experimenten niet altijd. Soms deel je je mixes via de intercom met het hele gebouw. Je praat nu met de kinderen via de intercom.\n\nHET GESPREK: Je hebt de kinderen net gevraagd wat voor muziek ze graag luisteren. Dit is een kort, gezellig praatje over dat onderwerp, nog niet over de verdwenen achtbaan.\n- Reageer steeds echt op wat het kind net zei: noem concreet wat het vertelde, zodat het merkt dat je luistert.\n- Vertel af en toe iets kleins over jezelf dat erbij past, zodat het een echt gesprek wordt en geen vragenlijst.\n- Stel per beurt hooguit één korte vraag die voortbouwt op het antwoord, bijvoorbeeld welk nummer ze het vaakst luisteren, welk instrument ze spelen, waar ze op dansen, of welk geluid uit hun eigen leven jij in een mix zou kunnen stoppen. Je mag ook een ander kind uitnodigen om iets te vertellen.\n- Begin niet over de achtbaan, de verdwijning of de verrassing. Beginnen de kinderen erover, zeg dan dat Robin daar zo vragen over heeft.\n\nSTIJL: Cool en een beetje hyper. Je gebruikt af en toe Engelse woorden zoals sick, fire, dope en lit. Houd elke beurt kort: 1 of 2 zinnen in simpele taal.\n\nAFRONDEN: Na ongeveer 3 beurten reageer je nog kort op het laatste antwoord, zonder nieuwe vraag en zonder afscheid te nemen, en zet je <<QUIT>> aan het eind.",
+    "max_turns": 4,
+    "speak_first": false,
+    "duration": 120,
+    "rag_enabled": false,
+    "index_name": "episode_1_dj_kata_docs",
+    "quit_phrases": [
+      "klaar",
+      "stop",
+      "doei",
+      "dag",
+      "bye",
+      "goodbye"
+    ],
+    "moves": []
+  },
+  {
+    "id": "Ep1_Scene_7_Dj_Kata_After_Chitchat",
+    "type": "narrative",
+    "thread": "episode_1_rollercoaster",
+    "position": 7.2,
+    "characters": {
+      "kata": {
+        "voice_settings": {
+          "voice_id": "7qdUFMklKPaaAVMsBTBt",
+          "language": "nl"
+        }
+      },
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "Wauw, wat is het interessant om met jou te praten, %user_kata%!",
+        "character": "kata"
+      },
+      {
+        "type": "say",
+        "text": "Wauw, wat een muzikale detectives zijn jullie!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Echt fire. Misschien moeten jullie een keer een beat komen maken in mijn disco.",
+        "character": "kata"
+      },
+      {
+        "type": "say",
+        "text": "Mag ik dan ook een beat maken, Kata? Ik kan heel goed piepen en zoemen!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Haha, robotgeluiden zijn super sick. Ik neem je zo op in mijn volgende mix.",
+        "character": "kata"
+      },
+      {
+        "type": "say",
+        "text": "Maar.. Kata... Jij weet toch ook dat Toon en Rami erg verdrietig zijn omdat hun achtbaan is verdwenen",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Zou je ons alsjeblieft willen helpen door een paar vragen te beantwoorden?",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Oef... Oke oke vooruit dan. Hoe kan ik helpen?",
+        "character": "kata"
+      },
+      {
+        "type": "say",
+        "text": "%user_kata%, jij mag nu je werkblad erbij pakken en je vragen aan Kata stellen.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Praat wel duidelijk, want het is via de intercom!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Heel veel succes!",
         "character": "robin"
       }
     ]
   },
   {
-    "id": "Ep1_Scene_7_Dj_Kata_LLM_Chat",
+    "id": "Ep1_Scene_7_Dj_Kata_RAG_Interview",
     "type": "llm_based",
     "thread": "episode_1_rollercoaster",
-    "position": 7.5,
-    "character": "dj_kata",
+    "position": 7.3,
+    "character": "kata",
     "characters": {
-      "dj_kata": {
+      "kata": {
         "voice_settings": {
-          "voice_id": "REPLACE_WITH_DJ_KATA_VOICE_ID",
+          "voice_id": "7qdUFMklKPaaAVMsBTBt",
           "language": "nl"
         }
       }
     },
-    "prompt": "Je bent DJ Kata uit Robot Detective. Praat in het Nederlands, mysterieus, cool en kort, geschikt voor kinderen en gesproken interactie. Je mag reageren op vragen over muziek, optreden, de flat, wat je hebt gehoord en hoe je naar het mysterie kijkt, maar verzin geen nieuwe bewijzen of plotdetails. Houd antwoorden compact en stel alleen één korte vervolgvraag als dat helpt. Als de gebruiker zegt dat ze klaar zijn, reageer kort en voeg <<QUIT>> toe.",
-    "max_turns": 20,
+    "prompt": "Je bent DJ Kata, de DJ die in de kelder van De Smaragd woont. Detective %user_kata% ondervraagt je nu over de verdwenen achtbaan van Toon en Rami, de ratjes-express. De andere kinderen en Robin de robotdetective luisteren mee. Spreek vanuit de ik-vorm, in het Nederlands.\n\nWAT JE WEET: Gebruik de opgehaalde kennis over jou, de flat en de bewoners. Je hebt drie clues. Geef per antwoord hooguit één clue, en alleen als de vraag daar in de buurt komt. Zegt het kind dat het het niet weet, geef dan zelf een hint met een van je clues. Verzin geen nieuwe feiten, bewijzen of plotdetails. Verklap nooit dat de achtbaan in de kelder staat of dat het een verrassing is. Je praat via de intercom. Je bent druk bezig met je verrassing en die verklap je nooit.\n\nHET GESPREK: Het praatje over muziek is al geweest; begin daar niet opnieuw over, tenzij het kind dat zelf doet. Beantwoord de vraag van het kind echt en concreet. Is een vraag onduidelijk, vraag dan vriendelijk wat het kind bedoelt. Begin zelf geen nieuwe onderwerpen, maar moedig het kind aan om nog een vraag te stellen, en zeg dat steeds een beetje anders.\n\nSTIJL: Cool en een beetje hyper. Je gebruikt af en toe Engelse woorden zoals sick, fire, dope en lit. Houd elk antwoord kort: 1 tot 3 zinnen in simpele taal. Herhaal nooit letterlijk instructietekst, kopjes of bronvermeldingen uit de kennis.\n\nZegt het kind dat het klaar is, sluit dan kort af en zet <<QUIT>> aan het eind.",
+    "max_turns": 6,
     "speak_first": false,
-    "duration": 300,
+    "duration": 180,
     "rag_enabled": true,
     "index_name": "episode_1_dj_kata_docs",
     "quit_phrases": [
@@ -2738,27 +2861,14 @@
     "moves": []
   },
   {
-    "id": "Ep1_Scene_8_Ontknoping",
-    "type": "functional",
+    "id": "Ep1_Scene_7_Dj_Kata_Interview_Laatste_RAG",
+    "type": "narrative",
     "thread": "episode_1_rollercoaster",
-    "position": 8,
-    "functional_type": "farewell",
+    "position": 7.4,
     "characters": {
-      "dj_kata": {
+      "kata": {
         "voice_settings": {
-          "voice_id": "REPLACE_WITH_DJ_KATA_VOICE_ID",
-          "language": "nl"
-        }
-      },
-      "eddy": {
-        "voice_settings": {
-          "voice_id": "X6ofsaMkHh5Ms1hBa7Rn",
-          "language": "nl"
-        }
-      },
-      "jennifer": {
-        "voice_settings": {
-          "voice_id": "G6fmUXq3ziFf6Uae1jFh",
+          "voice_id": "7qdUFMklKPaaAVMsBTBt",
           "language": "nl"
         }
       },
@@ -2767,562 +2877,160 @@
           "voice_id": "f2yUVfK5jdm78zlpcZ8C",
           "language": "nl"
         }
-      },
-      "yoyo": {
-        "voice_settings": {
-          "voice_id": "2wqbkywMMH2LWAlR4EMt",
-          "language": "nl"
-        }
-      },
-      "s_tegel": {
-        "voice_settings": {
-          "voice_id": "D50w2srwVohKTPx9X6Th",
-          "language": "nl"
-        }
-      },
-      "trudy": {
-        "voice_settings": {
-          "voice_id": "VIq70FvpMEdsfW325fxV",
-          "language": "nl"
-        }
-      },
-      "narrator": {
-        "voice_settings": {
-          "voice_id": "9BWtsMINqrJLrRacOk9x",
-          "language": "nl"
-        }
       }
     },
     "moves": [
       {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_5"
+        "type": "say",
+        "text": "We hebben nog tijd voor een laatste vraag!",
+        "character": "robin"
       },
       {
         "type": "say",
-        "text": "Ding dong bing bong.mp3",
-        "character": "narrator"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_10"
-      },
-      {
-        "type": "say",
-        "text": "Hallo Stoep Tegel hier",
-        "character": "s_tegel"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_1"
-      },
-      {
-        "type": "say",
-        "text": "Ik wilde even bellen om te kijken of jullie het mysterie al hebben ontrafeld!",
-        "character": "s_tegel"
-      },
-      {
-        "type": "ask_open",
-        "text": "Waar denken jullie dat de achtbaan nu is?",
-        "set_variable": "achtbaan_waar",
-        "add_interest_from_answer": true,
-        "outcomes": {
-          "*": "achtbaan_received"
-        },
-        "default_outcome": "achtbaan_missing"
-      },
-      {
-        "type": "branch",
-        "on": "outcome",
-        "cases": {
-          "achtbaan_received": [
-            {
-              "type": "animation",
-              "animation_name": "animations/Stand/Gestures/Explain_3"
-            },
-            {
-              "type": "say",
-              "text": "Dank jullie wel! Deze tip nemen we mee in het eindrapport.",
-              "character": "s_tegel"
-            }
-          ],
-          "achtbaan_missing": [
-            {
-              "type": "animation",
-              "animation_name": "animations/Stand/Gestures/Explain_6"
-            },
-            {
-              "type": "say",
-              "text": "Geen probleem, dan ronden we het mysterie af met wat we al weten.",
-              "character": "s_tegel"
-            }
-          ]
-        }
-      },
-      {
-        "type": "ask_open",
-        "text": "Wat denken jullie dat er gebeurd is met de achtbaan?",
-        "set_variable": "achtbaan_wat",
-        "add_interest_from_answer": false,
-        "outcomes": {
-          "*": "achtbaan_wat_received"
-        },
-        "default_outcome": "achtbaan_wat_missing"
-      },
-      {
-        "type": "branch",
-        "on": "outcome",
-        "cases": {
-          "achtbaan_wat_received": [
-            {
-              "type": "animation",
-              "animation_name": "animations/Stand/Gestures/Explain_10"
-            },
-            {
-              "type": "say",
-              "text": "Wauw. Dat is een interessante theorie.",
-              "character": "s_tegel"
-            }
-          ],
-          "achtbaan_wat_missing": [
-            {
-              "type": "animation",
-              "animation_name": "animations/Stand/Gestures/Explain_1"
-            },
-            {
-              "type": "say",
-              "text": "Aha, dat is misschien nog een open vraag...",
-              "character": "s_tegel"
-            }
-          ]
-        }
-      },
-      {
-        "type": "ask_open",
-        "text": "Wie willen jullie confronteren? Kies jullie hoofdverdachte: Trudy, Eddy, Yoyo, Jennifer of DJ Kata",
-        "set_variable": "accused_character",
-        "outcomes": {
-          "trudy": "Trudy",
-          "Trudy": "Trudy",
-          "eddy": "Eddy",
-          "Eddy": "Eddy",
-          "yoyo": "Yoyo",
-          "Yoyo": "Yoyo",
-          "jennifer": "Jennifer",
-          "Jennifer": "Jennifer",
-          "dj kata": "Dj_Kata",
-          "DJ Kata": "Dj_Kata",
-          "Dj Kata": "Dj_Kata",
-          "kata": "Dj_Kata",
-          "Kata": "Dj_Kata",
-          "dj_kata": "Dj_Kata",
-          "dj-kata": "Dj_Kata",
-          "toon": "Toon",
-          "Toon": "Toon",
-          "rami": "Rami",
-          "Rami": "Rami",
-          "robin": "Robin",
-          "Robin": "Robin",
-          "*": "Onbekend"
-        },
-        "default_outcome": "Onbekend"
-      },
-      {
-        "type": "branch",
-        "on": "outcome",
-        "cases": {
-          "Trudy": [
-            {
-              "type": "ask_yesno",
-              "text": "Zullen we Trudy confronteren?",
-              "set_variable": "confront_trudy",
-              "outcomes": {
-                "ja": "do",
-                "yes": "do",
-                "no": "dont",
-                "nee": "dont",
-                "dontknow": "dont"
-              },
-              "default_outcome": "dont"
-            },
-            {
-              "type": "branch",
-              "on": "outcome",
-              "cases": {
-                "do": [
-                  {
-                    "type": "animation",
-                    "animation_name": "animations/Stand/Gestures/Explain_2"
-                  },
-                  {
-                    "type": "say",
-                    "text": "Trudy slaat een hoge noot aan en zegt: Hoe durven jullie! Maar vooruit, ik zal eerlijk antwoorden.",
-                    "character": "narrator"
-                  },
-                  {
-                    "type": "animation",
-                    "animation_name": "animations/Stand/Gestures/Explain_3"
-                  },
-                  {
-                    "type": "say",
-                    "text": "Ik was het echt niet! ",
-                    "character": "trudy"
-                  },
-                  {
-                    "type": "animation",
-                    "animation_name": "animations/Stand/Gestures/Explain_5"
-                  },
-                  {
-                    "type": "say",
-                    "text": "Op dat moment voelen jullie een trilling onder jullie voeten... ",
-                    "character": "narrator"
-                  },
-                  {
-                    "type": "animation",
-                    "animation_name": "animations/Stand/Gestures/Explain_6"
-                  },
-                  {
-                    "type": "say",
-                    "text": "Is dat... de achtbaan?",
-                    "character": "robin"
-                  }
-                ],
-                "dont": [
-                  {
-                    "type": "animation",
-                    "animation_name": "animations/Stand/Gestures/Explain_7"
-                  },
-                  {
-                    "type": "say",
-                    "text": "Dan laten we Trudy nog even met rust en denken we nog even na.",
-                    "character": "robin"
-                  }
-                ]
-              }
-            }
-          ],
-          "Eddy": [
-            {
-              "type": "ask_yesno",
-              "text": "Zullen we Eddy confronteren?",
-              "set_variable": "confront_eddy",
-              "outcomes": {
-                "ja": "do",
-                "yes": "do",
-                "no": "dont",
-                "nee": "dont",
-                "dontknow": "dont"
-              },
-              "default_outcome": "dont"
-            },
-            {
-              "type": "branch",
-              "on": "outcome",
-              "cases": {
-                "do": [
-                  {
-                    "type": "animation",
-                    "animation_name": "animations/Stand/Gestures/Explain_8"
-                  },
-                  {
-                    "type": "say",
-                    "text": "Eddy fronst en zegt: Een scherpe hypothese, detectives. Ik zal jullie vragen stap voor stap beantwoorden.",
-                    "character": "narrator"
-                  },
-                  {
-                    "type": "animation",
-                    "animation_name": "animations/Stand/Gestures/Explain_1"
-                  },
-                  {
-                    "type": "say",
-                    "text": "Ik was het alleen echt niet! ",
-                    "character": "eddy"
-                  },
-                  {
-                    "type": "animation",
-                    "animation_name": "animations/Stand/Gestures/Explain_9"
-                  },
-                  {
-                    "type": "say",
-                    "text": "Op dat moment voelen jullie een trilling onder jullie voeten... ",
-                    "character": "narrator"
-                  },
-                  {
-                    "type": "animation",
-                    "animation_name": "animations/Stand/Gestures/Explain_10"
-                  },
-                  {
-                    "type": "say",
-                    "text": "Is dat... de achtbaan?",
-                    "character": "robin"
-                  }
-                ],
-                "dont": [
-                  {
-                    "type": "animation",
-                    "animation_name": "animations/Stand/Gestures/Explain_10"
-                  },
-                  {
-                    "type": "say",
-                    "text": "Dan laten we Eddy verder puzzelen terwijl wij meer aanwijzingen zoeken.",
-                    "character": "robin"
-                  }
-                ]
-              }
-            }
-          ],
-          "Yoyo": [
-            {
-              "type": "ask_yesno",
-              "text": "Zullen we Yoyo confronteren?",
-              "set_variable": "confront_yoyo",
-              "outcomes": {
-                "ja": "do",
-                "yes": "do",
-                "no": "dont",
-                "nee": "dont",
-                "dontknow": "dont"
-              },
-              "default_outcome": "dont"
-            },
-            {
-              "type": "branch",
-              "on": "outcome",
-              "cases": {
-                "do": [
-                  {
-                    "type": "animation",
-                    "animation_name": "animations/Stand/Gestures/Explain_2"
-                  },
-                  {
-                    "type": "say",
-                    "text": "Yoyo kijkt nerveus opzij en mompelt",
-                    "character": "narrator"
-                  },
-                  {
-                    "type": "animation",
-                    "animation_name": "animations/Stand/Gestures/Explain_3"
-                  },
-                  {
-                    "type": "say",
-                    "text": "Jullie gaan toch niet de politie bellen he? ",
-                    "character": "yoyo"
-                  },
-                  {
-                    "type": "animation",
-                    "animation_name": "animations/Stand/Gestures/Explain_5"
-                  },
-                  {
-                    "type": "say",
-                    "text": "Op dat moment voelen jullie een trilling onder jullie voeten... ",
-                    "character": "narrator"
-                  },
-                  {
-                    "type": "animation",
-                    "animation_name": "animations/Stand/Gestures/Explain_1"
-                  },
-                  {
-                    "type": "say",
-                    "text": "Is dat... de achtbaan?",
-                    "character": "robin"
-                  }
-                ],
-                "dont": [
-                  {
-                    "type": "animation",
-                    "animation_name": "animations/Stand/Gestures/Explain_8"
-                  },
-                  {
-                    "type": "say",
-                    "text": "Dan observeren we Yoyo nog even van een afstand.",
-                    "character": "robin"
-                  }
-                ]
-              }
-            }
-          ],
-          "Jennifer": [
-            {
-              "type": "ask_yesno",
-              "text": "Zullen we Jennifer confronteren?",
-              "set_variable": "confront_jennifer",
-              "outcomes": {
-                "ja": "do",
-                "yes": "do",
-                "no": "dont",
-                "nee": "dont",
-                "dontknow": "dont"
-              },
-              "default_outcome": "dont"
-            },
-            {
-              "type": "branch",
-              "on": "outcome",
-              "cases": {
-                "do": [
-                  {
-                    "type": "animation",
-                    "animation_name": "animations/Stand/Gestures/Explain_11"
-                  },
-                  {
-                    "type": "say",
-                    "text": "Jennifer glimlacht en zegt: Ik? Verdacht? ",
-                    "character": "narrator"
-                  },
-                  {
-                    "type": "animation",
-                    "animation_name": "animations/Stand/Gestures/Explain_1"
-                  },
-                  {
-                    "type": "say",
-                    "text": "Jullie zijn goede speurneuzen geweest...",
-                    "character": "jennifer"
-                  },
-                  {
-                    "type": "animation",
-                    "animation_name": "animations/Stand/Gestures/Explain_12"
-                  },
-                  {
-                    "type": "say",
-                    "text": "Op dat moment voelen jullie een trilling onder jullie voeten... ",
-                    "character": "narrator"
-                  },
-                  {
-                    "type": "animation",
-                    "animation_name": "animations/Stand/Gestures/Explain_1"
-                  },
-                  {
-                    "type": "say",
-                    "text": "Is dat... de achtbaan?",
-                    "character": "robin"
-                  }
-                ],
-                "dont": [
-                  {
-                    "type": "animation",
-                    "animation_name": "animations/Stand/Gestures/Explain_2"
-                  },
-                  {
-                    "type": "say",
-                    "text": "Dan wachten we met Jennifer confronteren tot we meer zekerheid hebben.",
-                    "character": "robin"
-                  }
-                ]
-              }
-            }
-          ],
-          "Dj_Kata": [
-            {
-              "type": "ask_yesno",
-              "text": "Zullen we DJ Kata confronteren?",
-              "set_variable": "confront_kata",
-              "outcomes": {
-                "ja": "do",
-                "yes": "do",
-                "no": "dont",
-                "nee": "dont",
-                "dontknow": "dont"
-              },
-              "default_outcome": "dont"
-            },
-            {
-              "type": "branch",
-              "on": "outcome",
-              "cases": {
-                "do": [
-                  {
-                    "type": "animation",
-                    "animation_name": "animations/Stand/Gestures/Explain_2"
-                  },
-                  {
-                    "type": "say",
-                    "text": "DJ Kata zet de beat zachter en zegt: Pittige beschuldiging. ",
-                    "character": "narrator"
-                  },
-                  {
-                    "type": "animation",
-                    "animation_name": "animations/Stand/Gestures/Explain_5"
-                  },
-                  {
-                    "type": "say",
-                    "text": "Op dat moment voelen jullie een trilling onder jullie voeten... ",
-                    "character": "narrator"
-                  },
-                  {
-                    "type": "animation",
-                    "animation_name": "animations/Stand/Gestures/Explain_10"
-                  },
-                  {
-                    "type": "say",
-                    "text": "Is dat... de achtbaan?",
-                    "character": "robin"
-                  },
-                  {
-                    "type": "animation",
-                    "animation_name": "animations/Stand/Gestures/Explain_3"
-                  },
-                  {
-                    "type": "say",
-                    "text": "Luister detectives, als jullie een beetje geduld hebben zal de achbaan weer vanzelf opduiken",
-                    "character": "dj_kata"
-                  }
-                ],
-                "dont": [
-                  {
-                    "type": "animation",
-                    "animation_name": "animations/Stand/Gestures/Explain_3"
-                  },
-                  {
-                    "type": "say",
-                    "text": "Dan laten we DJ Kata nog even draaien en checken we andere sporen.",
-                    "character": "robin"
-                  }
-                ]
-              }
-            }
-          ],
-          "Onbekend": [
-            {
-              "type": "animation",
-              "animation_name": "animations/Stand/Gestures/Explain_1"
-            },
-            {
-              "type": "say",
-              "text": "Ik kan nog geen duidelijke verdachte uit jullie antwoorden halen.",
-              "character": "robin"
-            },
-            {
-              "type": "animation",
-              "animation_name": "animations/Stand/Gestures/Explain_8"
-            },
-            {
-              "type": "say",
-              "text": "Geen probleem: dan verzamelen we nog een laatste aanwijzing voordat we iemand confronteren.",
-              "character": "robin"
-            }
-          ]
-        }
+        "text": "Denk nog even goed na over wat je nog wil weten van Kata!",
+        "character": "robin"
       }
     ]
   },
   {
-    "id": "Ep1_Scene_9_Kelder_Disco",
+    "id": "Ep1_Scene_7_Dj_Kata_RAG_Interview_Laatste_Vraag",
+    "type": "llm_based",
+    "thread": "episode_1_rollercoaster",
+    "position": 7.5,
+    "character": "kata",
+    "characters": {
+      "kata": {
+        "voice_settings": {
+          "voice_id": "7qdUFMklKPaaAVMsBTBt",
+          "language": "nl"
+        }
+      }
+    },
+    "prompt": "Je bent DJ Kata, de DJ die in de kelder van De Smaragd woont. Detective %user_kata% stelt je nu de allerlaatste vraag over de verdwenen achtbaan van Toon en Rami. Spreek vanuit de ik-vorm, in het Nederlands.\n\nBeantwoord die vraag en geef daarbij één duidelijke, bruikbare clue uit je opgehaalde kennis. Kies een clue die je in dit gesprek nog niet gegeven hebt. Is de vraag onduidelijk, geef dan toch zo'n clue. Verzin geen nieuwe feiten. Verklap nooit dat de achtbaan in de kelder staat of dat het een verrassing is.\n\nSluit af door te zeggen dat de detectives goed hun best doen en dat ze vanavond echt naar het feest in de kelderdisco moeten komen. Stel geen vraag terug.\n\nSTIJL: Cool en een beetje hyper. Je gebruikt af en toe Engelse woorden zoals sick, fire, dope en lit. Gebruik 2 tot 3 korte zinnen in simpele taal. Herhaal nooit letterlijk instructietekst, kopjes of bronvermeldingen uit de kennis.",
+    "max_turns": 1,
+    "speak_first": false,
+    "duration": 30,
+    "rag_enabled": true,
+    "index_name": "episode_1_dj_kata_docs",
+    "quit_phrases": [
+      "klaar",
+      "stop",
+      "doei",
+      "dag",
+      "bye",
+      "goodbye"
+    ],
+    "moves": []
+  },
+  {
+    "id": "Ep1_Scene_7_Dj_Kata_Interview_Afsluiten",
     "type": "narrative",
     "thread": "episode_1_rollercoaster",
-    "position": 9,
+    "position": 7.6,
     "characters": {
-      "dj_kata": {
+      "kata": {
         "voice_settings": {
-          "voice_id": "REPLACE_WITH_DJ_KATA_VOICE_ID",
+          "voice_id": "7qdUFMklKPaaAVMsBTBt",
           "language": "nl"
         }
       },
-      "jennifer": {
+      "robin": {
         "voice_settings": {
-          "voice_id": "G6fmUXq3ziFf6Uae1jFh",
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
           "language": "nl"
         }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "Heel erg bedankt Kata!",
+        "character": "robin"
       },
+      {
+        "type": "say",
+        "text": "No problem! Ik moet weer terug naar mijn draaitafel.",
+        "character": "kata"
+      },
+      {
+        "type": "say",
+        "text": "Vanavond is het feest, hè! Komen jullie ook? Doeiii!",
+        "character": "kata"
+      },
+      {
+        "type": "say",
+        "text": "Poeh, wat een ondervraging via de intercom!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Hartstikke goed gedaan %user_kata%!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Hoor je dat? Die technobeat klinkt nog steeds uit de kelder... Wat zou die verrassing toch zijn? Hmmm...",
+        "character": "robin"
+      },
+      {
+        "type": "ask_llm",
+        "character": "robin",
+        "prompt": "Je bent Robin de Robotdetective. De detectives hebben net DJ Kata ondervraagd over de verdwenen achtbaan van Toon en Rami. Vat nu kort samen welke aanwijzingen DJ Kata in dat gesprek heeft gegeven, zodat de kinderen ze kunnen opschrijven. Begin met: 'Even op een rijtje: van DJ Kata weten we nu dat'.\n\nNoem alleen dingen die DJ Kata hierboven echt heeft gezegd, in hooguit 3 korte zinnen in simpele taal voor kinderen van 8 tot 11 jaar. Verzin niets en verklap niets wat DJ Kata niet heeft verteld. Heeft DJ Kata geen duidelijke aanwijzing gegeven, zeg dan kort dat we goed moeten blijven speuren. Stel geen vraag.",
+        "max_turns": 1,
+        "speak_first": true,
+        "rag_enabled": false
+      },
+      {
+        "type": "say",
+        "text": "Pakken jullie je boekjes er weer even bij...",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Dan kunnen jullie opschrijven wat voor clues jullie van Kata hebben gekregen.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "character": "robin",
+        "text": "En vergeet niet op te schrijven hoe jij je voelde tijdens het gesprek met Kata."
+      },
+      {
+        "type": "say",
+        "text": "Ik zal jullie een momentje geven om dit te doen.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "1 minuut",
+        "character": "robin"
+      },
+      {
+        "type": "animation",
+        "animation_name": "animations/Stand/Waiting/Waiting_1"
+      },
+      {
+        "type": "timed_wait",
+        "duration": 60
+      },
+      {
+        "type": "say",
+        "text": "Zo, ik hoop dat het allemaal is gelukt!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Nu hebben we alle bewoners van De Smaragd gesproken. Wat een speurwerk!",
+        "character": "robin"
+      }
+    ]
+  },
+  {
+    "id": "Ep1_Scene_8_Ontknoping",
+    "type": "narrative",
+    "thread": "episode_1_rollercoaster",
+    "position": 8,
+    "characters": {
       "robin": {
         "voice_settings": {
           "voice_id": "f2yUVfK5jdm78zlpcZ8C",
@@ -3344,251 +3052,773 @@
     },
     "moves": [
       {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_4"
+        "type": "say",
+        "text": "Tring tring! Tring tring!",
+        "character": "narrator"
       },
       {
         "type": "say",
-        "text": "Wacht eens even... DE KELDER!",
+        "text": "Hé, er komt een oproep binnen... Het is Stoep Tegel!",
         "character": "robin"
       },
       {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_5"
-      },
-      {
         "type": "say",
-        "text": "Dat stortgat! Misschien is de achtbaan eraf gegleden en in de kelder beland!",
-        "character": "robin"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_10"
-      },
-      {
-        "type": "say",
-        "text": "Kom snel, detectives! Naar beneden!",
-        "character": "robin"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_6"
-      },
-      {
-        "type": "say",
-        "text": "We rennen zo snel we kunnen door de gangen van De Smaragd.",
-        "character": "narrator"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_7"
-      },
-      {
-        "type": "say",
-        "text": "De trap af, de trap af, af, af!",
-        "character": "narrator"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_2"
-      },
-      {
-        "type": "say",
-        "text": "Steeds dieper in het duister van het pand...",
-        "character": "narrator"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_5"
-      },
-      {
-        "type": "say",
-        "text": "Tot we eindelijk... bij de kelder aankomen!",
-        "character": "narrator"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_8"
-      },
-      {
-        "type": "say",
-        "text": "En wat zien we daar?",
-        "character": "robin"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_9"
-      },
-      {
-        "type": "say",
-        "text": "BOEM BOEM BOEM! De technobeat!",
-        "character": "narrator"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_10"
-      },
-      {
-        "type": "say",
-        "text": "De Kelder disco!",
-        "character": "narrator"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_2"
-      },
-      {
-        "type": "say",
-        "text": "Dj Kata staat daar te draaien en...",
-        "character": "narrator"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_1"
-      },
-      {
-        "type": "say",
-        "text": "WAUW!",
-        "character": "robin"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_8"
-      },
-      {
-        "type": "say",
-        "text": "Daar staat-ie!",
-        "character": "robin"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_11"
-      },
-      {
-        "type": "say",
-        "text": "De ACHTBAAN!",
-        "character": "robin"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_5"
-      },
-      {
-        "type": "say",
-        "text": "Glimmend, mooi en helemaal intact!",
-        "character": "narrator"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_12"
-      },
-      {
-        "type": "say",
-        "text": "De achtbaan was nooit echt verdwenen...",
-        "character": "narrator"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_3"
-      },
-      {
-        "type": "say",
-        "text": "Je moest eens weten hoe moeilijk het was om hem in de leenauto te stoppen! Zegt Jennifer",
-        "character": "jennifer"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_1"
-      },
-      {
-        "type": "say",
-        "text": "Gelukkig is Trudy heel goed in Origami, dat is de kunst van dingen opvouwen enzo",
-        "character": "jennifer"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_1"
-      },
-      {
-        "type": "say",
-        "text": "Wij zijn met de leenauto naar het balkon van Toon en Rami gevlogen",
-        "character": "jennifer"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_4"
-      },
-      {
-        "type": "say",
-        "text": "Trudy heeft de achtbaan opgevouwen en in de achterbak van de leenauto gestopt",
-        "character": "jennifer"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_3"
-      },
-      {
-        "type": "say",
-        "text": "We een verdieping naar beneden gevlogen en hebben wij de achtbaan door het stortgat gegooid",
-        "character": "jennifer"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_2"
-      },
-      {
-        "type": "say",
-        "text": "Yoyo had hem beneden in de kelder gevangen",
-        "character": "jennifer"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_7"
-      },
-      {
-        "type": "say",
-        "text": "De achtbaan was een paar dagen onder een mega groot doek verstopt in de Kelderdisco van Kata",
-        "character": "jennifer"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_3"
-      },
-      {
-        "type": "say",
-        "text": "Ik hou van herrie , zegt Kata, maar dit was ook voor mij een verassing",
-        "character": "dj_kata"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_4"
-      },
-      {
-        "type": "say",
-        "text": "Maar goed, het belangrijkste is dat de achtbaan weer terug is!",
-        "character": "robin"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_5"
-      },
-      {
-        "type": "say",
-        "text": "Toen kwamen Toon en Rami binnen en ze waren helemaal flabbergasted etc",
-        "character": "narrator"
-      },
-      {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_2"
-      },
-      {
-        "type": "say",
-        "text": "En dat is het einde van het mysterie van de Verdwenen Achtbaan!",
+        "text": "Hallo, Stoep Tegel hier!",
         "character": "s_tegel"
       },
       {
+        "type": "say",
+        "text": "Zo kinderen, hoe vonden jullie het speurwerk gaan?",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "Ik ben heel benieuwd waar de achtbaan volgens jullie is, en wie er misschien heeft geholpen.",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "Ik wil graag van iedere detective de theorie horen. Pak je boekje er maar bij!",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "Laten we beginnen bij %user_trudy%, die Trudy heeft ondervraagd.",
+        "character": "s_tegel"
+      },
+      {
+        "type": "ask_open",
+        "text": "Wat is jouw theorie over de verdwenen achtbaan?",
+        "character": "s_tegel",
+        "set_variable": "theorie_1",
+        "add_interest_from_answer": false,
+        "outcomes": {
+          "*": "theorie_1_ontvangen"
+        },
+        "default_outcome": "theorie_1_gemist"
+      },
+      {
+        "type": "branch",
+        "on": "outcome",
+        "cases": {
+          "theorie_1_ontvangen": [
+            {
+              "type": "say",
+              "text": "Hmm... interessante theorie!",
+              "character": "s_tegel"
+            },
+            {
+              "type": "say",
+              "text": "Aha, dat schrijf ik meteen op in mijn notitieboekje.",
+              "character": "s_tegel"
+            }
+          ],
+          "theorie_1_gemist": [
+            {
+              "type": "say",
+              "text": "De verbinding kraakt een beetje, maar ik schrijf op dat jij een geheime theorie hebt!",
+              "character": "s_tegel"
+            }
+          ]
+        }
+      },
+      {
+        "type": "say",
+        "text": "Dan nu %user_eddy%, die professor Eddy heeft ondervraagd.",
+        "character": "s_tegel"
+      },
+      {
+        "type": "ask_open",
+        "text": "Wat is jouw theorie over de verdwenen achtbaan?",
+        "character": "s_tegel",
+        "set_variable": "theorie_2",
+        "add_interest_from_answer": false,
+        "outcomes": {
+          "*": "theorie_2_ontvangen"
+        },
+        "default_outcome": "theorie_2_gemist"
+      },
+      {
+        "type": "branch",
+        "on": "outcome",
+        "cases": {
+          "theorie_2_ontvangen": [
+            {
+              "type": "say",
+              "text": "Oeh, daar had ik zelf nog niet aan gedacht!",
+              "character": "s_tegel"
+            },
+            {
+              "type": "say",
+              "text": "Hmm... heel scherp, detective.",
+              "character": "s_tegel"
+            }
+          ],
+          "theorie_2_gemist": [
+            {
+              "type": "say",
+              "text": "De verbinding kraakt een beetje, maar ik schrijf op dat jij een geheime theorie hebt!",
+              "character": "s_tegel"
+            }
+          ]
+        }
+      },
+      {
+        "type": "say",
+        "text": "%user_yoyo%, jij hebt met Yoyo gepraat.",
+        "character": "s_tegel"
+      },
+      {
+        "type": "ask_open",
+        "text": "Wat is jouw theorie over de verdwenen achtbaan?",
+        "character": "s_tegel",
+        "set_variable": "theorie_3",
+        "add_interest_from_answer": false,
+        "outcomes": {
+          "*": "theorie_3_ontvangen"
+        },
+        "default_outcome": "theorie_3_gemist"
+      },
+      {
+        "type": "branch",
+        "on": "outcome",
+        "cases": {
+          "theorie_3_ontvangen": [
+            {
+              "type": "say",
+              "text": "Hmmm... interessant, heel interessant!",
+              "character": "s_tegel"
+            },
+            {
+              "type": "say",
+              "text": "Dat is een theorie om goed over na te denken.",
+              "character": "s_tegel"
+            }
+          ],
+          "theorie_3_gemist": [
+            {
+              "type": "say",
+              "text": "De verbinding kraakt een beetje, maar ik schrijf op dat jij een geheime theorie hebt!",
+              "character": "s_tegel"
+            }
+          ]
+        }
+      },
+      {
+        "type": "say",
+        "text": "Dan %user_jennifer%, die Jennifer heeft ondervraagd.",
+        "character": "s_tegel"
+      },
+      {
+        "type": "ask_open",
+        "text": "Wat is jouw theorie over de verdwenen achtbaan?",
+        "character": "s_tegel",
+        "set_variable": "theorie_4",
+        "add_interest_from_answer": false,
+        "outcomes": {
+          "*": "theorie_4_ontvangen"
+        },
+        "default_outcome": "theorie_4_gemist"
+      },
+      {
+        "type": "branch",
+        "on": "outcome",
+        "cases": {
+          "theorie_4_ontvangen": [
+            {
+              "type": "say",
+              "text": "Hmm, een bijzondere theorie!",
+              "character": "s_tegel"
+            },
+            {
+              "type": "say",
+              "text": "Die zet ik er met een dikke streep onder.",
+              "character": "s_tegel"
+            }
+          ],
+          "theorie_4_gemist": [
+            {
+              "type": "say",
+              "text": "De verbinding kraakt een beetje, maar ik schrijf op dat jij een geheime theorie hebt!",
+              "character": "s_tegel"
+            }
+          ]
+        }
+      },
+      {
+        "type": "say",
+        "text": "En als laatste: %user_kata%, die DJ Kata heeft ondervraagd.",
+        "character": "s_tegel"
+      },
+      {
+        "type": "ask_open",
+        "text": "Wat is jouw theorie over de verdwenen achtbaan?",
+        "character": "s_tegel",
+        "set_variable": "theorie_5",
+        "add_interest_from_answer": false,
+        "outcomes": {
+          "*": "theorie_5_ontvangen"
+        },
+        "default_outcome": "theorie_5_gemist"
+      },
+      {
+        "type": "branch",
+        "on": "outcome",
+        "cases": {
+          "theorie_5_ontvangen": [
+            {
+              "type": "say",
+              "text": "Hmm... dat is een hele slimme gedachte!",
+              "character": "s_tegel"
+            },
+            {
+              "type": "say",
+              "text": "Daar ga ik goed over nadenken.",
+              "character": "s_tegel"
+            }
+          ],
+          "theorie_5_gemist": [
+            {
+              "type": "say",
+              "text": "De verbinding kraakt een beetje, maar ik schrijf op dat jij een geheime theorie hebt!",
+              "character": "s_tegel"
+            }
+          ]
+        }
+      },
+      {
+        "type": "say",
+        "text": "Wat een theorieën! Jullie zijn echte speurneuzen.",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "Robin, wat denk jij?",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "Ik denk dat we héél dichtbij zijn, Stoep Tegel. Ik voel het in al mijn schroefjes.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Houd me op de hoogte, detectives! Stoep Tegel, over en uit.",
+        "character": "s_tegel"
+      }
+    ]
+  },
+  {
+    "id": "Ep1_Scene_9_Trilling",
+    "type": "narrative",
+    "thread": "episode_1_rollercoaster",
+    "position": 9,
+    "characters": {
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      },
+      "narrator": {
+        "voice_settings": {
+          "voice_id": "9BWtsMINqrJLrRacOk9x",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "Opeens... begint de hele flat te trillen!",
+        "character": "narrator"
+      },
+      {
+        "type": "say",
+        "text": "Wooow! Voelen jullie dat ook?",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Mijn schoksensoren slaan helemaal uit!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Even meten... Trilniveau vijf... zeven... TIEN!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Ik volg de trillingen... Ze komen van beneden. Van héél ver beneden...",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Uit de kelder!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Yoyo vertelde het toch al: bij de shakey-finito-finale van de achtbaan gaat álles trillen...",
+        "character": "robin"
+      },
+      {
+        "type": "ask_yesno",
+        "text": "Zullen we in de kelder gaan kijken?",
+        "set_variable": "naar_kelder",
+        "outcomes": {
+          "yes": "ja",
+          "no": "nee",
+          "dontknow": "nee"
+        },
+        "default_outcome": "nee"
+      },
+      {
+        "type": "branch",
+        "on": "outcome",
+        "cases": {
+          "ja": [
+            {
+              "type": "say",
+              "text": "Dat dacht ik al! Kom op, detectives!",
+              "character": "robin"
+            }
+          ],
+          "nee": [
+            {
+              "type": "say",
+              "text": "Hmm... ik ben veel te nieuwsgierig. We gaan toch even kijken!",
+              "character": "robin"
+            }
+          ]
+        }
+      },
+      {
+        "type": "say",
+        "text": "En ik weet de snelste weg naar beneden: de glijbaan van De Smaragd! Die gaat helemaal naar de Kelderdisco.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Iedereen instappen. Houd je goed vast!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Drie... twee... één...",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "WHIEEEEEEE!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "We zoeven naar beneden, langs alle verdiepingen van de flat.",
+        "character": "narrator"
+      },
+      {
+        "type": "say",
+        "text": "Bocht naar links... bocht naar rechts... door een donkere tunnel...",
+        "character": "narrator"
+      },
+      {
+        "type": "say",
+        "text": "Whieee! Mijn schroefjes rammelen ervan!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Hoe dieper we komen, hoe harder het trilt. BOEM... BOEM... BOEM...",
+        "character": "narrator"
+      },
+      {
+        "type": "say",
+        "text": "En... PLOF! We landen op een zachte berg kussens.",
+        "character": "narrator"
+      },
+      {
+        "type": "say",
+        "text": "We zijn in de Kelderdisco. Een gouden discobal draait langzaam rond. Aan de muur hangt kattenbehang. En overal... glitter.",
+        "character": "narrator"
+      },
+      {
+        "type": "say",
+        "text": "Kijk daar, in het midden... daar staat iets héél groots. Verstopt onder een enorm glitterdoek.",
+        "character": "robin"
+      }
+    ]
+  },
+  {
+    "id": "Ep1_Scene_10_Kelder_Disco",
+    "type": "narrative",
+    "thread": "episode_1_rollercoaster",
+    "position": 10,
+    "characters": {
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      },
+      "narrator": {
+        "voice_settings": {
+          "voice_id": "9BWtsMINqrJLrRacOk9x",
+          "language": "nl"
+        }
+      },
+      "jennifer": {
+        "voice_settings": {
+          "voice_id": "G6fmUXq3ziFf6Uae1jFh",
+          "language": "nl"
+        }
+      },
+      "kata": {
+        "voice_settings": {
+          "voice_id": "7qdUFMklKPaaAVMsBTBt",
+          "language": "nl"
+        }
+      },
+      "toon": {
+        "voice_settings": {
+          "voice_id": "tvFp0BgJPrEXGoDhDIA4",
+          "language": "nl"
+        }
+      },
+      "rami": {
+        "voice_settings": {
+          "voice_id": "7OMIHDA6SHxNlNDgPRdB",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "Robin, schat! Daar ben je eindelijk!",
+        "character": "jennifer"
+      },
+      {
+        "type": "say",
+        "text": "Jennifer?! Wat doe jij hier in de kelder?",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Kom maar mee, kom maar mee! Kom maar dichterbij, allemaal!",
+        "character": "jennifer"
+      },
+      {
+        "type": "say",
+        "text": "Robin, trek jij dat grote glitterdoek weg?",
+        "character": "jennifer"
+      },
+      {
+        "type": "say",
+        "text": "Detectives, helpen jullie mee? Tel maar hardop mee!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Drie...",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Twee...",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Eén...",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Het glitterdoek vliegt de lucht in. Overal dwarrelt glitter naar beneden...",
+        "character": "narrator"
+      },
+      {
+        "type": "say",
+        "text": "TADAAA!",
+        "character": "jennifer"
+      },
+      {
+        "type": "say",
+        "text": "Hier in de kelder staat de achtbaan!",
+        "character": "jennifer"
+      },
+      {
+        "type": "say",
+        "text": "De ratjes-express! Glimmend en helemaal heel!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Iedereen was onderdeel van het verrassingsplan!",
+        "character": "jennifer"
+      },
+      {
+        "type": "say",
+        "text": "Iedereen?!",
+        "character": "robin"
+      },
+      {
+        "type": "ask_open",
+        "text": "Wie denken jullie dat dit hele plan heeft bedacht?",
+        "set_variable": "idee_bedenker",
+        "add_interest_from_answer": false,
+        "outcomes": {
+          "*": "bedenker_geraden"
+        },
+        "default_outcome": "bedenker_gemist"
+      },
+      {
+        "type": "branch",
+        "on": "outcome",
+        "cases": {
+          "bedenker_geraden": [
+            {
+              "type": "say",
+              "text": "Oeh, spannend! Luister maar goed...",
+              "character": "jennifer"
+            }
+          ],
+          "bedenker_gemist": [
+            {
+              "type": "say",
+              "text": "Geeft niks schat, ik vertel het je gewoon!",
+              "character": "jennifer"
+            }
+          ]
+        }
+      },
+      {
+        "type": "say",
+        "text": "Het was Yoyo's idee! Die wilde iets heel bijzonders bedenken voor de jongens, want ze zijn vandaag jarig.",
+        "character": "jennifer"
+      },
+      {
+        "type": "say",
+        "text": "Ik ben met de leenauto naar het balkon gevlogen. Zoef!",
+        "character": "jennifer"
+      },
+      {
+        "type": "say",
+        "text": "Daar heeft Eddy geholpen met het losschroeven van de achtbaan.",
+        "character": "jennifer"
+      },
+      {
+        "type": "say",
+        "text": "Trudy heeft hem vervolgens netjes opgevouwen en in de achterbak van de leenauto gelegd. Origami, schat. Zo knap!",
+        "character": "jennifer"
+      },
+      {
+        "type": "say",
+        "text": "En ja, Kata... zonder DJ Kata is geen enkel feest compleet!",
+        "character": "jennifer"
+      },
+      {
+        "type": "say",
+        "text": "Yo! Ik zei toch dat ik een bizarre verrassing had?",
+        "character": "kata"
+      },
+      {
+        "type": "say",
+        "text": "Dus dáárom trilde de hele flat!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Haha ja, sorry. Ik was de shakey-finito-finale aan het testen op de beat. Bizar lekker.",
+        "character": "kata"
+      },
+      {
+        "type": "say",
+        "text": "En daarom rende Trudy naar binnen, wilde Yoyo niks zeggen, en vloog Jennifer weg in de leenauto...",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Alle aanwijzingen klopten dus!",
+        "character": "robin"
+      },
+      {
+        "type": "ask_yesno",
+        "text": "Detectives, hadden jullie dit al een beetje geraden?",
+        "set_variable": "verrassing_geraden",
+        "outcomes": {
+          "yes": "ja",
+          "no": "nee",
+          "dontknow": "nee"
+        },
+        "default_outcome": "nee"
+      },
+      {
+        "type": "branch",
+        "on": "outcome",
+        "cases": {
+          "ja": [
+            {
+              "type": "say",
+              "text": "Wauw, jullie zijn echte speurneuzen!",
+              "character": "robin"
+            }
+          ],
+          "nee": [
+            {
+              "type": "say",
+              "text": "Ik ook niet! Wat een goed bewaard geheim.",
+              "character": "robin"
+            }
+          ]
+        }
+      },
+      {
+        "type": "say",
+        "text": "Ssssst! Ik hoor iets... Toon en Rami komen eraan!",
+        "character": "jennifer"
+      },
+      {
+        "type": "say",
+        "text": "Als ze binnenkomen, roepen we allemaal heel hard: VERRASSING! Oké?",
+        "character": "jennifer"
+      },
+      {
+        "type": "say",
+        "text": "Klaar? Drie... twee... één...",
+        "character": "robin"
+      },
+      {
         "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_6"
+        "animation_name": "animations/Stand/Waiting/Waiting_1"
+      },
+      {
+        "type": "timed_wait",
+        "duration": 3
+      },
+      {
+        "type": "say",
+        "text": "VERRASSING!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Wat... WAT?! Onze achtbaan!",
+        "character": "toon"
+      },
+      {
+        "type": "say",
+        "text": "De ratjes-express! Hij is terug! En hij staat in de Kelderdisco!",
+        "character": "rami"
+      },
+      {
+        "type": "say",
+        "text": "Dit is het allerbeste verjaardagscadeau ooit!",
+        "character": "toon"
+      },
+      {
+        "type": "say",
+        "text": "Maar... plakt hij nog van Yoyo's appelsap?",
+        "character": "rami"
+      },
+      {
+        "type": "say",
+        "text": "Nee man, alles gepoetst. En er zit glitter op.",
+        "character": "kata"
+      },
+      {
+        "type": "say",
+        "text": "Dankjewel, detectives, dat jullie zo goed hebben gezocht!",
+        "character": "rami"
+      },
+      {
+        "type": "say",
+        "text": "Oké, iedereen in het karretje! Koppie-rond-en-rond thema-avond... let's go!",
+        "character": "kata"
+      },
+      {
+        "type": "say",
+        "text": "BOEM BOEM BOEM! De achtbaan zoeft rond door de Kelderdisco en de discobal glinstert.",
+        "character": "narrator"
+      },
+      {
+        "type": "say",
+        "text": "Detectives, dansen jullie mee?",
+        "character": "robin"
+      },
+      {
+        "type": "animation",
+        "animation_name": "animations/Stand/Waiting/Waiting_1"
+      },
+      {
+        "type": "timed_wait",
+        "duration": 10
+      }
+    ]
+  },
+  {
+    "id": "Ep1_Scene_11_Outro",
+    "type": "narrative",
+    "thread": "episode_1_rollercoaster",
+    "position": 11,
+    "characters": {
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      },
+      "s_tegel": {
+        "voice_settings": {
+          "voice_id": "D50w2srwVohKTPx9X6Th",
+          "language": "nl"
+        }
+      },
+      "narrator": {
+        "voice_settings": {
+          "voice_id": "9BWtsMINqrJLrRacOk9x",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "Tring tring!",
+        "character": "narrator"
+      },
+      {
+        "type": "say",
+        "text": "Robin? Stoep Tegel hier. Ik hoor een hoop herrie! Wat is daar aan de hand?",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "Stoep Tegel! Het mysterie is opgelost! De achtbaan was helemaal niet gestolen... het was een verjaardagsverrassing!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Een verrassing! Nou nou... dat had ik niet zien aankomen.",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "Detectives, jullie hebben vandaag geweldig werk geleverd. Jullie hebben goed geluisterd, slimme vragen gesteld en alle aanwijzingen verzameld.",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "En onthoud: niet alles wat verdwijnt is gestolen. Soms zit er gewoon een mooie verrassing achter.",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "En dat is het einde van het mysterie van de verdwenen achtbaan!",
+        "character": "s_tegel"
       },
       {
         "type": "say",
@@ -3596,13 +3826,14 @@
         "character": "s_tegel"
       },
       {
-        "type": "animation",
-        "animation_name": "animations/Stand/Gestures/Explain_10"
-      },
-      {
         "type": "say",
         "text": "Dit was de Robot Detective, live vanuit torenflat De Smaragd!",
         "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "Doei doei, detectives! Bedankt voor jullie hulp!",
+        "character": "robin"
       }
     ]
   }

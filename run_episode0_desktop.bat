@@ -3,7 +3,7 @@ REM Run supporting services in separate terminals, then start Episode_0 (desktop
 SET REPO=C:\Users\viq021\repositories\Robot_Detective
 
 REM Redis
-start "Redis" cmd /k "cd /d %REPO% && call .venv\Scripts\activate.bat && run-redis --data-dir RAG_Vectors"
+start "Redis" cmd /k "cd /d %REPO% && call .venv\Scripts\activate.bat && python run_datastore.py --data-dir RAG_Vectors"
 
 REM ElevenLabs TTS service
 start "ElevenLabs TTS" cmd /k "cd /d %REPO% && call .venv\Scripts\activate.bat && run-elevenlabs-tts"

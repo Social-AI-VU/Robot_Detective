@@ -57,6 +57,11 @@ DIALOG_CONFIG_PATH = REPO_ROOT / "RobotDetective_Narrative_Jsons" / "Episode_0_a
 GOOGLE_KEYFILE_PATH = REPO_ROOT / "conf" / "google" / "google-key.json"
 ENV_FILE_PATH = REPO_ROOT / "conf" / ".env"
 
+# Load conf/.env BEFORE reading any os.getenv()-based settings below,
+# otherwise values like NAO_IP silently fall back to their hardcoded
+# defaults even when set in the .env file.
+load_dotenv(dotenv_path=ENV_FILE_PATH)
+
 INDEX_NAME = "episode_0_robin_docs"
 INGEST_DOCS = False
 PARTICIPANT_ID = os.getenv("PARTICIPANT_ID", "0")
@@ -188,7 +193,6 @@ if __name__ == "__main__":
         language="nl",
         post_speech_delay=0,
         signal_listening_behavior=True,
-        duration=NAO_LISTEN_TIMEOUT_SEC,
     )
     llm = OpenAIGPTProvider(api_key=os.getenv("OPENAI_API_KEY"))
     vector_store = RedisVectorStoreProvider(

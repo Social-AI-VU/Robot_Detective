@@ -192,9 +192,16 @@ if __name__ == '__main__':
        # "Ep1_Scene_6_Jennifer_LLM_Chat",  # initial LLM chat with Jennifer
         "Ep1_Scene_6_Jennifer_RAG_Interview",  # RAG-backed Jennifer interview
         "Ep1_Scene_7_Dj_Kata",  # interview DJ Kata
-        "Ep1_Scene_7_Dj_Kata_LLM_Chat",  # RAG-backed DJ Kata interview
+        "Ep1_Scene_7_Dj_Kata_RAG_Chitchat",  # Kata chitchat over muziek
+        "Ep1_Scene_7_Dj_Kata_After_Chitchat",  # bridge naar Kata interview
+        "Ep1_Scene_7_Dj_Kata_RAG_Interview",  # RAG-backed Kata interview
+        "Ep1_Scene_7_Dj_Kata_Interview_Laatste_RAG",  # last-question setup
+        "Ep1_Scene_7_Dj_Kata_RAG_Interview_Laatste_Vraag",  # final Kata clue
+        "Ep1_Scene_7_Dj_Kata_Interview_Afsluiten",  # close Kata scene
         "Ep1_Scene_8_Ontknoping",
-        "Ep1_Scene_9_Kelder_Disco"
+        "Ep1_Scene_9_Trilling",  # flat trilt, glijbaan naar de kelder
+        "Ep1_Scene_10_Kelder_Disco",  # onthulling onder het glitterdoek
+        "Ep1_Scene_11_Outro",  # outro Stoep Tegel
     ]
 
     active_dialog_json_path = str(DIALOG_CONFIG_PATH)
@@ -233,6 +240,12 @@ if __name__ == '__main__':
     # 6. RUN SESSION
     # =========================
 
+    session_manager.conversation_state.user_model.update({"user_trudy": "Anita"})
+    session_manager.conversation_state.user_model.update({"user_eddy": "Smita"})
+    session_manager.conversation_state.user_model.update({"user_yoyo": "Frita"})
+    session_manager.conversation_state.user_model.update({"user_jennifer": "Mimimimi"})
+    session_manager.conversation_state.user_model.update({"user_kata": "Lalalala"})
+    session_manager.conversation_state.user_model.update({"user_teacher": "Juffrouw Egel"})
     session_manager.run()
 
     sys.exit()

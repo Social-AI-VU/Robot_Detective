@@ -231,35 +231,43 @@ if __name__ == '__main__':
       #  "Ep1_Scene_2_Toon_Rami",  # Toon & Rami report the missing rollercoaster
       #  "Ep1_Scene_3_Trudy",  # interview Trudy (karaoke plan)
       #  "Ep1_Scene_3_Trudy_RAG_Chitchat",  # RAG-backed Trudy chitchat
-     #   "Ep1_Scene_3_Trudy_After_Chitchat",  # Robin/trudy bridge after chitchat
-     #   "Ep1_Scene_3_Trudy_RAG_Interview",  # RAG-backed Trudy interview
-     #   "Ep1_Scene_3_Trudy_Interview_Laatste_RAG",
-     #   "Ep1_Scene_3_Trudy_RAG_Interview_Laatste_Vraag",
-     #   "Ep1_Scene_3_Trudy_After_Interview",
+      #  "Ep1_Scene_3_Trudy_After_Chitchat",  # Robin/trudy bridge after chitchat
+      #  "Ep1_Scene_3_Trudy_RAG_Interview",  # RAG-backed Trudy interview
+      #  "Ep1_Scene_3_Trudy_Interview_Laatste_RAG",
+      # "Ep1_Scene_3_Trudy_RAG_Interview_Laatste_Vraag",
+      #  "Ep1_Scene_3_Trudy_After_Interview",
       #  "Ep1_Scene_4_Eddy",  # intro Eddy
-     #   "Ep1_Scene_4_Eddy_RAG_Chitchat",  # Eddy chitchat
+      #  "Ep1_Scene_4_Eddy_RAG_Chitchat",  # Eddy chitchat
       #  "Ep1_Scene_4_Eddy_After_Chitchat",  # bridge after Eddy chitchat
-     #   "Ep1_Scene_4_Eddy_RAG_Interview",  # RAG-backed Eddy interview
-     #   "Ep1_Scene_4_Eddy_Interview_Laatste_RAG",  # last-question setup
-     #   "Ep1_Scene_4_Eddy_RAG_Interview_Laatste_Vraag",  # final Eddy clue
-     #   "Ep1_Scene_4_Eddy_Interview_Afsluiten",  # close Eddy scene
-     #   "Ep1_Scene_5_Yoyo",
-    #    "Ep1_Scene_5_Yoyo_RAG_Chitchat",
-     #   "Ep1_Scene_5_Yoyo_After_Chitchat",
-     #   "Ep1_Scene_5_Yoyo_RAG_Interview",# interview Yoyo RAG
-     #   "Ep1_Scene_5_Yoyo_Interview_Laatste_RAG",
-     #   "Ep1_Scene_5_Yoyo_RAG_Interview_Laatste_Vraag",
-     #   "Ep1_Scene_5_Yoyo_Interview_Afsluiten",
-      #  "Ep1_Scene_6_Jennifer",
+       # "Ep1_Scene_4_Eddy_RAG_Interview",  # RAG-backed Eddy interview
+       # "Ep1_Scene_4_Eddy_Interview_Laatste_RAG",  # last-question setup
+       # "Ep1_Scene_4_Eddy_RAG_Interview_Laatste_Vraag",  # final Eddy clue
+       # "Ep1_Scene_4_Eddy_Interview_Afsluiten",  # close Eddy scene
+       # "Ep1_Scene_5_Yoyo",
+       # "Ep1_Scene_5_Yoyo_RAG_Chitchat",
+       # "Ep1_Scene_5_Yoyo_After_Chitchat",
+        "Ep1_Scene_5_Yoyo_RAG_Interview",# interview Yoyo RAG
+        "Ep1_Scene_5_Yoyo_Interview_Laatste_RAG",
+        "Ep1_Scene_5_Yoyo_RAG_Interview_Laatste_Vraag",
+        "Ep1_Scene_5_Yoyo_Interview_Afsluiten",
+        "Ep1_Scene_6_Jennifer",
         "Ep1_Scene_6_Jennifer_RAG_Chitchat",
         "Ep1_Scene_6_Jennifer_After_Chitchat",
         "Ep1_Scene_6_Jennifer_RAG_Interview",
         "Ep1_Scene_6_Jennifer_Interview_Laatste_RAG",
         "Ep1_Scene_6_Jennifer_RAG_Interview_Laatste_Vraag",
+        "Ep1_Scene_6_Jennifer_Interview_Afsluiten",
         "Ep1_Scene_7_Dj_Kata",
-        "Ep1_Scene_7_Dj_Kata_LLM_Chat",
+        "Ep1_Scene_7_Dj_Kata_RAG_Chitchat",  # Kata chitchat over muziek
+        "Ep1_Scene_7_Dj_Kata_After_Chitchat",  # bridge naar Kata interview
+        "Ep1_Scene_7_Dj_Kata_RAG_Interview",  # RAG-backed Kata interview
+        "Ep1_Scene_7_Dj_Kata_Interview_Laatste_RAG",  # last-question setup
+        "Ep1_Scene_7_Dj_Kata_RAG_Interview_Laatste_Vraag",  # final Kata clue
+        "Ep1_Scene_7_Dj_Kata_Interview_Afsluiten",  # close Kata scene
         "Ep1_Scene_8_Ontknoping",
-        "Ep1_Scene_9_Kelder_Disco"
+        "Ep1_Scene_9_Trilling",  # flat trilt, glijbaan naar de kelder
+        "Ep1_Scene_10_Kelder_Disco",  # onthulling onder het glitterdoek
+        "Ep1_Scene_11_Outro",  # outro Stoep Tegel
     ]
 
     active_dialog_json_path = str(DIALOG_CONFIG_PATH)
@@ -299,6 +307,12 @@ if __name__ == '__main__':
     # =========================
 
 
+    session_manager.conversation_state.user_model.update({"user_trudy": "Anita"})
+    session_manager.conversation_state.user_model.update({"user_eddy": "Smita"})
+    session_manager.conversation_state.user_model.update({"user_yoyo": "Frita"})
+    session_manager.conversation_state.user_model.update({"user_jennifer": "Mimimimi"})
+    session_manager.conversation_state.user_model.update({"user_kata": "Lalalala"})
+    session_manager.conversation_state.user_model.update({"user_teacher": "Juffrouw Egel"})
     session_manager.run()
 
     sys.exit()

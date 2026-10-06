@@ -1,102 +1,158 @@
-"""
-Robot Detective — Episode 3: Het mysterie van de kapotte intercom
-=================================================================
-Control file for the Episode 3 intercom script.
-Scene execution can be commented out here while keeping the dialog JSON intact.
-"""
+r"""
+Robot Detective — Episode 3: Het mysterie van de kapotte intercom (NAO)
+=======================================================================
+Same setup as Episode_1_NAO.py:
 
+- NAO microphone input via Dialogflow
+- NAO speakers for ElevenLabs audio playback
+
+Before running:
+
+    run-redis --data-dir RAG_Vectors
+    run-dialogflow
+    run-elevenlabs-tts
+
+Ingest this episode's character knowledge once (RAG_Vectors/RAG_Ingestion_Episodes_2_4.py),
+then start the episode from the repository root (sound effects are looked up in ./sounds):
+
+    python RobotDetectiveEpisodeScripts/Episode_3_kapotte_intercom.py
+"""
 import json
 import os
 import sys
 import tempfile
 from pathlib import Path
 
-from dotenv import load_dotenv
-from sic_framework.devices.common_desktop.desktop_speakers import SpeakersConf
+_REPO_ROOT_FOR_IMPORT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+if _REPO_ROOT_FOR_IMPORT not in sys.path:
+    sys.path.insert(0, _REPO_ROOT_FOR_IMPORT)
 
 from runtime_patches import apply_runtime_patches
 
 apply_runtime_patches()
 
-from sic_framework.devices.desktop import Desktop
+from dotenv import load_dotenv
+from sic_framework.devices import Nao
+from sic_framework.services.dialogflow.dialogflow import DialogflowConf
+
+from sic_framework.devices.common_naoqi.naoqi_autonomous import NaoRestRequest
+from sic_framework.devices.common_naoqi.naoqi_motion import NaoPostureRequest
 
 from nardial.conversation_agent import ConversationAgent
 from nardial.interaction_orchestrator import InteractionConfig
-from nardial.providers.device.desktop import DesktopAdapter
+from nardial.providers.device import AnimationStyle
+from nardial.providers.device.nao import NaoAdapter
+from nardial.providers.nlu.dialogflow import DialogflowNLUProvider
 from nardial.providers.llm.openai_gpt import OpenAIGPTProvider
-from nardial.providers.nlu.written_keyword import WrittenKeywordNLUProvider
-from nardial.providers.tts.null import NullTTSProvider
 from nardial.providers.vector_store.redis_store import RedisVectorStoreProvider
+from nardial.providers.tts.elevenlabs import ElevenLabsTTSConf, ElevenLabsTTSProvider
 from nardial.session_manager import SessionManager
+
 
 BASE_DIR = Path(__file__).resolve().parent
 REPO_ROOT = BASE_DIR.parent
-DOCS_DIR = REPO_ROOT / "Detective_Data" / "Episode Scripts"
-DOC_JSON_PATH = DOCS_DIR / "kort verhaal Het mysterie van de kapotte intercom.docx.txt"
+
+DOCS_DIR = REPO_ROOT / "Detective_Data" / "Episode_3_Detective_Data"
 DIALOG_CONFIG_PATH = REPO_ROOT / "RobotDetective_Narrative_Jsons" / "Episode_3_kapotte_intercom_all_dialogs.json"
+GOOGLE_KEYFILE_PATH = REPO_ROOT / "conf" / "google" / "google-key.json"
 ENV_FILE_PATH = REPO_ROOT / "conf" / ".env"
 
-INDEX_NAME = "episode_3_kapotte_intercom_docs"
-DEFAULT_RAG_INDEX_NAME = INDEX_NAME
+load_dotenv(dotenv_path=ENV_FILE_PATH)
+
 PARTICIPANT_ID = os.getenv("PARTICIPANT_ID", "3")
-RESET_PARTICIPANT_STATE = os.getenv("RESET_PARTICIPANT_STATE", "1").strip().lower() in {"1", "true", "yes", "y"}
-MANUAL_MODE = True
-SCENES = [
+NAO_IP = os.getenv("NAO_IP", "192.168.0.250")
+DEFAULT_RAG_INDEX_NAME = "episode_3_kata_docs"
+
+# Names of the children, keyed by the character each child interviews.
+USER_NAMES = {
+    "user_kata": "Anita",
+    "user_trudy": "Smita",
+    "user_heike": "Frita",
+    "user_choukri": "Mimimimi",
+    "user_s_tegel": "Lalalala",
+    "user_teacher": "Juffrouw Egel",
+}
+
+SESSION_AGENDA = [
     "Ep3_Scene_1_Intro",
-    "Ep3_Scene_2_Robin_Intro",
-    "Ep3_Scene_3_DJ_Kata",
-    "Ep3_Scene_3_Kata_RAG_Interview",
-    "Ep3_Scene_4_Trudy",
-    "Ep3_Scene_4_Trudy_RAG_Interview",
-    "Ep3_Scene_5_Heike",
-    "Ep3_Scene_5_Heike_RAG_Interview",
-    "Ep3_Scene_6_Choukri",
-    "Ep3_Scene_6_Choukri_RAG_Interview",
-    "Ep3_Scene_6_S_toe_Tegel",
-    "Ep3_Scene_7_Stoep_Tegel",
-    "Ep3_Scene_7_Stoep_Tegel_RAG_Interview",
-    "Ep3_Scene_8_Ontknoping",
+    "Ep3_Scene_2_Mysterie",
+    "Ep3_Scene_3_Robin_Intro",
+    "Ep3_Scene_3_Robin_Oefenvragen",
+    "Ep3_Scene_3_Robin_Spelregels",
+    "Ep3_Scene_4_DJ_Kata",
+    "Ep3_Scene_4_DJ_Kata_RAG_Chitchat",
+    "Ep3_Scene_4_DJ_Kata_After_Chitchat",
+    "Ep3_Scene_4_DJ_Kata_RAG_Interview",
+    "Ep3_Scene_4_DJ_Kata_Interview_Laatste_RAG",
+    "Ep3_Scene_4_DJ_Kata_RAG_Interview_Laatste_Vraag",
+    "Ep3_Scene_4_DJ_Kata_Interview_Afsluiten",
+    "Ep3_Scene_5_Trudy",
+    "Ep3_Scene_5_Trudy_RAG_Chitchat",
+    "Ep3_Scene_5_Trudy_After_Chitchat",
+    "Ep3_Scene_5_Trudy_RAG_Interview",
+    "Ep3_Scene_5_Trudy_Interview_Laatste_RAG",
+    "Ep3_Scene_5_Trudy_RAG_Interview_Laatste_Vraag",
+    "Ep3_Scene_5_Trudy_Interview_Afsluiten",
+    "Ep3_Scene_6_Heike",
+    "Ep3_Scene_6_Heike_RAG_Chitchat",
+    "Ep3_Scene_6_Heike_After_Chitchat",
+    "Ep3_Scene_6_Heike_RAG_Interview",
+    "Ep3_Scene_6_Heike_Interview_Laatste_RAG",
+    "Ep3_Scene_6_Heike_RAG_Interview_Laatste_Vraag",
+    "Ep3_Scene_6_Heike_Interview_Afsluiten",
+    "Ep3_Scene_7_Choukri",
+    "Ep3_Scene_7_Choukri_RAG_Chitchat",
+    "Ep3_Scene_7_Choukri_After_Chitchat",
+    "Ep3_Scene_7_Choukri_RAG_Interview",
+    "Ep3_Scene_7_Choukri_Interview_Laatste_RAG",
+    "Ep3_Scene_7_Choukri_RAG_Interview_Laatste_Vraag",
+    "Ep3_Scene_7_Choukri_Interview_Afsluiten",
+    "Ep3_Scene_8_Stoep_Tegel",
+    "Ep3_Scene_8_Stoep_Tegel_RAG_Chitchat",
+    "Ep3_Scene_8_Stoep_Tegel_After_Chitchat",
+    "Ep3_Scene_8_Stoep_Tegel_RAG_Interview",
+    "Ep3_Scene_8_Stoep_Tegel_Interview_Laatste_RAG",
+    "Ep3_Scene_8_Stoep_Tegel_RAG_Interview_Laatste_Vraag",
+    "Ep3_Scene_8_Stoep_Tegel_Interview_Afsluiten",
+    "Ep3_Scene_9_Ontknoping",
 ]
 
 
 def print_startup_checks() -> None:
-    print(f"[CHECK] Storyboard exists: {DOC_JSON_PATH.exists()} -> {DOC_JSON_PATH}")
     print(f"[CHECK] Dialog JSON exists: {DIALOG_CONFIG_PATH.exists()} -> {DIALOG_CONFIG_PATH}")
-    print(f"[CHECK] Env file exists: {ENV_FILE_PATH.exists()} -> {ENV_FILE_PATH}")
+    print(f"[CHECK] Google key exists: {GOOGLE_KEYFILE_PATH.exists()} -> {GOOGLE_KEYFILE_PATH}")
+    print(f"[CHECK] NAO_IP: {NAO_IP}")
+    if not os.getenv("OPENAI_API_KEY"):
+        print("[WARN] OPENAI_API_KEY missing in environment; llm_based scenes will fail")
     print(f"[CHECK] Participant ID: {PARTICIPANT_ID}")
-    print(f"[CHECK] RESET_PARTICIPANT_STATE: {RESET_PARTICIPANT_STATE}")
-
-
-def reset_participant_state_if_needed() -> None:
-    if not RESET_PARTICIPANT_STATE:
-        return
-
-    candidate_paths = [
-        Path.cwd() / "participants" / f"{PARTICIPANT_ID}.json",
-        REPO_ROOT / "participants" / f"{PARTICIPANT_ID}.json",
-        BASE_DIR / "participants" / f"{PARTICIPANT_ID}.json",
-    ]
-    for path in candidate_paths:
-        if path.exists():
-            path.unlink()
-            print(f"[RESET] Deleted participant state: {path}")
-
-
-def load_storyboard() -> str:
-    return DOC_JSON_PATH.read_text(encoding="utf-8")
 
 
 if __name__ == "__main__":
-    load_dotenv(dotenv_path=ENV_FILE_PATH)
     print_startup_checks()
-    reset_participant_state_if_needed()
 
-    desktop = Desktop(speakers_conf=SpeakersConf(sample_rate=22050))
-    device = DesktopAdapter(desktop)
-    tts = NullTTSProvider()
+    nao = Nao(ip=NAO_IP)
+    device = NaoAdapter(nao)
+    nao.motion.request(NaoPostureRequest("Stand", 0.8))
 
-    interaction_config = InteractionConfig(post_speech_delay=0, signal_listening_behavior=False)
-    nlu = WrittenKeywordNLUProvider()
+    tts_conf = ElevenLabsTTSConf(
+        api_key=os.getenv("ELEVENLABS_API_KEY", ""),
+        voice_id="f2yUVfK5jdm78zlpcZ8C",  # Robin
+        model_id="eleven_flash_v2_5",
+    )
+    tts = ElevenLabsTTSProvider(conf=tts_conf, device=device)
+
+    keyfile_json = json.loads(GOOGLE_KEYFILE_PATH.read_text(encoding="utf-8"))
+    nlu = DialogflowNLUProvider(
+        conf=DialogflowConf(keyfile_json=keyfile_json, sample_rate_hertz=16000, language="nl"),
+        mic=device.get_mic(),
+    )
+
+    interaction_config = InteractionConfig(
+        language="nl",
+        post_speech_delay=0,
+        signal_listening_behavior=True,
+    )
+    interaction_config.animation_style = AnimationStyle.EXPRESSIVE
     llm = OpenAIGPTProvider(api_key=os.getenv("OPENAI_API_KEY"))
     vector_store = RedisVectorStoreProvider(
         embedding_model="text-embedding-3-large",
@@ -115,22 +171,30 @@ if __name__ == "__main__":
         int_config=interaction_config,
     )
 
+    # Only the scenes in SESSION_AGENDA are loaded, so commenting a scene out skips it
+    # without tripping nardial's position-order check.
+    all_dialogs = json.loads(DIALOG_CONFIG_PATH.read_text(encoding="utf-8"))
+    dialogs_by_id = {d["id"]: d for d in all_dialogs}
+    missing = [scene_id for scene_id in SESSION_AGENDA if scene_id not in dialogs_by_id]
+    if missing:
+        raise ValueError(f"SESSION_AGENDA contains unknown dialog ids: {missing}")
     with tempfile.NamedTemporaryFile(
-        mode="w",
-        suffix="_episode3_kapotte_intercom_manual_dialogs.json",
-        delete=False,
-        encoding="utf-8",
+        mode="w", suffix="_episode3_nao_dialogs.json", delete=False, encoding="utf-8"
     ) as temp_file:
-        temp_file.write(load_storyboard())
+        json.dump([dialogs_by_id[s] for s in SESSION_AGENDA], temp_file, ensure_ascii=False, indent=2)
         active_dialog_json_path = temp_file.name
 
-    print(f"[MANUAL MODE] Using storyboard source: {DOC_JSON_PATH}")
-    print(f"[MANUAL MODE] Using filtered dialog file: {active_dialog_json_path}")
-
     session_manager = SessionManager(
-        session_agenda=[],
+        session_agenda=SESSION_AGENDA,
         agent=agent,
         dialog_json_path=active_dialog_json_path,
         participant_id=PARTICIPANT_ID,
     )
-    session_manager.run()
+
+    try:
+        session_manager.conversation_state.user_model.update(USER_NAMES)
+        session_manager.run()
+    except Exception as e:
+        print(f"Error occurred: {e}")
+    finally:
+        nao.autonomous.request(NaoRestRequest())

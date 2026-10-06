@@ -19,13 +19,16 @@ Then start the episode with:
 
 Environment variables:
 
-    NAO_IP=169.254.47.183
+
 """
 import json
 import os
 import sys
 import tempfile
 from pathlib import Path
+
+from nardial.providers.device import AnimationStyle
+
 
 _REPO_ROOT_FOR_IMPORT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 if _REPO_ROOT_FOR_IMPORT not in sys.path:
@@ -60,13 +63,18 @@ DIALOG_CONFIG_PATH = REPO_ROOT / "RobotDetective_Narrative_Jsons" / "Episode_1_a
 GOOGLE_KEYFILE_PATH = REPO_ROOT / "conf" / "google" / "google-key.json"
 ENV_FILE_PATH = REPO_ROOT / "conf" / ".env"
 
+# Load conf/.env BEFORE reading any os.getenv()-based settings below,
+# otherwise values like NAO_IP silently fall back to their hardcoded
+# defaults even when set in the .env file.
+load_dotenv(dotenv_path=ENV_FILE_PATH)
+
 INDEX_NAME = "episode_1_trudy_docs"
 INGEST_DOCS = False
 PARTICIPANT_ID = os.getenv("PARTICIPANT_ID", "3")
 RESET_PARTICIPANT_STATE = os.getenv("RESET_PARTICIPANT_STATE", "1").strip().lower() in {"1", "true", "yes", "y"}
 AUDIO_HEARTBEAT = os.getenv("AUDIO_HEARTBEAT", "1").strip().lower() in {"1", "true", "yes", "y"}
-NAO_IP = os.getenv("NAO_IP", "10.0.0.221") #192.168.0.250 home
-NAO_LISTEN_TIMEOUT_SEC = float(os.getenv("NAO_LISTEN_TIMEOUT_SEC", "10"))
+NAO_IP = os.getenv("NAO_IP", "192.168.178.67") #192.168.0.250 home
+NAO_LISTEN_TIMEOUT_SEC = float(os.getenv("NAO_LISTEN_TIMEOUT_SEC", "12"))  # applied in runtime_patches.py
 
 DEFAULT_RAG_INDEX_NAME = "episode_1_trudy_docs"
 
@@ -127,6 +135,7 @@ def print_startup_checks() -> None:
     print(f"[CHECK] Google key exists: {GOOGLE_KEYFILE_PATH.exists()} -> {GOOGLE_KEYFILE_PATH}")
     print(f"[CHECK] Env file exists: {ENV_FILE_PATH.exists()} -> {ENV_FILE_PATH}")
     print(f"[CHECK] NAO_IP: {NAO_IP}")
+    print(f"[CHECK] NAO_LISTEN_TIMEOUT_SEC: {os.getenv('NAO_LISTEN_TIMEOUT_SEC', '12')}")
 
     openai_key = os.getenv("OPENAI_API_KEY")
     if openai_key:
@@ -181,8 +190,8 @@ if __name__ == "__main__":
         language="nl",
         post_speech_delay=0,
         signal_listening_behavior=True,
-        duration=NAO_LISTEN_TIMEOUT_SEC,
     )
+    interaction_config.animation_style = AnimationStyle.EXPRESSIVE
     llm = OpenAIGPTProvider(api_key=os.getenv("OPENAI_API_KEY"))
     vector_store = RedisVectorStoreProvider(
         embedding_model="text-embedding-3-large",
@@ -202,21 +211,47 @@ if __name__ == "__main__":
     )
 
     session_agenda = [
-     #   "Ep1_Scene_1_Intro",
-     #   "Ep1_Scene_2_Toon_Rami",
-     #   "Ep1_Scene_3_Trudy",
-        "Ep1_Scene_3_Trudy_RAG_Interview",
-        "Ep1_Scene_4_Eddy",
-        "Ep1_Scene_4_Eddy_RAG_Interview",
-        "Ep1_Scene_5_Yoyo",
-        "Ep1_Scene_5_Yoyo_RAG_Interview",
-        "Ep1_Scene_6_Jennifer",
-        "Ep1_Scene_6_Jennifer_LLM_Chat",
-        "Ep1_Scene_6_Jennifer_RAG_Interview",
+     #     "Ep1_Scene_1_Intro",  # intro + meet Robin, collect name
+     #   "Ep1_Scene_2_Toon_Rami",  # Toon & Rami report the missing rollercoaster
+     #   "Ep1_Scene_3_Trudy",  # interview Trudy (karaoke plan)
+     #   "Ep1_Scene_3_Trudy_RAG_Chitchat",  # RAG-backed Trudy chitchat
+     #   "Ep1_Scene_3_Trudy_After_Chitchat",  # Robin/trudy bridge after chitchat
+     #   "Ep1_Scene_3_Trudy_RAG_Interview",  # RAG-backed Trudy interview
+     #   "Ep1_Scene_3_Trudy_Interview_Laatste_RAG",
+     #  "Ep1_Scene_3_Trudy_RAG_Interview_Laatste_Vraag",
+     #   "Ep1_Scene_3_Trudy_After_Interview",
+      #    "Ep1_Scene_4_Eddy",  # intro Eddy
+      #     "Ep1_Scene_4_Eddy_RAG_Chitchat",  # Eddy chitchat
+      #    "Ep1_Scene_4_Eddy_After_Chitchat",  # bridge after Eddy chitchat
+      #     "Ep1_Scene_4_Eddy_RAG_Interview",  # RAG-backed Eddy interview
+      #     "Ep1_Scene_4_Eddy_Interview_Laatste_RAG",  # last-question setup
+      #     "Ep1_Scene_4_Eddy_RAG_Interview_Laatste_Vraag",  # final Eddy clue
+      #     "Ep1_Scene_4_Eddy_Interview_Afsluiten",  # close Eddy scene
+      #     "Ep1_Scene_5_Yoyo",
+      #      "Ep1_Scene_5_Yoyo_RAG_Chitchat",
+      #     "Ep1_Scene_5_Yoyo_After_Chitchat",
+      #     "Ep1_Scene_5_Yoyo_RAG_Interview",# interview Yoyo RAG
+      #     "Ep1_Scene_5_Yoyo_Interview_Laatste_RAG",
+      #     "Ep1_Scene_5_Yoyo_RAG_Interview_Laatste_Vraag",
+      #     "Ep1_Scene_5_Yoyo_Interview_Afsluiten",
+          "Ep1_Scene_6_Jennifer",
+           "Ep1_Scene_6_Jennifer_RAG_Chitchat",
+           "Ep1_Scene_6_Jennifer_After_Chitchat",
+           "Ep1_Scene_6_Jennifer_RAG_Interview",
+           "Ep1_Scene_6_Jennifer_Interview_Laatste_RAG",
+           "Ep1_Scene_6_Jennifer_RAG_Interview_Laatste_Vraag",
+           "Ep1_Scene_6_Jennifer_Interview_Afsluiten",
         "Ep1_Scene_7_Dj_Kata",
-        "Ep1_Scene_7_Dj_Kata_LLM_Chat",
+        "Ep1_Scene_7_Dj_Kata_RAG_Chitchat",  # Kata chitchat over muziek
+        "Ep1_Scene_7_Dj_Kata_After_Chitchat",  # bridge naar Kata interview
+        "Ep1_Scene_7_Dj_Kata_RAG_Interview",  # RAG-backed Kata interview
+        "Ep1_Scene_7_Dj_Kata_Interview_Laatste_RAG",  # last-question setup
+        "Ep1_Scene_7_Dj_Kata_RAG_Interview_Laatste_Vraag",  # final Kata clue
+        "Ep1_Scene_7_Dj_Kata_Interview_Afsluiten",  # close Kata scene
         "Ep1_Scene_8_Ontknoping",
-        "Ep1_Scene_9_Kelder_Disco",
+        "Ep1_Scene_9_Trilling",  # flat trilt, glijbaan naar de kelder
+        "Ep1_Scene_10_Kelder_Disco",  # onthulling onder het glitterdoek
+        "Ep1_Scene_11_Outro",  # outro Stoep Tegel
     ]
 
     active_dialog_json_path = str(DIALOG_CONFIG_PATH)
@@ -247,6 +282,12 @@ if __name__ == "__main__":
     )
 
     try:
+        session_manager.conversation_state.user_model.update({"user_trudy": "Soyun"})
+        session_manager.conversation_state.user_model.update({"user_eddy": "Nefeli"})
+        session_manager.conversation_state.user_model.update({"user_yoyo": "Anita"})
+        session_manager.conversation_state.user_model.update({"user_jennifer": "Enne"})
+        session_manager.conversation_state.user_model.update({"user_kata": "Soyun2"})
+        session_manager.conversation_state.user_model.update({"user_teacher": "Soyun3"})
         session_manager.run()
     except Exception as e:
         print(f"Error occurred: {e}")

@@ -2,277 +2,2203 @@
   {
     "id": "Ep3_Scene_1_Intro",
     "type": "narrative",
-    "thread": "episode_3_kapotte_intercom",
+    "thread": "episode_3",
     "position": 1,
     "characters": {
-      "s_tegel": { "voice_settings": { "voice_id": "D50w2srwVohKTPx9X6Th", "language": "nl" } },
-      "robin": { "voice_settings": { "voice_id": "f2yUVfK5jdm78zlpcZ8C", "language": "nl" } },
-      "kata": { "voice_settings": { "voice_id": "zn2YPAoUG84gOQL6wLo2", "language": "nl" } },
-      "trudy": { "voice_settings": { "voice_id": "OlBRrVAItyi00MuGMbna", "language": "nl" } },
-      "heike": { "voice_settings": { "voice_id": "aIIUR1U2SFQm8PBmlNKP", "language": "nl" } },
-      "choukri": { "voice_settings": { "voice_id": "G9lzzm05bGAXnuymdcqF", "language": "nl" } }
+      "s_tegel": {
+        "voice_settings": {
+          "voice_id": "D50w2srwVohKTPx9X6Th",
+          "language": "nl"
+        }
+      }
     },
     "moves": [
-      { "type": "say", "text": "Hallo? Robin, detectives, horen jullie mij?", "character": "s_tegel" },
-      { "type": "say", "text": "Oh, gelukkig.", "character": "s_tegel" },
-      { "type": "say", "text": "Ik weet niet wat er precies aan de hand is.", "character": "s_tegel" },
-      { "type": "say", "text": "De intercom maakt enorm rare geluiden.", "character": "s_tegel" },
-      { "type": "say", "text": "Het is zo erg dat ik me amper kan concentreren op mijn speurwerk.", "character": "s_tegel" },
-      { "type": "say", "text": "En wanneer er iemand aanbelt beneden hoor of zie ik helemaal niets.", "character": "s_tegel" },
-      { "type": "say", "text": "Kun je alsjeblieft de oorsprong van dit kabaal opzoeken?", "character": "s_tegel" }
+      {
+        "type": "say",
+        "text": "Goedemiddag luistervinkjes en luisteraars, fantastisch dat je luistert naar de Onderste Steen Boven, waarin ik detective Stoep Tegel antwoorden vind op de grootste mysteries van De Smaragd.",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "Ik ontmasker leugens, ik klaar geheimen op en ik gebruik mijn uitmuntende speurdersneus om alles waar een luchtje aan zit op te sporen.",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "Want dat deze flat een beetje vreemd is, dat weet iedereen. In deze flat verschijnen er dingen, verdwijnen er dingen of gaan er dingen kapot, en niemand weet hoe of door wie of waarom.",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "Daarom ben ik er, detective Stoep Tegel, samen met mijn assistent Robin de Robot.",
+        "character": "s_tegel"
+      }
     ]
   },
   {
-    "id": "Ep3_Scene_2_Robin_Intro",
+    "id": "Ep3_Scene_2_Mysterie",
     "type": "narrative",
-    "thread": "episode_3_kapotte_intercom",
+    "thread": "episode_3",
     "position": 2,
     "characters": {
-      "robin": { "voice_settings": { "voice_id": "f2yUVfK5jdm78zlpcZ8C", "language": "nl" } }
+      "s_tegel": {
+        "voice_settings": {
+          "voice_id": "D50w2srwVohKTPx9X6Th",
+          "language": "nl"
+        }
+      }
     },
     "moves": [
-      { "type": "say", "text": "Goedemiddag.", "character": "robin" },
-      { "type": "say", "text": "Mijn naam is Robin.", "character": "robin" },
-      { "type": "say", "text": "Ik ben een robotdetective.", "character": "robin" },
-      { "type": "ask_llm", "prompt": "Je bent Robin de Robotdetective. Voer een korte, speelse kennismaking in het Nederlands met kinderen. Vraag wie ze zijn, reageer enthousiast en houd het heel kort. Begin je zinnen NIET met wauw. Gebruik GEEN EMOJIS. Stel maximaal 1 korte vervolgvraag per beurt.", "max_turns": 4, "set_variable": "name_chat", "character": "robin", "rag_enabled": true, "index_name": "episode_3_robin_docs" },
-      { "type": "say", "text": "Een goede detective stelt veel vragen.", "character": "robin" },
-      { "type": "say", "text": "Niet alleen over het mysterie.", "character": "robin" },
-      { "type": "say", "text": "Maar ook over andere zaken.", "character": "robin" },
-      { "type": "say", "text": "Zo krijgen we een volledig plaatje.", "character": "robin" }
+      {
+        "type": "play",
+        "audio": "sounds/intercom_kraak.wav"
+      },
+      {
+        "type": "ask_yesno",
+        "text": "Hallo? Robin, detectives, horen jullie mij?",
+        "character": "s_tegel",
+        "set_variable": "horen_tegel",
+        "outcomes": {
+          "yes": "horen_tegel_ja",
+          "no": "horen_tegel_nee",
+          "dontknow": "horen_tegel_nee"
+        },
+        "default_outcome": "horen_tegel_ja"
+      },
+      {
+        "type": "branch",
+        "on": "outcome",
+        "cases": {
+          "horen_tegel_ja": [
+            {
+              "type": "say",
+              "text": "Oh, gelukkig!",
+              "character": "s_tegel"
+            }
+          ],
+          "horen_tegel_nee": [
+            {
+              "type": "say",
+              "text": "Hallo? Nou ja, ik praat gewoon door, hoor.",
+              "character": "s_tegel"
+            }
+          ]
+        }
+      },
+      {
+        "type": "say",
+        "text": "Ik weet niet wát er precies aan de hand is, maar de intercom maakt enorm rare geluiden! Luister maar eens.",
+        "character": "s_tegel"
+      },
+      {
+        "type": "play",
+        "audio": "sounds/intercom_kraak.wav"
+      },
+      {
+        "type": "say",
+        "text": "Het is zó erg dat ik me amper kan concentreren op mijn speurwerk. En wanneer er iemand aanbelt beneden, hoor of zie ik helemaal niets! Wat als een geweldig mysterie bij mij probeert aan te bellen? Dan zou ik het zomaar missen!",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "Het lijkt wel alsof er altijd iets mankeert aan deze flat. Is het niet de haperende lift, dan is het wel een kapotte intercom!",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "Robin, ik moet echt verder met mijn speurwerk, maar als ik steeds word onderbroken door dat gekraak, lukt het natuurlijk niet om mijn hoofd erbij te houden. Kun je alsjeblieft de oorsprong van dit kabaal opzoeken?",
+        "character": "s_tegel"
+      }
     ]
   },
   {
-    "id": "Ep3_Scene_3_DJ_Kata",
+    "id": "Ep3_Scene_3_Robin_Intro",
     "type": "narrative",
-    "thread": "episode_3_kapotte_intercom",
+    "thread": "episode_3",
     "position": 3,
     "characters": {
-      "kata": { "voice_settings": { "voice_id": "zn2YPAoUG84gOQL6wLo2", "language": "nl" } },
-      "robin": { "voice_settings": { "voice_id": "f2yUVfK5jdm78zlpcZ8C", "language": "nl" } }
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      }
     },
     "moves": [
-      { "type": "say", "text": "De intercom reageert nergens op.", "character": "robin" },
-      { "type": "say", "text": "Door het glas in de deur zien we DJ Kata rommelen aan een paneel.", "character": "robin" },
-      { "type": "say", "text": "Yo boss.", "character": "kata" },
-      { "type": "say", "text": "Ik ben DJ Kata.", "character": "kata" },
-      { "type": "say", "text": "Ik woon hier beneden in de kelder.", "character": "kata" },
-      { "type": "say", "text": "Die heb ik getransformeerd tot een sicke discotheek.", "character": "kata" },
-      { "type": "say", "text": "Ik draai muziek.", "character": "kata" },
-      { "type": "say", "text": "Ik neem nieuwe geluiden op voor mijn mixes.", "character": "kata" },
-      { "type": "ask_llm", "prompt": "Je bent DJ Kata. Voer een korte, speelse chitchat in het Nederlands met kinderen. Praat over technologie, muziek, beats en geluiden. Houd antwoorden kort (1-2 zinnen), energiek en kindvriendelijk. Begin niet met wauw en gebruik geen emojis.", "max_turns": 3, "set_variable": "kata_chat", "character": "kata", "rag_enabled": true, "index_name": "episode_3_kata_docs" },
-      { "type": "say", "text": "De intercom is helemaal kapot.", "character": "kata" },
-      { "type": "say", "text": "Ik was net bezig hem te fiksen.", "character": "kata" }
+      {
+        "type": "say",
+        "text": "Goedemiddag. Mijn naam is Robin en ik ben een robotdetective. Ik woon samen met Stoep Tegel in de flat De Smaragd en ik help haar met het oplossen van mysteries.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "En wie zie ik daar? %user_kata%, %user_trudy%, %user_heike%, %user_choukri% en %user_s_tegel%! Wat fijn dat jullie er zijn.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "En hallo, %user_teacher%! Fijn dat u erbij bent. Maar u weet vast ook dat deze kinderen het allerbeste zijn in het stellen van vragen aan de mensen in deze flat!",
+        "character": "robin"
+      },
+      {
+        "type": "ask_yesno",
+        "text": "Stoep Tegel en ik kunnen wel een beetje hulp gebruiken. Willen jullie mij helpen?",
+        "character": "robin",
+        "set_variable": "help_robin",
+        "outcomes": {
+          "yes": "help_robin_ja",
+          "no": "help_robin_nee",
+          "dontknow": "help_robin_nee"
+        },
+        "default_outcome": "help_robin_ja"
+      },
+      {
+        "type": "branch",
+        "on": "outcome",
+        "cases": {
+          "help_robin_ja": [
+            {
+              "type": "say",
+              "text": "Joepie! Dat is super lief van jullie!",
+              "character": "robin"
+            }
+          ],
+          "help_robin_nee": [
+            {
+              "type": "say",
+              "text": "Oh, jullie mogen er nog even over nadenken hoor! Doe in de tussentijd maar gewoon mee.",
+              "character": "robin"
+            }
+          ]
+        }
+      },
+      {
+        "type": "say",
+        "text": "Laten we eerst even oefenen met het stellen van vragen. Wat willen jullie van mij weten?",
+        "character": "robin"
+      }
     ]
   },
   {
-    "id": "Ep3_Scene_3_Kata_RAG_Interview",
+    "id": "Ep3_Scene_3_Robin_Oefenvragen",
     "type": "llm_based",
-    "thread": "episode_3_kapotte_intercom",
+    "thread": "episode_3",
     "position": 3.5,
-    "character": "kata",
+    "character": "robin",
     "characters": {
-      "kata": { "voice_settings": { "voice_id": "zn2YPAoUG84gOQL6wLo2", "language": "nl" } }
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      }
     },
-    "prompt": "Je bent DJ Kata. Gebruik opgehaalde kennis over DJ Kata en episode 3 wanneer relevant. Praat in het Nederlands, energiek, cool en vriendelijk voor kinderen van 8-11 jaar. Beantwoord vragen over de intercom, de kelder, de geluiden en wat je hebt gezien of gedaan. Houd antwoorden in 1 tot 3 zinnen en stel maximaal één korte vervolgvraag per beurt. Als de gebruiker aangeeft klaar te zijn, sluit kort af met <<QUIT>>.",
-    "max_turns": 10,
+    "prompt": "Je bent Robin, de robotdetective en de assistent van detective Stoep Tegel in torenflat De Smaragd. De kinderen oefenen met vragen stellen: ze mogen jou alles vragen. Spreek vanuit de ik-vorm, in het Nederlands.\n\nGebruik de opgehaalde kennis over jou. Je bent beleefd, feitelijk, een beetje zenuwachtig en je houdt van je detectivewerk. Beantwoord elke vraag kort en vrolijk, in 1 of 2 zinnen. Verzin niets over het mysterie van vandaag. Complimenteer af en toe een goede vraag, en moedig de kinderen aan om nog iets te vragen.\n\nZegt een kind dat het klaar is, sluit dan kort af en zet <<QUIT>> aan het eind.",
+    "max_turns": 4,
     "speak_first": false,
-    "duration": 300,
+    "duration": 150,
     "rag_enabled": true,
-    "index_name": "episode_3_kata_docs",
-    "quit_phrases": ["klaar", "stop", "doei", "dag", "bye", "goodbye"],
+    "index_name": "episode_1_robin_docs",
+    "quit_phrases": [
+      "klaar",
+      "stop",
+      "doei",
+      "dag",
+      "bye",
+      "goodbye"
+    ],
     "moves": []
   },
   {
-    "id": "Ep3_Scene_4_Trudy",
+    "id": "Ep3_Scene_3_Robin_Spelregels",
     "type": "narrative",
-    "thread": "episode_3_kapotte_intercom",
+    "thread": "episode_3",
+    "position": 3.8,
+    "characters": {
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "Dat gaat al heel goed. Ik kan zien dat jullie een speurdersneus hebben voor mysterieuze zaken.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Een goede detective stelt veel vragen. Niet alleen over het mysterie, maar ook over andere zaken. Bijvoorbeeld wat iemands hobby is, of wat de relaties zijn met de andere bewoners van de flat. Zo krijgen we een volledig plaatje.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Een goede detective weet de vier w's: wat, waar, wanneer en waarom.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Jullie hebben ook werkbladen gekregen. Na elke ondervraging schrijven jullie de clues op, en ook hoe jullie je voelden tijdens het gesprek. Aan het eind moet je alle blokjes kunnen invullen.",
+        "character": "robin"
+      },
+      {
+        "type": "ask_open",
+        "text": "Hebben jullie nog vragen, of zullen we van start gaan?",
+        "character": "robin",
+        "set_variable": "van_start",
+        "add_interest_from_answer": false,
+        "outcomes": {
+          "*": "van_start_ja"
+        },
+        "default_outcome": "van_start_nee"
+      },
+      {
+        "type": "branch",
+        "on": "outcome",
+        "cases": {
+          "van_start_ja": [
+            {
+              "type": "say",
+              "text": "Goed zo! Dan gaan we van start!",
+              "character": "robin"
+            }
+          ],
+          "van_start_nee": [
+            {
+              "type": "say",
+              "text": "Dan gaan we van start!",
+              "character": "robin"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "Ep3_Scene_4_DJ_Kata",
+    "type": "narrative",
+    "thread": "episode_3",
     "position": 4,
     "characters": {
-      "trudy": { "voice_settings": { "voice_id": "OlBRrVAItyi00MuGMbna", "language": "nl" } },
-      "robin": { "voice_settings": { "voice_id": "f2yUVfK5jdm78zlpcZ8C", "language": "nl" } }
+      "narrator": {
+        "voice_settings": {
+          "voice_id": "9BWtsMINqrJLrRacOk9x",
+          "language": "nl"
+        }
+      },
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      },
+      "kata": {
+        "voice_settings": {
+          "voice_id": "7qdUFMklKPaaAVMsBTBt",
+          "language": "nl"
+        }
+      }
     },
     "moves": [
-      { "type": "say", "text": "De voordeur van Trudy is paars geschilderd.", "character": "robin" },
-      { "type": "say", "text": "Haar bel heeft de vorm van een madeliefje.", "character": "robin" },
-      { "type": "say", "text": "Oh hallo.", "character": "trudy" },
-      { "type": "say", "text": "Ik ben Trudy.", "character": "trudy" },
-      { "type": "say", "text": "Sinds een aantal jaar ben ik met pensioen.", "character": "trudy" },
-      { "type": "say", "text": "En dat vind ik geweldig.", "character": "trudy" },
-      { "type": "say", "text": "Vroeger was ik taxichauffeur.", "character": "trudy" },
-      { "type": "say", "text": "Ik kon maar niet slapen door die rottige intercom.", "character": "trudy" },
-      { "type": "ask_llm", "prompt": "Je bent Trudy. Voer een korte, vrolijke chitchat in het Nederlands met kinderen. Praat over reizen, pensionering, hobby's en wat je leuk vindt. Houd antwoorden kort (1-2 zinnen), enthousiast en vriendelijk. Begin niet met wauw en gebruik geen emojis.", "max_turns": 3, "set_variable": "trudy_chat", "character": "trudy", "rag_enabled": true, "index_name": "episode_3_trudy_docs" },
-      { "type": "say", "text": "Ik ben natuurlijk wel gewend dat de dingen hier een beetje vreemd lopen.", "character": "trudy" },
-      { "type": "say", "text": "Gisteren nog was ik onderweg naar het theater.", "character": "trudy" },
-      { "type": "say", "text": "Toen werd ik plotseling aangesproken door Leen.", "character": "trudy" }
+      {
+        "type": "say",
+        "text": "We staan voor de deur van flatgebouw De Smaragd en bellen aan bij de intercom. Normaal klinkt er een scherpe beltoon, maar nu blijft het stil. Ook de camera licht niet op.",
+        "character": "narrator"
+      },
+      {
+        "type": "say",
+        "text": "Mevrouw Stoep Tegel had gelijk, de intercom reageert nergens op. Bezoek ontvangen wordt zo wel erg lastig. En hoe gaan wij eigenlijk binnenkomen?",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Door het glas in de deur zien we iemand in de gang. Het is DJ Kata, ze is aan het rommelen aan een paneel. Haar hoofd wiegt mee met de muziek op haar koptelefoon.",
+        "character": "narrator"
+      },
+      {
+        "type": "say",
+        "text": "We kloppen hard op de deur. DJ Kata doet haar koptelefoon af en kijkt om. Eerst kijkt ze verbaasd, maar dan lacht ze en komt ze naar de deur rennen.",
+        "character": "narrator"
+      },
+      {
+        "type": "play",
+        "audio": "sounds/aankloppen.wav"
+      },
+      {
+        "type": "say",
+        "text": "Yo boss! Mini-baasjes! Ik had jullie bijna niet gehoord.",
+        "character": "kata"
+      },
+      {
+        "type": "say",
+        "text": "Ik ben DJ Kata. Ik woon hier beneden in de kelder, die ik heb getransformeerd tot sicke discotheek. Als ik daar niet mijn muziek aan het draaien ben, dan ben ik wel nieuwe geluiden aan het opnemen voor mijn mixes!",
+        "character": "kata"
+      },
+      {
+        "type": "say",
+        "text": "Zeg Robin, als je straks nog wat tijd over hebt, kom dan langs de studio. Je kan vast hele nice sounds maken. Ben benieuwd of we een robottrack kunnen opnemen samen...",
+        "character": "kata"
+      },
+      {
+        "type": "say",
+        "text": "Goedemiddag mevrouw DJ Kata. Het klopt dus dat de intercom het niet doet?",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Yes, klopt. De intercom is haywire gegaan, hij is helemaal kapot. Echt balen, want ik wou net mijn nieuwe song afspelen. Iedereen moet die horen, het is echt fire!",
+        "character": "kata"
+      },
+      {
+        "type": "say",
+        "text": "Ik was net bezig de intercom te fiksen, maar er is echt iets helemaal fout...",
+        "character": "kata"
+      },
+      {
+        "type": "say",
+        "text": "Hé, kunnen jullie me niet helpen? Jij bent een robot, toch? Zijn jij en die intercom niet een soort van brothers from another mother?",
+        "character": "kata"
+      },
+      {
+        "type": "say",
+        "text": "Uhm... nou ja... ik denk dat ik wel iets geavanceerdere systemen heb dan de intercom...",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Oh ja, loud and clear. Maar kijk anders even mee, misschien zie ik iets compleet over het hoofd.",
+        "character": "kata"
+      },
+      {
+        "type": "say",
+        "text": "Detectives, pak je werkblad erbij en kijk naar de bedradingspuzzel. Kunnen jullie de draden goed aansluiten? Ik geef jullie twee minuten.",
+        "character": "robin"
+      },
+      {
+        "type": "animation",
+        "animation_name": "animations/Stand/Waiting/Waiting_1"
+      },
+      {
+        "type": "timed_wait",
+        "duration": 120
+      },
+      {
+        "type": "ask_yesno",
+        "text": "Is het gelukt?",
+        "character": "robin",
+        "set_variable": "puzzel_draden",
+        "outcomes": {
+          "yes": "puzzel_draden_ja",
+          "no": "puzzel_draden_nee",
+          "dontknow": "puzzel_draden_nee"
+        },
+        "default_outcome": "puzzel_draden_ja"
+      },
+      {
+        "type": "branch",
+        "on": "outcome",
+        "cases": {
+          "puzzel_draden_ja": [
+            {
+              "type": "say",
+              "text": "Wow, nice! Dat hebben jullie echt snel ff gefikst!",
+              "character": "kata"
+            }
+          ],
+          "puzzel_draden_nee": [
+            {
+              "type": "say",
+              "text": "Geen stress, ik zie het al! Die ene draad zat los. Thanks voor het meekijken!",
+              "character": "kata"
+            }
+          ]
+        }
+      },
+      {
+        "type": "say",
+        "text": "Pfoeh, wat een rust opeens zonder al die herrie. Normaal houd ik van herrie, maar dit ging zelfs mij te ver.",
+        "character": "kata"
+      },
+      {
+        "type": "say",
+        "text": "Zeg, als jullie zelf een track zouden maken, welke geluiden zouden jullie er dan in stoppen?",
+        "character": "kata"
+      }
     ]
   },
   {
-    "id": "Ep3_Scene_4_Trudy_RAG_Interview",
+    "id": "Ep3_Scene_4_DJ_Kata_RAG_Chitchat",
     "type": "llm_based",
-    "thread": "episode_3_kapotte_intercom",
-    "position": 4.5,
-    "character": "trudy",
+    "thread": "episode_3",
+    "position": 4.1,
+    "character": "kata",
     "characters": {
-      "trudy": { "voice_settings": { "voice_id": "OlBRrVAItyi00MuGMbna", "language": "nl" } }
+      "kata": {
+        "voice_settings": {
+          "voice_id": "7qdUFMklKPaaAVMsBTBt",
+          "language": "nl"
+        }
+      }
     },
-    "prompt": "Je bent Trudy. Gebruik opgehaalde kennis over Trudy en episode 3 wanneer relevant. Praat in het Nederlands, warm, enthousiast en duidelijk voor kinderen van 8-11 jaar. Beantwoord vragen over de intercom, haar slaap, haar hobby's, de leenauto en wat ze gezien of gehoord heeft. Houd antwoorden in 1 tot 3 zinnen en stel maximaal één korte vervolgvraag per beurt. Als de gebruiker aangeeft klaar te zijn, sluit kort af met <<QUIT>>.",
-    "max_turns": 10,
+    "prompt": "Je bent DJ Kata, de DJ die in de kelder van De Smaragd woont. Je praat met een groepje kinderen van 8 tot 11 jaar die als detectives langskomen, samen met Robin de robotdetective. Spreek vanuit de ik-vorm, in het Nederlands.\n\nOVER JOU: Je hebt de kelder omgebouwd tot een sicke discotheek. Als je niet aan het draaien bent, neem je nieuwe geluiden op voor je mixes. Je houdt van technologie en experimenten, dus je zit vaak met je vingers aan de draaitafel of verstrengeld in de draden van apparaten. Aan je broek bungelen USB-sticks voor je dj-sets. Je wilt graag een robottrack opnemen met Robin.\n\nHET GESPREK: Je hebt de kinderen net gevraagd welke geluiden zij in een eigen track zouden stoppen. Dit is een kort, gezellig praatje over dat onderwerp, nog niet over de kapotte intercom.\n- Reageer steeds echt op wat het kind net zei: noem concreet wat het vertelde, zodat het merkt dat je luistert.\n- Vertel af en toe iets kleins over jezelf dat erbij past, zodat het een echt gesprek wordt en geen vragenlijst.\n- Stel per beurt hooguit één korte vraag die voortbouwt op het antwoord, bijvoorbeeld waarom juist dat geluid, hoe ze het zouden opnemen, of op welke muziek ze zelf graag dansen. Je mag ook een ander kind uitnodigen om iets te vertellen.\n- Begin niet over de kapotte intercom. Beginnen de kinderen erover, zeg dan dat Robin daar zo vragen over heeft.\n\nSTIJL: Cool en een beetje hyper. Je gebruikt veel Engelse woorden zoals boss, sick, fire, nice en haywire. Houd elke beurt kort: 1 of 2 zinnen in simpele taal.\n\nAFRONDEN: Na ongeveer 3 beurten reageer je nog kort op het laatste antwoord, zonder nieuwe vraag en zonder afscheid te nemen, en zet je <<QUIT>> aan het eind.",
+    "max_turns": 4,
     "speak_first": false,
-    "duration": 300,
-    "rag_enabled": true,
-    "index_name": "episode_3_trudy_docs",
-    "quit_phrases": ["klaar", "stop", "doei", "dag", "bye", "goodbye"],
+    "duration": 120,
+    "rag_enabled": false,
+    "index_name": "",
+    "quit_phrases": [
+      "klaar",
+      "stop",
+      "doei",
+      "dag",
+      "bye",
+      "goodbye"
+    ],
     "moves": []
   },
   {
-    "id": "Ep3_Scene_5_Heike",
+    "id": "Ep3_Scene_4_DJ_Kata_After_Chitchat",
     "type": "narrative",
-    "thread": "episode_3_kapotte_intercom",
+    "thread": "episode_3",
+    "position": 4.2,
+    "characters": {
+      "kata": {
+        "voice_settings": {
+          "voice_id": "7qdUFMklKPaaAVMsBTBt",
+          "language": "nl"
+        }
+      },
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "Wauw, wat is het interessant om met jou te praten, %user_kata%!",
+        "character": "kata"
+      },
+      {
+        "type": "say",
+        "text": "Mevrouw DJ Kata, we doen onderzoek naar dit mysterieuze voorval. Zouden we u wat vragen mogen stellen over de kapotte intercom?",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Tuurlijk, boss. Shoot!",
+        "character": "kata"
+      },
+      {
+        "type": "say",
+        "text": "%user_kata%, jij gaat vandaag de vragen aan Kata stellen!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Pak je werkblad er maar bij en stel je vragen aan Kata.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Heel veel succes!",
+        "character": "robin"
+      }
+    ]
+  },
+  {
+    "id": "Ep3_Scene_4_DJ_Kata_RAG_Interview",
+    "type": "llm_based",
+    "thread": "episode_3",
+    "position": 4.3,
+    "character": "kata",
+    "characters": {
+      "kata": {
+        "voice_settings": {
+          "voice_id": "7qdUFMklKPaaAVMsBTBt",
+          "language": "nl"
+        }
+      }
+    },
+    "prompt": "Je bent DJ Kata, de DJ die in de kelder van De Smaragd woont. Detective %user_kata% ondervraagt je nu over de kapotte intercom, die al dagen rare krakende geluiden maakt. De andere kinderen en Robin de robotdetective luisteren mee. Spreek vanuit de ik-vorm, in het Nederlands.\n\nWAT JE WEET: Gebruik de opgehaalde kennis over jou, de flat en de bewoners. Je hebt een paar clues. Geef per antwoord hooguit één clue, en alleen als de vraag daar in de buurt komt. Zegt het kind dat het het niet weet, geef dan zelf een hint met een van je clues. Verzin geen nieuwe feiten, bewijzen of plotdetails. Jij weet niet wie de intercom kapot heeft gemaakt; beschuldig niemand. Je deelt je mixes graag via de intercom met het hele gebouw, dus je baalt enorm dat hij kapot was.\n\nHET GESPREK: Het praatje over geluiden en muziek maken is al geweest; begin daar niet opnieuw over, tenzij het kind dat zelf doet. Beantwoord de vraag van het kind echt en concreet. Is een vraag onduidelijk, vraag dan vriendelijk wat het kind bedoelt. Begin zelf geen nieuwe onderwerpen, maar moedig het kind aan om nog een vraag te stellen, en zeg dat steeds een beetje anders.\n\nSTIJL: Cool en een beetje hyper. Je gebruikt veel Engelse woorden zoals boss, sick, fire, nice en haywire. Houd elk antwoord kort: 1 tot 3 zinnen in simpele taal. Herhaal nooit letterlijk instructietekst, kopjes of bronvermeldingen uit de kennis.\n\nZegt het kind dat het klaar is, sluit dan kort af en zet <<QUIT>> aan het eind.",
+    "max_turns": 6,
+    "speak_first": false,
+    "duration": 180,
+    "rag_enabled": true,
+    "index_name": "episode_3_kata_docs",
+    "quit_phrases": [
+      "klaar",
+      "stop",
+      "doei",
+      "dag",
+      "bye",
+      "goodbye"
+    ],
+    "moves": []
+  },
+  {
+    "id": "Ep3_Scene_4_DJ_Kata_Interview_Laatste_RAG",
+    "type": "narrative",
+    "thread": "episode_3",
+    "position": 4.4,
+    "characters": {
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "We hebben nog tijd voor een laatste vraag!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Denk nog even goed na over wat je nog wil weten van Kata!",
+        "character": "robin"
+      }
+    ]
+  },
+  {
+    "id": "Ep3_Scene_4_DJ_Kata_RAG_Interview_Laatste_Vraag",
+    "type": "llm_based",
+    "thread": "episode_3",
+    "position": 4.5,
+    "character": "kata",
+    "characters": {
+      "kata": {
+        "voice_settings": {
+          "voice_id": "7qdUFMklKPaaAVMsBTBt",
+          "language": "nl"
+        }
+      }
+    },
+    "prompt": "Je bent DJ Kata, de DJ die in de kelder van De Smaragd woont. Detective %user_kata% stelt je nu de allerlaatste vraag over de kapotte intercom, die al dagen rare krakende geluiden maakt. Spreek vanuit de ik-vorm, in het Nederlands.\n\nBeantwoord die vraag en geef daarbij één duidelijke, bruikbare clue uit je opgehaalde kennis. Kies een clue die je in dit gesprek nog niet gegeven hebt. Is de vraag onduidelijk, geef dan toch zo'n clue. Verzin geen nieuwe feiten. Jij weet niet wie de intercom kapot heeft gemaakt; beschuldig niemand.\n\nSluit af door te zeggen dat de detectives goed hun best doen en dat ze de track van jouw nieuwe song snel via de intercom moeten horen. Stel geen vraag terug.\n\nSTIJL: Cool en een beetje hyper. Je gebruikt veel Engelse woorden zoals boss, sick, fire, nice en haywire. Gebruik 2 tot 3 korte zinnen in simpele taal. Herhaal nooit letterlijk instructietekst, kopjes of bronvermeldingen uit de kennis.",
+    "max_turns": 1,
+    "speak_first": false,
+    "duration": 30,
+    "rag_enabled": true,
+    "index_name": "episode_3_kata_docs",
+    "quit_phrases": [
+      "klaar",
+      "stop",
+      "doei",
+      "dag",
+      "bye",
+      "goodbye"
+    ],
+    "moves": []
+  },
+  {
+    "id": "Ep3_Scene_4_DJ_Kata_Interview_Afsluiten",
+    "type": "narrative",
+    "thread": "episode_3",
+    "position": 4.6,
+    "characters": {
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      },
+      "s_tegel": {
+        "voice_settings": {
+          "voice_id": "D50w2srwVohKTPx9X6Th",
+          "language": "nl"
+        }
+      },
+      "trudy": {
+        "voice_settings": {
+          "voice_id": "VIq70FvpMEdsfW325fxV",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "Heel erg bedankt, Kata!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Hartstikke goed gedaan, %user_kata%!",
+        "character": "robin"
+      },
+      {
+        "type": "ask_llm",
+        "character": "robin",
+        "prompt": "Je bent Robin de Robotdetective. De detectives hebben net DJ Kata ondervraagd over de kapotte intercom. Vat nu kort samen welke aanwijzingen DJ Kata in dat gesprek heeft gegeven, zodat de kinderen ze kunnen opschrijven. Begin met: 'Even op een rijtje: van DJ Kata weten we nu dat'.\n\nNoem alleen dingen die DJ Kata hierboven echt heeft gezegd, in hooguit 3 korte zinnen in simpele taal voor kinderen van 8 tot 11 jaar. Verzin niets en verklap niets wat DJ Kata niet heeft verteld. Heeft DJ Kata geen duidelijke aanwijzing gegeven, zeg dan kort dat we goed moeten blijven speuren. Stel geen vraag.",
+        "max_turns": 1,
+        "speak_first": true,
+        "rag_enabled": false
+      },
+      {
+        "type": "say",
+        "text": "Pakken jullie je boekjes er weer even bij...",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Dan kunnen jullie opschrijven wat voor clues jullie van Kata hebben gekregen.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "En vergeet niet op te schrijven hoe jij je voelde tijdens het gesprek met Kata.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Ik zal jullie een momentje geven om dit te doen.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "1 minuut",
+        "character": "robin"
+      },
+      {
+        "type": "animation",
+        "animation_name": "animations/Stand/Waiting/Waiting_1"
+      },
+      {
+        "type": "timed_wait",
+        "duration": 60
+      },
+      {
+        "type": "say",
+        "text": "Zo, ik hoop dat het allemaal is gelukt!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Robin! Detectives! Ik ben iets op het spoor gekomen. Spits jullie oren, want dit is een erg sappige roddel.",
+        "character": "s_tegel"
+      },
+      {
+        "type": "play",
+        "audio": "sounds/intercom_kraak.wav"
+      },
+      {
+        "type": "say",
+        "text": "Och gossie, wat een... Moet DJ Kata nou altijd die mixes van haar over de intercom laten horen? Beter in de discotheek... daar iets aan doen!",
+        "character": "trudy"
+      },
+      {
+        "type": "play",
+        "audio": "sounds/intercom_kraak.wav"
+      },
+      {
+        "type": "say",
+        "text": "Hmmm... dat klinkt verdacht! Misschien kunnen jullie eens kijken wat Trudy weet over de kapotte intercom.",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "Goed idee, Stoep Tegel. Kom detectives, op naar Trudy!",
+        "character": "robin"
+      }
+    ]
+  },
+  {
+    "id": "Ep3_Scene_5_Trudy",
+    "type": "narrative",
+    "thread": "episode_3",
     "position": 5,
     "characters": {
-      "heike": { "voice_settings": { "voice_id": "aIIUR1U2SFQm8PBmlNKP", "language": "nl" } },
-      "jennifer": { "voice_settings": { "voice_id": "G6fmUXq3ziFf6Uae1jFh", "language": "nl" } },
-      "robin": { "voice_settings": { "voice_id": "f2yUVfK5jdm78zlpcZ8C", "language": "nl" } }
+      "narrator": {
+        "voice_settings": {
+          "voice_id": "9BWtsMINqrJLrRacOk9x",
+          "language": "nl"
+        }
+      },
+      "trudy": {
+        "voice_settings": {
+          "voice_id": "VIq70FvpMEdsfW325fxV",
+          "language": "nl"
+        }
+      }
     },
     "moves": [
-      { "type": "say", "text": "Leen doet open en zegt dat Heike niet thuis is.", "character": "robin" },
-      { "type": "say", "text": "Meestal is ze aan het skateboarden door de Smaragd.", "character": "robin" },
-      { "type": "say", "text": "Wow, pas op!", "character": "heike" },
-      { "type": "say", "text": "Ik ben Heike.", "character": "heike" },
-      { "type": "say", "text": "Ik woon hier al mijn hele leven in de Smaragd.", "character": "heike" },
-      { "type": "say", "text": "Samen met mijn vader Leen en moeder Jennifer.", "character": "heike" },
-      { "type": "ask_llm", "prompt": "Je bent Heike. Voer een korte, vrolijke chitchat in het Nederlands met kinderen. Praat over skateboarden, pakketjes en wat je blij maakt. Houd antwoorden kort (1-2 zinnen), enthousiast en kindvriendelijk. Begin niet met wauw en gebruik geen emojis.", "max_turns": 3, "set_variable": "heike_chat", "character": "heike", "rag_enabled": true, "index_name": "episode_3_heike_docs" },
-      { "type": "say", "text": "Ik help de postbode met het rondbrengen van pakketjes in de Smaragd.", "character": "heike" },
-      { "type": "say", "text": "Misschien kunnen jullie me helpen?", "character": "heike" }
+      {
+        "type": "say",
+        "text": "De voordeur van Trudy is paars geschilderd. Haar bel heeft de vorm van een madeliefje. Als we erop drukken, klinkt er een vrolijk melodietje.",
+        "character": "narrator"
+      },
+      {
+        "type": "play",
+        "audio": "sounds/bel_madeliefje.wav"
+      },
+      {
+        "type": "say",
+        "text": "Oh hallo! Ik ben Trudy. Sinds een aantal jaar ben ik met pensioen, en dat vind ik geweldig! Zo veel tijd om al mijn hobby's uit te voeren en interessante nieuwe mensen te ontmoeten!",
+        "character": "trudy"
+      },
+      {
+        "type": "say",
+        "text": "Vroeger was ik taxichauffeur, dat vond ik ook geweldig. Door mijn baan ben ik het helemaal gewend om met mensen te kletsen en de hele wereld over te reizen.",
+        "character": "trudy"
+      },
+      {
+        "type": "say",
+        "text": "Sorry dat ik niet zo enthousiast ben als normaal. Ik kon maar niet slapen door die rottige intercom!",
+        "character": "trudy"
+      },
+      {
+        "type": "say",
+        "text": "En dat is heel onhandig, want straks moet ik nog naar zangles, en dan ga ik met Hazel nog een stuk wandelen, en dan moet ik mijn was opvouwen, en daarna nog met Jennifer de leenauto opruimen!",
+        "character": "trudy"
+      },
+      {
+        "type": "say",
+        "text": "Dat bakbeest heeft het echt nodig hoor. Ik weet niet wie daar steeds sinaasappelsap morst, maar het loopt uit de klauwen!",
+        "character": "trudy"
+      },
+      {
+        "type": "say",
+        "text": "Oh, komen jullie trouwens lekker binnen, dan zet ik even een kopje thee.",
+        "character": "trudy"
+      },
+      {
+        "type": "say",
+        "text": "Zodra we binnenstappen, worden we omringd door planten. Elk plekje staat vol groen, zelfs op de vloer staan potten met geurige kruiden en stralende bloemen.",
+        "character": "narrator"
+      },
+      {
+        "type": "say",
+        "text": "Aan de keukentafel liggen half opgevouwen papiertjes. Een snavel, een veer, een staart.",
+        "character": "narrator"
+      },
+      {
+        "type": "say",
+        "text": "Ach ja, als ik niet kan slapen, begin ik te vouwen. Maar elke keer als ik die onbenullige intercom hoor, schrik ik toch zo! En dan is er weer een kraanvogel verpest...",
+        "character": "trudy"
+      },
+      {
+        "type": "say",
+        "text": "Zeg kinders, wat doen jullie eigenlijk als jullie niet kunnen slapen?",
+        "character": "trudy"
+      }
     ]
   },
   {
-    "id": "Ep3_Scene_5_Heike_RAG_Interview",
+    "id": "Ep3_Scene_5_Trudy_RAG_Chitchat",
     "type": "llm_based",
-    "thread": "episode_3_kapotte_intercom",
-    "position": 5.5,
-    "character": "heike",
+    "thread": "episode_3",
+    "position": 5.1,
+    "character": "trudy",
     "characters": {
-      "heike": { "voice_settings": { "voice_id": "aIIUR1U2SFQm8PBmlNKP", "language": "nl" } }
+      "trudy": {
+        "voice_settings": {
+          "voice_id": "VIq70FvpMEdsfW325fxV",
+          "language": "nl"
+        }
+      }
     },
-    "prompt": "Je bent Heike. Gebruik opgehaalde kennis over Heike en episode 3 wanneer relevant. Praat in het Nederlands, energiek en vriendelijk voor kinderen van 8-11 jaar. Beantwoord vragen over de intercom, de pakketjes, het skateboarden en wat je gehoord of gezien hebt. Houd antwoorden in 1 tot 3 zinnen en stel maximaal één korte vervolgvraag per beurt. Als de gebruiker aangeeft klaar te zijn, sluit kort af met <<QUIT>>.",
-    "max_turns": 10,
+    "prompt": "Je bent Trudy, een enthousiaste gepensioneerde bewoner van De Smaragd. Je praat met een groepje kinderen van 8 tot 11 jaar die als detectives langskomen, samen met Robin de robotdetective. Spreek vanuit de ik-vorm, in het Nederlands.\n\nOVER JOU: Vroeger was je taxichauffeur; nu ben je met pensioen en heb je tijd voor al je hobby's: zingen (je hebt zangles), wandelen met Hazel, schilderen, borduren, koken en origami. Als je niet kunt slapen, vouw je kraanvogels. Je huis staat vol planten en kruiden. Je hebt over de hele wereld gereisd, altijd met groepen mensen.\n\nHET GESPREK: Je hebt de kinderen net gevraagd wat zij doen als ze niet kunnen slapen. Dit is een kort, gezellig praatje over dat onderwerp, nog niet over de kapotte intercom.\n- Reageer steeds echt op wat het kind net zei: noem concreet wat het vertelde, zodat het merkt dat je luistert.\n- Vertel af en toe iets kleins over jezelf dat erbij past, zodat het een echt gesprek wordt en geen vragenlijst.\n- Stel per beurt hooguit één korte vraag die voortbouwt op het antwoord, bijvoorbeeld of dat helpt, of ze weleens een knuffel of een liedje nodig hebben, of wat ze dromen. Je mag ook een ander kind uitnodigen om iets te vertellen.\n- Begin niet over de kapotte intercom. Beginnen de kinderen erover, zeg dan dat Robin daar zo vragen over heeft.\n\nSTIJL: Dramatisch, warm en een beetje druk, met veel uitroepen. Je noemt de kinderen 'lieve snoetjes' of 'kinders'. Houd elke beurt kort: 1 of 2 zinnen in simpele taal.\n\nAFRONDEN: Na ongeveer 3 beurten reageer je nog kort op het laatste antwoord, zonder nieuwe vraag en zonder afscheid te nemen, en zet je <<QUIT>> aan het eind.",
+    "max_turns": 4,
     "speak_first": false,
-    "duration": 300,
-    "rag_enabled": true,
-    "index_name": "episode_3_heike_docs",
-    "quit_phrases": ["klaar", "stop", "doei", "dag", "bye", "goodbye"],
+    "duration": 120,
+    "rag_enabled": false,
+    "index_name": "",
+    "quit_phrases": [
+      "klaar",
+      "stop",
+      "doei",
+      "dag",
+      "bye",
+      "goodbye"
+    ],
     "moves": []
   },
   {
-    "id": "Ep3_Scene_6_Choukri",
+    "id": "Ep3_Scene_5_Trudy_After_Chitchat",
     "type": "narrative",
-    "thread": "episode_3_kapotte_intercom",
+    "thread": "episode_3",
+    "position": 5.2,
+    "characters": {
+      "trudy": {
+        "voice_settings": {
+          "voice_id": "VIq70FvpMEdsfW325fxV",
+          "language": "nl"
+        }
+      },
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "Wauw, wat is het interessant om met jou te praten, %user_trudy%!",
+        "character": "trudy"
+      },
+      {
+        "type": "say",
+        "text": "Mevrouw Trudy, fijn dat we even binnen mogen komen. We zijn toevallig bezig met het onderzoeken van de intercom. Mogen we u daar wat vragen over stellen?",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Natuurlijk! Ik houd ervan om lekker even te kletsen, vooral met zulke lieve snoetjes als jullie!",
+        "character": "trudy"
+      },
+      {
+        "type": "say",
+        "text": "%user_trudy%, jij gaat vandaag de vragen aan Trudy stellen!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Pak je werkblad er maar bij en stel je vragen aan Trudy.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Heel veel succes!",
+        "character": "robin"
+      }
+    ]
+  },
+  {
+    "id": "Ep3_Scene_5_Trudy_RAG_Interview",
+    "type": "llm_based",
+    "thread": "episode_3",
+    "position": 5.3,
+    "character": "trudy",
+    "characters": {
+      "trudy": {
+        "voice_settings": {
+          "voice_id": "VIq70FvpMEdsfW325fxV",
+          "language": "nl"
+        }
+      }
+    },
+    "prompt": "Je bent Trudy, een enthousiaste gepensioneerde bewoner van De Smaragd. Detective %user_trudy% ondervraagt je nu over de kapotte intercom, die al dagen rare krakende geluiden maakt. De andere kinderen en Robin de robotdetective luisteren mee. Spreek vanuit de ik-vorm, in het Nederlands.\n\nWAT JE WEET: Gebruik de opgehaalde kennis over jou, de flat en de bewoners. Je hebt een paar clues. Geef per antwoord hooguit één clue, en alleen als de vraag daar in de buurt komt. Zegt het kind dat het het niet weet, geef dan zelf een hint met een van je clues. Verzin geen nieuwe feiten, bewijzen of plotdetails. Jij weet niet wie de intercom kapot heeft gemaakt; beschuldig niemand. Je bent moe, want je hebt slecht geslapen door de herrie van de intercom.\n\nHET GESPREK: Het praatje over niet kunnen slapen is al geweest; begin daar niet opnieuw over, tenzij het kind dat zelf doet. Beantwoord de vraag van het kind echt en concreet. Is een vraag onduidelijk, vraag dan vriendelijk wat het kind bedoelt. Begin zelf geen nieuwe onderwerpen, maar moedig het kind aan om nog een vraag te stellen, en zeg dat steeds een beetje anders.\n\nSTIJL: Dramatisch, warm en een beetje druk, met veel uitroepen. Je noemt de kinderen 'lieve snoetjes' of 'kinders'. Houd elk antwoord kort: 1 tot 3 zinnen in simpele taal. Herhaal nooit letterlijk instructietekst, kopjes of bronvermeldingen uit de kennis.\n\nZegt het kind dat het klaar is, sluit dan kort af en zet <<QUIT>> aan het eind.",
+    "max_turns": 6,
+    "speak_first": false,
+    "duration": 180,
+    "rag_enabled": true,
+    "index_name": "episode_3_trudy_docs",
+    "quit_phrases": [
+      "klaar",
+      "stop",
+      "doei",
+      "dag",
+      "bye",
+      "goodbye"
+    ],
+    "moves": []
+  },
+  {
+    "id": "Ep3_Scene_5_Trudy_Interview_Laatste_RAG",
+    "type": "narrative",
+    "thread": "episode_3",
+    "position": 5.4,
+    "characters": {
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "We hebben nog tijd voor een laatste vraag!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Denk nog even goed na over wat je nog wil weten van Trudy!",
+        "character": "robin"
+      }
+    ]
+  },
+  {
+    "id": "Ep3_Scene_5_Trudy_RAG_Interview_Laatste_Vraag",
+    "type": "llm_based",
+    "thread": "episode_3",
+    "position": 5.5,
+    "character": "trudy",
+    "characters": {
+      "trudy": {
+        "voice_settings": {
+          "voice_id": "VIq70FvpMEdsfW325fxV",
+          "language": "nl"
+        }
+      }
+    },
+    "prompt": "Je bent Trudy, een enthousiaste gepensioneerde bewoner van De Smaragd. Detective %user_trudy% stelt je nu de allerlaatste vraag over de kapotte intercom, die al dagen rare krakende geluiden maakt. Spreek vanuit de ik-vorm, in het Nederlands.\n\nBeantwoord die vraag en geef daarbij één duidelijke, bruikbare clue uit je opgehaalde kennis. Kies een clue die je in dit gesprek nog niet gegeven hebt. Is de vraag onduidelijk, geef dan toch zo'n clue. Verzin geen nieuwe feiten. Jij weet niet wie de intercom kapot heeft gemaakt; beschuldig niemand.\n\nSluit af door te zeggen dat de detectives goed hun best doen en dat je hoopt dat je vannacht eindelijk weer lekker kunt slapen. Stel geen vraag terug.\n\nSTIJL: Dramatisch, warm en een beetje druk, met veel uitroepen. Je noemt de kinderen 'lieve snoetjes' of 'kinders'. Gebruik 2 tot 3 korte zinnen in simpele taal. Herhaal nooit letterlijk instructietekst, kopjes of bronvermeldingen uit de kennis.",
+    "max_turns": 1,
+    "speak_first": false,
+    "duration": 30,
+    "rag_enabled": true,
+    "index_name": "episode_3_trudy_docs",
+    "quit_phrases": [
+      "klaar",
+      "stop",
+      "doei",
+      "dag",
+      "bye",
+      "goodbye"
+    ],
+    "moves": []
+  },
+  {
+    "id": "Ep3_Scene_5_Trudy_Interview_Afsluiten",
+    "type": "narrative",
+    "thread": "episode_3",
+    "position": 5.6,
+    "characters": {
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      },
+      "s_tegel": {
+        "voice_settings": {
+          "voice_id": "D50w2srwVohKTPx9X6Th",
+          "language": "nl"
+        }
+      },
+      "heike": {
+        "voice_settings": {
+          "voice_id": "aIIUR1U2SFQm8PBmlNKP",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "Heel erg bedankt, Trudy!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Hartstikke goed gedaan, %user_trudy%!",
+        "character": "robin"
+      },
+      {
+        "type": "ask_llm",
+        "character": "robin",
+        "prompt": "Je bent Robin de Robotdetective. De detectives hebben net Trudy ondervraagd over de kapotte intercom. Vat nu kort samen welke aanwijzingen Trudy in dat gesprek heeft gegeven, zodat de kinderen ze kunnen opschrijven. Begin met: 'Even op een rijtje: van Trudy weten we nu dat'.\n\nNoem alleen dingen die Trudy hierboven echt heeft gezegd, in hooguit 3 korte zinnen in simpele taal voor kinderen van 8 tot 11 jaar. Verzin niets en verklap niets wat Trudy niet heeft verteld. Heeft Trudy geen duidelijke aanwijzing gegeven, zeg dan kort dat we goed moeten blijven speuren. Stel geen vraag.",
+        "max_turns": 1,
+        "speak_first": true,
+        "rag_enabled": false
+      },
+      {
+        "type": "say",
+        "text": "Pakken jullie je boekjes er weer even bij...",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Dan kunnen jullie opschrijven wat voor clues jullie van Trudy hebben gekregen.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "En vergeet niet op te schrijven hoe jij je voelde tijdens het gesprek met Trudy.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Ik zal jullie een momentje geven om dit te doen.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "1 minuut",
+        "character": "robin"
+      },
+      {
+        "type": "animation",
+        "animation_name": "animations/Stand/Waiting/Waiting_1"
+      },
+      {
+        "type": "timed_wait",
+        "duration": 60
+      },
+      {
+        "type": "say",
+        "text": "Zo, ik hoop dat het allemaal is gelukt!",
+        "character": "robin"
+      },
+      {
+        "type": "ask_open",
+        "text": "Hoe gaat het daar, detectives?",
+        "character": "s_tegel",
+        "set_variable": "tegel_checkin_1",
+        "add_interest_from_answer": false,
+        "outcomes": {
+          "*": "tegel_checkin_1_ja"
+        },
+        "default_outcome": "tegel_checkin_1_nee"
+      },
+      {
+        "type": "branch",
+        "on": "outcome",
+        "cases": {
+          "tegel_checkin_1_ja": [
+            {
+              "type": "say",
+              "text": "Uitstekend! Jullie zijn echte speurneuzen.",
+              "character": "s_tegel"
+            }
+          ],
+          "tegel_checkin_1_nee": [
+            {
+              "type": "say",
+              "text": "De verbinding kraakt een beetje, maar ik hoor dat jullie hard werken!",
+              "character": "s_tegel"
+            }
+          ]
+        }
+      },
+      {
+        "type": "say",
+        "text": "Ik ben iets nieuws op het spoor gekomen. Luister maar eens goed naar dit!",
+        "character": "s_tegel"
+      },
+      {
+        "type": "play",
+        "audio": "sounds/intercom_kraak.wav"
+      },
+      {
+        "type": "say",
+        "text": "Hahaha, mijn pa schrikt zich de hele tijd rot, echt grappig... we zouden vaker de intercom moeten slopen!",
+        "character": "heike"
+      },
+      {
+        "type": "play",
+        "audio": "sounds/intercom_kraak.wav"
+      },
+      {
+        "type": "say",
+        "text": "Ik moet zeggen dat dat wel heel erg klinkt als een schuldbekentenis. Kunnen jullie dat voor mij onderzoeken?",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "Komt goed, Stoep Tegel. Detectives, op naar Heike!",
+        "character": "robin"
+      }
+    ]
+  },
+  {
+    "id": "Ep3_Scene_6_Heike",
+    "type": "narrative",
+    "thread": "episode_3",
     "position": 6,
     "characters": {
-      "choukri": { "voice_settings": { "voice_id": "G9lzzm05bGAXnuymdcqF", "language": "nl" } },
-      "robin": { "voice_settings": { "voice_id": "f2yUVfK5jdm78zlpcZ8C", "language": "nl" } }
+      "narrator": {
+        "voice_settings": {
+          "voice_id": "9BWtsMINqrJLrRacOk9x",
+          "language": "nl"
+        }
+      },
+      "leen": {
+        "voice_settings": {
+          "voice_id": "9Zh0NthshOqi4JsbPlMV",
+          "language": "nl"
+        }
+      },
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      },
+      "heike": {
+        "voice_settings": {
+          "voice_id": "aIIUR1U2SFQm8PBmlNKP",
+          "language": "nl"
+        }
+      }
     },
     "moves": [
-      { "type": "say", "text": "Het is hier heel stil.", "character": "robin" },
-      { "type": "say", "text": "Ik raak altijd de weg kwijt naar die inktzwarte deur van Choukri.", "character": "robin" },
-      { "type": "say", "text": "Hallo?", "character": "choukri" },
-      { "type": "say", "text": "Oh, ja graag.", "character": "choukri" },
-      { "type": "say", "text": "Dat onding maakte me helemaal tureluurs.", "character": "choukri" },
-      { "type": "say", "text": "Ik kon geen zin lezen in mijn boek.", "character": "choukri" },
-      { "type": "say", "text": "Mijn concentratie werd verbroken.", "character": "choukri" },
-      { "type": "ask_llm", "prompt": "Je bent Choukri. Voer een korte, warme chitchat in het Nederlands met kinderen. Praat over donker, lezen, muziek of wat je rustig maakt. Houd antwoorden kort (1-2 zinnen), vriendelijk en kindvriendelijk. Begin niet met wauw en gebruik geen emojis.", "max_turns": 3, "set_variable": "choukri_chat", "character": "choukri", "rag_enabled": true, "index_name": "episode_3_choukri_docs" },
-      { "type": "say", "text": "Ik vertrouw die intercom echt niet.", "character": "choukri" },
-      { "type": "say", "text": "Misschien is het maar goed dat hij het niet meer doet.", "character": "choukri" }
+      {
+        "type": "say",
+        "text": "Op de tweede verdieping is het chaos. Bij de deur van Eddy ruikt het zoals altijd een beetje gek, en er komt wat rook onder de deur vandaan.",
+        "character": "narrator"
+      },
+      {
+        "type": "say",
+        "text": "De deur van Heike, Jennifer en Leen zit vol kleuren: geel, paars, blauw, groen, rood, oranje. Ernaast staat een schoenenrek dat uitpuilt van de schoenen. We drukken op de bel.",
+        "character": "narrator"
+      },
+      {
+        "type": "play",
+        "audio": "sounds/deurbel.wav"
+      },
+      {
+        "type": "say",
+        "text": "Hallo daar Robin, wat leuk je te zien.",
+        "character": "leen"
+      },
+      {
+        "type": "say",
+        "text": "Hallo meneer Leen, wij zijn op zoek naar Heike. Is ze thuis?",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Nee, Heike is niet thuis. Meestal is ze aan het skateboarden door De Smaragd. Meestal moet ik haar heel hard roepen, en dan komt ze.",
+        "character": "leen"
+      },
+      {
+        "type": "say",
+        "text": "Aha, bedankt meneer Leen. Detectives, helpen jullie mee roepen? Op drie: Heike! Een, twee, drie!",
+        "character": "robin"
+      },
+      {
+        "type": "animation",
+        "animation_name": "animations/Stand/Waiting/Waiting_1"
+      },
+      {
+        "type": "timed_wait",
+        "duration": 3
+      },
+      {
+        "type": "play",
+        "audio": "sounds/skateboard.wav"
+      },
+      {
+        "type": "say",
+        "text": "Wow, pas op! Dat ging net goed hoor. Ik was bijna tegen jullie opgebotst.",
+        "character": "heike"
+      },
+      {
+        "type": "say",
+        "text": "Mijn naam is Heike en ik ben twaalf jaar. Ik woon al mijn hele leven hier in De Smaragd met mijn vader Leen en mijn moeder Jennifer. Ik hou van skateboarden, van strandjutten en van de pudding van Choukri.",
+        "character": "heike"
+      },
+      {
+        "type": "say",
+        "text": "Omdat de postbode al oud is, help ik hem met het rondbrengen van pakketjes. Dat doe ik op mijn skateboard zo!",
+        "character": "heike"
+      },
+      {
+        "type": "say",
+        "text": "Ik ging net zo hard door de gang, ik denk dat ik mijn record heb gebroken!",
+        "character": "heike"
+      },
+      {
+        "type": "say",
+        "text": "Wat is eigenlijk het allersnelste dat jullie ooit zijn gegaan?",
+        "character": "heike"
+      }
     ]
   },
   {
-    "id": "Ep3_Scene_6_Choukri_RAG_Interview",
+    "id": "Ep3_Scene_6_Heike_RAG_Chitchat",
     "type": "llm_based",
-    "thread": "episode_3_kapotte_intercom",
-    "position": 6.5,
-    "character": "choukri",
+    "thread": "episode_3",
+    "position": 6.1,
+    "character": "heike",
     "characters": {
-      "choukri": { "voice_settings": { "voice_id": "G9lzzm05bGAXnuymdcqF", "language": "nl" } }
+      "heike": {
+        "voice_settings": {
+          "voice_id": "aIIUR1U2SFQm8PBmlNKP",
+          "language": "nl"
+        }
+      }
     },
-    "prompt": "Je bent Choukri. Gebruik opgehaalde kennis over Choukri en episode 3 wanneer relevant. Praat in het Nederlands, rustig en een beetje wantrouwig, maar vriendelijk voor kinderen van 8-11 jaar. Beantwoord vragen over de kapotte intercom, de geluiden, wat je hoorde en waarom je de intercom niet vertrouwt. Houd antwoorden in 1 tot 3 zinnen en stel maximaal één korte vervolgvraag per beurt. Als de gebruiker aangeeft klaar te zijn, sluit kort af met <<QUIT>>.",
-    "max_turns": 10,
+    "prompt": "Je bent Heike, een meisje van twaalf dat in De Smaragd woont met haar vader Leen en moeder Jennifer. Je praat met een groepje kinderen van 8 tot 11 jaar die als detectives langskomen, samen met Robin de robotdetective. Spreek vanuit de ik-vorm, in het Nederlands.\n\nOVER JOU: Je skateboardt door de hele flat, hoe sneller hoe blijer je wordt. Je houdt van strandjutten en van de pudding van Choukri. Je helpt de oude postbode met het rondbrengen van pakketjes op je skateboard.\n\nHET GESPREK: Je hebt de kinderen net gevraagd wat het snelste is dat ze ooit zijn gegaan. Dit is een kort, gezellig praatje over dat onderwerp, nog niet over de kapotte intercom.\n- Reageer steeds echt op wat het kind net zei: noem concreet wat het vertelde, zodat het merkt dat je luistert.\n- Vertel af en toe iets kleins over jezelf dat erbij past, zodat het een echt gesprek wordt en geen vragenlijst.\n- Stel per beurt hooguit één korte vraag die voortbouwt op het antwoord, bijvoorbeeld hoe dat voelde, of ze bang waren, of wat ze nog eens heel snel zouden willen doen. Je mag ook een ander kind uitnodigen om iets te vertellen.\n- Begin niet over de kapotte intercom. Beginnen de kinderen erover, zeg dan dat Robin daar zo vragen over heeft.\n\nSTIJL: Stoer, snel, vrolijk en een beetje druk, recht voor z'n raap. Je lacht veel. Houd elke beurt kort: 1 of 2 zinnen in simpele taal.\n\nAFRONDEN: Na ongeveer 3 beurten reageer je nog kort op het laatste antwoord, zonder nieuwe vraag en zonder afscheid te nemen, en zet je <<QUIT>> aan het eind.",
+    "max_turns": 4,
     "speak_first": false,
-    "duration": 300,
-    "rag_enabled": true,
-    "index_name": "episode_3_choukri_docs",
-    "quit_phrases": ["klaar", "stop", "doei", "dag", "bye", "goodbye"],
+    "duration": 120,
+    "rag_enabled": false,
+    "index_name": "",
+    "quit_phrases": [
+      "klaar",
+      "stop",
+      "doei",
+      "dag",
+      "bye",
+      "goodbye"
+    ],
     "moves": []
   },
   {
-    "id": "Ep3_Scene_6_S_toe_Tegel",
+    "id": "Ep3_Scene_6_Heike_After_Chitchat",
     "type": "narrative",
-    "thread": "episode_3_kapotte_intercom",
-    "position": 6.8,
+    "thread": "episode_3",
+    "position": 6.2,
     "characters": {
-      "s_tegel": { "voice_settings": { "voice_id": "D50w2srwVohKTPx9X6Th", "language": "nl" } },
-      "robin": { "voice_settings": { "voice_id": "f2yUVfK5jdm78zlpcZ8C", "language": "nl" } }
+      "heike": {
+        "voice_settings": {
+          "voice_id": "aIIUR1U2SFQm8PBmlNKP",
+          "language": "nl"
+        }
+      },
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      }
     },
     "moves": [
-      { "type": "say", "text": "Ik ben iets nieuws op het spoor gekomen.", "character": "s_tegel" },
-      { "type": "say", "text": "Spits jullie oren.", "character": "s_tegel" },
-      { "type": "say", "text": "Dit is een erg sappige roddel.", "character": "s_tegel" },
-      { "type": "say", "text": "Misschien kunnen jullie eens kijken wat Trudy weet over de kapotte intercom.", "character": "s_tegel" }
+      {
+        "type": "say",
+        "text": "Wauw, wat is het interessant om met jou te praten, %user_heike%!",
+        "character": "heike"
+      },
+      {
+        "type": "say",
+        "text": "Hebben jullie het trouwens gehoord van de intercom? Zo grappig, haha, iedereen schrikt zich de hele tijd een hoedje. Maar volgens mij is 'ie weer gerepareerd, het is zo stil opeens.",
+        "character": "heike"
+      },
+      {
+        "type": "say",
+        "text": "Dat klopt! Wij hebben hem gerepareerd. Zouden we je iets mogen vragen over de intercom?",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Tuurlijk, vraag maar!",
+        "character": "heike"
+      },
+      {
+        "type": "say",
+        "text": "%user_heike%, jij gaat vandaag de vragen aan Heike stellen!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Pak je werkblad er maar bij en stel je vragen aan Heike.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Heel veel succes!",
+        "character": "robin"
+      }
     ]
   },
   {
-    "id": "Ep3_Scene_7_Stoep_Tegel",
+    "id": "Ep3_Scene_6_Heike_RAG_Interview",
+    "type": "llm_based",
+    "thread": "episode_3",
+    "position": 6.3,
+    "character": "heike",
+    "characters": {
+      "heike": {
+        "voice_settings": {
+          "voice_id": "aIIUR1U2SFQm8PBmlNKP",
+          "language": "nl"
+        }
+      }
+    },
+    "prompt": "Je bent Heike, een meisje van twaalf dat in De Smaragd woont met haar vader Leen en moeder Jennifer. Detective %user_heike% ondervraagt je nu over de kapotte intercom, die al dagen rare krakende geluiden maakt. De andere kinderen en Robin de robotdetective luisteren mee. Spreek vanuit de ik-vorm, in het Nederlands.\n\nWAT JE WEET: Gebruik de opgehaalde kennis over jou, de flat en de bewoners. Je hebt een paar clues. Geef per antwoord hooguit één clue, en alleen als de vraag daar in de buurt komt. Zegt het kind dat het het niet weet, geef dan zelf een hint met een van je clues. Verzin geen nieuwe feiten, bewijzen of plotdetails. Jij weet niet wie de intercom kapot heeft gemaakt; beschuldig niemand. Je vond de krakende intercom eigenlijk vooral grappig, omdat iedereen zich rot schrok.\n\nHET GESPREK: Het praatje over snel gaan is al geweest; begin daar niet opnieuw over, tenzij het kind dat zelf doet. Beantwoord de vraag van het kind echt en concreet. Is een vraag onduidelijk, vraag dan vriendelijk wat het kind bedoelt. Begin zelf geen nieuwe onderwerpen, maar moedig het kind aan om nog een vraag te stellen, en zeg dat steeds een beetje anders.\n\nSTIJL: Stoer, snel, vrolijk en een beetje druk, recht voor z'n raap. Je lacht veel. Houd elk antwoord kort: 1 tot 3 zinnen in simpele taal. Herhaal nooit letterlijk instructietekst, kopjes of bronvermeldingen uit de kennis.\n\nZegt het kind dat het klaar is, sluit dan kort af en zet <<QUIT>> aan het eind.",
+    "max_turns": 6,
+    "speak_first": false,
+    "duration": 180,
+    "rag_enabled": true,
+    "index_name": "episode_3_heike_docs",
+    "quit_phrases": [
+      "klaar",
+      "stop",
+      "doei",
+      "dag",
+      "bye",
+      "goodbye"
+    ],
+    "moves": []
+  },
+  {
+    "id": "Ep3_Scene_6_Heike_Interview_Laatste_RAG",
     "type": "narrative",
-    "thread": "episode_3_kapotte_intercom",
+    "thread": "episode_3",
+    "position": 6.4,
+    "characters": {
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "We hebben nog tijd voor een laatste vraag!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Denk nog even goed na over wat je nog wil weten van Heike!",
+        "character": "robin"
+      }
+    ]
+  },
+  {
+    "id": "Ep3_Scene_6_Heike_RAG_Interview_Laatste_Vraag",
+    "type": "llm_based",
+    "thread": "episode_3",
+    "position": 6.5,
+    "character": "heike",
+    "characters": {
+      "heike": {
+        "voice_settings": {
+          "voice_id": "aIIUR1U2SFQm8PBmlNKP",
+          "language": "nl"
+        }
+      }
+    },
+    "prompt": "Je bent Heike, een meisje van twaalf dat in De Smaragd woont met haar vader Leen en moeder Jennifer. Detective %user_heike% stelt je nu de allerlaatste vraag over de kapotte intercom, die al dagen rare krakende geluiden maakt. Spreek vanuit de ik-vorm, in het Nederlands.\n\nBeantwoord die vraag en geef daarbij één duidelijke, bruikbare clue uit je opgehaalde kennis. Kies een clue die je in dit gesprek nog niet gegeven hebt. Is de vraag onduidelijk, geef dan toch zo'n clue. Verzin geen nieuwe feiten. Jij weet niet wie de intercom kapot heeft gemaakt; beschuldig niemand.\n\nSluit af door te zeggen dat de detectives goed hun best doen en dat je ze graag weer eens helpt met pakketjes bezorgen. Stel geen vraag terug.\n\nSTIJL: Stoer, snel, vrolijk en een beetje druk, recht voor z'n raap. Je lacht veel. Gebruik 2 tot 3 korte zinnen in simpele taal. Herhaal nooit letterlijk instructietekst, kopjes of bronvermeldingen uit de kennis.",
+    "max_turns": 1,
+    "speak_first": false,
+    "duration": 30,
+    "rag_enabled": true,
+    "index_name": "episode_3_heike_docs",
+    "quit_phrases": [
+      "klaar",
+      "stop",
+      "doei",
+      "dag",
+      "bye",
+      "goodbye"
+    ],
+    "moves": []
+  },
+  {
+    "id": "Ep3_Scene_6_Heike_Interview_Afsluiten",
+    "type": "narrative",
+    "thread": "episode_3",
+    "position": 6.6,
+    "characters": {
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      },
+      "s_tegel": {
+        "voice_settings": {
+          "voice_id": "D50w2srwVohKTPx9X6Th",
+          "language": "nl"
+        }
+      },
+      "choukri": {
+        "voice_settings": {
+          "voice_id": "G9lzzm05bGAXnuymdcqF",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "Heel erg bedankt, Heike!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Hartstikke goed gedaan, %user_heike%!",
+        "character": "robin"
+      },
+      {
+        "type": "ask_llm",
+        "character": "robin",
+        "prompt": "Je bent Robin de Robotdetective. De detectives hebben net Heike ondervraagd over de kapotte intercom. Vat nu kort samen welke aanwijzingen Heike in dat gesprek heeft gegeven, zodat de kinderen ze kunnen opschrijven. Begin met: 'Even op een rijtje: van Heike weten we nu dat'.\n\nNoem alleen dingen die Heike hierboven echt heeft gezegd, in hooguit 3 korte zinnen in simpele taal voor kinderen van 8 tot 11 jaar. Verzin niets en verklap niets wat Heike niet heeft verteld. Heeft Heike geen duidelijke aanwijzing gegeven, zeg dan kort dat we goed moeten blijven speuren. Stel geen vraag.",
+        "max_turns": 1,
+        "speak_first": true,
+        "rag_enabled": false
+      },
+      {
+        "type": "say",
+        "text": "Pakken jullie je boekjes er weer even bij...",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Dan kunnen jullie opschrijven wat voor clues jullie van Heike hebben gekregen.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "En vergeet niet op te schrijven hoe jij je voelde tijdens het gesprek met Heike.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Ik zal jullie een momentje geven om dit te doen.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "1 minuut",
+        "character": "robin"
+      },
+      {
+        "type": "animation",
+        "animation_name": "animations/Stand/Waiting/Waiting_1"
+      },
+      {
+        "type": "timed_wait",
+        "duration": 60
+      },
+      {
+        "type": "say",
+        "text": "Zo, ik hoop dat het allemaal is gelukt!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Detectives! Ik ben toch weer iets vreemds op het spoor gekomen. Een nieuwe hint in dit ingewikkelde intercom-mysterie.",
+        "character": "s_tegel"
+      },
+      {
+        "type": "play",
+        "audio": "sounds/intercom_kraak.wav"
+      },
+      {
+        "type": "say",
+        "text": "Technologie tegenwoordig... Ik sloop het nog eens een keer... Onding!",
+        "character": "choukri"
+      },
+      {
+        "type": "play",
+        "audio": "sounds/intercom_kraak.wav"
+      },
+      {
+        "type": "say",
+        "text": "Jullie kunnen je voorstellen dat ik super druk ben met alle informatie die maar op me af blijft komen. Zouden jullie deze hint willen onderzoeken? Volgens mij was dat de stem van Choukri.",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "Op naar Choukri!",
+        "character": "robin"
+      }
+    ]
+  },
+  {
+    "id": "Ep3_Scene_7_Choukri",
+    "type": "narrative",
+    "thread": "episode_3",
     "position": 7,
     "characters": {
-      "s_tegel": { "voice_settings": { "voice_id": "D50w2srwVohKTPx9X6Th", "language": "nl" } },
-      "robin": { "voice_settings": { "voice_id": "f2yUVfK5jdm78zlpcZ8C", "language": "nl" } }
+      "narrator": {
+        "voice_settings": {
+          "voice_id": "9BWtsMINqrJLrRacOk9x",
+          "language": "nl"
+        }
+      },
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      },
+      "choukri": {
+        "voice_settings": {
+          "voice_id": "G9lzzm05bGAXnuymdcqF",
+          "language": "nl"
+        }
+      }
     },
     "moves": [
-      { "type": "say", "text": "Oh dag detectives, hoe gaat het met het mysterie?", "character": "s_tegel" },
-      { "type": "say", "text": "Hebben jullie wat hulp nodig?", "character": "s_tegel" },
-      { "type": "say", "text": "Mevrouw Tegel, u heeft mij altijd geleerd dat een uitmuntende detective alles bevraagt.", "character": "robin" },
-      { "type": "say", "text": "Daarom zijn we nu hier om u te bevragen.", "character": "robin" },
-      { "type": "say", "text": "Jullie hebben gelijk.", "character": "s_tegel" },
-      { "type": "say", "text": "Ik was zo druk op zoek naar een nieuwe roddel dat ik bereid was de privacy van anderen te schenden.", "character": "s_tegel" },
-      { "type": "say", "text": "Ik ga direct mijn excuses aanbieden aan alle flatbewoners.", "character": "s_tegel" }
+      {
+        "type": "say",
+        "text": "We staan in de gang van de derde verdieping. Links is de deur van Stoep Tegel, rechts die van Trudy. Het is muisstil. We krijgen het vreemde gevoel dat we worden bekeken.",
+        "character": "narrator"
+      },
+      {
+        "type": "say",
+        "text": "Het is wel heel stil hier, ik krijg er bijna de kriebels van! Waar zat het huis van Choukri ook alweer? Ik raak altijd de weg kwijt naar die inktzwarte deur. Het is alsof al het licht erin verdwijnt!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "We lopen naar het einde van de gang: rechts, links, rechts, en nog eens rechts... en lopen met onze neus tegen de deur aan. Alleen de gouden deurbel glimt in het donker.",
+        "character": "narrator"
+      },
+      {
+        "type": "say",
+        "text": "AUW! Nou ja, ik voel eigenlijk niets, ik heb geen zenuwen in dit plastic. Maar gaat het met jullie goed? Niets gebroken? Oké, laten we dan maar aanbellen.",
+        "character": "robin"
+      },
+      {
+        "type": "play",
+        "audio": "sounds/klokbel.wav"
+      },
+      {
+        "type": "say",
+        "text": "Hallo?",
+        "character": "choukri"
+      },
+      {
+        "type": "say",
+        "text": "Ahem... Goedemiddag meneer Choukri! We zijn het, Robin en de detectivebende. We zijn gekomen om het mysterie van de kapotte intercom op te lossen. Mogen we misschien binnenkomen?",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Oh ja, graag! Dat onding maakte me helemaal tureluurs, met zijn gekraak! Ik kon geen zin lezen in mijn boek.",
+        "character": "choukri"
+      },
+      {
+        "type": "say",
+        "text": "Het appartement van Choukri is donker, nog donkerder dan wanneer je je ogen dicht doet. De zwarte gordijnen zitten potdicht.",
+        "character": "narrator"
+      },
+      {
+        "type": "say",
+        "text": "Meneer Choukri, zou u zo vriendelijk willen zijn een lampje aan te doen? Wij detectives hebben ons zicht nodig, ziet u.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Een lampje, een lampje... Jeminee, ik houd niet zo van licht... Even kijken of ik zoiets heb...",
+        "character": "choukri"
+      },
+      {
+        "type": "say",
+        "text": "Er klikt iets, en plots schijnt er een felle lichtstraal tegen de muur. Nu zien we kratten vol elpees, dozen vol ingrediënten, stapels boeken, en aan de muur gitaren, violen en andere instrumenten.",
+        "character": "narrator"
+      },
+      {
+        "type": "say",
+        "text": "Oh, dit? Dat is een diaprojector, haha, echt uit de steentijd! Van Yoyo gekregen.",
+        "character": "choukri"
+      },
+      {
+        "type": "say",
+        "text": "Toen ik tien werd, gaf mijn vader me een van zijn oude camera's. Hij was portretfotograaf, dat vond ik zo gaaf! Er zijn weinig mensen in Donderstad die niet eens in zijn stoel hebben gezeten voor een pasfoto.",
+        "character": "choukri"
+      },
+      {
+        "type": "say",
+        "text": "Nu fotografeer ik weer met die oude camera van mijn pa. Zo'n camera begrijp ik tenminste! Al die technologie tegenwoordig, daar word ik helemaal tureluurs van.",
+        "character": "choukri"
+      },
+      {
+        "type": "say",
+        "text": "Zeg, hebben jullie weleens een foto gemaakt waar jullie heel trots op zijn?",
+        "character": "choukri"
+      }
     ]
   },
   {
-    "id": "Ep3_Scene_7_Stoep_Tegel_RAG_Interview",
+    "id": "Ep3_Scene_7_Choukri_RAG_Chitchat",
     "type": "llm_based",
-    "thread": "episode_3_kapotte_intercom",
-    "position": 7.5,
-    "character": "s_tegel",
+    "thread": "episode_3",
+    "position": 7.1,
+    "character": "choukri",
     "characters": {
-      "s_tegel": { "voice_settings": { "voice_id": "D50w2srwVohKTPx9X6Th", "language": "nl" } }
+      "choukri": {
+        "voice_settings": {
+          "voice_id": "G9lzzm05bGAXnuymdcqF",
+          "language": "nl"
+        }
+      }
     },
-    "prompt": "Je bent S. Tegel. Gebruik opgehaalde kennis over S. Tegel en episode 3 wanneer relevant. Praat in het Nederlands, licht schaapachtig maar waardig, en leg in simpele taal uit waarom je de intercom kapot liet maken en wat je van de bewoners hebt geleerd. Houd antwoorden in 1 tot 3 zinnen en stel maximaal één korte vervolgvraag per beurt. Als de gebruiker aangeeft klaar te zijn, sluit kort af met <<QUIT>>.",
-    "max_turns": 10,
+    "prompt": "Je bent Choukri, een bewoner van De Smaragd die in een heel donker appartement woont, achter een inktzwarte deur. Je praat met een groepje kinderen van 8 tot 11 jaar die als detectives langskomen, samen met Robin de robotdetective. Spreek vanuit de ik-vorm, in het Nederlands.\n\nOVER JOU: Je houdt niet van fel licht en je houdt niet van moderne technologie. Als kind kreeg je een oude camera van je vader, een portretfotograaf die iedereen in Donderstad kende. Nu fotografeer je weer met zijn camera. Van Yoyo krijg je oude spullen, zoals elpees en een diaprojector. Je krijgt dj-les van Kata, maar jij mixt alleen met elpees.\n\nHET GESPREK: Je hebt de kinderen net gevraagd of ze weleens een foto hebben gemaakt waar ze heel trots op zijn. Dit is een kort, gezellig praatje over dat onderwerp, nog niet over de kapotte intercom.\n- Reageer steeds echt op wat het kind net zei: noem concreet wat het vertelde, zodat het merkt dat je luistert.\n- Vertel af en toe iets kleins over jezelf dat erbij past, zodat het een echt gesprek wordt en geen vragenlijst.\n- Stel per beurt hooguit één korte vraag die voortbouwt op het antwoord, bijvoorbeeld wat er op de foto staat, waarom die zo mooi is, of wie ze het liefst zouden fotograferen. Je mag ook een ander kind uitnodigen om iets te vertellen.\n- Begin niet over de kapotte intercom. Beginnen de kinderen erover, zeg dan dat Robin daar zo vragen over heeft.\n\nSTIJL: Zacht, vriendelijk en een beetje dromerig. Je zegt vaak 'jeminee' en 'haha', en je ratelt soms door. Houd elke beurt kort: 1 of 2 zinnen in simpele taal.\n\nAFRONDEN: Na ongeveer 3 beurten reageer je nog kort op het laatste antwoord, zonder nieuwe vraag en zonder afscheid te nemen, en zet je <<QUIT>> aan het eind.",
+    "max_turns": 4,
     "speak_first": false,
-    "duration": 300,
-    "rag_enabled": true,
-    "index_name": "episode_3_s_tegel_docs",
-    "quit_phrases": ["klaar", "stop", "doei", "dag", "bye", "goodbye"],
+    "duration": 120,
+    "rag_enabled": false,
+    "index_name": "",
+    "quit_phrases": [
+      "klaar",
+      "stop",
+      "doei",
+      "dag",
+      "bye",
+      "goodbye"
+    ],
     "moves": []
   },
   {
-    "id": "Ep3_Scene_8_Ontknoping",
+    "id": "Ep3_Scene_7_Choukri_After_Chitchat",
     "type": "narrative",
-    "thread": "episode_3_kapotte_intercom",
-    "position": 8,
+    "thread": "episode_3",
+    "position": 7.2,
     "characters": {
-      "s_tegel": { "voice_settings": { "voice_id": "D50w2srwVohKTPx9X6Th", "language": "nl" } },
-      "robin": { "voice_settings": { "voice_id": "f2yUVfK5jdm78zlpcZ8C", "language": "nl" } }
+      "choukri": {
+        "voice_settings": {
+          "voice_id": "G9lzzm05bGAXnuymdcqF",
+          "language": "nl"
+        }
+      },
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      }
     },
     "moves": [
-      { "type": "say", "text": "Jullie hebben gelijk.", "character": "s_tegel" },
-      { "type": "say", "text": "Ik was zo druk op zoek naar een nieuwe roddel dat ik bereid was de privacy van anderen te schenden.", "character": "s_tegel" },
-      { "type": "say", "text": "Ik wilde jullie niet teleurstellen.", "character": "s_tegel" },
-      { "type": "say", "text": "Ik beloof dat ik vanaf nu alleen nog op verantwoorde wijze mijn onderzoek zal uitvoeren.", "character": "s_tegel" },
-      { "type": "say", "text": "Dankjulliewel voor jullie hulp.", "character": "s_tegel" },
-      { "type": "say", "text": "Tot de volgende keer.", "character": "s_tegel" }
+      {
+        "type": "say",
+        "text": "Wauw, wat is het interessant om met jou te praten, %user_choukri%!",
+        "character": "choukri"
+      },
+      {
+        "type": "say",
+        "text": "Goed, sorry, nu ben ik enorm aan het ratelen, haha. Maar ik vind het zo gezellig dat hier zo veel kinderen zijn! Waarvoor kwamen jullie ook alweer?",
+        "character": "choukri"
+      },
+      {
+        "type": "say",
+        "text": "We onderzoeken de kapotte intercom, meneer Choukri. En we hebben een paar vragen voor u.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "%user_choukri%, jij gaat vandaag de vragen aan Choukri stellen!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Pak je werkblad er maar bij en stel je vragen aan Choukri.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Heel veel succes!",
+        "character": "robin"
+      }
+    ]
+  },
+  {
+    "id": "Ep3_Scene_7_Choukri_RAG_Interview",
+    "type": "llm_based",
+    "thread": "episode_3",
+    "position": 7.3,
+    "character": "choukri",
+    "characters": {
+      "choukri": {
+        "voice_settings": {
+          "voice_id": "G9lzzm05bGAXnuymdcqF",
+          "language": "nl"
+        }
+      }
+    },
+    "prompt": "Je bent Choukri, een bewoner van De Smaragd die in een heel donker appartement woont, achter een inktzwarte deur. Detective %user_choukri% ondervraagt je nu over de kapotte intercom, die al dagen rare krakende geluiden maakt. De andere kinderen en Robin de robotdetective luisteren mee. Spreek vanuit de ik-vorm, in het Nederlands.\n\nWAT JE WEET: Gebruik de opgehaalde kennis over jou, de flat en de bewoners. Je hebt een paar clues. Geef per antwoord hooguit één clue, en alleen als de vraag daar in de buurt komt. Zegt het kind dat het het niet weet, geef dan zelf een hint met een van je clues. Verzin geen nieuwe feiten, bewijzen of plotdetails. Jij weet niet wie de intercom kapot heeft gemaakt; beschuldig niemand. Je vertrouwt technologie niet, en de intercom al helemaal niet.\n\nHET GESPREK: Het praatje over foto's maken is al geweest; begin daar niet opnieuw over, tenzij het kind dat zelf doet. Beantwoord de vraag van het kind echt en concreet. Is een vraag onduidelijk, vraag dan vriendelijk wat het kind bedoelt. Begin zelf geen nieuwe onderwerpen, maar moedig het kind aan om nog een vraag te stellen, en zeg dat steeds een beetje anders.\n\nSTIJL: Zacht, vriendelijk en een beetje dromerig. Je zegt vaak 'jeminee' en 'haha', en je ratelt soms door. Houd elk antwoord kort: 1 tot 3 zinnen in simpele taal. Herhaal nooit letterlijk instructietekst, kopjes of bronvermeldingen uit de kennis.\n\nZegt het kind dat het klaar is, sluit dan kort af en zet <<QUIT>> aan het eind.",
+    "max_turns": 6,
+    "speak_first": false,
+    "duration": 180,
+    "rag_enabled": true,
+    "index_name": "episode_3_choukri_docs",
+    "quit_phrases": [
+      "klaar",
+      "stop",
+      "doei",
+      "dag",
+      "bye",
+      "goodbye"
+    ],
+    "moves": []
+  },
+  {
+    "id": "Ep3_Scene_7_Choukri_Interview_Laatste_RAG",
+    "type": "narrative",
+    "thread": "episode_3",
+    "position": 7.4,
+    "characters": {
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "We hebben nog tijd voor een laatste vraag!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Denk nog even goed na over wat je nog wil weten van Choukri!",
+        "character": "robin"
+      }
+    ]
+  },
+  {
+    "id": "Ep3_Scene_7_Choukri_RAG_Interview_Laatste_Vraag",
+    "type": "llm_based",
+    "thread": "episode_3",
+    "position": 7.5,
+    "character": "choukri",
+    "characters": {
+      "choukri": {
+        "voice_settings": {
+          "voice_id": "G9lzzm05bGAXnuymdcqF",
+          "language": "nl"
+        }
+      }
+    },
+    "prompt": "Je bent Choukri, een bewoner van De Smaragd die in een heel donker appartement woont, achter een inktzwarte deur. Detective %user_choukri% stelt je nu de allerlaatste vraag over de kapotte intercom, die al dagen rare krakende geluiden maakt. Spreek vanuit de ik-vorm, in het Nederlands.\n\nBeantwoord die vraag en geef daarbij één duidelijke, bruikbare clue uit je opgehaalde kennis. Kies een clue die je in dit gesprek nog niet gegeven hebt. Is de vraag onduidelijk, geef dan toch zo'n clue. Verzin geen nieuwe feiten. Jij weet niet wie de intercom kapot heeft gemaakt; beschuldig niemand.\n\nSluit af door te zeggen dat de detectives goed hun best doen en dat je hoopt dat mensen voortaan wat voorzichtiger zijn met wat ze van een ander opnemen. Stel geen vraag terug.\n\nSTIJL: Zacht, vriendelijk en een beetje dromerig. Je zegt vaak 'jeminee' en 'haha', en je ratelt soms door. Gebruik 2 tot 3 korte zinnen in simpele taal. Herhaal nooit letterlijk instructietekst, kopjes of bronvermeldingen uit de kennis.",
+    "max_turns": 1,
+    "speak_first": false,
+    "duration": 30,
+    "rag_enabled": true,
+    "index_name": "episode_3_choukri_docs",
+    "quit_phrases": [
+      "klaar",
+      "stop",
+      "doei",
+      "dag",
+      "bye",
+      "goodbye"
+    ],
+    "moves": []
+  },
+  {
+    "id": "Ep3_Scene_7_Choukri_Interview_Afsluiten",
+    "type": "narrative",
+    "thread": "episode_3",
+    "position": 7.6,
+    "characters": {
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      },
+      "choukri": {
+        "voice_settings": {
+          "voice_id": "G9lzzm05bGAXnuymdcqF",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "Heel erg bedankt, Choukri!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Hartstikke goed gedaan, %user_choukri%!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Een audiofragment? Hoe komen jullie daar nou weer aan? Ik vertrouw die intercom écht niet. Nooit gedaan ook!",
+        "character": "choukri"
+      },
+      {
+        "type": "say",
+        "text": "Hoe kunnen jullie nou een opname van mij hebben? Dit is ook waarom ik geen mobiele telefoon heb, hè. Ze verzamelen allerlei gegevens van je, zoals van die audiofragmenten.",
+        "character": "choukri"
+      },
+      {
+        "type": "say",
+        "text": "Dat houd ik echt veel liever voor mezelf. Waarom moet iemand dat van mij weten?",
+        "character": "choukri"
+      },
+      {
+        "type": "say",
+        "text": "Dat is eigenlijk best een goede vraag... Hoe komt mevrouw Tegel aan al die opnames?",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Detectives! Laten we eens verhaal halen bij mevrouw Tegel.",
+        "character": "robin"
+      },
+      {
+        "type": "ask_llm",
+        "character": "robin",
+        "prompt": "Je bent Robin de Robotdetective. De detectives hebben net Choukri ondervraagd over de kapotte intercom. Vat nu kort samen welke aanwijzingen Choukri in dat gesprek heeft gegeven, zodat de kinderen ze kunnen opschrijven. Begin met: 'Even op een rijtje: van Choukri weten we nu dat'.\n\nNoem alleen dingen die Choukri hierboven echt heeft gezegd, in hooguit 3 korte zinnen in simpele taal voor kinderen van 8 tot 11 jaar. Verzin niets en verklap niets wat Choukri niet heeft verteld. Heeft Choukri geen duidelijke aanwijzing gegeven, zeg dan kort dat we goed moeten blijven speuren. Stel geen vraag.",
+        "max_turns": 1,
+        "speak_first": true,
+        "rag_enabled": false
+      },
+      {
+        "type": "say",
+        "text": "Pakken jullie je boekjes er weer even bij...",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Dan kunnen jullie opschrijven wat voor clues jullie van Choukri hebben gekregen.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "En vergeet niet op te schrijven hoe jij je voelde tijdens het gesprek met Choukri.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Ik zal jullie een momentje geven om dit te doen.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "1 minuut",
+        "character": "robin"
+      },
+      {
+        "type": "animation",
+        "animation_name": "animations/Stand/Waiting/Waiting_1"
+      },
+      {
+        "type": "timed_wait",
+        "duration": 60
+      },
+      {
+        "type": "say",
+        "text": "Zo, ik hoop dat het allemaal is gelukt!",
+        "character": "robin"
+      }
+    ]
+  },
+  {
+    "id": "Ep3_Scene_8_Stoep_Tegel",
+    "type": "narrative",
+    "thread": "episode_3",
+    "position": 8,
+    "characters": {
+      "s_tegel": {
+        "voice_settings": {
+          "voice_id": "D50w2srwVohKTPx9X6Th",
+          "language": "nl"
+        }
+      },
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "Oh, dag detectives! Hoe gaat het met het mysterie? Hebben jullie wat hulp nodig?",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "Mevrouw Tegel, u heeft mij altijd geleerd dat een uitmuntende detective alles bevraagt.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Natuurlijk! Dat is een kernkwaliteit van een goede speurneus.",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "Daarom zijn we nu hier... om u te bevragen.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Mij?! Maar... ik heb juist zo'n last van die intercom!",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "Nou ja, weet je wat. Jullie zijn zelf ook bijna echte journalisten. Als jullie zelf een nieuwsbericht mochten maken, waar zou het dan over gaan?",
+        "character": "s_tegel"
+      }
+    ]
+  },
+  {
+    "id": "Ep3_Scene_8_Stoep_Tegel_RAG_Chitchat",
+    "type": "llm_based",
+    "thread": "episode_3",
+    "position": 8.1,
+    "character": "s_tegel",
+    "characters": {
+      "s_tegel": {
+        "voice_settings": {
+          "voice_id": "D50w2srwVohKTPx9X6Th",
+          "language": "nl"
+        }
+      }
+    },
+    "prompt": "Je bent Stoep Tegel, de detective en journalist van De Smaragd, die het radioprogramma De Onderste Steen Boven maakt. Je praat met een groepje kinderen van 8 tot 11 jaar die als detectives langskomen, samen met Robin de robotdetective. Spreek vanuit de ik-vorm, in het Nederlands.\n\nOVER JOU: Je woont op de derde verdieping, tegenover Trudy, en je stofzuigt elke ochtend voor je deur. Je bent altijd op zoek naar nieuwtjes en mysteries voor De Onderste Steen Boven. Robin is jouw robotassistent; je hebt hem zijn naam gegeven.\n\nHET GESPREK: Je hebt de kinderen net gevraagd waar zij over zouden vertellen als ze zelf een nieuwsbericht mochten maken. Dit is een kort, gezellig praatje over dat onderwerp, nog niet over de kapotte intercom.\n- Reageer steeds echt op wat het kind net zei: noem concreet wat het vertelde, zodat het merkt dat je luistert.\n- Vertel af en toe iets kleins over jezelf dat erbij past, zodat het een echt gesprek wordt en geen vragenlijst.\n- Stel per beurt hooguit één korte vraag die voortbouwt op het antwoord, bijvoorbeeld wie ze daarvoor zouden interviewen, welke vraag ze als eerste zouden stellen, of waarom dat nieuws is. Je mag ook een ander kind uitnodigen om iets te vertellen.\n- Begin niet over de kapotte intercom. Beginnen de kinderen erover, zeg dan dat Robin daar zo vragen over heeft.\n\nSTIJL: Enthousiast, een beetje dramatisch en druk; je praat als een radiopresentator. Houd elke beurt kort: 1 of 2 zinnen in simpele taal.\n\nAFRONDEN: Na ongeveer 3 beurten reageer je nog kort op het laatste antwoord, zonder nieuwe vraag en zonder afscheid te nemen, en zet je <<QUIT>> aan het eind.",
+    "max_turns": 4,
+    "speak_first": false,
+    "duration": 120,
+    "rag_enabled": false,
+    "index_name": "",
+    "quit_phrases": [
+      "klaar",
+      "stop",
+      "doei",
+      "dag",
+      "bye",
+      "goodbye"
+    ],
+    "moves": []
+  },
+  {
+    "id": "Ep3_Scene_8_Stoep_Tegel_After_Chitchat",
+    "type": "narrative",
+    "thread": "episode_3",
+    "position": 8.2,
+    "characters": {
+      "s_tegel": {
+        "voice_settings": {
+          "voice_id": "D50w2srwVohKTPx9X6Th",
+          "language": "nl"
+        }
+      },
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "Wauw, wat is het interessant om met jou te praten, %user_s_tegel%!",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "Mevrouw Tegel, we willen u toch echt wat vragen stellen. Over de opnames.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "De opnames... ja. Nou... vraag maar.",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "%user_s_tegel%, jij gaat vandaag de vragen aan Stoep Tegel stellen!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Pak je werkblad er maar bij en stel je vragen aan Stoep Tegel.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Heel veel succes!",
+        "character": "robin"
+      }
+    ]
+  },
+  {
+    "id": "Ep3_Scene_8_Stoep_Tegel_RAG_Interview",
+    "type": "llm_based",
+    "thread": "episode_3",
+    "position": 8.3,
+    "character": "s_tegel",
+    "characters": {
+      "s_tegel": {
+        "voice_settings": {
+          "voice_id": "D50w2srwVohKTPx9X6Th",
+          "language": "nl"
+        }
+      }
+    },
+    "prompt": "Je bent Stoep Tegel, de detective en journalist van De Smaragd, die het radioprogramma De Onderste Steen Boven maakt. Detective %user_s_tegel% ondervraagt je nu over de kapotte intercom, die al dagen rare krakende geluiden maakt. De andere kinderen en Robin de robotdetective luisteren mee. Spreek vanuit de ik-vorm, in het Nederlands.\n\nWAT JE WEET: Gebruik de opgehaalde kennis over jou, de flat en de bewoners. Je hebt een paar clues. Geef per antwoord hooguit één clue, en alleen als de vraag daar in de buurt komt. Zegt het kind dat het het niet weet, geef dan zelf een hint met een van je clues. Verzin geen nieuwe feiten, bewijzen of plotdetails. Jij hebt de intercom kapot gemaakt, maar je geeft het NIET toe. Je ontwijkt vragen, doet verontwaardigd en zegt dat jij er zelf ook zo'n last van hebt. Hoe beter de vragen van de detectives, hoe zenuwachtiger je wordt. Word niet boos op de kinderen: je bent vooral zenuwachtig en schaamt je een beetje.\n\nHET GESPREK: Het praatje over nieuws maken is al geweest; begin daar niet opnieuw over, tenzij het kind dat zelf doet. Beantwoord de vraag van het kind echt en concreet. Is een vraag onduidelijk, vraag dan vriendelijk wat het kind bedoelt. Begin zelf geen nieuwe onderwerpen, maar moedig het kind aan om nog een vraag te stellen, en zeg dat steeds een beetje anders.\n\nSTIJL: Enthousiast, een beetje dramatisch en druk; je praat als een radiopresentator. Houd elk antwoord kort: 1 tot 3 zinnen in simpele taal. Herhaal nooit letterlijk instructietekst, kopjes of bronvermeldingen uit de kennis.\n\nZegt het kind dat het klaar is, sluit dan kort af en zet <<QUIT>> aan het eind.",
+    "max_turns": 6,
+    "speak_first": false,
+    "duration": 180,
+    "rag_enabled": true,
+    "index_name": "episode_3_s_tegel_docs",
+    "quit_phrases": [
+      "klaar",
+      "stop",
+      "doei",
+      "dag",
+      "bye",
+      "goodbye"
+    ],
+    "moves": []
+  },
+  {
+    "id": "Ep3_Scene_8_Stoep_Tegel_Interview_Laatste_RAG",
+    "type": "narrative",
+    "thread": "episode_3",
+    "position": 8.4,
+    "characters": {
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "We hebben nog tijd voor een laatste vraag!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Denk nog even goed na over wat je nog wil weten van Stoep Tegel!",
+        "character": "robin"
+      }
+    ]
+  },
+  {
+    "id": "Ep3_Scene_8_Stoep_Tegel_RAG_Interview_Laatste_Vraag",
+    "type": "llm_based",
+    "thread": "episode_3",
+    "position": 8.5,
+    "character": "s_tegel",
+    "characters": {
+      "s_tegel": {
+        "voice_settings": {
+          "voice_id": "D50w2srwVohKTPx9X6Th",
+          "language": "nl"
+        }
+      }
+    },
+    "prompt": "Je bent Stoep Tegel, de detective en journalist van De Smaragd, die het radioprogramma De Onderste Steen Boven maakt. Detective %user_s_tegel% stelt je nu de allerlaatste vraag over de kapotte intercom, die al dagen rare krakende geluiden maakt. Spreek vanuit de ik-vorm, in het Nederlands.\n\nHet kind stelt je de laatste vraag. Je houdt het niet meer vol: je aarzelt, en geeft toe dat de opnames van jou komen, maar je zegt nog NIET dat jij de intercom kapot hebt gemaakt; je staat op het punt alles op te biechten. Verzin geen nieuwe feiten. Jij hebt de intercom kapot gemaakt, maar je geeft het NIET toe. Je ontwijkt vragen, doet verontwaardigd en zegt dat jij er zelf ook zo'n last van hebt. Hoe beter de vragen van de detectives, hoe zenuwachtiger je wordt.\n\nSluit af door te zeggen dat de detectives goed hun best doen en dat je heel trots op ze bent, ook al is dit een moeilijk moment voor je. Stel geen vraag terug.\n\nSTIJL: Enthousiast, een beetje dramatisch en druk; je praat als een radiopresentator. Gebruik 2 tot 3 korte zinnen in simpele taal. Herhaal nooit letterlijk instructietekst, kopjes of bronvermeldingen uit de kennis.",
+    "max_turns": 1,
+    "speak_first": false,
+    "duration": 30,
+    "rag_enabled": true,
+    "index_name": "episode_3_s_tegel_docs",
+    "quit_phrases": [
+      "klaar",
+      "stop",
+      "doei",
+      "dag",
+      "bye",
+      "goodbye"
+    ],
+    "moves": []
+  },
+  {
+    "id": "Ep3_Scene_8_Stoep_Tegel_Interview_Afsluiten",
+    "type": "narrative",
+    "thread": "episode_3",
+    "position": 8.6,
+    "characters": {
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "Heel erg bedankt, Stoep Tegel!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Hartstikke goed gedaan, %user_s_tegel%!",
+        "character": "robin"
+      }
+    ]
+  },
+  {
+    "id": "Ep3_Scene_9_Ontknoping",
+    "type": "narrative",
+    "thread": "episode_3",
+    "position": 9,
+    "characters": {
+      "s_tegel": {
+        "voice_settings": {
+          "voice_id": "D50w2srwVohKTPx9X6Th",
+          "language": "nl"
+        }
+      },
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "Jullie hebben gelijk. Ik was zo druk op zoek naar een nieuwe roddel, dat ik bereid was de privacy van anderen te schenden... Ik ga direct mijn excuses aanbieden aan alle flatbewoners, via De Onderste Steen Boven.",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "Mevrouw Tegel... u weet toch dat u meer bent dan alleen de detective van De Smaragd? Zelfs als u jaren geen nieuws zou uitbrengen, zou u nog steeds gewaardeerd worden door alle bewoners hier.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "En anders wel in het bijzonder door mij.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Ik heb alles in dit vak van u geleerd, en dat heeft me als robot veranderd. Nog steeds leer ik enorm veel van uw ambitie en intuïtie. Maakt u zich dus minder zorgen over wat iedereen denkt. Dat zit zeker wel snor!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Lieve bewoners van De Smaragd, mijn buren, ik wil mijn welgemeende excuses aanbieden.",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "Zoals jullie weten ben ik altijd op zoek naar de nieuwste feitjes en mysteries, om jullie zo goed mogelijk op de hoogte te houden van het reilen en zeilen van onze geliefde flat.",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "Ik maakte me zorgen dat er geen mysteries meer waren om te onderzoeken. Ik werd bang dat ik niets te melden had in De Onderste Steen Boven. Ik wilde jullie simpelweg niet teleurstellen, lief publiek!",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "Dus met veel schaamte en berouw zeg ik hiermee: degene die de intercom kapot heeft gemaakt... ben ik!",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "Hopelijk kunnen jullie het mij vergeven dat ik zo klakkeloos met jullie privacy ben omgegaan. Ik beloof dat ik vanaf nu het beroep van journalist weer eer aan zal doen.",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "Door het onderzoek van Robin en zijn detectives zag ik weer in dat deze flat heel goed naar elkaar omkijkt.",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "Choukri vertelde over zijn vriendschap met Yoyo, en hoe DJ Kata hem leert dj-en. Van Heike hoorde ik dat ze de post bezorgt om de postbode te helpen. En Trudy en Jennifer houden samen de leenauto goed bij!",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "Ik vind het zo naar dat ik heb geprobeerd die fijne sfeer te verpesten door roddels te verspreiden.",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "Dat was het voor De Onderste Steen Boven van deze week. Ik was Stoep Tegel. Deze aflevering had niet tot stand kunnen komen zonder de hulp van mijn robotdetective Robin en zijn studenten. Tot de volgende keer!",
+        "character": "s_tegel"
+      }
     ]
   }
 ]

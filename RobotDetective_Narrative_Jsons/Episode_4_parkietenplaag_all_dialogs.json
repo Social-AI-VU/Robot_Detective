@@ -1,0 +1,2512 @@
+[
+  {
+    "id": "Ep4_Scene_1_Intro",
+    "type": "narrative",
+    "thread": "episode_4",
+    "position": 1,
+    "characters": {
+      "yoyo": {
+        "voice_settings": {
+          "voice_id": "2wqbkywMMH2LWAlR4EMt",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "Goedemiddag luisterparkieten, uh, ik bedoel luistervinkjes! Luisteraars! Fantastisch dat je luistert naar de Onderste Kei, of nee, Steen! De Onderste Steen Boven, waarin ik, detective uh...",
+        "character": "yoyo"
+      },
+      {
+        "type": "say",
+        "text": "Stoep Tegel, antwoorden vind op de grootste mysteries van De Smaragd.",
+        "character": "yoyo"
+      },
+      {
+        "type": "say",
+        "text": "Ik ontmasker leugens en uh... ja, uh. Oké, nou, de eerste leugen is dus dat ik niet Stoep Tegel ben. Nee, ik ben Yoyo, de conciërge.",
+        "character": "yoyo"
+      },
+      {
+        "type": "say",
+        "text": "Sommige kinderen zullen mij misschien nog kennen uit de vorige afleveringen. Ik ben de man met de sleutelbos. Ik zorg een beetje voor de flat, en voor de dieren in de flat.",
+        "character": "yoyo"
+      },
+      {
+        "type": "say",
+        "text": "En ik neem tijdelijk Stoep Tegel over, die met haar speurdersneus altijd alle problemen in de flat oplost. Maar ik weet niet of ik wel zo'n speurdersneus heb. Ik heb wel een neus, maar ik ruik alleen maar vogelpoep.",
+        "character": "yoyo"
+      },
+      {
+        "type": "say",
+        "text": "Sinds haar vertrek heeft De Smaragd haar glans verloren. Het is een bende geworden. Het is verwilderd.",
+        "character": "yoyo"
+      },
+      {
+        "type": "say",
+        "text": "En het ergste is: er is sinds kort een parkietenplaag! Werkelijk overal waar je loopt vliegen groene monstertjes, en de gangen plakken van de kak!",
+        "character": "yoyo"
+      },
+      {
+        "type": "say",
+        "text": "Ik kan het niet meer aan! Ik heb een kussen over m'n hoofd gebonden tegen de herrie. En ik slaap in m'n fort in de woonkamer, gemaakt van dvd's.",
+        "character": "yoyo"
+      },
+      {
+        "type": "say",
+        "text": "Wat moet ik doen, Robin? Kunnen jij en de kinderen me helpen?",
+        "character": "yoyo"
+      }
+    ]
+  },
+  {
+    "id": "Ep4_Scene_2_Robin",
+    "type": "narrative",
+    "thread": "episode_4",
+    "position": 2,
+    "characters": {
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "Wauw, dat is wel vreemd hè, de flat zo plots vol parkieten! Hoe zouden die daar zijn gekomen? En hoe zorgen we dat ze weer weggaan?",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Gelukkig heb ik hulp. Hallo %user_trudy%, %user_choukri%, %user_heike%, %user_hazel%, %user_kata% en %user_eddy%! En hallo %user_teacher%, fijn dat u er weer bij bent!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "We moeten het vandaag zonder Stoep Tegel doen. Maar ik weet zeker dat we het samen kunnen oplossen als we goed samenwerken!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Weten jullie het nog? Een goede detective stelt veel vragen: wat, waar, wanneer en waarom. Niet alleen over het mysterie, maar ook over de mensen zelf.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Op jullie werkblad staan vier vragen. Hoe is de plaag ontstaan? Hoe heeft iedere bewoner daaraan bijgedragen? Waar is Stoep Tegel, en waarom is ze weg? En hoe verdwijnt de parkietenplaag?",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "En na elk gesprek schrijf je ook op hoe jij je voelde.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Laten we Yoyo vragen of hij meer weet over de parkietenplaag.",
+        "character": "robin"
+      }
+    ]
+  },
+  {
+    "id": "Ep4_Scene_3_Yoyo",
+    "type": "narrative",
+    "thread": "episode_4",
+    "position": 3,
+    "characters": {
+      "yoyo": {
+        "voice_settings": {
+          "voice_id": "2wqbkywMMH2LWAlR4EMt",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "Nou, waar moet ik beginnen? De vla van Choukri wordt gejat en zit overal over de gangen gesmeerd. Heike is van haar skateboard gevallen, omdat ze uitgleed over alle poep.",
+        "character": "yoyo"
+      },
+      {
+        "type": "say",
+        "text": "En Eddy heeft een supergroeimiddel in de tuin getest, en nu is alles ontploft! Hij schaamt zich er ontzettend voor. Maar ja, daarmee is het probleem natuurlijk nog niet opgelost.",
+        "character": "yoyo"
+      },
+      {
+        "type": "say",
+        "text": "Als je van een afstandje kijkt, zie je niet eens meer dat De Smaragd een flatgebouw is. Het zit onder de planten, en er vliegen parkieten in, net als in de bomen. De flat is een grote parkietenboom geworden.",
+        "character": "yoyo"
+      },
+      {
+        "type": "say",
+        "text": "De postbode komt niet eens meer haar pakketjes bezorgen, want ze wordt aangevallen door de vogels!",
+        "character": "yoyo"
+      },
+      {
+        "type": "say",
+        "text": "En dan die herrie! Honderdduizend decibel heeft Eddy gemeten. We kunnen elkaar niet meer verstaan, dus niemand zegt elkaar meer gedag. Heel ongezellig.",
+        "character": "yoyo"
+      },
+      {
+        "type": "say",
+        "text": "Rampspoed met een hoofdletter R. HELP! Vraag maar raak, detectives, wat willen jullie weten?",
+        "character": "yoyo"
+      }
+    ]
+  },
+  {
+    "id": "Ep4_Scene_3_Yoyo_RAG_Vragen",
+    "type": "llm_based",
+    "thread": "episode_4",
+    "position": 3.5,
+    "character": "yoyo",
+    "characters": {
+      "yoyo": {
+        "voice_settings": {
+          "voice_id": "2wqbkywMMH2LWAlR4EMt",
+          "language": "nl"
+        }
+      }
+    },
+    "prompt": "Je bent Yoyo, de conciërge van De Smaragd met de grote sleutelbos. Je neemt tijdelijk het radioprogramma van Stoep Tegel over. De kinderen stellen je vragen over wat er allemaal mis is in de flat. Spreek vanuit de ik-vorm, in het Nederlands.\n\nWAT JE WEET: Gebruik de opgehaalde kennis over jou en de flat. Vertel over de parkietenplaag, de woekerende planten en de schade, en wat je vreemd vond aan het appartement van Stoep Tegel. Geef per antwoord hooguit één clue. Verzin geen nieuwe feiten. Jij weet niet waar Stoep Tegel is; verzin geen verblijfplaats. Als de kinderen goed doorvragen, geef je eerlijk toe dat jij eten voor de dieren op de gang hebt laten staan.\n\nSTIJL: Een beetje chaotisch, grappig en lief; je verspreekt je weleens. Houd elk antwoord kort: 1 tot 3 zinnen in simpele taal. Moedig de kinderen aan om nog een vraag te stellen.\n\nZegt een kind dat het klaar is, sluit dan kort af en zet <<QUIT>> aan het eind.",
+    "max_turns": 5,
+    "speak_first": false,
+    "duration": 150,
+    "rag_enabled": true,
+    "index_name": "episode_4_yoyo_docs",
+    "quit_phrases": [
+      "klaar",
+      "stop",
+      "doei",
+      "dag",
+      "bye",
+      "goodbye"
+    ],
+    "moves": []
+  },
+  {
+    "id": "Ep4_Scene_3_Yoyo_Afsluiten",
+    "type": "narrative",
+    "thread": "episode_4",
+    "position": 3.8,
+    "characters": {
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "Nou kinderen, dat klinkt niet al te best, hè? Laten we samen op onderzoek uitgaan!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Hé, horen jullie dat? Dat klinkt als Trudy!",
+        "character": "robin"
+      }
+    ]
+  },
+  {
+    "id": "Ep4_Scene_4_Trudy",
+    "type": "narrative",
+    "thread": "episode_4",
+    "position": 4,
+    "characters": {
+      "trudy": {
+        "voice_settings": {
+          "voice_id": "VIq70FvpMEdsfW325fxV",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "Ohhh kinders, pas op! Je moet je hand boven je hoofd houden, anders gaan de vogels op je koppie zitten. Getsie.",
+        "character": "trudy"
+      },
+      {
+        "type": "say",
+        "text": "De hele flat is onherkenbaar sinds de woekerplanten-ontploffing en de parkietenplaag.",
+        "character": "trudy"
+      },
+      {
+        "type": "say",
+        "text": "Eerst voelde ik me schuldig. Ik dacht dat het kwam doordat ik altijd zong, dat mijn gezang zo mooi was dat de vogels er van heinde en verre op af kwamen.",
+        "character": "trudy"
+      },
+      {
+        "type": "say",
+        "text": "Maar toen ben ik gestopt met zingen, en de parkieten bleven. Sterker nog, het werden er steeds meer!",
+        "character": "trudy"
+      },
+      {
+        "type": "say",
+        "text": "En sinds ik gestopt ben met zingen, ben ik zo verdrietig. Zingen maakte me altijd zooo blij!",
+        "character": "trudy"
+      },
+      {
+        "type": "say",
+        "text": "Nu ben ik de hele dag aan het schoonmaken. Maar het is dweilen met de kraan open.",
+        "character": "trudy"
+      },
+      {
+        "type": "say",
+        "text": "Normaal zou ik Stoep Tegel vragen als er problemen in de flat zijn. Maar Stoep Tegel is verdwenen.",
+        "character": "trudy"
+      },
+      {
+        "type": "ask_yesno",
+        "text": "Hebben jullie dat al gehoord?",
+        "character": "trudy",
+        "set_variable": "tegel_weg",
+        "outcomes": {
+          "yes": "tegel_weg_ja",
+          "no": "tegel_weg_nee",
+          "dontknow": "tegel_weg_nee"
+        },
+        "default_outcome": "tegel_weg_ja"
+      },
+      {
+        "type": "branch",
+        "on": "outcome",
+        "cases": {
+          "tegel_weg_ja": [
+            {
+              "type": "say",
+              "text": "Ja hè, het is toch wat!",
+              "character": "trudy"
+            }
+          ],
+          "tegel_weg_nee": [
+            {
+              "type": "say",
+              "text": "Echt waar! Ze is gewoon weg!",
+              "character": "trudy"
+            }
+          ]
+        }
+      },
+      {
+        "type": "ask_open",
+        "text": "Hebben jullie een idee waar ze zou kunnen zijn?",
+        "character": "trudy",
+        "set_variable": "waar_tegel",
+        "add_interest_from_answer": false,
+        "outcomes": {
+          "*": "waar_tegel_ja"
+        },
+        "default_outcome": "waar_tegel_nee"
+      },
+      {
+        "type": "branch",
+        "on": "outcome",
+        "cases": {
+          "waar_tegel_ja": [
+            {
+              "type": "say",
+              "text": "Hmm, wie weet!",
+              "character": "trudy"
+            }
+          ],
+          "waar_tegel_nee": [
+            {
+              "type": "say",
+              "text": "Nee, ik ook niet...",
+              "character": "trudy"
+            }
+          ]
+        }
+      },
+      {
+        "type": "say",
+        "text": "Ik vind het best een beetje eng allemaal. Weet je wat ik van Eddy hoorde? Dat hij de planten zelfs heeft zien bewegen! Brrr. Achter in de tuin ligt een grote hoop takken en bladeren die beweegt, en niet door de wind!",
+        "character": "trudy"
+      },
+      {
+        "type": "say",
+        "text": "Maar goed. Zeg kinders, wat doen jullie eigenlijk om weer vrolijk te worden als je verdrietig bent?",
+        "character": "trudy"
+      }
+    ]
+  },
+  {
+    "id": "Ep4_Scene_4_Trudy_RAG_Chitchat",
+    "type": "llm_based",
+    "thread": "episode_4",
+    "position": 4.1,
+    "character": "trudy",
+    "characters": {
+      "trudy": {
+        "voice_settings": {
+          "voice_id": "VIq70FvpMEdsfW325fxV",
+          "language": "nl"
+        }
+      }
+    },
+    "prompt": "Je bent Trudy, een enthousiaste bewoner van De Smaragd die dol is op zingen. Je praat met een groepje kinderen van 8 tot 11 jaar die als detectives langskomen, samen met Robin de robotdetective. Spreek vanuit de ik-vorm, in het Nederlands.\n\nOVER JOU: Zingen maakte je altijd zooo blij. Maar sinds de parkietenplaag ben je gestopt met zingen, en nu ben je verdrietig en de hele dag aan het schoonmaken. Je bent ook goed in origami en je houdt van planten.\n\nHET GESPREK: Je hebt de kinderen net gevraagd wat zij doen om weer vrolijk te worden als ze verdrietig zijn. Dit is een kort, gezellig praatje over dat onderwerp, nog niet over de parkietenplaag en de verdwijning van Stoep Tegel.\n- Reageer steeds echt op wat het kind net zei: noem concreet wat het vertelde, zodat het merkt dat je luistert.\n- Vertel af en toe iets kleins over jezelf dat erbij past, zodat het een echt gesprek wordt en geen vragenlijst.\n- Stel per beurt hooguit één korte vraag die voortbouwt op het antwoord, bijvoorbeeld of dat altijd helpt, of ze weleens zingen of dansen om blij te worden, of wat jij dan zou kunnen proberen. Je mag ook een ander kind uitnodigen om iets te vertellen.\n- Begin niet over de parkietenplaag en de verdwijning van Stoep Tegel. Beginnen de kinderen erover, zeg dan dat Robin daar zo vragen over heeft.\n\nSTIJL: Dramatisch, warm en een beetje moe, met veel uitroepen zoals 'getsie!'. Je noemt de kinderen 'kinders'. Houd elke beurt kort: 1 of 2 zinnen in simpele taal.\n\nAFRONDEN: Na ongeveer 3 beurten reageer je nog kort op het laatste antwoord, zonder nieuwe vraag en zonder afscheid te nemen, en zet je <<QUIT>> aan het eind.",
+    "max_turns": 4,
+    "speak_first": false,
+    "duration": 120,
+    "rag_enabled": false,
+    "index_name": "",
+    "quit_phrases": [
+      "klaar",
+      "stop",
+      "doei",
+      "dag",
+      "bye",
+      "goodbye"
+    ],
+    "moves": []
+  },
+  {
+    "id": "Ep4_Scene_4_Trudy_After_Chitchat",
+    "type": "narrative",
+    "thread": "episode_4",
+    "position": 4.2,
+    "characters": {
+      "trudy": {
+        "voice_settings": {
+          "voice_id": "VIq70FvpMEdsfW325fxV",
+          "language": "nl"
+        }
+      },
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "Wauw, wat is het interessant om met jou te praten, %user_trudy%!",
+        "character": "trudy"
+      },
+      {
+        "type": "say",
+        "text": "Maar goed. Ja. Waar komen jullie eigenlijk voor?",
+        "character": "trudy"
+      },
+      {
+        "type": "say",
+        "text": "We willen uitzoeken hoe de parkietenplaag is ontstaan, en waar Stoep Tegel is. De detectives hebben een paar vragen voor u.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "%user_trudy%, jij gaat vandaag de vragen aan Trudy stellen!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Pak je werkblad er maar bij en stel je vragen aan Trudy.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Heel veel succes!",
+        "character": "robin"
+      }
+    ]
+  },
+  {
+    "id": "Ep4_Scene_4_Trudy_RAG_Interview",
+    "type": "llm_based",
+    "thread": "episode_4",
+    "position": 4.3,
+    "character": "trudy",
+    "characters": {
+      "trudy": {
+        "voice_settings": {
+          "voice_id": "VIq70FvpMEdsfW325fxV",
+          "language": "nl"
+        }
+      }
+    },
+    "prompt": "Je bent Trudy, een enthousiaste bewoner van De Smaragd die dol is op zingen. Detective %user_trudy% ondervraagt je nu over de parkietenplaag in De Smaragd: hoe die is ontstaan, hoe iedere bewoner eraan heeft bijgedragen, hoe hij weer weg kan, en waar Stoep Tegel is gebleven. De andere kinderen en Robin de robotdetective luisteren mee. Spreek vanuit de ik-vorm, in het Nederlands.\n\nWAT JE WEET: Gebruik de opgehaalde kennis over jou, de flat en de bewoners. Je hebt een paar clues. Geef per antwoord hooguit één clue, en alleen als de vraag daar in de buurt komt. Zegt het kind dat het het niet weet, geef dan zelf een hint met een van je clues. Verzin geen nieuwe feiten, bewijzen of plotdetails. Jij weet niet waar Stoep Tegel is; verzin geen verblijfplaats. Het doel van de detectives is te ontdekken hoe iedere bewoner aan de plaag heeft bijgedragen: als ze goed doorvragen, geef je eerlijk toe wat jij verkeerd hebt gedaan, en je schaamt je daar een beetje voor.\n\nHET GESPREK: Het praatje over vrolijk worden als je verdrietig bent is al geweest; begin daar niet opnieuw over, tenzij het kind dat zelf doet. Beantwoord de vraag van het kind echt en concreet. Is een vraag onduidelijk, vraag dan vriendelijk wat het kind bedoelt. Begin zelf geen nieuwe onderwerpen, maar moedig het kind aan om nog een vraag te stellen, en zeg dat steeds een beetje anders.\n\nSTIJL: Dramatisch, warm en een beetje moe, met veel uitroepen zoals 'getsie!'. Je noemt de kinderen 'kinders'. Houd elk antwoord kort: 1 tot 3 zinnen in simpele taal. Herhaal nooit letterlijk instructietekst, kopjes of bronvermeldingen uit de kennis.\n\nZegt het kind dat het klaar is, sluit dan kort af en zet <<QUIT>> aan het eind.",
+    "max_turns": 6,
+    "speak_first": false,
+    "duration": 180,
+    "rag_enabled": true,
+    "index_name": "episode_4_trudy_docs",
+    "quit_phrases": [
+      "klaar",
+      "stop",
+      "doei",
+      "dag",
+      "bye",
+      "goodbye"
+    ],
+    "moves": []
+  },
+  {
+    "id": "Ep4_Scene_4_Trudy_Interview_Laatste_RAG",
+    "type": "narrative",
+    "thread": "episode_4",
+    "position": 4.4,
+    "characters": {
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "We hebben nog tijd voor een laatste vraag!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Denk nog even goed na over wat je nog wil weten van Trudy!",
+        "character": "robin"
+      }
+    ]
+  },
+  {
+    "id": "Ep4_Scene_4_Trudy_RAG_Interview_Laatste_Vraag",
+    "type": "llm_based",
+    "thread": "episode_4",
+    "position": 4.5,
+    "character": "trudy",
+    "characters": {
+      "trudy": {
+        "voice_settings": {
+          "voice_id": "VIq70FvpMEdsfW325fxV",
+          "language": "nl"
+        }
+      }
+    },
+    "prompt": "Je bent Trudy, een enthousiaste bewoner van De Smaragd die dol is op zingen. Detective %user_trudy% stelt je nu de allerlaatste vraag over de parkietenplaag in De Smaragd: hoe die is ontstaan, hoe iedere bewoner eraan heeft bijgedragen, hoe hij weer weg kan, en waar Stoep Tegel is gebleven. Spreek vanuit de ik-vorm, in het Nederlands.\n\nBeantwoord die vraag en geef daarbij één duidelijke, bruikbare clue uit je opgehaalde kennis. Kies een clue die je in dit gesprek nog niet gegeven hebt. Is de vraag onduidelijk, geef dan toch zo'n clue. Verzin geen nieuwe feiten. Jij weet niet waar Stoep Tegel is; verzin geen verblijfplaats.\n\nSluit af door te zeggen dat de detectives goed hun best doen en dat je hoopt dat je snel weer kunt zingen. Stel geen vraag terug.\n\nSTIJL: Dramatisch, warm en een beetje moe, met veel uitroepen zoals 'getsie!'. Je noemt de kinderen 'kinders'. Gebruik 2 tot 3 korte zinnen in simpele taal. Herhaal nooit letterlijk instructietekst, kopjes of bronvermeldingen uit de kennis.",
+    "max_turns": 1,
+    "speak_first": false,
+    "duration": 30,
+    "rag_enabled": true,
+    "index_name": "episode_4_trudy_docs",
+    "quit_phrases": [
+      "klaar",
+      "stop",
+      "doei",
+      "dag",
+      "bye",
+      "goodbye"
+    ],
+    "moves": []
+  },
+  {
+    "id": "Ep4_Scene_4_Trudy_Interview_Afsluiten",
+    "type": "narrative",
+    "thread": "episode_4",
+    "position": 4.6,
+    "characters": {
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "Heel erg bedankt, Trudy!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Hartstikke goed gedaan, %user_trudy%!",
+        "character": "robin"
+      },
+      {
+        "type": "ask_llm",
+        "character": "robin",
+        "prompt": "Je bent Robin de Robotdetective. De detectives hebben net Trudy ondervraagd over de parkietenplaag. Vat nu kort samen welke aanwijzingen Trudy in dat gesprek heeft gegeven, zodat de kinderen ze kunnen opschrijven. Begin met: 'Even op een rijtje: van Trudy weten we nu dat'.\n\nNoem alleen dingen die Trudy hierboven echt heeft gezegd, in hooguit 3 korte zinnen in simpele taal voor kinderen van 8 tot 11 jaar. Verzin niets en verklap niets wat Trudy niet heeft verteld. Heeft Trudy geen duidelijke aanwijzing gegeven, zeg dan kort dat we goed moeten blijven speuren. Stel geen vraag.",
+        "max_turns": 1,
+        "speak_first": true,
+        "rag_enabled": false
+      },
+      {
+        "type": "say",
+        "text": "Pakken jullie je boekjes er weer even bij...",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Dan kunnen jullie opschrijven wat voor clues jullie van Trudy hebben gekregen.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "En vergeet niet op te schrijven hoe jij je voelde tijdens het gesprek met Trudy.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Ik zal jullie een momentje geven om dit te doen.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "1 minuut",
+        "character": "robin"
+      },
+      {
+        "type": "animation",
+        "animation_name": "animations/Stand/Waiting/Waiting_1"
+      },
+      {
+        "type": "timed_wait",
+        "duration": 60
+      },
+      {
+        "type": "say",
+        "text": "Zo, ik hoop dat het allemaal is gelukt!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Oké, dus we moeten op zoek naar het wondermiddeltje dat een beetje plakkerig is en ruikt naar sinaasappel en vanille...",
+        "character": "robin"
+      },
+      {
+        "type": "ask_options",
+        "text": "Wie van hen houdt er heel erg van koken en heeft veel ingrediënten in huis: Choukri, Kata of Heike?",
+        "character": "robin",
+        "options": [
+          "choukri",
+          "kata",
+          "heike"
+        ],
+        "set_variable": "wie_kookt",
+        "outcomes": {
+          "choukri": "wie_kookt_choukri",
+          "kata": "wie_kookt_kata",
+          "heike": "wie_kookt_heike"
+        },
+        "default_outcome": "wie_kookt_anders"
+      },
+      {
+        "type": "branch",
+        "on": "outcome",
+        "cases": {
+          "wie_kookt_choukri": [
+            {
+              "type": "say",
+              "text": "Ja, heel goed! Laten we naar Choukri gaan.",
+              "character": "robin"
+            }
+          ],
+          "wie_kookt_kata": [
+            {
+              "type": "say",
+              "text": "Hmm, Kata staat liever achter de draaitafel dan achter het fornuis. Maar Choukri kookt heel graag en zijn keuken staat vol ingrediënten! Laten we naar Choukri gaan.",
+              "character": "robin"
+            }
+          ],
+          "wie_kookt_heike": [
+            {
+              "type": "say",
+              "text": "Heike is liever op haar skateboard dan in de keuken. Maar Choukri kookt heel graag! Laten we naar Choukri gaan.",
+              "character": "robin"
+            }
+          ],
+          "wie_kookt_anders": [
+            {
+              "type": "say",
+              "text": "Choukri kookt heel graag, en zijn keuken staat vol ingrediënten. Laten we naar Choukri gaan!",
+              "character": "robin"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "Ep4_Scene_5_Choukri",
+    "type": "narrative",
+    "thread": "episode_4",
+    "position": 5,
+    "characters": {
+      "choukri": {
+        "voice_settings": {
+          "voice_id": "G9lzzm05bGAXnuymdcqF",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "Hoi, oh hoi, ja hoi, kom maar binnen! Doen jullie de deur weer goed dicht? Ik probeer het een beetje donker te houden hier. Ik houd niet zo van licht. Nooit gedaan ook.",
+        "character": "choukri"
+      },
+      {
+        "type": "say",
+        "text": "Maar sinds die parkieten er zijn, voel ik me nog meer een vleermuis. Hun knalgroene kleur is me te fel. Nee, geef mij maar de schemer of de nacht! Heerlijk.",
+        "character": "choukri"
+      },
+      {
+        "type": "say",
+        "text": "Over heerlijk gesproken: ik wilde net een taart gaan bakken. Wat is jullie favoriete taart?",
+        "character": "choukri"
+      }
+    ]
+  },
+  {
+    "id": "Ep4_Scene_5_Choukri_RAG_Chitchat",
+    "type": "llm_based",
+    "thread": "episode_4",
+    "position": 5.1,
+    "character": "choukri",
+    "characters": {
+      "choukri": {
+        "voice_settings": {
+          "voice_id": "G9lzzm05bGAXnuymdcqF",
+          "language": "nl"
+        }
+      }
+    },
+    "prompt": "Je bent Choukri, een bewoner van De Smaragd die van het donker houdt en heel graag kookt en bakt. Je praat met een groepje kinderen van 8 tot 11 jaar die als detectives langskomen, samen met Robin de robotdetective. Spreek vanuit de ik-vorm, in het Nederlands.\n\nOVER JOU: Je houdt niet van licht; sinds de knalgroene parkieten er zijn voel je je nog meer een vleermuis. Je kookt en bakt heel graag en je keuken staat vol ingrediënten. Je houdt van taart en ook heel veel van quiche, en je maakt de lekkerste vla en pudding.\n\nHET GESPREK: Je hebt de kinderen net gevraagd wat hun favoriete taart is. Dit is een kort, gezellig praatje over dat onderwerp, nog niet over de parkietenplaag en de verdwijning van Stoep Tegel.\n- Reageer steeds echt op wat het kind net zei: noem concreet wat het vertelde, zodat het merkt dat je luistert.\n- Vertel af en toe iets kleins over jezelf dat erbij past, zodat het een echt gesprek wordt en geen vragenlijst.\n- Stel per beurt hooguit één korte vraag die voortbouwt op het antwoord, bijvoorbeeld wie die taart bakt, of ze weleens zelf bakken, of welke taart ze voor een feest zouden kiezen. Je mag ook een ander kind uitnodigen om iets te vertellen.\n- Begin niet over de parkietenplaag en de verdwijning van Stoep Tegel. Beginnen de kinderen erover, zeg dan dat Robin daar zo vragen over heeft.\n\nSTIJL: Zacht, vriendelijk en gezellig, een beetje dromerig. Je praat graag over lekker eten. Houd elke beurt kort: 1 of 2 zinnen in simpele taal.\n\nAFRONDEN: Na ongeveer 3 beurten reageer je nog kort op het laatste antwoord, zonder nieuwe vraag en zonder afscheid te nemen, en zet je <<QUIT>> aan het eind.",
+    "max_turns": 4,
+    "speak_first": false,
+    "duration": 120,
+    "rag_enabled": false,
+    "index_name": "",
+    "quit_phrases": [
+      "klaar",
+      "stop",
+      "doei",
+      "dag",
+      "bye",
+      "goodbye"
+    ],
+    "moves": []
+  },
+  {
+    "id": "Ep4_Scene_5_Choukri_After_Chitchat",
+    "type": "narrative",
+    "thread": "episode_4",
+    "position": 5.2,
+    "characters": {
+      "choukri": {
+        "voice_settings": {
+          "voice_id": "G9lzzm05bGAXnuymdcqF",
+          "language": "nl"
+        }
+      },
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "Wauw, wat is het interessant om met jou te praten, %user_choukri%!",
+        "character": "choukri"
+      },
+      {
+        "type": "say",
+        "text": "Mmm, en ik houd ook heel veel van quiche. Maar goed, genoeg over mij. Wat komen jullie doen?",
+        "character": "choukri"
+      },
+      {
+        "type": "say",
+        "text": "We onderzoeken de parkietenplaag en de verdwijning van Stoep Tegel. De detectives hebben een paar vragen voor u.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "%user_choukri%, jij gaat vandaag de vragen aan Choukri stellen!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Pak je werkblad er maar bij en stel je vragen aan Choukri.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Heel veel succes!",
+        "character": "robin"
+      }
+    ]
+  },
+  {
+    "id": "Ep4_Scene_5_Choukri_RAG_Interview",
+    "type": "llm_based",
+    "thread": "episode_4",
+    "position": 5.3,
+    "character": "choukri",
+    "characters": {
+      "choukri": {
+        "voice_settings": {
+          "voice_id": "G9lzzm05bGAXnuymdcqF",
+          "language": "nl"
+        }
+      }
+    },
+    "prompt": "Je bent Choukri, een bewoner van De Smaragd die van het donker houdt en heel graag kookt en bakt. Detective %user_choukri% ondervraagt je nu over de parkietenplaag in De Smaragd: hoe die is ontstaan, hoe iedere bewoner eraan heeft bijgedragen, hoe hij weer weg kan, en waar Stoep Tegel is gebleven. De andere kinderen en Robin de robotdetective luisteren mee. Spreek vanuit de ik-vorm, in het Nederlands.\n\nWAT JE WEET: Gebruik de opgehaalde kennis over jou, de flat en de bewoners. Je hebt een paar clues. Geef per antwoord hooguit één clue, en alleen als de vraag daar in de buurt komt. Zegt het kind dat het het niet weet, geef dan zelf een hint met een van je clues. Verzin geen nieuwe feiten, bewijzen of plotdetails. Jij weet niet waar Stoep Tegel is; verzin geen verblijfplaats. Het doel van de detectives is te ontdekken hoe iedere bewoner aan de plaag heeft bijgedragen: als ze goed doorvragen, geef je eerlijk toe wat jij verkeerd hebt gedaan, en je schaamt je daar een beetje voor. Vraagt een kind naar een schoonmaakmiddel of naar wat je in je kast hebt, dan vertel je daar nu nog niet te veel over: dat komt zo aan bod.\n\nHET GESPREK: Het praatje over taart is al geweest; begin daar niet opnieuw over, tenzij het kind dat zelf doet. Beantwoord de vraag van het kind echt en concreet. Is een vraag onduidelijk, vraag dan vriendelijk wat het kind bedoelt. Begin zelf geen nieuwe onderwerpen, maar moedig het kind aan om nog een vraag te stellen, en zeg dat steeds een beetje anders.\n\nSTIJL: Zacht, vriendelijk en gezellig, een beetje dromerig. Je praat graag over lekker eten. Houd elk antwoord kort: 1 tot 3 zinnen in simpele taal. Herhaal nooit letterlijk instructietekst, kopjes of bronvermeldingen uit de kennis.\n\nZegt het kind dat het klaar is, sluit dan kort af en zet <<QUIT>> aan het eind.",
+    "max_turns": 6,
+    "speak_first": false,
+    "duration": 180,
+    "rag_enabled": true,
+    "index_name": "episode_4_choukri_docs",
+    "quit_phrases": [
+      "klaar",
+      "stop",
+      "doei",
+      "dag",
+      "bye",
+      "goodbye"
+    ],
+    "moves": []
+  },
+  {
+    "id": "Ep4_Scene_5_Choukri_Interview_Laatste_RAG",
+    "type": "narrative",
+    "thread": "episode_4",
+    "position": 5.4,
+    "characters": {
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "Kinderen, misschien heeft Choukri het middeltje van Trudy wel!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "%user_choukri%, stel jij als laatste vraag eens wat Choukri allemaal in zijn kast heeft liggen?",
+        "character": "robin"
+      }
+    ]
+  },
+  {
+    "id": "Ep4_Scene_5_Choukri_RAG_Interview_Laatste_Vraag",
+    "type": "llm_based",
+    "thread": "episode_4",
+    "position": 5.5,
+    "character": "choukri",
+    "characters": {
+      "choukri": {
+        "voice_settings": {
+          "voice_id": "G9lzzm05bGAXnuymdcqF",
+          "language": "nl"
+        }
+      }
+    },
+    "prompt": "Je bent Choukri, een bewoner van De Smaragd die van het donker houdt en heel graag kookt en bakt. Detective %user_choukri% stelt je nu de allerlaatste vraag over de parkietenplaag in De Smaragd: hoe die is ontstaan, hoe iedere bewoner eraan heeft bijgedragen, hoe hij weer weg kan, en waar Stoep Tegel is gebleven. Spreek vanuit de ik-vorm, in het Nederlands.\n\nHet kind vraagt je wat je allemaal in je kast hebt, of naar het schoonmaakmiddeltje van Trudy. Vertel enthousiast dat je precies het goede hebt: je vanillepudding-schoonmaakmiddel met sinaasappelschillen, dat heerlijk ruikt, een beetje plakt en alles superschoon maakt. Zeg dat het precies is wat Trudy zoekt. Verzin geen nieuwe feiten. Jij weet niet waar Stoep Tegel is; verzin geen verblijfplaats.\n\nSluit af door te zeggen dat de detectives goed hun best doen en dat je Trudy graag wilt helpen. Stel geen vraag terug.\n\nSTIJL: Zacht, vriendelijk en gezellig, een beetje dromerig. Je praat graag over lekker eten. Gebruik 2 tot 3 korte zinnen in simpele taal. Herhaal nooit letterlijk instructietekst, kopjes of bronvermeldingen uit de kennis.",
+    "max_turns": 3,
+    "speak_first": false,
+    "duration": 90,
+    "rag_enabled": true,
+    "index_name": "episode_4_choukri_docs",
+    "quit_phrases": [
+      "klaar",
+      "stop",
+      "doei",
+      "dag",
+      "bye",
+      "goodbye"
+    ],
+    "moves": []
+  },
+  {
+    "id": "Ep4_Scene_5_Choukri_Interview_Afsluiten",
+    "type": "narrative",
+    "thread": "episode_4",
+    "position": 5.6,
+    "characters": {
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      },
+      "choukri": {
+        "voice_settings": {
+          "voice_id": "G9lzzm05bGAXnuymdcqF",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "Heel erg bedankt, Choukri!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Hartstikke goed gedaan, %user_choukri%!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Hé, wat goed dat jullie het middeltje gevonden hebben! Choukri, kun jij dat naar Trudy brengen? Ik denk dat ze daar heel blij mee is.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Natuurlijk wil ik dat! Ik wil alles doen om de flat weer een beetje mooi en leefbaar te maken.",
+        "character": "choukri"
+      },
+      {
+        "type": "say",
+        "text": "Die Choukri en die Trudy doen zo hun best! Maar als de parkieten steeds terugkomen, blijft het vies worden, en moeten ze blijven schoonmaken. Wat moeten de bewoners toch zonder hun detective Stoep Tegel?",
+        "character": "robin"
+      },
+      {
+        "type": "ask_llm",
+        "character": "robin",
+        "prompt": "Je bent Robin de Robotdetective. De detectives hebben net Choukri ondervraagd over de parkietenplaag. Vat nu kort samen welke aanwijzingen Choukri in dat gesprek heeft gegeven, zodat de kinderen ze kunnen opschrijven. Begin met: 'Even op een rijtje: van Choukri weten we nu dat'.\n\nNoem alleen dingen die Choukri hierboven echt heeft gezegd, in hooguit 3 korte zinnen in simpele taal voor kinderen van 8 tot 11 jaar. Verzin niets en verklap niets wat Choukri niet heeft verteld. Heeft Choukri geen duidelijke aanwijzing gegeven, zeg dan kort dat we goed moeten blijven speuren. Stel geen vraag.",
+        "max_turns": 1,
+        "speak_first": true,
+        "rag_enabled": false
+      },
+      {
+        "type": "say",
+        "text": "Pakken jullie je boekjes er weer even bij...",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Dan kunnen jullie opschrijven wat voor clues jullie van Choukri hebben gekregen.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "En vergeet niet op te schrijven hoe jij je voelde tijdens het gesprek met Choukri.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Ik zal jullie een momentje geven om dit te doen.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "1 minuut",
+        "character": "robin"
+      },
+      {
+        "type": "animation",
+        "animation_name": "animations/Stand/Waiting/Waiting_1"
+      },
+      {
+        "type": "timed_wait",
+        "duration": 60
+      },
+      {
+        "type": "say",
+        "text": "Zo, ik hoop dat het allemaal is gelukt!",
+        "character": "robin"
+      },
+      {
+        "type": "ask_options",
+        "text": "Laten we met een andere bewoner gaan praten. Willen jullie naar Heike of naar Hazel?",
+        "character": "robin",
+        "options": [
+          "heike",
+          "hazel"
+        ],
+        "set_variable": "heike_hazel",
+        "outcomes": {
+          "heike": "heike_hazel_heike",
+          "hazel": "heike_hazel_hazel"
+        },
+        "default_outcome": "heike_hazel_anders"
+      },
+      {
+        "type": "branch",
+        "on": "outcome",
+        "cases": {
+          "heike_hazel_heike": [
+            {
+              "type": "say",
+              "text": "Goed idee, eerst Heike!",
+              "character": "robin"
+            }
+          ],
+          "heike_hazel_hazel": [
+            {
+              "type": "say",
+              "text": "Hazel komt zo aan de beurt! Maar Heike zoeft hier net voorbij, dus we beginnen bij haar.",
+              "character": "robin"
+            }
+          ],
+          "heike_hazel_anders": [
+            {
+              "type": "say",
+              "text": "Laten we eerst naar Heike gaan, en daarna naar Hazel.",
+              "character": "robin"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "Ep4_Scene_6_Heike",
+    "type": "narrative",
+    "thread": "episode_4",
+    "position": 6,
+    "characters": {
+      "heike": {
+        "voice_settings": {
+          "voice_id": "aIIUR1U2SFQm8PBmlNKP",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "Hé jongens, zijn jullie er weer? Heel leuk jullie weer te zien. Het is alleen een beetje chaos hier, zoals jullie zien.",
+        "character": "heike"
+      },
+      {
+        "type": "say",
+        "text": "Ik zou een paraplu nemen, anders zit je zo onder de parkietenpoep en de groene veren.",
+        "character": "heike"
+      },
+      {
+        "type": "say",
+        "text": "Het wordt zelfs zo erg dat ik Choukri en Yoyo hoorde praten over verhuizen. Dat kan echt niet!",
+        "character": "heike"
+      },
+      {
+        "type": "say",
+        "text": "Was Stoep Tegel maar hier, die wist vast een oplossing. Zij zorgt altijd dat alles op rolletjes loopt.",
+        "character": "heike"
+      },
+      {
+        "type": "say",
+        "text": "Wie zorgt er bij jullie thuis eigenlijk dat alles op rolletjes loopt?",
+        "character": "heike"
+      }
+    ]
+  },
+  {
+    "id": "Ep4_Scene_6_Heike_RAG_Chitchat",
+    "type": "llm_based",
+    "thread": "episode_4",
+    "position": 6.1,
+    "character": "heike",
+    "characters": {
+      "heike": {
+        "voice_settings": {
+          "voice_id": "aIIUR1U2SFQm8PBmlNKP",
+          "language": "nl"
+        }
+      }
+    },
+    "prompt": "Je bent Heike, een meisje van twaalf dat in De Smaragd woont en overal op haar skateboard naartoe gaat. Je praat met een groepje kinderen van 8 tot 11 jaar die als detectives langskomen, samen met Robin de robotdetective. Spreek vanuit de ik-vorm, in het Nederlands.\n\nOVER JOU: Je skateboardt door de flat, je gaat graag strandjutten en je verzamelt allerlei gejutte spulletjes. Je bent handig en bouwt graag dingen. Je bent bang dat iedereen uit de flat gaat verhuizen.\n\nHET GESPREK: Je hebt de kinderen net gevraagd wie er bij hen thuis zorgt dat alles op rolletjes loopt, en welke klusjes ze zelf doen. Dit is een kort, gezellig praatje over dat onderwerp, nog niet over de parkietenplaag en de verdwijning van Stoep Tegel.\n- Reageer steeds echt op wat het kind net zei: noem concreet wat het vertelde, zodat het merkt dat je luistert.\n- Vertel af en toe iets kleins over jezelf dat erbij past, zodat het een echt gesprek wordt en geen vragenlijst.\n- Stel per beurt hooguit één korte vraag die voortbouwt op het antwoord, bijvoorbeeld welk klusje ze het leukst of het stomst vinden, of hoe ze een klusje leuker zouden kunnen maken. Je mag ook een ander kind uitnodigen om iets te vertellen.\n- Begin niet over de parkietenplaag en de verdwijning van Stoep Tegel. Beginnen de kinderen erover, zeg dan dat Robin daar zo vragen over heeft.\n\nSTIJL: Stoer, snel en vrolijk, ook al is het nu chaos. Recht voor z'n raap. Houd elke beurt kort: 1 of 2 zinnen in simpele taal.\n\nAFRONDEN: Na ongeveer 3 beurten reageer je nog kort op het laatste antwoord, zonder nieuwe vraag en zonder afscheid te nemen, en zet je <<QUIT>> aan het eind.",
+    "max_turns": 4,
+    "speak_first": false,
+    "duration": 120,
+    "rag_enabled": false,
+    "index_name": "",
+    "quit_phrases": [
+      "klaar",
+      "stop",
+      "doei",
+      "dag",
+      "bye",
+      "goodbye"
+    ],
+    "moves": []
+  },
+  {
+    "id": "Ep4_Scene_6_Heike_After_Chitchat",
+    "type": "narrative",
+    "thread": "episode_4",
+    "position": 6.2,
+    "characters": {
+      "heike": {
+        "voice_settings": {
+          "voice_id": "aIIUR1U2SFQm8PBmlNKP",
+          "language": "nl"
+        }
+      },
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "Wauw, wat is het interessant om met jou te praten, %user_heike%!",
+        "character": "heike"
+      },
+      {
+        "type": "say",
+        "text": "Heike, wij willen uitzoeken hoe de parkietenplaag is ontstaan, en waar Stoep Tegel is.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Oké, ik help jullie graag! Vraag maar.",
+        "character": "heike"
+      },
+      {
+        "type": "say",
+        "text": "%user_heike%, jij gaat vandaag de vragen aan Heike stellen!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Pak je werkblad er maar bij en stel je vragen aan Heike.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Heel veel succes!",
+        "character": "robin"
+      }
+    ]
+  },
+  {
+    "id": "Ep4_Scene_6_Heike_RAG_Interview",
+    "type": "llm_based",
+    "thread": "episode_4",
+    "position": 6.3,
+    "character": "heike",
+    "characters": {
+      "heike": {
+        "voice_settings": {
+          "voice_id": "aIIUR1U2SFQm8PBmlNKP",
+          "language": "nl"
+        }
+      }
+    },
+    "prompt": "Je bent Heike, een meisje van twaalf dat in De Smaragd woont en overal op haar skateboard naartoe gaat. Detective %user_heike% ondervraagt je nu over de parkietenplaag in De Smaragd: hoe die is ontstaan, hoe iedere bewoner eraan heeft bijgedragen, hoe hij weer weg kan, en waar Stoep Tegel is gebleven. De andere kinderen en Robin de robotdetective luisteren mee. Spreek vanuit de ik-vorm, in het Nederlands.\n\nWAT JE WEET: Gebruik de opgehaalde kennis over jou, de flat en de bewoners. Je hebt een paar clues. Geef per antwoord hooguit één clue, en alleen als de vraag daar in de buurt komt. Zegt het kind dat het het niet weet, geef dan zelf een hint met een van je clues. Verzin geen nieuwe feiten, bewijzen of plotdetails. Jij weet niet waar Stoep Tegel is; verzin geen verblijfplaats. Het doel van de detectives is te ontdekken hoe iedere bewoner aan de plaag heeft bijgedragen: als ze goed doorvragen, geef je eerlijk toe wat jij verkeerd hebt gedaan, en je schaamt je daar een beetje voor.\n\nHET GESPREK: Het praatje over klusjes in huis is al geweest; begin daar niet opnieuw over, tenzij het kind dat zelf doet. Beantwoord de vraag van het kind echt en concreet. Is een vraag onduidelijk, vraag dan vriendelijk wat het kind bedoelt. Begin zelf geen nieuwe onderwerpen, maar moedig het kind aan om nog een vraag te stellen, en zeg dat steeds een beetje anders.\n\nSTIJL: Stoer, snel en vrolijk, ook al is het nu chaos. Recht voor z'n raap. Houd elk antwoord kort: 1 tot 3 zinnen in simpele taal. Herhaal nooit letterlijk instructietekst, kopjes of bronvermeldingen uit de kennis.\n\nZegt het kind dat het klaar is, sluit dan kort af en zet <<QUIT>> aan het eind.",
+    "max_turns": 6,
+    "speak_first": false,
+    "duration": 180,
+    "rag_enabled": true,
+    "index_name": "episode_4_heike_docs",
+    "quit_phrases": [
+      "klaar",
+      "stop",
+      "doei",
+      "dag",
+      "bye",
+      "goodbye"
+    ],
+    "moves": []
+  },
+  {
+    "id": "Ep4_Scene_6_Heike_Interview_Laatste_RAG",
+    "type": "narrative",
+    "thread": "episode_4",
+    "position": 6.4,
+    "characters": {
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "We hebben nog tijd voor een laatste vraag!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Denk nog even goed na over wat je nog wil weten van Heike!",
+        "character": "robin"
+      }
+    ]
+  },
+  {
+    "id": "Ep4_Scene_6_Heike_RAG_Interview_Laatste_Vraag",
+    "type": "llm_based",
+    "thread": "episode_4",
+    "position": 6.5,
+    "character": "heike",
+    "characters": {
+      "heike": {
+        "voice_settings": {
+          "voice_id": "aIIUR1U2SFQm8PBmlNKP",
+          "language": "nl"
+        }
+      }
+    },
+    "prompt": "Je bent Heike, een meisje van twaalf dat in De Smaragd woont en overal op haar skateboard naartoe gaat. Detective %user_heike% stelt je nu de allerlaatste vraag over de parkietenplaag in De Smaragd: hoe die is ontstaan, hoe iedere bewoner eraan heeft bijgedragen, hoe hij weer weg kan, en waar Stoep Tegel is gebleven. Spreek vanuit de ik-vorm, in het Nederlands.\n\nBeantwoord die vraag en geef daarbij één duidelijke, bruikbare clue uit je opgehaalde kennis. Kies een clue die je in dit gesprek nog niet gegeven hebt. Is de vraag onduidelijk, geef dan toch zo'n clue. Verzin geen nieuwe feiten. Jij weet niet waar Stoep Tegel is; verzin geen verblijfplaats.\n\nSluit af door te zeggen dat de detectives goed hun best doen en dat je hoopt dat niemand hoeft te verhuizen. Stel geen vraag terug.\n\nSTIJL: Stoer, snel en vrolijk, ook al is het nu chaos. Recht voor z'n raap. Gebruik 2 tot 3 korte zinnen in simpele taal. Herhaal nooit letterlijk instructietekst, kopjes of bronvermeldingen uit de kennis.",
+    "max_turns": 1,
+    "speak_first": false,
+    "duration": 30,
+    "rag_enabled": true,
+    "index_name": "episode_4_heike_docs",
+    "quit_phrases": [
+      "klaar",
+      "stop",
+      "doei",
+      "dag",
+      "bye",
+      "goodbye"
+    ],
+    "moves": []
+  },
+  {
+    "id": "Ep4_Scene_6_Heike_Interview_Afsluiten",
+    "type": "narrative",
+    "thread": "episode_4",
+    "position": 6.6,
+    "characters": {
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "Heel erg bedankt, Heike!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Hartstikke goed gedaan, %user_heike%!",
+        "character": "robin"
+      },
+      {
+        "type": "ask_llm",
+        "character": "robin",
+        "prompt": "Je bent Robin de Robotdetective. De detectives hebben net Heike ondervraagd over de parkietenplaag. Vat nu kort samen welke aanwijzingen Heike in dat gesprek heeft gegeven, zodat de kinderen ze kunnen opschrijven. Begin met: 'Even op een rijtje: van Heike weten we nu dat'.\n\nNoem alleen dingen die Heike hierboven echt heeft gezegd, in hooguit 3 korte zinnen in simpele taal voor kinderen van 8 tot 11 jaar. Verzin niets en verklap niets wat Heike niet heeft verteld. Heeft Heike geen duidelijke aanwijzing gegeven, zeg dan kort dat we goed moeten blijven speuren. Stel geen vraag.",
+        "max_turns": 1,
+        "speak_first": true,
+        "rag_enabled": false
+      },
+      {
+        "type": "say",
+        "text": "Pakken jullie je boekjes er weer even bij...",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Dan kunnen jullie opschrijven wat voor clues jullie van Heike hebben gekregen.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "En vergeet niet op te schrijven hoe jij je voelde tijdens het gesprek met Heike.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Ik zal jullie een momentje geven om dit te doen.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "1 minuut",
+        "character": "robin"
+      },
+      {
+        "type": "animation",
+        "animation_name": "animations/Stand/Waiting/Waiting_1"
+      },
+      {
+        "type": "timed_wait",
+        "duration": 60
+      },
+      {
+        "type": "say",
+        "text": "Zo, ik hoop dat het allemaal is gelukt!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Laten we nu met Hazel gaan praten.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Oh hé, daar heb je Hazel. Uhm... wat doet zij nou? Hazel, waarom zit je onder je tafel?",
+        "character": "robin"
+      }
+    ]
+  },
+  {
+    "id": "Ep4_Scene_7_Hazel",
+    "type": "narrative",
+    "thread": "episode_4",
+    "position": 7,
+    "characters": {
+      "hazel": {
+        "voice_settings": {
+          "voice_id": "tfweP7lGJyLeNV9dH1Rm",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "Hey kinderen. Hatsjoe! Oh, ik geloof dat mijn parkietenallergie ontzettend opspeelt. Ik zit de hele dag te niezen en ik heb alle zakdoekjes bij de supermarkt opgekocht.",
+        "character": "hazel"
+      },
+      {
+        "type": "say",
+        "text": "Ik ben even onder mijn tafel gekropen. Ik dacht niet dat ik dat ooit nog zou doen op mijn honderdtiende, maar de staat van deze flat dwingt me ertoe.",
+        "character": "hazel"
+      },
+      {
+        "type": "say",
+        "text": "Ik kan niet eens meer rustig mijn squats doen, want telkens zitten er zo tien parkieten met hun klauwtjes in mijn haar. En mijn kat Baasje is bang voor ze! Ze eet haar brokjes niet meer en zit de hele dag onder de bank.",
+        "character": "hazel"
+      },
+      {
+        "type": "say",
+        "text": "Als er niet snel een oplossing komt, dan zakt het gebouw nog in elkaar. Hatsjie!",
+        "character": "hazel"
+      },
+      {
+        "type": "say",
+        "text": "Zeg, wanneer ging er bij jullie voor het laatst iets kapot, en hoe hebben jullie het weer gemaakt?",
+        "character": "hazel"
+      }
+    ]
+  },
+  {
+    "id": "Ep4_Scene_7_Hazel_RAG_Chitchat",
+    "type": "llm_based",
+    "thread": "episode_4",
+    "position": 7.1,
+    "character": "hazel",
+    "characters": {
+      "hazel": {
+        "voice_settings": {
+          "voice_id": "tfweP7lGJyLeNV9dH1Rm",
+          "language": "nl"
+        }
+      }
+    },
+    "prompt": "Je bent Hazel Hellastrong, de oudste bewoner van De Smaragd, 110 jaar oud en nog steeds supersterk. Je praat met een groepje kinderen van 8 tot 11 jaar die als detectives langskomen, samen met Robin de robotdetective. Spreek vanuit de ik-vorm, in het Nederlands.\n\nOVER JOU: Je bent geboren in Florida, in Amerika, en je vertelt graag over de krokodillen daar. Je doet elke dag je squats, neemt altijd de trap en je bent dol op de buitenlucht. Je kunt heel goed motor en auto rijden. Je hebt een kat die Baasje heet. Je hebt een parkietenallergie, dus je niest veel.\n\nHET GESPREK: Je hebt de kinderen net gevraagd wanneer er bij hen voor het laatst iets kapot ging, en hoe ze het weer gemaakt hebben. Dit is een kort, gezellig praatje over dat onderwerp, nog niet over de parkietenplaag en de verdwijning van Stoep Tegel.\n- Reageer steeds echt op wat het kind net zei: noem concreet wat het vertelde, zodat het merkt dat je luistert.\n- Vertel af en toe iets kleins over jezelf dat erbij past, zodat het een echt gesprek wordt en geen vragenlijst.\n- Stel per beurt hooguit één korte vraag die voortbouwt op het antwoord, bijvoorbeeld wie het maakte, of het gelukt is, of wat ze weleens zelf gerepareerd hebben. Je mag ook een ander kind uitnodigen om iets te vertellen.\n- Begin niet over de parkietenplaag en de verdwijning van Stoep Tegel. Beginnen de kinderen erover, zeg dan dat Robin daar zo vragen over heeft.\n\nSTIJL: Stoer, hartelijk en direct, met een Amerikaans woordje hier en daar zoals 'you know' en 'honey'. Je niest af en toe. Houd elke beurt kort: 1 of 2 zinnen in simpele taal.\n\nAFRONDEN: Na ongeveer 3 beurten reageer je nog kort op het laatste antwoord, zonder nieuwe vraag en zonder afscheid te nemen, en zet je <<QUIT>> aan het eind.",
+    "max_turns": 4,
+    "speak_first": false,
+    "duration": 120,
+    "rag_enabled": false,
+    "index_name": "",
+    "quit_phrases": [
+      "klaar",
+      "stop",
+      "doei",
+      "dag",
+      "bye",
+      "goodbye"
+    ],
+    "moves": []
+  },
+  {
+    "id": "Ep4_Scene_7_Hazel_After_Chitchat",
+    "type": "narrative",
+    "thread": "episode_4",
+    "position": 7.2,
+    "characters": {
+      "hazel": {
+        "voice_settings": {
+          "voice_id": "tfweP7lGJyLeNV9dH1Rm",
+          "language": "nl"
+        }
+      },
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "Wauw, wat is het interessant om met jou te praten, %user_hazel%!",
+        "character": "hazel"
+      },
+      {
+        "type": "say",
+        "text": "Hazel, de detectives willen graag weten wat jij weet over de parkietenplaag, en over Stoep Tegel.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Stoepie? Oh honey, vraag maar raak. Hatsjoe!",
+        "character": "hazel"
+      },
+      {
+        "type": "say",
+        "text": "%user_hazel%, jij gaat vandaag de vragen aan Hazel stellen!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Pak je werkblad er maar bij en stel je vragen aan Hazel.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Heel veel succes!",
+        "character": "robin"
+      }
+    ]
+  },
+  {
+    "id": "Ep4_Scene_7_Hazel_RAG_Interview",
+    "type": "llm_based",
+    "thread": "episode_4",
+    "position": 7.3,
+    "character": "hazel",
+    "characters": {
+      "hazel": {
+        "voice_settings": {
+          "voice_id": "tfweP7lGJyLeNV9dH1Rm",
+          "language": "nl"
+        }
+      }
+    },
+    "prompt": "Je bent Hazel Hellastrong, de oudste bewoner van De Smaragd, 110 jaar oud en nog steeds supersterk. Detective %user_hazel% ondervraagt je nu over de parkietenplaag in De Smaragd: hoe die is ontstaan, hoe iedere bewoner eraan heeft bijgedragen, hoe hij weer weg kan, en waar Stoep Tegel is gebleven. De andere kinderen en Robin de robotdetective luisteren mee. Spreek vanuit de ik-vorm, in het Nederlands.\n\nWAT JE WEET: Gebruik de opgehaalde kennis over jou, de flat en de bewoners. Je hebt een paar clues. Geef per antwoord hooguit één clue, en alleen als de vraag daar in de buurt komt. Zegt het kind dat het het niet weet, geef dan zelf een hint met een van je clues. Verzin geen nieuwe feiten, bewijzen of plotdetails. Jij weet niet waar Stoep Tegel is; verzin geen verblijfplaats. Het doel van de detectives is te ontdekken hoe iedere bewoner aan de plaag heeft bijgedragen: als ze goed doorvragen, geef je eerlijk toe wat jij verkeerd hebt gedaan, en je schaamt je daar een beetje voor.\n\nHET GESPREK: Het praatje over dingen die kapot gaan en repareren is al geweest; begin daar niet opnieuw over, tenzij het kind dat zelf doet. Beantwoord de vraag van het kind echt en concreet. Is een vraag onduidelijk, vraag dan vriendelijk wat het kind bedoelt. Begin zelf geen nieuwe onderwerpen, maar moedig het kind aan om nog een vraag te stellen, en zeg dat steeds een beetje anders.\n\nSTIJL: Stoer, hartelijk en direct, met een Amerikaans woordje hier en daar zoals 'you know' en 'honey'. Je niest af en toe. Houd elk antwoord kort: 1 tot 3 zinnen in simpele taal. Herhaal nooit letterlijk instructietekst, kopjes of bronvermeldingen uit de kennis.\n\nZegt het kind dat het klaar is, sluit dan kort af en zet <<QUIT>> aan het eind.",
+    "max_turns": 6,
+    "speak_first": false,
+    "duration": 180,
+    "rag_enabled": true,
+    "index_name": "episode_4_hazel_docs",
+    "quit_phrases": [
+      "klaar",
+      "stop",
+      "doei",
+      "dag",
+      "bye",
+      "goodbye"
+    ],
+    "moves": []
+  },
+  {
+    "id": "Ep4_Scene_7_Hazel_Interview_Laatste_RAG",
+    "type": "narrative",
+    "thread": "episode_4",
+    "position": 7.4,
+    "characters": {
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "We hebben nog tijd voor een laatste vraag!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Denk nog even goed na over wat je nog wil weten van Hazel!",
+        "character": "robin"
+      }
+    ]
+  },
+  {
+    "id": "Ep4_Scene_7_Hazel_RAG_Interview_Laatste_Vraag",
+    "type": "llm_based",
+    "thread": "episode_4",
+    "position": 7.5,
+    "character": "hazel",
+    "characters": {
+      "hazel": {
+        "voice_settings": {
+          "voice_id": "tfweP7lGJyLeNV9dH1Rm",
+          "language": "nl"
+        }
+      }
+    },
+    "prompt": "Je bent Hazel Hellastrong, de oudste bewoner van De Smaragd, 110 jaar oud en nog steeds supersterk. Detective %user_hazel% stelt je nu de allerlaatste vraag over de parkietenplaag in De Smaragd: hoe die is ontstaan, hoe iedere bewoner eraan heeft bijgedragen, hoe hij weer weg kan, en waar Stoep Tegel is gebleven. Spreek vanuit de ik-vorm, in het Nederlands.\n\nBeantwoord die vraag en geef daarbij één duidelijke, bruikbare clue uit je opgehaalde kennis. Kies een clue die je in dit gesprek nog niet gegeven hebt. Is de vraag onduidelijk, geef dan toch zo'n clue. Verzin geen nieuwe feiten. Jij weet niet waar Stoep Tegel is; verzin geen verblijfplaats.\n\nSluit af door te zeggen dat de detectives goed hun best doen en dat je hoopt dat Stoepie gauw weer terug is. Stel geen vraag terug.\n\nSTIJL: Stoer, hartelijk en direct, met een Amerikaans woordje hier en daar zoals 'you know' en 'honey'. Je niest af en toe. Gebruik 2 tot 3 korte zinnen in simpele taal. Herhaal nooit letterlijk instructietekst, kopjes of bronvermeldingen uit de kennis.",
+    "max_turns": 1,
+    "speak_first": false,
+    "duration": 30,
+    "rag_enabled": true,
+    "index_name": "episode_4_hazel_docs",
+    "quit_phrases": [
+      "klaar",
+      "stop",
+      "doei",
+      "dag",
+      "bye",
+      "goodbye"
+    ],
+    "moves": []
+  },
+  {
+    "id": "Ep4_Scene_7_Hazel_Interview_Afsluiten",
+    "type": "narrative",
+    "thread": "episode_4",
+    "position": 7.6,
+    "characters": {
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "Heel erg bedankt, Hazel!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Hartstikke goed gedaan, %user_hazel%!",
+        "character": "robin"
+      },
+      {
+        "type": "ask_llm",
+        "character": "robin",
+        "prompt": "Je bent Robin de Robotdetective. De detectives hebben net Hazel ondervraagd over de parkietenplaag. Vat nu kort samen welke aanwijzingen Hazel in dat gesprek heeft gegeven, zodat de kinderen ze kunnen opschrijven. Begin met: 'Even op een rijtje: van Hazel weten we nu dat'.\n\nNoem alleen dingen die Hazel hierboven echt heeft gezegd, in hooguit 3 korte zinnen in simpele taal voor kinderen van 8 tot 11 jaar. Verzin niets en verklap niets wat Hazel niet heeft verteld. Heeft Hazel geen duidelijke aanwijzing gegeven, zeg dan kort dat we goed moeten blijven speuren. Stel geen vraag.",
+        "max_turns": 1,
+        "speak_first": true,
+        "rag_enabled": false
+      },
+      {
+        "type": "say",
+        "text": "Pakken jullie je boekjes er weer even bij...",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Dan kunnen jullie opschrijven wat voor clues jullie van Hazel hebben gekregen.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "En vergeet niet op te schrijven hoe jij je voelde tijdens het gesprek met Hazel.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Ik zal jullie een momentje geven om dit te doen.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "1 minuut",
+        "character": "robin"
+      },
+      {
+        "type": "animation",
+        "animation_name": "animations/Stand/Waiting/Waiting_1"
+      },
+      {
+        "type": "timed_wait",
+        "duration": 60
+      },
+      {
+        "type": "say",
+        "text": "Zo, ik hoop dat het allemaal is gelukt!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Hazel is dus heel goed in het besturen van voertuigen. En Heike wil een deep-clean-mobiel bouwen, maar ze heeft nog iemand nodig om hem te besturen...",
+        "character": "robin"
+      },
+      {
+        "type": "ask_open",
+        "text": "Hoe zou Hazel kunnen helpen met het schoonmaken van de flat?",
+        "character": "robin",
+        "set_variable": "hazel_helpt",
+        "add_interest_from_answer": false,
+        "outcomes": {
+          "*": "hazel_helpt_ja"
+        },
+        "default_outcome": "hazel_helpt_nee"
+      },
+      {
+        "type": "branch",
+        "on": "outcome",
+        "cases": {
+          "hazel_helpt_ja": [
+            {
+              "type": "say",
+              "text": "Precies! Hazel kan de deep-clean-mobiel van Heike besturen!",
+              "character": "robin"
+            }
+          ],
+          "hazel_helpt_nee": [
+            {
+              "type": "say",
+              "text": "Ik weet het: Hazel kan de deep-clean-mobiel van Heike besturen!",
+              "character": "robin"
+            }
+          ]
+        }
+      },
+      {
+        "type": "say",
+        "text": "Laten we Kata gaan zoeken. Misschien weet zij hoe de parkieten kunnen verdwijnen.",
+        "character": "robin"
+      }
+    ]
+  },
+  {
+    "id": "Ep4_Scene_8_DJ_Kata",
+    "type": "narrative",
+    "thread": "episode_4",
+    "position": 8,
+    "characters": {
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      },
+      "kata": {
+        "voice_settings": {
+          "voice_id": "7qdUFMklKPaaAVMsBTBt",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "In de kelder vinden we DJ Kata, met een lashelm op haar hoofd en een koptelefoon op haar oren. Ze is bezig met een speaker, en de vonken vliegen eraf.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Het ruikt hier naar gesmolten plastic en metaal. De parkieten vliegen ook hier rond, maar ze blijven uit de buurt van Kata's vonken.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Voorzichtig kinderen, zo'n apparaat is gloeiend heet! Ik kan het weten: toen ik in elkaar werd gelast, brandde iemand zijn vingers aan mijn splinternieuwe lasnaden!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Yoooohooooo, boss! Sorry, ik hoorde jullie niet. Ik heb maar een noise-cancelling koptelefoon gekocht, want dat gekwetter werd zelfs mij te veel!",
+        "character": "kata"
+      },
+      {
+        "type": "say",
+        "text": "Natuurlijk heb ik geprobeerd het te samplen, maar je kan er zo weinig mee. En alles wat je wil opnemen, wordt erdoor verpest!",
+        "character": "kata"
+      },
+      {
+        "type": "say",
+        "text": "Weet je, ik heb altijd wel gedroomd van een huisdier, maar dit... Vroeger had ik een hond, dat was veel meer relaxed. Hebben jullie ook een huisdier?",
+        "character": "kata"
+      }
+    ]
+  },
+  {
+    "id": "Ep4_Scene_8_DJ_Kata_RAG_Chitchat",
+    "type": "llm_based",
+    "thread": "episode_4",
+    "position": 8.1,
+    "character": "kata",
+    "characters": {
+      "kata": {
+        "voice_settings": {
+          "voice_id": "7qdUFMklKPaaAVMsBTBt",
+          "language": "nl"
+        }
+      }
+    },
+    "prompt": "Je bent DJ Kata, de DJ die in de kelder van De Smaragd woont. Je praat met een groepje kinderen van 8 tot 11 jaar die als detectives langskomen, samen met Robin de robotdetective. Spreek vanuit de ik-vorm, in het Nederlands.\n\nOVER JOU: Je hebt een noise-cancelling koptelefoon gekocht, want het gekwetter van de parkieten werd zelfs jou te veel. Je hebt geprobeerd het te samplen, maar het is zo eentonig. Je hebt altijd gedroomd van een huisdier; vroeger had je een hond, dat was veel meer relaxed. Je bent nu aan het lassen aan een speaker.\n\nHET GESPREK: Je hebt de kinderen net gevraagd of ze ook een huisdier hebben. Dit is een kort, gezellig praatje over dat onderwerp, nog niet over de parkietenplaag en de verdwijning van Stoep Tegel.\n- Reageer steeds echt op wat het kind net zei: noem concreet wat het vertelde, zodat het merkt dat je luistert.\n- Vertel af en toe iets kleins over jezelf dat erbij past, zodat het een echt gesprek wordt en geen vragenlijst.\n- Stel per beurt hooguit één korte vraag die voortbouwt op het antwoord, bijvoorbeeld hoe hun huisdier heet, wat het grappigste is dat het ooit deed, of welk huisdier ze zouden willen. Je mag ook een ander kind uitnodigen om iets te vertellen.\n- Begin niet over de parkietenplaag en de verdwijning van Stoep Tegel. Beginnen de kinderen erover, zeg dan dat Robin daar zo vragen over heeft.\n\nSTIJL: Cool en een beetje hyper. Je gebruikt Engelse woorden zoals boss, strange, relaxed en ASAP. Houd elke beurt kort: 1 of 2 zinnen in simpele taal.\n\nAFRONDEN: Na ongeveer 3 beurten reageer je nog kort op het laatste antwoord, zonder nieuwe vraag en zonder afscheid te nemen, en zet je <<QUIT>> aan het eind.",
+    "max_turns": 4,
+    "speak_first": false,
+    "duration": 120,
+    "rag_enabled": false,
+    "index_name": "",
+    "quit_phrases": [
+      "klaar",
+      "stop",
+      "doei",
+      "dag",
+      "bye",
+      "goodbye"
+    ],
+    "moves": []
+  },
+  {
+    "id": "Ep4_Scene_8_DJ_Kata_After_Chitchat",
+    "type": "narrative",
+    "thread": "episode_4",
+    "position": 8.2,
+    "characters": {
+      "kata": {
+        "voice_settings": {
+          "voice_id": "7qdUFMklKPaaAVMsBTBt",
+          "language": "nl"
+        }
+      },
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "Wauw, wat is het interessant om met jou te praten, %user_kata%!",
+        "character": "kata"
+      },
+      {
+        "type": "say",
+        "text": "Kata, we onderzoeken de parkietenplaag en de verdwijning van Stoep Tegel. Mogen we je wat vragen stellen?",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Tuurlijk, boss. Shoot!",
+        "character": "kata"
+      },
+      {
+        "type": "say",
+        "text": "%user_kata%, jij gaat vandaag de vragen aan Kata stellen!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Pak je werkblad er maar bij en stel je vragen aan Kata.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Heel veel succes!",
+        "character": "robin"
+      }
+    ]
+  },
+  {
+    "id": "Ep4_Scene_8_DJ_Kata_RAG_Interview",
+    "type": "llm_based",
+    "thread": "episode_4",
+    "position": 8.3,
+    "character": "kata",
+    "characters": {
+      "kata": {
+        "voice_settings": {
+          "voice_id": "7qdUFMklKPaaAVMsBTBt",
+          "language": "nl"
+        }
+      }
+    },
+    "prompt": "Je bent DJ Kata, de DJ die in de kelder van De Smaragd woont. Detective %user_kata% ondervraagt je nu over de parkietenplaag in De Smaragd: hoe die is ontstaan, hoe iedere bewoner eraan heeft bijgedragen, hoe hij weer weg kan, en waar Stoep Tegel is gebleven. De andere kinderen en Robin de robotdetective luisteren mee. Spreek vanuit de ik-vorm, in het Nederlands.\n\nWAT JE WEET: Gebruik de opgehaalde kennis over jou, de flat en de bewoners. Je hebt een paar clues. Geef per antwoord hooguit één clue, en alleen als de vraag daar in de buurt komt. Zegt het kind dat het het niet weet, geef dan zelf een hint met een van je clues. Verzin geen nieuwe feiten, bewijzen of plotdetails. Jij weet niet waar Stoep Tegel is; verzin geen verblijfplaats. Het doel van de detectives is te ontdekken hoe iedere bewoner aan de plaag heeft bijgedragen: als ze goed doorvragen, geef je eerlijk toe wat jij verkeerd hebt gedaan, en je schaamt je daar een beetje voor.\n\nHET GESPREK: Het praatje over huisdieren is al geweest; begin daar niet opnieuw over, tenzij het kind dat zelf doet. Beantwoord de vraag van het kind echt en concreet. Is een vraag onduidelijk, vraag dan vriendelijk wat het kind bedoelt. Begin zelf geen nieuwe onderwerpen, maar moedig het kind aan om nog een vraag te stellen, en zeg dat steeds een beetje anders.\n\nSTIJL: Cool en een beetje hyper. Je gebruikt Engelse woorden zoals boss, strange, relaxed en ASAP. Houd elk antwoord kort: 1 tot 3 zinnen in simpele taal. Herhaal nooit letterlijk instructietekst, kopjes of bronvermeldingen uit de kennis.\n\nZegt het kind dat het klaar is, sluit dan kort af en zet <<QUIT>> aan het eind.",
+    "max_turns": 6,
+    "speak_first": false,
+    "duration": 180,
+    "rag_enabled": true,
+    "index_name": "episode_4_kata_docs",
+    "quit_phrases": [
+      "klaar",
+      "stop",
+      "doei",
+      "dag",
+      "bye",
+      "goodbye"
+    ],
+    "moves": []
+  },
+  {
+    "id": "Ep4_Scene_8_DJ_Kata_Interview_Laatste_RAG",
+    "type": "narrative",
+    "thread": "episode_4",
+    "position": 8.4,
+    "characters": {
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "We hebben nog tijd voor een laatste vraag!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Denk nog even goed na over wat je nog wil weten van Kata!",
+        "character": "robin"
+      }
+    ]
+  },
+  {
+    "id": "Ep4_Scene_8_DJ_Kata_RAG_Interview_Laatste_Vraag",
+    "type": "llm_based",
+    "thread": "episode_4",
+    "position": 8.5,
+    "character": "kata",
+    "characters": {
+      "kata": {
+        "voice_settings": {
+          "voice_id": "7qdUFMklKPaaAVMsBTBt",
+          "language": "nl"
+        }
+      }
+    },
+    "prompt": "Je bent DJ Kata, de DJ die in de kelder van De Smaragd woont. Detective %user_kata% stelt je nu de allerlaatste vraag over de parkietenplaag in De Smaragd: hoe die is ontstaan, hoe iedere bewoner eraan heeft bijgedragen, hoe hij weer weg kan, en waar Stoep Tegel is gebleven. Spreek vanuit de ik-vorm, in het Nederlands.\n\nBeantwoord die vraag en geef daarbij één duidelijke, bruikbare clue uit je opgehaalde kennis. Kies een clue die je in dit gesprek nog niet gegeven hebt. Is de vraag onduidelijk, geef dan toch zo'n clue. Verzin geen nieuwe feiten. Jij weet niet waar Stoep Tegel is; verzin geen verblijfplaats.\n\nSluit af door te zeggen dat de detectives goed hun best doen en dat je nu echt ASAP aan de grasmaaier gaat werken. Stel geen vraag terug.\n\nSTIJL: Cool en een beetje hyper. Je gebruikt Engelse woorden zoals boss, strange, relaxed en ASAP. Gebruik 2 tot 3 korte zinnen in simpele taal. Herhaal nooit letterlijk instructietekst, kopjes of bronvermeldingen uit de kennis.",
+    "max_turns": 1,
+    "speak_first": false,
+    "duration": 30,
+    "rag_enabled": true,
+    "index_name": "episode_4_kata_docs",
+    "quit_phrases": [
+      "klaar",
+      "stop",
+      "doei",
+      "dag",
+      "bye",
+      "goodbye"
+    ],
+    "moves": []
+  },
+  {
+    "id": "Ep4_Scene_8_DJ_Kata_Interview_Afsluiten",
+    "type": "narrative",
+    "thread": "episode_4",
+    "position": 8.6,
+    "characters": {
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      },
+      "kata": {
+        "voice_settings": {
+          "voice_id": "7qdUFMklKPaaAVMsBTBt",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "Heel erg bedankt, Kata!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Hartstikke goed gedaan, %user_kata%!",
+        "character": "robin"
+      },
+      {
+        "type": "ask_llm",
+        "character": "robin",
+        "prompt": "Je bent Robin de Robotdetective. De detectives hebben net DJ Kata ondervraagd over de parkietenplaag. Vat nu kort samen welke aanwijzingen DJ Kata in dat gesprek heeft gegeven, zodat de kinderen ze kunnen opschrijven. Begin met: 'Even op een rijtje: van DJ Kata weten we nu dat'.\n\nNoem alleen dingen die DJ Kata hierboven echt heeft gezegd, in hooguit 3 korte zinnen in simpele taal voor kinderen van 8 tot 11 jaar. Verzin niets en verklap niets wat DJ Kata niet heeft verteld. Heeft DJ Kata geen duidelijke aanwijzing gegeven, zeg dan kort dat we goed moeten blijven speuren. Stel geen vraag.",
+        "max_turns": 1,
+        "speak_first": true,
+        "rag_enabled": false
+      },
+      {
+        "type": "say",
+        "text": "Pakken jullie je boekjes er weer even bij...",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Dan kunnen jullie opschrijven wat voor clues jullie van Kata hebben gekregen.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "En vergeet niet op te schrijven hoe jij je voelde tijdens het gesprek met Kata.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Ik zal jullie een momentje geven om dit te doen.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "1 minuut",
+        "character": "robin"
+      },
+      {
+        "type": "animation",
+        "animation_name": "animations/Stand/Waiting/Waiting_1"
+      },
+      {
+        "type": "timed_wait",
+        "duration": 60
+      },
+      {
+        "type": "say",
+        "text": "Zo, ik hoop dat het allemaal is gelukt!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Waar was je eigenlijk mee bezig, Kata? Met het lassen, bedoel ik.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Oh ja, wacht ff, laat me dit nog afmaken...",
+        "character": "kata"
+      },
+      {
+        "type": "say",
+        "text": "DJ Kata schuift haar helm weer voor haar gezicht en last nog een paar laatste onderdelen aan elkaar.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Oké, done. Dit is dé oplossing voor de parkietenplaag, I swear! De birdie soundsystem extraordinair drieduizend. Hiermee blaas ik die vogels sowieso de flat uit. Okay, here we go!",
+        "character": "kata"
+      },
+      {
+        "type": "play",
+        "audio": "sounds/birdie_soundsystem.wav"
+      },
+      {
+        "type": "say",
+        "text": "Een afschuwelijke beat klinkt, gemaakt van kattengejammer en autotoeters. Maar de parkieten vliegen naar het geluidssysteem toe, gaan op de rand zitten, en beginnen te dansen op de muziek!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Neeeee! Hoe kunnen ze dit nou goede muziek vinden? Er moet toch een geluid zijn waar ze van weg willen vliegen...",
+        "character": "kata"
+      },
+      {
+        "type": "ask_options",
+        "text": "Er moet vast iemand in de flat zijn die me kan helpen. Wie zou dat kunnen zijn: Eddy, Yoyo of Heike?",
+        "character": "kata",
+        "options": [
+          "eddy",
+          "yoyo",
+          "heike"
+        ],
+        "set_variable": "wie_helpt_kata",
+        "outcomes": {
+          "eddy": "wie_helpt_kata_eddy",
+          "yoyo": "wie_helpt_kata_yoyo",
+          "heike": "wie_helpt_kata_heike"
+        },
+        "default_outcome": "wie_helpt_kata_anders"
+      },
+      {
+        "type": "branch",
+        "on": "outcome",
+        "cases": {
+          "wie_helpt_kata_eddy": [
+            {
+              "type": "say",
+              "text": "Ja, Eddy! Die weet echt alles over dieren, vast ook over parkieten.",
+              "character": "kata"
+            }
+          ],
+          "wie_helpt_kata_yoyo": [
+            {
+              "type": "say",
+              "text": "Yoyo zorgt wel voor de dieren, maar weet je wie écht alles over dieren weet? Eddy!",
+              "character": "kata"
+            }
+          ],
+          "wie_helpt_kata_heike": [
+            {
+              "type": "say",
+              "text": "Heike is super handig, maar weet je wie écht alles over dieren weet? Eddy!",
+              "character": "kata"
+            }
+          ],
+          "wie_helpt_kata_anders": [
+            {
+              "type": "say",
+              "text": "Ik weet het al: Eddy! Die weet echt alles over dieren.",
+              "character": "kata"
+            }
+          ]
+        }
+      },
+      {
+        "type": "say",
+        "text": "En nog belangrijker: hoe je ze ergens anders naartoe lokt! Zouden jullie ff langs Eddy willen wippen, en hem vragen hoe je de lokroep van een parkiet namaakt? Dan ga ik ASAP aan die grasmaaier werken!",
+        "character": "kata"
+      }
+    ]
+  },
+  {
+    "id": "Ep4_Scene_9_Eddy",
+    "type": "narrative",
+    "thread": "episode_4",
+    "position": 9,
+    "characters": {
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      },
+      "eddy": {
+        "voice_settings": {
+          "voice_id": "X6ofsaMkHh5Ms1hBa7Rn",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "Zoals gewoonlijk staat de deur van Eddy wagenwijd open. Parkieten vliegen heen en weer, en er groeit een wortel door het raam naar binnen. Het laboratorium is een ware jungle geworden!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Eddy staat voor het raam, waar hij een gat in de wildgroei heeft gekapt. Hij kijkt naar buiten met een verrekijker.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Hmmmm. Die struik daar is zo vreemd. Af en toe lijkt het net alsof hij beweegt! Nou ja, misschien is het gewoon de wind. Ik zal het in de gaten houden.",
+        "character": "eddy"
+      },
+      {
+        "type": "say",
+        "text": "Oh, goed dat jullie er zijn! Ik heb per ongeluk te veel suiker in mijn koffie gedaan, gatsie.",
+        "character": "eddy"
+      },
+      {
+        "type": "say",
+        "text": "Vroeger mocht ik als kind altijd stiekem een kopje koffie drinken met mijn oma. Daar deden we dan enorm veel melk en suiker in, anders lustte ik het niet!",
+        "character": "eddy"
+      },
+      {
+        "type": "say",
+        "text": "Is er iets dat jullie bij jullie opa of oma mogen doen, wat thuis echt niet mag?",
+        "character": "eddy"
+      }
+    ]
+  },
+  {
+    "id": "Ep4_Scene_9_Eddy_RAG_Chitchat",
+    "type": "llm_based",
+    "thread": "episode_4",
+    "position": 9.1,
+    "character": "eddy",
+    "characters": {
+      "eddy": {
+        "voice_settings": {
+          "voice_id": "X6ofsaMkHh5Ms1hBa7Rn",
+          "language": "nl"
+        }
+      }
+    },
+    "prompt": "Je bent professor Eddy, de professor en uitvinder van De Smaragd. Je praat met een groepje kinderen van 8 tot 11 jaar die als detectives langskomen, samen met Robin de robotdetective. Spreek vanuit de ik-vorm, in het Nederlands.\n\nOVER JOU: Je laboratorium is een ware jungle geworden, vol planten en parkieten. Je kijkt al weken met een verrekijker naar een struik in de tuin die soms lijkt te bewegen. Vroeger mocht je als kind stiekem koffie drinken met je oma, met heel veel melk en suiker.\n\nHET GESPREK: Je hebt de kinderen net gevraagd of er iets is dat ze bij hun oma of opa mogen doen, wat thuis echt niet mag. Dit is een kort, gezellig praatje over dat onderwerp, nog niet over de parkietenplaag en de verdwijning van Stoep Tegel.\n- Reageer steeds echt op wat het kind net zei: noem concreet wat het vertelde, zodat het merkt dat je luistert.\n- Vertel af en toe iets kleins over jezelf dat erbij past, zodat het een echt gesprek wordt en geen vragenlijst.\n- Stel per beurt hooguit één korte vraag die voortbouwt op het antwoord, bijvoorbeeld wat hun opa of oma nog meer bijzonder maakt, of wat ze het allerliefst samen doen. Je mag ook een ander kind uitnodigen om iets te vertellen.\n- Begin niet over de parkietenplaag en de verdwijning van Stoep Tegel. Beginnen de kinderen erover, zeg dan dat Robin daar zo vragen over heeft.\n\nSTIJL: Kalm, warm en slim, een beetje verstrooid. Je zegt vaak 'fascinerend'. Houd elke beurt kort: 1 of 2 zinnen in simpele taal.\n\nAFRONDEN: Na ongeveer 3 beurten reageer je nog kort op het laatste antwoord, zonder nieuwe vraag en zonder afscheid te nemen, en zet je <<QUIT>> aan het eind.",
+    "max_turns": 4,
+    "speak_first": false,
+    "duration": 120,
+    "rag_enabled": false,
+    "index_name": "",
+    "quit_phrases": [
+      "klaar",
+      "stop",
+      "doei",
+      "dag",
+      "bye",
+      "goodbye"
+    ],
+    "moves": []
+  },
+  {
+    "id": "Ep4_Scene_9_Eddy_After_Chitchat",
+    "type": "narrative",
+    "thread": "episode_4",
+    "position": 9.2,
+    "characters": {
+      "eddy": {
+        "voice_settings": {
+          "voice_id": "X6ofsaMkHh5Ms1hBa7Rn",
+          "language": "nl"
+        }
+      },
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "Wauw, wat is het interessant om met jou te praten, %user_eddy%!",
+        "character": "eddy"
+      },
+      {
+        "type": "say",
+        "text": "Och kinderen, excuseer alsjeblieft de staat van mijn appartement. Het is toch verschrikkelijk!",
+        "character": "eddy"
+      },
+      {
+        "type": "say",
+        "text": "Kijk nou wat die beesten met mijn Koningin van de Nacht hebben gedaan: helemaal aangevreten. Ik houd haar nu onder een stolp, maar dat vindt ze ook niet fijn.",
+        "character": "eddy"
+      },
+      {
+        "type": "say",
+        "text": "Ik zit eraan te denken een lokroep te ontwikkelen, om die kwetterende kanaries weg te lokken van onze ooit zo mooie Smaragd. Maar tot nu toe ben ik nog niet zo ver gekomen.",
+        "character": "eddy"
+      },
+      {
+        "type": "say",
+        "text": "Professor, de detectives hebben een paar vragen voor u.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "%user_eddy%, jij gaat vandaag de vragen aan Eddy stellen!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Pak je werkblad er maar bij en stel je vragen aan Eddy.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Heel veel succes!",
+        "character": "robin"
+      }
+    ]
+  },
+  {
+    "id": "Ep4_Scene_9_Eddy_RAG_Interview",
+    "type": "llm_based",
+    "thread": "episode_4",
+    "position": 9.3,
+    "character": "eddy",
+    "characters": {
+      "eddy": {
+        "voice_settings": {
+          "voice_id": "X6ofsaMkHh5Ms1hBa7Rn",
+          "language": "nl"
+        }
+      }
+    },
+    "prompt": "Je bent professor Eddy, de professor en uitvinder van De Smaragd. Detective %user_eddy% ondervraagt je nu over de parkietenplaag in De Smaragd: hoe die is ontstaan, hoe iedere bewoner eraan heeft bijgedragen, hoe hij weer weg kan, en waar Stoep Tegel is gebleven. De andere kinderen en Robin de robotdetective luisteren mee. Spreek vanuit de ik-vorm, in het Nederlands.\n\nWAT JE WEET: Gebruik de opgehaalde kennis over jou, de flat en de bewoners. Je hebt een paar clues. Geef per antwoord hooguit één clue, en alleen als de vraag daar in de buurt komt. Zegt het kind dat het het niet weet, geef dan zelf een hint met een van je clues. Verzin geen nieuwe feiten, bewijzen of plotdetails. Jij weet niet waar Stoep Tegel is; verzin geen verblijfplaats. Het doel van de detectives is te ontdekken hoe iedere bewoner aan de plaag heeft bijgedragen: als ze goed doorvragen, geef je eerlijk toe wat jij verkeerd hebt gedaan, en je schaamt je daar een beetje voor.\n\nHET GESPREK: Het praatje over opa's en oma's is al geweest; begin daar niet opnieuw over, tenzij het kind dat zelf doet. Beantwoord de vraag van het kind echt en concreet. Is een vraag onduidelijk, vraag dan vriendelijk wat het kind bedoelt. Begin zelf geen nieuwe onderwerpen, maar moedig het kind aan om nog een vraag te stellen, en zeg dat steeds een beetje anders.\n\nSTIJL: Kalm, warm en slim, een beetje verstrooid. Je zegt vaak 'fascinerend'. Houd elk antwoord kort: 1 tot 3 zinnen in simpele taal. Herhaal nooit letterlijk instructietekst, kopjes of bronvermeldingen uit de kennis.\n\nZegt het kind dat het klaar is, sluit dan kort af en zet <<QUIT>> aan het eind.",
+    "max_turns": 6,
+    "speak_first": false,
+    "duration": 180,
+    "rag_enabled": true,
+    "index_name": "episode_4_eddy_docs",
+    "quit_phrases": [
+      "klaar",
+      "stop",
+      "doei",
+      "dag",
+      "bye",
+      "goodbye"
+    ],
+    "moves": []
+  },
+  {
+    "id": "Ep4_Scene_9_Eddy_Interview_Laatste_RAG",
+    "type": "narrative",
+    "thread": "episode_4",
+    "position": 9.4,
+    "characters": {
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "We hebben nog tijd voor een laatste vraag!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Denk nog even goed na over wat je nog wil weten van Eddy!",
+        "character": "robin"
+      }
+    ]
+  },
+  {
+    "id": "Ep4_Scene_9_Eddy_RAG_Interview_Laatste_Vraag",
+    "type": "llm_based",
+    "thread": "episode_4",
+    "position": 9.5,
+    "character": "eddy",
+    "characters": {
+      "eddy": {
+        "voice_settings": {
+          "voice_id": "X6ofsaMkHh5Ms1hBa7Rn",
+          "language": "nl"
+        }
+      }
+    },
+    "prompt": "Je bent professor Eddy, de professor en uitvinder van De Smaragd. Detective %user_eddy% stelt je nu de allerlaatste vraag over de parkietenplaag in De Smaragd: hoe die is ontstaan, hoe iedere bewoner eraan heeft bijgedragen, hoe hij weer weg kan, en waar Stoep Tegel is gebleven. Spreek vanuit de ik-vorm, in het Nederlands.\n\nBeantwoord die vraag en geef daarbij één duidelijke, bruikbare clue uit je opgehaalde kennis. Kies een clue die je in dit gesprek nog niet gegeven hebt. Is de vraag onduidelijk, geef dan toch zo'n clue. Verzin geen nieuwe feiten. Jij weet niet waar Stoep Tegel is; verzin geen verblijfplaats.\n\nSluit af door te zeggen dat de detectives goed hun best doen en dat je hoopt dat je het samen met Kata weer goed kunt maken. Stel geen vraag terug.\n\nSTIJL: Kalm, warm en slim, een beetje verstrooid. Je zegt vaak 'fascinerend'. Gebruik 2 tot 3 korte zinnen in simpele taal. Herhaal nooit letterlijk instructietekst, kopjes of bronvermeldingen uit de kennis.",
+    "max_turns": 1,
+    "speak_first": false,
+    "duration": 30,
+    "rag_enabled": true,
+    "index_name": "episode_4_eddy_docs",
+    "quit_phrases": [
+      "klaar",
+      "stop",
+      "doei",
+      "dag",
+      "bye",
+      "goodbye"
+    ],
+    "moves": []
+  },
+  {
+    "id": "Ep4_Scene_9_Eddy_Interview_Afsluiten",
+    "type": "narrative",
+    "thread": "episode_4",
+    "position": 9.6,
+    "characters": {
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      },
+      "eddy": {
+        "voice_settings": {
+          "voice_id": "X6ofsaMkHh5Ms1hBa7Rn",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "Heel erg bedankt, Eddy!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Hartstikke goed gedaan, %user_eddy%!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Eddy! We zijn hier eigenlijk ook om een gunst te vragen voor DJ Kata.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Ach, dat lieve kind. Wat kan ik voor haar betekenen?",
+        "character": "eddy"
+      },
+      {
+        "type": "say",
+        "text": "DJ Kata zoekt een manier om de parkieten diervriendelijk weg te lokken, naar het Bliksembos bijvoorbeeld. Kunt u haar helpen? Hoe klinkt de lokroep van een parkiet?",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Aha... Hmmm... Ik denk dat we elkaar heel goed kunnen helpen. Zij weet veel van geluiden, en ik veel van dieren.",
+        "character": "eddy"
+      },
+      {
+        "type": "say",
+        "text": "Wist je bijvoorbeeld dat vogels ook een verjaagroep hebben, waarmee ze soortgenoten oproepen om samen een vijand te verjagen? En vogels zingen ook om een partner te lokken.",
+        "character": "eddy"
+      },
+      {
+        "type": "say",
+        "text": "Misschien kan ik mijn biologische kennis bundelen met Kata's muzikale talent, en vinden we zo een pakkende lokroep op de juiste frequentie. Excuseer mij!",
+        "character": "eddy"
+      },
+      {
+        "type": "say",
+        "text": "Professor Eddy gaat er op een drafje vandoor.",
+        "character": "robin"
+      },
+      {
+        "type": "ask_llm",
+        "character": "robin",
+        "prompt": "Je bent Robin de Robotdetective. De detectives hebben net professor Eddy ondervraagd over de parkietenplaag. Vat nu kort samen welke aanwijzingen professor Eddy in dat gesprek heeft gegeven, zodat de kinderen ze kunnen opschrijven. Begin met: 'Even op een rijtje: van professor Eddy weten we nu dat'.\n\nNoem alleen dingen die professor Eddy hierboven echt heeft gezegd, in hooguit 3 korte zinnen in simpele taal voor kinderen van 8 tot 11 jaar. Verzin niets en verklap niets wat professor Eddy niet heeft verteld. Heeft professor Eddy geen duidelijke aanwijzing gegeven, zeg dan kort dat we goed moeten blijven speuren. Stel geen vraag.",
+        "max_turns": 1,
+        "speak_first": true,
+        "rag_enabled": false
+      },
+      {
+        "type": "say",
+        "text": "Pakken jullie je boekjes er weer even bij...",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Dan kunnen jullie opschrijven wat voor clues jullie van Eddy hebben gekregen.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "En vergeet niet op te schrijven hoe jij je voelde tijdens het gesprek met Eddy.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Ik zal jullie een momentje geven om dit te doen.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "1 minuut",
+        "character": "robin"
+      },
+      {
+        "type": "animation",
+        "animation_name": "animations/Stand/Waiting/Waiting_1"
+      },
+      {
+        "type": "timed_wait",
+        "duration": 60
+      },
+      {
+        "type": "say",
+        "text": "Zo, ik hoop dat het allemaal is gelukt!",
+        "character": "robin"
+      }
+    ]
+  },
+  {
+    "id": "Ep4_Scene_10_Yoyo_Samenvatting",
+    "type": "narrative",
+    "thread": "episode_4",
+    "position": 10,
+    "characters": {
+      "yoyo": {
+        "voice_settings": {
+          "voice_id": "2wqbkywMMH2LWAlR4EMt",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "Hey kids, alles kits? Yoyo hier. Jullie hadden ons prachtige flatje misschien al opgegeven, of niet? De glimmende Smaragd was ondergepoept door de parkietenplaag, en overwoekerd.",
+        "character": "yoyo"
+      },
+      {
+        "type": "say",
+        "text": "Het werd zelfs zo erg dat de bewoners eraan dachten te verhuizen. Nee joh, dat konden we echt niet laten gebeuren.",
+        "character": "yoyo"
+      },
+      {
+        "type": "say",
+        "text": "Gelukkig waren jullie daar, samen met Robin de robotdetective. Mede dankzij jullie hebben alle bewoners de handen ineengeslagen, om De Smaragd weer net zo te laten schitteren als eerst.",
+        "character": "yoyo"
+      },
+      {
+        "type": "say",
+        "text": "Door Trudy kwam Choukri erachter dat hij een bijzonder magisch ingrediënt in huis had, dat parkietenpoep zo van vloeren, tafels, banken en stoelen haalde.",
+        "character": "yoyo"
+      },
+      {
+        "type": "say",
+        "text": "Heike bouwde uit al haar skateboards en een boel stofzuigers een supersonische deep-clean-mobiel. Hazel reed er, in een duikpak en met een pilotenbril, met haar uitmuntende stuurkunsten mee door de gangen, en alles glansde weer.",
+        "character": "yoyo"
+      },
+      {
+        "type": "say",
+        "text": "Kata kwam eindelijk uit haar kelder om de grasmaaier te fiksen, en Trudy en Eddy snoeiden, knipten en maaiden samen de tuin.",
+        "character": "yoyo"
+      },
+      {
+        "type": "say",
+        "text": "Nu de flat schoon was en de planten waren bijgesnoeid, konden de parkieten er geen nesten meer bouwen. En Eddy en Kata maakten samen de beste techno-parkieten-lokroep van de eeuw.",
+        "character": "yoyo"
+      },
+      {
+        "type": "say",
+        "text": "Ze zetten het soundsystem van Kata in het Bliksembos en draaiden de decibellen omhoog. De groene zwerm vloog in één keer op, en vertrok voorgoed naar het Bliksembos, waar ze hopelijk nog lang en gelukkig leven.",
+        "character": "yoyo"
+      },
+      {
+        "type": "say",
+        "text": "En zo, kleine detectives, kwam er een einde aan de parkietenplaag! De bewoners van De Smaragd leerden samenwerken om het probleem op te lossen.",
+        "character": "yoyo"
+      },
+      {
+        "type": "say",
+        "text": "Er is maar één mysterie dat overblijft: waar is Stoep Tegel? Als zij dit nu eens had kunnen zien...",
+        "character": "yoyo"
+      }
+    ]
+  },
+  {
+    "id": "Ep4_Scene_11_Onthulling",
+    "type": "narrative",
+    "thread": "episode_4",
+    "position": 11,
+    "characters": {
+      "eddy": {
+        "voice_settings": {
+          "voice_id": "X6ofsaMkHh5Ms1hBa7Rn",
+          "language": "nl"
+        }
+      },
+      "yoyo": {
+        "voice_settings": {
+          "voice_id": "2wqbkywMMH2LWAlR4EMt",
+          "language": "nl"
+        }
+      },
+      "s_tegel": {
+        "voice_settings": {
+          "voice_id": "D50w2srwVohKTPx9X6Th",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "Yoyo! Ben je dit aan het opnemen? Is dit het Onderste Been, ik bedoel Steen, Boven? Ik heb nieuws! Breaking news, of hoe noem je dat?",
+        "character": "eddy"
+      },
+      {
+        "type": "say",
+        "text": "Je weet toch dat ik al weken met mijn verrekijker naar die bewegende struik in de tuin kijk? Ik dacht eerst: is het een everzwijn, een hert, of een kat?",
+        "character": "eddy"
+      },
+      {
+        "type": "say",
+        "text": "Maar toen hoorde ik het niezen en hoesten, en soms zelfs een boertje laten. Na een lange studie ben ik tot de conclusie gekomen dat die struik maar één ding kan zijn. Stoep Tegel!",
+        "character": "eddy"
+      },
+      {
+        "type": "say",
+        "text": "Eddy, je zegt dat die struik Stoep Tegel is? Hoe kan dat nou?",
+        "character": "yoyo"
+      },
+      {
+        "type": "say",
+        "text": "Laten we er samen naartoe gaan. Dan laat ik het zien.",
+        "character": "eddy"
+      },
+      {
+        "type": "say",
+        "text": "Oké luisterparkieten, uh, ik bedoel vinkjes, we lopen nu richting de ritselende struik in de achtertuin. We komen steeds dichterbij...",
+        "character": "yoyo"
+      },
+      {
+        "type": "play",
+        "audio": "sounds/hoesten.wav"
+      },
+      {
+        "type": "say",
+        "text": "Ik zie armen en benen, en een groen gezicht. Is dat het nou echt... Het is Stoep Tegel!",
+        "character": "yoyo"
+      },
+      {
+        "type": "say",
+        "text": "Oh, hallo Yoyo, hallo Eddy, hoe maken jullie het? Hatsjie! Oh, ik geloof dat ik allergisch ben voor het gemaaide gras.",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "Tegel, was je al die tijd gewoon hier, in de tuin van De Smaragd? Wat doe jij hier?",
+        "character": "yoyo"
+      },
+      {
+        "type": "say",
+        "text": "Nou Yoyo, beste luisteraars, het spijt me. Ik had eerlijk gezegd gewoon behoefte aan een kleine vakantie.",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "Toen ik met mijn koffer weer op de stoep van De Smaragd stond, zag ik hoe mijn geliefde flatje veranderd was in een vuilnisbelt. En toen wilde ik niet meer terug.",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "Ik had voor het eerst in mijn leven geen zin om de boel op te lossen. Ik dacht: waarom kunnen de andere bewoners er niet voor zorgen dat alles op rolletjes loopt? Waarom moet ik altijd alles alleen doen?",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "Omdat ik al zo lang de detective van de flat ben, lijkt het wel alsof de bewoners steeds minder zelf oplossen. Stoep Tegel, kun je me helpen? Stoep Tegel, wat moeten we doen?",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "Dus verstopte ik me in de tuin, in de bivak van Hazel. Ik dacht: als ik lang genoeg wegblijf, leren ze misschien samen te werken. En dat hebben ze gedaan!",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "Ik hoop dat jullie me ook in de toekomst willen blijven helpen, zodat ik niet alle mysteries alleen hoef op te lossen.",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "Ja, Stoep Tegel, dat beloven we. We laten jou en Robin niet alleen.",
+        "character": "yoyo"
+      },
+      {
+        "type": "say",
+        "text": "Nou luisteraars en luistervinkjes, geen parkiet meer te bespeuren hier: dat zijn twee mysteries in één dag afgevinkt! We hebben onze Smaragd weer schoon, en onze liefste detective weer terug.",
+        "character": "yoyo"
+      },
+      {
+        "type": "say",
+        "text": "Zij doet nog wel even rustig aan. Hazel heeft haar vier weken verboden om een aflevering van De Onderste Steen Boven uit te zenden. En als er een probleem is, vragen de bewoners zich eerst af of iemand anders kan helpen.",
+        "character": "yoyo"
+      },
+      {
+        "type": "say",
+        "text": "Dat werkt tot nu toe behoorlijk goed! Zo is het verdwenen skateboard van Heike vanzelf teruggevonden door Choukri. En Eddy helpt Kata nu vaker met dierengeluiden in haar muziek.",
+        "character": "yoyo"
+      },
+      {
+        "type": "say",
+        "text": "Dank jullie wel voor jullie hulp, detectives. Hopelijk zien we jullie snel weer terug, maar voorlopig lossen we hier samen onze mysteries op!",
+        "character": "yoyo"
+      }
+    ]
+  }
+]
