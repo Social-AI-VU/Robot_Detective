@@ -39,9 +39,10 @@ INGEST_TOGGLES = {
     "Heike":   True,
     "Choukri": True,
     "Eddy":    True,
-    "Rami":    True,
+    "Rami":    True,   # still used for the pipet question to Rami
     "Hazel":   False,  # no RAG interview with Hazel in episode 2 (yet)
-    "Toon":    False,  # no RAG interview with Toon in episode 2 (yet)
+    "Toon":    True,
+    "Jennifer": True,
 }
 
 # ─── Character source folders and target index names ─────────────────────────
@@ -52,6 +53,7 @@ CHARACTER_CONFIG = {
     "Rami":    {"docs_dir": DETECTIVE_DATA_DIR / "Ep2_Rami", "index_name": "episode_2_rami_docs"},
     "Hazel":   {"docs_dir": DETECTIVE_DATA_DIR / "Ep2_Hazel", "index_name": "episode_2_hazel_docs"},
     "Toon":    {"docs_dir": DETECTIVE_DATA_DIR / "Ep2_Toon", "index_name": "episode_2_toon_docs"},
+    "Jennifer": {"docs_dir": DETECTIVE_DATA_DIR / "Ep2_Jennifer", "index_name": "episode_2_jennifer_docs"},
 }
 
 

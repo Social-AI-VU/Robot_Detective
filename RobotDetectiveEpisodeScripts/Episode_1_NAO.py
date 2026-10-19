@@ -49,17 +49,31 @@ from nardial.conversation_agent import ConversationAgent
 from nardial.interaction_orchestrator import InteractionConfig
 from nardial.providers.device.nao import NaoAdapter
 from nardial.providers.nlu.dialogflow import DialogflowNLUProvider
-from nardial.providers.llm.openai_gpt import OpenAIGPTProvider
+from local_llm import make_llm_provider  # OpenAI or a local model, see LLM_BACKEND in conf/.env
 from nardial.providers.vector_store.redis_store import RedisVectorStoreProvider
 from nardial.providers.tts.elevenlabs import ElevenLabsTTSConf, ElevenLabsTTSProvider
 from nardial.session_manager import SessionManager
+
+from start_gate import connect_nao, log_startup, wait_for_start
 
 
 BASE_DIR = Path(__file__).resolve().parent
 REPO_ROOT = BASE_DIR.parent
 
 DOCS_DIR = BASE_DIR / "Detective_Data"
-DIALOG_CONFIG_PATH = REPO_ROOT / "RobotDetective_Narrative_Jsons" / "Episode_1_all_dialogs.json"
+# Which version of the episode (made by utils/make_short_episodes.py):
+#   "vol"  = the full episode
+#   "kort" = short version, 5 interviews (~60-65 min)
+#   "3"    = 3 interviews + 2 note-keepers (~50 min); set the note-keepers' names below
+# The launcher overrides this with the EPISODE_VERSION environment variable.
+# Scenes in the agenda that a version leaves out are skipped.
+EPISODE_VERSION = os.getenv("EPISODE_VERSION", "kort").strip().lower()
+USE_SHORT_VERSION = EPISODE_VERSION != "vol"
+DIALOG_CONFIG_PATH = REPO_ROOT / "RobotDetective_Narrative_Jsons" / {
+    "vol": "Episode_1_all_dialogs.json",
+    "kort": "Episode_1_all_dialogs_kort.json",
+    "3": "Episode_1_all_dialogs_3.json",
+}[EPISODE_VERSION]
 GOOGLE_KEYFILE_PATH = REPO_ROOT / "conf" / "google" / "google-key.json"
 ENV_FILE_PATH = REPO_ROOT / "conf" / ".env"
 
@@ -168,10 +182,11 @@ if __name__ == "__main__":
 
 
 
-    nao = Nao(ip=NAO_IP)
+    nao = connect_nao(NAO_IP)  # skips SIC's slow install check on the robot, see start_gate.py
     device = NaoAdapter(nao)
 
     nao.motion.request(NaoPostureRequest("Stand", 0.8))
+    log_startup("robot standing")
 
     tts_conf = ElevenLabsTTSConf(
         api_key=os.getenv("ELEVENLABS_API_KEY", ""),
@@ -192,7 +207,9 @@ if __name__ == "__main__":
         signal_listening_behavior=True,
     )
     interaction_config.animation_style = AnimationStyle.EXPRESSIVE
-    llm = OpenAIGPTProvider(api_key=os.getenv("OPENAI_API_KEY"))
+    # Synthesize each line in one piece instead of per sentence: saves ~2 s per sentence on the NAO.
+    interaction_config.chunk_audio = False
+    llm = make_llm_provider()
     vector_store = RedisVectorStoreProvider(
         embedding_model="text-embedding-3-large",
         openai_api_key=os.getenv("OPENAI_API_KEY"),
@@ -201,6 +218,7 @@ if __name__ == "__main__":
         input_path=str(DOCS_DIR),
     )
 
+    log_startup("TTS, mic, NLU, LLM ready")
     agent = ConversationAgent(
         device=device,
         tts_provider=tts,
@@ -211,29 +229,29 @@ if __name__ == "__main__":
     )
 
     session_agenda = [
-     #     "Ep1_Scene_1_Intro",  # intro + meet Robin, collect name
-     #   "Ep1_Scene_2_Toon_Rami",  # Toon & Rami report the missing rollercoaster
-     #   "Ep1_Scene_3_Trudy",  # interview Trudy (karaoke plan)
-     #   "Ep1_Scene_3_Trudy_RAG_Chitchat",  # RAG-backed Trudy chitchat
-     #   "Ep1_Scene_3_Trudy_After_Chitchat",  # Robin/trudy bridge after chitchat
-     #   "Ep1_Scene_3_Trudy_RAG_Interview",  # RAG-backed Trudy interview
-     #   "Ep1_Scene_3_Trudy_Interview_Laatste_RAG",
-     #  "Ep1_Scene_3_Trudy_RAG_Interview_Laatste_Vraag",
-     #   "Ep1_Scene_3_Trudy_After_Interview",
-      #    "Ep1_Scene_4_Eddy",  # intro Eddy
-      #     "Ep1_Scene_4_Eddy_RAG_Chitchat",  # Eddy chitchat
-      #    "Ep1_Scene_4_Eddy_After_Chitchat",  # bridge after Eddy chitchat
-      #     "Ep1_Scene_4_Eddy_RAG_Interview",  # RAG-backed Eddy interview
-      #     "Ep1_Scene_4_Eddy_Interview_Laatste_RAG",  # last-question setup
-      #     "Ep1_Scene_4_Eddy_RAG_Interview_Laatste_Vraag",  # final Eddy clue
-      #     "Ep1_Scene_4_Eddy_Interview_Afsluiten",  # close Eddy scene
-      #     "Ep1_Scene_5_Yoyo",
-      #      "Ep1_Scene_5_Yoyo_RAG_Chitchat",
-      #     "Ep1_Scene_5_Yoyo_After_Chitchat",
-      #     "Ep1_Scene_5_Yoyo_RAG_Interview",# interview Yoyo RAG
-      #     "Ep1_Scene_5_Yoyo_Interview_Laatste_RAG",
-      #     "Ep1_Scene_5_Yoyo_RAG_Interview_Laatste_Vraag",
-      #     "Ep1_Scene_5_Yoyo_Interview_Afsluiten",
+        "Ep1_Scene_1_Intro",  # intro + meet Robin, collect name
+        "Ep1_Scene_2_Toon_Rami",  # Toon & Rami report the missing rollercoaster
+        "Ep1_Scene_3_Trudy",  # interview Trudy (karaoke plan)
+        "Ep1_Scene_3_Trudy_RAG_Chitchat",  # RAG-backed Trudy chitchat
+        "Ep1_Scene_3_Trudy_After_Chitchat",  # Robin/trudy bridge after chitchat
+        "Ep1_Scene_3_Trudy_RAG_Interview",  # RAG-backed Trudy interview
+        "Ep1_Scene_3_Trudy_Interview_Laatste_RAG",
+        "Ep1_Scene_3_Trudy_RAG_Interview_Laatste_Vraag",
+        "Ep1_Scene_3_Trudy_After_Interview",
+        "Ep1_Scene_4_Eddy",  # intro Eddy
+        "Ep1_Scene_4_Eddy_RAG_Chitchat",  # Eddy chitchat
+        "Ep1_Scene_4_Eddy_After_Chitchat",  # bridge after Eddy chitchat
+        "Ep1_Scene_4_Eddy_RAG_Interview",  # RAG-backed Eddy interview
+        "Ep1_Scene_4_Eddy_Interview_Laatste_RAG",  # last-question setup
+        "Ep1_Scene_4_Eddy_RAG_Interview_Laatste_Vraag",  # final Eddy clue
+        "Ep1_Scene_4_Eddy_Interview_Afsluiten",  # close Eddy scene
+        "Ep1_Scene_5_Yoyo",
+        "Ep1_Scene_5_Yoyo_RAG_Chitchat",
+        "Ep1_Scene_5_Yoyo_After_Chitchat",
+        "Ep1_Scene_5_Yoyo_RAG_Interview",# interview Yoyo RAG
+        "Ep1_Scene_5_Yoyo_Interview_Laatste_RAG",
+        "Ep1_Scene_5_Yoyo_RAG_Interview_Laatste_Vraag",
+        "Ep1_Scene_5_Yoyo_Interview_Afsluiten",
           "Ep1_Scene_6_Jennifer",
            "Ep1_Scene_6_Jennifer_RAG_Chitchat",
            "Ep1_Scene_6_Jennifer_After_Chitchat",
@@ -259,6 +277,8 @@ if __name__ == "__main__":
         all_dialogs = json.loads(DIALOG_CONFIG_PATH.read_text(encoding="utf-8"))
         populate_missing_character_definitions(all_dialogs)
         dialogs_by_id = {d.get("id"): d for d in all_dialogs if d.get("id")}
+        if USE_SHORT_VERSION:
+            session_agenda = [scene_id for scene_id in session_agenda if scene_id in dialogs_by_id]
         missing = [scene_id for scene_id in session_agenda if scene_id not in dialogs_by_id]
         if missing:
             raise ValueError(f"session_agenda contains unknown dialog ids: {missing}")
@@ -282,12 +302,17 @@ if __name__ == "__main__":
     )
 
     try:
-        session_manager.conversation_state.user_model.update({"user_trudy": "Soyun"})
-        session_manager.conversation_state.user_model.update({"user_eddy": "Nefeli"})
-        session_manager.conversation_state.user_model.update({"user_yoyo": "Anita"})
-        session_manager.conversation_state.user_model.update({"user_jennifer": "Enne"})
-        session_manager.conversation_state.user_model.update({"user_kata": "Soyun2"})
+        session_manager.conversation_state.user_model.update({"user_trudy": "Anita"})
+        session_manager.conversation_state.user_model.update({"user_eddy": "Lilly"})
+        session_manager.conversation_state.user_model.update({"user_yoyo": "Julianna"})
+        session_manager.conversation_state.user_model.update({"user_jennifer": "Eva"})
+        session_manager.conversation_state.user_model.update({"user_kata": "Reachy"})
+        # Only used in the 3-interview version: the two note-keepers.
+        session_manager.conversation_state.user_model.update({"user_notulist_1": "Anita"})
+        session_manager.conversation_state.user_model.update({"user_notulist_2": "Lilly"})
         session_manager.conversation_state.user_model.update({"user_teacher": "Soyun3"})
+        # Wait for Enter, a touch on the NAO's head/chest, or the word 'start'.
+        wait_for_start(nao=nao, device=device, nlu=nlu)
         session_manager.run()
     except Exception as e:
         print(f"Error occurred: {e}")

@@ -43,17 +43,31 @@ from nardial.interaction_orchestrator import InteractionConfig
 from nardial.providers.device import AnimationStyle
 from nardial.providers.device.nao import NaoAdapter
 from nardial.providers.nlu.dialogflow import DialogflowNLUProvider
-from nardial.providers.llm.openai_gpt import OpenAIGPTProvider
+from local_llm import make_llm_provider  # OpenAI or a local model, see LLM_BACKEND in conf/.env
 from nardial.providers.vector_store.redis_store import RedisVectorStoreProvider
 from nardial.providers.tts.elevenlabs import ElevenLabsTTSConf, ElevenLabsTTSProvider
 from nardial.session_manager import SessionManager
+
+from start_gate import connect_nao, log_startup, wait_for_start
 
 
 BASE_DIR = Path(__file__).resolve().parent
 REPO_ROOT = BASE_DIR.parent
 
 DOCS_DIR = REPO_ROOT / "Detective_Data" / "Episode_2_Detective_Data"
-DIALOG_CONFIG_PATH = REPO_ROOT / "RobotDetective_Narrative_Jsons" / "Episode_2_gigagiebels_all_dialogs.json"
+# Which version of the episode (made by utils/make_short_episodes.py):
+#   "vol"  = the full episode
+#   "kort" = short version, 5 interviews (~60-65 min)
+#   "3"    = 3 interviews + 2 note-keepers (~50 min); set the note-keepers' names below
+# The launcher overrides this with the EPISODE_VERSION environment variable.
+# Scenes in the agenda that a version leaves out are skipped.
+EPISODE_VERSION = os.getenv("EPISODE_VERSION", "kort").strip().lower()
+USE_SHORT_VERSION = EPISODE_VERSION != "vol"
+DIALOG_CONFIG_PATH = REPO_ROOT / "RobotDetective_Narrative_Jsons" / {
+    "vol": "Episode_2_gigagiebels_all_dialogs.json",
+    "kort": "Episode_2_gigagiebels_all_dialogs_kort.json",
+    "3": "Episode_2_gigagiebels_all_dialogs_3.json",
+}[EPISODE_VERSION]
 GOOGLE_KEYFILE_PATH = REPO_ROOT / "conf" / "google" / "google-key.json"
 ENV_FILE_PATH = REPO_ROOT / "conf" / ".env"
 
@@ -68,7 +82,11 @@ USER_NAMES = {
     "user_heike": "Anita",
     "user_choukri": "Smita",
     "user_eddy": "Frita",
-    "user_rami": "Mimimimi",
+    "user_jennifer": "Mimimimi2",
+    "user_toon": "Mimimimi",
+    # Only used in the 3-interview version: the two note-keepers.
+    "user_notulist_1": "Notulist1",
+    "user_notulist_2": "Notulist2",
     "user_teacher": "Juffrouw Egel",
 }
 
@@ -76,7 +94,7 @@ SESSION_AGENDA = [
     "Ep2_Scene_1_Intro",
     "Ep2_Scene_2_Mysterie",
     "Ep2_Scene_3_Robin_Intro",
-    "Ep2_Scene_3_Robin_Oefenvragen",
+    # "Ep2_Scene_3_Robin_Oefenvragen",  # chitchat skipped; Robin_Intro now explains the beep and green eyes
     "Ep2_Scene_3_Robin_Spelregels",
     "Ep2_Scene_4_Rebus",
     "Ep2_Scene_5_Heike",
@@ -100,6 +118,13 @@ SESSION_AGENDA = [
     "Ep2_Scene_7_Eddy_Interview_Laatste_RAG",
     "Ep2_Scene_7_Eddy_RAG_Interview_Laatste_Vraag",
     "Ep2_Scene_7_Eddy_Interview_Afsluiten",
+    "Ep2_Scene_7b_Jennifer",
+    "Ep2_Scene_7b_Jennifer_RAG_Chitchat",
+    "Ep2_Scene_7b_Jennifer_After_Chitchat",
+    "Ep2_Scene_7b_Jennifer_RAG_Interview",
+    "Ep2_Scene_7b_Jennifer_Interview_Laatste_RAG",
+    "Ep2_Scene_7b_Jennifer_RAG_Interview_Laatste_Vraag",
+    "Ep2_Scene_7b_Jennifer_Interview_Afsluiten",
     "Ep2_Scene_8_Tegel_Belt",
     "Ep2_Scene_9_Toon_Rami",
     "Ep2_Scene_9_Toon_Rami_RAG_Chitchat",
@@ -124,9 +149,10 @@ def print_startup_checks() -> None:
 if __name__ == "__main__":
     print_startup_checks()
 
-    nao = Nao(ip=NAO_IP)
+    nao = connect_nao(NAO_IP)  # skips SIC's slow install check on the robot, see start_gate.py
     device = NaoAdapter(nao)
     nao.motion.request(NaoPostureRequest("Stand", 0.8))
+    log_startup("robot standing")
 
     tts_conf = ElevenLabsTTSConf(
         api_key=os.getenv("ELEVENLABS_API_KEY", ""),
@@ -147,7 +173,9 @@ if __name__ == "__main__":
         signal_listening_behavior=True,
     )
     interaction_config.animation_style = AnimationStyle.EXPRESSIVE
-    llm = OpenAIGPTProvider(api_key=os.getenv("OPENAI_API_KEY"))
+    # Synthesize each line in one piece instead of per sentence: saves ~2 s per sentence on the NAO.
+    interaction_config.chunk_audio = False
+    llm = make_llm_provider()
     vector_store = RedisVectorStoreProvider(
         embedding_model="text-embedding-3-large",
         openai_api_key=os.getenv("OPENAI_API_KEY"),
@@ -156,6 +184,7 @@ if __name__ == "__main__":
         input_path=str(DOCS_DIR),
     )
 
+    log_startup("TTS, mic, NLU, LLM ready")
     agent = ConversationAgent(
         device=device,
         tts_provider=tts,
@@ -169,6 +198,8 @@ if __name__ == "__main__":
     # without tripping nardial's position-order check.
     all_dialogs = json.loads(DIALOG_CONFIG_PATH.read_text(encoding="utf-8"))
     dialogs_by_id = {d["id"]: d for d in all_dialogs}
+    if USE_SHORT_VERSION:
+        SESSION_AGENDA = [scene_id for scene_id in SESSION_AGENDA if scene_id in dialogs_by_id]
     missing = [scene_id for scene_id in SESSION_AGENDA if scene_id not in dialogs_by_id]
     if missing:
         raise ValueError(f"SESSION_AGENDA contains unknown dialog ids: {missing}")
@@ -187,6 +218,8 @@ if __name__ == "__main__":
 
     try:
         session_manager.conversation_state.user_model.update(USER_NAMES)
+        # Wait for Enter, a touch on the NAO's head/chest, or the word 'start'.
+        wait_for_start(nao=nao, device=device, nlu=nlu)
         session_manager.run()
     except Exception as e:
         print(f"Error occurred: {e}")

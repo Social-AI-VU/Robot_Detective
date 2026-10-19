@@ -44,10 +44,12 @@ from nardial.conversation_agent import ConversationAgent
 from nardial.interaction_orchestrator import InteractionConfig
 from nardial.providers.device.nao import NaoAdapter
 from nardial.providers.nlu.dialogflow import DialogflowNLUProvider
-from nardial.providers.llm.openai_gpt import OpenAIGPTProvider
+from local_llm import make_llm_provider  # OpenAI or a local model, see LLM_BACKEND in conf/.env
 from nardial.providers.vector_store.redis_store import RedisVectorStoreProvider
 from nardial.providers.tts.elevenlabs import ElevenLabsTTSConf, ElevenLabsTTSProvider
 from nardial.session_manager import SessionManager
+
+from start_gate import connect_nao, log_startup, wait_for_start
 
 BASE_DIR = Path(__file__).resolve().parent
 REPO_ROOT = BASE_DIR.parent
@@ -171,10 +173,11 @@ if __name__ == "__main__":
     print_startup_checks()
     reset_participant_state_if_needed()
 
-    nao = Nao(ip=NAO_IP)
+    nao = connect_nao(NAO_IP)  # skips SIC's slow install check on the robot, see start_gate.py
     device = NaoAdapter(nao)
 
     nao.motion.request(NaoPostureRequest("Stand", 0.8))
+    log_startup("robot standing")
 
     tts_conf = ElevenLabsTTSConf(
         api_key=os.getenv("ELEVENLABS_API_KEY", ""),
@@ -194,7 +197,7 @@ if __name__ == "__main__":
         post_speech_delay=0,
         signal_listening_behavior=True,
     )
-    llm = OpenAIGPTProvider(api_key=os.getenv("OPENAI_API_KEY"))
+    llm = make_llm_provider()
     vector_store = RedisVectorStoreProvider(
         embedding_model="text-embedding-3-large",
         openai_api_key=os.getenv("OPENAI_API_KEY"),
@@ -203,6 +206,7 @@ if __name__ == "__main__":
         input_path=str(DOCS_DIR),
     )
 
+    log_startup("TTS, mic, NLU, LLM ready")
     agent = ConversationAgent(
         device=device,
         tts_provider=tts,
@@ -213,8 +217,8 @@ if __name__ == "__main__":
     )
 
     session_agenda = [
-       # "Ep0_Scene_1_Intro",
-       # "Ep0_Scene_2_Smaragd_Flat",
+        "Ep0_Scene_1_Intro",
+        "Ep0_Scene_2_Smaragd_Flat",
         "Ep0_Scene_3_Question_Intro",
         "Ep0_Scene_4_Student_Practice",
     ]
@@ -247,6 +251,16 @@ if __name__ == "__main__":
     )
 
     try:
+        # The children's names; Robin calls them by name in the practice round (scene 4).
+        # Same names as in Episode_1_NAO.py.
+        session_manager.conversation_state.user_model.update({"user_trudy": "Soyun"})
+        session_manager.conversation_state.user_model.update({"user_eddy": "Nefeli"})
+        session_manager.conversation_state.user_model.update({"user_yoyo": "Anita"})
+        session_manager.conversation_state.user_model.update({"user_jennifer": "Enne"})
+        session_manager.conversation_state.user_model.update({"user_kata": "Soyun2"})
+        session_manager.conversation_state.user_model.update({"user_teacher": "Soyun3"})
+        # Wait for Enter, a touch on the NAO's head/chest, or the word 'start'.
+        wait_for_start(nao=nao, device=device, nlu=nlu)
         session_manager.run()
     except Exception as e:
         print(f"Error occurred: {e}")

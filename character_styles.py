@@ -7,10 +7,15 @@ Eye colour and gestures per character, so children can see who is talking on the
   Only use animation names that exist on the NAO (the ones below are standard NAOqi animations).
 - "thinking" are short sounds the character makes while the answer to a child is being generated,
   so the wait does not feel empty. Keep them short (1 to 3 words); they are cached after first use.
+- "volume" (optional, default 1.0) multiplies how loud the character speaks on the robot. Some
+  ElevenLabs voices come out much quieter than others; 2.0 is twice as loud. Audio is never pushed
+  into distortion: a piece that would get too loud is turned up only as far as it cleanly can.
 
 Characters that never share a scene may reuse a colour; the NAO eyes can only show a handful
 of clearly different colours.
 """
+
+THINKING_HM = ["Hm...", "Hmm...", "Hmmm..."]
 
 CHARACTER_STYLES = {
     # Robin: curious detective, explains and thinks out loud.
@@ -24,11 +29,7 @@ CHARACTER_STYLES = {
             "animations/Stand/Gestures/YouKnowWhat_2",
             "animations/Stand/Gestures/Me_1",
         ],
-        "thinking": [
-            "Hmm, even nadenken...",
-            "Hmmm...",
-            "Even kijken...",
-        ],
+        "thinking": THINKING_HM,
     },
     # Narrator: calm storyteller.
     "narrator": {
@@ -49,11 +50,7 @@ CHARACTER_STYLES = {
             "animations/Stand/Gestures/Far_2",
             "animations/Stand/Gestures/Enthusiastic_4",
         ],
-        "thinking": [
-            "Hmm, interessant...",
-            "Even denken...",
-            "Aha, hmm...",
-        ],
+        "thinking": THINKING_HM,
     },
     # Trudy: dramatic, cheerful singer, arms up to the sky.
     "trudy": {
@@ -65,11 +62,7 @@ CHARACTER_STYLES = {
             "animations/Stand/Gestures/ShowSky_7",
             "animations/Stand/Emotions/Positive/Happy_4",
         ],
-        "thinking": [
-            "Ooh, even denken hoor...",
-            "Hmmm, kinders...",
-            "Tjonge, even nadenken...",
-        ],
+        "thinking": THINKING_HM,
     },
     # Professor Eddy: calm, smart, a bit absent-minded, thinks a lot.
     "eddy": {
@@ -81,11 +74,7 @@ CHARACTER_STYLES = {
             "animations/Stand/Gestures/Explain_11",
             "animations/Stand/Gestures/IDontKnow_1",
         ],
-        "thinking": [
-            "Hmm, fascinerend...",
-            "Even nadenken...",
-            "Hmm, hmm...",
-        ],
+        "thinking": THINKING_HM,
     },
     # Yoyo: cool and funny.
     "yoyo": {
@@ -96,11 +85,7 @@ CHARACTER_STYLES = {
             "animations/Stand/Gestures/Yes_2",
             "animations/Stand/Gestures/Give_3",
         ],
-        "thinking": [
-            "Uhh, even denken...",
-            "Hmm...",
-            "Ehm, wacht even...",
-        ],
+        "thinking": THINKING_HM,
     },
     # Jennifer: mysterious and theatrical, slow calm gestures.
     "jennifer": {
@@ -112,11 +97,7 @@ CHARACTER_STYLES = {
             "animations/Stand/Gestures/ShowFloor_4",
             "animations/Stand/Emotions/Positive/Peaceful_1",
         ],
-        "thinking": [
-            "Hmmm... tja...",
-            "Ach schat, even denken...",
-            "Mmm...",
-        ],
+        "thinking": THINKING_HM,
     },
     # DJ Kata: cool and hyper, energetic.
     "kata": {
@@ -128,11 +109,7 @@ CHARACTER_STYLES = {
             "animations/Stand/Gestures/Yes_1",
             "animations/Stand/Emotions/Positive/Happy_4",
         ],
-        "thinking": [
-            "Hmm, wacht effe...",
-            "Uhh, yo, even denken...",
-            "Hmm...",
-        ],
+        "thinking": THINKING_HM,
     },
     # Toon: relaxed and tough ("ja man").
     "toon": {
@@ -143,11 +120,7 @@ CHARACTER_STYLES = {
             "animations/Stand/Gestures/You_1",
             "animations/Stand/Gestures/Yes_1",
         ],
-        "thinking": [
-            "Hmm, ja man...",
-            "Uhh...",
-            "Even denken...",
-        ],
+        "thinking": THINKING_HM,
     },
     # Rami: relaxed and funny, Toon's younger brother.
     "rami": {
@@ -158,11 +131,7 @@ CHARACTER_STYLES = {
             "animations/Stand/Gestures/No_2",
             "animations/Stand/Gestures/YouKnowWhat_2",
         ],
-        "thinking": [
-            "Uhh...",
-            "Hmm, even denken...",
-            "Ehm...",
-        ],
+        "thinking": THINKING_HM,
     },
     # Hazel: 110 years old, tough and hearty.
     "hazel": {
@@ -173,11 +142,7 @@ CHARACTER_STYLES = {
             "animations/Stand/Gestures/Give_5",
             "animations/Stand/Gestures/Everything_2",
         ],
-        "thinking": [
-            "Well, hmm...",
-            "Even denken, honey...",
-            "Hmm...",
-        ],
+        "thinking": THINKING_HM,
     },
     # Heike: tough, fast and direct.
     "heike": {
@@ -188,11 +153,7 @@ CHARACTER_STYLES = {
             "animations/Stand/Gestures/No_9",
             "animations/Stand/Gestures/Yes_2",
         ],
-        "thinking": [
-            "Uhh, even denken...",
-            "Hmm...",
-            "Ehm, wacht...",
-        ],
+        "thinking": THINKING_HM,
     },
     # Choukri: soft, shy and dreamy, small gestures.
     "choukri": {
@@ -203,11 +164,7 @@ CHARACTER_STYLES = {
             "animations/Stand/Gestures/ShowFloor_3",
             "animations/Stand/Gestures/Me_1",
         ],
-        "thinking": [
-            "Hmm... even denken...",
-            "Oh, eh...",
-            "Mmm...",
-        ],
+        "thinking": THINKING_HM,
     },
     "leen": {
         "eyes": (1.0, 0.85, 0.0),  # yellow
@@ -216,11 +173,7 @@ CHARACTER_STYLES = {
             "animations/Stand/Gestures/Give_3",
             "animations/Stand/Gestures/Me_1",
         ],
-        "thinking": [
-            "Hmm...",
-            "Even denken...",
-            "Ehm...",
-        ],
+        "thinking": THINKING_HM,
     },
 }
 

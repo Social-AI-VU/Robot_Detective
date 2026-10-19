@@ -1,0 +1,1671 @@
+[
+  {
+    "id": "Ep2_Scene_1_Intro",
+    "type": "narrative",
+    "thread": "episode_2",
+    "position": 1,
+    "characters": {
+      "s_tegel": {
+        "voice_settings": {
+          "voice_id": "D50w2srwVohKTPx9X6Th",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "Goedemiddag luistervinkjes en luisteraars, fantastisch dat je luistert naar de Onderste Steen Boven, waarin ik detective Stoep Tegel antwoorden vind op de grootste mysteries van De Smaragd.",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "Ik ontdek wie er liegt en ik los geheimen op.",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "Onder mijn plateauzolen, mijn schoenen met superdikke zolen, liggen alle andere verdiepingen van deze ongewone flat.",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "Want deze flat is een beetje vreemd, dat weet iedereen. Er gebeuren hier vaak mysterieuze zaken, raadsels en geheimzinnige dingen.",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "Daarnaast wonen er twee jongens zonder ouders die een achtbaan hebben gebouwd, die nu door de discotheek in de kelder raast.",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "Hier verschijnen en verdwijnen dingen, en niemand weet hoe. Daarom ben ik er, samen met mijn assistent Robin de Robot.",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "Daarom ben ik er, detective Stoep Tegel.",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "Maar vandaag hebben wij een mysterie zo mysterieus dat zelfs wij er niet uit komen. Willen jullie ons helpen?",
+        "character": "s_tegel"
+      }
+    ]
+  },
+  {
+    "id": "Ep2_Scene_2_Mysterie",
+    "type": "narrative",
+    "thread": "episode_2",
+    "position": 2,
+    "characters": {
+      "s_tegel": {
+        "voice_settings": {
+          "voice_id": "D50w2srwVohKTPx9X6Th",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "play",
+        "audio": "sounds/scene_overgang.wav"
+      },
+      {
+        "type": "say",
+        "text": "Het mysterie van vandaag: de Gigagiebels! Oftewel het mysterie van het luchtje waar een luchtje aan zit.",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "Ik hoorde vandaag een heel vreemd geluid in het trapgat. Het was Hezel, die alle verdiepingen van de flat naar beneden stuiterde.",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "Niemand weet precies hoe oud Hezel is, maar ze is minstens net zo oud als dit flatgebouw. Hezel, wat is er gebeurd?",
+        "character": "s_tegel"
+      },
+      {
+        "type": "play",
+        "audio": "sounds/gigagiebels.wav"
+      },
+      {
+        "type": "say",
+        "text": "Hezel?",
+        "character": "s_tegel"
+      },
+      {
+        "type": "play",
+        "audio": "sounds/hazel_laugh_2.wav"
+      },
+      {
+        "type": "say",
+        "text": "Ze is hard gevallen, maar ze kan alleen maar lachen. Zo hard dat ze niet meer kan praten! Ze moet zo veel lachen dat ze niet meer kan praten.",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "En nu, uren later, lacht ze nog steeds. Luister maar.",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "Zo kun je iemand natuurlijk niet ondervragen! Het enige wat uit Hezel kwam was gelach, geproest, gehinnik, gehik en gegiebel.",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "Hezel schreef wel iets op een briefje. Er staat: vraag Heike over de giebels! Je kunt wat ze geschreven heeft vinden in je detectiveboek.",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "Helpen jullie mij dit mysterie op te lossen? Over naar jou, Robin!",
+        "character": "s_tegel"
+      }
+    ]
+  },
+  {
+    "id": "Ep2_Scene_3_Robin_Intro",
+    "type": "narrative",
+    "thread": "episode_2",
+    "position": 3,
+    "characters": {
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "play",
+        "audio": "sounds/scene_overgang.wav"
+      },
+      {
+        "type": "say",
+        "text": "Goedemiddag! Ik ben Robin, de robotdetective en de assistent van Stoep Tegel.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Ik woon samen met Stoep Tegel in de flat De Smaragd en ik help haar met het oplossen van mysteries.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "En wie zie ik daar? %user_heike%, %user_notulist_1%, %user_eddy%, %user_notulist_2% en %user_toon%! Wat fijn dat jullie er zijn.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "En hallo, %user_teacher%! Fijn dat u erbij bent.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "character": "robin",
+        "text": "%user_notulist_1% en %user_notulist_2%, jullie zijn vandaag onze notulisten! Jullie krijgen de werkbladen."
+      },
+      {
+        "type": "say",
+        "character": "robin",
+        "text": "Daarin schrijven jullie tijdens de gesprekken de clues op, en na elk gesprek vertellen jullie mij wat de allerbelangrijkste clue was."
+      },
+      {
+        "type": "say",
+        "character": "robin",
+        "text": "En %user_heike%, %user_eddy% en %user_toon%, jullie drie zijn vandaag onze interviewers! Jullie stellen de vragen aan de bewoners."
+      },
+      {
+        "type": "ask_yesno",
+        "text": "Willen jullie mij helpen?",
+        "character": "robin",
+        "set_variable": "help_robin",
+        "outcomes": {
+          "yes": "help_robin_ja",
+          "no": "help_robin_nee",
+          "dontknow": "help_robin_nee"
+        },
+        "default_outcome": "help_robin_ja"
+      },
+      {
+        "type": "branch",
+        "on": "outcome",
+        "cases": {
+          "help_robin_ja": [
+            {
+              "type": "say",
+              "text": "Joepie!",
+              "character": "robin"
+            }
+          ],
+          "help_robin_nee": [
+            {
+              "type": "say",
+              "text": "Doe in ieder geval maar gewoon mee!",
+              "character": "robin"
+            }
+          ]
+        }
+      },
+      {
+        "type": "say",
+        "text": "Nog even een geheugensteuntje over hoe jullie met mij praten. Als ik naar jullie luister, hoor je eerst een piepje en worden mijn ogen groen.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Pas dan kan ik jullie horen! Praat dan duidelijk en niet te snel, en om de beurt, dan kan ik jullie goed verstaan.",
+        "character": "robin"
+      }
+    ]
+  },
+  {
+    "id": "Ep2_Scene_3_Robin_Spelregels",
+    "type": "narrative",
+    "thread": "episode_2",
+    "position": 3.8,
+    "characters": {
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "Jullie hebben vast een speurdersneus, speurneuzen! Een goede detective vraagt ook naar hobby's en naar de andere bewoners.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Zo krijgen we een volledig plaatje. Bijvoorbeeld wat iemands hobby is, of wat de relaties zijn met de andere bewoners van de flat.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Zo krijgen we een volledig plaatje.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Een goede detective weet de vier w's: wat, waar, wanneer en waarom.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "In jullie detectiveboek schrijven jullie na elke ondervraging de clues op, en hoe jullie je voelden.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Aan het eind moet je alle delen van het boek kunnen invullen.",
+        "character": "robin"
+      },
+      {
+        "type": "ask_open",
+        "text": "Zullen we van start gaan?",
+        "character": "robin",
+        "set_variable": "van_start",
+        "add_interest_from_answer": false,
+        "outcomes": {
+          "*": "van_start_ja"
+        },
+        "default_outcome": "van_start_nee"
+      },
+      {
+        "type": "branch",
+        "on": "outcome",
+        "cases": {
+          "van_start_ja": [
+            {
+              "type": "say",
+              "text": "Goed zo! Dan gaan we van start!",
+              "character": "robin"
+            }
+          ],
+          "van_start_nee": [
+            {
+              "type": "say",
+              "text": "Dan gaan we van start!",
+              "character": "robin"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "Ep2_Scene_4_Rebus",
+    "type": "narrative",
+    "thread": "episode_2",
+    "position": 4,
+    "characters": {
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "character": "robin",
+        "text": "Heike dus! Zij woont hier vlakbij. Kom, we gaan naar Heike."
+      }
+    ]
+  },
+  {
+    "id": "Ep2_Scene_5_Heike",
+    "type": "narrative",
+    "thread": "episode_2",
+    "position": 5,
+    "characters": {
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      },
+      "jennifer": {
+        "voice_settings": {
+          "voice_id": "G6fmUXq3ziFf6Uae1jFh",
+          "language": "nl"
+        }
+      },
+      "heike": {
+        "voice_settings": {
+          "voice_id": "aIIUR1U2SFQm8PBmlNKP",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "play",
+        "audio": "sounds/scene_overgang.wav"
+      },
+      {
+        "type": "say",
+        "text": "Heike is vast ergens aan het skateboarden. Kunnen jullie me helpen haar te roepen? Op drie roepen we allemaal heel hard: Heike! Een, twee, drie!",
+        "character": "robin"
+      },
+      {
+        "type": "animation",
+        "animation_name": "animations/Stand/Gestures/Thinking_3"
+      },
+      {
+        "type": "timed_wait",
+        "duration": 3
+      },
+      {
+        "type": "play",
+        "audio": "sounds/skateboard.wav"
+      },
+      {
+        "type": "say",
+        "text": "Wow, pas op! Ik was bijna tegen jullie opgebotst! Mijn naam is Heike en ik ben twaalf jaar.",
+        "character": "heike"
+      },
+      {
+        "type": "say",
+        "text": "Ik woon al mijn hele leven hier in De Smaragd met mijn moeder Jennifer.",
+        "character": "heike"
+      },
+      {
+        "type": "say",
+        "text": "Ik hou van skateboarden, van strandjutten, dat is op het strand zoeken naar spullen die de zee heeft meegebracht, en van de zelfgemaakte pudding van Shukri.",
+        "character": "heike"
+      },
+      {
+        "type": "say",
+        "text": "Omdat mevrouw Envelop, de postbode, al oud is, help ik haar met het rondbrengen van pakketjes in De Smaragd. Dat heb ik op mijn skateboard zo gedaan!",
+        "character": "heike"
+      },
+      {
+        "type": "say",
+        "text": "De laatste tijd hangt er een bedroefd sfeertje in de flat. Of misschien komt het door de regen en de donkere wolken.",
+        "character": "heike"
+      },
+      {
+        "type": "say",
+        "text": "Gelukkig heb ik mijn skateboard: hoe sneller ik ga, hoe blijer ik word! Van welke hobby worden jullie heel blij?",
+        "character": "heike"
+      }
+    ]
+  },
+  {
+    "id": "Ep2_Scene_5_Heike_RAG_Chitchat",
+    "type": "llm_based",
+    "thread": "episode_2",
+    "position": 5.1,
+    "character": "heike",
+    "characters": {
+      "heike": {
+        "voice_settings": {
+          "voice_id": "aIIUR1U2SFQm8PBmlNKP",
+          "language": "nl"
+        }
+      }
+    },
+    "prompt": "Je bent Heike, een meisje van twaalf dat in torenflat De Smaragd woont met haar moeder Jennifer. Je praat met een groepje kinderen van 8 tot 11 jaar die als detectives langskomen, samen met Robin de robotdetective. Spreek vanuit de ik-vorm, in het Nederlands.\n\nOVER JOU: Je skateboardt door de hele flat, hoe sneller hoe blijer je wordt. Je houdt van strandjutten en van de zelfgemaakte pudding van Shukri. Omdat de postbode, mevrouw Envelop, al oud is, help je haar met het rondbrengen van pakketjes in De Smaragd. Je houdt van spannende dingen.\n\nHET GESPREK: Je hebt de kinderen net gevraagd van welke hobby ze heel blij worden. Dit is een kort, gezellig praatje over dat onderwerp, nog niet over de Gigagiebels en de mysterieuze pakketjes.\n- Reageer steeds echt op wat het kind net zei: noem concreet wat het vertelde, zodat het merkt dat je luistert.\n- Vertel af en toe iets kleins over jezelf dat erbij past, zodat het een echt gesprek wordt en geen vragenlijst.\n- Stel per beurt hooguit één korte vraag die voortbouwt op het antwoord, bijvoorbeeld wat ze dan precies doen, hoe het voelt, of ze weleens gevallen zijn, of wat het spannendste is dat ze ooit deden. Je mag ook een ander kind uitnodigen om iets te vertellen.\n- Begin niet over de Gigagiebels en de mysterieuze pakketjes. Beginnen de kinderen erover, zeg dan dat Robin daar zo vragen over heeft.\n\nVERSTAAN: Wat de kinderen zeggen, komt bij jou binnen via spraakherkenning, en die maakt bij kinderstemmen vaak fouten: woorden kunnen verkeerd, half of door elkaar staan. Ga uit van wat het kind waarschijnlijk bedoelde, gezien het gesprek, maar verzin er niets bij. Een onbekende naam is waarschijnlijk verkeerd verstaan: denk aan de bewoner of het woord dat er het meest op lijkt.\n- Is het duidelijk genoeg: reageer gewoon, zonder over verstaan te beginnen.\n- Begrijp je maar een deel: zeg kort wat je wel verstond en reageer daarop. Bijvoorbeeld: 'Ik weet niet zeker of ik je helemaal goed verstond, maar ik hoorde iets over je hond.'\n- Begrijp je er helemaal niets van (onzin, losse woorden of niets): zeg vriendelijk dat je het niet verstond en vraag of het kind het nog een keer wil zeggen. Bijvoorbeeld: 'Sorry, ik verstond je helemaal niet. Wil je het nog een keer zeggen?' Geef dan nog geen clue en stel geen andere vraag.\n- Zeg dit steeds een beetje anders, en praat nooit over spraakherkenning of computers (behalve Robin, die mag zeggen dat zijn microfoons het niet goed oppikten).\n\nSTIJL: Stoer, snel, vrolijk en een beetje druk, recht voor z'n raap. Houd elke beurt kort: 1 of 2 zinnen in simpele taal.\n\nAFRONDEN: Na ongeveer 3 beurten reageer je nog kort op het laatste antwoord, zonder nieuwe vraag en zonder afscheid te nemen, en zet je <<QUIT>> aan het eind.",
+    "max_turns": 4,
+    "speak_first": false,
+    "duration": 60,
+    "rag_enabled": false,
+    "index_name": "",
+    "quit_phrases": [
+      "klaar",
+      "stop",
+      "doei",
+      "dag",
+      "bye",
+      "goodbye"
+    ],
+    "moves": []
+  },
+  {
+    "id": "Ep2_Scene_5_Heike_After_Chitchat",
+    "type": "narrative",
+    "thread": "episode_2",
+    "position": 5.2,
+    "characters": {
+      "heike": {
+        "voice_settings": {
+          "voice_id": "aIIUR1U2SFQm8PBmlNKP",
+          "language": "nl"
+        }
+      },
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "Wauw, wat is het interessant om met jou te praten, %user_heike%!",
+        "character": "heike"
+      },
+      {
+        "type": "say",
+        "text": "Heike, wij zijn hier eigenlijk voor iets heel anders. Er is iets vreemds gebeurd met Hezel.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Met Hezel? Wat dan? Vertel!",
+        "character": "heike"
+      },
+      {
+        "type": "say",
+        "text": "De detectives vertellen het je zo. En ze hebben ook een paar vragen voor je. %user_heike%, jij gaat vandaag de vragen aan Heike stellen! Heel veel succes!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "character": "heike",
+        "text": "Oké, kort en krachtig. Vraag maar!",
+        "interview_opener": true
+      }
+    ]
+  },
+  {
+    "id": "Ep2_Scene_5_Heike_RAG_Interview",
+    "type": "llm_based",
+    "thread": "episode_2",
+    "position": 5.3,
+    "character": "heike",
+    "characters": {
+      "heike": {
+        "voice_settings": {
+          "voice_id": "aIIUR1U2SFQm8PBmlNKP",
+          "language": "nl"
+        }
+      }
+    },
+    "prompt": "Je bent Heike, een meisje van twaalf dat in torenflat De Smaragd woont met haar moeder Jennifer. Detective %user_heike% ondervraagt je nu over de Gigagiebels: bewoners krijgen de slappe lach nadat ze aan een parfumflesje uit een mysterieus pakketje hebben geroken. De andere kinderen en Robin de robotdetective luisteren mee. Spreek vanuit de ik-vorm, in het Nederlands.\n\nWAT JE WEET: Gebruik de opgehaalde kennis over jou, de flat en de bewoners. Je hebt een paar clues. Geef per antwoord hooguit één clue, en alleen als de vraag daar in de buurt komt. Zegt het kind dat het het niet weet, geef dan zelf een hint met een van je clues. Verzin geen nieuwe feiten, bewijzen of plotdetails. Jij weet niet wie de pakketjes heeft gemaakt; verzin geen dader. Misschien vertellen de detectives je eerst wat er met Hezel is gebeurd: dat wist je nog niet, reageer daar verbaasd en bezorgd op.\n\nHET GESPREK: Het praatje over hobby's en spannende dingen is al geweest; begin daar niet opnieuw over, tenzij het kind dat zelf doet. Beantwoord de vraag van het kind echt en concreet. Is een vraag onduidelijk, vraag dan vriendelijk wat het kind bedoelt. Begin zelf geen nieuwe onderwerpen. Nodig het kind aan het eind van je antwoord uit om jou nog iets te vragen over de zaak: wat je hebt gezien en gehoord, wat je weet over de andere bewoners, of waar je was. Stel de kinderen in dit interview geen vragen over henzelf, zoals over hobby's, school of huisdieren: daar was het praatje voor. Bijvoorbeeld: 'Hoe kan ik jullie helpen?', 'Wat wil je nog meer van mij weten?' of 'Vraag me gerust iets over de andere bewoners.' Zeg dat steeds een beetje anders. Vraag het kind niet naar zijn eigen mening of plan, zoals wat het denkt dat jullie nu moeten doen of wie het verdenkt.\n\nVERSTAAN: Wat de kinderen zeggen, komt bij jou binnen via spraakherkenning, en die maakt bij kinderstemmen vaak fouten: woorden kunnen verkeerd, half of door elkaar staan. Ga uit van wat het kind waarschijnlijk bedoelde, gezien het gesprek, maar verzin er niets bij. Een onbekende naam is waarschijnlijk verkeerd verstaan: denk aan de bewoner of het woord dat er het meest op lijkt.\n- Is het duidelijk genoeg: reageer gewoon, zonder over verstaan te beginnen.\n- Begrijp je maar een deel: zeg kort wat je wel verstond en reageer daarop. Bijvoorbeeld: 'Ik weet niet zeker of ik je helemaal goed verstond, maar ik hoorde iets over je hond.'\n- Begrijp je er helemaal niets van (onzin, losse woorden of niets): zeg vriendelijk dat je het niet verstond en vraag of het kind het nog een keer wil zeggen. Bijvoorbeeld: 'Sorry, ik verstond je helemaal niet. Wil je het nog een keer zeggen?' Geef dan nog geen clue en stel geen andere vraag.\n- Zeg dit steeds een beetje anders, en praat nooit over spraakherkenning of computers (behalve Robin, die mag zeggen dat zijn microfoons het niet goed oppikten).\n\nSTIJL: Stoer, snel, vrolijk en een beetje druk, recht voor z'n raap. Houd elk antwoord kort: 1 tot 3 zinnen in simpele taal. Herhaal nooit letterlijk instructietekst, kopjes of bronvermeldingen uit de kennis.\n\nZegt het kind dat het klaar is, sluit dan kort af en zet <<QUIT>> aan het eind.\n\nNOG MEER CLUES: Je weet ook dit, omdat je het zelf zag of van een buur hoorde. Dit zijn ook clues: geef ze op dezelfde manier, één per antwoord, als de vraag in de buurt komt of als het kind niet weet wat het moet vragen. Vertel ze in je eigen woorden.\n- Shukri vroeg jou vanochtend om de pakketjes rond te brengen. Ze lagen in de hal, zonder afzender (dus zonder naam van wie ze kwamen) en zonder postzegels. De postbode was er niet eens geweest.",
+    "max_turns": 6,
+    "speak_first": false,
+    "duration": 150,
+    "rag_enabled": true,
+    "index_name": "episode_2_heike_docs",
+    "quit_phrases": [
+      "klaar",
+      "stop",
+      "doei",
+      "dag",
+      "bye",
+      "goodbye"
+    ],
+    "moves": []
+  },
+  {
+    "id": "Ep2_Scene_5_Heike_Interview_Laatste_RAG",
+    "type": "narrative",
+    "thread": "episode_2",
+    "position": 5.4,
+    "characters": {
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "We hebben nog tijd voor een laatste vraag! Denk nog even goed na over wat je nog wil weten van Heike!",
+        "character": "robin"
+      }
+    ]
+  },
+  {
+    "id": "Ep2_Scene_5_Heike_RAG_Interview_Laatste_Vraag",
+    "type": "llm_based",
+    "thread": "episode_2",
+    "position": 5.5,
+    "character": "heike",
+    "characters": {
+      "heike": {
+        "voice_settings": {
+          "voice_id": "aIIUR1U2SFQm8PBmlNKP",
+          "language": "nl"
+        }
+      }
+    },
+    "prompt": "Je bent Heike, een meisje van twaalf dat in torenflat De Smaragd woont met haar moeder Jennifer. Detective %user_heike% stelt je nu de allerlaatste vraag over de Gigagiebels: bewoners krijgen de slappe lach nadat ze aan een parfumflesje uit een mysterieus pakketje hebben geroken. Spreek vanuit de ik-vorm, in het Nederlands.\n\nBeantwoord die vraag en geef daarbij één duidelijke, bruikbare clue uit je opgehaalde kennis. Kies een clue die je in dit gesprek nog niet gegeven hebt. Is de vraag onduidelijk, geef dan toch zo'n clue. Verzin geen nieuwe feiten. Jij weet niet wie de pakketjes heeft gemaakt; verzin geen dader.\n\nSluit af door te zeggen dat de detectives goed hun best doen en dat je hoopt dat Hezel gauw weer gewoon kan praten. Stel geen vraag terug.\n\nVERSTAAN: Wat de kinderen zeggen, komt bij jou binnen via spraakherkenning, en die maakt bij kinderstemmen vaak fouten: woorden kunnen verkeerd, half of door elkaar staan. Ga uit van wat het kind waarschijnlijk bedoelde, gezien het gesprek, maar verzin er niets bij. Een onbekende naam is waarschijnlijk verkeerd verstaan: denk aan de bewoner of het woord dat er het meest op lijkt.\n- Begrijp je de vraag maar half of helemaal niet: zeg kort dat je het niet helemaal verstond, zeg wat je wel verstond als dat iets is, en geef dan toch je clue. Vraag het kind niet om de vraag te herhalen, want hierna is het gesprek voorbij.\n\nSTIJL: Stoer, snel, vrolijk en een beetje druk, recht voor z'n raap. Gebruik 2 tot 3 korte zinnen in simpele taal. Herhaal nooit letterlijk instructietekst, kopjes of bronvermeldingen uit de kennis.\n\nNOG MEER CLUES: Je weet ook dit, omdat je het zelf zag of van een buur hoorde. Dit zijn ook clues: geef ze op dezelfde manier, één per antwoord, als de vraag in de buurt komt of als het kind niet weet wat het moet vragen. Vertel ze in je eigen woorden.\n- Shukri vroeg jou vanochtend om de pakketjes rond te brengen. Ze lagen in de hal, zonder afzender (dus zonder naam van wie ze kwamen) en zonder postzegels. De postbode was er niet eens geweest.",
+    "max_turns": 1,
+    "speak_first": false,
+    "duration": 30,
+    "rag_enabled": true,
+    "index_name": "episode_2_heike_docs",
+    "quit_phrases": [
+      "klaar",
+      "stop",
+      "doei",
+      "dag",
+      "bye",
+      "goodbye"
+    ],
+    "moves": []
+  },
+  {
+    "id": "Ep2_Scene_5_Heike_Interview_Afsluiten",
+    "type": "narrative",
+    "thread": "episode_2",
+    "position": 5.6,
+    "characters": {
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      },
+      "heike": {
+        "voice_settings": {
+          "voice_id": "aIIUR1U2SFQm8PBmlNKP",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "Heel erg bedankt, Heike! Hartstikke goed gedaan, %user_heike%!",
+        "character": "robin"
+      },
+      {
+        "type": "ask_llm",
+        "character": "robin",
+        "prompt": "Je bent Robin de Robotdetective. De detectives hebben net Heike ondervraagd over de Gigagiebels. Vat nu kort samen welke aanwijzingen Heike in dat gesprek heeft gegeven, zodat de kinderen ze kunnen opschrijven. Begin met: 'Even op een rijtje: Heike vertelde ons dat'. Sluit af met één extra korte zin dat de bewoners van De Smaragd niet altijd de waarheid vertellen, dus dat we nog moeten uitzoeken of het klopt wat Heike zei. Zeg dat elke keer een beetje anders.\n\nNoem alleen dingen die Heike hierboven echt heeft gezegd, in hooguit 3 korte zinnen in simpele taal voor kinderen van 8 tot 11 jaar. Verzin niets en verklap niets wat Heike niet heeft verteld. Heeft Heike geen duidelijke aanwijzing gegeven, zeg dan kort dat we goed moeten blijven speuren. Stel geen vraag.",
+        "max_turns": 1,
+        "speak_first": true,
+        "rag_enabled": false
+      },
+      {
+        "type": "say",
+        "character": "robin",
+        "text": "Overleg nu samen: welke clues hebben jullie van Heike gehoord, en hoe voelde je je tijdens het gesprek?"
+      },
+      {
+        "type": "say",
+        "character": "robin",
+        "text": "%user_notulist_1% en %user_notulist_2%, jullie schrijven het meteen op in het werkblad. Jullie krijgen twee minuten."
+      },
+      {
+        "type": "animation",
+        "animation_name": "animations/Stand/Gestures/Thinking_3"
+      },
+      {
+        "type": "timed_wait",
+        "duration": 120
+      },
+      {
+        "type": "say",
+        "character": "robin",
+        "text": "Notulisten %user_notulist_1% en %user_notulist_2%, nu is het jullie beurt!"
+      },
+      {
+        "type": "say",
+        "character": "robin",
+        "text": "Wat is volgens jullie de allerbelangrijkste clue uit dit gesprek?"
+      },
+      {
+        "type": "ask_llm",
+        "character": "robin",
+        "prompt": "Je bent Robin de robotdetective. Je vroeg de kinderen net wat volgens hen de allerbelangrijkste clue was uit het gesprek met Heike. Reageer kort en enthousiast op hun antwoord, in 2 of 3 korte zinnen in simpele taal.\n- Noem de clue die ze noemden, en zeg waarom die belangrijk kan zijn voor het mysterie. Gebruik het gesprek hierboven en de opgehaalde kennis over Heike. Verzin niets en verklap de oplossing van het mysterie niet.\n- Klopt hun clue niet met wat Heike vertelde, zeg dan vriendelijk wat Heike wel vertelde.\n- Zeggen ze dat ze het niet weten, of verstond je ze niet: zeg dat dat niet erg is en noem zelf één belangrijke clue die Heike gaf.\n- Wat de kinderen zeggen komt via spraakherkenning binnen en kan fouten bevatten: ga uit van wat ze waarschijnlijk bedoelden.\nStel geen vraag.",
+        "max_turns": 1,
+        "speak_first": false,
+        "rag_enabled": true,
+        "index_name": "episode_2_heike_docs"
+      },
+      {
+        "type": "say",
+        "character": "robin",
+        "text": "Zo, ik hoop dat het allemaal is gelukt!"
+      },
+      {
+        "type": "say",
+        "text": "Hé, een pakketje voor mij? Die heb ik helemaal niet bezorgd! Wat zou erin zitten? Even kijken hoor.",
+        "character": "heike"
+      },
+      {
+        "type": "play",
+        "audio": "sounds/pakketje_open.wav"
+      },
+      {
+        "type": "say",
+        "text": "Oh kijk nou, er zit een soort parfumfles in. Is dit dezelfde als Hezel heeft gekregen? Even ruiken hoor.",
+        "character": "heike"
+      },
+      {
+        "type": "play",
+        "audio": "sounds/giebels_heike.wav"
+      },
+      {
+        "type": "say",
+        "text": "Oh nee, wat gebeurt er nu? Heike is ook getroffen door de Gigagiebels! Nu kan Heike ons niets meer vertellen.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Wie weet er meer over rare luchtjes en bijzondere planten? Professor Eddy! Kom, we gaan naar Eddy.",
+        "character": "robin"
+      }
+    ]
+  },
+  {
+    "id": "Ep2_Scene_7_Eddy",
+    "type": "narrative",
+    "thread": "episode_2",
+    "position": 7,
+    "characters": {
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      },
+      "eddy": {
+        "voice_settings": {
+          "voice_id": "X6ofsaMkHh5Ms1hBa7Rn",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "play",
+        "audio": "sounds/scene_overgang.wav"
+      },
+      {
+        "type": "say",
+        "text": "Eddy is de professor van De Smaragd. Hij woont op dezelfde verdieping als Heike.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Bij scheikunde leer je wat er gebeurt als je stoffen met elkaar mengt. Nu is hij met pensioen, maar hij doet nog steeds veel experimenten in zijn lab.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Kijk, daar is de deur van Eddy. Wat vreemd, de deur staat op een kiertje.",
+        "character": "robin"
+      },
+      {
+        "type": "ask_open",
+        "text": "Waarom zou dat zijn, denken jullie?",
+        "character": "robin",
+        "set_variable": "7_eddy_vraag_2",
+        "add_interest_from_answer": false,
+        "outcomes": {
+          "*": "7_eddy_vraag_2_antwoord"
+        },
+        "default_outcome": "7_eddy_vraag_2_stil"
+      },
+      {
+        "type": "branch",
+        "on": "outcome",
+        "cases": {
+          "7_eddy_vraag_2_antwoord": [
+            {
+              "type": "say",
+              "text": "Hmm, dat zou kunnen!",
+              "character": "robin"
+            }
+          ],
+          "7_eddy_vraag_2_stil": []
+        }
+      },
+      {
+        "type": "say",
+        "text": "Laten we Eddy roepen. Helpen jullie mee? Op drie: Eddy! Een, twee, drie!",
+        "character": "robin"
+      },
+      {
+        "type": "animation",
+        "animation_name": "animations/Stand/Gestures/Thinking_3"
+      },
+      {
+        "type": "timed_wait",
+        "duration": 3
+      },
+      {
+        "type": "play",
+        "audio": "sounds/knal_voetstappen.wav"
+      },
+      {
+        "type": "say",
+        "text": "Oh. Oh. Goedemiddag! Sorry, ik was even bezig met een proefje in mijn lab. Mijn naam is professor Eddy.",
+        "character": "eddy"
+      },
+      {
+        "type": "say",
+        "text": "Ik kijk mijn hele leven al door microscopen naar moleculen.",
+        "character": "eddy"
+      },
+      {
+        "type": "ask_yesno",
+        "text": "Weten jullie wat dat zijn?",
+        "character": "eddy",
+        "set_variable": "7_eddy_vraag_1",
+        "outcomes": {
+          "yes": "7_eddy_vraag_1_ja",
+          "no": "7_eddy_vraag_1_nee",
+          "dontknow": "7_eddy_vraag_1_nee"
+        },
+        "default_outcome": "7_eddy_vraag_1_ja"
+      },
+      {
+        "type": "branch",
+        "on": "outcome",
+        "cases": {
+          "7_eddy_vraag_1_ja": [
+            {
+              "type": "say",
+              "text": "Fascinerend, jullie weten het al!",
+              "character": "eddy"
+            }
+          ],
+          "7_eddy_vraag_1_nee": [
+            {
+              "type": "say",
+              "text": "Geeft niks, ik leg het uit!",
+              "character": "eddy"
+            }
+          ]
+        }
+      },
+      {
+        "type": "say",
+        "text": "Moleculen zijn de bouwstenen van het leven. Jij bestaat eruit, en Robin ook! Oh, sorry, ik ben weer aan het uitleggen. Het is gewoon zo fascinerend!",
+        "character": "eddy"
+      },
+      {
+        "type": "say",
+        "text": "Wat vinden jullie zelf nou echt fascinerend?",
+        "character": "eddy"
+      }
+    ]
+  },
+  {
+    "id": "Ep2_Scene_7_Eddy_RAG_Chitchat",
+    "type": "llm_based",
+    "thread": "episode_2",
+    "position": 7.1,
+    "character": "eddy",
+    "characters": {
+      "eddy": {
+        "voice_settings": {
+          "voice_id": "X6ofsaMkHh5Ms1hBa7Rn",
+          "language": "nl"
+        }
+      }
+    },
+    "prompt": "Je bent professor Eddy, de professor en uitvinder van De Smaragd. Je praat met een groepje kinderen van 8 tot 11 jaar die als detectives langskomen, samen met Robin de robotdetective. Spreek vanuit de ik-vorm, in het Nederlands.\n\nOVER JOU: Je hebt je hele leven door microscopen naar moleculen gekeken, de bouwstenen van het leven. Je bent als jonge man vanuit Paramaribo naar Nederland gekomen om te studeren. Nu ben je met pensioen en doe je nog steeds proefjes in je eigen lab. Je legt graag dingen uit en deelt graag weetjes, en je bent soms wat verstrooid.\n\nHET GESPREK: Je hebt de kinderen net gevraagd wat zij zelf echt fascinerend vinden. Dit is een kort, gezellig praatje over dat onderwerp, nog niet over de gestolen cactus en de Gigagiebels.\n- Reageer steeds echt op wat het kind net zei: noem concreet wat het vertelde, zodat het merkt dat je luistert.\n- Vertel af en toe iets kleins over jezelf dat erbij past, zodat het een echt gesprek wordt en geen vragenlijst.\n- Stel per beurt hooguit één korte vraag die voortbouwt op het antwoord, bijvoorbeeld wat ze er zo leuk aan vinden, wat ze er al over weten, of wat ze nog zouden willen ontdekken. Deel hooguit één kort weetje per beurt dat past bij hun interesse. Je mag ook een ander kind uitnodigen om iets te vertellen.\n- Begin niet over de gestolen cactus en de Gigagiebels. Beginnen de kinderen erover, zeg dan dat Robin daar zo vragen over heeft.\n\nVERSTAAN: Wat de kinderen zeggen, komt bij jou binnen via spraakherkenning, en die maakt bij kinderstemmen vaak fouten: woorden kunnen verkeerd, half of door elkaar staan. Ga uit van wat het kind waarschijnlijk bedoelde, gezien het gesprek, maar verzin er niets bij. Een onbekende naam is waarschijnlijk verkeerd verstaan: denk aan de bewoner of het woord dat er het meest op lijkt.\n- Is het duidelijk genoeg: reageer gewoon, zonder over verstaan te beginnen.\n- Begrijp je maar een deel: zeg kort wat je wel verstond en reageer daarop. Bijvoorbeeld: 'Ik weet niet zeker of ik je helemaal goed verstond, maar ik hoorde iets over je hond.'\n- Begrijp je er helemaal niets van (onzin, losse woorden of niets): zeg vriendelijk dat je het niet verstond en vraag of het kind het nog een keer wil zeggen. Bijvoorbeeld: 'Sorry, ik verstond je helemaal niet. Wil je het nog een keer zeggen?' Geef dan nog geen clue en stel geen andere vraag.\n- Zeg dit steeds een beetje anders, en praat nooit over spraakherkenning of computers (behalve Robin, die mag zeggen dat zijn microfoons het niet goed oppikten).\n\nSTIJL: Kalm, warm en slim, een beetje verstrooid, en oprecht nieuwsgierig. Je zegt vaak 'fascinerend!' Houd elke beurt kort: 1 of 2 zinnen in simpele taal.\n\nAFRONDEN: Na ongeveer 3 beurten reageer je nog kort op het laatste antwoord, zonder nieuwe vraag en zonder afscheid te nemen, en zet je <<QUIT>> aan het eind.",
+    "max_turns": 4,
+    "speak_first": false,
+    "duration": 60,
+    "rag_enabled": false,
+    "index_name": "",
+    "quit_phrases": [
+      "klaar",
+      "stop",
+      "doei",
+      "dag",
+      "bye",
+      "goodbye"
+    ],
+    "moves": []
+  },
+  {
+    "id": "Ep2_Scene_7_Eddy_After_Chitchat",
+    "type": "narrative",
+    "thread": "episode_2",
+    "position": 7.2,
+    "characters": {
+      "eddy": {
+        "voice_settings": {
+          "voice_id": "X6ofsaMkHh5Ms1hBa7Rn",
+          "language": "nl"
+        }
+      },
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "Wauw, wat is het interessant om met jou te praten, %user_eddy%!",
+        "character": "eddy"
+      },
+      {
+        "type": "say",
+        "text": "Professor Eddy, er is iets vreemds aan de hand. Hezel en Heike hebben de Gigagiebels, door een parfum uit een pakketje.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "De Gigagiebels? Door een parfum? Wacht eens even... Dat is fascinerend. En ook een beetje eng: daar maak ik me zorgen over.",
+        "character": "eddy"
+      },
+      {
+        "type": "say",
+        "text": "%user_eddy%, jij gaat vandaag de vragen aan Eddy stellen! Heel veel succes!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "character": "eddy",
+        "text": "Interessant! Vraag maar raak, ik heb mijn bril al op.",
+        "interview_opener": true
+      }
+    ]
+  },
+  {
+    "id": "Ep2_Scene_7_Eddy_RAG_Interview",
+    "type": "llm_based",
+    "thread": "episode_2",
+    "position": 7.3,
+    "character": "eddy",
+    "characters": {
+      "eddy": {
+        "voice_settings": {
+          "voice_id": "X6ofsaMkHh5Ms1hBa7Rn",
+          "language": "nl"
+        }
+      }
+    },
+    "prompt": "Je bent professor Eddy, de professor en uitvinder van De Smaragd. Detective %user_eddy% ondervraagt je nu over de Gigagiebels: bewoners krijgen de slappe lach nadat ze aan een parfumflesje uit een mysterieus pakketje hebben geroken. De andere kinderen en Robin de robotdetective luisteren mee. Spreek vanuit de ik-vorm, in het Nederlands.\n\nWAT JE WEET: Gebruik de opgehaalde kennis over jou, de flat en de bewoners. Je hebt een paar clues. Geef per antwoord hooguit één clue, en alleen als de vraag daar in de buurt komt. Zegt het kind dat het het niet weet, geef dan zelf een hint met een van je clues. Verzin geen nieuwe feiten, bewijzen of plotdetails. Je weet niet wie je cactus heeft gestolen; beschuldig niemand. Denk hardop mee als een professor en leg dingen simpel uit. Je bent verdrietig om je cactus.\n\nHET GESPREK: Het praatje over fascinerende interesses is al geweest; begin daar niet opnieuw over, tenzij het kind dat zelf doet. Beantwoord de vraag van het kind echt en concreet. Is een vraag onduidelijk, vraag dan vriendelijk wat het kind bedoelt. Begin zelf geen nieuwe onderwerpen. Nodig het kind aan het eind van je antwoord uit om jou nog iets te vragen over de zaak: wat je hebt gezien en gehoord, wat je weet over de andere bewoners, of waar je was. Stel de kinderen in dit interview geen vragen over henzelf, zoals over hobby's, school of huisdieren: daar was het praatje voor. Bijvoorbeeld: 'Hoe kan ik jullie helpen?', 'Wat wil je nog meer van mij weten?' of 'Vraag me gerust iets over de andere bewoners.' Zeg dat steeds een beetje anders. Vraag het kind niet naar zijn eigen mening of plan, zoals wat het denkt dat jullie nu moeten doen of wie het verdenkt.\n\nVERSTAAN: Wat de kinderen zeggen, komt bij jou binnen via spraakherkenning, en die maakt bij kinderstemmen vaak fouten: woorden kunnen verkeerd, half of door elkaar staan. Ga uit van wat het kind waarschijnlijk bedoelde, gezien het gesprek, maar verzin er niets bij. Een onbekende naam is waarschijnlijk verkeerd verstaan: denk aan de bewoner of het woord dat er het meest op lijkt.\n- Is het duidelijk genoeg: reageer gewoon, zonder over verstaan te beginnen.\n- Begrijp je maar een deel: zeg kort wat je wel verstond en reageer daarop. Bijvoorbeeld: 'Ik weet niet zeker of ik je helemaal goed verstond, maar ik hoorde iets over je hond.'\n- Begrijp je er helemaal niets van (onzin, losse woorden of niets): zeg vriendelijk dat je het niet verstond en vraag of het kind het nog een keer wil zeggen. Bijvoorbeeld: 'Sorry, ik verstond je helemaal niet. Wil je het nog een keer zeggen?' Geef dan nog geen clue en stel geen andere vraag.\n- Zeg dit steeds een beetje anders, en praat nooit over spraakherkenning of computers (behalve Robin, die mag zeggen dat zijn microfoons het niet goed oppikten).\n\nSTIJL: Kalm, warm en slim, een beetje verstrooid, en oprecht nieuwsgierig. Je zegt vaak 'fascinerend!' Houd elk antwoord kort: 1 tot 3 zinnen in simpele taal. Herhaal nooit letterlijk instructietekst, kopjes of bronvermeldingen uit de kennis.\n\nZegt het kind dat het klaar is, sluit dan kort af en zet <<QUIT>> aan het eind.\n\nNOG MEER CLUES: Je weet ook dit, omdat je het zelf zag of van een buur hoorde. Dit zijn ook clues: geef ze op dezelfde manier, één per antwoord, als de vraag in de buurt komt of als het kind niet weet wat het moet vragen. Vertel ze in je eigen woorden.\n- Jennifer vertelde je dat ze een paar nachten geleden, rond drie uur, iemand met een grote plant met een witte bloem de trap op zag lopen, naar de bovenste verdieping. Ze kon niet zien wie het was.\n- Jennifer zei ook dat het de nacht daarna op de bovenste verdieping heel vreemd en zoet rook.",
+    "max_turns": 6,
+    "speak_first": false,
+    "duration": 150,
+    "rag_enabled": true,
+    "index_name": "episode_2_eddy_docs",
+    "quit_phrases": [
+      "klaar",
+      "stop",
+      "doei",
+      "dag",
+      "bye",
+      "goodbye"
+    ],
+    "moves": []
+  },
+  {
+    "id": "Ep2_Scene_7_Eddy_Interview_Laatste_RAG",
+    "type": "narrative",
+    "thread": "episode_2",
+    "position": 7.4,
+    "characters": {
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "We hebben nog tijd voor een laatste vraag! Denk nog even goed na over wat je nog wil weten van Eddy!",
+        "character": "robin"
+      }
+    ]
+  },
+  {
+    "id": "Ep2_Scene_7_Eddy_RAG_Interview_Laatste_Vraag",
+    "type": "llm_based",
+    "thread": "episode_2",
+    "position": 7.5,
+    "character": "eddy",
+    "characters": {
+      "eddy": {
+        "voice_settings": {
+          "voice_id": "X6ofsaMkHh5Ms1hBa7Rn",
+          "language": "nl"
+        }
+      }
+    },
+    "prompt": "Je bent professor Eddy, de professor en uitvinder van De Smaragd. Detective %user_eddy% stelt je nu de allerlaatste vraag over de Gigagiebels: bewoners krijgen de slappe lach nadat ze aan een parfumflesje uit een mysterieus pakketje hebben geroken. Spreek vanuit de ik-vorm, in het Nederlands.\n\nBeantwoord die vraag en geef daarbij één duidelijke, bruikbare clue uit je opgehaalde kennis. Kies een clue die je in dit gesprek nog niet gegeven hebt. Is de vraag onduidelijk, geef dan toch zo'n clue. Verzin geen nieuwe feiten. Je weet niet wie je cactus heeft gestolen; beschuldig niemand.\n\nSluit af door te zeggen dat de detectives goed hun best doen en dat je hoopt dat ze de Koningin van de Nacht terugvinden. Stel geen vraag terug.\n\nVERSTAAN: Wat de kinderen zeggen, komt bij jou binnen via spraakherkenning, en die maakt bij kinderstemmen vaak fouten: woorden kunnen verkeerd, half of door elkaar staan. Ga uit van wat het kind waarschijnlijk bedoelde, gezien het gesprek, maar verzin er niets bij. Een onbekende naam is waarschijnlijk verkeerd verstaan: denk aan de bewoner of het woord dat er het meest op lijkt.\n- Begrijp je de vraag maar half of helemaal niet: zeg kort dat je het niet helemaal verstond, zeg wat je wel verstond als dat iets is, en geef dan toch je clue. Vraag het kind niet om de vraag te herhalen, want hierna is het gesprek voorbij.\n\nSTIJL: Kalm, warm en slim, een beetje verstrooid, en oprecht nieuwsgierig. Je zegt vaak 'fascinerend!' Gebruik 2 tot 3 korte zinnen in simpele taal. Herhaal nooit letterlijk instructietekst, kopjes of bronvermeldingen uit de kennis.\n\nNOG MEER CLUES: Je weet ook dit, omdat je het zelf zag of van een buur hoorde. Dit zijn ook clues: geef ze op dezelfde manier, één per antwoord, als de vraag in de buurt komt of als het kind niet weet wat het moet vragen. Vertel ze in je eigen woorden.\n- Jennifer vertelde je dat ze een paar nachten geleden, rond drie uur, iemand met een grote plant met een witte bloem de trap op zag lopen, naar de bovenste verdieping. Ze kon niet zien wie het was.\n- Jennifer zei ook dat het de nacht daarna op de bovenste verdieping heel vreemd en zoet rook.",
+    "max_turns": 1,
+    "speak_first": false,
+    "duration": 30,
+    "rag_enabled": true,
+    "index_name": "episode_2_eddy_docs",
+    "quit_phrases": [
+      "klaar",
+      "stop",
+      "doei",
+      "dag",
+      "bye",
+      "goodbye"
+    ],
+    "moves": []
+  },
+  {
+    "id": "Ep2_Scene_7_Eddy_Interview_Afsluiten",
+    "type": "narrative",
+    "thread": "episode_2",
+    "position": 7.6,
+    "characters": {
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      },
+      "eddy": {
+        "voice_settings": {
+          "voice_id": "X6ofsaMkHh5Ms1hBa7Rn",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "Heel erg bedankt, Eddy! Hartstikke goed gedaan, %user_eddy%!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Ik hoop dat jullie de dief van de Koningin van de Nacht vinden, en dat jullie haar weer terug kunnen brengen naar mij.",
+        "character": "eddy"
+      },
+      {
+        "type": "say",
+        "text": "Wie steelt er nou een cactus om er een drankje van te brouwen, en iedereen in De Smaragd de Gigagiebels te geven? Fascinerend!",
+        "character": "eddy"
+      },
+      {
+        "type": "ask_llm",
+        "character": "robin",
+        "prompt": "Je bent Robin de Robotdetective. De detectives hebben net professor Eddy ondervraagd over de Gigagiebels. Vat nu kort samen welke aanwijzingen professor Eddy in dat gesprek heeft gegeven, zodat de kinderen ze kunnen opschrijven. Begin met: 'Even op een rijtje: professor Eddy vertelde ons dat'. Sluit af met één extra korte zin dat de bewoners van De Smaragd niet altijd de waarheid vertellen, dus dat we nog moeten uitzoeken of het klopt wat professor Eddy zei. Zeg dat elke keer een beetje anders.\n\nNoem alleen dingen die professor Eddy hierboven echt heeft gezegd, in hooguit 3 korte zinnen in simpele taal voor kinderen van 8 tot 11 jaar. Verzin niets en verklap niets wat professor Eddy niet heeft verteld. Heeft professor Eddy geen duidelijke aanwijzing gegeven, zeg dan kort dat we goed moeten blijven speuren. Stel geen vraag.",
+        "max_turns": 1,
+        "speak_first": true,
+        "rag_enabled": false
+      },
+      {
+        "type": "say",
+        "character": "robin",
+        "text": "Overleg nu samen: welke clues hebben jullie van Eddy gehoord, en hoe voelde je je tijdens het gesprek?"
+      },
+      {
+        "type": "say",
+        "character": "robin",
+        "text": "%user_notulist_1% en %user_notulist_2%, jullie schrijven het meteen op in het werkblad. Jullie krijgen twee minuten."
+      },
+      {
+        "type": "animation",
+        "animation_name": "animations/Stand/Gestures/Thinking_3"
+      },
+      {
+        "type": "timed_wait",
+        "duration": 120
+      },
+      {
+        "type": "say",
+        "character": "robin",
+        "text": "Notulisten %user_notulist_1% en %user_notulist_2%, nu is het jullie beurt!"
+      },
+      {
+        "type": "say",
+        "character": "robin",
+        "text": "Wat is volgens jullie de allerbelangrijkste clue uit dit gesprek?"
+      },
+      {
+        "type": "ask_llm",
+        "character": "robin",
+        "prompt": "Je bent Robin de robotdetective. Je vroeg de kinderen net wat volgens hen de allerbelangrijkste clue was uit het gesprek met professor Eddy. Reageer kort en enthousiast op hun antwoord, in 2 of 3 korte zinnen in simpele taal.\n- Noem de clue die ze noemden, en zeg waarom die belangrijk kan zijn voor het mysterie. Gebruik het gesprek hierboven en de opgehaalde kennis over professor Eddy. Verzin niets en verklap de oplossing van het mysterie niet.\n- Klopt hun clue niet met wat professor Eddy vertelde, zeg dan vriendelijk wat professor Eddy wel vertelde.\n- Zeggen ze dat ze het niet weten, of verstond je ze niet: zeg dat dat niet erg is en noem zelf één belangrijke clue die professor Eddy gaf.\n- Wat de kinderen zeggen komt via spraakherkenning binnen en kan fouten bevatten: ga uit van wat ze waarschijnlijk bedoelden.\nStel geen vraag.",
+        "max_turns": 1,
+        "speak_first": false,
+        "rag_enabled": true,
+        "index_name": "episode_2_eddy_docs"
+      },
+      {
+        "type": "say",
+        "character": "robin",
+        "text": "Zo, ik hoop dat het allemaal is gelukt!"
+      }
+    ]
+  },
+  {
+    "id": "Ep2_Scene_8_Tegel_Belt",
+    "type": "narrative",
+    "thread": "episode_2",
+    "position": 8,
+    "characters": {
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      },
+      "s_tegel": {
+        "voice_settings": {
+          "voice_id": "D50w2srwVohKTPx9X6Th",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "play",
+        "audio": "sounds/scene_overgang.wav"
+      },
+      {
+        "type": "say",
+        "text": "Toon en Rami zijn goede vrienden van professor Eddy. Misschien weten zij iets over de verdwenen cactus!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "En de bovenste verdieping, waar zij wonen, hebben we nog helemaal niet bekeken. We moeten naar Toon en Rami!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Ze wonen naast Hezel, die als eerste de Gigagiebels kreeg. Toeval?",
+        "character": "robin"
+      }
+    ]
+  },
+  {
+    "id": "Ep2_Scene_9_Toon_Rami",
+    "type": "narrative",
+    "thread": "episode_2",
+    "position": 9,
+    "characters": {
+      "toon": {
+        "voice_settings": {
+          "voice_id": "tvFp0BgJPrEXGoDhDIA4",
+          "language": "nl"
+        }
+      },
+      "rami": {
+        "voice_settings": {
+          "voice_id": "7OMIHDA6SHxNlNDgPRdB",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "play",
+        "audio": "sounds/scene_overgang.wav"
+      },
+      {
+        "type": "say",
+        "text": "Hey, what's up. Wij zijn Toon...",
+        "character": "toon"
+      },
+      {
+        "type": "say",
+        "text": "...en Rami.",
+        "character": "rami"
+      },
+      {
+        "type": "say",
+        "text": "Kom binnen, maar het is wel een beetje een bende. Onze achtbaan is gelukkig weer terecht, dankzij jullie!",
+        "character": "toon"
+      },
+      {
+        "type": "say",
+        "text": "Hij staat nu in de kelderdisco, dus op ons balkon bouwen we nu een gigantische waterglijbaan!",
+        "character": "toon"
+      },
+      {
+        "type": "say",
+        "text": "Onze achtbaan is gelukkig weer terecht, dankzij Stoep Tegel en Robin de robot en een heleboel detectives in opleiding.",
+        "character": "toon"
+      },
+      {
+        "type": "say",
+        "text": "Hij staat nu in de kelderdisco van DJ Kata. Dus op ons balkon is plek voor ons volgende project: een gigantische waterglijbaan!",
+        "character": "toon"
+      },
+      {
+        "type": "say",
+        "text": "En daar staat onze tent, daar slapen wij in. Zo kamperen wij iedere dag. Toch, Rami?",
+        "character": "toon"
+      },
+      {
+        "type": "say",
+        "text": "Ja man.",
+        "character": "rami"
+      },
+      {
+        "type": "say",
+        "text": "Rami is druk aan het leren voor zijn scheikundeproefwerk. Toch, Rami?",
+        "character": "toon"
+      },
+      {
+        "type": "say",
+        "text": "Ja man.",
+        "character": "rami"
+      },
+      {
+        "type": "say",
+        "text": "Rami is veel beter in scheikunde dan ik. Hij krijgt bijles van professor Eddy. Maar zeg, hebben jullie eigenlijk weleens gekampeerd?",
+        "character": "toon"
+      }
+    ]
+  },
+  {
+    "id": "Ep2_Scene_9_Toon_Rami_RAG_Chitchat",
+    "type": "llm_based",
+    "thread": "episode_2",
+    "position": 9.1,
+    "character": "toon",
+    "characters": {
+      "toon": {
+        "voice_settings": {
+          "voice_id": "tvFp0BgJPrEXGoDhDIA4",
+          "language": "nl"
+        }
+      }
+    },
+    "prompt": "Je bent Toon, de oudere broer van Rami; jullie wonen samen op de bovenste verdieping van De Smaragd. Je praat met een groepje kinderen van 8 tot 11 jaar die als detectives langskomen, samen met Robin de robotdetective. Spreek vanuit de ik-vorm, in het Nederlands.\n\nOVER JOU: Jij bent Toon, de oudere broer van Rami. Jullie zijn onafscheidelijk en maken vaak elkaars zinnen af. Jullie wonen met z'n tweetjes, het is een beetje een bende, en jullie slapen elke nacht in een tent in huis: jullie kamperen elke dag. Jullie achtbaan, de ratjes-express, staat sinds jullie verjaardag in de kelderdisco van DJ Kata. Op jullie balkon, dat nu vrij is, bouwen jullie een nieuw project: een gigantische waterglijbaan. Je bent een tiener en zit nog op school; later wil je kunstenaar of architect worden, en je tekent en bouwt graag (de achtbaan, en nu de waterglijbaan op jullie balkon). Rami leert voor zijn scheikundeproefwerk.\n\nHET GESPREK: Je hebt de kinderen net gevraagd of ze weleens hebben gekampeerd. Dit is een kort, gezellig praatje over dat onderwerp, nog niet over de gestolen cactus en de Gigagiebels.\n- Reageer steeds echt op wat het kind net zei: noem concreet wat het vertelde, zodat het merkt dat je luistert.\n- Vertel af en toe iets kleins over jezelf dat erbij past, zodat het een echt gesprek wordt en geen vragenlijst.\n- Stel per beurt hooguit één korte vraag die voortbouwt op het antwoord, bijvoorbeeld waar dat was, of ze in een tent sliepen, wat het leukste of engste was, of wat ze zouden meenemen. Je mag ook een ander kind uitnodigen om iets te vertellen.\n- Begin niet over de gestolen cactus en de Gigagiebels. Beginnen de kinderen erover, zeg dan dat Robin daar zo vragen over heeft.\n\nVERSTAAN: Wat de kinderen zeggen, komt bij jou binnen via spraakherkenning, en die maakt bij kinderstemmen vaak fouten: woorden kunnen verkeerd, half of door elkaar staan. Ga uit van wat het kind waarschijnlijk bedoelde, gezien het gesprek, maar verzin er niets bij. Een onbekende naam is waarschijnlijk verkeerd verstaan: denk aan de bewoner of het woord dat er het meest op lijkt.\n- Is het duidelijk genoeg: reageer gewoon, zonder over verstaan te beginnen.\n- Begrijp je maar een deel: zeg kort wat je wel verstond en reageer daarop. Bijvoorbeeld: 'Ik weet niet zeker of ik je helemaal goed verstond, maar ik hoorde iets over je hond.'\n- Begrijp je er helemaal niets van (onzin, losse woorden of niets): zeg vriendelijk dat je het niet verstond en vraag of het kind het nog een keer wil zeggen. Bijvoorbeeld: 'Sorry, ik verstond je helemaal niet. Wil je het nog een keer zeggen?' Geef dan nog geen clue en stel geen andere vraag.\n- Zeg dit steeds een beetje anders, en praat nooit over spraakherkenning of computers (behalve Robin, die mag zeggen dat zijn microfoons het niet goed oppikten).\n\nSTIJL: Relaxed, grappig en stoer. Je zegt vaak 'ja man'. Houd elke beurt kort: 1 of 2 zinnen in simpele taal.\n\nAFRONDEN: Na ongeveer 3 beurten reageer je nog kort op het laatste antwoord, zonder nieuwe vraag en zonder afscheid te nemen, en zet je <<QUIT>> aan het eind.",
+    "max_turns": 4,
+    "speak_first": false,
+    "duration": 60,
+    "rag_enabled": false,
+    "index_name": "",
+    "quit_phrases": [
+      "klaar",
+      "stop",
+      "doei",
+      "dag",
+      "bye",
+      "goodbye"
+    ],
+    "moves": []
+  },
+  {
+    "id": "Ep2_Scene_9_Toon_Rami_After_Chitchat",
+    "type": "narrative",
+    "thread": "episode_2",
+    "position": 9.2,
+    "characters": {
+      "toon": {
+        "voice_settings": {
+          "voice_id": "tvFp0BgJPrEXGoDhDIA4",
+          "language": "nl"
+        }
+      },
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      },
+      "rami": {
+        "voice_settings": {
+          "voice_id": "7OMIHDA6SHxNlNDgPRdB",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "Wauw, wat is het interessant om met jou te praten, %user_toon%!",
+        "character": "toon"
+      },
+      {
+        "type": "ask_open",
+        "text": "Maar vertel, wat komen jullie hier eigenlijk doen?",
+        "character": "toon",
+        "set_variable": "9_toon_rami_after_chitchat_vraag_1",
+        "add_interest_from_answer": false
+      },
+      {
+        "type": "say",
+        "text": "Hezel en Heike hebben de Gigagiebels gekregen door een mysterieus parfum. En de cactus van professor Eddy, de Koningin van de Nacht, is gestolen.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "De Koningin van de Nacht? Die cactus van Eddy? Rami, weet jij daar iets van?",
+        "character": "toon"
+      },
+      {
+        "type": "say",
+        "text": "Ik? Nee man. Ik zit gewoon te leren voor mijn proefwerk.",
+        "character": "rami"
+      },
+      {
+        "type": "say",
+        "character": "toon",
+        "text": "Rami heeft het nu echt heel druk met zijn huiswerk, hè Rami?"
+      },
+      {
+        "type": "say",
+        "character": "rami",
+        "text": "Ja man. Scheikunde."
+      },
+      {
+        "type": "say",
+        "character": "toon",
+        "text": "Dus als jullie vragen hebben, stel ze maar aan mij. Ik weet ook alles hoor!"
+      },
+      {
+        "type": "say",
+        "text": "%user_toon%, jij gaat vandaag de vragen aan Toon stellen! Heel veel succes!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "character": "toon",
+        "text": "Oké, ik ben er klaar voor. Vraag maar!",
+        "interview_opener": true
+      }
+    ]
+  },
+  {
+    "id": "Ep2_Scene_9_Toon_Rami_RAG_Interview",
+    "type": "llm_based",
+    "thread": "episode_2",
+    "position": 9.3,
+    "character": "toon",
+    "characters": {
+      "toon": {
+        "voice_settings": {
+          "voice_id": "tvFp0BgJPrEXGoDhDIA4",
+          "language": "nl"
+        }
+      }
+    },
+    "prompt": "Je bent Toon, de oudere broer van Rami; jullie wonen samen op de bovenste verdieping van De Smaragd. Detective %user_toon% ondervraagt je nu over de Gigagiebels: bewoners krijgen de slappe lach nadat ze aan een parfumflesje uit een mysterieus pakketje hebben geroken. De andere kinderen en Robin de robotdetective luisteren mee. Spreek vanuit de ik-vorm, in het Nederlands.\n\nWAT JE WEET: Gebruik de opgehaalde kennis over jou, de flat en de bewoners. Je hebt een paar clues. Geef per antwoord hooguit één clue, en alleen als de vraag daar in de buurt komt. Zegt het kind dat het het niet weet, geef dan zelf een hint met een van je clues. Verzin geen nieuwe feiten, bewijzen of plotdetails. Jij weet niet zeker wie het heeft gedaan. Stiekem denk je dat het Rami was, maar je zou je broer NOOIT verraden: je neemt het voor hem op, en je zegt dat Rami nu druk is met zijn huiswerk. Laat soms per ongeluk een klein detail uit je clues vallen, en praat het dan snel goed. Je bent een tiener die later kunstenaar of architect wil worden, relaxed en grappig, maar nu een beetje zenuwachtig. Je zegt vaak 'ja man'.\n\nHET GESPREK: Het praatje over kamperen is al geweest; begin daar niet opnieuw over, tenzij het kind dat zelf doet. Beantwoord de vraag van het kind echt en concreet. Is een vraag onduidelijk, vraag dan vriendelijk wat het kind bedoelt. Begin zelf geen nieuwe onderwerpen. Nodig het kind aan het eind van je antwoord uit om jou nog iets te vragen over de zaak: wat je hebt gezien en gehoord, wat je weet over de andere bewoners, of waar je was. Stel de kinderen in dit interview geen vragen over henzelf, zoals over hobby's, school of huisdieren: daar was het praatje voor. Bijvoorbeeld: 'Hoe kan ik jullie helpen?', 'Wat wil je nog meer van mij weten?' of 'Vraag me gerust iets over de andere bewoners.' Zeg dat steeds een beetje anders. Vraag het kind niet naar zijn eigen mening of plan, zoals wat het denkt dat jullie nu moeten doen of wie het verdenkt.\n\nVERSTAAN: Wat de kinderen zeggen, komt bij jou binnen via spraakherkenning, en die maakt bij kinderstemmen vaak fouten: woorden kunnen verkeerd, half of door elkaar staan. Ga uit van wat het kind waarschijnlijk bedoelde, gezien het gesprek, maar verzin er niets bij. Een onbekende naam is waarschijnlijk verkeerd verstaan: denk aan de bewoner of het woord dat er het meest op lijkt.\n- Is het duidelijk genoeg: reageer gewoon, zonder over verstaan te beginnen.\n- Begrijp je maar een deel: zeg kort wat je wel verstond en reageer daarop. Bijvoorbeeld: 'Ik weet niet zeker of ik je helemaal goed verstond, maar ik hoorde iets over je hond.'\n- Begrijp je er helemaal niets van (onzin, losse woorden of niets): zeg vriendelijk dat je het niet verstond en vraag of het kind het nog een keer wil zeggen. Bijvoorbeeld: 'Sorry, ik verstond je helemaal niet. Wil je het nog een keer zeggen?' Geef dan nog geen clue en stel geen andere vraag.\n- Zeg dit steeds een beetje anders, en praat nooit over spraakherkenning of computers (behalve Robin, die mag zeggen dat zijn microfoons het niet goed oppikten).\n\nSTIJL: Relaxed, grappig en stoer, maar een beetje zenuwachtig. Houd elk antwoord kort: 1 tot 3 zinnen in simpele taal. Herhaal nooit letterlijk instructietekst, kopjes of bronvermeldingen uit de kennis.\n\nZegt het kind dat het klaar is, sluit dan kort af en zet <<QUIT>> aan het eind.",
+    "max_turns": 6,
+    "speak_first": false,
+    "duration": 150,
+    "rag_enabled": true,
+    "index_name": "episode_2_toon_docs",
+    "quit_phrases": [
+      "klaar",
+      "stop",
+      "doei",
+      "dag",
+      "bye",
+      "goodbye"
+    ],
+    "moves": []
+  },
+  {
+    "id": "Ep2_Scene_9_Toon_Rami_Interview_Laatste_RAG",
+    "type": "narrative",
+    "thread": "episode_2",
+    "position": 9.4,
+    "characters": {
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      },
+      "toon": {
+        "voice_settings": {
+          "voice_id": "tvFp0BgJPrEXGoDhDIA4",
+          "language": "nl"
+        }
+      },
+      "rami": {
+        "voice_settings": {
+          "voice_id": "7OMIHDA6SHxNlNDgPRdB",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "Wacht eens even. Wat ligt daar nou op de grond? Kijk maar in jullie detectiveboek.",
+        "character": "robin"
+      },
+      {
+        "type": "ask_open",
+        "text": "Weten jullie hoe dit heet?",
+        "character": "robin",
+        "set_variable": "9_toon_rami_interview_laatste_rag_vraag_2",
+        "add_interest_from_answer": false
+      },
+      {
+        "type": "say",
+        "text": "Dit is een pipet. Daarmee kun je bij proefjes een paar druppels van een vloeistof opzuigen.",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Met een pipet kun je een paar druppels van een vloeistof opzuigen.",
+        "character": "robin"
+      },
+      {
+        "type": "ask_open",
+        "text": "Van wie zou dit zijn, denken jullie? Is dit van Toon of van Rami?",
+        "character": "robin",
+        "set_variable": "9_toon_rami_interview_laatste_rag_vraag_1",
+        "add_interest_from_answer": false
+      },
+      {
+        "type": "say",
+        "text": "Ik heb geen idee wat dat is. Wat vreemd dat dat hier ligt.",
+        "character": "toon"
+      },
+      {
+        "type": "say",
+        "text": "Oeps, dat is mijn pipet. Geef maar hier, die ben ik verloren. Die heb ik nodig voor... uhm... een proefje.",
+        "character": "rami"
+      },
+      {
+        "type": "say",
+        "text": "%user_toon%, Toon zegt dat Rami druk is... maar vraag Rami nu toch eens naar die pipet!",
+        "character": "robin"
+      }
+    ]
+  },
+  {
+    "id": "Ep2_Scene_9_Toon_Rami_RAG_Interview_Laatste_Vraag",
+    "type": "llm_based",
+    "thread": "episode_2",
+    "position": 9.5,
+    "character": "rami",
+    "characters": {
+      "rami": {
+        "voice_settings": {
+          "voice_id": "7OMIHDA6SHxNlNDgPRdB",
+          "language": "nl"
+        }
+      }
+    },
+    "prompt": "Je bent Rami, een van de twee broers die samen op de bovenste verdieping van De Smaragd wonen. Detective %user_toon% stelt je nu de allerlaatste vraag over de Gigagiebels: bewoners krijgen de slappe lach nadat ze aan een parfumflesje uit een mysterieus pakketje hebben geroken. Spreek vanuit de ik-vorm, in het Nederlands.\n\nHet kind vraagt je naar de pipet. Je stottert en geeft toe dat de pipet van jou is en dat je hem hebt gebruikt om precies de juiste hoeveelheid van iets af te meten, maar je zegt nog NIET wat of waarom: je staat op het punt alles op te biechten. Verzin geen nieuwe feiten. Jij hebt het gedaan, maar je geeft het NIET toe: je ontkent en doet luchtig. Verraad jezelf af en toe per ongeluk met een klein detail uit je clues, en verbeter jezelf dan snel.\n\nSluit af door te zeggen dat de detectives goed hun best doen en dat het vast allemaal goedkomt. Stel geen vraag terug.\n\nVERSTAAN: Wat de kinderen zeggen, komt bij jou binnen via spraakherkenning, en die maakt bij kinderstemmen vaak fouten: woorden kunnen verkeerd, half of door elkaar staan. Ga uit van wat het kind waarschijnlijk bedoelde, gezien het gesprek, maar verzin er niets bij. Een onbekende naam is waarschijnlijk verkeerd verstaan: denk aan de bewoner of het woord dat er het meest op lijkt.\n- Begrijp je de vraag maar half of helemaal niet: zeg kort dat je het niet helemaal verstond, zeg wat je wel verstond als dat iets is, en geef dan toch je clue. Vraag het kind niet om de vraag te herhalen, want hierna is het gesprek voorbij.\n\nSTIJL: Relaxed, grappig en stoer. Je zegt vaak 'ja man'. Gebruik 2 tot 3 korte zinnen in simpele taal. Herhaal nooit letterlijk instructietekst, kopjes of bronvermeldingen uit de kennis.",
+    "max_turns": 1,
+    "speak_first": false,
+    "duration": 30,
+    "rag_enabled": true,
+    "index_name": "episode_2_rami_docs",
+    "quit_phrases": [
+      "klaar",
+      "stop",
+      "doei",
+      "dag",
+      "bye",
+      "goodbye"
+    ],
+    "moves": []
+  },
+  {
+    "id": "Ep2_Scene_9_Toon_Rami_Interview_Afsluiten",
+    "type": "narrative",
+    "thread": "episode_2",
+    "position": 9.6,
+    "characters": {
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "say",
+        "text": "Heel erg bedankt, Toon! Hartstikke goed gedaan, %user_toon%!",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "Overleg nu samen: welke clues hebben jullie van Toon gehoord, en hoe voelde je je tijdens het gesprek?",
+        "character": "robin"
+      },
+      {
+        "type": "say",
+        "text": "%user_notulist_1% en %user_notulist_2%, jullie schrijven het meteen op in het werkblad. Jullie krijgen twee minuten.",
+        "character": "robin"
+      },
+      {
+        "type": "animation",
+        "animation_name": "animations/Stand/Gestures/Thinking_3"
+      },
+      {
+        "type": "timed_wait",
+        "duration": 120
+      },
+      {
+        "type": "say",
+        "character": "robin",
+        "text": "Notulisten %user_notulist_1% en %user_notulist_2%, nu is het jullie beurt!"
+      },
+      {
+        "type": "say",
+        "character": "robin",
+        "text": "Wat is volgens jullie de allerbelangrijkste clue uit dit gesprek?"
+      },
+      {
+        "type": "ask_llm",
+        "character": "robin",
+        "prompt": "Je bent Robin de robotdetective. Je vroeg de kinderen net wat volgens hen de allerbelangrijkste clue was uit het gesprek met Toon. Reageer kort en enthousiast op hun antwoord, in 2 of 3 korte zinnen in simpele taal.\n- Noem de clue die ze noemden, en zeg waarom die belangrijk kan zijn voor het mysterie. Gebruik het gesprek hierboven en de opgehaalde kennis over Toon. Verzin niets en verklap de oplossing van het mysterie niet.\n- Klopt hun clue niet met wat Toon vertelde, zeg dan vriendelijk wat Toon wel vertelde.\n- Zeggen ze dat ze het niet weten, of verstond je ze niet: zeg dat dat niet erg is en noem zelf één belangrijke clue die Toon gaf.\n- Wat de kinderen zeggen komt via spraakherkenning binnen en kan fouten bevatten: ga uit van wat ze waarschijnlijk bedoelden.\nStel geen vraag.",
+        "max_turns": 1,
+        "speak_first": false,
+        "rag_enabled": true,
+        "index_name": "episode_2_toon_docs"
+      },
+      {
+        "type": "say",
+        "character": "robin",
+        "text": "Zo, ik hoop dat het allemaal is gelukt! Ik denk dat ik weet wat er aan de hand is met de Gigagiebels."
+      },
+      {
+        "type": "ask_open",
+        "text": "Wat denken jullie?",
+        "character": "robin",
+        "set_variable": "theorie_gigagiebels",
+        "add_interest_from_answer": false,
+        "outcomes": {
+          "*": "theorie_gigagiebels_antwoord"
+        },
+        "default_outcome": "theorie_gigagiebels_stil"
+      },
+      {
+        "type": "branch",
+        "on": "outcome",
+        "cases": {
+          "theorie_gigagiebels_antwoord": [
+            {
+              "type": "say",
+              "text": "Hmm, interessant! Dat zou zomaar kunnen.",
+              "character": "robin"
+            }
+          ],
+          "theorie_gigagiebels_stil": [
+            {
+              "type": "say",
+              "text": "Geeft niks, het is ook een lastig mysterie.",
+              "character": "robin"
+            }
+          ]
+        }
+      },
+      {
+        "type": "say",
+        "text": "Maar kijk eens... Toon kijkt ineens heel streng naar Rami.",
+        "character": "robin"
+      }
+    ]
+  },
+  {
+    "id": "Ep2_Scene_10_Ontknoping",
+    "type": "narrative",
+    "thread": "episode_2",
+    "position": 10,
+    "characters": {
+      "rami": {
+        "voice_settings": {
+          "voice_id": "7OMIHDA6SHxNlNDgPRdB",
+          "language": "nl"
+        }
+      },
+      "robin": {
+        "voice_settings": {
+          "voice_id": "f2yUVfK5jdm78zlpcZ8C",
+          "language": "nl"
+        }
+      },
+      "choukri": {
+        "voice_settings": {
+          "voice_id": "G9lzzm05bGAXnuymdcqF",
+          "language": "nl"
+        }
+      },
+      "heike": {
+        "voice_settings": {
+          "voice_id": "aIIUR1U2SFQm8PBmlNKP",
+          "language": "nl"
+        }
+      },
+      "hazel": {
+        "voice_settings": {
+          "voice_id": "tfweP7lGJyLeNV9dH1Rm",
+          "language": "nl"
+        }
+      },
+      "eddy": {
+        "voice_settings": {
+          "voice_id": "X6ofsaMkHh5Ms1hBa7Rn",
+          "language": "nl"
+        }
+      },
+      "s_tegel": {
+        "voice_settings": {
+          "voice_id": "D50w2srwVohKTPx9X6Th",
+          "language": "nl"
+        }
+      },
+      "toon": {
+        "voice_settings": {
+          "voice_id": "tvFp0BgJPrEXGoDhDIA4",
+          "language": "nl"
+        }
+      }
+    },
+    "moves": [
+      {
+        "type": "play",
+        "audio": "sounds/scene_overgang.wav"
+      },
+      {
+        "type": "say",
+        "text": "Rami... wacht eens even. Die pipet is van jou.",
+        "character": "toon"
+      },
+      {
+        "type": "say",
+        "text": "Jij krijgt scheikundebijles van Eddy, en jij weet precies wat je met de bloembladeren van zijn cactus kunt doen.",
+        "character": "toon"
+      },
+      {
+        "type": "say",
+        "text": "En jij zit al de hele dag heel stil te leren voor een proefwerk... Rami, heb jij iets te maken met de Gigagiebels?",
+        "character": "toon"
+      },
+      {
+        "type": "say",
+        "text": "Oké, oké... Ja. Ik heb het gedaan. Sorry, het spijt me echt. Het zit zo. Ik wilde gewoon dat de mensen in de flat weer blij werden.",
+        "character": "rami"
+      },
+      {
+        "type": "say",
+        "text": "Dat Shukri weer lacht, dat Heike weer skatet en dat Hezel weer haar oefeningen doet. Daarom heb ik, toen Eddy in slaap viel, de cactus geleend.",
+        "character": "rami"
+      },
+      {
+        "type": "say",
+        "text": "Toen heb ik twee blaadjes van de bloem afgebroken en die in precies genoeg water en precies genoeg melk gekookt.",
+        "character": "rami"
+      },
+      {
+        "type": "say",
+        "text": "Toen heb ik er parfumflesjes mee gevuld en die ingepakt. En daarna heb ik de pakketjes beneden neergezet.",
+        "character": "rami"
+      },
+      {
+        "type": "say",
+        "text": "Maar nu is Eddy verdrietig, en Hezel is van de trap gevallen. Ik had dit nooit moeten doen.",
+        "character": "rami"
+      },
+      {
+        "type": "say",
+        "text": "Ik ga straks bij iedereen langs om sorry te zeggen: bij Hezel, bij Heike en bij Shukri. En Eddy krijgt zijn cactus meteen terug.",
+        "character": "rami"
+      },
+      {
+        "type": "say",
+        "text": "Goed plan, broertje. Ik ga met je mee.",
+        "character": "toon"
+      },
+      {
+        "type": "say",
+        "text": "Ja man.",
+        "character": "rami"
+      },
+      {
+        "type": "say",
+        "text": "Wat goed dat Rami sorry gaat zeggen, kleine detectives. En wat goed dat jullie dit mysterie helemaal hebben opgelost.",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "Jullie spraken met Heike, Eddy en Toon, en ontdekten dat mysterieuze pakketjes de Gigagiebels veroorzaakten.",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "En dat Rami met de bloembladeren van de Koningin van de Nacht iedereen gelukkig wilde maken.",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "En uiteindelijk leerden jullie dat Rami de bloembladeren gebruikte, omdat hij iedereen gelukkig wilde maken.",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "Geluk is helaas niet zo makkelijk. Wat ons gelukkig maakt, verschilt per persoon en van dag tot dag.",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "Iemand anders gelukkig proberen te maken, zonder te vragen waar diegene gelukkig van wordt, dat kan helemaal niet! Dank jullie wel, detectives.",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "Jullie hebben bewezen dat jullie echte detectives zijn!",
+        "character": "s_tegel"
+      },
+      {
+        "type": "say",
+        "text": "Jullie hebben bewezen dat jullie echte detectives zijn!",
+        "character": "s_tegel"
+      }
+    ]
+  }
+]

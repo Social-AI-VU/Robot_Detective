@@ -1,0 +1,287 @@
+r"""
+Robot Detective — Episode 0 (NAO, laptop microphone)
+====================================================
+Copy of Episode_0_NAO.py that listens through the LAPTOP microphone instead of the NAO's own
+microphones. Everything else (speech, gestures, eye colours, the beep) still happens on the NAO.
+Useful when the NAO's microphones pick up too much noise, or the children sit closer to the laptop.
+
+- Laptop microphone input via Dialogflow
+- NAO speakers for ElevenLabs audio playback
+
+Before running:
+
+    python run_datastore.py --data-dir RAG_Vectors
+    run-dialogflow
+    run-elevenlabs-tts
+    & "C:\\Users\\viq021\\repositories\\Robot_Detective\\conf\\redis\\redis-server.exe" "C:\\Users\\viq021\\repositories\\Robot_Detective\\conf\\redis\\redis.conf"
+
+Then start the episode with:
+
+    python RobotDetectiveEpisodeScripts/Episode_0_NAO_laptop_mic.py
+
+Environment variables:
+
+    NAO_IP=169.254.47.183
+    LAPTOP_MIC_NAME=Microphone (DJI MIC MINI)   (optional: which microphone; see laptop_mic.py
+                                                 and `python utils/mic_check.py list`)
+"""
+import json
+import os
+import sys
+import tempfile
+from pathlib import Path
+
+_repo_root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+if _repo_root not in sys.path:
+    sys.path.insert(0, _repo_root)
+
+from runtime_patches import apply_runtime_patches
+apply_runtime_patches()
+
+from dotenv import load_dotenv
+from sic_framework.devices import Nao
+from sic_framework.devices.common_desktop.desktop_microphone import MicrophoneConf
+from sic_framework.devices.desktop import Desktop
+
+from laptop_mic import describe_laptop_mic, resolve_laptop_mic_index
+from sic_framework.services.dialogflow.dialogflow import DialogflowConf
+from sic_framework.devices.common_naoqi.naoqi_autonomous import NaoRestRequest
+from sic_framework.devices.common_naoqi.naoqi_motion import NaoPostureRequest
+
+from nardial.conversation_agent import ConversationAgent
+from nardial.interaction_orchestrator import InteractionConfig
+from nardial.providers.device.nao import NaoAdapter
+from nardial.providers.nlu.dialogflow import DialogflowNLUProvider
+from local_llm import make_llm_provider  # OpenAI or a local model, see LLM_BACKEND in conf/.env
+from nardial.providers.vector_store.redis_store import RedisVectorStoreProvider
+from nardial.providers.tts.elevenlabs import ElevenLabsTTSConf, ElevenLabsTTSProvider
+from nardial.session_manager import SessionManager
+
+from start_gate import connect_nao, log_startup, wait_for_start
+
+BASE_DIR = Path(__file__).resolve().parent
+REPO_ROOT = BASE_DIR.parent
+
+DOCS_DIR = BASE_DIR / "Detective_Data"
+DIALOG_CONFIG_PATH = REPO_ROOT / "RobotDetective_Narrative_Jsons" / "Episode_0_all_dialogs.json"
+GOOGLE_KEYFILE_PATH = REPO_ROOT / "conf" / "google" / "google-key.json"
+ENV_FILE_PATH = REPO_ROOT / "conf" / ".env"
+
+# Load conf/.env BEFORE reading any os.getenv()-based settings below,
+# otherwise values like NAO_IP silently fall back to their hardcoded
+# defaults even when set in the .env file.
+load_dotenv(dotenv_path=ENV_FILE_PATH)
+
+INDEX_NAME = "episode_0_robin_docs"
+INGEST_DOCS = False
+PARTICIPANT_ID = os.getenv("PARTICIPANT_ID", "0")
+RESET_PARTICIPANT_STATE = os.getenv("RESET_PARTICIPANT_STATE", "1").strip().lower() in {"1", "true", "yes", "y"}
+NAO_LISTEN_TIMEOUT_SEC = float(os.getenv("NAO_LISTEN_TIMEOUT_SEC", "10"))
+# 44100 Hz is what laptop microphones support natively (also used by the SIC desktop demos).
+LAPTOP_MIC_SAMPLE_RATE = 44100
+# Which laptop microphone: LAPTOP_MIC_NAME or LAPTOP_MIC_INDEX in conf/.env (see laptop_mic.py).
+LAPTOP_MIC_INDEX = resolve_laptop_mic_index()
+NAO_IP = os.getenv("NAO_IP", "10.15.2.254") #home 192.168.0.250
+
+DEFAULT_RAG_INDEX_NAME = "episode_0_robin_docs"
+
+MANUAL_MODE = True
+
+
+def iter_referenced_characters(node):
+    if isinstance(node, dict):
+        character = node.get("character")
+        if isinstance(character, str):
+            yield character
+        for value in node.values():
+            yield from iter_referenced_characters(value)
+    elif isinstance(node, list):
+        for item in node:
+            yield from iter_referenced_characters(item)
+
+
+def populate_missing_character_definitions(dialogs) -> None:
+    known_character_defs = {}
+    for dialog in dialogs:
+        for character_name, character_def in dialog.get("characters", {}).items():
+            known_character_defs.setdefault(character_name, character_def)
+
+    unresolved = []
+    for dialog in dialogs:
+        characters = dialog.setdefault("characters", {})
+        missing_in_dialog = []
+
+        for character_name in dict.fromkeys(iter_referenced_characters(dialog.get("moves", []))):
+            if character_name in characters:
+                continue
+            character_def = known_character_defs.get(character_name)
+            if character_def is None:
+                missing_in_dialog.append(character_name)
+                continue
+            characters[character_name] = character_def
+        if missing_in_dialog:
+            unresolved.append(f"{dialog.get('id', '<unknown>')}: {', '.join(sorted(missing_in_dialog))}")
+
+    if unresolved:
+        raise ValueError("Dialogs reference characters without definitions: " + "; ".join(unresolved))
+
+
+def print_startup_checks() -> None:
+    print(f"[CHECK] Dialog JSON exists: {DIALOG_CONFIG_PATH.exists()} -> {DIALOG_CONFIG_PATH}")
+    print(f"[CHECK] Google key exists: {GOOGLE_KEYFILE_PATH.exists()} -> {GOOGLE_KEYFILE_PATH}")
+    print(f"[CHECK] Env file exists: {ENV_FILE_PATH.exists()} -> {ENV_FILE_PATH}")
+    print(f"[CHECK] NAO_IP: {NAO_IP}")
+    print(f"[CHECK] Microphone: laptop, {describe_laptop_mic(LAPTOP_MIC_INDEX)}")
+
+    openai_key = os.getenv("OPENAI_API_KEY")
+    if openai_key:
+        print("[CHECK] OPENAI_API_KEY found in environment")
+    else:
+        print("[WARN] OPENAI_API_KEY missing in environment; ask_llm/llm_based can be skipped/fail")
+
+    print(f"[CHECK] Participant ID: {PARTICIPANT_ID}")
+    print(f"[CHECK] RESET_PARTICIPANT_STATE: {RESET_PARTICIPANT_STATE}")
+
+    try:
+        all_dialogs = json.loads(DIALOG_CONFIG_PATH.read_text(encoding="utf-8"))
+        rag_blocks = [d for d in all_dialogs if d.get("type") == "llm_based" and d.get("rag_enabled")]
+        print(f"[CHECK] RAG-enabled dialog blocks: {[d.get('id') for d in rag_blocks]}")
+        print(f"[CHECK] Default RAG index: {DEFAULT_RAG_INDEX_NAME}")
+        for block in rag_blocks:
+            print(f"[CHECK] {block.get('id')} -> index={block.get('index_name', DEFAULT_RAG_INDEX_NAME)}")
+    except Exception as exc:
+        print(f"[WARN] Could not inspect rag_enabled dialogs: {exc}")
+
+
+def reset_participant_state_if_needed() -> None:
+    if not RESET_PARTICIPANT_STATE:
+        return
+
+    candidate_paths = [
+        Path.cwd() / "participants" / f"{PARTICIPANT_ID}.json",
+        REPO_ROOT / "participants" / f"{PARTICIPANT_ID}.json",
+        REPO_ROOT / "RobotDetectiveEpisodeScripts" / "participants" / f"{PARTICIPANT_ID}.json",
+    ]
+
+    for path in candidate_paths:
+        try:
+            if path.exists():
+                path.unlink()
+                print(f"[RESET] Deleted participant state: {path}")
+        except Exception as exc:
+            print(f"[WARN] Could not delete participant state at {path}: {exc}")
+
+    try:
+        from nardial.user_model import UserModel
+
+        user_model = UserModel(participant_id=PARTICIPANT_ID)
+        user_model.clear_remote()
+        print(f"[RESET] Cleared remote continuity for participant {PARTICIPANT_ID}")
+    except Exception as exc:
+        print(f"[WARN] Could not clear remote participant continuity: {exc}")
+
+
+if __name__ == "__main__":
+    load_dotenv(dotenv_path=ENV_FILE_PATH)
+    print_startup_checks()
+    reset_participant_state_if_needed()
+
+    nao = connect_nao(NAO_IP)  # skips SIC's slow install check on the robot, see start_gate.py
+    device = NaoAdapter(nao)
+
+    nao.motion.request(NaoPostureRequest("Stand", 0.8))
+    log_startup("robot standing")
+
+    tts_conf = ElevenLabsTTSConf(
+        api_key=os.getenv("ELEVENLABS_API_KEY", ""),
+        voice_id="f2yUVfK5jdm78zlpcZ8C",
+        model_id="eleven_flash_v2_5",
+    )
+    tts = ElevenLabsTTSProvider(conf=tts_conf, device=device)
+
+    # Listen through the laptop microphone; only the microphone of the laptop is started,
+    # so all speech still comes out of the NAO.
+    laptop = Desktop(mic_conf=MicrophoneConf(
+        sample_rate=LAPTOP_MIC_SAMPLE_RATE,
+        device_index=LAPTOP_MIC_INDEX,
+    ))
+    keyfile_json = json.loads(GOOGLE_KEYFILE_PATH.read_text(encoding="utf-8"))
+    nlu = DialogflowNLUProvider(
+        conf=DialogflowConf(keyfile_json=keyfile_json, sample_rate_hertz=LAPTOP_MIC_SAMPLE_RATE, language="nl"),
+        mic=laptop.mic,
+    )
+
+    interaction_config = InteractionConfig(
+        language="nl",
+        post_speech_delay=0,
+        signal_listening_behavior=True,
+    )
+    llm = make_llm_provider()
+    vector_store = RedisVectorStoreProvider(
+        embedding_model="text-embedding-3-large",
+        openai_api_key=os.getenv("OPENAI_API_KEY"),
+        index_name=DEFAULT_RAG_INDEX_NAME,
+        ingest_docs=False,
+        input_path=str(DOCS_DIR),
+    )
+
+    log_startup("TTS, mic, NLU, LLM ready")
+    agent = ConversationAgent(
+        device=device,
+        tts_provider=tts,
+        nlu_provider=nlu,
+        llm_provider=llm,
+        vector_store=vector_store,
+        int_config=interaction_config,
+    )
+
+    session_agenda = [
+     #   "Ep0_Scene_1_Intro",
+     #   "Ep0_Scene_2_Smaragd_Flat",
+      #  "Ep0_Scene_3_Question_Intro",
+        "Ep0_Scene_4_Student_Practice",
+    ]
+
+    active_dialog_json_path = str(DIALOG_CONFIG_PATH)
+    if MANUAL_MODE:
+        all_dialogs = json.loads(DIALOG_CONFIG_PATH.read_text(encoding="utf-8"))
+        populate_missing_character_definitions(all_dialogs)
+        dialogs_by_id = {d.get("id"): d for d in all_dialogs if d.get("id")}
+        missing = [scene_id for scene_id in session_agenda if scene_id not in dialogs_by_id]
+        if missing:
+            raise ValueError(f"session_agenda contains unknown dialog ids: {missing}")
+
+        filtered_dialogs = [dialogs_by_id[scene_id] for scene_id in session_agenda]
+
+        with tempfile.NamedTemporaryFile(
+            mode="w", suffix="_episode0_nao_laptop_mic_manual_dialogs.json", delete=False, encoding="utf-8"
+        ) as temp_file:
+            json.dump(filtered_dialogs, temp_file, ensure_ascii=False, indent=2)
+            active_dialog_json_path = temp_file.name
+
+        print(f"[MANUAL MODE] Active scene count: {len(session_agenda)}")
+        print(f"[MANUAL MODE] Using filtered dialog file: {active_dialog_json_path}")
+
+    session_manager = SessionManager(
+        session_agenda=session_agenda,
+        agent=agent,
+        dialog_json_path=active_dialog_json_path,
+        participant_id=PARTICIPANT_ID,
+    )
+
+    try:
+        # The children's names; Robin calls them by name in the practice round (scene 4).
+        # Same names as in Episode_1_NAO.py.
+        session_manager.conversation_state.user_model.update({"user_trudy": "Mevrouw"})
+        session_manager.conversation_state.user_model.update({"user_eddy": "Meneer"})
+        session_manager.conversation_state.user_model.update({"user_yoyo": "Mevrouw"})
+        session_manager.conversation_state.user_model.update({"user_jennifer": "Meneer"})
+        session_manager.conversation_state.user_model.update({"user_kata": "Mevrouw"})
+        session_manager.conversation_state.user_model.update({"user_teacher": "Meneer"})
+        # Wait for Enter, a touch on the NAO's head/chest, or the word 'start'.
+        wait_for_start(nao=nao, device=device, nlu=nlu)
+        session_manager.run()
+    except Exception as e:
+        print(f"Error occurred: {e}")
+    finally:
+        nao.autonomous.request(NaoRestRequest())

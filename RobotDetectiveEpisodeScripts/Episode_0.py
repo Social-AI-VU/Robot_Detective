@@ -15,7 +15,7 @@ from sic_framework.devices.desktop import Desktop
 from nardial.conversation_agent import ConversationAgent
 from nardial.interaction_orchestrator import InteractionConfig
 from nardial.providers.device.desktop import DesktopAdapter
-from nardial.providers.llm.openai_gpt import OpenAIGPTProvider
+from local_llm import make_llm_provider  # OpenAI or a local model, see LLM_BACKEND in conf/.env
 from nardial.providers.nlu.written_keyword import WrittenKeywordNLUProvider
 from nardial.providers.tts.elevenlabs import ElevenLabsTTSConf, ElevenLabsTTSProvider
 from nardial.providers.vector_store.redis_store import RedisVectorStoreProvider
@@ -94,7 +94,7 @@ if __name__ == "__main__":
 
     interaction_config = InteractionConfig(post_speech_delay=0, signal_listening_behavior=False)
     nlu = WrittenKeywordNLUProvider()
-    llm = OpenAIGPTProvider(api_key=os.getenv("OPENAI_API_KEY"))
+    llm = make_llm_provider()
 
     vector_store = RedisVectorStoreProvider(
         embedding_model="text-embedding-3-large",
@@ -159,5 +159,13 @@ if __name__ == "__main__":
         participant_id=PARTICIPANT_ID,
     )
 
+    # The children's names; Robin calls them by name in the practice round (scene 4).
+    # Same names as in Episode_1_NAO.py.
+    session_manager.conversation_state.user_model.update({"user_trudy": "Soyun"})
+    session_manager.conversation_state.user_model.update({"user_eddy": "Nefeli"})
+    session_manager.conversation_state.user_model.update({"user_yoyo": "Anita"})
+    session_manager.conversation_state.user_model.update({"user_jennifer": "Enne"})
+    session_manager.conversation_state.user_model.update({"user_kata": "Soyun2"})
+    session_manager.conversation_state.user_model.update({"user_teacher": "Soyun3"})
     session_manager.run()
     sys.exit()
