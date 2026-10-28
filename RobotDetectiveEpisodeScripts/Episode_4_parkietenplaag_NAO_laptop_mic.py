@@ -83,8 +83,11 @@ ENV_FILE_PATH = REPO_ROOT / "conf" / ".env"
 load_dotenv(dotenv_path=ENV_FILE_PATH)
 
 PARTICIPANT_ID = os.getenv("PARTICIPANT_ID", "3")
-# 44100 Hz is what laptop microphones support natively (also used by the SIC desktop demos).
-LAPTOP_MIC_SAMPLE_RATE = 44100
+# 16000 Hz: what Google recommends for speech recognition, and 2.75x less audio to upload than 44100 Hz.
+# On a slow connection (phone hotspot) 44100 Hz made the stream lag behind, so transcripts came in late
+# and pieces of speech were lost. Set LAPTOP_MIC_SAMPLE_RATE=44100 in conf/.env if a microphone
+# does not support 16000.
+LAPTOP_MIC_SAMPLE_RATE = int(os.getenv("LAPTOP_MIC_SAMPLE_RATE", "16000"))
 # Which laptop microphone: LAPTOP_MIC_NAME or LAPTOP_MIC_INDEX in conf/.env (see laptop_mic.py).
 LAPTOP_MIC_INDEX = resolve_laptop_mic_index()
 NAO_IP = os.getenv("NAO_IP", "192.168.0.250")

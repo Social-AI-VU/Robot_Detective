@@ -77,8 +77,11 @@ INGEST_DOCS = False
 PARTICIPANT_ID = os.getenv("PARTICIPANT_ID", "0")
 RESET_PARTICIPANT_STATE = os.getenv("RESET_PARTICIPANT_STATE", "1").strip().lower() in {"1", "true", "yes", "y"}
 NAO_LISTEN_TIMEOUT_SEC = float(os.getenv("NAO_LISTEN_TIMEOUT_SEC", "10"))
-# 44100 Hz is what laptop microphones support natively (also used by the SIC desktop demos).
-LAPTOP_MIC_SAMPLE_RATE = 44100
+# 16000 Hz: what Google recommends for speech recognition, and 2.75x less audio to upload than 44100 Hz.
+# On a slow connection (phone hotspot) 44100 Hz made the stream lag behind, so transcripts came in late
+# and pieces of speech were lost. Set LAPTOP_MIC_SAMPLE_RATE=44100 in conf/.env if a microphone
+# does not support 16000.
+LAPTOP_MIC_SAMPLE_RATE = int(os.getenv("LAPTOP_MIC_SAMPLE_RATE", "16000"))
 # Which laptop microphone: LAPTOP_MIC_NAME or LAPTOP_MIC_INDEX in conf/.env (see laptop_mic.py).
 LAPTOP_MIC_INDEX = resolve_laptop_mic_index()
 NAO_IP = os.getenv("NAO_IP", "10.15.2.254") #home 192.168.0.250

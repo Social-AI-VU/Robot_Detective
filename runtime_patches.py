@@ -252,6 +252,36 @@ def _install_vector_store_quality_patch() -> None:
 
     RedisVectorStoreProvider.query = _query
 
+    # Warm-up: the first knowledge lookup of a session was ~4 s slower than the rest, because the datastore
+    # service first loads the openai library (~1.9 s), creates its client (~0.6 s) and opens the connection
+    # (~1.6 s extra). One dummy lookup in the background while the episode starts pays that before any
+    # child asks something. Disable with RAG_WARMUP=0 in conf/.env.
+    original_init = RedisVectorStoreProvider.__init__
+
+    def __init__(self, *args, **kwargs):
+        original_init(self, *args, **kwargs)
+        if kwargs.get("ingest_docs") or not self._index_name:
+            return
+        if os.getenv("RAG_WARMUP", "1").strip().lower() not in {"1", "true", "yes", "y"}:
+            return
+        import threading
+        import time
+
+        def warm_up():
+            started = time.monotonic()
+            try:
+                self._datastore.request(QueryVectorDBRequest(
+                    index_name=self._index_name, query_text="opwarmen", openai_api_key=self._openai_api_key,
+                    k=1, partition="default", embedding_model=self._embedding_model,
+                ))
+                print("[RAG] knowledge lookup warmed up in {:.1f} s".format(time.monotonic() - started), flush=True)
+            except Exception as exc:
+                print("[RAG] warm-up failed (the first lookup may be slower): {}".format(exc), flush=True)
+
+        threading.Thread(target=warm_up, name="rag-warmup", daemon=True).start()
+
+    RedisVectorStoreProvider.__init__ = __init__
+
 
 def _strip_speaker_labels(text: str) -> str:
     """
@@ -437,6 +467,9 @@ def _install_llm_memory_patch() -> None:
         "- Alles wat je schrijft wordt hardop uitgesproken tegen kinderen: houd je aan de lengte uit je "
         "instructies (meestal 1 of 2 korte zinnen). "
         "Geen emojis, aanhalingstekens, opsommingen of beschrijvingen tussen haakjes.\n"
+        "- Je weet alleen wat in je eigen instructies en je eigen opgehaalde kennis staat. Vertelt een kind "
+        "iets wat een andere bewoner zei, reageer er dan kort op (bijvoorbeeld 'Zei Yoyo dat?'), maar neem het "
+        "niet over als iets wat jij weet, en begin er niet zelf over.\n"
         "- Schrijf alleen wat jij zelf nu hardop zegt, in de ik-vorm. De namen met een dubbele punt "
         "hieronder bij 'ZOJUIST GEZEGD' zijn alleen om te laten zien wie wat zei: zet nooit zelf een naam "
         "voor je tekst (dus niet 'Eddy: ...') en schrijf nooit wat een ander zegt.\n"
@@ -467,7 +500,13 @@ def _install_llm_memory_patch() -> None:
             return "Robot"
         return speaker_names.get(character, str(character).replace("_", " ").title())
 
-    def _transcript(session_history) -> list[str]:
+    def _transcript(session_history, only_character=None) -> list[str]:
+        """
+        What was just said, for the LLM's memory. With only_character (a resident's own chitchat or
+        interview), the lines of OTHER residents and Robin's recaps of them are left out: otherwise one
+        resident's information spread to every later character ("Jennifer had geen sleutel", told by
+        Yoyo, then repeated by everyone). The children's and Robin's lines stay.
+        """
         lines = []
         for entry in session_history or []:
             if not isinstance(entry, dict) or entry.get("role") not in ("robot", "user"):
@@ -476,6 +515,10 @@ def _install_llm_memory_patch() -> None:
             if not (entry_type in ("say", "llm_followup") or entry_type.startswith(("ask_", "answer_"))):
                 continue
             text = str(entry.get("text") or "").strip() or (no_answer if entry.get("role") == "user" else "")
+            if only_character and entry.get("role") == "robot":
+                speaker = entry.get("character")
+                if text.startswith("Even op een rijtje") or (speaker and speaker not in narrators and speaker != only_character):
+                    continue
             if text:
                 lines.append(f"{_speaker(entry)}: {text}")
         return lines[-transcript_lines:]
@@ -499,7 +542,7 @@ def _install_llm_memory_patch() -> None:
                 lines.append(f"Robin (samenvatting): {text}")
             elif text and character and character not in narrators:
                 lines.append(f"{_speaker(entry)}: {text}")
-        return lines[-250:]
+        return lines[-120:]  # the exact clue list comes from clue_tracker; this is context, kept short for speed
 
     def _fill_variables(text: str, user_model) -> str:
         try:
@@ -538,7 +581,8 @@ def _install_llm_memory_patch() -> None:
                 return None
             return max(0.0, duration - (monotonic() - start_time))
 
-        transcript = _transcript(self.session_history)
+        resident = character if (character and character not in narrators and isinstance(self, md.LLMDialog)) else None
+        transcript = _transcript(self.session_history, only_character=resident)
         system_prompt = _fill_variables(prompt or "", self.user_model) + memory_rules
         if getattr(self, "_include_episode_clues", False):
             clues = _episode_clues(self.session_history)
@@ -597,7 +641,8 @@ def _install_llm_memory_patch() -> None:
                     index_name=index_name,
                 ),
                 # Only when reacting to something a child actually said.
-                think=user_input not in (no_answer, start_chat),
+                # (and during Stoep Tegel's summary at the end, which takes a few seconds to write).
+                think=user_input not in (no_answer, start_chat) or getattr(self, "_include_episode_clues", False),
             )
             if llm_text is None:
                 return

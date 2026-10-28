@@ -46,17 +46,23 @@ echo    [N] OpenAI gpt-5.4-nano: a little faster, but the smallest model
 echo    [O] OpenAI gpt-4o-mini via the GPT service (the previous default)
 echo    [L] small local model on this laptop via Ollama (qwen2.5:3b; slower, for testing)
 choice /c FNOL /n /m "Choice: "
+SET LLM_CHOICE=%ERRORLEVEL%
 REM gpt-5.4-mini/nano are called straight from the episode (LLM_BACKEND=openai_direct, see local_llm.py),
-REM so they do not need the GPT service.
+REM so they do not need the GPT service. One SET per line: "IF ... SET a& SET b& GOTO" can run the
+REM GOTO even when the IF is false.
 SET LLM_BACKEND=openai_direct
 SET OPENAI_MODEL=gpt-5.4-mini
 SET LLM_NAME=gpt-5.4-mini
 SET LLM_LOCAL=0
 SET NEED_GPT=0
-IF ERRORLEVEL 4 SET LLM_BACKEND=local& SET LLM_LOCAL=1& SET LLM_NAME=local& GOTO :llmdone
-IF ERRORLEVEL 3 SET LLM_BACKEND=openai& SET NEED_GPT=1& SET LLM_NAME=gpt-4o-mini& GOTO :llmdone
-IF ERRORLEVEL 2 SET OPENAI_MODEL=gpt-5.4-nano& SET LLM_NAME=gpt-5.4-nano
-:llmdone
+IF "%LLM_CHOICE%"=="2" SET OPENAI_MODEL=gpt-5.4-nano
+IF "%LLM_CHOICE%"=="2" SET LLM_NAME=gpt-5.4-nano
+IF "%LLM_CHOICE%"=="3" SET LLM_BACKEND=openai
+IF "%LLM_CHOICE%"=="3" SET NEED_GPT=1
+IF "%LLM_CHOICE%"=="3" SET LLM_NAME=gpt-4o-mini
+IF "%LLM_CHOICE%"=="4" SET LLM_BACKEND=local
+IF "%LLM_CHOICE%"=="4" SET LLM_LOCAL=1
+IF "%LLM_CHOICE%"=="4" SET LLM_NAME=local
 
 IF "%EP%"=="0" SET RUNNER=Episode_0_NAO
 IF "%EP%"=="1" SET RUNNER=Episode_1_NAO
@@ -87,8 +93,9 @@ call echo %%date%% %%time%%  launcher: checking services: %NEEDED%>>"%REPO%\logs
 REM Restart Dialogflow and GPT before every episode: an episode stopped with Ctrl+C can leave its
 REM Dialogflow / GPT component behind, which then answers every request of the next episode as well
 REM (an empty transcript, or a reply to the wrong question: "sorry, ik verstond je niet").
-SET RESTART=
-IF NOT "%MODE%"=="4" SET RESTART=dialogflow
+REM The same goes for ElevenLabs: a leftover component generates every line a second time (paid twice).
+SET RESTART=elevenlabs
+IF NOT "%MODE%"=="4" SET RESTART=%RESTART% dialogflow
 IF "%NEED_GPT%"=="1" SET RESTART=%RESTART% gpt
 IF NOT "%RESTART%"=="" ".venv\Scripts\python.exe" utils\service_runner.py --restart %RESTART%
 ".venv\Scripts\python.exe" utils\service_runner.py --ensure %NEEDED%

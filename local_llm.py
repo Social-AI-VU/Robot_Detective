@@ -30,7 +30,8 @@ class LocalLLMProvider:
     """nardial LLM provider for any OpenAI-compatible server (Ollama, LM Studio, llama.cpp, vLLM)."""
 
     def __init__(self, base_url: str, model: str, temperature: float = 0.7, max_tokens: int = 150,
-                 timeout: float = 60, api_key: str | None = None, reasoning_effort: str = "none"):
+                 timeout: float = 60, api_key: str | None = None, reasoning_effort: str = "none",
+                 max_retries: int = 0):
         from openai import OpenAI
 
         self.model = model
@@ -39,7 +40,7 @@ class LocalLLMProvider:
         self.reasoning_effort = reasoning_effort
         # Local servers ignore the key, but the client needs one.
         self._client = OpenAI(base_url=base_url, api_key=api_key or os.getenv("LOCAL_LLM_API_KEY", "local"),
-                              timeout=timeout, max_retries=0)
+                              timeout=timeout, max_retries=max_retries)
 
     def complete(self, messages, system_prompt: str = "") -> str:
         if not messages:
@@ -47,6 +48,22 @@ class LocalLLMProvider:
         chat = [{"role": "system", "content": system_prompt}] if system_prompt else []
         chat += [{"role": m.role, "content": m.content} for m in messages]
         started = time.monotonic()
+        try:
+            resp = self._create(chat)
+        except Exception as exc:
+            # Without this the character just goes silent; nardial only prints "Exception: ...".
+            print(f"[LLM] {self.model}: no answer after {time.monotonic() - started:.1f} s "
+                  f"({type(exc).__name__}: {exc}). The character skips this turn.", flush=True)
+            raise
+        text = resp.choices[0].message.content or ""
+        if not text.strip():
+            print(f"[LLM] {self.model}: empty answer (finish_reason={resp.choices[0].finish_reason})", flush=True)
+        # Reasoning models (deepseek-r1, qwen3, ...) put their thinking between <think> tags.
+        text = THINK_BLOCK.sub("", text).strip()
+        print(f"[LLM] {self.model}: {time.monotonic() - started:.1f} s", flush=True)
+        return text
+
+    def _create(self, chat):
         if self.model.startswith("gpt-5"):
             # GPT-5 models only take max_completion_tokens, no temperature, and think first unless told not to.
             try:
@@ -66,11 +83,7 @@ class LocalLLMProvider:
             resp = self._client.chat.completions.create(
                 model=self.model, messages=chat, temperature=self.temperature, max_tokens=self.max_tokens,
             )
-        text = resp.choices[0].message.content or ""
-        # Reasoning models (deepseek-r1, qwen3, ...) put their thinking between <think> tags.
-        text = THINK_BLOCK.sub("", text).strip()
-        print(f"[LLM] {self.model}: {time.monotonic() - started:.1f} s", flush=True)
-        return text
+        return resp
 
 
 def preload_ollama(url: str, model: str, keep_alive: str = "3h") -> None:
@@ -121,7 +134,10 @@ def make_llm_provider():
             api_key=os.getenv("OPENAI_API_KEY"),
             temperature=float(os.getenv("OPENAI_TEMPERATURE", "0.7")),
             max_tokens=int(os.getenv("OPENAI_MAX_TOKENS", "150")),
-            timeout=float(os.getenv("OPENAI_TIMEOUT", "30")),
+            # Short wait per try, and retry: on a phone hotspot a request sometimes stalls or drops,
+            # and without a retry that character turn simply has no answer.
+            timeout=float(os.getenv("OPENAI_TIMEOUT", "15")),
+            max_retries=int(os.getenv("OPENAI_MAX_RETRIES", "2")),
             reasoning_effort=os.getenv("OPENAI_REASONING_EFFORT", "none").strip(),
         )
     if backend != "openai":
