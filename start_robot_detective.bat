@@ -29,6 +29,15 @@ echo    [T] laptop only, typing the answers (for testing)
 choice /c RMLT /n /m "Choice: "
 SET MODE=%ERRORLEVEL%
 SET EPISODE_VERSION=kort
+SET EPISODE_LANGUAGE=nl
+IF NOT "%EP%"=="0" GOTO :languagedone
+echo.
+echo  Which language?
+echo    [N] Nederlands
+echo    [E] English (English speech recognition and Robin's English knowledge)
+choice /c NE /n /m "Choice: "
+IF ERRORLEVEL 2 SET EPISODE_LANGUAGE=en
+:languagedone
 IF "%EP%"=="0" GOTO :versiondone
 echo.
 echo  Which version?
@@ -106,7 +115,7 @@ echo Starting %RUNNER%.py %ARGS% (version: %EPISODE_VERSION%, language model: %L
 IF "%MODE%"=="3" (echo When it says READY: press Enter here, or say "start".) ELSE IF "%MODE%"=="4" (echo When it says READY: press Enter here.) ELSE (echo Booting the NAO. When its eyes turn blue: press Enter here, touch its head or chest, or say "start".)
 echo.
 call .venv\Scripts\activate.bat
-echo %date% %time%  launcher: starting %RUNNER% version=%EPISODE_VERSION% llm=%LLM_NAME% participant=%PARTICIPANT_ID%>>"%REPO%\logs\startup_times.log"
+echo %date% %time%  launcher: starting %RUNNER% version=%EPISODE_VERSION% language=%EPISODE_LANGUAGE% llm=%LLM_NAME% participant=%PARTICIPANT_ID%>>"%REPO%\logs\startup_times.log"
 python "RobotDetectiveEpisodeScripts\%RUNNER%.py" %ARGS%
 
 echo.

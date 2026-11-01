@@ -23,7 +23,8 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parent
 DATA_DIR = REPO / "Detective_Data"
 LOG_FILE = REPO / "logs" / "clues_found.jsonl"
-CLUE_LINE = re.compile(r"^\s*\**\s*clue\s*(\d+)\s*(?:\([^)]*\))?\s*:\s*(.+)$", re.IGNORECASE)
+# "Clue 1 (vraag): tekst", also in the Markdown layout "- **Clue 1 (vraag):** tekst".
+CLUE_LINE = re.compile(r"^\s*(?:[-*]\s+)?\**\s*clue\s*(\d+)\s*(?:\([^)]*\))?\s*:\s*\**\s*(.+)$", re.IGNORECASE)
 
 # What the children discovered in this session: character -> set of clue numbers.
 _found: dict[str, set[int]] = {}

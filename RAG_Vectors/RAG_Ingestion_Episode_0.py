@@ -26,6 +26,7 @@ REPO_ROOT = BASE_DIR.parent
 
 ENV_FILE_PATH = REPO_ROOT / "conf" / ".env"
 DETECTIVE_DATA_DIR = REPO_ROOT / "Detective_Data" / "Episode_0_Detective_Data"
+DETECTIVE_DATA_DIR_EN = REPO_ROOT / "Detective_Data" / "Episode_0_Detective_Data_EN"  # English episode 0
 
 EMBEDDING_MODEL = "text-embedding-3-large"
 CHUNK_CHARS = 350
@@ -36,11 +37,13 @@ FORCE_RECREATE_INDEX = False
 # ─── Toggle per character: True = ingest, False = skip ───────────────────────
 INGEST_TOGGLES = {
     "Robin": True,
+    "Robin_EN": True,  # English version (Episode_0_all_dialogs_en.json)
 }
 
 # ─── Character source folders and target index names ─────────────────────────
 CHARACTER_CONFIG = {
     "Robin": {"docs_dir": DETECTIVE_DATA_DIR / "Ep0_Robin", "index_name": "episode_0_robin_docs"},
+    "Robin_EN": {"docs_dir": DETECTIVE_DATA_DIR_EN / "Ep0_Robin", "index_name": "episode_0_robin_docs_en"},
 }
 
 

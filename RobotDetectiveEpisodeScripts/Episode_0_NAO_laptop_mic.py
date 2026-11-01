@@ -63,7 +63,12 @@ BASE_DIR = Path(__file__).resolve().parent
 REPO_ROOT = BASE_DIR.parent
 
 DOCS_DIR = BASE_DIR / "Detective_Data"
-DIALOG_CONFIG_PATH = REPO_ROOT / "RobotDetective_Narrative_Jsons" / "Episode_0_all_dialogs.json"
+# EPISODE_LANGUAGE=en (the launcher asks): the English episode 0, with Robin's English knowledge
+# (index episode_0_robin_docs_en) and English speech recognition.
+ENGLISH = os.getenv("EPISODE_LANGUAGE", "nl").strip().lower().startswith("en")
+LANGUAGE = "en" if ENGLISH else "nl"
+DIALOG_CONFIG_PATH = REPO_ROOT / "RobotDetective_Narrative_Jsons" / (
+    "Episode_0_all_dialogs_en.json" if ENGLISH else "Episode_0_all_dialogs.json")
 GOOGLE_KEYFILE_PATH = REPO_ROOT / "conf" / "google" / "google-key.json"
 ENV_FILE_PATH = REPO_ROOT / "conf" / ".env"
 
@@ -86,7 +91,7 @@ LAPTOP_MIC_SAMPLE_RATE = int(os.getenv("LAPTOP_MIC_SAMPLE_RATE", "16000"))
 LAPTOP_MIC_INDEX = resolve_laptop_mic_index()
 NAO_IP = os.getenv("NAO_IP", "10.15.2.254") #home 192.168.0.250
 
-DEFAULT_RAG_INDEX_NAME = "episode_0_robin_docs"
+DEFAULT_RAG_INDEX_NAME = "episode_0_robin_docs_en" if ENGLISH else "episode_0_robin_docs"
 
 MANUAL_MODE = True
 
@@ -134,6 +139,7 @@ def print_startup_checks() -> None:
     print(f"[CHECK] Google key exists: {GOOGLE_KEYFILE_PATH.exists()} -> {GOOGLE_KEYFILE_PATH}")
     print(f"[CHECK] Env file exists: {ENV_FILE_PATH.exists()} -> {ENV_FILE_PATH}")
     print(f"[CHECK] NAO_IP: {NAO_IP}")
+    print(f"[CHECK] Language: {LANGUAGE}")
     print(f"[CHECK] Microphone: laptop, {describe_laptop_mic(LAPTOP_MIC_INDEX)}")
 
     openai_key = os.getenv("OPENAI_API_KEY")
@@ -210,12 +216,12 @@ if __name__ == "__main__":
     ))
     keyfile_json = json.loads(GOOGLE_KEYFILE_PATH.read_text(encoding="utf-8"))
     nlu = DialogflowNLUProvider(
-        conf=DialogflowConf(keyfile_json=keyfile_json, sample_rate_hertz=LAPTOP_MIC_SAMPLE_RATE, language="nl"),
+        conf=DialogflowConf(keyfile_json=keyfile_json, sample_rate_hertz=LAPTOP_MIC_SAMPLE_RATE, language=LANGUAGE),
         mic=laptop.mic,
     )
 
     interaction_config = InteractionConfig(
-        language="nl",
+        language=LANGUAGE,
         post_speech_delay=0,
         signal_listening_behavior=True,
     )

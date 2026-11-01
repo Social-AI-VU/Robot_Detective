@@ -68,6 +68,9 @@ ROBOT_RUNNERS = {
 SPEAKER_RATE = 24000          # laptop speaker; all audio is converted to this rate
 LAPTOP_MIC_SAMPLE_RATE = 44100
 PARTICIPANT_ID = os.getenv("PARTICIPANT_ID", "3")
+# EPISODE_LANGUAGE=en: the English version of the episode (only episode 0 has one so far).
+ENGLISH = os.getenv("EPISODE_LANGUAGE", "nl").strip().lower().startswith("en")
+LANGUAGE = "en" if ENGLISH else "nl"
 
 
 class LaptopSpeakerAdapter(DesktopAdapter):
@@ -89,7 +92,10 @@ def robot_runner_settings(episode: int) -> dict:
     default = re.search(r'EPISODE_VERSION = os\.getenv\("EPISODE_VERSION", "(\w+)"\)', src)
     version = os.getenv("EPISODE_VERSION", default.group(1) if default else "kort").strip().lower()
     suffix = {"vol": "_all_dialogs.json", "kort": "_all_dialogs_kort.json", "3": "_all_dialogs_3.json"}[version]
-    dialog_file = next(f for f in files if f.endswith(suffix))
+    # Episode 0 has one version only. English (EPISODE_LANGUAGE=en): the runner names the _en file too.
+    dialog_file = next((f for f in files if f.endswith(suffix)), next(f for f in files if not f.endswith("_en.json")))
+    if ENGLISH:
+        dialog_file = next((f for f in files if f == dialog_file.replace(".json", "_en.json")), dialog_file)
     agenda_block = re.search(r"(?:session_agenda|SESSION_AGENDA) = \[(.*?)\n\s*\]", src, re.S).group(1)
     agenda = re.findall(r'^\s*"(Ep\d+_[^"]+)"', agenda_block, re.M)  # commented-out lines start with '#'
     names = dict(re.findall(r'"(user_\w+)":\s*"([^"]*)"', src))
@@ -150,11 +156,11 @@ def main() -> None:
     else:
         keyfile_json = json.loads(GOOGLE_KEYFILE_PATH.read_text(encoding="utf-8"))
         nlu = DialogflowNLUProvider(
-            conf=DialogflowConf(keyfile_json=keyfile_json, sample_rate_hertz=LAPTOP_MIC_SAMPLE_RATE, language="nl"),
+            conf=DialogflowConf(keyfile_json=keyfile_json, sample_rate_hertz=LAPTOP_MIC_SAMPLE_RATE, language=LANGUAGE),
             mic=laptop.mic,
         )
 
-    interaction_config = InteractionConfig(language="nl", post_speech_delay=0, signal_listening_behavior=False)
+    interaction_config = InteractionConfig(language=LANGUAGE, post_speech_delay=0, signal_listening_behavior=False)
     interaction_config.chunk_audio = False  # same as on the robot: one request per line
     agent = ConversationAgent(
         device=device,

@@ -193,6 +193,8 @@ def _install_vector_store_quality_patch() -> None:
         return len(normalized.split()) <= 2 and "?" not in normalized
 
     def _clean_snippet(content: str) -> str:
+        import re
+
         heading_drops = {
             "personal history trudy",
             "personal relationships trudy",
@@ -200,13 +202,21 @@ def _install_vector_store_quality_patch() -> None:
             "ep1 mystery knowledge trudy",
             "conversation guidelines",
         }
+        # The knowledge files are Markdown (utils/format_knowledge_md.py): strip the markup, and drop the
+        # section headings of every character, so the LLM does not echo "Personal history ..." or "##".
+        section_heading = re.compile(
+            r"^(personal history|personal relationships|interpersonal relationships|mystery knowle?d?ge?|mystery knowlegde"
+            r"|ep\s*\d+\s+mystery knowledge|conversation guidelines|clues|beschuldiging)\b", re.IGNORECASE)
         lines = []
         for raw in (content or "").replace("\ufeff", "").splitlines():
             line = raw.strip()
+            is_heading = line.startswith("#")
+            line = re.sub(r"^#+\s*", "", line)
+            line = re.sub(r"^[-*]\s+", "", line).replace("**", "").strip()
             if not line:
                 continue
             low = line.lower()
-            if low in heading_drops:
+            if low in heading_drops or (is_heading and section_heading.match(line)):
                 continue
             if "haal dit uit de rag" in low:
                 continue
@@ -487,6 +497,18 @@ def _install_llm_memory_patch() -> None:
     no_question_rule = (
         "\n\nStel zelf geen vraag: na jouw antwoord gaat het gesprek meteen verder met iets anders."
     )
+    # English episodes (EPISODE_LANGUAGE=en, e.g. Episode_0_all_dialogs_en.json): the same rules in
+    # English, so the model does not slip into Dutch.
+    english = os.getenv("EPISODE_LANGUAGE", "nl").strip().lower().startswith("en")
+    if english:
+        pronoun_rule = (
+            "\n- He or she: Yoyo is a man (he, him; Mr Yoyo). DJ Kata, Jennifer and Stoep Tegel are women "
+            "(she, her). Professor Eddy, Shukri, Toon and Rami are men or boys (he, him). Robin is a robot (he). "
+            "Always answer in English."
+        )
+        no_question_rule = (
+            "\n\nDo not ask a question yourself: right after your answer the conversation moves on to something else."
+        )
     last_turn_rule = (
         "\n\nDIT IS JE LAATSTE BEURT: reageer kort op wat er net gezegd is. Stel GEEN vraag meer, "
         "en neem alleen afscheid als je instructies daarom vragen."
