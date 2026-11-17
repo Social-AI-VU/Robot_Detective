@@ -3,7 +3,7 @@ REM ============================================================================
 REM  Robot Detective launcher
 REM  1. Asks which episode (0-4), how to run it (robot or laptop only) and which version
 REM     (kort = 5 interviews, 3 = 3 interviews + 2 note-keepers, vol = full episode)
-REM     and which language model (OpenAI gpt-5.4-mini/nano or gpt-4o-mini, or a local model via Ollama; see local_llm.py)
+REM     and which language model (OpenAI gpt-5.6-terra, gpt-5.4-nano or gpt-4o-mini, or a local model via Ollama; see local_llm.py)
 REM  2. Starts the services that are not running yet (Redis, ElevenLabs TTS, GPT, Dialogflow),
 REM     each in its own window that restarts the service if it crashes
 REM  3. Sets up the episode in THIS window, then waits for your go-ahead:
@@ -42,26 +42,28 @@ IF "%EP%"=="0" GOTO :versiondone
 echo.
 echo  Which version?
 echo    [K] kort: 5 interviews (~65 min)
-echo    [3] 3 interviews + 2 notulisten (~50 min); set the names in the episode's runner
+echo    [3] 3 interviews + 2 notulisten (~45 min)
+echo    [4] 4 interviews + 1 notulist, no get-to-know chats (~50 min)
 echo    [V] volledig: the full episode
-choice /c K3V /n /m "Choice: "
-IF ERRORLEVEL 3 SET EPISODE_VERSION=vol& GOTO :versiondone
+choice /c K34V /n /m "Choice: "
+IF ERRORLEVEL 4 SET EPISODE_VERSION=vol& GOTO :versiondone
+IF ERRORLEVEL 3 SET EPISODE_VERSION=4& GOTO :versiondone
 IF ERRORLEVEL 2 SET EPISODE_VERSION=3& GOTO :versiondone
 :versiondone
 echo.
 echo  Which language model for the chats and interviews?
-echo    [F] OpenAI gpt-5.4-mini: fast and smart (recommended)
+echo    [F] OpenAI gpt-5.6-terra: fast and smart (recommended)
 echo    [N] OpenAI gpt-5.4-nano: a little faster, but the smallest model
 echo    [O] OpenAI gpt-4o-mini via the GPT service (the previous default)
 echo    [L] small local model on this laptop via Ollama (qwen2.5:3b; slower, for testing)
 choice /c FNOL /n /m "Choice: "
 SET LLM_CHOICE=%ERRORLEVEL%
-REM gpt-5.4-mini/nano are called straight from the episode (LLM_BACKEND=openai_direct, see local_llm.py),
+REM gpt-5.6-terra and gpt-5.4-nano are called straight from the episode (LLM_BACKEND=openai_direct, see local_llm.py),
 REM so they do not need the GPT service. One SET per line: "IF ... SET a& SET b& GOTO" can run the
 REM GOTO even when the IF is false.
 SET LLM_BACKEND=openai_direct
-SET OPENAI_MODEL=gpt-5.4-mini
-SET LLM_NAME=gpt-5.4-mini
+SET OPENAI_MODEL=gpt-5.6-terra
+SET LLM_NAME=gpt-5.6-terra
 SET LLM_LOCAL=0
 SET NEED_GPT=0
 IF "%LLM_CHOICE%"=="2" SET OPENAI_MODEL=gpt-5.4-nano

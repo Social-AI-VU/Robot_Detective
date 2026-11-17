@@ -73,6 +73,7 @@ DIALOG_CONFIG_PATH = REPO_ROOT / "RobotDetective_Narrative_Jsons" / {
     "vol": "Episode_1_all_dialogs.json",
     "kort": "Episode_1_all_dialogs_kort.json",
     "3": "Episode_1_all_dialogs_3.json",
+    "4": "Episode_1_all_dialogs_4.json",
 }[EPISODE_VERSION]
 GOOGLE_KEYFILE_PATH = REPO_ROOT / "conf" / "google" / "google-key.json"
 ENV_FILE_PATH = REPO_ROOT / "conf" / ".env"
@@ -269,7 +270,6 @@ if __name__ == "__main__":
         "Ep1_Scene_8_Ontknoping",
         "Ep1_Scene_9_Trilling",  # flat trilt, glijbaan naar de kelder
         "Ep1_Scene_10_Kelder_Disco",  # onthulling onder het glitterdoek
-        "Ep1_Scene_11_Outro",  # outro Stoep Tegel
     ]
 
     active_dialog_json_path = str(DIALOG_CONFIG_PATH)

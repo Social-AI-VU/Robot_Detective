@@ -267,7 +267,6 @@ if __name__ == '__main__':
         "Ep1_Scene_8_Ontknoping",
         "Ep1_Scene_9_Trilling",  # flat trilt, glijbaan naar de kelder
         "Ep1_Scene_10_Kelder_Disco",  # onthulling onder het glitterdoek
-        "Ep1_Scene_11_Outro",  # outro Stoep Tegel
     ]
 
     active_dialog_json_path = str(DIALOG_CONFIG_PATH)

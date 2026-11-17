@@ -53,6 +53,17 @@ CHARACTER_CONFIG = {
     "Eddy":    {"docs_dir": DETECTIVE_DATA_DIR / "Ep4_Eddy", "index_name": "episode_4_eddy_docs"},
 }
 
+# 3- and 4-interview versions: copies of the knowledge without the characters who are not in that
+# story (made by utils/make_three_version_knowledge.py). Ingested as <index>_3 / <index>_4, with the
+# same toggle as the original.
+for _suffix in ("_3", "_4"):
+    _variant_dir = DETECTIVE_DATA_DIR.parent / (DETECTIVE_DATA_DIR.name + _suffix)
+    for _name, _cfg in [(n, c) for n, c in CHARACTER_CONFIG.items() if not n.endswith(("_3", "_4"))]:
+        _dir = _variant_dir / _cfg["docs_dir"].name
+        if _dir.exists():
+            CHARACTER_CONFIG[_name + _suffix] = {"docs_dir": _dir, "index_name": _cfg["index_name"] + _suffix}
+            INGEST_TOGGLES.setdefault(_name + _suffix, INGEST_TOGGLES.get(_name, False))
+
 
 def ingest_character(character: str, docs_dir: Path, index_name: str) -> tuple[bool, str]:
     if not docs_dir.exists():

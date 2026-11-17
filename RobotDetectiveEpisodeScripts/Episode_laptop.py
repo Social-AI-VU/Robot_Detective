@@ -91,7 +91,7 @@ def robot_runner_settings(episode: int) -> dict:
     files = re.findall(r'"(Episode_\w+?\.json)"', src)
     default = re.search(r'EPISODE_VERSION = os\.getenv\("EPISODE_VERSION", "(\w+)"\)', src)
     version = os.getenv("EPISODE_VERSION", default.group(1) if default else "kort").strip().lower()
-    suffix = {"vol": "_all_dialogs.json", "kort": "_all_dialogs_kort.json", "3": "_all_dialogs_3.json"}[version]
+    suffix = {"vol": "_all_dialogs.json", "kort": "_all_dialogs_kort.json", "3": "_all_dialogs_3.json", "4": "_all_dialogs_4.json"}[version]
     # Episode 0 has one version only. English (EPISODE_LANGUAGE=en): the runner names the _en file too.
     dialog_file = next((f for f in files if f.endswith(suffix)), next(f for f in files if not f.endswith("_en.json")))
     if ENGLISH:
@@ -132,6 +132,9 @@ def main() -> None:
     parser.add_argument("--typing", action="store_true", help="type the answers instead of speaking them")
     args = parser.parse_args()
 
+    if args.typing:
+        # The P/S session keys listen to the whole keyboard: typed answers would pause the session.
+        os.environ["SESSION_CONTROLS"] = "0"
     settings = robot_runner_settings(args.episode)
     print(f"[LAPTOP] Episode {args.episode}: {settings['dialog_file']}, {len(settings['agenda'])} scenes, "
           f"answers by {'typing' if args.typing else 'speaking'}")

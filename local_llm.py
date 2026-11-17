@@ -4,7 +4,7 @@ local model served by Ollama or LM Studio (both speak the OpenAI chat protocol).
 
 The launcher asks which one to use. Without the launcher, set it in conf/.env:
     LLM_BACKEND=openai_direct                  # any OpenAI model, straight from the episode (no GPT service):
-    OPENAI_MODEL=gpt-5.4-mini                  #   e.g. gpt-5.4-mini, gpt-5.4-nano, gpt-4o
+    OPENAI_MODEL=gpt-5.6-terra                 #   e.g. gpt-5.6-terra, gpt-5.4-nano, gpt-4o
     OPENAI_REASONING_EFFORT=none               #   GPT-5 only: how long it thinks first; "none" is fastest
     LLM_BACKEND=local                          # "openai" (default, gpt-4o-mini via the GPT service) or "local"
     LOCAL_LLM_URL=http://localhost:11434/v1    # Ollama; LM Studio is http://localhost:1234/v1
@@ -31,16 +31,37 @@ class LocalLLMProvider:
 
     def __init__(self, base_url: str, model: str, temperature: float = 0.7, max_tokens: int = 150,
                  timeout: float = 60, api_key: str | None = None, reasoning_effort: str = "none",
-                 max_retries: int = 0):
+                 max_retries: int = 0, connect_timeout: float | None = None):
+        import httpx
         from openai import OpenAI
 
         self.model = model
         self.temperature = temperature
         self.max_tokens = max_tokens
         self.reasoning_effort = reasoning_effort
-        # Local servers ignore the key, but the client needs one.
+        self.max_retries = max_retries
+        # Retries are done in complete(), so each attempt is logged (the client retried silently: a
+        # stalled first request cost Yoyo's first chat a full minute without a trace in the logs).
+        # A connection that does not open within connect_timeout is retried right away, instead of
+        # waiting the full answer timeout.
         self._client = OpenAI(base_url=base_url, api_key=api_key or os.getenv("LOCAL_LLM_API_KEY", "local"),
-                              timeout=timeout, max_retries=max_retries)
+                              timeout=httpx.Timeout(timeout, connect=connect_timeout or timeout), max_retries=0)
+
+    def warm_up(self) -> None:
+        """Open the connection to the server now, in the background (name lookup, TLS), so the first
+        child's answer does not pay for it. Costs no tokens: it only lists the models."""
+        import threading
+
+        def run():
+            started = time.monotonic()
+            try:
+                self._client.models.list()
+                _log_llm_call(f"warm-up {self.model}: connected in {time.monotonic() - started:.1f} s")
+            except Exception as exc:
+                _log_llm_call(f"warm-up {self.model}: FAILED after {time.monotonic() - started:.1f} s "
+                              f"({type(exc).__name__}: {exc})")
+
+        threading.Thread(target=run, daemon=True).start()
 
     def complete(self, messages, system_prompt: str = "") -> str:
         if not messages:
@@ -48,19 +69,27 @@ class LocalLLMProvider:
         chat = [{"role": "system", "content": system_prompt}] if system_prompt else []
         chat += [{"role": m.role, "content": m.content} for m in messages]
         started = time.monotonic()
-        try:
-            resp = self._create(chat)
-        except Exception as exc:
-            # Without this the character just goes silent; nardial only prints "Exception: ...".
-            print(f"[LLM] {self.model}: no answer after {time.monotonic() - started:.1f} s "
-                  f"({type(exc).__name__}: {exc}). The character skips this turn.", flush=True)
-            raise
+        attempts = []
+        for attempt in range(self.max_retries + 1):
+            tried = time.monotonic()
+            try:
+                resp = self._create(chat)
+                break
+            except Exception as exc:
+                attempts.append(f"try {attempt + 1}: {type(exc).__name__} after {time.monotonic() - tried:.1f} s")
+                if attempt == self.max_retries or not _retryable(exc):
+                    # Without this the character just goes silent; nardial only prints "Exception: ...".
+                    _log_llm_call(f"{self.model}: NO ANSWER after {time.monotonic() - started:.1f} s "
+                                  f"({'; '.join(attempts)}: {exc}). The character skips this turn.")
+                    raise
+                time.sleep(0.5)
         text = resp.choices[0].message.content or ""
         if not text.strip():
-            print(f"[LLM] {self.model}: empty answer (finish_reason={resp.choices[0].finish_reason})", flush=True)
+            _log_llm_call(f"{self.model}: empty answer (finish_reason={resp.choices[0].finish_reason})")
         # Reasoning models (deepseek-r1, qwen3, ...) put their thinking between <think> tags.
         text = THINK_BLOCK.sub("", text).strip()
-        print(f"[LLM] {self.model}: {time.monotonic() - started:.1f} s", flush=True)
+        _log_llm_call(f"{self.model}: {time.monotonic() - started:.1f} s"
+                      + (f" (after {'; '.join(attempts)})" if attempts else ""))
         return text
 
     def _create(self, chat):
@@ -84,6 +113,27 @@ class LocalLLMProvider:
                 model=self.model, messages=chat, temperature=self.temperature, max_tokens=self.max_tokens,
             )
         return resp
+
+
+LLM_LOG = os.path.join(os.path.dirname(os.path.abspath(__file__)), "logs", "llm_calls.log")
+
+
+def _log_llm_call(line: str) -> None:
+    """Print the line and keep it in logs/llm_calls.log (the console of a session is gone afterwards)."""
+    print(f"[LLM] {line}", flush=True)
+    try:
+        os.makedirs(os.path.dirname(LLM_LOG), exist_ok=True)
+        with open(LLM_LOG, "a", encoding="utf-8") as f:
+            f.write(f"{time.strftime('%Y-%m-%d %H:%M:%S')}  {line}\n")
+    except OSError:
+        pass
+
+
+def _retryable(exc: Exception) -> bool:
+    """A timeout, a dropped connection, rate limit or server error is worth another try; a bad request
+    (wrong model name, invalid key) is not."""
+    status = getattr(exc, "status_code", None)
+    return status is None or status == 429 or status >= 500
 
 
 def preload_ollama(url: str, model: str, keep_alive: str = "3h") -> None:
@@ -126,20 +176,24 @@ def make_llm_provider():
             timeout=float(os.getenv("LOCAL_LLM_TIMEOUT", "60")),
         )
     if backend == "openai_direct":
-        model = os.getenv("OPENAI_MODEL", "gpt-5.4-mini").strip()
+        model = os.getenv("OPENAI_MODEL", "gpt-5.6-terra").strip()
         print(f"[LLM] OpenAI {model}, directly (no GPT service)", flush=True)
-        return LocalLLMProvider(
+        provider = LocalLLMProvider(
             base_url="https://api.openai.com/v1",
             model=model,
             api_key=os.getenv("OPENAI_API_KEY"),
             temperature=float(os.getenv("OPENAI_TEMPERATURE", "0.7")),
             max_tokens=int(os.getenv("OPENAI_MAX_TOKENS", "150")),
             # Short wait per try, and retry: on a phone hotspot a request sometimes stalls or drops,
-            # and without a retry that character turn simply has no answer.
+            # and without a retry that character turn simply has no answer. A connection that does
+            # not open within 5 s is tried again at once.
             timeout=float(os.getenv("OPENAI_TIMEOUT", "15")),
+            connect_timeout=float(os.getenv("OPENAI_CONNECT_TIMEOUT", "5")),
             max_retries=int(os.getenv("OPENAI_MAX_RETRIES", "2")),
             reasoning_effort=os.getenv("OPENAI_REASONING_EFFORT", "none").strip(),
         )
+        provider.warm_up()
+        return provider
     if backend != "openai":
         print(f"[LLM] Unknown LLM_BACKEND={backend!r}; using OpenAI", flush=True)
     from nardial.providers.llm.openai_gpt import OpenAIGPTProvider

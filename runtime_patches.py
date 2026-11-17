@@ -378,6 +378,7 @@ def _limit_questions(text: str, max_questions: int) -> str:
 
 
 _voice_to_character_cache: dict | None = None
+_recent_thinking: dict[str, list[str]] = {}  # character -> thinking phrases said last (no repeats)
 
 
 async def _while_thinking(agent, voice_settings, llm_call, think: bool = True):
@@ -415,7 +416,13 @@ async def _while_thinking(agent, voice_settings, llm_call, think: bool = True):
             if THINKING_GESTURES and hasattr(device, "play_animation"):
                 device.play_animation(random.choice(THINKING_GESTURES), run_async=True)
             # animated=False: the thinking gesture replaces the usual speaking gesture.
-            await agent.say(random.choice(sounds), voice_settings=voice_settings, animated=False)
+            # Not the same phrase as the last few times this character thought out loud.
+            recent = _recent_thinking.setdefault(character, [])
+            fresh = [s for s in sounds if s not in recent] or sounds
+            phrase = random.choice(fresh)
+            recent.append(phrase)
+            del recent[:len(recent) - min(3, len(sounds) - 1)]
+            await agent.say(phrase, voice_settings=voice_settings, animated=False)
     except Exception as exc:
         print("Thinking sound failed: {}".format(exc))
     return await task
@@ -596,6 +603,9 @@ def _install_llm_memory_patch() -> None:
                                 rag_enabled: bool = False, index_name=None, voice_settings=None):
         agent = self.conversation_agent
         character = getattr(self, "character", None)
+        if voice_settings is None and character:
+            # nardial 0.4 runs an llm_based scene without a voice: the character's own voice, not Robin's.
+            voice_settings = self._get_voice_settings({"character": character})
         start_time = monotonic()
 
         def remaining_time():
@@ -725,9 +735,25 @@ def _install_llm_memory_patch() -> None:
     original_ask_llm = md.MiniDialog.handle_move_ask_llm
 
     async def handle_move_ask_llm(self, move):
-        self._include_episode_clues = bool(isinstance(move, dict) and move.get("include_episode_clues"))
-        try:
+        if not isinstance(move, dict):
             return await original_ask_llm(self, move)
+        self._include_episode_clues = bool(move.get("include_episode_clues"))
+        try:
+            # Read the move ourselves: nardial 0.4's MoveAskLLM drops speak_first, duration, rag_enabled,
+            # index_name and character. Without speak_first=false the reaction to the note-keepers' clue
+            # talked first and never listened; without character Stoep Tegel spoke in Robin's voice.
+            return await self._run_llm_exchange(
+                prompt=move.get("prompt", ""),
+                max_turns=move.get("max_turns") or md.MAX_LLM_TURNS,
+                set_variable=move.get("set_variable"),
+                quit_phrases=move.get("quit_phrases"),
+                quit_signal=move.get("quit_signal"),
+                speak_first=move.get("speak_first", True),
+                duration=move.get("duration"),
+                rag_enabled=bool(move.get("rag_enabled", False)),
+                index_name=move.get("index_name"),
+                voice_settings=self._get_voice_settings(move),
+            )
         finally:
             self._include_episode_clues = False
 
@@ -768,6 +794,20 @@ def _install_llm_memory_patch() -> None:
                     print("[CLUES] could not start the check for {}: {}".format(character, exc))
 
     md.MiniDialog._run_llm_exchange = _run_llm_exchange_and_count_clues
+
+    # nardial 0.4 drops the "character" of an llm_based scene (0.3 kept it): without it the chat or
+    # interview was spoken in Robin's voice, and the clue check and the per-character memory did not
+    # know who was talking.
+    original_llm_from_doc = md.LLMDialog.from_doc.__func__
+
+    @classmethod
+    def llm_from_doc(cls, doc, **common):
+        dialog = original_llm_from_doc(cls, doc, **common)
+        if not getattr(dialog, "character", None) and doc.get("character"):
+            dialog.character = doc["character"]
+        return dialog
+
+    md.LLMDialog.from_doc = llm_from_doc
     md.MiniDialog._generate_llm_followup = _generate_llm_followup
     def _with_variables(original_handler):
         # nardial only fills %variables% in "say" lines, so a question like
@@ -780,7 +820,79 @@ def _install_llm_memory_patch() -> None:
         return handler
 
     md.MiniDialog.handle_move_ask_open = _with_variables(_with_followup_rag(md.MiniDialog.handle_move_ask_open))
-    md.MiniDialog.handle_move_ask_yesno = _with_variables(_with_followup_rag(md.MiniDialog.handle_move_ask_yesno))
+    yes_words = {"ja", "jaa", "jaaa", "jazeker", "jawel", "yes", "jep", "jup", "tuurlijk", "natuurlijk", "zeker",
+                 "oke", "oké", "ok", "okay", "goed", "prima", "graag", "klopt"}
+    no_words = {"nee", "neee", "no", "nope", "nooit", "neehoor"}
+    filler_words = {"eh", "ehm", "uh", "uhm", "hoor", "wel", "hè", "he", "zeker", "ik", "wij", "we", "denk", "het"}
+
+    def _quick_yes_no(heard):
+        """A plain short 'ja'/'nee' needs no language model."""
+        words = re.findall(r"\w+", heard.lower())
+        if not words or len(words) > 4 or any(w not in yes_words | no_words | filler_words for w in words):
+            return None
+        has_yes, has_no = any(w in yes_words for w in words), any(w in no_words for w in words)
+        return "yes" if has_yes and not has_no else "no" if has_no and not has_yes else None
+
+    open_yes_no_prompt = (
+        "Je bent {name}. Je stelde de kinderen (8 tot 12 jaar) net deze ja/nee-vraag: \"{question}\"\n"
+        "Hun antwoord komt hieronder. Het komt via spraakherkenning binnen en kan fouten bevatten: ga uit van wat "
+        "ze waarschijnlijk bedoelden.\n\n"
+        "Schrijf precies twee regels:\n"
+        "ANTWOORD: ja, nee of geen\n"
+        "REACTIE: (een korte reactie, of niets)\n\n"
+        "- ANTWOORD: 'ja' als hun antwoord op de vraag ja betekent (ook 'jazeker', 'tuurlijk', 'ik wel'), 'nee' als "
+        "het nee betekent, 'geen' als er geen ja of nee in zit.\n"
+        "- REACTIE: zeiden de kinderen meer dan alleen ja of nee (iets wat ze vertellen, vragen of bedenken), reageer "
+        "daar dan op als {name}: vriendelijk, in 1 korte zin in simpele taal, zonder vraag. Noem kort wat ze "
+        "vertelden. Beloof niets, en zeg niet of iets klopt of goed geraden is: dat moet het verhaal nog uitwijzen. "
+        "Reageer niet op het ja of nee zelf, want dat doet het verhaal hierna. Zeiden ze alleen ja of nee, of iets "
+        "wat je niet verstaat, laat de reactie dan leeg."
+    )
+
+    def _with_open_answer(original_handler):
+        # A yes/no question with "open_answer": true is asked as an open question. Children often say
+        # more than ja or nee ("ja, ik heb ook een broertje!"); the character first reacts to that
+        # (language model), then the story follows the ja/nee branch. No ja or nee in the answer: "no".
+        async def handler(self, move):
+            if not (isinstance(move, dict) and move.get("open_answer")):
+                return await original_handler(self, move)
+            from nardial.moves import MOVE_ANSWER_YESNO, MOVE_ASK_YESNO
+
+            agent = self.conversation_agent
+            voice_settings = self._get_voice_settings(move)
+            question = move.get("text", "")
+            await agent.say(question, voice_settings=voice_settings)
+            self._record_robot(MOVE_ASK_YESNO, question)
+            result = await agent.orchestrator.listen()
+            heard = (result.transcript or "").strip()
+            self._record_user(MOVE_ANSWER_YESNO, heard)
+
+            answer, reaction = _quick_yes_no(heard), ""
+            if answer is None and heard:
+                character = move.get("character") or "robin"
+                prompt = open_yes_no_prompt.format(name=_speaker({"role": "robot", "character": character}),
+                                                   question=question) + "\n" + pronoun_rule
+                reply = await _while_thinking(agent, voice_settings, agent.ask_llm(
+                    user_prompt=heard, context_messages=[], system_prompt=prompt))
+                found = re.search(r"ANTWOORD:\s*(ja|nee|geen)", reply or "", re.IGNORECASE)
+                answer = {"ja": "yes", "nee": "no"}.get(found.group(1).lower() if found else "", None)
+                said = re.search(r"REACTIE:\s*(.*)", reply or "", re.IGNORECASE | re.DOTALL)
+                reaction = _limit_questions(_strip_speaker_labels(said.group(1).strip()), 0) if said else ""
+                if reaction.strip("().- ").lower() in ("", "niets", "leeg", "geen"):
+                    reaction = ""
+            answer = answer or "no"
+            print(f"[JA/NEE] heard {heard!r} -> {answer}" + (f", reaction: {reaction!r}" if reaction else ""), flush=True)
+            if reaction:
+                await agent.say(reaction, voice_settings=voice_settings)
+                self._record_robot(md.MOVE_LLM_FOLLOWUP, reaction)
+            if move.get("set_variable"):
+                self.user_model[move["set_variable"]] = answer
+            return answer
+
+        return handler
+
+    md.MiniDialog.handle_move_ask_yesno = _with_variables(_with_open_answer(
+        _with_followup_rag(md.MiniDialog.handle_move_ask_yesno)))
     md.MiniDialog.handle_move_ask_options = _with_variables(md.MiniDialog.handle_move_ask_options)
 
 
@@ -814,59 +926,42 @@ def _install_listen_timeout_patch() -> None:
     InteractionOrchestrator.listen = listen
 
 
-def _install_dialogflow_timeout_patch() -> None:
+def _install_session_controls_patch() -> None:
     """
-    Make Dialogflow stop listening when the listen window ends, so answers never arrive too late.
-
-    Without a timeout the Dialogflow service listens "until it thinks the user is done talking". With a
-    sensitive (laptop) microphone it often never decides that: it kept listening after the episode had
-    given up, picked up the robot's own next lines, and every later answer arrived too late to be used.
-    Now the service stops after NAO_LISTEN_TIMEOUT_SEC and returns what it heard so far; the episode
-    waits DIALOGFLOW_GRACE_SEC longer for that result, and tells the service to stop if it never comes.
+    Keyboard controls during a session (nardial 0.4 `InteractionConfig.controls`), for every runner:
+    - P: pause / resume. A sentence that is cut off is spoken again from the start after resuming;
+      a listen stops, and what was heard so far is still used.
+    - S: stop listening now (the child is done, or nobody answers).
+    The keys work globally (pynput), the console window does not need focus. Space (and S) in the
+    console still skip a discussion/writing pause (_install_skippable_waits_patch).
+    Change the keys with PAUSE_KEYS / SKIP_LISTEN_KEYS (comma-separated), or switch the controls off
+    with SESSION_CONTROLS=0 (Episode_laptop.py --typing does this: typed answers would trigger them).
+    The listen window is NAO_LISTEN_TIMEOUT_SEC (default 12), also set as nardial's listen_timeout.
     """
     try:
-        from nardial.providers.nlu import NLUResult
-        from nardial.providers.nlu.dialogflow import DialogflowNLUProvider
-        from sic_framework.services.dialogflow.dialogflow import GetIntentRequest, StopListeningMessage
+        from nardial.interaction_orchestrator import InteractionConfig
     except Exception:
         return
+    original_init = InteractionConfig.__init__
 
-    original_init = DialogflowNLUProvider.__init__
+    def _keys(name, default):
+        return [k.strip().lower() for k in os.getenv(name, default).split(",") if k.strip()]
 
-    def _seconds(name: str, default: str) -> float:
-        try:
-            return float(os.getenv(name, default))
-        except Exception:
-            return float(default)
-
-    def __init__(self, conf, mic=None):
-        # The conf is sent to the Dialogflow service when it starts, so set the timeout before that.
-        if getattr(conf, "timeout", None) is None:
-            conf.timeout = _seconds("NAO_LISTEN_TIMEOUT_SEC", "12")
-        original_init(self, conf, mic=mic)
-
-    def listen(self, context=None, timeout: float = 10.0):
-        try:
-            reply = self._dialogflow.request(
-                GetIntentRequest(self._request_id, context),
-                timeout=timeout + _seconds("DIALOGFLOW_GRACE_SEC", "5"),
-            )
-        except TimeoutError as e:
-            print("Dialogflow timeout:", e)
+    def __init__(self, *args, controls=None, listen_timeout=None, **kwargs):
+        if controls is None and os.getenv("SESSION_CONTROLS", "1").strip().lower() not in {"0", "false", "no", "n"}:
+            controls = {"toggle_pause": _keys("PAUSE_KEYS", "p"), "skip_listen": _keys("SKIP_LISTEN_KEYS", "s")}
+        if listen_timeout is None:
             try:
-                self._dialogflow.send_message(StopListeningMessage(self._request_id))
-            except Exception:
-                pass
-            return NLUResult(transcript="", intent=None)
-        response = getattr(reply, "response", None)
-        query_result = getattr(response, "query_result", None)
-        transcript = (getattr(query_result, "query_text", "") or "") if query_result is not None else ""
-        intent = getattr(reply, "intent", None) or None
-        print("The detected intent:", intent)
-        return NLUResult(transcript=transcript, intent=intent)
+                listen_timeout = float(os.getenv("NAO_LISTEN_TIMEOUT_SEC", "12"))
+            except ValueError:
+                listen_timeout = 12.0
+        original_init(self, *args, controls=controls, listen_timeout=listen_timeout, **kwargs)
+        if controls:
+            print("[CONTROLS] {} = pause/resume, {} = stop listening; space or S in this window skips a pause".format(
+                "/".join(k.upper() for k in controls.get("toggle_pause", [])),
+                "/".join(k.upper() for k in controls.get("skip_listen", []))), flush=True)
 
-    DialogflowNLUProvider.__init__ = __init__
-    DialogflowNLUProvider.listen = listen
+    InteractionConfig.__init__ = __init__
 
 
 def _make_beep(freq_hz: float = 880.0, duration_sec: float = 0.15, sample_rate: int = 16000) -> bytes:
@@ -1138,18 +1233,27 @@ def _install_tts_prefetch_patch() -> None:
 
         if not chunks:
             return
+        # Every line gets a number; cancel() (a pause, nardial 0.4 controls) stops the lines up to now
+        # before their next piece. The line is spoken again from the start after resuming.
+        self._speak_number = line = getattr(self, "_speak_number", 0) + 1
         volume = _character_volume(voice_id)
         with ThreadPoolExecutor(max_workers=1) as pool:
             upcoming = pool.submit(fetch, chunks[0])
             for i in range(len(chunks)):
                 audio, sample_rate = upcoming.result()
+                if getattr(self, "_cancelled_up_to", 0) >= line:
+                    return
                 if i + 1 < len(chunks):
                     upcoming = pool.submit(fetch, chunks[i + 1])
                 if audio:
                     audio = _amplify_audio(audio) if amplified else _apply_volume(audio, volume)
                     self._device.play_audio_bytes(audio, sample_rate)
 
+    def cancel(self) -> None:
+        self._cancelled_up_to = getattr(self, "_speak_number", 0)
+
     ElevenLabsTTSProvider.speak = speak
+    ElevenLabsTTSProvider.cancel = cancel
 
 
 def _install_empty_tts_chunk_patch() -> None:
@@ -1215,12 +1319,16 @@ def _install_skippable_waits_patch() -> None:
             while msvcrt.kbhit():  # ignore keys pressed before the pause started
                 msvcrt.getwch()
             end = monotonic() + duration
+            control = getattr(getattr(self.conversation_agent, "orchestrator", None), "control", None)
             while (remaining := end - monotonic()) > 0:
                 if msvcrt.kbhit() and msvcrt.getwch().lower() in ("s", " "):
                     skipped = True
                     print("[PAUSE] Skipped.", flush=True)
                     break
-                await asyncio.sleep(min(0.1, remaining))
+                step = min(0.1, remaining)
+                await asyncio.sleep(step)
+                if control is not None and control.paused:  # session paused (P): the clock stands still
+                    end += step
         self._record_system(
             MOVE_TIMED_WAIT,
             f"Skipped a {duration:.0f} second pause" if skipped else f"Waited {move.duration_seconds} seconds",
@@ -1337,7 +1445,7 @@ def _install_session_setup_patch() -> None:
         except Exception as exc:
             print(f"[RESET] Could not clear the saved progress of participant {participant_id}: {exc}", flush=True)
 
-    def __init__(self, session_agenda, agent, dialog_json_path, participant_id=None):
+    def __init__(self, session_agenda, agent, dialog_json_path, participant_id=None, **kwargs):
         reset_participant(participant_id)
         start = os.getenv("START_SCENE", "").strip()
         if start and start in session_agenda:
@@ -1353,7 +1461,7 @@ def _install_session_setup_patch() -> None:
                 print(f"[START] Could not start at scene {start}: {exc}", flush=True)
         elif start:
             print(f"[START] Scene {start} is not in this episode's agenda; starting from the beginning", flush=True)
-        original_init(self, session_agenda, agent, dialog_json_path, participant_id=participant_id)
+        original_init(self, session_agenda, agent, dialog_json_path, participant_id=participant_id, **kwargs)
 
     def run(self):
         path = os.getenv("PARTICIPANT_NAMES_FILE", "").strip()
@@ -1456,7 +1564,7 @@ def apply_runtime_patches() -> None:
     _install_session_setup_patch()
     _install_connector_timing_patch()
     _install_listen_timeout_patch()
-    _install_dialogflow_timeout_patch()
+    _install_session_controls_patch()  # nardial 0.4 pause/skip keys (also stops listening on time)
     _install_listen_beep_patch()
     # Before the character style patch, so the eyes change colour first and the pause follows.
     _install_pause_patch()
